@@ -1,0 +1,59 @@
+source .venv/Scripts/activate
+
+pip install -r requirements.txt
+joern --version
+java -version
+
+#activate joern
+export JOERN_HOME="/c/tools/joern"
+export PATH="$JOERN_HOME:$PATH"
+
+"/c/tools/joern/joern-parse.bat" --help
+
+# step 1 - .c files from diversevul
+===============================================
+python -m src.preprocess.step1_prepare_diversevul `
+  --in  "data\dataset\DiverseVul\diversevul_20230702.json" `
+  --out "work\diversevul_step1"
+
+# step 2 - Generate PDG using .sc script PDG = CFG + DDG
+================================================
+# 1) Make batch folders of, say, 2,000 files each
+$src = "work\diversevul_step1\funcs"
+$dstRoot = "work\funcs_batches"
+Remove-Item -Recurse -Force $dstRoot -ErrorAction SilentlyContinue
+New-Item -ItemType Directory -Force -Path $dstRoot | Out-Null
+
+$batchSize = 2000
+$files = Get-ChildItem $src -Filter *.c
+for ($i=0; $i -lt $files.Count; $i += $batchSize) {
+  $batch = $files[$i..([Math]::Min($i+$batchSize-1,$files.Count-1))]
+  $bdir = Join-Path $dstRoot ("b_{0:d3}" -f ($i/$batchSize))
+  New-Item -ItemType Directory -Force -Path $bdir | Out-Null
+  $batch | Copy-Item -Destination $bdir
+}
+
+# 2) For each batch: (a) build a CPG with c2cpg (b) run exporter on that CPG
+$joern = "external\joern"
+$pdgOut = "work\diversevul_pdg"
+New-Item -ItemType Directory -Force -Path $pdgOut | Out-Null
+
+Get-ChildItem $dstRoot -Directory | ForEach-Object {
+  $b = $_.FullName
+  $cpgBin = Join-Path $b "cpg.bin"
+
+  & "$joern\c2cpg.bat" -J-Xmx6g $b --output $cpgBin
+
+  $env:CPG_PATH   = (Resolve-Path $cpgBin).Path
+  $env:OUT_DIR    = (Resolve-Path $pdgOut).Path
+  $env:SENSI_PATH = (Resolve-Path 'src\preprocess\external\sensiAPI.txt').Path
+  $env:LOG_PATH   = "$env:OUT_DIR\export_batch_$($_.Name).log"
+
+  & "$joern\joern.bat" --script "tools\export_pdg_env.sc"
+  Remove-Item -Recurse -Force "workspace" -ErrorAction SilentlyContinue
+}
+========================================================================
+
+
+
+
