@@ -5,7 +5,6 @@ work/funcs_batches/
 work/funcs_small/
 work/diversevul_pdg
 data/dataset
-
 **/__pycache__
 *.cpg.bin
 *.cpg.bin.zip
