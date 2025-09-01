@@ -12,7 +12,7 @@ export PATH="$JOERN_HOME:$PATH"
 "/c/tools/joern/joern-parse.bat" --help
 
 # step 1 - .c files from diversevul - venv must be activated  
-===============================================
+============================================================
 python -m src.preprocess.step1_prepare_diversevul `
   --in  "data\dataset\DiverseVul\diversevul_20230702.json" `
   --out "work\diversevul_step1"
@@ -23,7 +23,7 @@ Activate joern and verify its working before running the below script.
 
 
 # step 2 - Generate PDG using .sc script PDG = CFG + DDG
-================================================
+=============================================================
 # 1) Make batch folders of, say, 2,000 files each
 $src = "work\diversevul_step1\funcs"
 $dstRoot = "work\funcs_batches"
@@ -58,8 +58,18 @@ Get-ChildItem $dstRoot -Directory | ForEach-Object {
   & "$joern\joern.bat" --script "tools\export_pdg_env.sc"
   Remove-Item -Recurse -Force "workspace" -ErrorAction SilentlyContinue
 }
-========================================================================
 
 
+# step 3 - Clean and slice - From diversevul_pdg(original) create diversevul_pdg_clean; diversevul_slices; pdg_bad
+========================================================================================================
+
+python -m src.preprocess.step2c_pipeline_validate_and_slice `
+  --src   work\diversevul_pdg `
+  --clean work\diversevul_pdg_clean `
+  --out   work\diversevul_slices `
+  --bad   work\pdg_bad `
+  --sensi src\preprocess\external\sensiAPI.txt `
+  --require_ddg `
+  --copy_bad
 
 
