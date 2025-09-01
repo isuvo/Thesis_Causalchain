@@ -1,6 +1,7 @@
 source .venv/Scripts/activate
 
 pip install -r requirements.txt
+
 joern --version
 java -version
 
@@ -10,11 +11,16 @@ export PATH="$JOERN_HOME:$PATH"
 
 "/c/tools/joern/joern-parse.bat" --help
 
-# step 1 - .c files from diversevul - venv must be activated 
+# step 1 - .c files from diversevul - venv must be activated  
 ===============================================
 python -m src.preprocess.step1_prepare_diversevul `
   --in  "data\dataset\DiverseVul\diversevul_20230702.json" `
   --out "work\diversevul_step1"
+
+
+P.S copy Joern from c/tools/joern -> root/external/joern 
+Activate joern and verify its working before running the below script. 
+
 
 # step 2 - Generate PDG using .sc script PDG = CFG + DDG
 ================================================
