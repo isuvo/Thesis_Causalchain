@@ -7,6 +7,7 @@ work/funcs_small/
 work/diversevul_pdg
 data/dataset
 work/diversevul_step1/funcs
+work/ 
 **/__pycache__
 *.cpg.bin
 *.cpg.bin.zip

@@ -10,7 +10,7 @@ export PATH="$JOERN_HOME:$PATH"
 
 "/c/tools/joern/joern-parse.bat" --help
 
-# step 1 - .c files from diversevul
+# step 1 - .c files from diversevul - venv must be activated 
 ===============================================
 python -m src.preprocess.step1_prepare_diversevul `
   --in  "data\dataset\DiverseVul\diversevul_20230702.json" `
