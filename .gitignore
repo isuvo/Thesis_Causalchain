@@ -1,5 +1,6 @@
 # Joern / temp / large artifacts
 workspace/
+external/joern/
 work/joern/
 work/funcs_batches/
 work/funcs_small/
