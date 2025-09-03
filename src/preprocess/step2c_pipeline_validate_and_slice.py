@@ -18,17 +18,24 @@ def load_sensi_list(path: Path) -> Set[str]:
         parts.extend([x.strip() for x in txt.splitlines()])
     return {x.lower() for x in parts if x and not x.startswith("#")}
 
-def find_seed_indices(lines: List[str], sensi: Set[str]) -> List[int]:
-    seeds = []
+def find_seed_indices(lines: List[str], sensi: Set[str]) -> Tuple[List[int], List[int]]:
+    """
+    Returns:
+      sensi_seeds: indices of lines calling a *sensitive* API
+      any_call_seeds: indices of lines calling *any* function
+    """
+    sensi_seeds = []
+    any_call_seeds = []
     for i, s in enumerate(lines):
         names = [m.group(1).lower() for m in CALL_NAME.finditer(s)]
-        if sensi:
-            if any(n in sensi for n in names):
-                seeds.append(i)
-        else:
-            if names:
-                seeds.append(i)
-    return sorted(set(seeds))
+        if names:
+            any_call_seeds.append(i)
+            if sensi and any(n in sensi for n in names):
+                sensi_seeds.append(i)
+    # make unique + sorted
+    sensi_seeds = sorted(set(sensi_seeds))
+    any_call_seeds = sorted(set(any_call_seeds))
+    return sensi_seeds, any_call_seeds
 
 def combine_edges(cdg: List[List[int]], ddg: List[List[int]]) -> List[List[int]]:
     seen, out = set(), []
@@ -118,6 +125,12 @@ def main():
     ap.add_argument("--min_nodes", type=int, default=2)
     ap.add_argument("--max_nodes", type=int, default=5000)
     ap.add_argument("--copy_bad", action="store_true", help="Copy rejects to --bad (never move)")
+    
+    ap.add_argument("--fallback_any_call", action="store_true",help="If no sensitive API is found, fallback to any function call as seed(s)")
+    ap.add_argument("--min_calls_for_fallback", type=int, default=1,help="Require at least N calls to attempt fallback seeding")
+    ap.add_argument("--max_seeds_per_pdg", type=int, default=5, help="Limit the number of seeds per PDG to avoid explosion")
+    ap.add_argument("--max_slice_size", type=int, default=512, help="Skip slices larger than this many nodes (0=disable)")
+    ap.add_argument("--keep_no_seed_clean", action="store_true", help="Write cleaned PDG even if it had no seeds")
     args = ap.parse_args()
 
     src   = Path(args.src)
@@ -181,12 +194,27 @@ def main():
             ddg = obj.get("data-dependences", [])
             combined = combine_edges(cdg, ddg)
 
-            seeds = find_seed_indices(lines, sensi)
+            sensi_seeds, any_call_seeds = find_seed_indices(lines, sensi)
+            seeds = sensi_seeds
+
+            # Fallback: if no sensi seeds, use any-call seeds (optionally)
+            if not seeds and args.fallback_any_call and len(any_call_seeds) >= args.min_calls_for_fallback:
+                seeds = any_call_seeds
+
+            # Cap the number of seeds per PDG
+            if args.max_seeds_per_pdg > 0 and len(seeds) > args.max_seeds_per_pdg:
+                seeds = seeds[:args.max_seeds_per_pdg]
+
             stats["seeds_total"] += len(seeds)
+
+            # Optionally still write clean PDG even if no seeds (for later)
             if not seeds:
                 stats["no_seed"] += 1
-                if not args.dry_run and args.copy_bad:
-                    shutil.copy2(str(jf), bad / jf.name)
+                if not args.dry_run:
+                    # always write CLEAN copy (we normalized already)
+                    (clean / jf.name).write_text(json.dumps(obj), encoding="utf-8")
+                    if args.copy_bad:
+                        shutil.copy2(str(jf), bad / jf.name)
                 continue
 
             n = len(lines)
@@ -196,6 +224,8 @@ def main():
                 fwd  = set(bfs_forward(n, ddg, {seed_idx}))
                 keep = sorted(back.union(fwd))
                 if len(keep) < 2:
+                    continue
+                if args.max_slice_size > 0 and len(keep) > args.max_slice_size:
                     continue
                 sl = make_slice_json(obj, keep, combined, seed_idx)
                 if not args.dry_run:

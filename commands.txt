@@ -1,5 +1,5 @@
 source .venv/Scripts/activate
-
+For PS: .venv/Scripts/activate
 pip install -r requirements.txt
 
 joern --version
@@ -24,6 +24,7 @@ Activate joern and verify its working before running the below script.
 
 # step 2 - Generate PDG using .sc script PDG = CFG + DDG
 =============================================================
+
 # 1) Make batch folders of, say, 2,000 files each
 $src = "work\diversevul_step1\funcs"
 $dstRoot = "work\funcs_batches"
@@ -60,9 +61,7 @@ Get-ChildItem $dstRoot -Directory | ForEach-Object {
 }
 
 
-# step 3 - Clean and slice - From diversevul_pdg(original) create diversevul_pdg_clean; diversevul_slices; pdg_bad
-========================================================================================================
-
+# 3) Clean and slice - From diversevul_pdg(original) create diversevul_pdg_clean; diversevul_slices; pdg_bad
 python -m src.preprocess.step2c_pipeline_validate_and_slice `
   --src   work\diversevul_pdg `
   --clean work\diversevul_pdg_clean `
@@ -73,3 +72,31 @@ python -m src.preprocess.step2c_pipeline_validate_and_slice `
   --copy_bad
 
 
+# step 3 - save embeddings, use graphcodebert and save the pt to be trained for GNN and attention 
+================================================================================
+
+python -m src.preprocess.embed_lines_gcbert \
+  --slices work/diversevul_step2/diversevul_slices \
+  --model microsoft/graphcodebert-base \
+  --device cpu \
+  --batch_size 16
+
+---diversevul_slices
+
+python -m src.preprocess.slices_to_pyg_gcbert \
+  --slices work/diversevul_step2/diversevul_slices \
+  --sensi_file src/preprocess/external/sensiAPI.txt \
+  --out_dir work/pyg_diversevul_tf \
+  --cache_db work/embeddings/line_cache.sqlite
+
+
+---diversevul_pdg_clean
+
+python -m src.preprocess.slices_to_pyg_gcbert \
+  --slices work/diversevul_step2/diversevul_pdg_clean \
+  --sensi_file src/preprocess/external/sensiAPI.txt \
+  --out_dir work/pyg_diversevul_clean \
+  --cache_db work/embeddings/line_cache.sqlite
+
+  # step 4 and 5 - 
+================================================================================
