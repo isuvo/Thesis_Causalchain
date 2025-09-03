@@ -26,6 +26,7 @@ Activate joern and verify its working before running the below script.
 =============================================================
 
 # 1) Make batch folders of, say, 2,000 files each
+
 $src = "work\diversevul_step1\funcs"
 $dstRoot = "work\funcs_batches"
 Remove-Item -Recurse -Force $dstRoot -ErrorAction SilentlyContinue
@@ -81,7 +82,7 @@ python -m src.preprocess.embed_lines_gcbert \
   --device cpu \
   --batch_size 16
 
----diversevul_slices
+---diversevul_slices(sliced ussing sensiapi)
 
 python -m src.preprocess.slices_to_pyg_gcbert \
   --slices work/diversevul_step2/diversevul_slices \
@@ -98,5 +99,83 @@ python -m src.preprocess.slices_to_pyg_gcbert \
   --out_dir work/pyg_diversevul_clean \
   --cache_db work/embeddings/line_cache.sqlite
 
-  # step 4 and 5 - 
+# step 4 - Train the GNN w/ seed-conditioned attention
 ================================================================================
+
+Script: src/step4_train_gnn_attn.py
+# From repo root, venv active
+python -m src.step4_train_gnn_attn `
+  --data_dir "work\pyg_diversevul_tf" `
+  --out_dir  "work\models" `
+  --epochs 80 `
+  --batch_size 64 `
+  --hidden 192 `
+  --attn_hidden 192 `
+  --lr 5e-4 `
+  --loss focal `
+  --gamma 2.0 `
+  --sampler weighted `
+  --progress tqdm `
+  --num_workers 0 `
+  --clean_out
+
+Step 5 — Export attention-guided causal chains (batch)
+================================================================================
+
+Script: src/step5_export_chains.py
+
+python -m src.step5_export_chains `
+  --data_dir "work\pyg_diversevul_tf" `
+  --model   "work\models\gcbert_gnn_attn.pt" `
+  --cfg     "work\models\gcbert_gnn_attn.cfg.json" `
+  --out     "work\chains\chains_diversevul.jsonl" `
+  --num_graphs 1000 `
+  --topk_nodes 12 `
+  --k_paths 3 `
+  --max_len 8 `
+  --clean_out
+
+
+Step 6 — Evaluate the trained model on the held-out test split
+================================================================================
+
+Script: src/step6_eval_report.py
+
+A) Evaluate the model you just trained locally
+
+# from repo root, venv active
+python -m src.step6_eval_report `
+  --data_dir "work\pyg_diversevul_tf" `
+  --model    "work\models\gcbert_gnn_attn.pt" `
+  --cfg      "work\models\gcbert_gnn_attn.cfg.json" `
+  --out      "work\eval\diversevul_eval_local.json" `
+  --thr 0.5 `
+  --find_best_thr
+
+B) Evaluate the Colab-trained model you copied back
+
+python -m src.step6_eval_report `
+  --data_dir "work\pyg_diversevul_tf" `
+  --model    "work\models_colab\gcbert_gnn_attn.pt" `
+  --cfg      "work\models_colab\gcbert_gnn_attn.cfg.json" `
+  --out      "work\eval\diversevul_eval_colab.json" `
+  --thr 0.5 `
+  --find_best_thr
+
+
+Step 6 - Pretty single-slice inference (one code slice → one beautiful chain)
+=================================================================================
+
+Script: src/infer_one_slice_pretty.py
+
+python -u -m src.infer_one_slice_pretty `
+  --slice_json "work\demo_slices\multi_class_vuln.slice.json" `
+  --model      "work\models\gcbert_gnn_attn.pt" `
+  --cfg        "work\models\gcbert_gnn_attn.cfg.json" `
+  --sensi_file "src\preprocess\external\sensiAPI.txt" `
+  --max_len 12 `
+  --print_topk 12 `
+  --hide_trivial_topn `
+  --min_attn 0.03 `
+  --thr 0.9 `
+  --hf_local_only

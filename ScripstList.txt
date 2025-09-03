@@ -1,0 +1,19 @@
+src/preprocess/step1_prepare_diversevul.py — extract per-function .c files from DiverseVul.
+
+tools/export_pdg_env.sc — Joern script to export PDG (CFG + DDG) per function.
+
+src/preprocess/step2c_pipeline_validate_and_slice.py — validate PDGs; slice around sensitive APIs.
+
+src/preprocess/embed_lines_gcbert.py — embed code lines with GraphCodeBERT (cache).
+
+src/preprocess/slices_to_pyg_gcbert.py — build PyG graphs (GC-BERT embeddings + light structural features).
+
+src/step4_train_gnn_attn.py — train GNN + seed-conditioned attention; write model + cfg.
+
+src/step5_export_chains.py — batch inference; emit JSONL chains.
+
+src/step6_eval_report.py — test-set evaluation; metrics + best threshold.
+
+src/infer_one_slice_pretty.py — single-slice inference with clean, labeled chain output.
+
+src/tools/format_chains.py — pretty-print large JSONL into human-readable chains.
