@@ -1,0 +1,146 @@
+{
+  "config": {
+    "epochs": 2,
+    "hidden": 64,
+    "layers": 3,
+    "lr": 0.002,
+    "wd": 0.0001,
+    "neg_pos_ratio": 20,
+    "device": "cuda"
+  },
+  "reports": {
+    "train": {
+      "split": "train",
+      "overall": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0
+      },
+      "thresholds": {
+        "default": 0.05
+      },
+      "n_graphs_used": 0,
+      "CCS_mean": null,
+      "CFAM_mean": null,
+      "CCS_count": 0,
+      "CFAM_count": 0
+    },
+    "valid": {
+      "split": "valid",
+      "overall": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0
+      },
+      "thresholds": {
+        "default": 0.25
+      },
+      "n_graphs_used": 0,
+      "CCS_mean": null,
+      "CFAM_mean": null,
+      "CCS_count": 0,
+      "CFAM_count": 0
+    },
+    "test": {
+      "split": "test",
+      "overall": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0
+      },
+      "thresholds": {
+        "default": 0.05
+      },
+      "n_graphs_used": 0,
+      "CCS_mean": null,
+      "CFAM_mean": null,
+      "CCS_count": 0,
+      "CFAM_count": 0
+    }
+  },
+  "demo": {
+    "meta": {
+      "split": "valid",
+      "graph_path": "Dataset\\valid\\hetero_ready_gcbert\\shard_0003.pt"
+    },
+    "paths": [
+      {
+        "score": -0.8481592088937759,
+        "nodes": [
+          41,
+          23
+        ]
+      },
+      {
+        "score": -0.8491012781858444,
+        "nodes": [
+          22,
+          43
+        ]
+      },
+      {
+        "score": -0.8494576960802078,
+        "nodes": [
+          22,
+          23
+        ]
+      },
+      {
+        "score": -0.8726113796234132,
+        "nodes": [
+          17,
+          18
+        ]
+      },
+      {
+        "score": -0.8857709616422653,
+        "nodes": [
+          22,
+          42
+        ]
+      },
+      {
+        "score": -0.893640100955963,
+        "nodes": [
+          55,
+          33
+        ]
+      },
+      {
+        "score": -0.8958590656518937,
+        "nodes": [
+          55,
+          106
+        ]
+      },
+      {
+        "score": -0.8959042578935622,
+        "nodes": [
+          24,
+          45
+        ]
+      },
+      {
+        "score": -1.1310549587011338,
+        "nodes": [
+          41,
+          23,
+          41
+        ]
+      },
+      {
+        "score": -1.1323534458875657,
+        "nodes": [
+          22,
+          23,
+          41
+        ]
+      }
+    ]
+  },
+  "notes": {
+    "interprocedural": "Relations used: DFG, CFG, CALL, ARG2PARAM, RET2CALL, RET2LHS. Multi-root seeds supported.",
+    "CCS": "p(X) vs p(do(X')), do(X') zeros features on causal-slice nodes (strict slicing from labels).",
+    "CFAM": "Grad-norm attribution on hidden h; mass on causal vs causal+spurious."
+  }
+}

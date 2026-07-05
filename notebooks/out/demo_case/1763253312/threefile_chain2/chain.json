@@ -1,0 +1,153 @@
+{
+  "demo": "threefile_chain2",
+  "hops": 7,
+  "indices": [
+    10,
+    11,
+    12,
+    13,
+    14,
+    103,
+    107,
+    108
+  ],
+  "nodes": [
+    {
+      "index": 0,
+      "graph_idx": 10,
+      "P": 0.4611619710922241,
+      "file": "app/main.c",
+      "lineNumber": 15,
+      "_label": "CALL",
+      "code": "if (fgets(buf, sizeof(buf), stdin) == NULL) {",
+      "role": "ROOT"
+    },
+    {
+      "index": 1,
+      "graph_idx": 11,
+      "P": 0.45800936222076416,
+      "file": "app/main.c",
+      "lineNumber": 16,
+      "_label": "BLOCK",
+      "code": "return 0;",
+      "role": "MID"
+    },
+    {
+      "index": 2,
+      "graph_idx": 12,
+      "P": 0.4461697041988373,
+      "file": "app/main.c",
+      "lineNumber": 17,
+      "_label": "BLOCK",
+      "code": "}",
+      "role": "MID"
+    },
+    {
+      "index": 3,
+      "graph_idx": 13,
+      "P": 0.5196774005889893,
+      "file": "app/main.c",
+      "lineNumber": 19,
+      "_label": "BLOCK",
+      "code": "n = strlen(buf);",
+      "role": "MID"
+    },
+    {
+      "index": 4,
+      "graph_idx": 14,
+      "P": 0.4241967499256134,
+      "file": "app/main.c",
+      "lineNumber": 20,
+      "_label": "CALL",
+      "code": "if (n > 0 && (buf[n - 1] == '\\n' || buf[n - 1] == '\\r')) {",
+      "role": "MID"
+    },
+    {
+      "index": 5,
+      "graph_idx": 103,
+      "P": 0.467456191778183,
+      "file": "lib/shell.c",
+      "lineNumber": 40,
+      "_label": "BLOCK",
+      "code": "n = sizeof(exec_local) - 1;",
+      "role": "MID"
+    },
+    {
+      "index": 6,
+      "graph_idx": 107,
+      "P": 0.4483889639377594,
+      "file": "lib/shell.c",
+      "lineNumber": 44,
+      "_label": "BLOCK",
+      "code": "exec_local[n] = '\\0';",
+      "role": "MID"
+    },
+    {
+      "index": 7,
+      "graph_idx": 108,
+      "P": 0.5473679304122925,
+      "file": "lib/shell.c",
+      "lineNumber": 45,
+      "_label": "CALL",
+      "code": "system(exec_local); /* external command execution */",
+      "role": "SINK"
+    }
+  ],
+  "edges": [
+    {
+      "from_index": 0,
+      "to_index": 1,
+      "families": [
+        "CFG"
+      ]
+    },
+    {
+      "from_index": 1,
+      "to_index": 2,
+      "families": [
+        "CFG"
+      ]
+    },
+    {
+      "from_index": 2,
+      "to_index": 3,
+      "families": [
+        "CFG"
+      ]
+    },
+    {
+      "from_index": 3,
+      "to_index": 4,
+      "families": [
+        "CFG",
+        "DFG"
+      ]
+    },
+    {
+      "from_index": 4,
+      "to_index": 5,
+      "families": [
+        "CPG"
+      ]
+    },
+    {
+      "from_index": 5,
+      "to_index": 6,
+      "families": [
+        "DFG"
+      ]
+    },
+    {
+      "from_index": 6,
+      "to_index": 7,
+      "families": [
+        "CFG"
+      ]
+    }
+  ],
+  "params": {
+    "MAX_HOPS": 12,
+    "BEAM_WIDTH": 24,
+    "TIME_BUDGET_S": 3.0
+  }
+}

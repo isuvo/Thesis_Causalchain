@@ -1,0 +1,133 @@
+{
+  "generated_at": "2025-10-09T15:47:41.820598Z",
+  "training_summary": {
+    "steps": 17190,
+    "epochs": 5,
+    "avg_loss": 0.953,
+    "checkpoints": {
+      "best": "best_model.pt",
+      "last": "ckpt_cagat_acc_interproc.pt"
+    }
+  },
+  "label_balance": {
+    "train": {
+      "pos": 9946,
+      "neg": 25173258,
+      "pos_ratio": 0.000395
+    },
+    "valid": {
+      "pos": 1455,
+      "neg": 3970281,
+      "pos_ratio": 0.000366
+    },
+    "test": {
+      "pos": 1316,
+      "neg": 3973974,
+      "pos_ratio": 0.000331
+    },
+    "node_text_evidence_count": 1074
+  },
+  "supervised_metrics_available": false,
+  "metrics_by_label_source": {
+    "threshold": 0.5,
+    "bfs_enabled": true,
+    "validation": {
+      "mined": {
+        "n_graphs": 2058,
+        "accuracy": 0.44,
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0
+      },
+      "heuristic": {
+        "n_graphs": 777,
+        "accuracy": 0.405,
+        "precision": 0.00261,
+        "recall": 0.817,
+        "f1": 0.00505
+      },
+      "bootstrap": {
+        "n_graphs": 70,
+        "accuracy": 0.492,
+        "precision": 0.0582,
+        "recall": 1.0,
+        "f1": 0.108
+      },
+      "pooled_mAP": {
+        "global": 0.00151,
+        "inter": 0.00274
+      }
+    },
+    "test": {
+      "mined": {
+        "n_graphs": 2025,
+        "accuracy": 0.443,
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0
+      },
+      "heuristic": {
+        "n_graphs": 812,
+        "accuracy": 0.402,
+        "precision": 0.00187,
+        "recall": 0.815,
+        "f1": 0.00366
+      },
+      "bootstrap": {
+        "n_graphs": 78,
+        "accuracy": 0.489,
+        "precision": 0.0604,
+        "recall": 1.0,
+        "f1": 0.112
+      },
+      "pooled_mAP": {
+        "global": 0.00167,
+        "inter": 0.00279
+      }
+    }
+  },
+  "robustness_diagnostics": {
+    "supervised_labels_present": false,
+    "weak_seeded_paths_found": false,
+    "call_chain_coherence": {
+      "valid": 0.235,
+      "test": 0.196
+    },
+    "pairs_evaluated_approx": 820000
+  },
+  "chain_mining": {
+    "validation": {
+      "graphs": 2905,
+      "sinks_considered": 467344,
+      "sinks_linked": 3248,
+      "coverage": 0.00695,
+      "avg_chain_length": 1.0,
+      "path_monotonicity": 0.999,
+      "call_edge_usage": 0.0366
+    },
+    "test": {
+      "graphs": 2915,
+      "sinks_considered": 406265,
+      "sinks_linked": 2084,
+      "coverage": 0.00513,
+      "avg_chain_length": 1.02,
+      "path_monotonicity": 0.996,
+      "call_edge_usage": 0.585
+    },
+    "beam_params": {
+      "MAX_HOPS": 8,
+      "BEAM_WIDTH": 16,
+      "TIME_BUDGET_S": 2.0,
+      "MONO_SLACK": 0.08,
+      "TOPK_SINKS_PER_GRAPH": 20,
+      "SINK_PROB_THR": 0.6
+    }
+  },
+  "runtime_eval_params": {
+    "device": "CUDA",
+    "bfs_forced": true,
+    "max_nodes": 5000,
+    "max_edges": 15000,
+    "threshold": 0.5
+  }
+}

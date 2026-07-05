@@ -1,0 +1,5431 @@
+{
+  "meta": {
+    "tool": "joern",
+    "source": "C:/Users/USER/Desktop/Thesis Research/Implementation/Thesis-causal-vul/work/src/valid/shard_ca8d",
+    "n_nodes": 318,
+    "n_edges": {
+      "AST": 187,
+      "CFG": 63,
+      "DFG": 10
+    },
+    "dfg_status": "rd_intra_proc",
+    "cpg_augmented": true,
+    "added_edges": {
+      "CALL": 20,
+      "ARG2PARAM": 36,
+      "RET2CALL": 20,
+      "RET2LHS": 2
+    }
+  },
+  "nodes": [
+    {
+      "name": "read_uleb128",
+      "_id": 21474836480,
+      "signature": "ut64(ut8**,ut8*)",
+      "methodFullName": "read_uleb128",
+      "_label": "BINDING"
+    },
+    {
+      "name": "duplicate_ptr",
+      "_id": 21474836481,
+      "signature": "void*(void*)",
+      "methodFullName": "duplicate_ptr",
+      "_label": "BINDING"
+    },
+    {
+      "name": "is_data_section",
+      "_id": 21474836482,
+      "signature": "bool(RBinSection*)",
+      "methodFullName": "is_data_section",
+      "_label": "BINDING"
+    },
+    {
+      "dynamicTypeHintFullName": [],
+      "_id": 25769803776,
+      "code": "{\n\tconst char *error = NULL;\n\tut64 v;\n\t*p = (ut8 *)r_uleb128 (*p, end - *p, &v, &error);\n\tif (error) {\n\t\teprintf (\"%s\", error);\n\t\tR_FREE (error);\n\t\treturn UT64_MAX;\n\t}\n\treturn v;\n}",
+      "typeFullName": "void",
+      "lineNumber": 7,
+      "order": 3,
+      "_label": "BLOCK",
+      "columnNumber": 45,
+      "possibleTypes": [],
+      "argumentIndex": -1
+    },
+    {
+      "dynamicTypeHintFullName": [],
+      "_id": 25769803777,
+      "code": "{\n\t\teprintf (\"%s\", error);\n\t\tR_FREE (error);\n\t\treturn UT64_MAX;\n\t}",
+      "typeFullName": "void",
+      "lineNumber": 11,
+      "order": 2,
+      "_label": "BLOCK",
+      "columnNumber": 13,
+      "possibleTypes": [],
+      "argumentIndex": -1
+    },
+    {
+      "dynamicTypeHintFullName": [],
+      "_id": 25769803778,
+      "code": "<empty>",
+      "typeFullName": "ANY",
+      "lineNumber": 1,
+      "order": 1,
+      "_label": "BLOCK",
+      "columnNumber": 1,
+      "possibleTypes": [],
+      "argumentIndex": -1
+    },
+    {
+      "dynamicTypeHintFullName": [],
+      "_id": 25769803779,
+      "code": "<empty>",
+      "typeFullName": "ANY",
+      "lineNumber": 1,
+      "order": 1,
+      "_label": "BLOCK",
+      "columnNumber": 1,
+      "possibleTypes": [],
+      "argumentIndex": -1
+    },
+    {
+      "dynamicTypeHintFullName": [],
+      "_id": 25769803780,
+      "code": "{\n\treturn p;\n}",
+      "typeFullName": "void",
+      "lineNumber": 7,
+      "order": 2,
+      "_label": "BLOCK",
+      "columnNumber": 37,
+      "possibleTypes": [],
+      "argumentIndex": -1
+    },
+    {
+      "dynamicTypeHintFullName": [],
+      "_id": 25769803781,
+      "code": "<empty>",
+      "typeFullName": "ANY",
+      "lineNumber": 1,
+      "order": 1,
+      "_label": "BLOCK",
+      "columnNumber": 1,
+      "possibleTypes": [],
+      "argumentIndex": -1
+    },
+    {
+      "dynamicTypeHintFullName": [],
+      "_id": 25769803782,
+      "code": "{\n\tif (strstr (sect->name, \"_cstring\")) {\n\t\treturn true;\n\t}\n\tif (strstr (sect->name, \"_objc_methname\")) {\n\t\treturn true;\n\t}\n\tif (strstr (sect->name, \"_objc_classname\")) {\n\t\treturn true;\n\t}\n\tif (strstr (sect->name, \"_objc_methtype\")) {\n\t\treturn true;\n\t}\n\treturn false;\n}",
+      "typeFullName": "void",
+      "lineNumber": 7,
+      "order": 2,
+      "_label": "BLOCK",
+      "columnNumber": 48,
+      "possibleTypes": [],
+      "argumentIndex": -1
+    },
+    {
+      "dynamicTypeHintFullName": [],
+      "_id": 25769803783,
+      "code": "{\n\t\treturn true;\n\t}",
+      "typeFullName": "void",
+      "lineNumber": 8,
+      "order": 2,
+      "_label": "BLOCK",
+      "columnNumber": 39,
+      "possibleTypes": [],
+      "argumentIndex": -1
+    },
+    {
+      "dynamicTypeHintFullName": [],
+      "_id": 25769803784,
+      "code": "{\n\t\treturn true;\n\t}",
+      "typeFullName": "void",
+      "lineNumber": 11,
+      "order": 2,
+      "_label": "BLOCK",
+      "columnNumber": 45,
+      "possibleTypes": [],
+      "argumentIndex": -1
+    },
+    {
+      "dynamicTypeHintFullName": [],
+      "_id": 25769803785,
+      "code": "{\n\t\treturn true;\n\t}",
+      "typeFullName": "void",
+      "lineNumber": 14,
+      "order": 2,
+      "_label": "BLOCK",
+      "columnNumber": 46,
+      "possibleTypes": [],
+      "argumentIndex": -1
+    },
+    {
+      "dynamicTypeHintFullName": [],
+      "_id": 25769803786,
+      "code": "{\n\t\treturn true;\n\t}",
+      "typeFullName": "void",
+      "lineNumber": 17,
+      "order": 2,
+      "_label": "BLOCK",
+      "columnNumber": 45,
+      "possibleTypes": [],
+      "argumentIndex": -1
+    },
+    {
+      "dynamicTypeHintFullName": [],
+      "_id": 25769803787,
+      "code": "<empty>",
+      "typeFullName": "ANY",
+      "lineNumber": 1,
+      "order": 1,
+      "_label": "BLOCK",
+      "columnNumber": 1,
+      "possibleTypes": [],
+      "argumentIndex": -1
+    },
+    {
+      "dynamicTypeHintFullName": [],
+      "_id": 25769803788,
+      "code": "<empty>",
+      "typeFullName": "ANY",
+      "lineNumber": 1,
+      "order": 1,
+      "_label": "BLOCK",
+      "columnNumber": 1,
+      "possibleTypes": [],
+      "argumentIndex": -1
+    },
+    {
+      "dynamicTypeHintFullName": [],
+      "_id": 25769803789,
+      "code": "<empty>",
+      "typeFullName": "ANY",
+      "lineNumber": 1,
+      "order": 1,
+      "_label": "BLOCK",
+      "columnNumber": 1,
+      "possibleTypes": [],
+      "argumentIndex": -1
+    },
+    {
+      "dynamicTypeHintFullName": [],
+      "_id": 25769803790,
+      "code": "<empty>",
+      "typeFullName": "ANY",
+      "lineNumber": 1,
+      "order": 1,
+      "_label": "BLOCK",
+      "columnNumber": 1,
+      "possibleTypes": [],
+      "argumentIndex": -1
+    },
+    {
+      "dynamicTypeHintFullName": [],
+      "_id": 25769803791,
+      "code": "<empty>",
+      "typeFullName": "ANY",
+      "lineNumber": 1,
+      "order": 1,
+      "_label": "BLOCK",
+      "columnNumber": 1,
+      "possibleTypes": [],
+      "argumentIndex": -1
+    },
+    {
+      "dynamicTypeHintFullName": [],
+      "_id": 25769803792,
+      "code": "<empty>",
+      "typeFullName": "ANY",
+      "order": 1,
+      "_label": "BLOCK",
+      "possibleTypes": [],
+      "argumentIndex": -1
+    },
+    {
+      "dynamicTypeHintFullName": [],
+      "_id": 25769803793,
+      "code": "<empty>",
+      "typeFullName": "ANY",
+      "order": 2,
+      "_label": "BLOCK",
+      "possibleTypes": [],
+      "argumentIndex": -1
+    },
+    {
+      "dynamicTypeHintFullName": [],
+      "_id": 25769803794,
+      "code": "<empty>",
+      "typeFullName": "ANY",
+      "order": 1,
+      "_label": "BLOCK",
+      "possibleTypes": [],
+      "argumentIndex": 1
+    },
+    {
+      "dynamicTypeHintFullName": [],
+      "_id": 25769803795,
+      "code": "<empty>",
+      "typeFullName": "ANY",
+      "order": 1,
+      "_label": "BLOCK",
+      "possibleTypes": [],
+      "argumentIndex": 1
+    },
+    {
+      "dynamicTypeHintFullName": [],
+      "_id": 25769803796,
+      "code": "<empty>",
+      "typeFullName": "ANY",
+      "order": 1,
+      "_label": "BLOCK",
+      "possibleTypes": [],
+      "argumentIndex": 1
+    },
+    {
+      "dynamicTypeHintFullName": [],
+      "_id": 25769803797,
+      "code": "<empty>",
+      "typeFullName": "ANY",
+      "order": 1,
+      "_label": "BLOCK",
+      "possibleTypes": [],
+      "argumentIndex": 1
+    },
+    {
+      "dynamicTypeHintFullName": [],
+      "_id": 25769803798,
+      "code": "<empty>",
+      "typeFullName": "ANY",
+      "order": 1,
+      "_label": "BLOCK",
+      "possibleTypes": [],
+      "argumentIndex": 1
+    },
+    {
+      "dynamicTypeHintFullName": [],
+      "_id": 25769803799,
+      "code": "<empty>",
+      "typeFullName": "ANY",
+      "order": 1,
+      "_label": "BLOCK",
+      "possibleTypes": [],
+      "argumentIndex": 1
+    },
+    {
+      "dynamicTypeHintFullName": [],
+      "_id": 25769803800,
+      "code": "<empty>",
+      "typeFullName": "ANY",
+      "order": 1,
+      "_label": "BLOCK",
+      "possibleTypes": [],
+      "argumentIndex": 1
+    },
+    {
+      "dynamicTypeHintFullName": [],
+      "_id": 25769803801,
+      "code": "<empty>",
+      "typeFullName": "ANY",
+      "order": 1,
+      "_label": "BLOCK",
+      "possibleTypes": [],
+      "argumentIndex": 1
+    },
+    {
+      "dynamicTypeHintFullName": [],
+      "_id": 25769803802,
+      "code": "<empty>",
+      "typeFullName": "ANY",
+      "order": 1,
+      "_label": "BLOCK",
+      "possibleTypes": [],
+      "argumentIndex": 1
+    },
+    {
+      "dynamicTypeHintFullName": [],
+      "_id": 25769803803,
+      "code": "<empty>",
+      "typeFullName": "ANY",
+      "order": 1,
+      "_label": "BLOCK",
+      "possibleTypes": [],
+      "argumentIndex": 1
+    },
+    {
+      "name": "<operator>.assignment",
+      "_id": 30064771072,
+      "signature": "",
+      "code": "*error = NULL",
+      "typeFullName": "void",
+      "lineNumber": 8,
+      "order": 2,
+      "methodFullName": "<operator>.assignment",
+      "dynamicTypeHintFullName": [],
+      "dispatchType": "STATIC_DISPATCH",
+      "columnNumber": 13,
+      "_label": "CALL",
+      "possibleTypes": [],
+      "argumentIndex": -1
+    },
+    {
+      "name": "<operator>.assignment",
+      "_id": 30064771073,
+      "signature": "",
+      "code": "*p = (ut8 *)r_uleb128 (*p, end - *p, &v, &error)",
+      "typeFullName": "ANY",
+      "lineNumber": 10,
+      "order": 4,
+      "methodFullName": "<operator>.assignment",
+      "dynamicTypeHintFullName": [],
+      "dispatchType": "STATIC_DISPATCH",
+      "columnNumber": 2,
+      "_label": "CALL",
+      "possibleTypes": [],
+      "argumentIndex": -1
+    },
+    {
+      "name": "<operator>.indirection",
+      "_id": 30064771074,
+      "signature": "",
+      "code": "*p",
+      "typeFullName": "ANY",
+      "lineNumber": 10,
+      "order": 1,
+      "methodFullName": "<operator>.indirection",
+      "dynamicTypeHintFullName": [],
+      "dispatchType": "STATIC_DISPATCH",
+      "columnNumber": 2,
+      "_label": "CALL",
+      "possibleTypes": [],
+      "argumentIndex": 1
+    },
+    {
+      "name": "<operator>.cast",
+      "_id": 30064771075,
+      "signature": "",
+      "code": "(ut8 *)r_uleb128 (*p, end - *p, &v, &error)",
+      "typeFullName": "ut8",
+      "lineNumber": 10,
+      "order": 2,
+      "methodFullName": "<operator>.cast",
+      "dynamicTypeHintFullName": [],
+      "dispatchType": "STATIC_DISPATCH",
+      "columnNumber": 7,
+      "_label": "CALL",
+      "possibleTypes": [],
+      "argumentIndex": 2
+    },
+    {
+      "name": "r_uleb128",
+      "_id": 30064771076,
+      "signature": "",
+      "code": "r_uleb128 (*p, end - *p, &v, &error)",
+      "typeFullName": "ANY",
+      "lineNumber": 10,
+      "order": 2,
+      "methodFullName": "r_uleb128",
+      "dynamicTypeHintFullName": [],
+      "dispatchType": "STATIC_DISPATCH",
+      "columnNumber": 14,
+      "_label": "CALL",
+      "possibleTypes": [],
+      "argumentIndex": 2
+    },
+    {
+      "name": "<operator>.indirection",
+      "_id": 30064771077,
+      "signature": "",
+      "code": "*p",
+      "typeFullName": "ANY",
+      "lineNumber": 10,
+      "order": 1,
+      "methodFullName": "<operator>.indirection",
+      "dynamicTypeHintFullName": [],
+      "dispatchType": "STATIC_DISPATCH",
+      "columnNumber": 25,
+      "_label": "CALL",
+      "possibleTypes": [],
+      "argumentIndex": 1
+    },
+    {
+      "name": "<operator>.subtraction",
+      "_id": 30064771078,
+      "signature": "",
+      "code": "end - *p",
+      "typeFullName": "ANY",
+      "lineNumber": 10,
+      "order": 2,
+      "methodFullName": "<operator>.subtraction",
+      "dynamicTypeHintFullName": [],
+      "dispatchType": "STATIC_DISPATCH",
+      "columnNumber": 29,
+      "_label": "CALL",
+      "possibleTypes": [],
+      "argumentIndex": 2
+    },
+    {
+      "name": "<operator>.indirection",
+      "_id": 30064771079,
+      "signature": "",
+      "code": "*p",
+      "typeFullName": "ANY",
+      "lineNumber": 10,
+      "order": 2,
+      "methodFullName": "<operator>.indirection",
+      "dynamicTypeHintFullName": [],
+      "dispatchType": "STATIC_DISPATCH",
+      "columnNumber": 35,
+      "_label": "CALL",
+      "possibleTypes": [],
+      "argumentIndex": 2
+    },
+    {
+      "name": "<operator>.addressOf",
+      "_id": 30064771080,
+      "signature": "",
+      "code": "&v",
+      "typeFullName": "ANY",
+      "lineNumber": 10,
+      "order": 3,
+      "methodFullName": "<operator>.addressOf",
+      "dynamicTypeHintFullName": [],
+      "dispatchType": "STATIC_DISPATCH",
+      "columnNumber": 39,
+      "_label": "CALL",
+      "possibleTypes": [],
+      "argumentIndex": 3
+    },
+    {
+      "name": "<operator>.addressOf",
+      "_id": 30064771081,
+      "signature": "",
+      "code": "&error",
+      "typeFullName": "ANY",
+      "lineNumber": 10,
+      "order": 4,
+      "methodFullName": "<operator>.addressOf",
+      "dynamicTypeHintFullName": [],
+      "dispatchType": "STATIC_DISPATCH",
+      "columnNumber": 43,
+      "_label": "CALL",
+      "possibleTypes": [],
+      "argumentIndex": 4
+    },
+    {
+      "name": "eprintf",
+      "_id": 30064771082,
+      "signature": "",
+      "code": "eprintf (\"%s\", error)",
+      "typeFullName": "ANY",
+      "lineNumber": 12,
+      "order": 1,
+      "methodFullName": "eprintf",
+      "dynamicTypeHintFullName": [],
+      "dispatchType": "STATIC_DISPATCH",
+      "columnNumber": 3,
+      "_label": "CALL",
+      "possibleTypes": [],
+      "argumentIndex": -1
+    },
+    {
+      "name": "R_FREE",
+      "_id": 30064771083,
+      "signature": "",
+      "code": "R_FREE (error)",
+      "typeFullName": "ANY",
+      "lineNumber": 13,
+      "order": 2,
+      "methodFullName": "R_FREE",
+      "dynamicTypeHintFullName": [],
+      "dispatchType": "STATIC_DISPATCH",
+      "columnNumber": 3,
+      "_label": "CALL",
+      "possibleTypes": [],
+      "argumentIndex": -1
+    },
+    {
+      "name": "strstr",
+      "_id": 30064771084,
+      "signature": "",
+      "code": "strstr (sect->name, \"_cstring\")",
+      "typeFullName": "ANY",
+      "lineNumber": 8,
+      "order": 1,
+      "methodFullName": "strstr",
+      "dynamicTypeHintFullName": [],
+      "dispatchType": "STATIC_DISPATCH",
+      "columnNumber": 6,
+      "_label": "CALL",
+      "possibleTypes": [],
+      "argumentIndex": -1
+    },
+    {
+      "name": "<operator>.indirectFieldAccess",
+      "_id": 30064771085,
+      "signature": "",
+      "code": "sect->name",
+      "typeFullName": "ANY",
+      "lineNumber": 8,
+      "order": 1,
+      "methodFullName": "<operator>.indirectFieldAccess",
+      "dynamicTypeHintFullName": [],
+      "dispatchType": "STATIC_DISPATCH",
+      "columnNumber": 14,
+      "_label": "CALL",
+      "possibleTypes": [],
+      "argumentIndex": 1
+    },
+    {
+      "name": "strstr",
+      "_id": 30064771086,
+      "signature": "",
+      "code": "strstr (sect->name, \"_objc_methname\")",
+      "typeFullName": "ANY",
+      "lineNumber": 11,
+      "order": 1,
+      "methodFullName": "strstr",
+      "dynamicTypeHintFullName": [],
+      "dispatchType": "STATIC_DISPATCH",
+      "columnNumber": 6,
+      "_label": "CALL",
+      "possibleTypes": [],
+      "argumentIndex": -1
+    },
+    {
+      "name": "<operator>.indirectFieldAccess",
+      "_id": 30064771087,
+      "signature": "",
+      "code": "sect->name",
+      "typeFullName": "ANY",
+      "lineNumber": 11,
+      "order": 1,
+      "methodFullName": "<operator>.indirectFieldAccess",
+      "dynamicTypeHintFullName": [],
+      "dispatchType": "STATIC_DISPATCH",
+      "columnNumber": 14,
+      "_label": "CALL",
+      "possibleTypes": [],
+      "argumentIndex": 1
+    },
+    {
+      "name": "strstr",
+      "_id": 30064771088,
+      "signature": "",
+      "code": "strstr (sect->name, \"_objc_classname\")",
+      "typeFullName": "ANY",
+      "lineNumber": 14,
+      "order": 1,
+      "methodFullName": "strstr",
+      "dynamicTypeHintFullName": [],
+      "dispatchType": "STATIC_DISPATCH",
+      "columnNumber": 6,
+      "_label": "CALL",
+      "possibleTypes": [],
+      "argumentIndex": -1
+    },
+    {
+      "name": "<operator>.indirectFieldAccess",
+      "_id": 30064771089,
+      "signature": "",
+      "code": "sect->name",
+      "typeFullName": "ANY",
+      "lineNumber": 14,
+      "order": 1,
+      "methodFullName": "<operator>.indirectFieldAccess",
+      "dynamicTypeHintFullName": [],
+      "dispatchType": "STATIC_DISPATCH",
+      "columnNumber": 14,
+      "_label": "CALL",
+      "possibleTypes": [],
+      "argumentIndex": 1
+    },
+    {
+      "name": "strstr",
+      "_id": 30064771090,
+      "signature": "",
+      "code": "strstr (sect->name, \"_objc_methtype\")",
+      "typeFullName": "ANY",
+      "lineNumber": 17,
+      "order": 1,
+      "methodFullName": "strstr",
+      "dynamicTypeHintFullName": [],
+      "dispatchType": "STATIC_DISPATCH",
+      "columnNumber": 6,
+      "_label": "CALL",
+      "possibleTypes": [],
+      "argumentIndex": -1
+    },
+    {
+      "name": "<operator>.indirectFieldAccess",
+      "_id": 30064771091,
+      "signature": "",
+      "code": "sect->name",
+      "typeFullName": "ANY",
+      "lineNumber": 17,
+      "order": 1,
+      "methodFullName": "<operator>.indirectFieldAccess",
+      "dynamicTypeHintFullName": [],
+      "dispatchType": "STATIC_DISPATCH",
+      "columnNumber": 14,
+      "_label": "CALL",
+      "possibleTypes": [],
+      "argumentIndex": 1
+    },
+    {
+      "parserTypeName": "CASTIfStatement",
+      "_id": 47244640256,
+      "code": "if (error) {\n\t\teprintf (\"%s\", error);\n\t\tR_FREE (error);\n\t\treturn UT64_MAX;\n\t}",
+      "lineNumber": 11,
+      "order": 5,
+      "controlStructureType": "IF",
+      "_label": "CONTROL_STRUCTURE",
+      "argumentIndex": -1,
+      "columnNumber": 2
+    },
+    {
+      "parserTypeName": "CASTIfStatement",
+      "_id": 47244640257,
+      "code": "if (strstr (sect->name, \"_cstring\")) {\n\t\treturn true;\n\t}",
+      "lineNumber": 8,
+      "order": 1,
+      "controlStructureType": "IF",
+      "_label": "CONTROL_STRUCTURE",
+      "argumentIndex": -1,
+      "columnNumber": 2
+    },
+    {
+      "parserTypeName": "CASTIfStatement",
+      "_id": 47244640258,
+      "code": "if (strstr (sect->name, \"_objc_methname\")) {\n\t\treturn true;\n\t}",
+      "lineNumber": 11,
+      "order": 2,
+      "controlStructureType": "IF",
+      "_label": "CONTROL_STRUCTURE",
+      "argumentIndex": -1,
+      "columnNumber": 2
+    },
+    {
+      "parserTypeName": "CASTIfStatement",
+      "_id": 47244640259,
+      "code": "if (strstr (sect->name, \"_objc_classname\")) {\n\t\treturn true;\n\t}",
+      "lineNumber": 14,
+      "order": 3,
+      "controlStructureType": "IF",
+      "_label": "CONTROL_STRUCTURE",
+      "argumentIndex": -1,
+      "columnNumber": 2
+    },
+    {
+      "parserTypeName": "CASTIfStatement",
+      "_id": 47244640260,
+      "code": "if (strstr (sect->name, \"_objc_methtype\")) {\n\t\treturn true;\n\t}",
+      "lineNumber": 17,
+      "order": 4,
+      "controlStructureType": "IF",
+      "_label": "CONTROL_STRUCTURE",
+      "argumentIndex": -1,
+      "columnNumber": 2
+    },
+    {
+      "name": "stddef.h",
+      "_id": 51539607552,
+      "version": "include",
+      "dependencyGroupId": "stddef.h",
+      "_label": "DEPENDENCY"
+    },
+    {
+      "name": "stdint.h",
+      "_id": 51539607553,
+      "version": "include",
+      "dependencyGroupId": "stdint.h",
+      "_label": "DEPENDENCY"
+    },
+    {
+      "name": "stdbool.h",
+      "_id": 51539607554,
+      "version": "include",
+      "dependencyGroupId": "stdbool.h",
+      "_label": "DEPENDENCY"
+    },
+    {
+      "name": "stddef.h",
+      "_id": 51539607555,
+      "version": "include",
+      "dependencyGroupId": "stddef.h",
+      "_label": "DEPENDENCY"
+    },
+    {
+      "name": "stdint.h",
+      "_id": 51539607556,
+      "version": "include",
+      "dependencyGroupId": "stdint.h",
+      "_label": "DEPENDENCY"
+    },
+    {
+      "name": "stdbool.h",
+      "_id": 51539607557,
+      "version": "include",
+      "dependencyGroupId": "stdbool.h",
+      "_label": "DEPENDENCY"
+    },
+    {
+      "name": "stddef.h",
+      "_id": 51539607558,
+      "version": "include",
+      "dependencyGroupId": "stddef.h",
+      "_label": "DEPENDENCY"
+    },
+    {
+      "name": "stdint.h",
+      "_id": 51539607559,
+      "version": "include",
+      "dependencyGroupId": "stdint.h",
+      "_label": "DEPENDENCY"
+    },
+    {
+      "name": "stdbool.h",
+      "_id": 51539607560,
+      "version": "include",
+      "dependencyGroupId": "stdbool.h",
+      "_label": "DEPENDENCY"
+    },
+    {
+      "name": "stddef.h",
+      "_id": 51539607561,
+      "version": "include",
+      "dependencyGroupId": "stddef.h",
+      "_label": "DEPENDENCY"
+    },
+    {
+      "name": "stdint.h",
+      "_id": 51539607562,
+      "version": "include",
+      "dependencyGroupId": "stdint.h",
+      "_label": "DEPENDENCY"
+    },
+    {
+      "name": "stdbool.h",
+      "_id": 51539607563,
+      "version": "include",
+      "dependencyGroupId": "stdbool.h",
+      "_label": "DEPENDENCY"
+    },
+    {
+      "name": "stddef.h",
+      "_id": 51539607564,
+      "version": "include",
+      "dependencyGroupId": "stddef.h",
+      "_label": "DEPENDENCY"
+    },
+    {
+      "name": "stdint.h",
+      "_id": 51539607565,
+      "version": "include",
+      "dependencyGroupId": "stdint.h",
+      "_label": "DEPENDENCY"
+    },
+    {
+      "name": "stdbool.h",
+      "_id": 51539607566,
+      "version": "include",
+      "dependencyGroupId": "stdbool.h",
+      "_label": "DEPENDENCY"
+    },
+    {
+      "name": "stddef.h",
+      "_id": 51539607567,
+      "version": "include",
+      "dependencyGroupId": "stddef.h",
+      "_label": "DEPENDENCY"
+    },
+    {
+      "name": "stdint.h",
+      "_id": 51539607568,
+      "version": "include",
+      "dependencyGroupId": "stdint.h",
+      "_label": "DEPENDENCY"
+    },
+    {
+      "name": "stdbool.h",
+      "_id": 51539607569,
+      "version": "include",
+      "dependencyGroupId": "stdbool.h",
+      "_label": "DEPENDENCY"
+    },
+    {
+      "name": "stddef.h",
+      "_id": 51539607570,
+      "version": "include",
+      "dependencyGroupId": "stddef.h",
+      "_label": "DEPENDENCY"
+    },
+    {
+      "name": "stdint.h",
+      "_id": 51539607571,
+      "version": "include",
+      "dependencyGroupId": "stdint.h",
+      "_label": "DEPENDENCY"
+    },
+    {
+      "name": "stdbool.h",
+      "_id": 51539607572,
+      "version": "include",
+      "dependencyGroupId": "stdbool.h",
+      "_label": "DEPENDENCY"
+    },
+    {
+      "name": "stddef.h",
+      "_id": 51539607573,
+      "version": "include",
+      "dependencyGroupId": "stddef.h",
+      "_label": "DEPENDENCY"
+    },
+    {
+      "name": "stdint.h",
+      "_id": 51539607574,
+      "version": "include",
+      "dependencyGroupId": "stdint.h",
+      "_label": "DEPENDENCY"
+    },
+    {
+      "name": "stdbool.h",
+      "_id": 51539607575,
+      "version": "include",
+      "dependencyGroupId": "stdbool.h",
+      "_label": "DEPENDENCY"
+    },
+    {
+      "_id": 55834574848,
+      "code": "name",
+      "order": 2,
+      "_label": "FIELD_IDENTIFIER",
+      "argumentIndex": 2,
+      "canonicalName": "name",
+      "lineNumber": 8,
+      "columnNumber": 14
+    },
+    {
+      "_id": 55834574849,
+      "code": "name",
+      "order": 2,
+      "_label": "FIELD_IDENTIFIER",
+      "argumentIndex": 2,
+      "canonicalName": "name",
+      "lineNumber": 11,
+      "columnNumber": 14
+    },
+    {
+      "_id": 55834574850,
+      "code": "name",
+      "order": 2,
+      "_label": "FIELD_IDENTIFIER",
+      "argumentIndex": 2,
+      "canonicalName": "name",
+      "lineNumber": 14,
+      "columnNumber": 14
+    },
+    {
+      "_id": 55834574851,
+      "code": "name",
+      "order": 2,
+      "_label": "FIELD_IDENTIFIER",
+      "argumentIndex": 2,
+      "canonicalName": "name",
+      "lineNumber": 17,
+      "columnNumber": 14
+    },
+    {
+      "name": "ca8d8b39f3e34a4fd943270330b80f1148129de4_0.c",
+      "_id": 60129542144,
+      "code": "<empty>",
+      "order": 0,
+      "content": "<empty>",
+      "_label": "FILE"
+    },
+    {
+      "name": "ca8d8b39f3e34a4fd943270330b80f1148129de4_23.c",
+      "_id": 60129542145,
+      "code": "<empty>",
+      "order": 0,
+      "content": "<empty>",
+      "_label": "FILE"
+    },
+    {
+      "name": "ca8d8b39f3e34a4fd943270330b80f1148129de4_27.c",
+      "_id": 60129542146,
+      "code": "<empty>",
+      "order": 0,
+      "content": "<empty>",
+      "_label": "FILE"
+    },
+    {
+      "name": "ca8d8b39f3e34a4fd943270330b80f1148129de4_33.c",
+      "_id": 60129542147,
+      "code": "<empty>",
+      "order": 0,
+      "content": "<empty>",
+      "_label": "FILE"
+    },
+    {
+      "name": "ca8d8b39f3e34a4fd943270330b80f1148129de4_39.c",
+      "_id": 60129542148,
+      "code": "<empty>",
+      "order": 0,
+      "content": "<empty>",
+      "_label": "FILE"
+    },
+    {
+      "name": "ca8d8b39f3e34a4fd943270330b80f1148129de4_41.c",
+      "_id": 60129542149,
+      "code": "<empty>",
+      "order": 0,
+      "content": "<empty>",
+      "_label": "FILE"
+    },
+    {
+      "name": "ca8d8b39f3e34a4fd943270330b80f1148129de4_60.c",
+      "_id": 60129542150,
+      "code": "<empty>",
+      "order": 0,
+      "content": "<empty>",
+      "_label": "FILE"
+    },
+    {
+      "name": "ca8d8b39f3e34a4fd943270330b80f1148129de4_8.c",
+      "_id": 60129542151,
+      "code": "<empty>",
+      "order": 0,
+      "content": "<empty>",
+      "_label": "FILE"
+    },
+    {
+      "name": "<includes>",
+      "_id": 60129542152,
+      "code": "<empty>",
+      "order": 1,
+      "content": "<empty>",
+      "_label": "FILE"
+    },
+    {
+      "name": "<unknown>",
+      "_id": 60129542153,
+      "code": "<empty>",
+      "order": 0,
+      "content": "<empty>",
+      "_label": "FILE"
+    },
+    {
+      "dynamicTypeHintFullName": [],
+      "name": "error",
+      "_id": 68719476736,
+      "code": "error",
+      "typeFullName": "char*",
+      "lineNumber": 8,
+      "order": 1,
+      "_label": "IDENTIFIER",
+      "columnNumber": 14,
+      "possibleTypes": [],
+      "argumentIndex": 1
+    },
+    {
+      "dynamicTypeHintFullName": [],
+      "name": "NULL",
+      "_id": 68719476737,
+      "code": "<unknown> NULL",
+      "typeFullName": "ANY",
+      "lineNumber": 8,
+      "order": 2,
+      "_label": "IDENTIFIER",
+      "columnNumber": 22,
+      "possibleTypes": [],
+      "argumentIndex": 2
+    },
+    {
+      "dynamicTypeHintFullName": [],
+      "name": "p",
+      "_id": 68719476738,
+      "code": "p",
+      "typeFullName": "ut8**",
+      "lineNumber": 10,
+      "order": 1,
+      "_label": "IDENTIFIER",
+      "columnNumber": 3,
+      "possibleTypes": [],
+      "argumentIndex": 1
+    },
+    {
+      "dynamicTypeHintFullName": [],
+      "name": "p",
+      "_id": 68719476739,
+      "code": "p",
+      "typeFullName": "ut8**",
+      "lineNumber": 10,
+      "order": 1,
+      "_label": "IDENTIFIER",
+      "columnNumber": 26,
+      "possibleTypes": [],
+      "argumentIndex": 1
+    },
+    {
+      "dynamicTypeHintFullName": [],
+      "name": "end",
+      "_id": 68719476740,
+      "code": "end",
+      "typeFullName": "ut8*",
+      "lineNumber": 10,
+      "order": 1,
+      "_label": "IDENTIFIER",
+      "columnNumber": 29,
+      "possibleTypes": [],
+      "argumentIndex": 1
+    },
+    {
+      "dynamicTypeHintFullName": [],
+      "name": "p",
+      "_id": 68719476741,
+      "code": "p",
+      "typeFullName": "ut8**",
+      "lineNumber": 10,
+      "order": 1,
+      "_label": "IDENTIFIER",
+      "columnNumber": 36,
+      "possibleTypes": [],
+      "argumentIndex": 1
+    },
+    {
+      "dynamicTypeHintFullName": [],
+      "name": "v",
+      "_id": 68719476742,
+      "code": "v",
+      "typeFullName": "ut64",
+      "lineNumber": 10,
+      "order": 1,
+      "_label": "IDENTIFIER",
+      "columnNumber": 40,
+      "possibleTypes": [],
+      "argumentIndex": 1
+    },
+    {
+      "dynamicTypeHintFullName": [],
+      "name": "error",
+      "_id": 68719476743,
+      "code": "error",
+      "typeFullName": "char*",
+      "lineNumber": 10,
+      "order": 1,
+      "_label": "IDENTIFIER",
+      "columnNumber": 44,
+      "possibleTypes": [],
+      "argumentIndex": 1
+    },
+    {
+      "dynamicTypeHintFullName": [],
+      "name": "error",
+      "_id": 68719476744,
+      "code": "error",
+      "typeFullName": "char*",
+      "lineNumber": 11,
+      "order": 1,
+      "_label": "IDENTIFIER",
+      "columnNumber": 6,
+      "possibleTypes": [],
+      "argumentIndex": -1
+    },
+    {
+      "dynamicTypeHintFullName": [],
+      "name": "error",
+      "_id": 68719476745,
+      "code": "error",
+      "typeFullName": "char*",
+      "lineNumber": 12,
+      "order": 2,
+      "_label": "IDENTIFIER",
+      "columnNumber": 18,
+      "possibleTypes": [],
+      "argumentIndex": 2
+    },
+    {
+      "dynamicTypeHintFullName": [],
+      "name": "error",
+      "_id": 68719476746,
+      "code": "error",
+      "typeFullName": "char*",
+      "lineNumber": 13,
+      "order": 1,
+      "_label": "IDENTIFIER",
+      "columnNumber": 11,
+      "possibleTypes": [],
+      "argumentIndex": 1
+    },
+    {
+      "dynamicTypeHintFullName": [],
+      "name": "UT64_MAX",
+      "_id": 68719476747,
+      "code": "<unknown> UT64_MAX",
+      "typeFullName": "ANY",
+      "lineNumber": 14,
+      "order": 1,
+      "_label": "IDENTIFIER",
+      "columnNumber": 10,
+      "possibleTypes": [],
+      "argumentIndex": -1
+    },
+    {
+      "dynamicTypeHintFullName": [],
+      "name": "v",
+      "_id": 68719476748,
+      "code": "v",
+      "typeFullName": "ut64",
+      "lineNumber": 16,
+      "order": 1,
+      "_label": "IDENTIFIER",
+      "columnNumber": 9,
+      "possibleTypes": [],
+      "argumentIndex": -1
+    },
+    {
+      "dynamicTypeHintFullName": [],
+      "name": "p",
+      "_id": 68719476749,
+      "code": "p",
+      "typeFullName": "void*",
+      "lineNumber": 8,
+      "order": 1,
+      "_label": "IDENTIFIER",
+      "columnNumber": 9,
+      "possibleTypes": [],
+      "argumentIndex": -1
+    },
+    {
+      "dynamicTypeHintFullName": [],
+      "name": "sect",
+      "_id": 68719476750,
+      "code": "sect",
+      "typeFullName": "RBinSection*",
+      "lineNumber": 8,
+      "order": 1,
+      "_label": "IDENTIFIER",
+      "columnNumber": 14,
+      "possibleTypes": [],
+      "argumentIndex": 1
+    },
+    {
+      "dynamicTypeHintFullName": [],
+      "name": "true",
+      "_id": 68719476751,
+      "code": "<unknown> true",
+      "typeFullName": "ANY",
+      "lineNumber": 9,
+      "order": 1,
+      "_label": "IDENTIFIER",
+      "columnNumber": 10,
+      "possibleTypes": [],
+      "argumentIndex": -1
+    },
+    {
+      "dynamicTypeHintFullName": [],
+      "name": "sect",
+      "_id": 68719476752,
+      "code": "sect",
+      "typeFullName": "RBinSection*",
+      "lineNumber": 11,
+      "order": 1,
+      "_label": "IDENTIFIER",
+      "columnNumber": 14,
+      "possibleTypes": [],
+      "argumentIndex": 1
+    },
+    {
+      "dynamicTypeHintFullName": [],
+      "name": "true",
+      "_id": 68719476753,
+      "code": "<unknown> true",
+      "typeFullName": "ANY",
+      "lineNumber": 12,
+      "order": 1,
+      "_label": "IDENTIFIER",
+      "columnNumber": 10,
+      "possibleTypes": [],
+      "argumentIndex": -1
+    },
+    {
+      "dynamicTypeHintFullName": [],
+      "name": "sect",
+      "_id": 68719476754,
+      "code": "sect",
+      "typeFullName": "RBinSection*",
+      "lineNumber": 14,
+      "order": 1,
+      "_label": "IDENTIFIER",
+      "columnNumber": 14,
+      "possibleTypes": [],
+      "argumentIndex": 1
+    },
+    {
+      "dynamicTypeHintFullName": [],
+      "name": "true",
+      "_id": 68719476755,
+      "code": "<unknown> true",
+      "typeFullName": "ANY",
+      "lineNumber": 15,
+      "order": 1,
+      "_label": "IDENTIFIER",
+      "columnNumber": 10,
+      "possibleTypes": [],
+      "argumentIndex": -1
+    },
+    {
+      "dynamicTypeHintFullName": [],
+      "name": "sect",
+      "_id": 68719476756,
+      "code": "sect",
+      "typeFullName": "RBinSection*",
+      "lineNumber": 17,
+      "order": 1,
+      "_label": "IDENTIFIER",
+      "columnNumber": 14,
+      "possibleTypes": [],
+      "argumentIndex": 1
+    },
+    {
+      "dynamicTypeHintFullName": [],
+      "name": "true",
+      "_id": 68719476757,
+      "code": "<unknown> true",
+      "typeFullName": "ANY",
+      "lineNumber": 18,
+      "order": 1,
+      "_label": "IDENTIFIER",
+      "columnNumber": 10,
+      "possibleTypes": [],
+      "argumentIndex": -1
+    },
+    {
+      "dynamicTypeHintFullName": [],
+      "name": "false",
+      "_id": 68719476758,
+      "code": "<unknown> false",
+      "typeFullName": "ANY",
+      "lineNumber": 20,
+      "order": 1,
+      "_label": "IDENTIFIER",
+      "columnNumber": 9,
+      "possibleTypes": [],
+      "argumentIndex": -1
+    },
+    {
+      "_id": 73014444032,
+      "importedAs": "stddef.h",
+      "code": "#include <stddef.h>",
+      "lineNumber": 3,
+      "order": 1,
+      "importedEntity": "stddef.h",
+      "_label": "IMPORT",
+      "columnNumber": 1
+    },
+    {
+      "_id": 73014444033,
+      "importedAs": "stdint.h",
+      "code": "#include <stdint.h>",
+      "lineNumber": 4,
+      "order": 2,
+      "importedEntity": "stdint.h",
+      "_label": "IMPORT",
+      "columnNumber": 1
+    },
+    {
+      "_id": 73014444034,
+      "importedAs": "stdbool.h",
+      "code": "#include <stdbool.h>",
+      "lineNumber": 5,
+      "order": 3,
+      "importedEntity": "stdbool.h",
+      "_label": "IMPORT",
+      "columnNumber": 1
+    },
+    {
+      "_id": 73014444035,
+      "importedAs": "stddef.h",
+      "code": "#include <stddef.h>",
+      "lineNumber": 3,
+      "order": 1,
+      "importedEntity": "stddef.h",
+      "_label": "IMPORT",
+      "columnNumber": 1
+    },
+    {
+      "_id": 73014444036,
+      "importedAs": "stdint.h",
+      "code": "#include <stdint.h>",
+      "lineNumber": 4,
+      "order": 2,
+      "importedEntity": "stdint.h",
+      "_label": "IMPORT",
+      "columnNumber": 1
+    },
+    {
+      "_id": 73014444037,
+      "importedAs": "stdbool.h",
+      "code": "#include <stdbool.h>",
+      "lineNumber": 5,
+      "order": 3,
+      "importedEntity": "stdbool.h",
+      "_label": "IMPORT",
+      "columnNumber": 1
+    },
+    {
+      "_id": 73014444038,
+      "importedAs": "stddef.h",
+      "code": "#include <stddef.h>",
+      "lineNumber": 3,
+      "order": 1,
+      "importedEntity": "stddef.h",
+      "_label": "IMPORT",
+      "columnNumber": 1
+    },
+    {
+      "_id": 73014444039,
+      "importedAs": "stdint.h",
+      "code": "#include <stdint.h>",
+      "lineNumber": 4,
+      "order": 2,
+      "importedEntity": "stdint.h",
+      "_label": "IMPORT",
+      "columnNumber": 1
+    },
+    {
+      "_id": 73014444040,
+      "importedAs": "stdbool.h",
+      "code": "#include <stdbool.h>",
+      "lineNumber": 5,
+      "order": 3,
+      "importedEntity": "stdbool.h",
+      "_label": "IMPORT",
+      "columnNumber": 1
+    },
+    {
+      "_id": 73014444041,
+      "importedAs": "stddef.h",
+      "code": "#include <stddef.h>",
+      "lineNumber": 3,
+      "order": 1,
+      "importedEntity": "stddef.h",
+      "_label": "IMPORT",
+      "columnNumber": 1
+    },
+    {
+      "_id": 73014444042,
+      "importedAs": "stdint.h",
+      "code": "#include <stdint.h>",
+      "lineNumber": 4,
+      "order": 2,
+      "importedEntity": "stdint.h",
+      "_label": "IMPORT",
+      "columnNumber": 1
+    },
+    {
+      "_id": 73014444043,
+      "importedAs": "stdbool.h",
+      "code": "#include <stdbool.h>",
+      "lineNumber": 5,
+      "order": 3,
+      "importedEntity": "stdbool.h",
+      "_label": "IMPORT",
+      "columnNumber": 1
+    },
+    {
+      "_id": 73014444044,
+      "importedAs": "stddef.h",
+      "code": "#include <stddef.h>",
+      "lineNumber": 3,
+      "order": 1,
+      "importedEntity": "stddef.h",
+      "_label": "IMPORT",
+      "columnNumber": 1
+    },
+    {
+      "_id": 73014444045,
+      "importedAs": "stdint.h",
+      "code": "#include <stdint.h>",
+      "lineNumber": 4,
+      "order": 2,
+      "importedEntity": "stdint.h",
+      "_label": "IMPORT",
+      "columnNumber": 1
+    },
+    {
+      "_id": 73014444046,
+      "importedAs": "stdbool.h",
+      "code": "#include <stdbool.h>",
+      "lineNumber": 5,
+      "order": 3,
+      "importedEntity": "stdbool.h",
+      "_label": "IMPORT",
+      "columnNumber": 1
+    },
+    {
+      "_id": 73014444047,
+      "importedAs": "stddef.h",
+      "code": "#include <stddef.h>",
+      "lineNumber": 3,
+      "order": 1,
+      "importedEntity": "stddef.h",
+      "_label": "IMPORT",
+      "columnNumber": 1
+    },
+    {
+      "_id": 73014444048,
+      "importedAs": "stdint.h",
+      "code": "#include <stdint.h>",
+      "lineNumber": 4,
+      "order": 2,
+      "importedEntity": "stdint.h",
+      "_label": "IMPORT",
+      "columnNumber": 1
+    },
+    {
+      "_id": 73014444049,
+      "importedAs": "stdbool.h",
+      "code": "#include <stdbool.h>",
+      "lineNumber": 5,
+      "order": 3,
+      "importedEntity": "stdbool.h",
+      "_label": "IMPORT",
+      "columnNumber": 1
+    },
+    {
+      "_id": 73014444050,
+      "importedAs": "stddef.h",
+      "code": "#include <stddef.h>",
+      "lineNumber": 3,
+      "order": 1,
+      "importedEntity": "stddef.h",
+      "_label": "IMPORT",
+      "columnNumber": 1
+    },
+    {
+      "_id": 73014444051,
+      "importedAs": "stdint.h",
+      "code": "#include <stdint.h>",
+      "lineNumber": 4,
+      "order": 2,
+      "importedEntity": "stdint.h",
+      "_label": "IMPORT",
+      "columnNumber": 1
+    },
+    {
+      "_id": 73014444052,
+      "importedAs": "stdbool.h",
+      "code": "#include <stdbool.h>",
+      "lineNumber": 5,
+      "order": 3,
+      "importedEntity": "stdbool.h",
+      "_label": "IMPORT",
+      "columnNumber": 1
+    },
+    {
+      "_id": 73014444053,
+      "importedAs": "stddef.h",
+      "code": "#include <stddef.h>",
+      "lineNumber": 3,
+      "order": 1,
+      "importedEntity": "stddef.h",
+      "_label": "IMPORT",
+      "columnNumber": 1
+    },
+    {
+      "_id": 73014444054,
+      "importedAs": "stdint.h",
+      "code": "#include <stdint.h>",
+      "lineNumber": 4,
+      "order": 2,
+      "importedEntity": "stdint.h",
+      "_label": "IMPORT",
+      "columnNumber": 1
+    },
+    {
+      "_id": 73014444055,
+      "importedAs": "stdbool.h",
+      "code": "#include <stdbool.h>",
+      "lineNumber": 5,
+      "order": 3,
+      "importedEntity": "stdbool.h",
+      "_label": "IMPORT",
+      "columnNumber": 1
+    },
+    {
+      "dynamicTypeHintFullName": [],
+      "_id": 90194313216,
+      "code": "\"%s\"",
+      "typeFullName": "char*",
+      "lineNumber": 12,
+      "order": 1,
+      "_label": "LITERAL",
+      "columnNumber": 12,
+      "possibleTypes": [],
+      "argumentIndex": 1
+    },
+    {
+      "dynamicTypeHintFullName": [],
+      "_id": 90194313217,
+      "code": "\"_cstring\"",
+      "typeFullName": "char*",
+      "lineNumber": 8,
+      "order": 2,
+      "_label": "LITERAL",
+      "columnNumber": 26,
+      "possibleTypes": [],
+      "argumentIndex": 2
+    },
+    {
+      "dynamicTypeHintFullName": [],
+      "_id": 90194313218,
+      "code": "\"_objc_methname\"",
+      "typeFullName": "char*",
+      "lineNumber": 11,
+      "order": 2,
+      "_label": "LITERAL",
+      "columnNumber": 26,
+      "possibleTypes": [],
+      "argumentIndex": 2
+    },
+    {
+      "dynamicTypeHintFullName": [],
+      "_id": 90194313219,
+      "code": "\"_objc_classname\"",
+      "typeFullName": "char*",
+      "lineNumber": 14,
+      "order": 2,
+      "_label": "LITERAL",
+      "columnNumber": 26,
+      "possibleTypes": [],
+      "argumentIndex": 2
+    },
+    {
+      "dynamicTypeHintFullName": [],
+      "_id": 90194313220,
+      "code": "\"_objc_methtype\"",
+      "typeFullName": "char*",
+      "lineNumber": 17,
+      "order": 2,
+      "_label": "LITERAL",
+      "columnNumber": 26,
+      "possibleTypes": [],
+      "argumentIndex": 2
+    },
+    {
+      "dynamicTypeHintFullName": [],
+      "name": "error",
+      "_id": 94489280512,
+      "genericSignature": "<empty>",
+      "typeFullName": "char*",
+      "lineNumber": 8,
+      "order": 1,
+      "_label": "LOCAL",
+      "possibleTypes": [],
+      "code": "const char *error",
+      "columnNumber": 14
+    },
+    {
+      "dynamicTypeHintFullName": [],
+      "name": "v",
+      "_id": 94489280513,
+      "genericSignature": "<empty>",
+      "typeFullName": "ut64",
+      "lineNumber": 9,
+      "order": 3,
+      "_label": "LOCAL",
+      "possibleTypes": [],
+      "code": "ut64 v",
+      "columnNumber": 7
+    },
+    {
+      "dynamicTypeHintFullName": [],
+      "name": "UT64_MAX",
+      "_id": 94489280514,
+      "genericSignature": "<empty>",
+      "typeFullName": "ANY",
+      "lineNumber": 14,
+      "order": 0,
+      "_label": "LOCAL",
+      "possibleTypes": [],
+      "code": "<unknown> UT64_MAX",
+      "columnNumber": 10
+    },
+    {
+      "dynamicTypeHintFullName": [],
+      "name": "NULL",
+      "_id": 94489280515,
+      "genericSignature": "<empty>",
+      "typeFullName": "ANY",
+      "lineNumber": 8,
+      "order": 0,
+      "_label": "LOCAL",
+      "possibleTypes": [],
+      "code": "<unknown> NULL",
+      "columnNumber": 22
+    },
+    {
+      "dynamicTypeHintFullName": [],
+      "name": "false",
+      "_id": 94489280516,
+      "genericSignature": "<empty>",
+      "typeFullName": "ANY",
+      "lineNumber": 20,
+      "order": 0,
+      "_label": "LOCAL",
+      "possibleTypes": [],
+      "code": "<unknown> false",
+      "columnNumber": 9
+    },
+    {
+      "dynamicTypeHintFullName": [],
+      "name": "true",
+      "_id": 94489280517,
+      "genericSignature": "<empty>",
+      "typeFullName": "ANY",
+      "lineNumber": 9,
+      "order": 0,
+      "_label": "LOCAL",
+      "possibleTypes": [],
+      "code": "<unknown> true",
+      "columnNumber": 10
+    },
+    {
+      "_id": 103079215104,
+      "version": "0.1",
+      "language": "NEWC",
+      "_label": "META_DATA",
+      "overlays": [
+        "base",
+        "controlflow",
+        "typerel",
+        "callgraph",
+        "dataflowOss"
+      ],
+      "root": "C:\\Users\\USER\\Desktop\\Thesis Research\\Implementation\\Thesis-causal-vul\\work\\src\\valid\\shard_ca8d"
+    },
+    {
+      "name": "read_uleb128",
+      "astParentFullName": "ca8d8b39f3e34a4fd943270330b80f1148129de4_0.c:<global>",
+      "_id": 107374182400,
+      "signature": "ut64(ut8**,ut8*)",
+      "astParentType": "TYPE_DECL",
+      "lineNumberEnd": 17,
+      "_label": "METHOD",
+      "columnNumberEnd": 1,
+      "fullName": "read_uleb128",
+      "genericSignature": "<empty>",
+      "code": "static ut64 read_uleb128(ut8 **p, ut8 *end) {\n\tconst char *error = NULL;\n\tut64 v;\n\t*p = (ut8 *)r_uleb128 (*p, end - *p, &v, &error);\n\tif (error) {\n\t\teprintf (\"%s\", error);\n\t\tR_FREE (error);\n\t\treturn UT64_MAX;\n\t}\n\treturn v;\n}",
+      "isExternal": false,
+      "lineNumber": 7,
+      "columnNumber": 1,
+      "order": 1,
+      "filename": "ca8d8b39f3e34a4fd943270330b80f1148129de4_0.c"
+    },
+    {
+      "name": "<global>",
+      "astParentFullName": "ca8d8b39f3e34a4fd943270330b80f1148129de4_0.c:<global>",
+      "_id": 107374182401,
+      "signature": "",
+      "astParentType": "TYPE_DECL",
+      "lineNumberEnd": 17,
+      "_label": "METHOD",
+      "columnNumberEnd": 1,
+      "fullName": "ca8d8b39f3e34a4fd943270330b80f1148129de4_0.c:<global>",
+      "genericSignature": "<empty>",
+      "code": "<global>",
+      "isExternal": false,
+      "lineNumber": 1,
+      "columnNumber": 1,
+      "order": 1,
+      "filename": "ca8d8b39f3e34a4fd943270330b80f1148129de4_0.c"
+    },
+    {
+      "name": "<global>",
+      "astParentFullName": "ca8d8b39f3e34a4fd943270330b80f1148129de4_23.c:<global>",
+      "_id": 107374182402,
+      "signature": "",
+      "astParentType": "TYPE_DECL",
+      "lineNumberEnd": 388,
+      "_label": "METHOD",
+      "columnNumberEnd": 1,
+      "fullName": "ca8d8b39f3e34a4fd943270330b80f1148129de4_23.c:<global>",
+      "genericSignature": "<empty>",
+      "code": "<global>",
+      "isExternal": false,
+      "lineNumber": 1,
+      "columnNumber": 1,
+      "order": 1,
+      "filename": "ca8d8b39f3e34a4fd943270330b80f1148129de4_23.c"
+    },
+    {
+      "name": "duplicate_ptr",
+      "astParentFullName": "ca8d8b39f3e34a4fd943270330b80f1148129de4_27.c:<global>",
+      "_id": 107374182403,
+      "signature": "void*(void*)",
+      "astParentType": "TYPE_DECL",
+      "lineNumberEnd": 9,
+      "_label": "METHOD",
+      "columnNumberEnd": 1,
+      "fullName": "duplicate_ptr",
+      "genericSignature": "<empty>",
+      "code": "static void *duplicate_ptr(void *p) {\n\treturn p;\n}",
+      "isExternal": false,
+      "lineNumber": 7,
+      "columnNumber": 1,
+      "order": 1,
+      "filename": "ca8d8b39f3e34a4fd943270330b80f1148129de4_27.c"
+    },
+    {
+      "name": "<global>",
+      "astParentFullName": "ca8d8b39f3e34a4fd943270330b80f1148129de4_27.c:<global>",
+      "_id": 107374182404,
+      "signature": "",
+      "astParentType": "TYPE_DECL",
+      "lineNumberEnd": 9,
+      "_label": "METHOD",
+      "columnNumberEnd": 1,
+      "fullName": "ca8d8b39f3e34a4fd943270330b80f1148129de4_27.c:<global>",
+      "genericSignature": "<empty>",
+      "code": "<global>",
+      "isExternal": false,
+      "lineNumber": 1,
+      "columnNumber": 1,
+      "order": 1,
+      "filename": "ca8d8b39f3e34a4fd943270330b80f1148129de4_27.c"
+    },
+    {
+      "name": "is_data_section",
+      "astParentFullName": "ca8d8b39f3e34a4fd943270330b80f1148129de4_33.c:<global>",
+      "_id": 107374182405,
+      "signature": "bool(RBinSection*)",
+      "astParentType": "TYPE_DECL",
+      "lineNumberEnd": 21,
+      "_label": "METHOD",
+      "columnNumberEnd": 1,
+      "fullName": "is_data_section",
+      "genericSignature": "<empty>",
+      "code": "static bool is_data_section(RBinSection *sect) {\n\tif (strstr (sect->name, \"_cstring\")) {\n\t\treturn true;\n\t}\n\tif (strstr (sect->name, \"_objc_methname\")) {\n\t\treturn true;\n\t}\n\tif (strstr (sect->name, \"_objc_classname\")) {\n\t\treturn true;\n\t}\n\tif (strstr (sect->name, \"_objc_methtype\")) {\n\t\treturn true;\n\t}\n\treturn false;\n}",
+      "isExternal": false,
+      "lineNumber": 7,
+      "columnNumber": 1,
+      "order": 1,
+      "filename": "ca8d8b39f3e34a4fd943270330b80f1148129de4_33.c"
+    },
+    {
+      "name": "<global>",
+      "astParentFullName": "ca8d8b39f3e34a4fd943270330b80f1148129de4_33.c:<global>",
+      "_id": 107374182406,
+      "signature": "",
+      "astParentType": "TYPE_DECL",
+      "lineNumberEnd": 21,
+      "_label": "METHOD",
+      "columnNumberEnd": 1,
+      "fullName": "ca8d8b39f3e34a4fd943270330b80f1148129de4_33.c:<global>",
+      "genericSignature": "<empty>",
+      "code": "<global>",
+      "isExternal": false,
+      "lineNumber": 1,
+      "columnNumber": 1,
+      "order": 1,
+      "filename": "ca8d8b39f3e34a4fd943270330b80f1148129de4_33.c"
+    },
+    {
+      "name": "<global>",
+      "astParentFullName": "ca8d8b39f3e34a4fd943270330b80f1148129de4_39.c:<global>",
+      "_id": 107374182407,
+      "signature": "",
+      "astParentType": "TYPE_DECL",
+      "lineNumberEnd": 163,
+      "_label": "METHOD",
+      "columnNumberEnd": 44,
+      "fullName": "ca8d8b39f3e34a4fd943270330b80f1148129de4_39.c:<global>",
+      "genericSignature": "<empty>",
+      "code": "<global>",
+      "isExternal": false,
+      "lineNumber": 1,
+      "columnNumber": 1,
+      "order": 1,
+      "filename": "ca8d8b39f3e34a4fd943270330b80f1148129de4_39.c"
+    },
+    {
+      "name": "<global>",
+      "astParentFullName": "ca8d8b39f3e34a4fd943270330b80f1148129de4_41.c:<global>",
+      "_id": 107374182408,
+      "signature": "",
+      "astParentType": "TYPE_DECL",
+      "lineNumberEnd": 186,
+      "_label": "METHOD",
+      "columnNumberEnd": 1,
+      "fullName": "ca8d8b39f3e34a4fd943270330b80f1148129de4_41.c:<global>",
+      "genericSignature": "<empty>",
+      "code": "<global>",
+      "isExternal": false,
+      "lineNumber": 1,
+      "columnNumber": 1,
+      "order": 1,
+      "filename": "ca8d8b39f3e34a4fd943270330b80f1148129de4_41.c"
+    },
+    {
+      "name": "<global>",
+      "astParentFullName": "ca8d8b39f3e34a4fd943270330b80f1148129de4_60.c:<global>",
+      "_id": 107374182409,
+      "signature": "",
+      "astParentType": "TYPE_DECL",
+      "lineNumberEnd": 9,
+      "_label": "METHOD",
+      "columnNumberEnd": 1,
+      "fullName": "ca8d8b39f3e34a4fd943270330b80f1148129de4_60.c:<global>",
+      "genericSignature": "<empty>",
+      "code": "<global>",
+      "isExternal": false,
+      "lineNumber": 1,
+      "columnNumber": 1,
+      "order": 1,
+      "filename": "ca8d8b39f3e34a4fd943270330b80f1148129de4_60.c"
+    },
+    {
+      "name": "<global>",
+      "astParentFullName": "ca8d8b39f3e34a4fd943270330b80f1148129de4_8.c:<global>",
+      "_id": 107374182410,
+      "signature": "",
+      "astParentType": "TYPE_DECL",
+      "lineNumberEnd": 83,
+      "_label": "METHOD",
+      "columnNumberEnd": 1,
+      "fullName": "ca8d8b39f3e34a4fd943270330b80f1148129de4_8.c:<global>",
+      "genericSignature": "<empty>",
+      "code": "<global>",
+      "isExternal": false,
+      "lineNumber": 1,
+      "columnNumber": 1,
+      "order": 1,
+      "filename": "ca8d8b39f3e34a4fd943270330b80f1148129de4_8.c"
+    },
+    {
+      "name": "<global>",
+      "astParentFullName": "<includes>:<global>",
+      "_id": 107374182411,
+      "signature": "",
+      "astParentType": "NAMESPACE_BLOCK",
+      "_label": "METHOD",
+      "fullName": "<includes>:<global>",
+      "genericSignature": "<empty>",
+      "code": "<global>",
+      "isExternal": false,
+      "lineNumber": 1,
+      "order": 1,
+      "filename": "<includes>"
+    },
+    {
+      "name": "MACH0_",
+      "astParentFullName": "ca8d8b39f3e34a4fd943270330b80f1148129de4_41.c:<global>",
+      "_id": 107374182412,
+      "signature": "RList*(ANY)",
+      "astParentType": "TYPE_DECL",
+      "lineNumberEnd": 7,
+      "_label": "METHOD",
+      "columnNumberEnd": 37,
+      "fullName": "MACH0_",
+      "genericSignature": "<empty>",
+      "code": "const RList *MACH0_(get_symbols_list)",
+      "isExternal": false,
+      "lineNumber": 7,
+      "columnNumber": 13,
+      "order": 1,
+      "filename": "ca8d8b39f3e34a4fd943270330b80f1148129de4_41.c"
+    },
+    {
+      "name": "R_FREE",
+      "astParentFullName": "<global>",
+      "_id": 107374182413,
+      "signature": "",
+      "astParentType": "NAMESPACE_BLOCK",
+      "_label": "METHOD",
+      "fullName": "R_FREE",
+      "genericSignature": "<empty>",
+      "code": "<empty>",
+      "isExternal": true,
+      "order": 0,
+      "filename": "<empty>"
+    },
+    {
+      "name": "eprintf",
+      "astParentFullName": "<global>",
+      "_id": 107374182414,
+      "signature": "",
+      "astParentType": "NAMESPACE_BLOCK",
+      "_label": "METHOD",
+      "fullName": "eprintf",
+      "genericSignature": "<empty>",
+      "code": "<empty>",
+      "isExternal": true,
+      "order": 0,
+      "filename": "<empty>"
+    },
+    {
+      "name": "<operator>.addressOf",
+      "astParentFullName": "<global>",
+      "_id": 107374182415,
+      "signature": "",
+      "astParentType": "NAMESPACE_BLOCK",
+      "_label": "METHOD",
+      "fullName": "<operator>.addressOf",
+      "genericSignature": "<empty>",
+      "code": "<empty>",
+      "isExternal": true,
+      "order": 0,
+      "filename": "<empty>"
+    },
+    {
+      "name": "strstr",
+      "astParentFullName": "<global>",
+      "_id": 107374182416,
+      "signature": "",
+      "astParentType": "NAMESPACE_BLOCK",
+      "_label": "METHOD",
+      "fullName": "strstr",
+      "genericSignature": "<empty>",
+      "code": "<empty>",
+      "isExternal": true,
+      "order": 0,
+      "filename": "<empty>"
+    },
+    {
+      "name": "<operator>.indirectFieldAccess",
+      "astParentFullName": "<global>",
+      "_id": 107374182417,
+      "signature": "",
+      "astParentType": "NAMESPACE_BLOCK",
+      "_label": "METHOD",
+      "fullName": "<operator>.indirectFieldAccess",
+      "genericSignature": "<empty>",
+      "code": "<empty>",
+      "isExternal": true,
+      "order": 0,
+      "filename": "<empty>"
+    },
+    {
+      "name": "<operator>.cast",
+      "astParentFullName": "<global>",
+      "_id": 107374182418,
+      "signature": "",
+      "astParentType": "NAMESPACE_BLOCK",
+      "_label": "METHOD",
+      "fullName": "<operator>.cast",
+      "genericSignature": "<empty>",
+      "code": "<empty>",
+      "isExternal": true,
+      "order": 0,
+      "filename": "<empty>"
+    },
+    {
+      "name": "<operator>.assignment",
+      "astParentFullName": "<global>",
+      "_id": 107374182419,
+      "signature": "",
+      "astParentType": "NAMESPACE_BLOCK",
+      "_label": "METHOD",
+      "fullName": "<operator>.assignment",
+      "genericSignature": "<empty>",
+      "code": "<empty>",
+      "isExternal": true,
+      "order": 0,
+      "filename": "<empty>"
+    },
+    {
+      "name": "<operator>.subtraction",
+      "astParentFullName": "<global>",
+      "_id": 107374182420,
+      "signature": "",
+      "astParentType": "NAMESPACE_BLOCK",
+      "_label": "METHOD",
+      "fullName": "<operator>.subtraction",
+      "genericSignature": "<empty>",
+      "code": "<empty>",
+      "isExternal": true,
+      "order": 0,
+      "filename": "<empty>"
+    },
+    {
+      "name": "<operator>.indirection",
+      "astParentFullName": "<global>",
+      "_id": 107374182421,
+      "signature": "",
+      "astParentType": "NAMESPACE_BLOCK",
+      "_label": "METHOD",
+      "fullName": "<operator>.indirection",
+      "genericSignature": "<empty>",
+      "code": "<empty>",
+      "isExternal": true,
+      "order": 0,
+      "filename": "<empty>"
+    },
+    {
+      "name": "r_uleb128",
+      "astParentFullName": "<global>",
+      "_id": 107374182422,
+      "signature": "",
+      "astParentType": "NAMESPACE_BLOCK",
+      "_label": "METHOD",
+      "fullName": "r_uleb128",
+      "genericSignature": "<empty>",
+      "code": "<empty>",
+      "isExternal": true,
+      "order": 0,
+      "filename": "<empty>"
+    },
+    {
+      "dynamicTypeHintFullName": [],
+      "name": "p",
+      "_id": 111669149696,
+      "evaluationStrategy": "BY_VALUE",
+      "isVariadic": false,
+      "typeFullName": "ut8**",
+      "lineNumber": 7,
+      "order": 1,
+      "_label": "METHOD_PARAMETER_IN",
+      "possibleTypes": [],
+      "index": 1,
+      "code": "ut8 **p",
+      "columnNumber": 26
+    },
+    {
+      "dynamicTypeHintFullName": [],
+      "name": "end",
+      "_id": 111669149697,
+      "evaluationStrategy": "BY_VALUE",
+      "isVariadic": false,
+      "typeFullName": "ut8*",
+      "lineNumber": 7,
+      "order": 2,
+      "_label": "METHOD_PARAMETER_IN",
+      "possibleTypes": [],
+      "index": 2,
+      "code": "ut8 *end",
+      "columnNumber": 35
+    },
+    {
+      "dynamicTypeHintFullName": [],
+      "name": "p",
+      "_id": 111669149698,
+      "evaluationStrategy": "BY_VALUE",
+      "isVariadic": false,
+      "typeFullName": "void*",
+      "lineNumber": 7,
+      "order": 1,
+      "_label": "METHOD_PARAMETER_IN",
+      "possibleTypes": [],
+      "index": 1,
+      "code": "void *p",
+      "columnNumber": 28
+    },
+    {
+      "dynamicTypeHintFullName": [],
+      "name": "sect",
+      "_id": 111669149699,
+      "evaluationStrategy": "BY_VALUE",
+      "isVariadic": false,
+      "typeFullName": "RBinSection*",
+      "lineNumber": 7,
+      "order": 1,
+      "_label": "METHOD_PARAMETER_IN",
+      "possibleTypes": [],
+      "index": 1,
+      "code": "RBinSection *sect",
+      "columnNumber": 29
+    },
+    {
+      "dynamicTypeHintFullName": [],
+      "name": "get_symbols_list",
+      "_id": 111669149700,
+      "evaluationStrategy": "BY_VALUE",
+      "isVariadic": false,
+      "typeFullName": "ANY",
+      "lineNumber": 7,
+      "order": 1,
+      "_label": "METHOD_PARAMETER_IN",
+      "possibleTypes": [],
+      "index": 1,
+      "code": "get_symbols_list",
+      "columnNumber": 21
+    },
+    {
+      "dynamicTypeHintFullName": [],
+      "name": "p1",
+      "_id": 111669149701,
+      "evaluationStrategy": "BY_VALUE",
+      "isVariadic": false,
+      "typeFullName": "ANY",
+      "order": 1,
+      "_label": "METHOD_PARAMETER_IN",
+      "possibleTypes": [],
+      "index": 1,
+      "code": "p1"
+    },
+    {
+      "dynamicTypeHintFullName": [],
+      "name": "p1",
+      "_id": 111669149702,
+      "evaluationStrategy": "BY_VALUE",
+      "isVariadic": false,
+      "typeFullName": "ANY",
+      "order": 1,
+      "_label": "METHOD_PARAMETER_IN",
+      "possibleTypes": [],
+      "index": 1,
+      "code": "p1"
+    },
+    {
+      "dynamicTypeHintFullName": [],
+      "name": "p2",
+      "_id": 111669149703,
+      "evaluationStrategy": "BY_VALUE",
+      "isVariadic": false,
+      "typeFullName": "ANY",
+      "order": 2,
+      "_label": "METHOD_PARAMETER_IN",
+      "possibleTypes": [],
+      "index": 2,
+      "code": "p2"
+    },
+    {
+      "dynamicTypeHintFullName": [],
+      "name": "p1",
+      "_id": 111669149704,
+      "evaluationStrategy": "BY_VALUE",
+      "isVariadic": false,
+      "typeFullName": "ANY",
+      "order": 1,
+      "_label": "METHOD_PARAMETER_IN",
+      "possibleTypes": [],
+      "index": 1,
+      "code": "p1"
+    },
+    {
+      "dynamicTypeHintFullName": [],
+      "name": "p1",
+      "_id": 111669149705,
+      "evaluationStrategy": "BY_VALUE",
+      "isVariadic": false,
+      "typeFullName": "ANY",
+      "order": 1,
+      "_label": "METHOD_PARAMETER_IN",
+      "possibleTypes": [],
+      "index": 1,
+      "code": "p1"
+    },
+    {
+      "dynamicTypeHintFullName": [],
+      "name": "p2",
+      "_id": 111669149706,
+      "evaluationStrategy": "BY_VALUE",
+      "isVariadic": false,
+      "typeFullName": "ANY",
+      "order": 2,
+      "_label": "METHOD_PARAMETER_IN",
+      "possibleTypes": [],
+      "index": 2,
+      "code": "p2"
+    },
+    {
+      "dynamicTypeHintFullName": [],
+      "name": "p1",
+      "_id": 111669149707,
+      "evaluationStrategy": "BY_VALUE",
+      "isVariadic": false,
+      "typeFullName": "ANY",
+      "order": 1,
+      "_label": "METHOD_PARAMETER_IN",
+      "possibleTypes": [],
+      "index": 1,
+      "code": "p1"
+    },
+    {
+      "dynamicTypeHintFullName": [],
+      "name": "p2",
+      "_id": 111669149708,
+      "evaluationStrategy": "BY_VALUE",
+      "isVariadic": false,
+      "typeFullName": "ANY",
+      "order": 2,
+      "_label": "METHOD_PARAMETER_IN",
+      "possibleTypes": [],
+      "index": 2,
+      "code": "p2"
+    },
+    {
+      "dynamicTypeHintFullName": [],
+      "name": "p1",
+      "_id": 111669149709,
+      "evaluationStrategy": "BY_VALUE",
+      "isVariadic": false,
+      "typeFullName": "ANY",
+      "order": 1,
+      "_label": "METHOD_PARAMETER_IN",
+      "possibleTypes": [],
+      "index": 1,
+      "code": "p1"
+    },
+    {
+      "dynamicTypeHintFullName": [],
+      "name": "p2",
+      "_id": 111669149710,
+      "evaluationStrategy": "BY_VALUE",
+      "isVariadic": false,
+      "typeFullName": "ANY",
+      "order": 2,
+      "_label": "METHOD_PARAMETER_IN",
+      "possibleTypes": [],
+      "index": 2,
+      "code": "p2"
+    },
+    {
+      "dynamicTypeHintFullName": [],
+      "name": "p1",
+      "_id": 111669149711,
+      "evaluationStrategy": "BY_VALUE",
+      "isVariadic": false,
+      "typeFullName": "ANY",
+      "order": 1,
+      "_label": "METHOD_PARAMETER_IN",
+      "possibleTypes": [],
+      "index": 1,
+      "code": "p1"
+    },
+    {
+      "dynamicTypeHintFullName": [],
+      "name": "p2",
+      "_id": 111669149712,
+      "evaluationStrategy": "BY_VALUE",
+      "isVariadic": false,
+      "typeFullName": "ANY",
+      "order": 2,
+      "_label": "METHOD_PARAMETER_IN",
+      "possibleTypes": [],
+      "index": 2,
+      "code": "p2"
+    },
+    {
+      "dynamicTypeHintFullName": [],
+      "name": "p1",
+      "_id": 111669149713,
+      "evaluationStrategy": "BY_VALUE",
+      "isVariadic": false,
+      "typeFullName": "ANY",
+      "order": 1,
+      "_label": "METHOD_PARAMETER_IN",
+      "possibleTypes": [],
+      "index": 1,
+      "code": "p1"
+    },
+    {
+      "dynamicTypeHintFullName": [],
+      "name": "p2",
+      "_id": 111669149714,
+      "evaluationStrategy": "BY_VALUE",
+      "isVariadic": false,
+      "typeFullName": "ANY",
+      "order": 2,
+      "_label": "METHOD_PARAMETER_IN",
+      "possibleTypes": [],
+      "index": 2,
+      "code": "p2"
+    },
+    {
+      "dynamicTypeHintFullName": [],
+      "name": "p1",
+      "_id": 111669149715,
+      "evaluationStrategy": "BY_VALUE",
+      "isVariadic": false,
+      "typeFullName": "ANY",
+      "order": 1,
+      "_label": "METHOD_PARAMETER_IN",
+      "possibleTypes": [],
+      "index": 1,
+      "code": "p1"
+    },
+    {
+      "dynamicTypeHintFullName": [],
+      "name": "p1",
+      "_id": 111669149716,
+      "evaluationStrategy": "BY_VALUE",
+      "isVariadic": false,
+      "typeFullName": "ANY",
+      "order": 1,
+      "_label": "METHOD_PARAMETER_IN",
+      "possibleTypes": [],
+      "index": 1,
+      "code": "p1"
+    },
+    {
+      "dynamicTypeHintFullName": [],
+      "name": "p2",
+      "_id": 111669149717,
+      "evaluationStrategy": "BY_VALUE",
+      "isVariadic": false,
+      "typeFullName": "ANY",
+      "order": 2,
+      "_label": "METHOD_PARAMETER_IN",
+      "possibleTypes": [],
+      "index": 2,
+      "code": "p2"
+    },
+    {
+      "dynamicTypeHintFullName": [],
+      "name": "p3",
+      "_id": 111669149718,
+      "evaluationStrategy": "BY_VALUE",
+      "isVariadic": false,
+      "typeFullName": "ANY",
+      "order": 3,
+      "_label": "METHOD_PARAMETER_IN",
+      "possibleTypes": [],
+      "index": 3,
+      "code": "p3"
+    },
+    {
+      "dynamicTypeHintFullName": [],
+      "name": "p4",
+      "_id": 111669149719,
+      "evaluationStrategy": "BY_VALUE",
+      "isVariadic": false,
+      "typeFullName": "ANY",
+      "order": 4,
+      "_label": "METHOD_PARAMETER_IN",
+      "possibleTypes": [],
+      "index": 4,
+      "code": "p4"
+    },
+    {
+      "name": "p",
+      "_id": 115964116992,
+      "evaluationStrategy": "BY_VALUE",
+      "isVariadic": false,
+      "code": "ut8 **p",
+      "typeFullName": "ut8**",
+      "lineNumber": 7,
+      "order": 1,
+      "_label": "METHOD_PARAMETER_OUT",
+      "index": 1,
+      "columnNumber": 26
+    },
+    {
+      "name": "end",
+      "_id": 115964116993,
+      "evaluationStrategy": "BY_VALUE",
+      "isVariadic": false,
+      "code": "ut8 *end",
+      "typeFullName": "ut8*",
+      "lineNumber": 7,
+      "order": 2,
+      "_label": "METHOD_PARAMETER_OUT",
+      "index": 2,
+      "columnNumber": 35
+    },
+    {
+      "name": "p",
+      "_id": 115964116994,
+      "evaluationStrategy": "BY_VALUE",
+      "isVariadic": false,
+      "code": "void *p",
+      "typeFullName": "void*",
+      "lineNumber": 7,
+      "order": 1,
+      "_label": "METHOD_PARAMETER_OUT",
+      "index": 1,
+      "columnNumber": 28
+    },
+    {
+      "name": "sect",
+      "_id": 115964116995,
+      "evaluationStrategy": "BY_VALUE",
+      "isVariadic": false,
+      "code": "RBinSection *sect",
+      "typeFullName": "RBinSection*",
+      "lineNumber": 7,
+      "order": 1,
+      "_label": "METHOD_PARAMETER_OUT",
+      "index": 1,
+      "columnNumber": 29
+    },
+    {
+      "name": "get_symbols_list",
+      "_id": 115964116996,
+      "evaluationStrategy": "BY_VALUE",
+      "isVariadic": false,
+      "code": "get_symbols_list",
+      "typeFullName": "ANY",
+      "lineNumber": 7,
+      "order": 1,
+      "_label": "METHOD_PARAMETER_OUT",
+      "index": 1,
+      "columnNumber": 21
+    },
+    {
+      "name": "p1",
+      "_id": 115964116997,
+      "evaluationStrategy": "BY_VALUE",
+      "isVariadic": false,
+      "code": "p1",
+      "typeFullName": "ANY",
+      "order": 1,
+      "_label": "METHOD_PARAMETER_OUT",
+      "index": 1
+    },
+    {
+      "name": "p1",
+      "_id": 115964116998,
+      "evaluationStrategy": "BY_VALUE",
+      "isVariadic": false,
+      "code": "p1",
+      "typeFullName": "ANY",
+      "order": 1,
+      "_label": "METHOD_PARAMETER_OUT",
+      "index": 1
+    },
+    {
+      "name": "p2",
+      "_id": 115964116999,
+      "evaluationStrategy": "BY_VALUE",
+      "isVariadic": false,
+      "code": "p2",
+      "typeFullName": "ANY",
+      "order": 2,
+      "_label": "METHOD_PARAMETER_OUT",
+      "index": 2
+    },
+    {
+      "name": "p1",
+      "_id": 115964117000,
+      "evaluationStrategy": "BY_VALUE",
+      "isVariadic": false,
+      "code": "p1",
+      "typeFullName": "ANY",
+      "order": 1,
+      "_label": "METHOD_PARAMETER_OUT",
+      "index": 1
+    },
+    {
+      "name": "p1",
+      "_id": 115964117001,
+      "evaluationStrategy": "BY_VALUE",
+      "isVariadic": false,
+      "code": "p1",
+      "typeFullName": "ANY",
+      "order": 1,
+      "_label": "METHOD_PARAMETER_OUT",
+      "index": 1
+    },
+    {
+      "name": "p2",
+      "_id": 115964117002,
+      "evaluationStrategy": "BY_VALUE",
+      "isVariadic": false,
+      "code": "p2",
+      "typeFullName": "ANY",
+      "order": 2,
+      "_label": "METHOD_PARAMETER_OUT",
+      "index": 2
+    },
+    {
+      "name": "p1",
+      "_id": 115964117003,
+      "evaluationStrategy": "BY_VALUE",
+      "isVariadic": false,
+      "code": "p1",
+      "typeFullName": "ANY",
+      "order": 1,
+      "_label": "METHOD_PARAMETER_OUT",
+      "index": 1
+    },
+    {
+      "name": "p2",
+      "_id": 115964117004,
+      "evaluationStrategy": "BY_VALUE",
+      "isVariadic": false,
+      "code": "p2",
+      "typeFullName": "ANY",
+      "order": 2,
+      "_label": "METHOD_PARAMETER_OUT",
+      "index": 2
+    },
+    {
+      "name": "p1",
+      "_id": 115964117005,
+      "evaluationStrategy": "BY_VALUE",
+      "isVariadic": false,
+      "code": "p1",
+      "typeFullName": "ANY",
+      "order": 1,
+      "_label": "METHOD_PARAMETER_OUT",
+      "index": 1
+    },
+    {
+      "name": "p2",
+      "_id": 115964117006,
+      "evaluationStrategy": "BY_VALUE",
+      "isVariadic": false,
+      "code": "p2",
+      "typeFullName": "ANY",
+      "order": 2,
+      "_label": "METHOD_PARAMETER_OUT",
+      "index": 2
+    },
+    {
+      "name": "p1",
+      "_id": 115964117007,
+      "evaluationStrategy": "BY_VALUE",
+      "isVariadic": false,
+      "code": "p1",
+      "typeFullName": "ANY",
+      "order": 1,
+      "_label": "METHOD_PARAMETER_OUT",
+      "index": 1
+    },
+    {
+      "name": "p2",
+      "_id": 115964117008,
+      "evaluationStrategy": "BY_VALUE",
+      "isVariadic": false,
+      "code": "p2",
+      "typeFullName": "ANY",
+      "order": 2,
+      "_label": "METHOD_PARAMETER_OUT",
+      "index": 2
+    },
+    {
+      "name": "p1",
+      "_id": 115964117009,
+      "evaluationStrategy": "BY_VALUE",
+      "isVariadic": false,
+      "code": "p1",
+      "typeFullName": "ANY",
+      "order": 1,
+      "_label": "METHOD_PARAMETER_OUT",
+      "index": 1
+    },
+    {
+      "name": "p2",
+      "_id": 115964117010,
+      "evaluationStrategy": "BY_VALUE",
+      "isVariadic": false,
+      "code": "p2",
+      "typeFullName": "ANY",
+      "order": 2,
+      "_label": "METHOD_PARAMETER_OUT",
+      "index": 2
+    },
+    {
+      "name": "p1",
+      "_id": 115964117011,
+      "evaluationStrategy": "BY_VALUE",
+      "isVariadic": false,
+      "code": "p1",
+      "typeFullName": "ANY",
+      "order": 1,
+      "_label": "METHOD_PARAMETER_OUT",
+      "index": 1
+    },
+    {
+      "name": "p1",
+      "_id": 115964117012,
+      "evaluationStrategy": "BY_VALUE",
+      "isVariadic": false,
+      "code": "p1",
+      "typeFullName": "ANY",
+      "order": 1,
+      "_label": "METHOD_PARAMETER_OUT",
+      "index": 1
+    },
+    {
+      "name": "p2",
+      "_id": 115964117013,
+      "evaluationStrategy": "BY_VALUE",
+      "isVariadic": false,
+      "code": "p2",
+      "typeFullName": "ANY",
+      "order": 2,
+      "_label": "METHOD_PARAMETER_OUT",
+      "index": 2
+    },
+    {
+      "name": "p3",
+      "_id": 115964117014,
+      "evaluationStrategy": "BY_VALUE",
+      "isVariadic": false,
+      "code": "p3",
+      "typeFullName": "ANY",
+      "order": 3,
+      "_label": "METHOD_PARAMETER_OUT",
+      "index": 3
+    },
+    {
+      "name": "p4",
+      "_id": 115964117015,
+      "evaluationStrategy": "BY_VALUE",
+      "isVariadic": false,
+      "code": "p4",
+      "typeFullName": "ANY",
+      "order": 4,
+      "_label": "METHOD_PARAMETER_OUT",
+      "index": 4
+    },
+    {
+      "dynamicTypeHintFullName": [],
+      "_id": 120259084288,
+      "code": "read_uleb128",
+      "typeFullName": "read_uleb128",
+      "lineNumber": 7,
+      "order": 1,
+      "methodFullName": "read_uleb128",
+      "_label": "METHOD_REF",
+      "columnNumber": 1,
+      "possibleTypes": [],
+      "argumentIndex": -1
+    },
+    {
+      "dynamicTypeHintFullName": [],
+      "_id": 120259084289,
+      "code": "duplicate_ptr",
+      "typeFullName": "duplicate_ptr",
+      "lineNumber": 7,
+      "order": 1,
+      "methodFullName": "duplicate_ptr",
+      "_label": "METHOD_REF",
+      "columnNumber": 1,
+      "possibleTypes": [],
+      "argumentIndex": -1
+    },
+    {
+      "dynamicTypeHintFullName": [],
+      "_id": 120259084290,
+      "code": "is_data_section",
+      "typeFullName": "is_data_section",
+      "lineNumber": 7,
+      "order": 1,
+      "methodFullName": "is_data_section",
+      "_label": "METHOD_REF",
+      "columnNumber": 1,
+      "possibleTypes": [],
+      "argumentIndex": -1
+    },
+    {
+      "dynamicTypeHintFullName": [],
+      "_id": 124554051584,
+      "evaluationStrategy": "BY_VALUE",
+      "code": "RET",
+      "typeFullName": "ut64",
+      "lineNumber": 7,
+      "order": 5,
+      "_label": "METHOD_RETURN",
+      "possibleTypes": [],
+      "columnNumber": 1
+    },
+    {
+      "dynamicTypeHintFullName": [],
+      "_id": 124554051585,
+      "evaluationStrategy": "BY_VALUE",
+      "code": "RET",
+      "typeFullName": "ANY",
+      "lineNumber": 1,
+      "order": 2,
+      "_label": "METHOD_RETURN",
+      "possibleTypes": [],
+      "columnNumber": 1
+    },
+    {
+      "dynamicTypeHintFullName": [],
+      "_id": 124554051586,
+      "evaluationStrategy": "BY_VALUE",
+      "code": "RET",
+      "typeFullName": "ANY",
+      "lineNumber": 1,
+      "order": 2,
+      "_label": "METHOD_RETURN",
+      "possibleTypes": [],
+      "columnNumber": 1
+    },
+    {
+      "dynamicTypeHintFullName": [],
+      "_id": 124554051587,
+      "evaluationStrategy": "BY_VALUE",
+      "code": "RET",
+      "typeFullName": "void*",
+      "lineNumber": 7,
+      "order": 4,
+      "_label": "METHOD_RETURN",
+      "possibleTypes": [],
+      "columnNumber": 1
+    },
+    {
+      "dynamicTypeHintFullName": [],
+      "_id": 124554051588,
+      "evaluationStrategy": "BY_VALUE",
+      "code": "RET",
+      "typeFullName": "ANY",
+      "lineNumber": 1,
+      "order": 2,
+      "_label": "METHOD_RETURN",
+      "possibleTypes": [],
+      "columnNumber": 1
+    },
+    {
+      "dynamicTypeHintFullName": [],
+      "_id": 124554051589,
+      "evaluationStrategy": "BY_VALUE",
+      "code": "RET",
+      "typeFullName": "bool",
+      "lineNumber": 7,
+      "order": 4,
+      "_label": "METHOD_RETURN",
+      "possibleTypes": [],
+      "columnNumber": 1
+    },
+    {
+      "dynamicTypeHintFullName": [],
+      "_id": 124554051590,
+      "evaluationStrategy": "BY_VALUE",
+      "code": "RET",
+      "typeFullName": "ANY",
+      "lineNumber": 1,
+      "order": 2,
+      "_label": "METHOD_RETURN",
+      "possibleTypes": [],
+      "columnNumber": 1
+    },
+    {
+      "dynamicTypeHintFullName": [],
+      "_id": 124554051591,
+      "evaluationStrategy": "BY_VALUE",
+      "code": "RET",
+      "typeFullName": "ANY",
+      "lineNumber": 1,
+      "order": 2,
+      "_label": "METHOD_RETURN",
+      "possibleTypes": [],
+      "columnNumber": 1
+    },
+    {
+      "dynamicTypeHintFullName": [],
+      "_id": 124554051592,
+      "evaluationStrategy": "BY_VALUE",
+      "code": "RET",
+      "typeFullName": "ANY",
+      "lineNumber": 1,
+      "order": 2,
+      "_label": "METHOD_RETURN",
+      "possibleTypes": [],
+      "columnNumber": 1
+    },
+    {
+      "dynamicTypeHintFullName": [],
+      "_id": 124554051593,
+      "evaluationStrategy": "BY_VALUE",
+      "code": "RET",
+      "typeFullName": "ANY",
+      "lineNumber": 1,
+      "order": 2,
+      "_label": "METHOD_RETURN",
+      "possibleTypes": [],
+      "columnNumber": 1
+    },
+    {
+      "dynamicTypeHintFullName": [],
+      "_id": 124554051594,
+      "evaluationStrategy": "BY_VALUE",
+      "code": "RET",
+      "typeFullName": "ANY",
+      "lineNumber": 1,
+      "order": 2,
+      "_label": "METHOD_RETURN",
+      "possibleTypes": [],
+      "columnNumber": 1
+    },
+    {
+      "dynamicTypeHintFullName": [],
+      "_id": 124554051595,
+      "evaluationStrategy": "BY_VALUE",
+      "code": "RET",
+      "typeFullName": "ANY",
+      "lineNumber": 1,
+      "order": 2,
+      "_label": "METHOD_RETURN",
+      "possibleTypes": []
+    },
+    {
+      "dynamicTypeHintFullName": [],
+      "_id": 124554051596,
+      "evaluationStrategy": "BY_VALUE",
+      "code": "RET",
+      "typeFullName": "RList*",
+      "lineNumber": 7,
+      "order": 3,
+      "_label": "METHOD_RETURN",
+      "possibleTypes": [],
+      "columnNumber": 13
+    },
+    {
+      "dynamicTypeHintFullName": [],
+      "_id": 124554051597,
+      "evaluationStrategy": "BY_VALUE",
+      "code": "RET",
+      "typeFullName": "ANY",
+      "order": 2,
+      "_label": "METHOD_RETURN",
+      "possibleTypes": []
+    },
+    {
+      "dynamicTypeHintFullName": [],
+      "_id": 124554051598,
+      "evaluationStrategy": "BY_VALUE",
+      "code": "RET",
+      "typeFullName": "ANY",
+      "order": 2,
+      "_label": "METHOD_RETURN",
+      "possibleTypes": []
+    },
+    {
+      "dynamicTypeHintFullName": [],
+      "_id": 124554051599,
+      "evaluationStrategy": "BY_VALUE",
+      "code": "RET",
+      "typeFullName": "ANY",
+      "order": 2,
+      "_label": "METHOD_RETURN",
+      "possibleTypes": []
+    },
+    {
+      "dynamicTypeHintFullName": [],
+      "_id": 124554051600,
+      "evaluationStrategy": "BY_VALUE",
+      "code": "RET",
+      "typeFullName": "ANY",
+      "order": 2,
+      "_label": "METHOD_RETURN",
+      "possibleTypes": []
+    },
+    {
+      "dynamicTypeHintFullName": [],
+      "_id": 124554051601,
+      "evaluationStrategy": "BY_VALUE",
+      "code": "RET",
+      "typeFullName": "ANY",
+      "order": 2,
+      "_label": "METHOD_RETURN",
+      "possibleTypes": []
+    },
+    {
+      "dynamicTypeHintFullName": [],
+      "_id": 124554051602,
+      "evaluationStrategy": "BY_VALUE",
+      "code": "RET",
+      "typeFullName": "ANY",
+      "order": 2,
+      "_label": "METHOD_RETURN",
+      "possibleTypes": []
+    },
+    {
+      "dynamicTypeHintFullName": [],
+      "_id": 124554051603,
+      "evaluationStrategy": "BY_VALUE",
+      "code": "RET",
+      "typeFullName": "ANY",
+      "order": 2,
+      "_label": "METHOD_RETURN",
+      "possibleTypes": []
+    },
+    {
+      "dynamicTypeHintFullName": [],
+      "_id": 124554051604,
+      "evaluationStrategy": "BY_VALUE",
+      "code": "RET",
+      "typeFullName": "ANY",
+      "order": 2,
+      "_label": "METHOD_RETURN",
+      "possibleTypes": []
+    },
+    {
+      "dynamicTypeHintFullName": [],
+      "_id": 124554051605,
+      "evaluationStrategy": "BY_VALUE",
+      "code": "RET",
+      "typeFullName": "ANY",
+      "order": 2,
+      "_label": "METHOD_RETURN",
+      "possibleTypes": []
+    },
+    {
+      "dynamicTypeHintFullName": [],
+      "_id": 124554051606,
+      "evaluationStrategy": "BY_VALUE",
+      "code": "RET",
+      "typeFullName": "ANY",
+      "order": 2,
+      "_label": "METHOD_RETURN",
+      "possibleTypes": []
+    },
+    {
+      "_id": 128849018880,
+      "modifierType": "STATIC",
+      "code": "<empty>",
+      "lineNumber": 7,
+      "order": 4,
+      "_label": "MODIFIER",
+      "columnNumber": 1
+    },
+    {
+      "_id": 128849018881,
+      "modifierType": "STATIC",
+      "code": "<empty>",
+      "lineNumber": 7,
+      "order": 3,
+      "_label": "MODIFIER",
+      "columnNumber": 1
+    },
+    {
+      "_id": 128849018882,
+      "modifierType": "STATIC",
+      "code": "<empty>",
+      "lineNumber": 7,
+      "order": 3,
+      "_label": "MODIFIER",
+      "columnNumber": 1
+    },
+    {
+      "name": "<global>",
+      "_id": 133143986176,
+      "code": "<empty>",
+      "order": -1,
+      "_label": "NAMESPACE"
+    },
+    {
+      "name": "<global>",
+      "_id": 137438953472,
+      "fullName": "<global>",
+      "code": "<empty>",
+      "_label": "NAMESPACE_BLOCK",
+      "order": 1,
+      "filename": "<unknown>"
+    },
+    {
+      "name": "<global>",
+      "_id": 137438953473,
+      "fullName": "ca8d8b39f3e34a4fd943270330b80f1148129de4_0.c:<global>",
+      "code": "<empty>",
+      "_label": "NAMESPACE_BLOCK",
+      "order": 1,
+      "filename": "ca8d8b39f3e34a4fd943270330b80f1148129de4_0.c"
+    },
+    {
+      "name": "<global>",
+      "_id": 137438953474,
+      "fullName": "ca8d8b39f3e34a4fd943270330b80f1148129de4_23.c:<global>",
+      "code": "<empty>",
+      "_label": "NAMESPACE_BLOCK",
+      "order": 1,
+      "filename": "ca8d8b39f3e34a4fd943270330b80f1148129de4_23.c"
+    },
+    {
+      "name": "<global>",
+      "_id": 137438953475,
+      "fullName": "ca8d8b39f3e34a4fd943270330b80f1148129de4_27.c:<global>",
+      "code": "<empty>",
+      "_label": "NAMESPACE_BLOCK",
+      "order": 1,
+      "filename": "ca8d8b39f3e34a4fd943270330b80f1148129de4_27.c"
+    },
+    {
+      "name": "<global>",
+      "_id": 137438953476,
+      "fullName": "ca8d8b39f3e34a4fd943270330b80f1148129de4_33.c:<global>",
+      "code": "<empty>",
+      "_label": "NAMESPACE_BLOCK",
+      "order": 1,
+      "filename": "ca8d8b39f3e34a4fd943270330b80f1148129de4_33.c"
+    },
+    {
+      "name": "<global>",
+      "_id": 137438953477,
+      "fullName": "ca8d8b39f3e34a4fd943270330b80f1148129de4_39.c:<global>",
+      "code": "<empty>",
+      "_label": "NAMESPACE_BLOCK",
+      "order": 1,
+      "filename": "ca8d8b39f3e34a4fd943270330b80f1148129de4_39.c"
+    },
+    {
+      "name": "<global>",
+      "_id": 137438953478,
+      "fullName": "ca8d8b39f3e34a4fd943270330b80f1148129de4_41.c:<global>",
+      "code": "<empty>",
+      "_label": "NAMESPACE_BLOCK",
+      "order": 1,
+      "filename": "ca8d8b39f3e34a4fd943270330b80f1148129de4_41.c"
+    },
+    {
+      "name": "<global>",
+      "_id": 137438953479,
+      "fullName": "ca8d8b39f3e34a4fd943270330b80f1148129de4_60.c:<global>",
+      "code": "<empty>",
+      "_label": "NAMESPACE_BLOCK",
+      "order": 1,
+      "filename": "ca8d8b39f3e34a4fd943270330b80f1148129de4_60.c"
+    },
+    {
+      "name": "<global>",
+      "_id": 137438953480,
+      "fullName": "ca8d8b39f3e34a4fd943270330b80f1148129de4_8.c:<global>",
+      "code": "<empty>",
+      "_label": "NAMESPACE_BLOCK",
+      "order": 1,
+      "filename": "ca8d8b39f3e34a4fd943270330b80f1148129de4_8.c"
+    },
+    {
+      "name": "<global>",
+      "_id": 137438953481,
+      "fullName": "<includes>:<global>",
+      "code": "<empty>",
+      "_label": "NAMESPACE_BLOCK",
+      "order": 1,
+      "filename": "<includes>"
+    },
+    {
+      "_id": 141733920768,
+      "code": "return UT64_MAX;",
+      "lineNumber": 14,
+      "order": 3,
+      "_label": "RETURN",
+      "argumentIndex": -1,
+      "columnNumber": 3
+    },
+    {
+      "_id": 141733920769,
+      "code": "return v;",
+      "lineNumber": 16,
+      "order": 6,
+      "_label": "RETURN",
+      "argumentIndex": -1,
+      "columnNumber": 2
+    },
+    {
+      "_id": 141733920770,
+      "code": "return p;",
+      "lineNumber": 8,
+      "order": 1,
+      "_label": "RETURN",
+      "argumentIndex": -1,
+      "columnNumber": 2
+    },
+    {
+      "_id": 141733920771,
+      "code": "return true;",
+      "lineNumber": 9,
+      "order": 1,
+      "_label": "RETURN",
+      "argumentIndex": -1,
+      "columnNumber": 3
+    },
+    {
+      "_id": 141733920772,
+      "code": "return true;",
+      "lineNumber": 12,
+      "order": 1,
+      "_label": "RETURN",
+      "argumentIndex": -1,
+      "columnNumber": 3
+    },
+    {
+      "_id": 141733920773,
+      "code": "return true;",
+      "lineNumber": 15,
+      "order": 1,
+      "_label": "RETURN",
+      "argumentIndex": -1,
+      "columnNumber": 3
+    },
+    {
+      "_id": 141733920774,
+      "code": "return true;",
+      "lineNumber": 18,
+      "order": 1,
+      "_label": "RETURN",
+      "argumentIndex": -1,
+      "columnNumber": 3
+    },
+    {
+      "_id": 141733920775,
+      "code": "return false;",
+      "lineNumber": 20,
+      "order": 5,
+      "_label": "RETURN",
+      "argumentIndex": -1,
+      "columnNumber": 2
+    },
+    {
+      "name": "ANY",
+      "_id": 158913789952,
+      "fullName": "ANY",
+      "typeDeclFullName": "ANY",
+      "_label": "TYPE"
+    },
+    {
+      "name": "RBinSection*",
+      "_id": 158913789953,
+      "fullName": "RBinSection*",
+      "typeDeclFullName": "RBinSection*",
+      "_label": "TYPE"
+    },
+    {
+      "name": "RList*",
+      "_id": 158913789954,
+      "fullName": "RList*",
+      "typeDeclFullName": "RList*",
+      "_label": "TYPE"
+    },
+    {
+      "name": "bool",
+      "_id": 158913789955,
+      "fullName": "bool",
+      "typeDeclFullName": "bool",
+      "_label": "TYPE"
+    },
+    {
+      "name": "char",
+      "_id": 158913789956,
+      "fullName": "char",
+      "typeDeclFullName": "char",
+      "_label": "TYPE"
+    },
+    {
+      "name": "char*",
+      "_id": 158913789957,
+      "fullName": "char*",
+      "typeDeclFullName": "char*",
+      "_label": "TYPE"
+    },
+    {
+      "name": "duplicate_ptr",
+      "_id": 158913789958,
+      "fullName": "duplicate_ptr",
+      "typeDeclFullName": "duplicate_ptr",
+      "_label": "TYPE"
+    },
+    {
+      "name": "is_data_section",
+      "_id": 158913789959,
+      "fullName": "is_data_section",
+      "typeDeclFullName": "is_data_section",
+      "_label": "TYPE"
+    },
+    {
+      "name": "read_uleb128",
+      "_id": 158913789960,
+      "fullName": "read_uleb128",
+      "typeDeclFullName": "read_uleb128",
+      "_label": "TYPE"
+    },
+    {
+      "name": "ut64",
+      "_id": 158913789961,
+      "fullName": "ut64",
+      "typeDeclFullName": "ut64",
+      "_label": "TYPE"
+    },
+    {
+      "name": "ut8",
+      "_id": 158913789962,
+      "fullName": "ut8",
+      "typeDeclFullName": "ut8",
+      "_label": "TYPE"
+    },
+    {
+      "name": "ut8*",
+      "_id": 158913789963,
+      "fullName": "ut8*",
+      "typeDeclFullName": "ut8*",
+      "_label": "TYPE"
+    },
+    {
+      "name": "ut8**",
+      "_id": 158913789964,
+      "fullName": "ut8**",
+      "typeDeclFullName": "ut8**",
+      "_label": "TYPE"
+    },
+    {
+      "name": "void",
+      "_id": 158913789965,
+      "fullName": "void",
+      "typeDeclFullName": "void",
+      "_label": "TYPE"
+    },
+    {
+      "name": "void*",
+      "_id": 158913789966,
+      "fullName": "void*",
+      "typeDeclFullName": "void*",
+      "_label": "TYPE"
+    },
+    {
+      "inheritsFromTypeFullName": [],
+      "name": "read_uleb128",
+      "astParentFullName": "ca8d8b39f3e34a4fd943270330b80f1148129de4_0.c:<global>",
+      "_id": 167503724544,
+      "astParentType": "TYPE_DECL",
+      "lineNumber": 7,
+      "_label": "TYPE_DECL",
+      "fullName": "read_uleb128",
+      "genericSignature": "<empty>",
+      "code": "read_uleb128",
+      "isExternal": false,
+      "columnNumber": 1,
+      "order": 1,
+      "filename": "ca8d8b39f3e34a4fd943270330b80f1148129de4_0.c"
+    },
+    {
+      "inheritsFromTypeFullName": [],
+      "name": "<global>",
+      "astParentFullName": "ca8d8b39f3e34a4fd943270330b80f1148129de4_0.c:<global>",
+      "_id": 167503724545,
+      "astParentType": "NAMESPACE_BLOCK",
+      "lineNumber": 1,
+      "_label": "TYPE_DECL",
+      "fullName": "ca8d8b39f3e34a4fd943270330b80f1148129de4_0.c:<global>",
+      "genericSignature": "<empty>",
+      "code": "<global>",
+      "isExternal": false,
+      "columnNumber": 1,
+      "order": 4,
+      "filename": "ca8d8b39f3e34a4fd943270330b80f1148129de4_0.c"
+    },
+    {
+      "inheritsFromTypeFullName": [],
+      "name": "<global>",
+      "astParentFullName": "ca8d8b39f3e34a4fd943270330b80f1148129de4_23.c:<global>",
+      "_id": 167503724546,
+      "astParentType": "NAMESPACE_BLOCK",
+      "lineNumber": 1,
+      "_label": "TYPE_DECL",
+      "fullName": "ca8d8b39f3e34a4fd943270330b80f1148129de4_23.c:<global>",
+      "genericSignature": "<empty>",
+      "code": "<global>",
+      "isExternal": false,
+      "columnNumber": 1,
+      "order": 4,
+      "filename": "ca8d8b39f3e34a4fd943270330b80f1148129de4_23.c"
+    },
+    {
+      "inheritsFromTypeFullName": [],
+      "name": "duplicate_ptr",
+      "astParentFullName": "ca8d8b39f3e34a4fd943270330b80f1148129de4_27.c:<global>",
+      "_id": 167503724547,
+      "astParentType": "TYPE_DECL",
+      "lineNumber": 7,
+      "_label": "TYPE_DECL",
+      "fullName": "duplicate_ptr",
+      "genericSignature": "<empty>",
+      "code": "duplicate_ptr",
+      "isExternal": false,
+      "columnNumber": 1,
+      "order": 1,
+      "filename": "ca8d8b39f3e34a4fd943270330b80f1148129de4_27.c"
+    },
+    {
+      "inheritsFromTypeFullName": [],
+      "name": "<global>",
+      "astParentFullName": "ca8d8b39f3e34a4fd943270330b80f1148129de4_27.c:<global>",
+      "_id": 167503724548,
+      "astParentType": "NAMESPACE_BLOCK",
+      "lineNumber": 1,
+      "_label": "TYPE_DECL",
+      "fullName": "ca8d8b39f3e34a4fd943270330b80f1148129de4_27.c:<global>",
+      "genericSignature": "<empty>",
+      "code": "<global>",
+      "isExternal": false,
+      "columnNumber": 1,
+      "order": 4,
+      "filename": "ca8d8b39f3e34a4fd943270330b80f1148129de4_27.c"
+    },
+    {
+      "inheritsFromTypeFullName": [],
+      "name": "is_data_section",
+      "astParentFullName": "ca8d8b39f3e34a4fd943270330b80f1148129de4_33.c:<global>",
+      "_id": 167503724549,
+      "astParentType": "TYPE_DECL",
+      "lineNumber": 7,
+      "_label": "TYPE_DECL",
+      "fullName": "is_data_section",
+      "genericSignature": "<empty>",
+      "code": "is_data_section",
+      "isExternal": false,
+      "columnNumber": 1,
+      "order": 1,
+      "filename": "ca8d8b39f3e34a4fd943270330b80f1148129de4_33.c"
+    },
+    {
+      "inheritsFromTypeFullName": [],
+      "name": "<global>",
+      "astParentFullName": "ca8d8b39f3e34a4fd943270330b80f1148129de4_33.c:<global>",
+      "_id": 167503724550,
+      "astParentType": "NAMESPACE_BLOCK",
+      "lineNumber": 1,
+      "_label": "TYPE_DECL",
+      "fullName": "ca8d8b39f3e34a4fd943270330b80f1148129de4_33.c:<global>",
+      "genericSignature": "<empty>",
+      "code": "<global>",
+      "isExternal": false,
+      "columnNumber": 1,
+      "order": 4,
+      "filename": "ca8d8b39f3e34a4fd943270330b80f1148129de4_33.c"
+    },
+    {
+      "inheritsFromTypeFullName": [],
+      "name": "<global>",
+      "astParentFullName": "ca8d8b39f3e34a4fd943270330b80f1148129de4_39.c:<global>",
+      "_id": 167503724551,
+      "astParentType": "NAMESPACE_BLOCK",
+      "lineNumber": 1,
+      "_label": "TYPE_DECL",
+      "fullName": "ca8d8b39f3e34a4fd943270330b80f1148129de4_39.c:<global>",
+      "genericSignature": "<empty>",
+      "code": "<global>",
+      "isExternal": false,
+      "columnNumber": 1,
+      "order": 4,
+      "filename": "ca8d8b39f3e34a4fd943270330b80f1148129de4_39.c"
+    },
+    {
+      "inheritsFromTypeFullName": [],
+      "name": "<global>",
+      "astParentFullName": "ca8d8b39f3e34a4fd943270330b80f1148129de4_41.c:<global>",
+      "_id": 167503724552,
+      "astParentType": "NAMESPACE_BLOCK",
+      "lineNumber": 1,
+      "_label": "TYPE_DECL",
+      "fullName": "ca8d8b39f3e34a4fd943270330b80f1148129de4_41.c:<global>",
+      "genericSignature": "<empty>",
+      "code": "<global>",
+      "isExternal": false,
+      "columnNumber": 1,
+      "order": 4,
+      "filename": "ca8d8b39f3e34a4fd943270330b80f1148129de4_41.c"
+    },
+    {
+      "inheritsFromTypeFullName": [],
+      "name": "<global>",
+      "astParentFullName": "ca8d8b39f3e34a4fd943270330b80f1148129de4_60.c:<global>",
+      "_id": 167503724553,
+      "astParentType": "NAMESPACE_BLOCK",
+      "lineNumber": 1,
+      "_label": "TYPE_DECL",
+      "fullName": "ca8d8b39f3e34a4fd943270330b80f1148129de4_60.c:<global>",
+      "genericSignature": "<empty>",
+      "code": "<global>",
+      "isExternal": false,
+      "columnNumber": 1,
+      "order": 4,
+      "filename": "ca8d8b39f3e34a4fd943270330b80f1148129de4_60.c"
+    },
+    {
+      "inheritsFromTypeFullName": [],
+      "name": "<global>",
+      "astParentFullName": "ca8d8b39f3e34a4fd943270330b80f1148129de4_8.c:<global>",
+      "_id": 167503724554,
+      "astParentType": "NAMESPACE_BLOCK",
+      "lineNumber": 1,
+      "_label": "TYPE_DECL",
+      "fullName": "ca8d8b39f3e34a4fd943270330b80f1148129de4_8.c:<global>",
+      "genericSignature": "<empty>",
+      "code": "<global>",
+      "isExternal": false,
+      "columnNumber": 1,
+      "order": 4,
+      "filename": "ca8d8b39f3e34a4fd943270330b80f1148129de4_8.c"
+    },
+    {
+      "inheritsFromTypeFullName": [],
+      "name": "ANY",
+      "astParentFullName": "<includes>:<global>",
+      "_id": 167503724555,
+      "astParentType": "NAMESPACE_BLOCK",
+      "_label": "TYPE_DECL",
+      "fullName": "ANY",
+      "genericSignature": "<empty>",
+      "code": "ANY",
+      "isExternal": true,
+      "order": -1,
+      "filename": "<includes>"
+    },
+    {
+      "inheritsFromTypeFullName": [],
+      "name": "RBinSection*",
+      "astParentFullName": "<includes>:<global>",
+      "_id": 167503724556,
+      "astParentType": "NAMESPACE_BLOCK",
+      "_label": "TYPE_DECL",
+      "fullName": "RBinSection*",
+      "genericSignature": "<empty>",
+      "code": "RBinSection*",
+      "isExternal": true,
+      "order": -1,
+      "filename": "<includes>"
+    },
+    {
+      "inheritsFromTypeFullName": [],
+      "name": "RList*",
+      "astParentFullName": "<includes>:<global>",
+      "_id": 167503724557,
+      "astParentType": "NAMESPACE_BLOCK",
+      "_label": "TYPE_DECL",
+      "fullName": "RList*",
+      "genericSignature": "<empty>",
+      "code": "RList*",
+      "isExternal": true,
+      "order": -1,
+      "filename": "<includes>"
+    },
+    {
+      "inheritsFromTypeFullName": [],
+      "name": "bool",
+      "astParentFullName": "<includes>:<global>",
+      "_id": 167503724558,
+      "astParentType": "NAMESPACE_BLOCK",
+      "_label": "TYPE_DECL",
+      "fullName": "bool",
+      "genericSignature": "<empty>",
+      "code": "bool",
+      "isExternal": true,
+      "order": -1,
+      "filename": "<includes>"
+    },
+    {
+      "inheritsFromTypeFullName": [],
+      "name": "char",
+      "astParentFullName": "<includes>:<global>",
+      "_id": 167503724559,
+      "astParentType": "NAMESPACE_BLOCK",
+      "_label": "TYPE_DECL",
+      "fullName": "char",
+      "genericSignature": "<empty>",
+      "code": "char",
+      "isExternal": true,
+      "order": -1,
+      "filename": "<includes>"
+    },
+    {
+      "inheritsFromTypeFullName": [],
+      "name": "char*",
+      "astParentFullName": "<includes>:<global>",
+      "_id": 167503724560,
+      "astParentType": "NAMESPACE_BLOCK",
+      "_label": "TYPE_DECL",
+      "fullName": "char*",
+      "genericSignature": "<empty>",
+      "code": "char*",
+      "isExternal": true,
+      "order": -1,
+      "filename": "<includes>"
+    },
+    {
+      "inheritsFromTypeFullName": [],
+      "name": "ut64",
+      "astParentFullName": "<includes>:<global>",
+      "_id": 167503724561,
+      "astParentType": "NAMESPACE_BLOCK",
+      "_label": "TYPE_DECL",
+      "fullName": "ut64",
+      "genericSignature": "<empty>",
+      "code": "ut64",
+      "isExternal": true,
+      "order": -1,
+      "filename": "<includes>"
+    },
+    {
+      "inheritsFromTypeFullName": [],
+      "name": "ut8",
+      "astParentFullName": "<includes>:<global>",
+      "_id": 167503724562,
+      "astParentType": "NAMESPACE_BLOCK",
+      "_label": "TYPE_DECL",
+      "fullName": "ut8",
+      "genericSignature": "<empty>",
+      "code": "ut8",
+      "isExternal": true,
+      "order": -1,
+      "filename": "<includes>"
+    },
+    {
+      "inheritsFromTypeFullName": [],
+      "name": "ut8*",
+      "astParentFullName": "<includes>:<global>",
+      "_id": 167503724563,
+      "astParentType": "NAMESPACE_BLOCK",
+      "_label": "TYPE_DECL",
+      "fullName": "ut8*",
+      "genericSignature": "<empty>",
+      "code": "ut8*",
+      "isExternal": true,
+      "order": -1,
+      "filename": "<includes>"
+    },
+    {
+      "inheritsFromTypeFullName": [],
+      "name": "ut8**",
+      "astParentFullName": "<includes>:<global>",
+      "_id": 167503724564,
+      "astParentType": "NAMESPACE_BLOCK",
+      "_label": "TYPE_DECL",
+      "fullName": "ut8**",
+      "genericSignature": "<empty>",
+      "code": "ut8**",
+      "isExternal": true,
+      "order": -1,
+      "filename": "<includes>"
+    },
+    {
+      "inheritsFromTypeFullName": [],
+      "name": "void",
+      "astParentFullName": "<includes>:<global>",
+      "_id": 167503724565,
+      "astParentType": "NAMESPACE_BLOCK",
+      "_label": "TYPE_DECL",
+      "fullName": "void",
+      "genericSignature": "<empty>",
+      "code": "void",
+      "isExternal": true,
+      "order": -1,
+      "filename": "<includes>"
+    },
+    {
+      "inheritsFromTypeFullName": [],
+      "name": "void*",
+      "astParentFullName": "<includes>:<global>",
+      "_id": 167503724566,
+      "astParentType": "NAMESPACE_BLOCK",
+      "_label": "TYPE_DECL",
+      "fullName": "void*",
+      "genericSignature": "<empty>",
+      "code": "void*",
+      "isExternal": true,
+      "order": -1,
+      "filename": "<includes>"
+    },
+    {
+      "dynamicTypeHintFullName": [],
+      "_id": 176093659136,
+      "code": "ut8 *",
+      "typeFullName": "ut8",
+      "lineNumber": 10,
+      "order": 1,
+      "_label": "TYPE_REF",
+      "columnNumber": 8,
+      "possibleTypes": [],
+      "argumentIndex": 1
+    },
+    {
+      "dynamicTypeHintFullName": [],
+      "parserTypeName": "CASTProblemDeclaration",
+      "_id": 180388626432,
+      "code": "static int init_items(struct MACH0_(obj_t) *bin) {\n\tstruct load_command lc = {0, 0};\n\tut8 loadc[sizeof (struct load_command)] = {0};\n\tbool is_first_thread = true;\n\tut64 off = 0LL;\n\tint i, len;\n\tchar cmd_flagname[128];\n\n\tbin->uuidn = 0;\n\tbin->os = 0;\n\tbin->has_crypto = 0;\n\tif (bin->hdr.sizeofcmds > bin->size) {\n\t\tbprintf (\"Warning: chopping hdr.sizeofcmds\\n\");\n\t\tbin->hdr.sizeofcmds = bin->size - 128;\n\t\t//return false;\n\t}\n\t//bprintf (\"Commands: %d\\n\", bin->hdr.ncmds);\n\tfor (i = 0, off = sizeof (struct MACH0_(mach_header)) + bin->header_at; \\\n\t\t\ti < bin->hdr.ncmds; i++, off += lc.cmdsize) {\n\t\tif (off > bin->size || off + sizeof (struct load_command) > bin->size) {\n\t\t\tbprintf (\"mach0: out of bounds command\\n\");\n\t\t\treturn false;\n\t\t}\n\t\tlen = r_buf_read_at (bin->b, off, loadc, sizeof (struct load_command));\n\t\tif (len < 1) {\n\t\t\tbprintf (\"Error: read (lc) at 0x%08\"PFMT64x\"\\n\", off);\n\t\t\treturn false;\n\t\t}\n\t\tlc.cmd = r_read_ble32 (&loadc[0], bin->big_endian);\n\t\tlc.cmdsize = r_read_ble32 (&loadc...",
+      "typeFullName": "<empty>",
+      "lineNumber": 7,
+      "order": 1,
+      "containedRef": "<empty>",
+      "_label": "UNKNOWN",
+      "columnNumber": 1,
+      "possibleTypes": [],
+      "argumentIndex": -1
+    },
+    {
+      "dynamicTypeHintFullName": [],
+      "parserTypeName": "CASTProblemDeclaration",
+      "_id": 180388626433,
+      "code": "static int walk_exports(struct MACH0_(obj_t) *bin, RExportsIterator iterator, void *ctx) {\n\tRList *states = NULL;\n\tr_return_val_if_fail (bin, 0);\n\tif (!bin->dyld_info) {\n\t\treturn 0;\n\t}\n\n\tsize_t count = 0;\n\tut8 *p = NULL;\n\tut64 size = bin->dyld_info->export_size;\n\tif (!size || size >= SIZE_MAX) {\n\t\treturn 0;\n\t}\n\tut8 *trie = calloc (size + 1, 1);\n\tif (!trie) {\n\t\treturn 0;\n\t}\n\tut8 *end = trie + size;\n\tif (r_buf_read_at (bin->b, bin->dyld_info->export_off, trie, bin->dyld_info->export_size) != size) {\n\t\tgoto beach;\n\t}\n\n\tstates = r_list_newf ((RListFree)free);\n\tif (!states) {\n\t\tgoto beach;\n\t}\n\n\tRTrieState *root = R_NEW0 (RTrieState);\n\tif (!root) {\n\t\tgoto beach;\n\t}\n\troot->node = trie;\n\troot->i = 0;\n\troot->label = NULL;\n\tr_list_push (states, root);\n\n\tdo {\n\t\tRTrieState * state = r_list_get_top (states);\n\t\tp = state->node;\n\t\tut64 len = read_uleb128 (&p, end);\n\t\tif (len == UT64_MAX) {\n\t\t\tbreak;\n\t\t}\n\t\tif (len) {\n\t\t\tut64 flags = read_uleb128 (&p, end);\n\t\t\tif (flags == UT64_MAX) {\n\t\t\t\tbreak;\n\t\t\t...",
+      "typeFullName": "<empty>",
+      "lineNumber": 7,
+      "order": 1,
+      "containedRef": "<empty>",
+      "_label": "UNKNOWN",
+      "columnNumber": 1,
+      "possibleTypes": [],
+      "argumentIndex": -1
+    },
+    {
+      "dynamicTypeHintFullName": [],
+      "parserTypeName": "CASTProblemDeclaration",
+      "_id": 180388626434,
+      "code": ")",
+      "typeFullName": "<empty>",
+      "lineNumber": 7,
+      "order": 1,
+      "containedRef": "<empty>",
+      "_label": "UNKNOWN",
+      "columnNumber": 37,
+      "possibleTypes": [],
+      "argumentIndex": -1
+    },
+    {
+      "dynamicTypeHintFullName": [],
+      "parserTypeName": "CASTProblemDeclaration",
+      "_id": 180388626435,
+      "code": "(struct MACH0_(obj_t) *bin) {\n\tstatic RList * cache = NULL; // XXX DONT COMMIT WITH THIS\n\tstruct symbol_t *symbols;\n\tsize_t j, s, symbols_size, symbols_count;\n\tut32 to, from;\n\tsize_t i;\n\n\tr_return_val_if_fail (bin, NULL);\n\tif (cache) {\n\t\treturn cache;\n\t}\n\tRList *list = r_list_newf ((RListFree)r_bin_symbol_free);\n\tcache = list;\n\n\tHtPP *hash = ht_pp_new0 ();\n\tif (!hash) {\n\t\treturn NULL;\n\t}\n\n\twalk_exports (bin, fill_exports_list, list);\n\tif (r_list_length (list)) {\n\t\tRListIter *it;\n\t\tRBinSymbol *s;\n\t\tr_list_foreach (list, it, s) {\n\t\t\tinSymtab (hash, s->name, s->vaddr);\n\t\t}\n\t}\n\n\tif (!bin->symtab || !bin->symstr) {\n\t\tht_pp_free (hash);\n\t\treturn list;\n\t}\n\t/* parse dynamic symbol table */\n\tsymbols_count = (bin->dysymtab.nextdefsym + \\\n\t\t\tbin->dysymtab.nlocalsym + \\\n\t\t\tbin->dysymtab.nundefsym );\n\tsymbols_count += bin->nsymtab;\n\tsymbols_size = (symbols_count + 1) * 2 * sizeof (struct symbol_t);\n\n\tif (symbols_size < 1 || !(symbols = calloc (1, symbols_size))) {\n\t\tht_pp_free (hash);\n\t\treturn N...",
+      "typeFullName": "<empty>",
+      "lineNumber": 7,
+      "order": 2,
+      "containedRef": "<empty>",
+      "_label": "UNKNOWN",
+      "columnNumber": 38,
+      "possibleTypes": [],
+      "argumentIndex": -1
+    },
+    {
+      "dynamicTypeHintFullName": [],
+      "parserTypeName": "CASTProblemDeclaration",
+      "_id": 180388626436,
+      "code": ")",
+      "typeFullName": "<empty>",
+      "lineNumber": 7,
+      "order": 1,
+      "containedRef": "<empty>",
+      "_label": "UNKNOWN",
+      "columnNumber": 29,
+      "possibleTypes": [],
+      "argumentIndex": -1
+    },
+    {
+      "dynamicTypeHintFullName": [],
+      "parserTypeName": "CASTProblemDeclaration",
+      "_id": 180388626437,
+      "code": "(struct MACH0_(obj_t) *bin) {\n\treturn bin? bin->intrp: NULL;\n}",
+      "typeFullName": "<empty>",
+      "lineNumber": 7,
+      "order": 2,
+      "containedRef": "<empty>",
+      "_label": "UNKNOWN",
+      "columnNumber": 30,
+      "possibleTypes": [],
+      "argumentIndex": -1
+    },
+    {
+      "dynamicTypeHintFullName": [],
+      "parserTypeName": "CASTProblemDeclaration",
+      "_id": 180388626438,
+      "code": "static bool parse_symtab(struct MACH0_(obj_t) *mo, ut64 off) {\n\tstruct symtab_command st;\n\tut32 size_sym;\n\tsize_t i;\n\tconst char *error_message = \"\";\n\tut8 symt[sizeof (struct symtab_command)] = {0};\n\tut8 nlst[sizeof (struct MACH0_(nlist))] = {0};\n\tconst bool be = mo->big_endian;\n\n\tif (off > (ut64)mo->size || off + sizeof (struct symtab_command) > (ut64)mo->size) {\n\t\treturn false;\n\t}\n\tint len = r_buf_read_at (mo->b, off, symt, sizeof (struct symtab_command));\n\tif (len != sizeof (struct symtab_command)) {\n\t\tEprintf (\"Error: read (symtab)\\n\");\n\t\treturn false;\n\t}\n\tst.cmd = r_read_ble32 (symt, be);\n\tst.cmdsize = r_read_ble32 (symt + 4, be);\n\tst.symoff = r_read_ble32 (symt + 8, be) + mo->symbols_off;\n\tst.nsyms = r_read_ble32 (symt + 12, be);\n\tst.stroff = r_read_ble32 (symt + 16, be) + mo->symbols_off;\n\tst.strsize = r_read_ble32 (symt + 20, be);\n\n\tmo->symtab = NULL;\n\tmo->nsymtab = 0;\n\tif (st.strsize > 0 && st.strsize < mo->size && st.nsyms > 0) {\n\t\tmo->nsymtab = st.nsyms;\n\t\tif (st.stroff >...",
+      "typeFullName": "<empty>",
+      "lineNumber": 7,
+      "order": 1,
+      "containedRef": "<empty>",
+      "_label": "UNKNOWN",
+      "columnNumber": 1,
+      "possibleTypes": [],
+      "argumentIndex": -1
+    }
+  ],
+  "edges": {
+    "AST": [
+      {
+        "src": 107374182400,
+        "dst": 111669149696,
+        "label": "AST"
+      },
+      {
+        "src": 107374182400,
+        "dst": 115964116992,
+        "label": "AST"
+      },
+      {
+        "src": 107374182400,
+        "dst": 111669149697,
+        "label": "AST"
+      },
+      {
+        "src": 107374182400,
+        "dst": 115964116993,
+        "label": "AST"
+      },
+      {
+        "src": 107374182400,
+        "dst": 25769803776,
+        "label": "AST"
+      },
+      {
+        "src": 107374182400,
+        "dst": 128849018880,
+        "label": "AST"
+      },
+      {
+        "src": 107374182400,
+        "dst": 124554051584,
+        "label": "AST"
+      },
+      {
+        "src": 25769803776,
+        "dst": 94489280514,
+        "label": "AST"
+      },
+      {
+        "src": 25769803776,
+        "dst": 94489280515,
+        "label": "AST"
+      },
+      {
+        "src": 25769803776,
+        "dst": 94489280512,
+        "label": "AST"
+      },
+      {
+        "src": 25769803776,
+        "dst": 30064771072,
+        "label": "AST"
+      },
+      {
+        "src": 25769803776,
+        "dst": 94489280513,
+        "label": "AST"
+      },
+      {
+        "src": 25769803776,
+        "dst": 30064771073,
+        "label": "AST"
+      },
+      {
+        "src": 25769803776,
+        "dst": 47244640256,
+        "label": "AST"
+      },
+      {
+        "src": 25769803776,
+        "dst": 141733920769,
+        "label": "AST"
+      },
+      {
+        "src": 30064771072,
+        "dst": 68719476736,
+        "label": "AST"
+      },
+      {
+        "src": 30064771072,
+        "dst": 68719476737,
+        "label": "AST"
+      },
+      {
+        "src": 30064771073,
+        "dst": 30064771074,
+        "label": "AST"
+      },
+      {
+        "src": 30064771073,
+        "dst": 30064771075,
+        "label": "AST"
+      },
+      {
+        "src": 30064771074,
+        "dst": 68719476738,
+        "label": "AST"
+      },
+      {
+        "src": 30064771075,
+        "dst": 176093659136,
+        "label": "AST"
+      },
+      {
+        "src": 30064771075,
+        "dst": 30064771076,
+        "label": "AST"
+      },
+      {
+        "src": 30064771076,
+        "dst": 30064771077,
+        "label": "AST"
+      },
+      {
+        "src": 30064771076,
+        "dst": 30064771078,
+        "label": "AST"
+      },
+      {
+        "src": 30064771076,
+        "dst": 30064771080,
+        "label": "AST"
+      },
+      {
+        "src": 30064771076,
+        "dst": 30064771081,
+        "label": "AST"
+      },
+      {
+        "src": 30064771077,
+        "dst": 68719476739,
+        "label": "AST"
+      },
+      {
+        "src": 30064771078,
+        "dst": 68719476740,
+        "label": "AST"
+      },
+      {
+        "src": 30064771078,
+        "dst": 30064771079,
+        "label": "AST"
+      },
+      {
+        "src": 30064771079,
+        "dst": 68719476741,
+        "label": "AST"
+      },
+      {
+        "src": 30064771080,
+        "dst": 68719476742,
+        "label": "AST"
+      },
+      {
+        "src": 30064771081,
+        "dst": 68719476743,
+        "label": "AST"
+      },
+      {
+        "src": 47244640256,
+        "dst": 68719476744,
+        "label": "AST"
+      },
+      {
+        "src": 47244640256,
+        "dst": 25769803777,
+        "label": "AST"
+      },
+      {
+        "src": 25769803777,
+        "dst": 30064771082,
+        "label": "AST"
+      },
+      {
+        "src": 25769803777,
+        "dst": 30064771083,
+        "label": "AST"
+      },
+      {
+        "src": 25769803777,
+        "dst": 141733920768,
+        "label": "AST"
+      },
+      {
+        "src": 30064771082,
+        "dst": 90194313216,
+        "label": "AST"
+      },
+      {
+        "src": 30064771082,
+        "dst": 68719476745,
+        "label": "AST"
+      },
+      {
+        "src": 30064771083,
+        "dst": 68719476746,
+        "label": "AST"
+      },
+      {
+        "src": 141733920768,
+        "dst": 68719476747,
+        "label": "AST"
+      },
+      {
+        "src": 141733920769,
+        "dst": 68719476748,
+        "label": "AST"
+      },
+      {
+        "src": 107374182401,
+        "dst": 107374182400,
+        "label": "AST"
+      },
+      {
+        "src": 107374182401,
+        "dst": 25769803778,
+        "label": "AST"
+      },
+      {
+        "src": 107374182401,
+        "dst": 124554051585,
+        "label": "AST"
+      },
+      {
+        "src": 25769803778,
+        "dst": 120259084288,
+        "label": "AST"
+      },
+      {
+        "src": 107374182402,
+        "dst": 25769803779,
+        "label": "AST"
+      },
+      {
+        "src": 107374182402,
+        "dst": 124554051586,
+        "label": "AST"
+      },
+      {
+        "src": 25769803779,
+        "dst": 180388626432,
+        "label": "AST"
+      },
+      {
+        "src": 107374182403,
+        "dst": 111669149698,
+        "label": "AST"
+      },
+      {
+        "src": 107374182403,
+        "dst": 115964116994,
+        "label": "AST"
+      },
+      {
+        "src": 107374182403,
+        "dst": 25769803780,
+        "label": "AST"
+      },
+      {
+        "src": 107374182403,
+        "dst": 128849018881,
+        "label": "AST"
+      },
+      {
+        "src": 107374182403,
+        "dst": 124554051587,
+        "label": "AST"
+      },
+      {
+        "src": 25769803780,
+        "dst": 141733920770,
+        "label": "AST"
+      },
+      {
+        "src": 141733920770,
+        "dst": 68719476749,
+        "label": "AST"
+      },
+      {
+        "src": 107374182404,
+        "dst": 107374182403,
+        "label": "AST"
+      },
+      {
+        "src": 107374182404,
+        "dst": 25769803781,
+        "label": "AST"
+      },
+      {
+        "src": 107374182404,
+        "dst": 124554051588,
+        "label": "AST"
+      },
+      {
+        "src": 25769803781,
+        "dst": 120259084289,
+        "label": "AST"
+      },
+      {
+        "src": 107374182405,
+        "dst": 111669149699,
+        "label": "AST"
+      },
+      {
+        "src": 107374182405,
+        "dst": 115964116995,
+        "label": "AST"
+      },
+      {
+        "src": 107374182405,
+        "dst": 25769803782,
+        "label": "AST"
+      },
+      {
+        "src": 107374182405,
+        "dst": 128849018882,
+        "label": "AST"
+      },
+      {
+        "src": 107374182405,
+        "dst": 124554051589,
+        "label": "AST"
+      },
+      {
+        "src": 25769803782,
+        "dst": 94489280516,
+        "label": "AST"
+      },
+      {
+        "src": 25769803782,
+        "dst": 94489280517,
+        "label": "AST"
+      },
+      {
+        "src": 25769803782,
+        "dst": 47244640257,
+        "label": "AST"
+      },
+      {
+        "src": 25769803782,
+        "dst": 47244640258,
+        "label": "AST"
+      },
+      {
+        "src": 25769803782,
+        "dst": 47244640259,
+        "label": "AST"
+      },
+      {
+        "src": 25769803782,
+        "dst": 47244640260,
+        "label": "AST"
+      },
+      {
+        "src": 25769803782,
+        "dst": 141733920775,
+        "label": "AST"
+      },
+      {
+        "src": 47244640257,
+        "dst": 30064771084,
+        "label": "AST"
+      },
+      {
+        "src": 47244640257,
+        "dst": 25769803783,
+        "label": "AST"
+      },
+      {
+        "src": 30064771084,
+        "dst": 30064771085,
+        "label": "AST"
+      },
+      {
+        "src": 30064771084,
+        "dst": 90194313217,
+        "label": "AST"
+      },
+      {
+        "src": 30064771085,
+        "dst": 68719476750,
+        "label": "AST"
+      },
+      {
+        "src": 30064771085,
+        "dst": 55834574848,
+        "label": "AST"
+      },
+      {
+        "src": 25769803783,
+        "dst": 141733920771,
+        "label": "AST"
+      },
+      {
+        "src": 141733920771,
+        "dst": 68719476751,
+        "label": "AST"
+      },
+      {
+        "src": 47244640258,
+        "dst": 30064771086,
+        "label": "AST"
+      },
+      {
+        "src": 47244640258,
+        "dst": 25769803784,
+        "label": "AST"
+      },
+      {
+        "src": 30064771086,
+        "dst": 30064771087,
+        "label": "AST"
+      },
+      {
+        "src": 30064771086,
+        "dst": 90194313218,
+        "label": "AST"
+      },
+      {
+        "src": 30064771087,
+        "dst": 68719476752,
+        "label": "AST"
+      },
+      {
+        "src": 30064771087,
+        "dst": 55834574849,
+        "label": "AST"
+      },
+      {
+        "src": 25769803784,
+        "dst": 141733920772,
+        "label": "AST"
+      },
+      {
+        "src": 141733920772,
+        "dst": 68719476753,
+        "label": "AST"
+      },
+      {
+        "src": 47244640259,
+        "dst": 30064771088,
+        "label": "AST"
+      },
+      {
+        "src": 47244640259,
+        "dst": 25769803785,
+        "label": "AST"
+      },
+      {
+        "src": 30064771088,
+        "dst": 30064771089,
+        "label": "AST"
+      },
+      {
+        "src": 30064771088,
+        "dst": 90194313219,
+        "label": "AST"
+      },
+      {
+        "src": 30064771089,
+        "dst": 68719476754,
+        "label": "AST"
+      },
+      {
+        "src": 30064771089,
+        "dst": 55834574850,
+        "label": "AST"
+      },
+      {
+        "src": 25769803785,
+        "dst": 141733920773,
+        "label": "AST"
+      },
+      {
+        "src": 141733920773,
+        "dst": 68719476755,
+        "label": "AST"
+      },
+      {
+        "src": 47244640260,
+        "dst": 30064771090,
+        "label": "AST"
+      },
+      {
+        "src": 47244640260,
+        "dst": 25769803786,
+        "label": "AST"
+      },
+      {
+        "src": 30064771090,
+        "dst": 30064771091,
+        "label": "AST"
+      },
+      {
+        "src": 30064771090,
+        "dst": 90194313220,
+        "label": "AST"
+      },
+      {
+        "src": 30064771091,
+        "dst": 68719476756,
+        "label": "AST"
+      },
+      {
+        "src": 30064771091,
+        "dst": 55834574851,
+        "label": "AST"
+      },
+      {
+        "src": 25769803786,
+        "dst": 141733920774,
+        "label": "AST"
+      },
+      {
+        "src": 141733920774,
+        "dst": 68719476757,
+        "label": "AST"
+      },
+      {
+        "src": 141733920775,
+        "dst": 68719476758,
+        "label": "AST"
+      },
+      {
+        "src": 107374182406,
+        "dst": 107374182405,
+        "label": "AST"
+      },
+      {
+        "src": 107374182406,
+        "dst": 25769803787,
+        "label": "AST"
+      },
+      {
+        "src": 107374182406,
+        "dst": 124554051590,
+        "label": "AST"
+      },
+      {
+        "src": 25769803787,
+        "dst": 120259084290,
+        "label": "AST"
+      },
+      {
+        "src": 107374182407,
+        "dst": 25769803788,
+        "label": "AST"
+      },
+      {
+        "src": 107374182407,
+        "dst": 124554051591,
+        "label": "AST"
+      },
+      {
+        "src": 25769803788,
+        "dst": 180388626433,
+        "label": "AST"
+      },
+      {
+        "src": 107374182408,
+        "dst": 25769803789,
+        "label": "AST"
+      },
+      {
+        "src": 107374182408,
+        "dst": 124554051592,
+        "label": "AST"
+      },
+      {
+        "src": 25769803789,
+        "dst": 180388626434,
+        "label": "AST"
+      },
+      {
+        "src": 25769803789,
+        "dst": 180388626435,
+        "label": "AST"
+      },
+      {
+        "src": 107374182409,
+        "dst": 25769803790,
+        "label": "AST"
+      },
+      {
+        "src": 107374182409,
+        "dst": 124554051593,
+        "label": "AST"
+      },
+      {
+        "src": 25769803790,
+        "dst": 180388626436,
+        "label": "AST"
+      },
+      {
+        "src": 25769803790,
+        "dst": 180388626437,
+        "label": "AST"
+      },
+      {
+        "src": 107374182410,
+        "dst": 25769803791,
+        "label": "AST"
+      },
+      {
+        "src": 107374182410,
+        "dst": 124554051594,
+        "label": "AST"
+      },
+      {
+        "src": 25769803791,
+        "dst": 180388626438,
+        "label": "AST"
+      },
+      {
+        "src": 107374182411,
+        "dst": 25769803792,
+        "label": "AST"
+      },
+      {
+        "src": 107374182411,
+        "dst": 124554051595,
+        "label": "AST"
+      },
+      {
+        "src": 107374182412,
+        "dst": 111669149700,
+        "label": "AST"
+      },
+      {
+        "src": 107374182412,
+        "dst": 115964116996,
+        "label": "AST"
+      },
+      {
+        "src": 107374182412,
+        "dst": 25769803793,
+        "label": "AST"
+      },
+      {
+        "src": 107374182412,
+        "dst": 124554051596,
+        "label": "AST"
+      },
+      {
+        "src": 107374182413,
+        "dst": 111669149701,
+        "label": "AST"
+      },
+      {
+        "src": 107374182413,
+        "dst": 25769803794,
+        "label": "AST"
+      },
+      {
+        "src": 107374182413,
+        "dst": 115964116997,
+        "label": "AST"
+      },
+      {
+        "src": 107374182413,
+        "dst": 124554051597,
+        "label": "AST"
+      },
+      {
+        "src": 107374182414,
+        "dst": 111669149702,
+        "label": "AST"
+      },
+      {
+        "src": 107374182414,
+        "dst": 25769803795,
+        "label": "AST"
+      },
+      {
+        "src": 107374182414,
+        "dst": 115964116998,
+        "label": "AST"
+      },
+      {
+        "src": 107374182414,
+        "dst": 111669149703,
+        "label": "AST"
+      },
+      {
+        "src": 107374182414,
+        "dst": 124554051598,
+        "label": "AST"
+      },
+      {
+        "src": 107374182414,
+        "dst": 115964116999,
+        "label": "AST"
+      },
+      {
+        "src": 107374182415,
+        "dst": 111669149704,
+        "label": "AST"
+      },
+      {
+        "src": 107374182415,
+        "dst": 25769803796,
+        "label": "AST"
+      },
+      {
+        "src": 107374182415,
+        "dst": 115964117000,
+        "label": "AST"
+      },
+      {
+        "src": 107374182415,
+        "dst": 124554051599,
+        "label": "AST"
+      },
+      {
+        "src": 107374182416,
+        "dst": 111669149705,
+        "label": "AST"
+      },
+      {
+        "src": 107374182416,
+        "dst": 25769803797,
+        "label": "AST"
+      },
+      {
+        "src": 107374182416,
+        "dst": 115964117001,
+        "label": "AST"
+      },
+      {
+        "src": 107374182416,
+        "dst": 111669149706,
+        "label": "AST"
+      },
+      {
+        "src": 107374182416,
+        "dst": 124554051600,
+        "label": "AST"
+      },
+      {
+        "src": 107374182416,
+        "dst": 115964117002,
+        "label": "AST"
+      },
+      {
+        "src": 107374182417,
+        "dst": 111669149707,
+        "label": "AST"
+      },
+      {
+        "src": 107374182417,
+        "dst": 25769803798,
+        "label": "AST"
+      },
+      {
+        "src": 107374182417,
+        "dst": 115964117003,
+        "label": "AST"
+      },
+      {
+        "src": 107374182417,
+        "dst": 111669149708,
+        "label": "AST"
+      },
+      {
+        "src": 107374182417,
+        "dst": 124554051601,
+        "label": "AST"
+      },
+      {
+        "src": 107374182417,
+        "dst": 115964117004,
+        "label": "AST"
+      },
+      {
+        "src": 107374182418,
+        "dst": 111669149709,
+        "label": "AST"
+      },
+      {
+        "src": 107374182418,
+        "dst": 25769803799,
+        "label": "AST"
+      },
+      {
+        "src": 107374182418,
+        "dst": 115964117005,
+        "label": "AST"
+      },
+      {
+        "src": 107374182418,
+        "dst": 111669149710,
+        "label": "AST"
+      },
+      {
+        "src": 107374182418,
+        "dst": 124554051602,
+        "label": "AST"
+      },
+      {
+        "src": 107374182418,
+        "dst": 115964117006,
+        "label": "AST"
+      },
+      {
+        "src": 107374182419,
+        "dst": 111669149711,
+        "label": "AST"
+      },
+      {
+        "src": 107374182419,
+        "dst": 25769803800,
+        "label": "AST"
+      },
+      {
+        "src": 107374182419,
+        "dst": 115964117007,
+        "label": "AST"
+      },
+      {
+        "src": 107374182419,
+        "dst": 111669149712,
+        "label": "AST"
+      },
+      {
+        "src": 107374182419,
+        "dst": 124554051603,
+        "label": "AST"
+      },
+      {
+        "src": 107374182419,
+        "dst": 115964117008,
+        "label": "AST"
+      },
+      {
+        "src": 107374182420,
+        "dst": 111669149713,
+        "label": "AST"
+      },
+      {
+        "src": 107374182420,
+        "dst": 25769803801,
+        "label": "AST"
+      },
+      {
+        "src": 107374182420,
+        "dst": 115964117009,
+        "label": "AST"
+      },
+      {
+        "src": 107374182420,
+        "dst": 111669149714,
+        "label": "AST"
+      },
+      {
+        "src": 107374182420,
+        "dst": 124554051604,
+        "label": "AST"
+      },
+      {
+        "src": 107374182420,
+        "dst": 115964117010,
+        "label": "AST"
+      },
+      {
+        "src": 107374182421,
+        "dst": 111669149715,
+        "label": "AST"
+      },
+      {
+        "src": 107374182421,
+        "dst": 25769803802,
+        "label": "AST"
+      },
+      {
+        "src": 107374182421,
+        "dst": 115964117011,
+        "label": "AST"
+      },
+      {
+        "src": 107374182421,
+        "dst": 124554051605,
+        "label": "AST"
+      },
+      {
+        "src": 107374182422,
+        "dst": 111669149716,
+        "label": "AST"
+      },
+      {
+        "src": 107374182422,
+        "dst": 25769803803,
+        "label": "AST"
+      },
+      {
+        "src": 107374182422,
+        "dst": 115964117012,
+        "label": "AST"
+      },
+      {
+        "src": 107374182422,
+        "dst": 111669149717,
+        "label": "AST"
+      },
+      {
+        "src": 107374182422,
+        "dst": 124554051606,
+        "label": "AST"
+      },
+      {
+        "src": 107374182422,
+        "dst": 115964117013,
+        "label": "AST"
+      },
+      {
+        "src": 107374182422,
+        "dst": 111669149718,
+        "label": "AST"
+      },
+      {
+        "src": 107374182422,
+        "dst": 115964117014,
+        "label": "AST"
+      },
+      {
+        "src": 107374182422,
+        "dst": 111669149719,
+        "label": "AST"
+      },
+      {
+        "src": 107374182422,
+        "dst": 115964117015,
+        "label": "AST"
+      }
+    ],
+    "CFG": [
+      {
+        "src": 30064771072,
+        "dst": 68719476738,
+        "label": "CFG"
+      },
+      {
+        "src": 30064771073,
+        "dst": 68719476744,
+        "label": "CFG"
+      },
+      {
+        "src": 68719476736,
+        "dst": 68719476737,
+        "label": "CFG"
+      },
+      {
+        "src": 68719476737,
+        "dst": 30064771072,
+        "label": "CFG"
+      },
+      {
+        "src": 30064771074,
+        "dst": 176093659136,
+        "label": "CFG"
+      },
+      {
+        "src": 30064771075,
+        "dst": 30064771073,
+        "label": "CFG"
+      },
+      {
+        "src": 68719476744,
+        "dst": 90194313216,
+        "label": "CFG"
+      },
+      {
+        "src": 68719476744,
+        "dst": 68719476748,
+        "label": "CFG"
+      },
+      {
+        "src": 68719476748,
+        "dst": 141733920769,
+        "label": "CFG"
+      },
+      {
+        "src": 68719476738,
+        "dst": 30064771074,
+        "label": "CFG"
+      },
+      {
+        "src": 176093659136,
+        "dst": 68719476739,
+        "label": "CFG"
+      },
+      {
+        "src": 30064771076,
+        "dst": 30064771075,
+        "label": "CFG"
+      },
+      {
+        "src": 30064771082,
+        "dst": 68719476746,
+        "label": "CFG"
+      },
+      {
+        "src": 30064771083,
+        "dst": 68719476747,
+        "label": "CFG"
+      },
+      {
+        "src": 30064771077,
+        "dst": 68719476740,
+        "label": "CFG"
+      },
+      {
+        "src": 30064771078,
+        "dst": 68719476742,
+        "label": "CFG"
+      },
+      {
+        "src": 30064771080,
+        "dst": 68719476743,
+        "label": "CFG"
+      },
+      {
+        "src": 30064771081,
+        "dst": 30064771076,
+        "label": "CFG"
+      },
+      {
+        "src": 90194313216,
+        "dst": 68719476745,
+        "label": "CFG"
+      },
+      {
+        "src": 68719476745,
+        "dst": 30064771082,
+        "label": "CFG"
+      },
+      {
+        "src": 68719476746,
+        "dst": 30064771083,
+        "label": "CFG"
+      },
+      {
+        "src": 68719476747,
+        "dst": 141733920768,
+        "label": "CFG"
+      },
+      {
+        "src": 68719476739,
+        "dst": 30064771077,
+        "label": "CFG"
+      },
+      {
+        "src": 68719476740,
+        "dst": 68719476741,
+        "label": "CFG"
+      },
+      {
+        "src": 30064771079,
+        "dst": 30064771078,
+        "label": "CFG"
+      },
+      {
+        "src": 68719476742,
+        "dst": 30064771080,
+        "label": "CFG"
+      },
+      {
+        "src": 68719476743,
+        "dst": 30064771081,
+        "label": "CFG"
+      },
+      {
+        "src": 68719476741,
+        "dst": 30064771079,
+        "label": "CFG"
+      },
+      {
+        "src": 107374182400,
+        "dst": 68719476736,
+        "label": "CFG"
+      },
+      {
+        "src": 68719476749,
+        "dst": 141733920770,
+        "label": "CFG"
+      },
+      {
+        "src": 107374182403,
+        "dst": 68719476749,
+        "label": "CFG"
+      },
+      {
+        "src": 30064771084,
+        "dst": 68719476751,
+        "label": "CFG"
+      },
+      {
+        "src": 30064771084,
+        "dst": 68719476752,
+        "label": "CFG"
+      },
+      {
+        "src": 30064771086,
+        "dst": 68719476753,
+        "label": "CFG"
+      },
+      {
+        "src": 30064771086,
+        "dst": 68719476754,
+        "label": "CFG"
+      },
+      {
+        "src": 30064771088,
+        "dst": 68719476755,
+        "label": "CFG"
+      },
+      {
+        "src": 30064771088,
+        "dst": 68719476756,
+        "label": "CFG"
+      },
+      {
+        "src": 30064771090,
+        "dst": 68719476757,
+        "label": "CFG"
+      },
+      {
+        "src": 30064771090,
+        "dst": 68719476758,
+        "label": "CFG"
+      },
+      {
+        "src": 68719476758,
+        "dst": 141733920775,
+        "label": "CFG"
+      },
+      {
+        "src": 30064771085,
+        "dst": 90194313217,
+        "label": "CFG"
+      },
+      {
+        "src": 90194313217,
+        "dst": 30064771084,
+        "label": "CFG"
+      },
+      {
+        "src": 30064771087,
+        "dst": 90194313218,
+        "label": "CFG"
+      },
+      {
+        "src": 90194313218,
+        "dst": 30064771086,
+        "label": "CFG"
+      },
+      {
+        "src": 30064771089,
+        "dst": 90194313219,
+        "label": "CFG"
+      },
+      {
+        "src": 90194313219,
+        "dst": 30064771088,
+        "label": "CFG"
+      },
+      {
+        "src": 30064771091,
+        "dst": 90194313220,
+        "label": "CFG"
+      },
+      {
+        "src": 90194313220,
+        "dst": 30064771090,
+        "label": "CFG"
+      },
+      {
+        "src": 68719476750,
+        "dst": 55834574848,
+        "label": "CFG"
+      },
+      {
+        "src": 55834574848,
+        "dst": 30064771085,
+        "label": "CFG"
+      },
+      {
+        "src": 68719476751,
+        "dst": 141733920771,
+        "label": "CFG"
+      },
+      {
+        "src": 68719476752,
+        "dst": 55834574849,
+        "label": "CFG"
+      },
+      {
+        "src": 55834574849,
+        "dst": 30064771087,
+        "label": "CFG"
+      },
+      {
+        "src": 68719476753,
+        "dst": 141733920772,
+        "label": "CFG"
+      },
+      {
+        "src": 68719476754,
+        "dst": 55834574850,
+        "label": "CFG"
+      },
+      {
+        "src": 55834574850,
+        "dst": 30064771089,
+        "label": "CFG"
+      },
+      {
+        "src": 68719476755,
+        "dst": 141733920773,
+        "label": "CFG"
+      },
+      {
+        "src": 68719476756,
+        "dst": 55834574851,
+        "label": "CFG"
+      },
+      {
+        "src": 55834574851,
+        "dst": 30064771091,
+        "label": "CFG"
+      },
+      {
+        "src": 68719476757,
+        "dst": 141733920774,
+        "label": "CFG"
+      },
+      {
+        "src": 107374182405,
+        "dst": 68719476750,
+        "label": "CFG"
+      },
+      {
+        "src": 180388626434,
+        "dst": 180388626435,
+        "label": "CFG"
+      },
+      {
+        "src": 180388626436,
+        "dst": 180388626437,
+        "label": "CFG"
+      }
+    ],
+    "DFG": [
+      {
+        "src": 30064771072,
+        "dst": 30064771073,
+        "label": "DFG"
+      },
+      {
+        "src": 30064771072,
+        "dst": 30064771075,
+        "label": "DFG"
+      },
+      {
+        "src": 30064771072,
+        "dst": 68719476744,
+        "label": "DFG"
+      },
+      {
+        "src": 30064771072,
+        "dst": 30064771076,
+        "label": "DFG"
+      },
+      {
+        "src": 30064771072,
+        "dst": 30064771082,
+        "label": "DFG"
+      },
+      {
+        "src": 30064771072,
+        "dst": 30064771083,
+        "label": "DFG"
+      },
+      {
+        "src": 30064771072,
+        "dst": 30064771081,
+        "label": "DFG"
+      },
+      {
+        "src": 30064771072,
+        "dst": 68719476745,
+        "label": "DFG"
+      },
+      {
+        "src": 30064771072,
+        "dst": 68719476746,
+        "label": "DFG"
+      },
+      {
+        "src": 30064771072,
+        "dst": 68719476743,
+        "label": "DFG"
+      }
+    ],
+    "CALL": [
+      {
+        "src": 30064771072,
+        "dst": 107374182419,
+        "label": "CALL"
+      },
+      {
+        "src": 30064771073,
+        "dst": 107374182419,
+        "label": "CALL"
+      },
+      {
+        "src": 30064771074,
+        "dst": 107374182421,
+        "label": "CALL"
+      },
+      {
+        "src": 30064771075,
+        "dst": 107374182418,
+        "label": "CALL"
+      },
+      {
+        "src": 30064771076,
+        "dst": 107374182422,
+        "label": "CALL"
+      },
+      {
+        "src": 30064771077,
+        "dst": 107374182421,
+        "label": "CALL"
+      },
+      {
+        "src": 30064771078,
+        "dst": 107374182420,
+        "label": "CALL"
+      },
+      {
+        "src": 30064771079,
+        "dst": 107374182421,
+        "label": "CALL"
+      },
+      {
+        "src": 30064771080,
+        "dst": 107374182415,
+        "label": "CALL"
+      },
+      {
+        "src": 30064771081,
+        "dst": 107374182415,
+        "label": "CALL"
+      },
+      {
+        "src": 30064771082,
+        "dst": 107374182414,
+        "label": "CALL"
+      },
+      {
+        "src": 30064771083,
+        "dst": 107374182413,
+        "label": "CALL"
+      },
+      {
+        "src": 30064771084,
+        "dst": 107374182416,
+        "label": "CALL"
+      },
+      {
+        "src": 30064771085,
+        "dst": 107374182417,
+        "label": "CALL"
+      },
+      {
+        "src": 30064771086,
+        "dst": 107374182416,
+        "label": "CALL"
+      },
+      {
+        "src": 30064771087,
+        "dst": 107374182417,
+        "label": "CALL"
+      },
+      {
+        "src": 30064771088,
+        "dst": 107374182416,
+        "label": "CALL"
+      },
+      {
+        "src": 30064771089,
+        "dst": 107374182417,
+        "label": "CALL"
+      },
+      {
+        "src": 30064771090,
+        "dst": 107374182416,
+        "label": "CALL"
+      },
+      {
+        "src": 30064771091,
+        "dst": 107374182417,
+        "label": "CALL"
+      }
+    ],
+    "ARG2PARAM": [
+      {
+        "src": 68719476736,
+        "dst": 111669149711,
+        "label": "ARG2PARAM"
+      },
+      {
+        "src": 68719476737,
+        "dst": 111669149712,
+        "label": "ARG2PARAM"
+      },
+      {
+        "src": 30064771074,
+        "dst": 111669149711,
+        "label": "ARG2PARAM"
+      },
+      {
+        "src": 30064771075,
+        "dst": 111669149712,
+        "label": "ARG2PARAM"
+      },
+      {
+        "src": 68719476738,
+        "dst": 111669149715,
+        "label": "ARG2PARAM"
+      },
+      {
+        "src": 176093659136,
+        "dst": 111669149709,
+        "label": "ARG2PARAM"
+      },
+      {
+        "src": 30064771076,
+        "dst": 111669149710,
+        "label": "ARG2PARAM"
+      },
+      {
+        "src": 30064771077,
+        "dst": 111669149716,
+        "label": "ARG2PARAM"
+      },
+      {
+        "src": 30064771078,
+        "dst": 111669149717,
+        "label": "ARG2PARAM"
+      },
+      {
+        "src": 30064771080,
+        "dst": 111669149718,
+        "label": "ARG2PARAM"
+      },
+      {
+        "src": 30064771081,
+        "dst": 111669149719,
+        "label": "ARG2PARAM"
+      },
+      {
+        "src": 68719476739,
+        "dst": 111669149715,
+        "label": "ARG2PARAM"
+      },
+      {
+        "src": 68719476740,
+        "dst": 111669149713,
+        "label": "ARG2PARAM"
+      },
+      {
+        "src": 30064771079,
+        "dst": 111669149714,
+        "label": "ARG2PARAM"
+      },
+      {
+        "src": 68719476741,
+        "dst": 111669149715,
+        "label": "ARG2PARAM"
+      },
+      {
+        "src": 68719476742,
+        "dst": 111669149704,
+        "label": "ARG2PARAM"
+      },
+      {
+        "src": 68719476743,
+        "dst": 111669149704,
+        "label": "ARG2PARAM"
+      },
+      {
+        "src": 90194313216,
+        "dst": 111669149702,
+        "label": "ARG2PARAM"
+      },
+      {
+        "src": 68719476745,
+        "dst": 111669149703,
+        "label": "ARG2PARAM"
+      },
+      {
+        "src": 68719476746,
+        "dst": 111669149701,
+        "label": "ARG2PARAM"
+      },
+      {
+        "src": 30064771085,
+        "dst": 111669149705,
+        "label": "ARG2PARAM"
+      },
+      {
+        "src": 90194313217,
+        "dst": 111669149706,
+        "label": "ARG2PARAM"
+      },
+      {
+        "src": 68719476750,
+        "dst": 111669149707,
+        "label": "ARG2PARAM"
+      },
+      {
+        "src": 55834574848,
+        "dst": 111669149708,
+        "label": "ARG2PARAM"
+      },
+      {
+        "src": 30064771087,
+        "dst": 111669149705,
+        "label": "ARG2PARAM"
+      },
+      {
+        "src": 90194313218,
+        "dst": 111669149706,
+        "label": "ARG2PARAM"
+      },
+      {
+        "src": 68719476752,
+        "dst": 111669149707,
+        "label": "ARG2PARAM"
+      },
+      {
+        "src": 55834574849,
+        "dst": 111669149708,
+        "label": "ARG2PARAM"
+      },
+      {
+        "src": 30064771089,
+        "dst": 111669149705,
+        "label": "ARG2PARAM"
+      },
+      {
+        "src": 90194313219,
+        "dst": 111669149706,
+        "label": "ARG2PARAM"
+      },
+      {
+        "src": 68719476754,
+        "dst": 111669149707,
+        "label": "ARG2PARAM"
+      },
+      {
+        "src": 55834574850,
+        "dst": 111669149708,
+        "label": "ARG2PARAM"
+      },
+      {
+        "src": 30064771091,
+        "dst": 111669149705,
+        "label": "ARG2PARAM"
+      },
+      {
+        "src": 90194313220,
+        "dst": 111669149706,
+        "label": "ARG2PARAM"
+      },
+      {
+        "src": 68719476756,
+        "dst": 111669149707,
+        "label": "ARG2PARAM"
+      },
+      {
+        "src": 55834574851,
+        "dst": 111669149708,
+        "label": "ARG2PARAM"
+      }
+    ],
+    "RET2CALL": [
+      {
+        "src": 124554051603,
+        "dst": 30064771072,
+        "label": "RET2CALL"
+      },
+      {
+        "src": 124554051603,
+        "dst": 30064771073,
+        "label": "RET2CALL"
+      },
+      {
+        "src": 124554051605,
+        "dst": 30064771074,
+        "label": "RET2CALL"
+      },
+      {
+        "src": 124554051602,
+        "dst": 30064771075,
+        "label": "RET2CALL"
+      },
+      {
+        "src": 124554051606,
+        "dst": 30064771076,
+        "label": "RET2CALL"
+      },
+      {
+        "src": 124554051605,
+        "dst": 30064771077,
+        "label": "RET2CALL"
+      },
+      {
+        "src": 124554051604,
+        "dst": 30064771078,
+        "label": "RET2CALL"
+      },
+      {
+        "src": 124554051605,
+        "dst": 30064771079,
+        "label": "RET2CALL"
+      },
+      {
+        "src": 124554051599,
+        "dst": 30064771080,
+        "label": "RET2CALL"
+      },
+      {
+        "src": 124554051599,
+        "dst": 30064771081,
+        "label": "RET2CALL"
+      },
+      {
+        "src": 124554051598,
+        "dst": 30064771082,
+        "label": "RET2CALL"
+      },
+      {
+        "src": 124554051597,
+        "dst": 30064771083,
+        "label": "RET2CALL"
+      },
+      {
+        "src": 124554051600,
+        "dst": 30064771084,
+        "label": "RET2CALL"
+      },
+      {
+        "src": 124554051601,
+        "dst": 30064771085,
+        "label": "RET2CALL"
+      },
+      {
+        "src": 124554051600,
+        "dst": 30064771086,
+        "label": "RET2CALL"
+      },
+      {
+        "src": 124554051601,
+        "dst": 30064771087,
+        "label": "RET2CALL"
+      },
+      {
+        "src": 124554051600,
+        "dst": 30064771088,
+        "label": "RET2CALL"
+      },
+      {
+        "src": 124554051601,
+        "dst": 30064771089,
+        "label": "RET2CALL"
+      },
+      {
+        "src": 124554051600,
+        "dst": 30064771090,
+        "label": "RET2CALL"
+      },
+      {
+        "src": 124554051601,
+        "dst": 30064771091,
+        "label": "RET2CALL"
+      }
+    ],
+    "RET2LHS": [
+      {
+        "src": 124554051605,
+        "dst": 30064771074,
+        "label": "RET2LHS"
+      },
+      {
+        "src": 124554051602,
+        "dst": 30064771074,
+        "label": "RET2LHS"
+      }
+    ]
+  }
+}

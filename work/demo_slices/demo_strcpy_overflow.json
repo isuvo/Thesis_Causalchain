@@ -1,0 +1,11 @@
+﻿{
+  "line-contents": [
+    "char buf[16];",
+    "int r = recv(sock, tmp, 64, 0);",
+    "strcpy(buf, tmp);",
+    "process(buf);"
+  ],
+  "pdg_edges": [[1,2],[0,2],[2,3]],
+  "target": 1,
+  "meta": {"source_file": "demo_strcpy_overflow.c", "seed_local_index": 2}
+}

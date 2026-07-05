@@ -1,0 +1,52 @@
+idx,prob,file,line,label,code
+0,0.521978,app/main.c,2,Stmt,#include <stdio.h>
+1,0.509339,app/main.c,3,Stmt,#include <stdlib.h>
+2,0.496300,app/main.c,4,Stmt,#include <string.h>
+3,0.493529,app/main.c,6,Stmt,extern char* wrap_a(char* in);
+4,0.573345,app/main.c,7,Stmt,extern char* wrap_b(char* in);
+5,0.508166,app/main.c,8,Stmt,extern char* wrap_c(char* in);
+6,0.550438,app/main.c,9,Stmt,extern void run_system(char* cmd);
+7,0.463009,app/main.c,11,ROOT,"int main(int argc, char** argv) {"
+8,0.463313,app/main.c,12,Stmt,char buf[256];
+9,0.405436,app/main.c,13,ROOT,// ROOT: untrusted input (simulate reading from argv)
+10,0.500306,app/main.c,14,Stmt,if (argc > 1) {
+11,0.511800,app/main.c,15,ROOT,"strncpy(buf, argv[1], sizeof(buf)-1);"
+12,0.538004,app/main.c,16,Stmt,buf[sizeof(buf)-1] = '\0';
+13,0.588382,app/main.c,17,Stmt,char* p = wrap_a(buf);
+14,0.535079,app/main.c,18,Stmt,p = wrap_b(p);
+15,0.480057,app/main.c,19,Stmt,p = wrap_c(p);
+16,0.486686,app/main.c,20,Stmt,// final call: dangerous sink
+17,0.420604,app/main.c,21,Stmt,run_system(p);
+18,0.494946,app/main.c,22,Stmt,}
+19,0.532482,app/main.c,23,Stmt,return 0;
+20,0.510050,app/main.c,24,Stmt,}
+21,0.517804,lib/wrap.c,2,Stmt,#include <stdio.h>
+22,0.495651,lib/wrap.c,3,Stmt,#include <stdlib.h>
+23,0.463498,lib/wrap.c,4,Stmt,#include <string.h>
+24,0.539785,lib/wrap.c,6,Stmt,char tmp1[300];
+25,0.466468,lib/wrap.c,7,Stmt,char tmp2[300];
+26,0.531685,lib/wrap.c,8,Stmt,char tmp3[300];
+27,0.509905,lib/wrap.c,10,Stmt,char* wrap_a(char* in) {
+28,0.482454,lib/wrap.c,11,Stmt,// propagation #1 (DFG + CALL/ARG2PARAM)
+29,0.544587,lib/wrap.c,12,Stmt,"snprintf(tmp1, sizeof(tmp1), ""%s"", in);"
+30,0.591719,lib/wrap.c,13,Stmt,return tmp1;
+31,0.506341,lib/wrap.c,14,Stmt,}
+32,0.416044,lib/wrap.c,16,Stmt,char* wrap_b(char* in) {
+33,0.474057,lib/wrap.c,17,Stmt,// propagation #2
+34,0.548542,lib/wrap.c,18,Stmt,"strcat(tmp2, in);"
+35,0.526602,lib/wrap.c,19,Stmt,"strcat(tmp2, "" --verbose"");"
+36,0.590599,lib/wrap.c,20,Stmt,return tmp2;
+37,0.506660,lib/wrap.c,21,Stmt,}
+38,0.445986,lib/wrap.c,23,Stmt,char* wrap_c(char* in) {
+39,0.488915,lib/wrap.c,24,Stmt,// propagation #3
+40,0.535928,lib/wrap.c,25,Stmt,"sprintf(tmp3, ""%s %s"", in, ""--force"");"
+41,0.612478,lib/wrap.c,26,Stmt,return tmp3;
+42,0.481834,lib/wrap.c,27,Stmt,}
+43,0.525931,lib/sink.c,2,Stmt,#include <stdio.h>
+44,0.504273,lib/sink.c,3,Stmt,#include <stdlib.h>
+45,0.473312,lib/sink.c,4,Stmt,#include <string.h>
+46,0.489177,lib/sink.c,6,Stmt,void run_system(char* cmd) {
+47,0.518977,lib/sink.c,7,Stmt,// SINK: vulnerable external command execution
+48,0.487113,lib/sink.c,8,Stmt,// (intentionally no sanitization)
+49,0.407496,lib/sink.c,9,SINK,system(cmd);
+50,0.532587,lib/sink.c,10,Stmt,}

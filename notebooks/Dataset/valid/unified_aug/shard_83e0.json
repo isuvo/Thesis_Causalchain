@@ -1,0 +1,4635 @@
+{
+  "meta": {
+    "tool": "joern",
+    "source": "C:/Users/USER/Desktop/Thesis Research/Implementation/Thesis-causal-vul/work/src/valid/shard_83e0",
+    "n_nodes": 190,
+    "n_edges": {
+      "AST": 148,
+      "CFG": 93,
+      "DFG": 41
+    },
+    "dfg_status": "rd_intra_proc",
+    "cpg_augmented": true,
+    "added_edges": {
+      "CALL": 37,
+      "ARG2PARAM": 74,
+      "RET2CALL": 37,
+      "RET2LHS": 14
+    }
+  },
+  "nodes": [
+    {
+      "name": "RegisterTXTImage",
+      "_id": 21474836480,
+      "signature": "size_t(void)",
+      "methodFullName": "RegisterTXTImage",
+      "_label": "BINDING"
+    },
+    {
+      "dynamicTypeHintFullName": [],
+      "_id": 25769803776,
+      "code": "{\n  MagickInfo\n    *entry;\n\n  entry=AcquireMagickInfo(\"TXT\",\"SPARSE-COLOR\",\"Sparse Color\");\n  entry->encoder=(EncodeImageHandler *) WriteTXTImage;\n  entry->flags|=CoderRawSupportFlag;\n  entry->flags|=CoderEndianSupportFlag;\n  (void) RegisterMagickInfo(entry);\n  entry=AcquireMagickInfo(\"TXT\",\"TEXT\",\"Text\");\n  entry->decoder=(DecodeImageHandler *) ReadTEXTImage;\n  entry->format_type=ImplicitFormatType;\n  entry->flags|=CoderRawSupportFlag;\n  entry->flags|=CoderEndianSupportFlag;\n  (void) RegisterMagickInfo(entry);\n  entry=AcquireMagickInfo(\"TXT\",\"TXT\",\"Text\");\n  entry->decoder=(DecodeImageHandler *) ReadTXTImage;\n  entry->encoder=(EncodeImageHandler *) WriteTXTImage;\n  entry->magick=(IsImageFormatHandler *) IsTXT;\n  (void) RegisterMagickInfo(entry);\n  return(MagickImageCoderSignature);\n}",
+      "typeFullName": "void",
+      "lineNumber": 8,
+      "order": 2,
+      "_label": "BLOCK",
+      "columnNumber": 1,
+      "possibleTypes": [],
+      "argumentIndex": -1
+    },
+    {
+      "dynamicTypeHintFullName": [],
+      "_id": 25769803777,
+      "code": "<empty>",
+      "typeFullName": "ANY",
+      "lineNumber": 1,
+      "order": 1,
+      "_label": "BLOCK",
+      "columnNumber": 1,
+      "possibleTypes": [],
+      "argumentIndex": -1
+    },
+    {
+      "dynamicTypeHintFullName": [],
+      "_id": 25769803778,
+      "code": "<empty>",
+      "typeFullName": "ANY",
+      "order": 1,
+      "_label": "BLOCK",
+      "possibleTypes": [],
+      "argumentIndex": -1
+    },
+    {
+      "dynamicTypeHintFullName": [],
+      "_id": 25769803779,
+      "code": "<empty>",
+      "typeFullName": "ANY",
+      "order": 1,
+      "_label": "BLOCK",
+      "possibleTypes": [],
+      "argumentIndex": 1
+    },
+    {
+      "dynamicTypeHintFullName": [],
+      "_id": 25769803780,
+      "code": "<empty>",
+      "typeFullName": "ANY",
+      "order": 1,
+      "_label": "BLOCK",
+      "possibleTypes": [],
+      "argumentIndex": 1
+    },
+    {
+      "dynamicTypeHintFullName": [],
+      "_id": 25769803781,
+      "code": "<empty>",
+      "typeFullName": "ANY",
+      "order": 1,
+      "_label": "BLOCK",
+      "possibleTypes": [],
+      "argumentIndex": 1
+    },
+    {
+      "dynamicTypeHintFullName": [],
+      "_id": 25769803782,
+      "code": "<empty>",
+      "typeFullName": "ANY",
+      "order": 1,
+      "_label": "BLOCK",
+      "possibleTypes": [],
+      "argumentIndex": 1
+    },
+    {
+      "dynamicTypeHintFullName": [],
+      "_id": 25769803783,
+      "code": "<empty>",
+      "typeFullName": "ANY",
+      "order": 1,
+      "_label": "BLOCK",
+      "possibleTypes": [],
+      "argumentIndex": 1
+    },
+    {
+      "dynamicTypeHintFullName": [],
+      "_id": 25769803784,
+      "code": "<empty>",
+      "typeFullName": "ANY",
+      "order": 1,
+      "_label": "BLOCK",
+      "possibleTypes": [],
+      "argumentIndex": 1
+    },
+    {
+      "name": "<operator>.assignment",
+      "_id": 30064771072,
+      "signature": "",
+      "code": "entry=AcquireMagickInfo(\"TXT\",\"SPARSE-COLOR\",\"Sparse Color\")",
+      "typeFullName": "ANY",
+      "lineNumber": 12,
+      "order": 2,
+      "methodFullName": "<operator>.assignment",
+      "dynamicTypeHintFullName": [],
+      "dispatchType": "STATIC_DISPATCH",
+      "columnNumber": 3,
+      "_label": "CALL",
+      "possibleTypes": [],
+      "argumentIndex": -1
+    },
+    {
+      "name": "AcquireMagickInfo",
+      "_id": 30064771073,
+      "signature": "",
+      "code": "AcquireMagickInfo(\"TXT\",\"SPARSE-COLOR\",\"Sparse Color\")",
+      "typeFullName": "ANY",
+      "lineNumber": 12,
+      "order": 2,
+      "methodFullName": "AcquireMagickInfo",
+      "dynamicTypeHintFullName": [],
+      "dispatchType": "STATIC_DISPATCH",
+      "columnNumber": 9,
+      "_label": "CALL",
+      "possibleTypes": [],
+      "argumentIndex": 2
+    },
+    {
+      "name": "<operator>.assignment",
+      "_id": 30064771074,
+      "signature": "",
+      "code": "entry->encoder=(EncodeImageHandler *) WriteTXTImage",
+      "typeFullName": "ANY",
+      "lineNumber": 13,
+      "order": 3,
+      "methodFullName": "<operator>.assignment",
+      "dynamicTypeHintFullName": [],
+      "dispatchType": "STATIC_DISPATCH",
+      "columnNumber": 3,
+      "_label": "CALL",
+      "possibleTypes": [],
+      "argumentIndex": -1
+    },
+    {
+      "name": "<operator>.indirectFieldAccess",
+      "_id": 30064771075,
+      "signature": "",
+      "code": "entry->encoder",
+      "typeFullName": "ANY",
+      "lineNumber": 13,
+      "order": 1,
+      "methodFullName": "<operator>.indirectFieldAccess",
+      "dynamicTypeHintFullName": [],
+      "dispatchType": "STATIC_DISPATCH",
+      "columnNumber": 3,
+      "_label": "CALL",
+      "possibleTypes": [],
+      "argumentIndex": 1
+    },
+    {
+      "name": "<operator>.cast",
+      "_id": 30064771076,
+      "signature": "",
+      "code": "(EncodeImageHandler *) WriteTXTImage",
+      "typeFullName": "EncodeImageHandler",
+      "lineNumber": 13,
+      "order": 2,
+      "methodFullName": "<operator>.cast",
+      "dynamicTypeHintFullName": [],
+      "dispatchType": "STATIC_DISPATCH",
+      "columnNumber": 18,
+      "_label": "CALL",
+      "possibleTypes": [],
+      "argumentIndex": 2
+    },
+    {
+      "name": "<operators>.assignmentOr",
+      "_id": 30064771077,
+      "signature": "",
+      "code": "entry->flags|=CoderRawSupportFlag",
+      "typeFullName": "ANY",
+      "lineNumber": 14,
+      "order": 4,
+      "methodFullName": "<operators>.assignmentOr",
+      "dynamicTypeHintFullName": [],
+      "dispatchType": "STATIC_DISPATCH",
+      "columnNumber": 3,
+      "_label": "CALL",
+      "possibleTypes": [],
+      "argumentIndex": -1
+    },
+    {
+      "name": "<operator>.indirectFieldAccess",
+      "_id": 30064771078,
+      "signature": "",
+      "code": "entry->flags",
+      "typeFullName": "ANY",
+      "lineNumber": 14,
+      "order": 1,
+      "methodFullName": "<operator>.indirectFieldAccess",
+      "dynamicTypeHintFullName": [],
+      "dispatchType": "STATIC_DISPATCH",
+      "columnNumber": 3,
+      "_label": "CALL",
+      "possibleTypes": [],
+      "argumentIndex": 1
+    },
+    {
+      "name": "<operators>.assignmentOr",
+      "_id": 30064771079,
+      "signature": "",
+      "code": "entry->flags|=CoderEndianSupportFlag",
+      "typeFullName": "ANY",
+      "lineNumber": 15,
+      "order": 5,
+      "methodFullName": "<operators>.assignmentOr",
+      "dynamicTypeHintFullName": [],
+      "dispatchType": "STATIC_DISPATCH",
+      "columnNumber": 3,
+      "_label": "CALL",
+      "possibleTypes": [],
+      "argumentIndex": -1
+    },
+    {
+      "name": "<operator>.indirectFieldAccess",
+      "_id": 30064771080,
+      "signature": "",
+      "code": "entry->flags",
+      "typeFullName": "ANY",
+      "lineNumber": 15,
+      "order": 1,
+      "methodFullName": "<operator>.indirectFieldAccess",
+      "dynamicTypeHintFullName": [],
+      "dispatchType": "STATIC_DISPATCH",
+      "columnNumber": 3,
+      "_label": "CALL",
+      "possibleTypes": [],
+      "argumentIndex": 1
+    },
+    {
+      "name": "<operator>.cast",
+      "_id": 30064771081,
+      "signature": "",
+      "code": "(void) RegisterMagickInfo(entry)",
+      "typeFullName": "void",
+      "lineNumber": 16,
+      "order": 6,
+      "methodFullName": "<operator>.cast",
+      "dynamicTypeHintFullName": [],
+      "dispatchType": "STATIC_DISPATCH",
+      "columnNumber": 3,
+      "_label": "CALL",
+      "possibleTypes": [],
+      "argumentIndex": -1
+    },
+    {
+      "name": "RegisterMagickInfo",
+      "_id": 30064771082,
+      "signature": "",
+      "code": "RegisterMagickInfo(entry)",
+      "typeFullName": "ANY",
+      "lineNumber": 16,
+      "order": 2,
+      "methodFullName": "RegisterMagickInfo",
+      "dynamicTypeHintFullName": [],
+      "dispatchType": "STATIC_DISPATCH",
+      "columnNumber": 10,
+      "_label": "CALL",
+      "possibleTypes": [],
+      "argumentIndex": 2
+    },
+    {
+      "name": "<operator>.assignment",
+      "_id": 30064771083,
+      "signature": "",
+      "code": "entry=AcquireMagickInfo(\"TXT\",\"TEXT\",\"Text\")",
+      "typeFullName": "ANY",
+      "lineNumber": 17,
+      "order": 7,
+      "methodFullName": "<operator>.assignment",
+      "dynamicTypeHintFullName": [],
+      "dispatchType": "STATIC_DISPATCH",
+      "columnNumber": 3,
+      "_label": "CALL",
+      "possibleTypes": [],
+      "argumentIndex": -1
+    },
+    {
+      "name": "AcquireMagickInfo",
+      "_id": 30064771084,
+      "signature": "",
+      "code": "AcquireMagickInfo(\"TXT\",\"TEXT\",\"Text\")",
+      "typeFullName": "ANY",
+      "lineNumber": 17,
+      "order": 2,
+      "methodFullName": "AcquireMagickInfo",
+      "dynamicTypeHintFullName": [],
+      "dispatchType": "STATIC_DISPATCH",
+      "columnNumber": 9,
+      "_label": "CALL",
+      "possibleTypes": [],
+      "argumentIndex": 2
+    },
+    {
+      "name": "<operator>.assignment",
+      "_id": 30064771085,
+      "signature": "",
+      "code": "entry->decoder=(DecodeImageHandler *) ReadTEXTImage",
+      "typeFullName": "ANY",
+      "lineNumber": 18,
+      "order": 8,
+      "methodFullName": "<operator>.assignment",
+      "dynamicTypeHintFullName": [],
+      "dispatchType": "STATIC_DISPATCH",
+      "columnNumber": 3,
+      "_label": "CALL",
+      "possibleTypes": [],
+      "argumentIndex": -1
+    },
+    {
+      "name": "<operator>.indirectFieldAccess",
+      "_id": 30064771086,
+      "signature": "",
+      "code": "entry->decoder",
+      "typeFullName": "ANY",
+      "lineNumber": 18,
+      "order": 1,
+      "methodFullName": "<operator>.indirectFieldAccess",
+      "dynamicTypeHintFullName": [],
+      "dispatchType": "STATIC_DISPATCH",
+      "columnNumber": 3,
+      "_label": "CALL",
+      "possibleTypes": [],
+      "argumentIndex": 1
+    },
+    {
+      "name": "<operator>.cast",
+      "_id": 30064771087,
+      "signature": "",
+      "code": "(DecodeImageHandler *) ReadTEXTImage",
+      "typeFullName": "DecodeImageHandler",
+      "lineNumber": 18,
+      "order": 2,
+      "methodFullName": "<operator>.cast",
+      "dynamicTypeHintFullName": [],
+      "dispatchType": "STATIC_DISPATCH",
+      "columnNumber": 18,
+      "_label": "CALL",
+      "possibleTypes": [],
+      "argumentIndex": 2
+    },
+    {
+      "name": "<operator>.assignment",
+      "_id": 30064771088,
+      "signature": "",
+      "code": "entry->format_type=ImplicitFormatType",
+      "typeFullName": "ANY",
+      "lineNumber": 19,
+      "order": 9,
+      "methodFullName": "<operator>.assignment",
+      "dynamicTypeHintFullName": [],
+      "dispatchType": "STATIC_DISPATCH",
+      "columnNumber": 3,
+      "_label": "CALL",
+      "possibleTypes": [],
+      "argumentIndex": -1
+    },
+    {
+      "name": "<operator>.indirectFieldAccess",
+      "_id": 30064771089,
+      "signature": "",
+      "code": "entry->format_type",
+      "typeFullName": "ANY",
+      "lineNumber": 19,
+      "order": 1,
+      "methodFullName": "<operator>.indirectFieldAccess",
+      "dynamicTypeHintFullName": [],
+      "dispatchType": "STATIC_DISPATCH",
+      "columnNumber": 3,
+      "_label": "CALL",
+      "possibleTypes": [],
+      "argumentIndex": 1
+    },
+    {
+      "name": "<operators>.assignmentOr",
+      "_id": 30064771090,
+      "signature": "",
+      "code": "entry->flags|=CoderRawSupportFlag",
+      "typeFullName": "ANY",
+      "lineNumber": 20,
+      "order": 10,
+      "methodFullName": "<operators>.assignmentOr",
+      "dynamicTypeHintFullName": [],
+      "dispatchType": "STATIC_DISPATCH",
+      "columnNumber": 3,
+      "_label": "CALL",
+      "possibleTypes": [],
+      "argumentIndex": -1
+    },
+    {
+      "name": "<operator>.indirectFieldAccess",
+      "_id": 30064771091,
+      "signature": "",
+      "code": "entry->flags",
+      "typeFullName": "ANY",
+      "lineNumber": 20,
+      "order": 1,
+      "methodFullName": "<operator>.indirectFieldAccess",
+      "dynamicTypeHintFullName": [],
+      "dispatchType": "STATIC_DISPATCH",
+      "columnNumber": 3,
+      "_label": "CALL",
+      "possibleTypes": [],
+      "argumentIndex": 1
+    },
+    {
+      "name": "<operators>.assignmentOr",
+      "_id": 30064771092,
+      "signature": "",
+      "code": "entry->flags|=CoderEndianSupportFlag",
+      "typeFullName": "ANY",
+      "lineNumber": 21,
+      "order": 11,
+      "methodFullName": "<operators>.assignmentOr",
+      "dynamicTypeHintFullName": [],
+      "dispatchType": "STATIC_DISPATCH",
+      "columnNumber": 3,
+      "_label": "CALL",
+      "possibleTypes": [],
+      "argumentIndex": -1
+    },
+    {
+      "name": "<operator>.indirectFieldAccess",
+      "_id": 30064771093,
+      "signature": "",
+      "code": "entry->flags",
+      "typeFullName": "ANY",
+      "lineNumber": 21,
+      "order": 1,
+      "methodFullName": "<operator>.indirectFieldAccess",
+      "dynamicTypeHintFullName": [],
+      "dispatchType": "STATIC_DISPATCH",
+      "columnNumber": 3,
+      "_label": "CALL",
+      "possibleTypes": [],
+      "argumentIndex": 1
+    },
+    {
+      "name": "<operator>.cast",
+      "_id": 30064771094,
+      "signature": "",
+      "code": "(void) RegisterMagickInfo(entry)",
+      "typeFullName": "void",
+      "lineNumber": 22,
+      "order": 12,
+      "methodFullName": "<operator>.cast",
+      "dynamicTypeHintFullName": [],
+      "dispatchType": "STATIC_DISPATCH",
+      "columnNumber": 3,
+      "_label": "CALL",
+      "possibleTypes": [],
+      "argumentIndex": -1
+    },
+    {
+      "name": "RegisterMagickInfo",
+      "_id": 30064771095,
+      "signature": "",
+      "code": "RegisterMagickInfo(entry)",
+      "typeFullName": "ANY",
+      "lineNumber": 22,
+      "order": 2,
+      "methodFullName": "RegisterMagickInfo",
+      "dynamicTypeHintFullName": [],
+      "dispatchType": "STATIC_DISPATCH",
+      "columnNumber": 10,
+      "_label": "CALL",
+      "possibleTypes": [],
+      "argumentIndex": 2
+    },
+    {
+      "name": "<operator>.assignment",
+      "_id": 30064771096,
+      "signature": "",
+      "code": "entry=AcquireMagickInfo(\"TXT\",\"TXT\",\"Text\")",
+      "typeFullName": "ANY",
+      "lineNumber": 23,
+      "order": 13,
+      "methodFullName": "<operator>.assignment",
+      "dynamicTypeHintFullName": [],
+      "dispatchType": "STATIC_DISPATCH",
+      "columnNumber": 3,
+      "_label": "CALL",
+      "possibleTypes": [],
+      "argumentIndex": -1
+    },
+    {
+      "name": "AcquireMagickInfo",
+      "_id": 30064771097,
+      "signature": "",
+      "code": "AcquireMagickInfo(\"TXT\",\"TXT\",\"Text\")",
+      "typeFullName": "ANY",
+      "lineNumber": 23,
+      "order": 2,
+      "methodFullName": "AcquireMagickInfo",
+      "dynamicTypeHintFullName": [],
+      "dispatchType": "STATIC_DISPATCH",
+      "columnNumber": 9,
+      "_label": "CALL",
+      "possibleTypes": [],
+      "argumentIndex": 2
+    },
+    {
+      "name": "<operator>.assignment",
+      "_id": 30064771098,
+      "signature": "",
+      "code": "entry->decoder=(DecodeImageHandler *) ReadTXTImage",
+      "typeFullName": "ANY",
+      "lineNumber": 24,
+      "order": 14,
+      "methodFullName": "<operator>.assignment",
+      "dynamicTypeHintFullName": [],
+      "dispatchType": "STATIC_DISPATCH",
+      "columnNumber": 3,
+      "_label": "CALL",
+      "possibleTypes": [],
+      "argumentIndex": -1
+    },
+    {
+      "name": "<operator>.indirectFieldAccess",
+      "_id": 30064771099,
+      "signature": "",
+      "code": "entry->decoder",
+      "typeFullName": "ANY",
+      "lineNumber": 24,
+      "order": 1,
+      "methodFullName": "<operator>.indirectFieldAccess",
+      "dynamicTypeHintFullName": [],
+      "dispatchType": "STATIC_DISPATCH",
+      "columnNumber": 3,
+      "_label": "CALL",
+      "possibleTypes": [],
+      "argumentIndex": 1
+    },
+    {
+      "name": "<operator>.cast",
+      "_id": 30064771100,
+      "signature": "",
+      "code": "(DecodeImageHandler *) ReadTXTImage",
+      "typeFullName": "DecodeImageHandler",
+      "lineNumber": 24,
+      "order": 2,
+      "methodFullName": "<operator>.cast",
+      "dynamicTypeHintFullName": [],
+      "dispatchType": "STATIC_DISPATCH",
+      "columnNumber": 18,
+      "_label": "CALL",
+      "possibleTypes": [],
+      "argumentIndex": 2
+    },
+    {
+      "name": "<operator>.assignment",
+      "_id": 30064771101,
+      "signature": "",
+      "code": "entry->encoder=(EncodeImageHandler *) WriteTXTImage",
+      "typeFullName": "ANY",
+      "lineNumber": 25,
+      "order": 15,
+      "methodFullName": "<operator>.assignment",
+      "dynamicTypeHintFullName": [],
+      "dispatchType": "STATIC_DISPATCH",
+      "columnNumber": 3,
+      "_label": "CALL",
+      "possibleTypes": [],
+      "argumentIndex": -1
+    },
+    {
+      "name": "<operator>.indirectFieldAccess",
+      "_id": 30064771102,
+      "signature": "",
+      "code": "entry->encoder",
+      "typeFullName": "ANY",
+      "lineNumber": 25,
+      "order": 1,
+      "methodFullName": "<operator>.indirectFieldAccess",
+      "dynamicTypeHintFullName": [],
+      "dispatchType": "STATIC_DISPATCH",
+      "columnNumber": 3,
+      "_label": "CALL",
+      "possibleTypes": [],
+      "argumentIndex": 1
+    },
+    {
+      "name": "<operator>.cast",
+      "_id": 30064771103,
+      "signature": "",
+      "code": "(EncodeImageHandler *) WriteTXTImage",
+      "typeFullName": "EncodeImageHandler",
+      "lineNumber": 25,
+      "order": 2,
+      "methodFullName": "<operator>.cast",
+      "dynamicTypeHintFullName": [],
+      "dispatchType": "STATIC_DISPATCH",
+      "columnNumber": 18,
+      "_label": "CALL",
+      "possibleTypes": [],
+      "argumentIndex": 2
+    },
+    {
+      "name": "<operator>.assignment",
+      "_id": 30064771104,
+      "signature": "",
+      "code": "entry->magick=(IsImageFormatHandler *) IsTXT",
+      "typeFullName": "ANY",
+      "lineNumber": 26,
+      "order": 16,
+      "methodFullName": "<operator>.assignment",
+      "dynamicTypeHintFullName": [],
+      "dispatchType": "STATIC_DISPATCH",
+      "columnNumber": 3,
+      "_label": "CALL",
+      "possibleTypes": [],
+      "argumentIndex": -1
+    },
+    {
+      "name": "<operator>.indirectFieldAccess",
+      "_id": 30064771105,
+      "signature": "",
+      "code": "entry->magick",
+      "typeFullName": "ANY",
+      "lineNumber": 26,
+      "order": 1,
+      "methodFullName": "<operator>.indirectFieldAccess",
+      "dynamicTypeHintFullName": [],
+      "dispatchType": "STATIC_DISPATCH",
+      "columnNumber": 3,
+      "_label": "CALL",
+      "possibleTypes": [],
+      "argumentIndex": 1
+    },
+    {
+      "name": "<operator>.cast",
+      "_id": 30064771106,
+      "signature": "",
+      "code": "(IsImageFormatHandler *) IsTXT",
+      "typeFullName": "IsImageFormatHandler",
+      "lineNumber": 26,
+      "order": 2,
+      "methodFullName": "<operator>.cast",
+      "dynamicTypeHintFullName": [],
+      "dispatchType": "STATIC_DISPATCH",
+      "columnNumber": 17,
+      "_label": "CALL",
+      "possibleTypes": [],
+      "argumentIndex": 2
+    },
+    {
+      "name": "<operator>.cast",
+      "_id": 30064771107,
+      "signature": "",
+      "code": "(void) RegisterMagickInfo(entry)",
+      "typeFullName": "void",
+      "lineNumber": 27,
+      "order": 17,
+      "methodFullName": "<operator>.cast",
+      "dynamicTypeHintFullName": [],
+      "dispatchType": "STATIC_DISPATCH",
+      "columnNumber": 3,
+      "_label": "CALL",
+      "possibleTypes": [],
+      "argumentIndex": -1
+    },
+    {
+      "name": "RegisterMagickInfo",
+      "_id": 30064771108,
+      "signature": "",
+      "code": "RegisterMagickInfo(entry)",
+      "typeFullName": "ANY",
+      "lineNumber": 27,
+      "order": 2,
+      "methodFullName": "RegisterMagickInfo",
+      "dynamicTypeHintFullName": [],
+      "dispatchType": "STATIC_DISPATCH",
+      "columnNumber": 10,
+      "_label": "CALL",
+      "possibleTypes": [],
+      "argumentIndex": 2
+    },
+    {
+      "name": "stddef.h",
+      "_id": 51539607552,
+      "version": "include",
+      "dependencyGroupId": "stddef.h",
+      "_label": "DEPENDENCY"
+    },
+    {
+      "name": "stdint.h",
+      "_id": 51539607553,
+      "version": "include",
+      "dependencyGroupId": "stdint.h",
+      "_label": "DEPENDENCY"
+    },
+    {
+      "name": "stdbool.h",
+      "_id": 51539607554,
+      "version": "include",
+      "dependencyGroupId": "stdbool.h",
+      "_label": "DEPENDENCY"
+    },
+    {
+      "_id": 55834574848,
+      "code": "encoder",
+      "order": 2,
+      "_label": "FIELD_IDENTIFIER",
+      "argumentIndex": 2,
+      "canonicalName": "encoder",
+      "lineNumber": 13,
+      "columnNumber": 3
+    },
+    {
+      "_id": 55834574849,
+      "code": "flags",
+      "order": 2,
+      "_label": "FIELD_IDENTIFIER",
+      "argumentIndex": 2,
+      "canonicalName": "flags",
+      "lineNumber": 14,
+      "columnNumber": 3
+    },
+    {
+      "_id": 55834574850,
+      "code": "flags",
+      "order": 2,
+      "_label": "FIELD_IDENTIFIER",
+      "argumentIndex": 2,
+      "canonicalName": "flags",
+      "lineNumber": 15,
+      "columnNumber": 3
+    },
+    {
+      "_id": 55834574851,
+      "code": "decoder",
+      "order": 2,
+      "_label": "FIELD_IDENTIFIER",
+      "argumentIndex": 2,
+      "canonicalName": "decoder",
+      "lineNumber": 18,
+      "columnNumber": 3
+    },
+    {
+      "_id": 55834574852,
+      "code": "format_type",
+      "order": 2,
+      "_label": "FIELD_IDENTIFIER",
+      "argumentIndex": 2,
+      "canonicalName": "format_type",
+      "lineNumber": 19,
+      "columnNumber": 3
+    },
+    {
+      "_id": 55834574853,
+      "code": "flags",
+      "order": 2,
+      "_label": "FIELD_IDENTIFIER",
+      "argumentIndex": 2,
+      "canonicalName": "flags",
+      "lineNumber": 20,
+      "columnNumber": 3
+    },
+    {
+      "_id": 55834574854,
+      "code": "flags",
+      "order": 2,
+      "_label": "FIELD_IDENTIFIER",
+      "argumentIndex": 2,
+      "canonicalName": "flags",
+      "lineNumber": 21,
+      "columnNumber": 3
+    },
+    {
+      "_id": 55834574855,
+      "code": "decoder",
+      "order": 2,
+      "_label": "FIELD_IDENTIFIER",
+      "argumentIndex": 2,
+      "canonicalName": "decoder",
+      "lineNumber": 24,
+      "columnNumber": 3
+    },
+    {
+      "_id": 55834574856,
+      "code": "encoder",
+      "order": 2,
+      "_label": "FIELD_IDENTIFIER",
+      "argumentIndex": 2,
+      "canonicalName": "encoder",
+      "lineNumber": 25,
+      "columnNumber": 3
+    },
+    {
+      "_id": 55834574857,
+      "code": "magick",
+      "order": 2,
+      "_label": "FIELD_IDENTIFIER",
+      "argumentIndex": 2,
+      "canonicalName": "magick",
+      "lineNumber": 26,
+      "columnNumber": 3
+    },
+    {
+      "name": "83e0f8ffd7eeb7661b0ff83257da23d24ca7f078_3.c",
+      "_id": 60129542144,
+      "code": "<empty>",
+      "order": 0,
+      "content": "<empty>",
+      "_label": "FILE"
+    },
+    {
+      "name": "<includes>",
+      "_id": 60129542145,
+      "code": "<empty>",
+      "order": 1,
+      "content": "<empty>",
+      "_label": "FILE"
+    },
+    {
+      "name": "<unknown>",
+      "_id": 60129542146,
+      "code": "<empty>",
+      "order": 0,
+      "content": "<empty>",
+      "_label": "FILE"
+    },
+    {
+      "dynamicTypeHintFullName": [],
+      "name": "entry",
+      "_id": 68719476736,
+      "code": "entry",
+      "typeFullName": "MagickInfo*",
+      "lineNumber": 12,
+      "order": 1,
+      "_label": "IDENTIFIER",
+      "columnNumber": 3,
+      "possibleTypes": [],
+      "argumentIndex": 1
+    },
+    {
+      "dynamicTypeHintFullName": [],
+      "name": "entry",
+      "_id": 68719476737,
+      "code": "entry",
+      "typeFullName": "MagickInfo*",
+      "lineNumber": 13,
+      "order": 1,
+      "_label": "IDENTIFIER",
+      "columnNumber": 3,
+      "possibleTypes": [],
+      "argumentIndex": 1
+    },
+    {
+      "dynamicTypeHintFullName": [],
+      "name": "WriteTXTImage",
+      "_id": 68719476738,
+      "code": "<unknown> WriteTXTImage",
+      "typeFullName": "ANY",
+      "lineNumber": 13,
+      "order": 2,
+      "_label": "IDENTIFIER",
+      "columnNumber": 41,
+      "possibleTypes": [],
+      "argumentIndex": 2
+    },
+    {
+      "dynamicTypeHintFullName": [],
+      "name": "entry",
+      "_id": 68719476739,
+      "code": "entry",
+      "typeFullName": "MagickInfo*",
+      "lineNumber": 14,
+      "order": 1,
+      "_label": "IDENTIFIER",
+      "columnNumber": 3,
+      "possibleTypes": [],
+      "argumentIndex": 1
+    },
+    {
+      "dynamicTypeHintFullName": [],
+      "name": "CoderRawSupportFlag",
+      "_id": 68719476740,
+      "code": "<unknown> CoderRawSupportFlag",
+      "typeFullName": "ANY",
+      "lineNumber": 14,
+      "order": 2,
+      "_label": "IDENTIFIER",
+      "columnNumber": 17,
+      "possibleTypes": [],
+      "argumentIndex": 2
+    },
+    {
+      "dynamicTypeHintFullName": [],
+      "name": "entry",
+      "_id": 68719476741,
+      "code": "entry",
+      "typeFullName": "MagickInfo*",
+      "lineNumber": 15,
+      "order": 1,
+      "_label": "IDENTIFIER",
+      "columnNumber": 3,
+      "possibleTypes": [],
+      "argumentIndex": 1
+    },
+    {
+      "dynamicTypeHintFullName": [],
+      "name": "CoderEndianSupportFlag",
+      "_id": 68719476742,
+      "code": "<unknown> CoderEndianSupportFlag",
+      "typeFullName": "ANY",
+      "lineNumber": 15,
+      "order": 2,
+      "_label": "IDENTIFIER",
+      "columnNumber": 17,
+      "possibleTypes": [],
+      "argumentIndex": 2
+    },
+    {
+      "dynamicTypeHintFullName": [],
+      "name": "entry",
+      "_id": 68719476743,
+      "code": "entry",
+      "typeFullName": "MagickInfo*",
+      "lineNumber": 16,
+      "order": 1,
+      "_label": "IDENTIFIER",
+      "columnNumber": 29,
+      "possibleTypes": [],
+      "argumentIndex": 1
+    },
+    {
+      "dynamicTypeHintFullName": [],
+      "name": "entry",
+      "_id": 68719476744,
+      "code": "entry",
+      "typeFullName": "MagickInfo*",
+      "lineNumber": 17,
+      "order": 1,
+      "_label": "IDENTIFIER",
+      "columnNumber": 3,
+      "possibleTypes": [],
+      "argumentIndex": 1
+    },
+    {
+      "dynamicTypeHintFullName": [],
+      "name": "entry",
+      "_id": 68719476745,
+      "code": "entry",
+      "typeFullName": "MagickInfo*",
+      "lineNumber": 18,
+      "order": 1,
+      "_label": "IDENTIFIER",
+      "columnNumber": 3,
+      "possibleTypes": [],
+      "argumentIndex": 1
+    },
+    {
+      "dynamicTypeHintFullName": [],
+      "name": "ReadTEXTImage",
+      "_id": 68719476746,
+      "code": "<unknown> ReadTEXTImage",
+      "typeFullName": "ANY",
+      "lineNumber": 18,
+      "order": 2,
+      "_label": "IDENTIFIER",
+      "columnNumber": 41,
+      "possibleTypes": [],
+      "argumentIndex": 2
+    },
+    {
+      "dynamicTypeHintFullName": [],
+      "name": "entry",
+      "_id": 68719476747,
+      "code": "entry",
+      "typeFullName": "MagickInfo*",
+      "lineNumber": 19,
+      "order": 1,
+      "_label": "IDENTIFIER",
+      "columnNumber": 3,
+      "possibleTypes": [],
+      "argumentIndex": 1
+    },
+    {
+      "dynamicTypeHintFullName": [],
+      "name": "ImplicitFormatType",
+      "_id": 68719476748,
+      "code": "<unknown> ImplicitFormatType",
+      "typeFullName": "ANY",
+      "lineNumber": 19,
+      "order": 2,
+      "_label": "IDENTIFIER",
+      "columnNumber": 22,
+      "possibleTypes": [],
+      "argumentIndex": 2
+    },
+    {
+      "dynamicTypeHintFullName": [],
+      "name": "entry",
+      "_id": 68719476749,
+      "code": "entry",
+      "typeFullName": "MagickInfo*",
+      "lineNumber": 20,
+      "order": 1,
+      "_label": "IDENTIFIER",
+      "columnNumber": 3,
+      "possibleTypes": [],
+      "argumentIndex": 1
+    },
+    {
+      "dynamicTypeHintFullName": [],
+      "name": "CoderRawSupportFlag",
+      "_id": 68719476750,
+      "code": "<unknown> CoderRawSupportFlag",
+      "typeFullName": "ANY",
+      "lineNumber": 20,
+      "order": 2,
+      "_label": "IDENTIFIER",
+      "columnNumber": 17,
+      "possibleTypes": [],
+      "argumentIndex": 2
+    },
+    {
+      "dynamicTypeHintFullName": [],
+      "name": "entry",
+      "_id": 68719476751,
+      "code": "entry",
+      "typeFullName": "MagickInfo*",
+      "lineNumber": 21,
+      "order": 1,
+      "_label": "IDENTIFIER",
+      "columnNumber": 3,
+      "possibleTypes": [],
+      "argumentIndex": 1
+    },
+    {
+      "dynamicTypeHintFullName": [],
+      "name": "CoderEndianSupportFlag",
+      "_id": 68719476752,
+      "code": "<unknown> CoderEndianSupportFlag",
+      "typeFullName": "ANY",
+      "lineNumber": 21,
+      "order": 2,
+      "_label": "IDENTIFIER",
+      "columnNumber": 17,
+      "possibleTypes": [],
+      "argumentIndex": 2
+    },
+    {
+      "dynamicTypeHintFullName": [],
+      "name": "entry",
+      "_id": 68719476753,
+      "code": "entry",
+      "typeFullName": "MagickInfo*",
+      "lineNumber": 22,
+      "order": 1,
+      "_label": "IDENTIFIER",
+      "columnNumber": 29,
+      "possibleTypes": [],
+      "argumentIndex": 1
+    },
+    {
+      "dynamicTypeHintFullName": [],
+      "name": "entry",
+      "_id": 68719476754,
+      "code": "entry",
+      "typeFullName": "MagickInfo*",
+      "lineNumber": 23,
+      "order": 1,
+      "_label": "IDENTIFIER",
+      "columnNumber": 3,
+      "possibleTypes": [],
+      "argumentIndex": 1
+    },
+    {
+      "dynamicTypeHintFullName": [],
+      "name": "entry",
+      "_id": 68719476755,
+      "code": "entry",
+      "typeFullName": "MagickInfo*",
+      "lineNumber": 24,
+      "order": 1,
+      "_label": "IDENTIFIER",
+      "columnNumber": 3,
+      "possibleTypes": [],
+      "argumentIndex": 1
+    },
+    {
+      "dynamicTypeHintFullName": [],
+      "name": "ReadTXTImage",
+      "_id": 68719476756,
+      "code": "<unknown> ReadTXTImage",
+      "typeFullName": "ANY",
+      "lineNumber": 24,
+      "order": 2,
+      "_label": "IDENTIFIER",
+      "columnNumber": 41,
+      "possibleTypes": [],
+      "argumentIndex": 2
+    },
+    {
+      "dynamicTypeHintFullName": [],
+      "name": "entry",
+      "_id": 68719476757,
+      "code": "entry",
+      "typeFullName": "MagickInfo*",
+      "lineNumber": 25,
+      "order": 1,
+      "_label": "IDENTIFIER",
+      "columnNumber": 3,
+      "possibleTypes": [],
+      "argumentIndex": 1
+    },
+    {
+      "dynamicTypeHintFullName": [],
+      "name": "WriteTXTImage",
+      "_id": 68719476758,
+      "code": "<unknown> WriteTXTImage",
+      "typeFullName": "ANY",
+      "lineNumber": 25,
+      "order": 2,
+      "_label": "IDENTIFIER",
+      "columnNumber": 41,
+      "possibleTypes": [],
+      "argumentIndex": 2
+    },
+    {
+      "dynamicTypeHintFullName": [],
+      "name": "entry",
+      "_id": 68719476759,
+      "code": "entry",
+      "typeFullName": "MagickInfo*",
+      "lineNumber": 26,
+      "order": 1,
+      "_label": "IDENTIFIER",
+      "columnNumber": 3,
+      "possibleTypes": [],
+      "argumentIndex": 1
+    },
+    {
+      "dynamicTypeHintFullName": [],
+      "name": "IsTXT",
+      "_id": 68719476760,
+      "code": "<unknown> IsTXT",
+      "typeFullName": "ANY",
+      "lineNumber": 26,
+      "order": 2,
+      "_label": "IDENTIFIER",
+      "columnNumber": 42,
+      "possibleTypes": [],
+      "argumentIndex": 2
+    },
+    {
+      "dynamicTypeHintFullName": [],
+      "name": "entry",
+      "_id": 68719476761,
+      "code": "entry",
+      "typeFullName": "MagickInfo*",
+      "lineNumber": 27,
+      "order": 1,
+      "_label": "IDENTIFIER",
+      "columnNumber": 29,
+      "possibleTypes": [],
+      "argumentIndex": 1
+    },
+    {
+      "dynamicTypeHintFullName": [],
+      "name": "MagickImageCoderSignature",
+      "_id": 68719476762,
+      "code": "<unknown> MagickImageCoderSignature",
+      "typeFullName": "ANY",
+      "lineNumber": 28,
+      "order": 1,
+      "_label": "IDENTIFIER",
+      "columnNumber": 10,
+      "possibleTypes": [],
+      "argumentIndex": -1
+    },
+    {
+      "_id": 73014444032,
+      "importedAs": "stddef.h",
+      "code": "#include <stddef.h>",
+      "lineNumber": 3,
+      "order": 1,
+      "importedEntity": "stddef.h",
+      "_label": "IMPORT",
+      "columnNumber": 1
+    },
+    {
+      "_id": 73014444033,
+      "importedAs": "stdint.h",
+      "code": "#include <stdint.h>",
+      "lineNumber": 4,
+      "order": 2,
+      "importedEntity": "stdint.h",
+      "_label": "IMPORT",
+      "columnNumber": 1
+    },
+    {
+      "_id": 73014444034,
+      "importedAs": "stdbool.h",
+      "code": "#include <stdbool.h>",
+      "lineNumber": 5,
+      "order": 3,
+      "importedEntity": "stdbool.h",
+      "_label": "IMPORT",
+      "columnNumber": 1
+    },
+    {
+      "dynamicTypeHintFullName": [],
+      "_id": 90194313216,
+      "code": "\"TXT\"",
+      "typeFullName": "char*",
+      "lineNumber": 12,
+      "order": 1,
+      "_label": "LITERAL",
+      "columnNumber": 27,
+      "possibleTypes": [],
+      "argumentIndex": 1
+    },
+    {
+      "dynamicTypeHintFullName": [],
+      "_id": 90194313217,
+      "code": "\"SPARSE-COLOR\"",
+      "typeFullName": "char*",
+      "lineNumber": 12,
+      "order": 2,
+      "_label": "LITERAL",
+      "columnNumber": 33,
+      "possibleTypes": [],
+      "argumentIndex": 2
+    },
+    {
+      "dynamicTypeHintFullName": [],
+      "_id": 90194313218,
+      "code": "\"Sparse Color\"",
+      "typeFullName": "char*",
+      "lineNumber": 12,
+      "order": 3,
+      "_label": "LITERAL",
+      "columnNumber": 48,
+      "possibleTypes": [],
+      "argumentIndex": 3
+    },
+    {
+      "dynamicTypeHintFullName": [],
+      "_id": 90194313219,
+      "code": "\"TXT\"",
+      "typeFullName": "char*",
+      "lineNumber": 17,
+      "order": 1,
+      "_label": "LITERAL",
+      "columnNumber": 27,
+      "possibleTypes": [],
+      "argumentIndex": 1
+    },
+    {
+      "dynamicTypeHintFullName": [],
+      "_id": 90194313220,
+      "code": "\"TEXT\"",
+      "typeFullName": "char*",
+      "lineNumber": 17,
+      "order": 2,
+      "_label": "LITERAL",
+      "columnNumber": 33,
+      "possibleTypes": [],
+      "argumentIndex": 2
+    },
+    {
+      "dynamicTypeHintFullName": [],
+      "_id": 90194313221,
+      "code": "\"Text\"",
+      "typeFullName": "char*",
+      "lineNumber": 17,
+      "order": 3,
+      "_label": "LITERAL",
+      "columnNumber": 40,
+      "possibleTypes": [],
+      "argumentIndex": 3
+    },
+    {
+      "dynamicTypeHintFullName": [],
+      "_id": 90194313222,
+      "code": "\"TXT\"",
+      "typeFullName": "char*",
+      "lineNumber": 23,
+      "order": 1,
+      "_label": "LITERAL",
+      "columnNumber": 27,
+      "possibleTypes": [],
+      "argumentIndex": 1
+    },
+    {
+      "dynamicTypeHintFullName": [],
+      "_id": 90194313223,
+      "code": "\"TXT\"",
+      "typeFullName": "char*",
+      "lineNumber": 23,
+      "order": 2,
+      "_label": "LITERAL",
+      "columnNumber": 33,
+      "possibleTypes": [],
+      "argumentIndex": 2
+    },
+    {
+      "dynamicTypeHintFullName": [],
+      "_id": 90194313224,
+      "code": "\"Text\"",
+      "typeFullName": "char*",
+      "lineNumber": 23,
+      "order": 3,
+      "_label": "LITERAL",
+      "columnNumber": 39,
+      "possibleTypes": [],
+      "argumentIndex": 3
+    },
+    {
+      "dynamicTypeHintFullName": [],
+      "name": "entry",
+      "_id": 94489280512,
+      "genericSignature": "<empty>",
+      "typeFullName": "MagickInfo*",
+      "lineNumber": 10,
+      "order": 1,
+      "_label": "LOCAL",
+      "possibleTypes": [],
+      "code": "MagickInfo *entry",
+      "columnNumber": 5
+    },
+    {
+      "dynamicTypeHintFullName": [],
+      "name": "MagickImageCoderSignature",
+      "_id": 94489280513,
+      "genericSignature": "<empty>",
+      "typeFullName": "ANY",
+      "lineNumber": 28,
+      "order": 0,
+      "_label": "LOCAL",
+      "possibleTypes": [],
+      "code": "<unknown> MagickImageCoderSignature",
+      "columnNumber": 10
+    },
+    {
+      "dynamicTypeHintFullName": [],
+      "name": "IsTXT",
+      "_id": 94489280514,
+      "genericSignature": "<empty>",
+      "typeFullName": "ANY",
+      "lineNumber": 26,
+      "order": 0,
+      "_label": "LOCAL",
+      "possibleTypes": [],
+      "code": "<unknown> IsTXT",
+      "columnNumber": 42
+    },
+    {
+      "dynamicTypeHintFullName": [],
+      "name": "WriteTXTImage",
+      "_id": 94489280515,
+      "genericSignature": "<empty>",
+      "typeFullName": "ANY",
+      "lineNumber": 13,
+      "order": 0,
+      "_label": "LOCAL",
+      "possibleTypes": [],
+      "code": "<unknown> WriteTXTImage",
+      "columnNumber": 41
+    },
+    {
+      "dynamicTypeHintFullName": [],
+      "name": "ReadTXTImage",
+      "_id": 94489280516,
+      "genericSignature": "<empty>",
+      "typeFullName": "ANY",
+      "lineNumber": 24,
+      "order": 0,
+      "_label": "LOCAL",
+      "possibleTypes": [],
+      "code": "<unknown> ReadTXTImage",
+      "columnNumber": 41
+    },
+    {
+      "dynamicTypeHintFullName": [],
+      "name": "CoderEndianSupportFlag",
+      "_id": 94489280517,
+      "genericSignature": "<empty>",
+      "typeFullName": "ANY",
+      "lineNumber": 15,
+      "order": 0,
+      "_label": "LOCAL",
+      "possibleTypes": [],
+      "code": "<unknown> CoderEndianSupportFlag",
+      "columnNumber": 17
+    },
+    {
+      "dynamicTypeHintFullName": [],
+      "name": "CoderRawSupportFlag",
+      "_id": 94489280518,
+      "genericSignature": "<empty>",
+      "typeFullName": "ANY",
+      "lineNumber": 14,
+      "order": 0,
+      "_label": "LOCAL",
+      "possibleTypes": [],
+      "code": "<unknown> CoderRawSupportFlag",
+      "columnNumber": 17
+    },
+    {
+      "dynamicTypeHintFullName": [],
+      "name": "ImplicitFormatType",
+      "_id": 94489280519,
+      "genericSignature": "<empty>",
+      "typeFullName": "ANY",
+      "lineNumber": 19,
+      "order": 0,
+      "_label": "LOCAL",
+      "possibleTypes": [],
+      "code": "<unknown> ImplicitFormatType",
+      "columnNumber": 22
+    },
+    {
+      "dynamicTypeHintFullName": [],
+      "name": "ReadTEXTImage",
+      "_id": 94489280520,
+      "genericSignature": "<empty>",
+      "typeFullName": "ANY",
+      "lineNumber": 18,
+      "order": 0,
+      "_label": "LOCAL",
+      "possibleTypes": [],
+      "code": "<unknown> ReadTEXTImage",
+      "columnNumber": 41
+    },
+    {
+      "_id": 103079215104,
+      "version": "0.1",
+      "language": "NEWC",
+      "_label": "META_DATA",
+      "overlays": [
+        "base",
+        "controlflow",
+        "typerel",
+        "callgraph",
+        "dataflowOss"
+      ],
+      "root": "C:\\Users\\USER\\Desktop\\Thesis Research\\Implementation\\Thesis-causal-vul\\work\\src\\valid\\shard_83e0"
+    },
+    {
+      "name": "RegisterTXTImage",
+      "astParentFullName": "83e0f8ffd7eeb7661b0ff83257da23d24ca7f078_3.c:<global>",
+      "_id": 107374182400,
+      "signature": "size_t(void)",
+      "astParentType": "TYPE_DECL",
+      "lineNumberEnd": 29,
+      "_label": "METHOD",
+      "columnNumberEnd": 1,
+      "fullName": "RegisterTXTImage",
+      "genericSignature": "<empty>",
+      "code": "size_t RegisterTXTImage(void)\n{\n  MagickInfo\n    *entry;\n\n  entry=AcquireMagickInfo(\"TXT\",\"SPARSE-COLOR\",\"Sparse Color\");\n  entry->encoder=(EncodeImageHandler *) WriteTXTImage;\n  entry->flags|=CoderRawSupportFlag;\n  entry->flags|=CoderEndianSupportFlag;\n  (void) RegisterMagickInfo(entry);\n  entry=AcquireMagickInfo(\"TXT\",\"TEXT\",\"Text\");\n  entry->decoder=(DecodeImageHandler *) ReadTEXTImage;\n  entry->format_type=ImplicitFormatType;\n  entry->flags|=CoderRawSupportFlag;\n  entry->flags|=CoderEndianSupportFlag;\n  (void) RegisterMagickInfo(entry);\n  entry=AcquireMagickInfo(\"TXT\",\"TXT\",\"Text\");\n  entry->decoder=(DecodeImageHandler *) ReadTXTImage;\n  entry->encoder=(EncodeImageHandler *) WriteTXTImage;\n  entry->magick=(IsImageFormatHandler *) IsTXT;\n  (void) RegisterMagickInfo(entry);\n  return(MagickImageCoderSignature);\n}",
+      "isExternal": false,
+      "lineNumber": 7,
+      "columnNumber": 14,
+      "order": 1,
+      "filename": "83e0f8ffd7eeb7661b0ff83257da23d24ca7f078_3.c"
+    },
+    {
+      "name": "<global>",
+      "astParentFullName": "83e0f8ffd7eeb7661b0ff83257da23d24ca7f078_3.c:<global>",
+      "_id": 107374182401,
+      "signature": "",
+      "astParentType": "TYPE_DECL",
+      "lineNumberEnd": 29,
+      "_label": "METHOD",
+      "columnNumberEnd": 1,
+      "fullName": "83e0f8ffd7eeb7661b0ff83257da23d24ca7f078_3.c:<global>",
+      "genericSignature": "<empty>",
+      "code": "<global>",
+      "isExternal": false,
+      "lineNumber": 1,
+      "columnNumber": 1,
+      "order": 1,
+      "filename": "83e0f8ffd7eeb7661b0ff83257da23d24ca7f078_3.c"
+    },
+    {
+      "name": "<global>",
+      "astParentFullName": "<includes>:<global>",
+      "_id": 107374182402,
+      "signature": "",
+      "astParentType": "NAMESPACE_BLOCK",
+      "_label": "METHOD",
+      "fullName": "<includes>:<global>",
+      "genericSignature": "<empty>",
+      "code": "<global>",
+      "isExternal": false,
+      "lineNumber": 1,
+      "order": 1,
+      "filename": "<includes>"
+    },
+    {
+      "name": "RegisterMagickInfo",
+      "astParentFullName": "<global>",
+      "_id": 107374182403,
+      "signature": "",
+      "astParentType": "NAMESPACE_BLOCK",
+      "_label": "METHOD",
+      "fullName": "RegisterMagickInfo",
+      "genericSignature": "<empty>",
+      "code": "<empty>",
+      "isExternal": true,
+      "order": 0,
+      "filename": "<empty>"
+    },
+    {
+      "name": "<operator>.indirectFieldAccess",
+      "astParentFullName": "<global>",
+      "_id": 107374182404,
+      "signature": "",
+      "astParentType": "NAMESPACE_BLOCK",
+      "_label": "METHOD",
+      "fullName": "<operator>.indirectFieldAccess",
+      "genericSignature": "<empty>",
+      "code": "<empty>",
+      "isExternal": true,
+      "order": 0,
+      "filename": "<empty>"
+    },
+    {
+      "name": "AcquireMagickInfo",
+      "astParentFullName": "<global>",
+      "_id": 107374182405,
+      "signature": "",
+      "astParentType": "NAMESPACE_BLOCK",
+      "_label": "METHOD",
+      "fullName": "AcquireMagickInfo",
+      "genericSignature": "<empty>",
+      "code": "<empty>",
+      "isExternal": true,
+      "order": 0,
+      "filename": "<empty>"
+    },
+    {
+      "name": "<operator>.cast",
+      "astParentFullName": "<global>",
+      "_id": 107374182406,
+      "signature": "",
+      "astParentType": "NAMESPACE_BLOCK",
+      "_label": "METHOD",
+      "fullName": "<operator>.cast",
+      "genericSignature": "<empty>",
+      "code": "<empty>",
+      "isExternal": true,
+      "order": 0,
+      "filename": "<empty>"
+    },
+    {
+      "name": "<operators>.assignmentOr",
+      "astParentFullName": "<global>",
+      "_id": 107374182407,
+      "signature": "",
+      "astParentType": "NAMESPACE_BLOCK",
+      "_label": "METHOD",
+      "fullName": "<operators>.assignmentOr",
+      "genericSignature": "<empty>",
+      "code": "<empty>",
+      "isExternal": true,
+      "order": 0,
+      "filename": "<empty>"
+    },
+    {
+      "name": "<operator>.assignment",
+      "astParentFullName": "<global>",
+      "_id": 107374182408,
+      "signature": "",
+      "astParentType": "NAMESPACE_BLOCK",
+      "_label": "METHOD",
+      "fullName": "<operator>.assignment",
+      "genericSignature": "<empty>",
+      "code": "<empty>",
+      "isExternal": true,
+      "order": 0,
+      "filename": "<empty>"
+    },
+    {
+      "dynamicTypeHintFullName": [],
+      "name": "",
+      "_id": 111669149696,
+      "evaluationStrategy": "BY_VALUE",
+      "isVariadic": false,
+      "typeFullName": "void",
+      "lineNumber": 7,
+      "order": 1,
+      "_label": "METHOD_PARAMETER_IN",
+      "possibleTypes": [],
+      "index": 1,
+      "code": "void",
+      "columnNumber": 38
+    },
+    {
+      "dynamicTypeHintFullName": [],
+      "name": "p1",
+      "_id": 111669149697,
+      "evaluationStrategy": "BY_VALUE",
+      "isVariadic": false,
+      "typeFullName": "ANY",
+      "order": 1,
+      "_label": "METHOD_PARAMETER_IN",
+      "possibleTypes": [],
+      "index": 1,
+      "code": "p1"
+    },
+    {
+      "dynamicTypeHintFullName": [],
+      "name": "p1",
+      "_id": 111669149698,
+      "evaluationStrategy": "BY_VALUE",
+      "isVariadic": false,
+      "typeFullName": "ANY",
+      "order": 1,
+      "_label": "METHOD_PARAMETER_IN",
+      "possibleTypes": [],
+      "index": 1,
+      "code": "p1"
+    },
+    {
+      "dynamicTypeHintFullName": [],
+      "name": "p2",
+      "_id": 111669149699,
+      "evaluationStrategy": "BY_VALUE",
+      "isVariadic": false,
+      "typeFullName": "ANY",
+      "order": 2,
+      "_label": "METHOD_PARAMETER_IN",
+      "possibleTypes": [],
+      "index": 2,
+      "code": "p2"
+    },
+    {
+      "dynamicTypeHintFullName": [],
+      "name": "p1",
+      "_id": 111669149700,
+      "evaluationStrategy": "BY_VALUE",
+      "isVariadic": false,
+      "typeFullName": "ANY",
+      "order": 1,
+      "_label": "METHOD_PARAMETER_IN",
+      "possibleTypes": [],
+      "index": 1,
+      "code": "p1"
+    },
+    {
+      "dynamicTypeHintFullName": [],
+      "name": "p2",
+      "_id": 111669149701,
+      "evaluationStrategy": "BY_VALUE",
+      "isVariadic": false,
+      "typeFullName": "ANY",
+      "order": 2,
+      "_label": "METHOD_PARAMETER_IN",
+      "possibleTypes": [],
+      "index": 2,
+      "code": "p2"
+    },
+    {
+      "dynamicTypeHintFullName": [],
+      "name": "p3",
+      "_id": 111669149702,
+      "evaluationStrategy": "BY_VALUE",
+      "isVariadic": false,
+      "typeFullName": "ANY",
+      "order": 3,
+      "_label": "METHOD_PARAMETER_IN",
+      "possibleTypes": [],
+      "index": 3,
+      "code": "p3"
+    },
+    {
+      "dynamicTypeHintFullName": [],
+      "name": "p1",
+      "_id": 111669149703,
+      "evaluationStrategy": "BY_VALUE",
+      "isVariadic": false,
+      "typeFullName": "ANY",
+      "order": 1,
+      "_label": "METHOD_PARAMETER_IN",
+      "possibleTypes": [],
+      "index": 1,
+      "code": "p1"
+    },
+    {
+      "dynamicTypeHintFullName": [],
+      "name": "p2",
+      "_id": 111669149704,
+      "evaluationStrategy": "BY_VALUE",
+      "isVariadic": false,
+      "typeFullName": "ANY",
+      "order": 2,
+      "_label": "METHOD_PARAMETER_IN",
+      "possibleTypes": [],
+      "index": 2,
+      "code": "p2"
+    },
+    {
+      "dynamicTypeHintFullName": [],
+      "name": "p1",
+      "_id": 111669149705,
+      "evaluationStrategy": "BY_VALUE",
+      "isVariadic": false,
+      "typeFullName": "ANY",
+      "order": 1,
+      "_label": "METHOD_PARAMETER_IN",
+      "possibleTypes": [],
+      "index": 1,
+      "code": "p1"
+    },
+    {
+      "dynamicTypeHintFullName": [],
+      "name": "p2",
+      "_id": 111669149706,
+      "evaluationStrategy": "BY_VALUE",
+      "isVariadic": false,
+      "typeFullName": "ANY",
+      "order": 2,
+      "_label": "METHOD_PARAMETER_IN",
+      "possibleTypes": [],
+      "index": 2,
+      "code": "p2"
+    },
+    {
+      "dynamicTypeHintFullName": [],
+      "name": "p1",
+      "_id": 111669149707,
+      "evaluationStrategy": "BY_VALUE",
+      "isVariadic": false,
+      "typeFullName": "ANY",
+      "order": 1,
+      "_label": "METHOD_PARAMETER_IN",
+      "possibleTypes": [],
+      "index": 1,
+      "code": "p1"
+    },
+    {
+      "dynamicTypeHintFullName": [],
+      "name": "p2",
+      "_id": 111669149708,
+      "evaluationStrategy": "BY_VALUE",
+      "isVariadic": false,
+      "typeFullName": "ANY",
+      "order": 2,
+      "_label": "METHOD_PARAMETER_IN",
+      "possibleTypes": [],
+      "index": 2,
+      "code": "p2"
+    },
+    {
+      "name": "",
+      "_id": 115964116992,
+      "evaluationStrategy": "BY_VALUE",
+      "isVariadic": false,
+      "code": "void",
+      "typeFullName": "void",
+      "lineNumber": 7,
+      "order": 1,
+      "_label": "METHOD_PARAMETER_OUT",
+      "index": 1,
+      "columnNumber": 38
+    },
+    {
+      "name": "p1",
+      "_id": 115964116993,
+      "evaluationStrategy": "BY_VALUE",
+      "isVariadic": false,
+      "code": "p1",
+      "typeFullName": "ANY",
+      "order": 1,
+      "_label": "METHOD_PARAMETER_OUT",
+      "index": 1
+    },
+    {
+      "name": "p1",
+      "_id": 115964116994,
+      "evaluationStrategy": "BY_VALUE",
+      "isVariadic": false,
+      "code": "p1",
+      "typeFullName": "ANY",
+      "order": 1,
+      "_label": "METHOD_PARAMETER_OUT",
+      "index": 1
+    },
+    {
+      "name": "p2",
+      "_id": 115964116995,
+      "evaluationStrategy": "BY_VALUE",
+      "isVariadic": false,
+      "code": "p2",
+      "typeFullName": "ANY",
+      "order": 2,
+      "_label": "METHOD_PARAMETER_OUT",
+      "index": 2
+    },
+    {
+      "name": "p1",
+      "_id": 115964116996,
+      "evaluationStrategy": "BY_VALUE",
+      "isVariadic": false,
+      "code": "p1",
+      "typeFullName": "ANY",
+      "order": 1,
+      "_label": "METHOD_PARAMETER_OUT",
+      "index": 1
+    },
+    {
+      "name": "p2",
+      "_id": 115964116997,
+      "evaluationStrategy": "BY_VALUE",
+      "isVariadic": false,
+      "code": "p2",
+      "typeFullName": "ANY",
+      "order": 2,
+      "_label": "METHOD_PARAMETER_OUT",
+      "index": 2
+    },
+    {
+      "name": "p3",
+      "_id": 115964116998,
+      "evaluationStrategy": "BY_VALUE",
+      "isVariadic": false,
+      "code": "p3",
+      "typeFullName": "ANY",
+      "order": 3,
+      "_label": "METHOD_PARAMETER_OUT",
+      "index": 3
+    },
+    {
+      "name": "p1",
+      "_id": 115964116999,
+      "evaluationStrategy": "BY_VALUE",
+      "isVariadic": false,
+      "code": "p1",
+      "typeFullName": "ANY",
+      "order": 1,
+      "_label": "METHOD_PARAMETER_OUT",
+      "index": 1
+    },
+    {
+      "name": "p2",
+      "_id": 115964117000,
+      "evaluationStrategy": "BY_VALUE",
+      "isVariadic": false,
+      "code": "p2",
+      "typeFullName": "ANY",
+      "order": 2,
+      "_label": "METHOD_PARAMETER_OUT",
+      "index": 2
+    },
+    {
+      "name": "p1",
+      "_id": 115964117001,
+      "evaluationStrategy": "BY_VALUE",
+      "isVariadic": false,
+      "code": "p1",
+      "typeFullName": "ANY",
+      "order": 1,
+      "_label": "METHOD_PARAMETER_OUT",
+      "index": 1
+    },
+    {
+      "name": "p2",
+      "_id": 115964117002,
+      "evaluationStrategy": "BY_VALUE",
+      "isVariadic": false,
+      "code": "p2",
+      "typeFullName": "ANY",
+      "order": 2,
+      "_label": "METHOD_PARAMETER_OUT",
+      "index": 2
+    },
+    {
+      "name": "p1",
+      "_id": 115964117003,
+      "evaluationStrategy": "BY_VALUE",
+      "isVariadic": false,
+      "code": "p1",
+      "typeFullName": "ANY",
+      "order": 1,
+      "_label": "METHOD_PARAMETER_OUT",
+      "index": 1
+    },
+    {
+      "name": "p2",
+      "_id": 115964117004,
+      "evaluationStrategy": "BY_VALUE",
+      "isVariadic": false,
+      "code": "p2",
+      "typeFullName": "ANY",
+      "order": 2,
+      "_label": "METHOD_PARAMETER_OUT",
+      "index": 2
+    },
+    {
+      "dynamicTypeHintFullName": [],
+      "_id": 120259084288,
+      "code": "RegisterTXTImage",
+      "typeFullName": "RegisterTXTImage",
+      "lineNumber": 7,
+      "order": 2,
+      "methodFullName": "RegisterTXTImage",
+      "_label": "METHOD_REF",
+      "columnNumber": 14,
+      "possibleTypes": [],
+      "argumentIndex": -1
+    },
+    {
+      "dynamicTypeHintFullName": [],
+      "_id": 124554051584,
+      "evaluationStrategy": "BY_VALUE",
+      "code": "RET",
+      "typeFullName": "size_t",
+      "lineNumber": 7,
+      "order": 3,
+      "_label": "METHOD_RETURN",
+      "possibleTypes": [],
+      "columnNumber": 14
+    },
+    {
+      "dynamicTypeHintFullName": [],
+      "_id": 124554051585,
+      "evaluationStrategy": "BY_VALUE",
+      "code": "RET",
+      "typeFullName": "ANY",
+      "lineNumber": 1,
+      "order": 2,
+      "_label": "METHOD_RETURN",
+      "possibleTypes": [],
+      "columnNumber": 1
+    },
+    {
+      "dynamicTypeHintFullName": [],
+      "_id": 124554051586,
+      "evaluationStrategy": "BY_VALUE",
+      "code": "RET",
+      "typeFullName": "ANY",
+      "lineNumber": 1,
+      "order": 2,
+      "_label": "METHOD_RETURN",
+      "possibleTypes": []
+    },
+    {
+      "dynamicTypeHintFullName": [],
+      "_id": 124554051587,
+      "evaluationStrategy": "BY_VALUE",
+      "code": "RET",
+      "typeFullName": "ANY",
+      "order": 2,
+      "_label": "METHOD_RETURN",
+      "possibleTypes": []
+    },
+    {
+      "dynamicTypeHintFullName": [],
+      "_id": 124554051588,
+      "evaluationStrategy": "BY_VALUE",
+      "code": "RET",
+      "typeFullName": "ANY",
+      "order": 2,
+      "_label": "METHOD_RETURN",
+      "possibleTypes": []
+    },
+    {
+      "dynamicTypeHintFullName": [],
+      "_id": 124554051589,
+      "evaluationStrategy": "BY_VALUE",
+      "code": "RET",
+      "typeFullName": "ANY",
+      "order": 2,
+      "_label": "METHOD_RETURN",
+      "possibleTypes": []
+    },
+    {
+      "dynamicTypeHintFullName": [],
+      "_id": 124554051590,
+      "evaluationStrategy": "BY_VALUE",
+      "code": "RET",
+      "typeFullName": "ANY",
+      "order": 2,
+      "_label": "METHOD_RETURN",
+      "possibleTypes": []
+    },
+    {
+      "dynamicTypeHintFullName": [],
+      "_id": 124554051591,
+      "evaluationStrategy": "BY_VALUE",
+      "code": "RET",
+      "typeFullName": "ANY",
+      "order": 2,
+      "_label": "METHOD_RETURN",
+      "possibleTypes": []
+    },
+    {
+      "dynamicTypeHintFullName": [],
+      "_id": 124554051592,
+      "evaluationStrategy": "BY_VALUE",
+      "code": "RET",
+      "typeFullName": "ANY",
+      "order": 2,
+      "_label": "METHOD_RETURN",
+      "possibleTypes": []
+    },
+    {
+      "name": "<global>",
+      "_id": 133143986176,
+      "code": "<empty>",
+      "order": -1,
+      "_label": "NAMESPACE"
+    },
+    {
+      "name": "<global>",
+      "_id": 137438953472,
+      "fullName": "<global>",
+      "code": "<empty>",
+      "_label": "NAMESPACE_BLOCK",
+      "order": 1,
+      "filename": "<unknown>"
+    },
+    {
+      "name": "<global>",
+      "_id": 137438953473,
+      "fullName": "83e0f8ffd7eeb7661b0ff83257da23d24ca7f078_3.c:<global>",
+      "code": "<empty>",
+      "_label": "NAMESPACE_BLOCK",
+      "order": 1,
+      "filename": "83e0f8ffd7eeb7661b0ff83257da23d24ca7f078_3.c"
+    },
+    {
+      "name": "<global>",
+      "_id": 137438953474,
+      "fullName": "<includes>:<global>",
+      "code": "<empty>",
+      "_label": "NAMESPACE_BLOCK",
+      "order": 1,
+      "filename": "<includes>"
+    },
+    {
+      "_id": 141733920768,
+      "code": "return(MagickImageCoderSignature);",
+      "lineNumber": 28,
+      "order": 18,
+      "_label": "RETURN",
+      "argumentIndex": -1,
+      "columnNumber": 3
+    },
+    {
+      "name": "ANY",
+      "_id": 158913789952,
+      "fullName": "ANY",
+      "typeDeclFullName": "ANY",
+      "_label": "TYPE"
+    },
+    {
+      "name": "DecodeImageHandler",
+      "_id": 158913789953,
+      "fullName": "DecodeImageHandler",
+      "typeDeclFullName": "DecodeImageHandler",
+      "_label": "TYPE"
+    },
+    {
+      "name": "EncodeImageHandler",
+      "_id": 158913789954,
+      "fullName": "EncodeImageHandler",
+      "typeDeclFullName": "EncodeImageHandler",
+      "_label": "TYPE"
+    },
+    {
+      "name": "IsImageFormatHandler",
+      "_id": 158913789955,
+      "fullName": "IsImageFormatHandler",
+      "typeDeclFullName": "IsImageFormatHandler",
+      "_label": "TYPE"
+    },
+    {
+      "name": "MagickInfo*",
+      "_id": 158913789956,
+      "fullName": "MagickInfo*",
+      "typeDeclFullName": "MagickInfo*",
+      "_label": "TYPE"
+    },
+    {
+      "name": "RegisterTXTImage",
+      "_id": 158913789957,
+      "fullName": "RegisterTXTImage",
+      "typeDeclFullName": "RegisterTXTImage",
+      "_label": "TYPE"
+    },
+    {
+      "name": "char*",
+      "_id": 158913789958,
+      "fullName": "char*",
+      "typeDeclFullName": "char*",
+      "_label": "TYPE"
+    },
+    {
+      "name": "size_t",
+      "_id": 158913789959,
+      "fullName": "size_t",
+      "typeDeclFullName": "size_t",
+      "_label": "TYPE"
+    },
+    {
+      "name": "void",
+      "_id": 158913789960,
+      "fullName": "void",
+      "typeDeclFullName": "void",
+      "_label": "TYPE"
+    },
+    {
+      "inheritsFromTypeFullName": [],
+      "name": "RegisterTXTImage",
+      "astParentFullName": "83e0f8ffd7eeb7661b0ff83257da23d24ca7f078_3.c:<global>",
+      "_id": 167503724544,
+      "astParentType": "TYPE_DECL",
+      "lineNumber": 7,
+      "_label": "TYPE_DECL",
+      "fullName": "RegisterTXTImage",
+      "genericSignature": "<empty>",
+      "code": "RegisterTXTImage",
+      "isExternal": false,
+      "columnNumber": 14,
+      "order": 1,
+      "filename": "83e0f8ffd7eeb7661b0ff83257da23d24ca7f078_3.c"
+    },
+    {
+      "inheritsFromTypeFullName": [],
+      "name": "<global>",
+      "astParentFullName": "83e0f8ffd7eeb7661b0ff83257da23d24ca7f078_3.c:<global>",
+      "_id": 167503724545,
+      "astParentType": "NAMESPACE_BLOCK",
+      "lineNumber": 1,
+      "_label": "TYPE_DECL",
+      "fullName": "83e0f8ffd7eeb7661b0ff83257da23d24ca7f078_3.c:<global>",
+      "genericSignature": "<empty>",
+      "code": "<global>",
+      "isExternal": false,
+      "columnNumber": 1,
+      "order": 4,
+      "filename": "83e0f8ffd7eeb7661b0ff83257da23d24ca7f078_3.c"
+    },
+    {
+      "inheritsFromTypeFullName": [],
+      "name": "ANY",
+      "astParentFullName": "<includes>:<global>",
+      "_id": 167503724546,
+      "astParentType": "NAMESPACE_BLOCK",
+      "_label": "TYPE_DECL",
+      "fullName": "ANY",
+      "genericSignature": "<empty>",
+      "code": "ANY",
+      "isExternal": true,
+      "order": -1,
+      "filename": "<includes>"
+    },
+    {
+      "inheritsFromTypeFullName": [],
+      "name": "DecodeImageHandler",
+      "astParentFullName": "<includes>:<global>",
+      "_id": 167503724547,
+      "astParentType": "NAMESPACE_BLOCK",
+      "_label": "TYPE_DECL",
+      "fullName": "DecodeImageHandler",
+      "genericSignature": "<empty>",
+      "code": "DecodeImageHandler",
+      "isExternal": true,
+      "order": -1,
+      "filename": "<includes>"
+    },
+    {
+      "inheritsFromTypeFullName": [],
+      "name": "EncodeImageHandler",
+      "astParentFullName": "<includes>:<global>",
+      "_id": 167503724548,
+      "astParentType": "NAMESPACE_BLOCK",
+      "_label": "TYPE_DECL",
+      "fullName": "EncodeImageHandler",
+      "genericSignature": "<empty>",
+      "code": "EncodeImageHandler",
+      "isExternal": true,
+      "order": -1,
+      "filename": "<includes>"
+    },
+    {
+      "inheritsFromTypeFullName": [],
+      "name": "IsImageFormatHandler",
+      "astParentFullName": "<includes>:<global>",
+      "_id": 167503724549,
+      "astParentType": "NAMESPACE_BLOCK",
+      "_label": "TYPE_DECL",
+      "fullName": "IsImageFormatHandler",
+      "genericSignature": "<empty>",
+      "code": "IsImageFormatHandler",
+      "isExternal": true,
+      "order": -1,
+      "filename": "<includes>"
+    },
+    {
+      "inheritsFromTypeFullName": [],
+      "name": "MagickInfo*",
+      "astParentFullName": "<includes>:<global>",
+      "_id": 167503724550,
+      "astParentType": "NAMESPACE_BLOCK",
+      "_label": "TYPE_DECL",
+      "fullName": "MagickInfo*",
+      "genericSignature": "<empty>",
+      "code": "MagickInfo*",
+      "isExternal": true,
+      "order": -1,
+      "filename": "<includes>"
+    },
+    {
+      "inheritsFromTypeFullName": [],
+      "name": "char*",
+      "astParentFullName": "<includes>:<global>",
+      "_id": 167503724551,
+      "astParentType": "NAMESPACE_BLOCK",
+      "_label": "TYPE_DECL",
+      "fullName": "char*",
+      "genericSignature": "<empty>",
+      "code": "char*",
+      "isExternal": true,
+      "order": -1,
+      "filename": "<includes>"
+    },
+    {
+      "inheritsFromTypeFullName": [],
+      "name": "size_t",
+      "astParentFullName": "<includes>:<global>",
+      "_id": 167503724552,
+      "astParentType": "NAMESPACE_BLOCK",
+      "_label": "TYPE_DECL",
+      "fullName": "size_t",
+      "genericSignature": "<empty>",
+      "code": "size_t",
+      "isExternal": true,
+      "order": -1,
+      "filename": "<includes>"
+    },
+    {
+      "inheritsFromTypeFullName": [],
+      "name": "void",
+      "astParentFullName": "<includes>:<global>",
+      "_id": 167503724553,
+      "astParentType": "NAMESPACE_BLOCK",
+      "_label": "TYPE_DECL",
+      "fullName": "void",
+      "genericSignature": "<empty>",
+      "code": "void",
+      "isExternal": true,
+      "order": -1,
+      "filename": "<includes>"
+    },
+    {
+      "dynamicTypeHintFullName": [],
+      "_id": 176093659136,
+      "code": "EncodeImageHandler *",
+      "typeFullName": "EncodeImageHandler",
+      "lineNumber": 13,
+      "order": 1,
+      "_label": "TYPE_REF",
+      "columnNumber": 19,
+      "possibleTypes": [],
+      "argumentIndex": 1
+    },
+    {
+      "dynamicTypeHintFullName": [],
+      "_id": 176093659137,
+      "code": "void",
+      "typeFullName": "void",
+      "lineNumber": 16,
+      "order": 1,
+      "_label": "TYPE_REF",
+      "columnNumber": 4,
+      "possibleTypes": [],
+      "argumentIndex": 1
+    },
+    {
+      "dynamicTypeHintFullName": [],
+      "_id": 176093659138,
+      "code": "DecodeImageHandler *",
+      "typeFullName": "DecodeImageHandler",
+      "lineNumber": 18,
+      "order": 1,
+      "_label": "TYPE_REF",
+      "columnNumber": 19,
+      "possibleTypes": [],
+      "argumentIndex": 1
+    },
+    {
+      "dynamicTypeHintFullName": [],
+      "_id": 176093659139,
+      "code": "void",
+      "typeFullName": "void",
+      "lineNumber": 22,
+      "order": 1,
+      "_label": "TYPE_REF",
+      "columnNumber": 4,
+      "possibleTypes": [],
+      "argumentIndex": 1
+    },
+    {
+      "dynamicTypeHintFullName": [],
+      "_id": 176093659140,
+      "code": "DecodeImageHandler *",
+      "typeFullName": "DecodeImageHandler",
+      "lineNumber": 24,
+      "order": 1,
+      "_label": "TYPE_REF",
+      "columnNumber": 19,
+      "possibleTypes": [],
+      "argumentIndex": 1
+    },
+    {
+      "dynamicTypeHintFullName": [],
+      "_id": 176093659141,
+      "code": "EncodeImageHandler *",
+      "typeFullName": "EncodeImageHandler",
+      "lineNumber": 25,
+      "order": 1,
+      "_label": "TYPE_REF",
+      "columnNumber": 19,
+      "possibleTypes": [],
+      "argumentIndex": 1
+    },
+    {
+      "dynamicTypeHintFullName": [],
+      "_id": 176093659142,
+      "code": "IsImageFormatHandler *",
+      "typeFullName": "IsImageFormatHandler",
+      "lineNumber": 26,
+      "order": 1,
+      "_label": "TYPE_REF",
+      "columnNumber": 18,
+      "possibleTypes": [],
+      "argumentIndex": 1
+    },
+    {
+      "dynamicTypeHintFullName": [],
+      "_id": 176093659143,
+      "code": "void",
+      "typeFullName": "void",
+      "lineNumber": 27,
+      "order": 1,
+      "_label": "TYPE_REF",
+      "columnNumber": 4,
+      "possibleTypes": [],
+      "argumentIndex": 1
+    },
+    {
+      "dynamicTypeHintFullName": [],
+      "parserTypeName": "CASTProblemDeclaration",
+      "_id": 180388626432,
+      "code": "ModuleExport",
+      "typeFullName": "<empty>",
+      "lineNumber": 7,
+      "order": 1,
+      "containedRef": "<empty>",
+      "_label": "UNKNOWN",
+      "columnNumber": 1,
+      "possibleTypes": [],
+      "argumentIndex": -1
+    }
+  ],
+  "edges": {
+    "AST": [
+      {
+        "src": 107374182400,
+        "dst": 111669149696,
+        "label": "AST"
+      },
+      {
+        "src": 107374182400,
+        "dst": 115964116992,
+        "label": "AST"
+      },
+      {
+        "src": 107374182400,
+        "dst": 25769803776,
+        "label": "AST"
+      },
+      {
+        "src": 107374182400,
+        "dst": 124554051584,
+        "label": "AST"
+      },
+      {
+        "src": 25769803776,
+        "dst": 94489280513,
+        "label": "AST"
+      },
+      {
+        "src": 25769803776,
+        "dst": 94489280514,
+        "label": "AST"
+      },
+      {
+        "src": 25769803776,
+        "dst": 94489280515,
+        "label": "AST"
+      },
+      {
+        "src": 25769803776,
+        "dst": 94489280516,
+        "label": "AST"
+      },
+      {
+        "src": 25769803776,
+        "dst": 94489280517,
+        "label": "AST"
+      },
+      {
+        "src": 25769803776,
+        "dst": 94489280518,
+        "label": "AST"
+      },
+      {
+        "src": 25769803776,
+        "dst": 94489280519,
+        "label": "AST"
+      },
+      {
+        "src": 25769803776,
+        "dst": 94489280520,
+        "label": "AST"
+      },
+      {
+        "src": 25769803776,
+        "dst": 94489280512,
+        "label": "AST"
+      },
+      {
+        "src": 25769803776,
+        "dst": 30064771072,
+        "label": "AST"
+      },
+      {
+        "src": 25769803776,
+        "dst": 30064771074,
+        "label": "AST"
+      },
+      {
+        "src": 25769803776,
+        "dst": 30064771077,
+        "label": "AST"
+      },
+      {
+        "src": 25769803776,
+        "dst": 30064771079,
+        "label": "AST"
+      },
+      {
+        "src": 25769803776,
+        "dst": 30064771081,
+        "label": "AST"
+      },
+      {
+        "src": 25769803776,
+        "dst": 30064771083,
+        "label": "AST"
+      },
+      {
+        "src": 25769803776,
+        "dst": 30064771085,
+        "label": "AST"
+      },
+      {
+        "src": 25769803776,
+        "dst": 30064771088,
+        "label": "AST"
+      },
+      {
+        "src": 25769803776,
+        "dst": 30064771090,
+        "label": "AST"
+      },
+      {
+        "src": 25769803776,
+        "dst": 30064771092,
+        "label": "AST"
+      },
+      {
+        "src": 25769803776,
+        "dst": 30064771094,
+        "label": "AST"
+      },
+      {
+        "src": 25769803776,
+        "dst": 30064771096,
+        "label": "AST"
+      },
+      {
+        "src": 25769803776,
+        "dst": 30064771098,
+        "label": "AST"
+      },
+      {
+        "src": 25769803776,
+        "dst": 30064771101,
+        "label": "AST"
+      },
+      {
+        "src": 25769803776,
+        "dst": 30064771104,
+        "label": "AST"
+      },
+      {
+        "src": 25769803776,
+        "dst": 30064771107,
+        "label": "AST"
+      },
+      {
+        "src": 25769803776,
+        "dst": 141733920768,
+        "label": "AST"
+      },
+      {
+        "src": 30064771072,
+        "dst": 68719476736,
+        "label": "AST"
+      },
+      {
+        "src": 30064771072,
+        "dst": 30064771073,
+        "label": "AST"
+      },
+      {
+        "src": 30064771073,
+        "dst": 90194313216,
+        "label": "AST"
+      },
+      {
+        "src": 30064771073,
+        "dst": 90194313217,
+        "label": "AST"
+      },
+      {
+        "src": 30064771073,
+        "dst": 90194313218,
+        "label": "AST"
+      },
+      {
+        "src": 30064771074,
+        "dst": 30064771075,
+        "label": "AST"
+      },
+      {
+        "src": 30064771074,
+        "dst": 30064771076,
+        "label": "AST"
+      },
+      {
+        "src": 30064771075,
+        "dst": 68719476737,
+        "label": "AST"
+      },
+      {
+        "src": 30064771075,
+        "dst": 55834574848,
+        "label": "AST"
+      },
+      {
+        "src": 30064771076,
+        "dst": 176093659136,
+        "label": "AST"
+      },
+      {
+        "src": 30064771076,
+        "dst": 68719476738,
+        "label": "AST"
+      },
+      {
+        "src": 30064771077,
+        "dst": 30064771078,
+        "label": "AST"
+      },
+      {
+        "src": 30064771077,
+        "dst": 68719476740,
+        "label": "AST"
+      },
+      {
+        "src": 30064771078,
+        "dst": 68719476739,
+        "label": "AST"
+      },
+      {
+        "src": 30064771078,
+        "dst": 55834574849,
+        "label": "AST"
+      },
+      {
+        "src": 30064771079,
+        "dst": 30064771080,
+        "label": "AST"
+      },
+      {
+        "src": 30064771079,
+        "dst": 68719476742,
+        "label": "AST"
+      },
+      {
+        "src": 30064771080,
+        "dst": 68719476741,
+        "label": "AST"
+      },
+      {
+        "src": 30064771080,
+        "dst": 55834574850,
+        "label": "AST"
+      },
+      {
+        "src": 30064771081,
+        "dst": 176093659137,
+        "label": "AST"
+      },
+      {
+        "src": 30064771081,
+        "dst": 30064771082,
+        "label": "AST"
+      },
+      {
+        "src": 30064771082,
+        "dst": 68719476743,
+        "label": "AST"
+      },
+      {
+        "src": 30064771083,
+        "dst": 68719476744,
+        "label": "AST"
+      },
+      {
+        "src": 30064771083,
+        "dst": 30064771084,
+        "label": "AST"
+      },
+      {
+        "src": 30064771084,
+        "dst": 90194313219,
+        "label": "AST"
+      },
+      {
+        "src": 30064771084,
+        "dst": 90194313220,
+        "label": "AST"
+      },
+      {
+        "src": 30064771084,
+        "dst": 90194313221,
+        "label": "AST"
+      },
+      {
+        "src": 30064771085,
+        "dst": 30064771086,
+        "label": "AST"
+      },
+      {
+        "src": 30064771085,
+        "dst": 30064771087,
+        "label": "AST"
+      },
+      {
+        "src": 30064771086,
+        "dst": 68719476745,
+        "label": "AST"
+      },
+      {
+        "src": 30064771086,
+        "dst": 55834574851,
+        "label": "AST"
+      },
+      {
+        "src": 30064771087,
+        "dst": 176093659138,
+        "label": "AST"
+      },
+      {
+        "src": 30064771087,
+        "dst": 68719476746,
+        "label": "AST"
+      },
+      {
+        "src": 30064771088,
+        "dst": 30064771089,
+        "label": "AST"
+      },
+      {
+        "src": 30064771088,
+        "dst": 68719476748,
+        "label": "AST"
+      },
+      {
+        "src": 30064771089,
+        "dst": 68719476747,
+        "label": "AST"
+      },
+      {
+        "src": 30064771089,
+        "dst": 55834574852,
+        "label": "AST"
+      },
+      {
+        "src": 30064771090,
+        "dst": 30064771091,
+        "label": "AST"
+      },
+      {
+        "src": 30064771090,
+        "dst": 68719476750,
+        "label": "AST"
+      },
+      {
+        "src": 30064771091,
+        "dst": 68719476749,
+        "label": "AST"
+      },
+      {
+        "src": 30064771091,
+        "dst": 55834574853,
+        "label": "AST"
+      },
+      {
+        "src": 30064771092,
+        "dst": 30064771093,
+        "label": "AST"
+      },
+      {
+        "src": 30064771092,
+        "dst": 68719476752,
+        "label": "AST"
+      },
+      {
+        "src": 30064771093,
+        "dst": 68719476751,
+        "label": "AST"
+      },
+      {
+        "src": 30064771093,
+        "dst": 55834574854,
+        "label": "AST"
+      },
+      {
+        "src": 30064771094,
+        "dst": 176093659139,
+        "label": "AST"
+      },
+      {
+        "src": 30064771094,
+        "dst": 30064771095,
+        "label": "AST"
+      },
+      {
+        "src": 30064771095,
+        "dst": 68719476753,
+        "label": "AST"
+      },
+      {
+        "src": 30064771096,
+        "dst": 68719476754,
+        "label": "AST"
+      },
+      {
+        "src": 30064771096,
+        "dst": 30064771097,
+        "label": "AST"
+      },
+      {
+        "src": 30064771097,
+        "dst": 90194313222,
+        "label": "AST"
+      },
+      {
+        "src": 30064771097,
+        "dst": 90194313223,
+        "label": "AST"
+      },
+      {
+        "src": 30064771097,
+        "dst": 90194313224,
+        "label": "AST"
+      },
+      {
+        "src": 30064771098,
+        "dst": 30064771099,
+        "label": "AST"
+      },
+      {
+        "src": 30064771098,
+        "dst": 30064771100,
+        "label": "AST"
+      },
+      {
+        "src": 30064771099,
+        "dst": 68719476755,
+        "label": "AST"
+      },
+      {
+        "src": 30064771099,
+        "dst": 55834574855,
+        "label": "AST"
+      },
+      {
+        "src": 30064771100,
+        "dst": 176093659140,
+        "label": "AST"
+      },
+      {
+        "src": 30064771100,
+        "dst": 68719476756,
+        "label": "AST"
+      },
+      {
+        "src": 30064771101,
+        "dst": 30064771102,
+        "label": "AST"
+      },
+      {
+        "src": 30064771101,
+        "dst": 30064771103,
+        "label": "AST"
+      },
+      {
+        "src": 30064771102,
+        "dst": 68719476757,
+        "label": "AST"
+      },
+      {
+        "src": 30064771102,
+        "dst": 55834574856,
+        "label": "AST"
+      },
+      {
+        "src": 30064771103,
+        "dst": 176093659141,
+        "label": "AST"
+      },
+      {
+        "src": 30064771103,
+        "dst": 68719476758,
+        "label": "AST"
+      },
+      {
+        "src": 30064771104,
+        "dst": 30064771105,
+        "label": "AST"
+      },
+      {
+        "src": 30064771104,
+        "dst": 30064771106,
+        "label": "AST"
+      },
+      {
+        "src": 30064771105,
+        "dst": 68719476759,
+        "label": "AST"
+      },
+      {
+        "src": 30064771105,
+        "dst": 55834574857,
+        "label": "AST"
+      },
+      {
+        "src": 30064771106,
+        "dst": 176093659142,
+        "label": "AST"
+      },
+      {
+        "src": 30064771106,
+        "dst": 68719476760,
+        "label": "AST"
+      },
+      {
+        "src": 30064771107,
+        "dst": 176093659143,
+        "label": "AST"
+      },
+      {
+        "src": 30064771107,
+        "dst": 30064771108,
+        "label": "AST"
+      },
+      {
+        "src": 30064771108,
+        "dst": 68719476761,
+        "label": "AST"
+      },
+      {
+        "src": 141733920768,
+        "dst": 68719476762,
+        "label": "AST"
+      },
+      {
+        "src": 107374182401,
+        "dst": 107374182400,
+        "label": "AST"
+      },
+      {
+        "src": 107374182401,
+        "dst": 25769803777,
+        "label": "AST"
+      },
+      {
+        "src": 107374182401,
+        "dst": 124554051585,
+        "label": "AST"
+      },
+      {
+        "src": 25769803777,
+        "dst": 180388626432,
+        "label": "AST"
+      },
+      {
+        "src": 25769803777,
+        "dst": 120259084288,
+        "label": "AST"
+      },
+      {
+        "src": 107374182402,
+        "dst": 25769803778,
+        "label": "AST"
+      },
+      {
+        "src": 107374182402,
+        "dst": 124554051586,
+        "label": "AST"
+      },
+      {
+        "src": 107374182403,
+        "dst": 111669149697,
+        "label": "AST"
+      },
+      {
+        "src": 107374182403,
+        "dst": 25769803779,
+        "label": "AST"
+      },
+      {
+        "src": 107374182403,
+        "dst": 115964116993,
+        "label": "AST"
+      },
+      {
+        "src": 107374182403,
+        "dst": 124554051587,
+        "label": "AST"
+      },
+      {
+        "src": 107374182404,
+        "dst": 111669149698,
+        "label": "AST"
+      },
+      {
+        "src": 107374182404,
+        "dst": 25769803780,
+        "label": "AST"
+      },
+      {
+        "src": 107374182404,
+        "dst": 115964116994,
+        "label": "AST"
+      },
+      {
+        "src": 107374182404,
+        "dst": 111669149699,
+        "label": "AST"
+      },
+      {
+        "src": 107374182404,
+        "dst": 124554051588,
+        "label": "AST"
+      },
+      {
+        "src": 107374182404,
+        "dst": 115964116995,
+        "label": "AST"
+      },
+      {
+        "src": 107374182405,
+        "dst": 111669149700,
+        "label": "AST"
+      },
+      {
+        "src": 107374182405,
+        "dst": 25769803781,
+        "label": "AST"
+      },
+      {
+        "src": 107374182405,
+        "dst": 115964116996,
+        "label": "AST"
+      },
+      {
+        "src": 107374182405,
+        "dst": 111669149701,
+        "label": "AST"
+      },
+      {
+        "src": 107374182405,
+        "dst": 124554051589,
+        "label": "AST"
+      },
+      {
+        "src": 107374182405,
+        "dst": 115964116997,
+        "label": "AST"
+      },
+      {
+        "src": 107374182405,
+        "dst": 111669149702,
+        "label": "AST"
+      },
+      {
+        "src": 107374182405,
+        "dst": 115964116998,
+        "label": "AST"
+      },
+      {
+        "src": 107374182406,
+        "dst": 111669149703,
+        "label": "AST"
+      },
+      {
+        "src": 107374182406,
+        "dst": 25769803782,
+        "label": "AST"
+      },
+      {
+        "src": 107374182406,
+        "dst": 115964116999,
+        "label": "AST"
+      },
+      {
+        "src": 107374182406,
+        "dst": 111669149704,
+        "label": "AST"
+      },
+      {
+        "src": 107374182406,
+        "dst": 124554051590,
+        "label": "AST"
+      },
+      {
+        "src": 107374182406,
+        "dst": 115964117000,
+        "label": "AST"
+      },
+      {
+        "src": 107374182407,
+        "dst": 111669149705,
+        "label": "AST"
+      },
+      {
+        "src": 107374182407,
+        "dst": 25769803783,
+        "label": "AST"
+      },
+      {
+        "src": 107374182407,
+        "dst": 115964117001,
+        "label": "AST"
+      },
+      {
+        "src": 107374182407,
+        "dst": 111669149706,
+        "label": "AST"
+      },
+      {
+        "src": 107374182407,
+        "dst": 124554051591,
+        "label": "AST"
+      },
+      {
+        "src": 107374182407,
+        "dst": 115964117002,
+        "label": "AST"
+      },
+      {
+        "src": 107374182408,
+        "dst": 111669149707,
+        "label": "AST"
+      },
+      {
+        "src": 107374182408,
+        "dst": 25769803784,
+        "label": "AST"
+      },
+      {
+        "src": 107374182408,
+        "dst": 115964117003,
+        "label": "AST"
+      },
+      {
+        "src": 107374182408,
+        "dst": 111669149708,
+        "label": "AST"
+      },
+      {
+        "src": 107374182408,
+        "dst": 124554051592,
+        "label": "AST"
+      },
+      {
+        "src": 107374182408,
+        "dst": 115964117004,
+        "label": "AST"
+      }
+    ],
+    "CFG": [
+      {
+        "src": 30064771072,
+        "dst": 68719476737,
+        "label": "CFG"
+      },
+      {
+        "src": 30064771074,
+        "dst": 68719476739,
+        "label": "CFG"
+      },
+      {
+        "src": 30064771077,
+        "dst": 68719476741,
+        "label": "CFG"
+      },
+      {
+        "src": 30064771079,
+        "dst": 176093659137,
+        "label": "CFG"
+      },
+      {
+        "src": 30064771081,
+        "dst": 68719476744,
+        "label": "CFG"
+      },
+      {
+        "src": 30064771083,
+        "dst": 68719476745,
+        "label": "CFG"
+      },
+      {
+        "src": 30064771085,
+        "dst": 68719476747,
+        "label": "CFG"
+      },
+      {
+        "src": 30064771088,
+        "dst": 68719476749,
+        "label": "CFG"
+      },
+      {
+        "src": 30064771090,
+        "dst": 68719476751,
+        "label": "CFG"
+      },
+      {
+        "src": 30064771092,
+        "dst": 176093659139,
+        "label": "CFG"
+      },
+      {
+        "src": 30064771094,
+        "dst": 68719476754,
+        "label": "CFG"
+      },
+      {
+        "src": 30064771096,
+        "dst": 68719476755,
+        "label": "CFG"
+      },
+      {
+        "src": 30064771098,
+        "dst": 68719476757,
+        "label": "CFG"
+      },
+      {
+        "src": 30064771101,
+        "dst": 68719476759,
+        "label": "CFG"
+      },
+      {
+        "src": 30064771104,
+        "dst": 176093659143,
+        "label": "CFG"
+      },
+      {
+        "src": 30064771107,
+        "dst": 68719476762,
+        "label": "CFG"
+      },
+      {
+        "src": 68719476736,
+        "dst": 90194313216,
+        "label": "CFG"
+      },
+      {
+        "src": 30064771073,
+        "dst": 30064771072,
+        "label": "CFG"
+      },
+      {
+        "src": 30064771075,
+        "dst": 176093659136,
+        "label": "CFG"
+      },
+      {
+        "src": 30064771076,
+        "dst": 30064771074,
+        "label": "CFG"
+      },
+      {
+        "src": 30064771078,
+        "dst": 68719476740,
+        "label": "CFG"
+      },
+      {
+        "src": 68719476740,
+        "dst": 30064771077,
+        "label": "CFG"
+      },
+      {
+        "src": 30064771080,
+        "dst": 68719476742,
+        "label": "CFG"
+      },
+      {
+        "src": 68719476742,
+        "dst": 30064771079,
+        "label": "CFG"
+      },
+      {
+        "src": 176093659137,
+        "dst": 68719476743,
+        "label": "CFG"
+      },
+      {
+        "src": 30064771082,
+        "dst": 30064771081,
+        "label": "CFG"
+      },
+      {
+        "src": 68719476744,
+        "dst": 90194313219,
+        "label": "CFG"
+      },
+      {
+        "src": 30064771084,
+        "dst": 30064771083,
+        "label": "CFG"
+      },
+      {
+        "src": 30064771086,
+        "dst": 176093659138,
+        "label": "CFG"
+      },
+      {
+        "src": 30064771087,
+        "dst": 30064771085,
+        "label": "CFG"
+      },
+      {
+        "src": 30064771089,
+        "dst": 68719476748,
+        "label": "CFG"
+      },
+      {
+        "src": 68719476748,
+        "dst": 30064771088,
+        "label": "CFG"
+      },
+      {
+        "src": 30064771091,
+        "dst": 68719476750,
+        "label": "CFG"
+      },
+      {
+        "src": 68719476750,
+        "dst": 30064771090,
+        "label": "CFG"
+      },
+      {
+        "src": 30064771093,
+        "dst": 68719476752,
+        "label": "CFG"
+      },
+      {
+        "src": 68719476752,
+        "dst": 30064771092,
+        "label": "CFG"
+      },
+      {
+        "src": 176093659139,
+        "dst": 68719476753,
+        "label": "CFG"
+      },
+      {
+        "src": 30064771095,
+        "dst": 30064771094,
+        "label": "CFG"
+      },
+      {
+        "src": 68719476754,
+        "dst": 90194313222,
+        "label": "CFG"
+      },
+      {
+        "src": 30064771097,
+        "dst": 30064771096,
+        "label": "CFG"
+      },
+      {
+        "src": 30064771099,
+        "dst": 176093659140,
+        "label": "CFG"
+      },
+      {
+        "src": 30064771100,
+        "dst": 30064771098,
+        "label": "CFG"
+      },
+      {
+        "src": 30064771102,
+        "dst": 176093659141,
+        "label": "CFG"
+      },
+      {
+        "src": 30064771103,
+        "dst": 30064771101,
+        "label": "CFG"
+      },
+      {
+        "src": 30064771105,
+        "dst": 176093659142,
+        "label": "CFG"
+      },
+      {
+        "src": 30064771106,
+        "dst": 30064771104,
+        "label": "CFG"
+      },
+      {
+        "src": 176093659143,
+        "dst": 68719476761,
+        "label": "CFG"
+      },
+      {
+        "src": 30064771108,
+        "dst": 30064771107,
+        "label": "CFG"
+      },
+      {
+        "src": 68719476762,
+        "dst": 141733920768,
+        "label": "CFG"
+      },
+      {
+        "src": 90194313216,
+        "dst": 90194313217,
+        "label": "CFG"
+      },
+      {
+        "src": 90194313217,
+        "dst": 90194313218,
+        "label": "CFG"
+      },
+      {
+        "src": 90194313218,
+        "dst": 30064771073,
+        "label": "CFG"
+      },
+      {
+        "src": 68719476737,
+        "dst": 55834574848,
+        "label": "CFG"
+      },
+      {
+        "src": 55834574848,
+        "dst": 30064771075,
+        "label": "CFG"
+      },
+      {
+        "src": 176093659136,
+        "dst": 68719476738,
+        "label": "CFG"
+      },
+      {
+        "src": 68719476738,
+        "dst": 30064771076,
+        "label": "CFG"
+      },
+      {
+        "src": 68719476739,
+        "dst": 55834574849,
+        "label": "CFG"
+      },
+      {
+        "src": 55834574849,
+        "dst": 30064771078,
+        "label": "CFG"
+      },
+      {
+        "src": 68719476741,
+        "dst": 55834574850,
+        "label": "CFG"
+      },
+      {
+        "src": 55834574850,
+        "dst": 30064771080,
+        "label": "CFG"
+      },
+      {
+        "src": 68719476743,
+        "dst": 30064771082,
+        "label": "CFG"
+      },
+      {
+        "src": 90194313219,
+        "dst": 90194313220,
+        "label": "CFG"
+      },
+      {
+        "src": 90194313220,
+        "dst": 90194313221,
+        "label": "CFG"
+      },
+      {
+        "src": 90194313221,
+        "dst": 30064771084,
+        "label": "CFG"
+      },
+      {
+        "src": 68719476745,
+        "dst": 55834574851,
+        "label": "CFG"
+      },
+      {
+        "src": 55834574851,
+        "dst": 30064771086,
+        "label": "CFG"
+      },
+      {
+        "src": 176093659138,
+        "dst": 68719476746,
+        "label": "CFG"
+      },
+      {
+        "src": 68719476746,
+        "dst": 30064771087,
+        "label": "CFG"
+      },
+      {
+        "src": 68719476747,
+        "dst": 55834574852,
+        "label": "CFG"
+      },
+      {
+        "src": 55834574852,
+        "dst": 30064771089,
+        "label": "CFG"
+      },
+      {
+        "src": 68719476749,
+        "dst": 55834574853,
+        "label": "CFG"
+      },
+      {
+        "src": 55834574853,
+        "dst": 30064771091,
+        "label": "CFG"
+      },
+      {
+        "src": 68719476751,
+        "dst": 55834574854,
+        "label": "CFG"
+      },
+      {
+        "src": 55834574854,
+        "dst": 30064771093,
+        "label": "CFG"
+      },
+      {
+        "src": 68719476753,
+        "dst": 30064771095,
+        "label": "CFG"
+      },
+      {
+        "src": 90194313222,
+        "dst": 90194313223,
+        "label": "CFG"
+      },
+      {
+        "src": 90194313223,
+        "dst": 90194313224,
+        "label": "CFG"
+      },
+      {
+        "src": 90194313224,
+        "dst": 30064771097,
+        "label": "CFG"
+      },
+      {
+        "src": 68719476755,
+        "dst": 55834574855,
+        "label": "CFG"
+      },
+      {
+        "src": 55834574855,
+        "dst": 30064771099,
+        "label": "CFG"
+      },
+      {
+        "src": 176093659140,
+        "dst": 68719476756,
+        "label": "CFG"
+      },
+      {
+        "src": 68719476756,
+        "dst": 30064771100,
+        "label": "CFG"
+      },
+      {
+        "src": 68719476757,
+        "dst": 55834574856,
+        "label": "CFG"
+      },
+      {
+        "src": 55834574856,
+        "dst": 30064771102,
+        "label": "CFG"
+      },
+      {
+        "src": 176093659141,
+        "dst": 68719476758,
+        "label": "CFG"
+      },
+      {
+        "src": 68719476758,
+        "dst": 30064771103,
+        "label": "CFG"
+      },
+      {
+        "src": 68719476759,
+        "dst": 55834574857,
+        "label": "CFG"
+      },
+      {
+        "src": 55834574857,
+        "dst": 30064771105,
+        "label": "CFG"
+      },
+      {
+        "src": 176093659142,
+        "dst": 68719476760,
+        "label": "CFG"
+      },
+      {
+        "src": 68719476760,
+        "dst": 30064771106,
+        "label": "CFG"
+      },
+      {
+        "src": 68719476761,
+        "dst": 30064771108,
+        "label": "CFG"
+      },
+      {
+        "src": 107374182400,
+        "dst": 68719476736,
+        "label": "CFG"
+      },
+      {
+        "src": 180388626432,
+        "dst": 120259084288,
+        "label": "CFG"
+      }
+    ],
+    "DFG": [
+      {
+        "src": 30064771072,
+        "dst": 30064771074,
+        "label": "DFG"
+      },
+      {
+        "src": 30064771072,
+        "dst": 30064771077,
+        "label": "DFG"
+      },
+      {
+        "src": 30064771072,
+        "dst": 30064771079,
+        "label": "DFG"
+      },
+      {
+        "src": 30064771072,
+        "dst": 30064771081,
+        "label": "DFG"
+      },
+      {
+        "src": 30064771083,
+        "dst": 30064771085,
+        "label": "DFG"
+      },
+      {
+        "src": 30064771083,
+        "dst": 30064771088,
+        "label": "DFG"
+      },
+      {
+        "src": 30064771083,
+        "dst": 30064771090,
+        "label": "DFG"
+      },
+      {
+        "src": 30064771083,
+        "dst": 30064771092,
+        "label": "DFG"
+      },
+      {
+        "src": 30064771083,
+        "dst": 30064771094,
+        "label": "DFG"
+      },
+      {
+        "src": 30064771096,
+        "dst": 30064771098,
+        "label": "DFG"
+      },
+      {
+        "src": 30064771096,
+        "dst": 30064771101,
+        "label": "DFG"
+      },
+      {
+        "src": 30064771096,
+        "dst": 30064771104,
+        "label": "DFG"
+      },
+      {
+        "src": 30064771096,
+        "dst": 30064771107,
+        "label": "DFG"
+      },
+      {
+        "src": 30064771072,
+        "dst": 30064771075,
+        "label": "DFG"
+      },
+      {
+        "src": 30064771072,
+        "dst": 30064771078,
+        "label": "DFG"
+      },
+      {
+        "src": 30064771072,
+        "dst": 30064771080,
+        "label": "DFG"
+      },
+      {
+        "src": 30064771072,
+        "dst": 30064771082,
+        "label": "DFG"
+      },
+      {
+        "src": 30064771072,
+        "dst": 68719476744,
+        "label": "DFG"
+      },
+      {
+        "src": 30064771083,
+        "dst": 30064771086,
+        "label": "DFG"
+      },
+      {
+        "src": 30064771083,
+        "dst": 30064771089,
+        "label": "DFG"
+      },
+      {
+        "src": 30064771083,
+        "dst": 30064771091,
+        "label": "DFG"
+      },
+      {
+        "src": 30064771083,
+        "dst": 30064771093,
+        "label": "DFG"
+      },
+      {
+        "src": 30064771083,
+        "dst": 30064771095,
+        "label": "DFG"
+      },
+      {
+        "src": 30064771083,
+        "dst": 68719476754,
+        "label": "DFG"
+      },
+      {
+        "src": 30064771096,
+        "dst": 30064771099,
+        "label": "DFG"
+      },
+      {
+        "src": 30064771096,
+        "dst": 30064771102,
+        "label": "DFG"
+      },
+      {
+        "src": 30064771096,
+        "dst": 30064771105,
+        "label": "DFG"
+      },
+      {
+        "src": 30064771096,
+        "dst": 30064771108,
+        "label": "DFG"
+      },
+      {
+        "src": 30064771072,
+        "dst": 68719476737,
+        "label": "DFG"
+      },
+      {
+        "src": 30064771072,
+        "dst": 68719476739,
+        "label": "DFG"
+      },
+      {
+        "src": 30064771072,
+        "dst": 68719476741,
+        "label": "DFG"
+      },
+      {
+        "src": 30064771072,
+        "dst": 68719476743,
+        "label": "DFG"
+      },
+      {
+        "src": 30064771083,
+        "dst": 68719476745,
+        "label": "DFG"
+      },
+      {
+        "src": 30064771083,
+        "dst": 68719476747,
+        "label": "DFG"
+      },
+      {
+        "src": 30064771083,
+        "dst": 68719476749,
+        "label": "DFG"
+      },
+      {
+        "src": 30064771083,
+        "dst": 68719476751,
+        "label": "DFG"
+      },
+      {
+        "src": 30064771083,
+        "dst": 68719476753,
+        "label": "DFG"
+      },
+      {
+        "src": 30064771096,
+        "dst": 68719476755,
+        "label": "DFG"
+      },
+      {
+        "src": 30064771096,
+        "dst": 68719476757,
+        "label": "DFG"
+      },
+      {
+        "src": 30064771096,
+        "dst": 68719476759,
+        "label": "DFG"
+      },
+      {
+        "src": 30064771096,
+        "dst": 68719476761,
+        "label": "DFG"
+      }
+    ],
+    "CALL": [
+      {
+        "src": 30064771072,
+        "dst": 107374182408,
+        "label": "CALL"
+      },
+      {
+        "src": 30064771073,
+        "dst": 107374182405,
+        "label": "CALL"
+      },
+      {
+        "src": 30064771074,
+        "dst": 107374182408,
+        "label": "CALL"
+      },
+      {
+        "src": 30064771075,
+        "dst": 107374182404,
+        "label": "CALL"
+      },
+      {
+        "src": 30064771076,
+        "dst": 107374182406,
+        "label": "CALL"
+      },
+      {
+        "src": 30064771077,
+        "dst": 107374182407,
+        "label": "CALL"
+      },
+      {
+        "src": 30064771078,
+        "dst": 107374182404,
+        "label": "CALL"
+      },
+      {
+        "src": 30064771079,
+        "dst": 107374182407,
+        "label": "CALL"
+      },
+      {
+        "src": 30064771080,
+        "dst": 107374182404,
+        "label": "CALL"
+      },
+      {
+        "src": 30064771081,
+        "dst": 107374182406,
+        "label": "CALL"
+      },
+      {
+        "src": 30064771082,
+        "dst": 107374182403,
+        "label": "CALL"
+      },
+      {
+        "src": 30064771083,
+        "dst": 107374182408,
+        "label": "CALL"
+      },
+      {
+        "src": 30064771084,
+        "dst": 107374182405,
+        "label": "CALL"
+      },
+      {
+        "src": 30064771085,
+        "dst": 107374182408,
+        "label": "CALL"
+      },
+      {
+        "src": 30064771086,
+        "dst": 107374182404,
+        "label": "CALL"
+      },
+      {
+        "src": 30064771087,
+        "dst": 107374182406,
+        "label": "CALL"
+      },
+      {
+        "src": 30064771088,
+        "dst": 107374182408,
+        "label": "CALL"
+      },
+      {
+        "src": 30064771089,
+        "dst": 107374182404,
+        "label": "CALL"
+      },
+      {
+        "src": 30064771090,
+        "dst": 107374182407,
+        "label": "CALL"
+      },
+      {
+        "src": 30064771091,
+        "dst": 107374182404,
+        "label": "CALL"
+      },
+      {
+        "src": 30064771092,
+        "dst": 107374182407,
+        "label": "CALL"
+      },
+      {
+        "src": 30064771093,
+        "dst": 107374182404,
+        "label": "CALL"
+      },
+      {
+        "src": 30064771094,
+        "dst": 107374182406,
+        "label": "CALL"
+      },
+      {
+        "src": 30064771095,
+        "dst": 107374182403,
+        "label": "CALL"
+      },
+      {
+        "src": 30064771096,
+        "dst": 107374182408,
+        "label": "CALL"
+      },
+      {
+        "src": 30064771097,
+        "dst": 107374182405,
+        "label": "CALL"
+      },
+      {
+        "src": 30064771098,
+        "dst": 107374182408,
+        "label": "CALL"
+      },
+      {
+        "src": 30064771099,
+        "dst": 107374182404,
+        "label": "CALL"
+      },
+      {
+        "src": 30064771100,
+        "dst": 107374182406,
+        "label": "CALL"
+      },
+      {
+        "src": 30064771101,
+        "dst": 107374182408,
+        "label": "CALL"
+      },
+      {
+        "src": 30064771102,
+        "dst": 107374182404,
+        "label": "CALL"
+      },
+      {
+        "src": 30064771103,
+        "dst": 107374182406,
+        "label": "CALL"
+      },
+      {
+        "src": 30064771104,
+        "dst": 107374182408,
+        "label": "CALL"
+      },
+      {
+        "src": 30064771105,
+        "dst": 107374182404,
+        "label": "CALL"
+      },
+      {
+        "src": 30064771106,
+        "dst": 107374182406,
+        "label": "CALL"
+      },
+      {
+        "src": 30064771107,
+        "dst": 107374182406,
+        "label": "CALL"
+      },
+      {
+        "src": 30064771108,
+        "dst": 107374182403,
+        "label": "CALL"
+      }
+    ],
+    "ARG2PARAM": [
+      {
+        "src": 68719476736,
+        "dst": 111669149707,
+        "label": "ARG2PARAM"
+      },
+      {
+        "src": 30064771073,
+        "dst": 111669149708,
+        "label": "ARG2PARAM"
+      },
+      {
+        "src": 90194313216,
+        "dst": 111669149700,
+        "label": "ARG2PARAM"
+      },
+      {
+        "src": 90194313217,
+        "dst": 111669149701,
+        "label": "ARG2PARAM"
+      },
+      {
+        "src": 90194313218,
+        "dst": 111669149702,
+        "label": "ARG2PARAM"
+      },
+      {
+        "src": 30064771075,
+        "dst": 111669149707,
+        "label": "ARG2PARAM"
+      },
+      {
+        "src": 30064771076,
+        "dst": 111669149708,
+        "label": "ARG2PARAM"
+      },
+      {
+        "src": 68719476737,
+        "dst": 111669149698,
+        "label": "ARG2PARAM"
+      },
+      {
+        "src": 55834574848,
+        "dst": 111669149699,
+        "label": "ARG2PARAM"
+      },
+      {
+        "src": 176093659136,
+        "dst": 111669149703,
+        "label": "ARG2PARAM"
+      },
+      {
+        "src": 68719476738,
+        "dst": 111669149704,
+        "label": "ARG2PARAM"
+      },
+      {
+        "src": 30064771078,
+        "dst": 111669149705,
+        "label": "ARG2PARAM"
+      },
+      {
+        "src": 68719476740,
+        "dst": 111669149706,
+        "label": "ARG2PARAM"
+      },
+      {
+        "src": 68719476739,
+        "dst": 111669149698,
+        "label": "ARG2PARAM"
+      },
+      {
+        "src": 55834574849,
+        "dst": 111669149699,
+        "label": "ARG2PARAM"
+      },
+      {
+        "src": 30064771080,
+        "dst": 111669149705,
+        "label": "ARG2PARAM"
+      },
+      {
+        "src": 68719476742,
+        "dst": 111669149706,
+        "label": "ARG2PARAM"
+      },
+      {
+        "src": 68719476741,
+        "dst": 111669149698,
+        "label": "ARG2PARAM"
+      },
+      {
+        "src": 55834574850,
+        "dst": 111669149699,
+        "label": "ARG2PARAM"
+      },
+      {
+        "src": 176093659137,
+        "dst": 111669149703,
+        "label": "ARG2PARAM"
+      },
+      {
+        "src": 30064771082,
+        "dst": 111669149704,
+        "label": "ARG2PARAM"
+      },
+      {
+        "src": 68719476743,
+        "dst": 111669149697,
+        "label": "ARG2PARAM"
+      },
+      {
+        "src": 68719476744,
+        "dst": 111669149707,
+        "label": "ARG2PARAM"
+      },
+      {
+        "src": 30064771084,
+        "dst": 111669149708,
+        "label": "ARG2PARAM"
+      },
+      {
+        "src": 90194313219,
+        "dst": 111669149700,
+        "label": "ARG2PARAM"
+      },
+      {
+        "src": 90194313220,
+        "dst": 111669149701,
+        "label": "ARG2PARAM"
+      },
+      {
+        "src": 90194313221,
+        "dst": 111669149702,
+        "label": "ARG2PARAM"
+      },
+      {
+        "src": 30064771086,
+        "dst": 111669149707,
+        "label": "ARG2PARAM"
+      },
+      {
+        "src": 30064771087,
+        "dst": 111669149708,
+        "label": "ARG2PARAM"
+      },
+      {
+        "src": 68719476745,
+        "dst": 111669149698,
+        "label": "ARG2PARAM"
+      },
+      {
+        "src": 55834574851,
+        "dst": 111669149699,
+        "label": "ARG2PARAM"
+      },
+      {
+        "src": 176093659138,
+        "dst": 111669149703,
+        "label": "ARG2PARAM"
+      },
+      {
+        "src": 68719476746,
+        "dst": 111669149704,
+        "label": "ARG2PARAM"
+      },
+      {
+        "src": 30064771089,
+        "dst": 111669149707,
+        "label": "ARG2PARAM"
+      },
+      {
+        "src": 68719476748,
+        "dst": 111669149708,
+        "label": "ARG2PARAM"
+      },
+      {
+        "src": 68719476747,
+        "dst": 111669149698,
+        "label": "ARG2PARAM"
+      },
+      {
+        "src": 55834574852,
+        "dst": 111669149699,
+        "label": "ARG2PARAM"
+      },
+      {
+        "src": 30064771091,
+        "dst": 111669149705,
+        "label": "ARG2PARAM"
+      },
+      {
+        "src": 68719476750,
+        "dst": 111669149706,
+        "label": "ARG2PARAM"
+      },
+      {
+        "src": 68719476749,
+        "dst": 111669149698,
+        "label": "ARG2PARAM"
+      },
+      {
+        "src": 55834574853,
+        "dst": 111669149699,
+        "label": "ARG2PARAM"
+      },
+      {
+        "src": 30064771093,
+        "dst": 111669149705,
+        "label": "ARG2PARAM"
+      },
+      {
+        "src": 68719476752,
+        "dst": 111669149706,
+        "label": "ARG2PARAM"
+      },
+      {
+        "src": 68719476751,
+        "dst": 111669149698,
+        "label": "ARG2PARAM"
+      },
+      {
+        "src": 55834574854,
+        "dst": 111669149699,
+        "label": "ARG2PARAM"
+      },
+      {
+        "src": 176093659139,
+        "dst": 111669149703,
+        "label": "ARG2PARAM"
+      },
+      {
+        "src": 30064771095,
+        "dst": 111669149704,
+        "label": "ARG2PARAM"
+      },
+      {
+        "src": 68719476753,
+        "dst": 111669149697,
+        "label": "ARG2PARAM"
+      },
+      {
+        "src": 68719476754,
+        "dst": 111669149707,
+        "label": "ARG2PARAM"
+      },
+      {
+        "src": 30064771097,
+        "dst": 111669149708,
+        "label": "ARG2PARAM"
+      },
+      {
+        "src": 90194313222,
+        "dst": 111669149700,
+        "label": "ARG2PARAM"
+      },
+      {
+        "src": 90194313223,
+        "dst": 111669149701,
+        "label": "ARG2PARAM"
+      },
+      {
+        "src": 90194313224,
+        "dst": 111669149702,
+        "label": "ARG2PARAM"
+      },
+      {
+        "src": 30064771099,
+        "dst": 111669149707,
+        "label": "ARG2PARAM"
+      },
+      {
+        "src": 30064771100,
+        "dst": 111669149708,
+        "label": "ARG2PARAM"
+      },
+      {
+        "src": 68719476755,
+        "dst": 111669149698,
+        "label": "ARG2PARAM"
+      },
+      {
+        "src": 55834574855,
+        "dst": 111669149699,
+        "label": "ARG2PARAM"
+      },
+      {
+        "src": 176093659140,
+        "dst": 111669149703,
+        "label": "ARG2PARAM"
+      },
+      {
+        "src": 68719476756,
+        "dst": 111669149704,
+        "label": "ARG2PARAM"
+      },
+      {
+        "src": 30064771102,
+        "dst": 111669149707,
+        "label": "ARG2PARAM"
+      },
+      {
+        "src": 30064771103,
+        "dst": 111669149708,
+        "label": "ARG2PARAM"
+      },
+      {
+        "src": 68719476757,
+        "dst": 111669149698,
+        "label": "ARG2PARAM"
+      },
+      {
+        "src": 55834574856,
+        "dst": 111669149699,
+        "label": "ARG2PARAM"
+      },
+      {
+        "src": 176093659141,
+        "dst": 111669149703,
+        "label": "ARG2PARAM"
+      },
+      {
+        "src": 68719476758,
+        "dst": 111669149704,
+        "label": "ARG2PARAM"
+      },
+      {
+        "src": 30064771105,
+        "dst": 111669149707,
+        "label": "ARG2PARAM"
+      },
+      {
+        "src": 30064771106,
+        "dst": 111669149708,
+        "label": "ARG2PARAM"
+      },
+      {
+        "src": 68719476759,
+        "dst": 111669149698,
+        "label": "ARG2PARAM"
+      },
+      {
+        "src": 55834574857,
+        "dst": 111669149699,
+        "label": "ARG2PARAM"
+      },
+      {
+        "src": 176093659142,
+        "dst": 111669149703,
+        "label": "ARG2PARAM"
+      },
+      {
+        "src": 68719476760,
+        "dst": 111669149704,
+        "label": "ARG2PARAM"
+      },
+      {
+        "src": 176093659143,
+        "dst": 111669149703,
+        "label": "ARG2PARAM"
+      },
+      {
+        "src": 30064771108,
+        "dst": 111669149704,
+        "label": "ARG2PARAM"
+      },
+      {
+        "src": 68719476761,
+        "dst": 111669149697,
+        "label": "ARG2PARAM"
+      }
+    ],
+    "RET2CALL": [
+      {
+        "src": 124554051592,
+        "dst": 30064771072,
+        "label": "RET2CALL"
+      },
+      {
+        "src": 124554051589,
+        "dst": 30064771073,
+        "label": "RET2CALL"
+      },
+      {
+        "src": 124554051592,
+        "dst": 30064771074,
+        "label": "RET2CALL"
+      },
+      {
+        "src": 124554051588,
+        "dst": 30064771075,
+        "label": "RET2CALL"
+      },
+      {
+        "src": 124554051590,
+        "dst": 30064771076,
+        "label": "RET2CALL"
+      },
+      {
+        "src": 124554051591,
+        "dst": 30064771077,
+        "label": "RET2CALL"
+      },
+      {
+        "src": 124554051588,
+        "dst": 30064771078,
+        "label": "RET2CALL"
+      },
+      {
+        "src": 124554051591,
+        "dst": 30064771079,
+        "label": "RET2CALL"
+      },
+      {
+        "src": 124554051588,
+        "dst": 30064771080,
+        "label": "RET2CALL"
+      },
+      {
+        "src": 124554051590,
+        "dst": 30064771081,
+        "label": "RET2CALL"
+      },
+      {
+        "src": 124554051587,
+        "dst": 30064771082,
+        "label": "RET2CALL"
+      },
+      {
+        "src": 124554051592,
+        "dst": 30064771083,
+        "label": "RET2CALL"
+      },
+      {
+        "src": 124554051589,
+        "dst": 30064771084,
+        "label": "RET2CALL"
+      },
+      {
+        "src": 124554051592,
+        "dst": 30064771085,
+        "label": "RET2CALL"
+      },
+      {
+        "src": 124554051588,
+        "dst": 30064771086,
+        "label": "RET2CALL"
+      },
+      {
+        "src": 124554051590,
+        "dst": 30064771087,
+        "label": "RET2CALL"
+      },
+      {
+        "src": 124554051592,
+        "dst": 30064771088,
+        "label": "RET2CALL"
+      },
+      {
+        "src": 124554051588,
+        "dst": 30064771089,
+        "label": "RET2CALL"
+      },
+      {
+        "src": 124554051591,
+        "dst": 30064771090,
+        "label": "RET2CALL"
+      },
+      {
+        "src": 124554051588,
+        "dst": 30064771091,
+        "label": "RET2CALL"
+      },
+      {
+        "src": 124554051591,
+        "dst": 30064771092,
+        "label": "RET2CALL"
+      },
+      {
+        "src": 124554051588,
+        "dst": 30064771093,
+        "label": "RET2CALL"
+      },
+      {
+        "src": 124554051590,
+        "dst": 30064771094,
+        "label": "RET2CALL"
+      },
+      {
+        "src": 124554051587,
+        "dst": 30064771095,
+        "label": "RET2CALL"
+      },
+      {
+        "src": 124554051592,
+        "dst": 30064771096,
+        "label": "RET2CALL"
+      },
+      {
+        "src": 124554051589,
+        "dst": 30064771097,
+        "label": "RET2CALL"
+      },
+      {
+        "src": 124554051592,
+        "dst": 30064771098,
+        "label": "RET2CALL"
+      },
+      {
+        "src": 124554051588,
+        "dst": 30064771099,
+        "label": "RET2CALL"
+      },
+      {
+        "src": 124554051590,
+        "dst": 30064771100,
+        "label": "RET2CALL"
+      },
+      {
+        "src": 124554051592,
+        "dst": 30064771101,
+        "label": "RET2CALL"
+      },
+      {
+        "src": 124554051588,
+        "dst": 30064771102,
+        "label": "RET2CALL"
+      },
+      {
+        "src": 124554051590,
+        "dst": 30064771103,
+        "label": "RET2CALL"
+      },
+      {
+        "src": 124554051592,
+        "dst": 30064771104,
+        "label": "RET2CALL"
+      },
+      {
+        "src": 124554051588,
+        "dst": 30064771105,
+        "label": "RET2CALL"
+      },
+      {
+        "src": 124554051590,
+        "dst": 30064771106,
+        "label": "RET2CALL"
+      },
+      {
+        "src": 124554051590,
+        "dst": 30064771107,
+        "label": "RET2CALL"
+      },
+      {
+        "src": 124554051587,
+        "dst": 30064771108,
+        "label": "RET2CALL"
+      }
+    ],
+    "RET2LHS": [
+      {
+        "src": 124554051589,
+        "dst": 68719476736,
+        "label": "RET2LHS"
+      },
+      {
+        "src": 124554051588,
+        "dst": 30064771075,
+        "label": "RET2LHS"
+      },
+      {
+        "src": 124554051590,
+        "dst": 30064771075,
+        "label": "RET2LHS"
+      },
+      {
+        "src": 124554051589,
+        "dst": 68719476744,
+        "label": "RET2LHS"
+      },
+      {
+        "src": 124554051588,
+        "dst": 30064771086,
+        "label": "RET2LHS"
+      },
+      {
+        "src": 124554051590,
+        "dst": 30064771086,
+        "label": "RET2LHS"
+      },
+      {
+        "src": 124554051588,
+        "dst": 30064771089,
+        "label": "RET2LHS"
+      },
+      {
+        "src": 124554051589,
+        "dst": 68719476754,
+        "label": "RET2LHS"
+      },
+      {
+        "src": 124554051588,
+        "dst": 30064771099,
+        "label": "RET2LHS"
+      },
+      {
+        "src": 124554051590,
+        "dst": 30064771099,
+        "label": "RET2LHS"
+      },
+      {
+        "src": 124554051588,
+        "dst": 30064771102,
+        "label": "RET2LHS"
+      },
+      {
+        "src": 124554051590,
+        "dst": 30064771102,
+        "label": "RET2LHS"
+      },
+      {
+        "src": 124554051588,
+        "dst": 30064771105,
+        "label": "RET2LHS"
+      },
+      {
+        "src": 124554051590,
+        "dst": 30064771105,
+        "label": "RET2LHS"
+      }
+    ]
+  }
+}

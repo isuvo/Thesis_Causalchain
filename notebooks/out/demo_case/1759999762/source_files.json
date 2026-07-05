@@ -1,0 +1,4 @@
+{
+  "mini/main.c": "\n#include <stdlib.h>\n\nextern void do_exec(char* cmd);\n\nint main(int argc, char** argv) {\n    if (argc > 1) {\n        char* p = argv[1];      \n        do_exec(p);             \n    }\n    return 0;\n}\n",
+  "mini/sink.c": "\n\nvoid do_exec(char* cmd) {\n    system(cmd);                // SINK\n}\n"
+}

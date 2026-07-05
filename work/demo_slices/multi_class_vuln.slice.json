@@ -1,0 +1,123 @@
+{
+  "line-contents": [
+    "ClassB B; ClassA A; ClassD D;",
+    "char buf[16];",
+    "char tmp[256];",
+    "int sock = 0;",
+    "B.readFromSocket(sock, tmp, 128);",
+    "size_t n = A.length(tmp);",
+    "if (A.isSafe(n)) {",
+    "  const char* t = A.prepare(tmp);",
+    "  D.copyInto(buf, t);",
+    "}",
+    "process(buf);",
+    "int ClassB::readFromSocket(int sock,char* tmp,size_t n){ return recv(sock,tmp,n,0); }",
+    "size_t ClassA::length(const char* s){ return strlen(s); }",
+    "bool ClassA::isSafe(size_t n){ return n <= 128; }",
+    "const char* ClassA::prepare(const char* s){ return s; }",
+    "void ClassD::copyInto(char* buf,const char* s){ strcpy(buf,s); }"
+  ],
+  "pdg_edges": [
+    [
+      0,
+      1
+    ],
+    [
+      1,
+      2
+    ],
+    [
+      2,
+      3
+    ],
+    [
+      3,
+      4
+    ],
+    [
+      4,
+      5
+    ],
+    [
+      5,
+      6
+    ],
+    [
+      6,
+      7
+    ],
+    [
+      7,
+      8
+    ],
+    [
+      8,
+      9
+    ],
+    [
+      9,
+      10
+    ],
+    [
+      10,
+      11
+    ],
+    [
+      11,
+      12
+    ],
+    [
+      12,
+      13
+    ],
+    [
+      13,
+      14
+    ],
+    [
+      14,
+      15
+    ],
+    [
+      4,
+      11
+    ],
+    [
+      5,
+      12
+    ],
+    [
+      6,
+      13
+    ],
+    [
+      7,
+      14
+    ],
+    [
+      8,
+      15
+    ],
+    [
+      13,
+      7
+    ],
+    [
+      1,
+      8
+    ],
+    [
+      2,
+      11
+    ],
+    [
+      2,
+      12
+    ]
+  ],
+  "target": 1,
+  "meta": {
+    "source_file": "multi_class_vuln.cpp",
+    "seed_local_index": 15
+  }
+}

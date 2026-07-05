@@ -1,0 +1,25 @@
+{
+  "epochs": 5,
+  "hidden": 64,
+  "layers": 3,
+  "lr": 0.002,
+  "wd": 0.0001,
+  "neg_pos_ratio": 20,
+  "device": "cuda",
+  "relations": [
+    "DFG",
+    "CFG",
+    "CALL",
+    "ARG2PARAM",
+    "RET2CALL",
+    "RET2LHS"
+  ],
+  "add_summary_edges": true,
+  "slice_mode": "beam",
+  "beam": {
+    "k": 8,
+    "width": 32,
+    "max_hops": 6,
+    "alpha_node": 0.7
+  }
+}

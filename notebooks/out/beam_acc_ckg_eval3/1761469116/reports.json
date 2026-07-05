@@ -1,0 +1,49 @@
+{
+  "config": {
+    "ckpt": "C:\\Users\\MSHUVO23\\Desktop\\Thesis Research\\Thesis-causal-vul\\notebooks\\out\\cvul\\1760989836\\model.pt",
+    "valid_dir": "C:\\Users\\MSHUVO23\\Desktop\\Thesis Research\\Thesis-causal-vul\\notebooks\\Dataset\\valid\\hetero_ready_gcbert",
+    "test_dir": "C:\\Users\\MSHUVO23\\Desktop\\Thesis Research\\Thesis-causal-vul\\notebooks\\Dataset\\test\\hetero_ready_gcbert",
+    "ckg": "C:\\Users\\MSHUVO23\\Desktop\\Thesis Research\\Thesis-causal-vul\\notebooks\\ckg\\ckg.json",
+    "beam": {
+      "seed_k": 8,
+      "width": 24,
+      "max_hops": 5,
+      "alpha_node": 0.7,
+      "lambda_prior": 0.15
+    }
+  },
+  "reports": {
+    "valid": {
+      "split": "valid",
+      "n_graphs_used": 2906,
+      "beam": {
+        "avg_length_edges": 4.729869236063317,
+        "interproc_ratio": 0.08526960981694164,
+        "motif_hit_rate": 0.9187740737344093
+      },
+      "metrics": {
+        "precision": null,
+        "recall": null,
+        "f1": null,
+        "CFAM_mean": 0.02518165187974487,
+        "CCS_mean": 3.6211604758941704e-06
+      }
+    },
+    "test": {
+      "split": "test",
+      "n_graphs_used": 2915,
+      "beam": {
+        "avg_length_edges": 4.690222984562607,
+        "interproc_ratio": 0.08522615785716829,
+        "motif_hit_rate": 0.9139537458410297
+      },
+      "metrics": {
+        "precision": null,
+        "recall": null,
+        "f1": null,
+        "CFAM_mean": 0.025429966759144485,
+        "CCS_mean": 3.828707944544765e-06
+      }
+    }
+  }
+}

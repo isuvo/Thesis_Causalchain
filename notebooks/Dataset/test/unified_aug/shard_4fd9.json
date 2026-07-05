@@ -1,0 +1,3013 @@
+{
+  "meta": {
+    "tool": "joern",
+    "source": "C:/Users/USER/Desktop/Thesis Research/Implementation/Thesis-causal-vul/work/src/test/shard_4fd9",
+    "n_nodes": 136,
+    "n_edges": {
+      "AST": 97,
+      "CFG": 54,
+      "DFG": 34
+    },
+    "dfg_status": "rd_intra_proc",
+    "cpg_augmented": true,
+    "added_edges": {
+      "CALL": 21,
+      "ARG2PARAM": 38,
+      "RET2CALL": 21,
+      "RET2LHS": 2
+    }
+  },
+  "nodes": [
+    {
+      "name": "mspack_destroy_chm_decompressor",
+      "_id": 21474836480,
+      "signature": "void(mschm_decompressor*)",
+      "methodFullName": "mspack_destroy_chm_decompressor",
+      "_label": "BINDING"
+    },
+    {
+      "dynamicTypeHintFullName": [],
+      "_id": 25769803776,
+      "code": "{\n  struct mschm_decompressor_p *self = (struct mschm_decompressor_p *) base;\n  if (self) {\n    struct mspack_system *sys = self->system;\n    if (self->d) {\n      if (self->d->infh)  sys->close(self->d->infh);\n      if (self->d->state) lzxd_free(self->d->state);\n      sys->free(self->d);\n    }\n    sys->free(self);\n  }\n}",
+      "typeFullName": "void",
+      "lineNumber": 7,
+      "order": 2,
+      "_label": "BLOCK",
+      "columnNumber": 71,
+      "possibleTypes": [],
+      "argumentIndex": -1
+    },
+    {
+      "dynamicTypeHintFullName": [],
+      "_id": 25769803777,
+      "code": "{\n    struct mspack_system *sys = self->system;\n    if (self->d) {\n      if (self->d->infh)  sys->close(self->d->infh);\n      if (self->d->state) lzxd_free(self->d->state);\n      sys->free(self->d);\n    }\n    sys->free(self);\n  }",
+      "typeFullName": "void",
+      "lineNumber": 9,
+      "order": 2,
+      "_label": "BLOCK",
+      "columnNumber": 13,
+      "possibleTypes": [],
+      "argumentIndex": -1
+    },
+    {
+      "dynamicTypeHintFullName": [],
+      "_id": 25769803778,
+      "code": "{\n      if (self->d->infh)  sys->close(self->d->infh);\n      if (self->d->state) lzxd_free(self->d->state);\n      sys->free(self->d);\n    }",
+      "typeFullName": "void",
+      "lineNumber": 11,
+      "order": 2,
+      "_label": "BLOCK",
+      "columnNumber": 18,
+      "possibleTypes": [],
+      "argumentIndex": -1
+    },
+    {
+      "dynamicTypeHintFullName": [],
+      "_id": 25769803779,
+      "code": "<empty>",
+      "typeFullName": "ANY",
+      "lineNumber": 12,
+      "order": 2,
+      "_label": "BLOCK",
+      "columnNumber": 27,
+      "possibleTypes": [],
+      "argumentIndex": -1
+    },
+    {
+      "dynamicTypeHintFullName": [],
+      "_id": 25769803780,
+      "code": "<empty>",
+      "typeFullName": "ANY",
+      "lineNumber": 13,
+      "order": 2,
+      "_label": "BLOCK",
+      "columnNumber": 27,
+      "possibleTypes": [],
+      "argumentIndex": -1
+    },
+    {
+      "dynamicTypeHintFullName": [],
+      "_id": 25769803781,
+      "code": "<empty>",
+      "typeFullName": "ANY",
+      "lineNumber": 1,
+      "order": 1,
+      "_label": "BLOCK",
+      "columnNumber": 1,
+      "possibleTypes": [],
+      "argumentIndex": -1
+    },
+    {
+      "dynamicTypeHintFullName": [],
+      "_id": 25769803782,
+      "code": "<empty>",
+      "typeFullName": "ANY",
+      "order": 1,
+      "_label": "BLOCK",
+      "possibleTypes": [],
+      "argumentIndex": -1
+    },
+    {
+      "dynamicTypeHintFullName": [],
+      "_id": 25769803783,
+      "code": "<empty>",
+      "typeFullName": "ANY",
+      "order": 1,
+      "_label": "BLOCK",
+      "possibleTypes": [],
+      "argumentIndex": 1
+    },
+    {
+      "dynamicTypeHintFullName": [],
+      "_id": 25769803784,
+      "code": "<empty>",
+      "typeFullName": "ANY",
+      "order": 1,
+      "_label": "BLOCK",
+      "possibleTypes": [],
+      "argumentIndex": 1
+    },
+    {
+      "dynamicTypeHintFullName": [],
+      "_id": 25769803785,
+      "code": "<empty>",
+      "typeFullName": "ANY",
+      "order": 1,
+      "_label": "BLOCK",
+      "possibleTypes": [],
+      "argumentIndex": 1
+    },
+    {
+      "dynamicTypeHintFullName": [],
+      "_id": 25769803786,
+      "code": "<empty>",
+      "typeFullName": "ANY",
+      "order": 1,
+      "_label": "BLOCK",
+      "possibleTypes": [],
+      "argumentIndex": 1
+    },
+    {
+      "dynamicTypeHintFullName": [],
+      "_id": 25769803787,
+      "code": "<empty>",
+      "typeFullName": "ANY",
+      "order": 1,
+      "_label": "BLOCK",
+      "possibleTypes": [],
+      "argumentIndex": 1
+    },
+    {
+      "name": "<operator>.assignment",
+      "_id": 30064771072,
+      "signature": "",
+      "code": "*self = (struct mschm_decompressor_p *) base",
+      "typeFullName": "void",
+      "lineNumber": 8,
+      "order": 2,
+      "methodFullName": "<operator>.assignment",
+      "dynamicTypeHintFullName": [],
+      "dispatchType": "STATIC_DISPATCH",
+      "columnNumber": 31,
+      "_label": "CALL",
+      "possibleTypes": [],
+      "argumentIndex": -1
+    },
+    {
+      "name": "<operator>.cast",
+      "_id": 30064771073,
+      "signature": "",
+      "code": "(struct mschm_decompressor_p *) base",
+      "typeFullName": "mschm_decompressor_p",
+      "lineNumber": 8,
+      "order": 2,
+      "methodFullName": "<operator>.cast",
+      "dynamicTypeHintFullName": [],
+      "dispatchType": "STATIC_DISPATCH",
+      "columnNumber": 39,
+      "_label": "CALL",
+      "possibleTypes": [],
+      "argumentIndex": 2
+    },
+    {
+      "name": "<operator>.assignment",
+      "_id": 30064771074,
+      "signature": "",
+      "code": "*sys = self->system",
+      "typeFullName": "void",
+      "lineNumber": 10,
+      "order": 2,
+      "methodFullName": "<operator>.assignment",
+      "dynamicTypeHintFullName": [],
+      "dispatchType": "STATIC_DISPATCH",
+      "columnNumber": 26,
+      "_label": "CALL",
+      "possibleTypes": [],
+      "argumentIndex": -1
+    },
+    {
+      "name": "<operator>.indirectFieldAccess",
+      "_id": 30064771075,
+      "signature": "",
+      "code": "self->system",
+      "typeFullName": "ANY",
+      "lineNumber": 10,
+      "order": 2,
+      "methodFullName": "<operator>.indirectFieldAccess",
+      "dynamicTypeHintFullName": [],
+      "dispatchType": "STATIC_DISPATCH",
+      "columnNumber": 33,
+      "_label": "CALL",
+      "possibleTypes": [],
+      "argumentIndex": 2
+    },
+    {
+      "name": "<operator>.indirectFieldAccess",
+      "_id": 30064771076,
+      "signature": "",
+      "code": "self->d",
+      "typeFullName": "ANY",
+      "lineNumber": 11,
+      "order": 1,
+      "methodFullName": "<operator>.indirectFieldAccess",
+      "dynamicTypeHintFullName": [],
+      "dispatchType": "STATIC_DISPATCH",
+      "columnNumber": 9,
+      "_label": "CALL",
+      "possibleTypes": [],
+      "argumentIndex": -1
+    },
+    {
+      "name": "<operator>.indirectFieldAccess",
+      "_id": 30064771077,
+      "signature": "",
+      "code": "self->d->infh",
+      "typeFullName": "ANY",
+      "lineNumber": 12,
+      "order": 1,
+      "methodFullName": "<operator>.indirectFieldAccess",
+      "dynamicTypeHintFullName": [],
+      "dispatchType": "STATIC_DISPATCH",
+      "columnNumber": 11,
+      "_label": "CALL",
+      "possibleTypes": [],
+      "argumentIndex": -1
+    },
+    {
+      "name": "<operator>.indirectFieldAccess",
+      "_id": 30064771078,
+      "signature": "",
+      "code": "self->d",
+      "typeFullName": "ANY",
+      "lineNumber": 12,
+      "order": 1,
+      "methodFullName": "<operator>.indirectFieldAccess",
+      "dynamicTypeHintFullName": [],
+      "dispatchType": "STATIC_DISPATCH",
+      "columnNumber": 11,
+      "_label": "CALL",
+      "possibleTypes": [],
+      "argumentIndex": 1
+    },
+    {
+      "name": "<operator>.pointerCall",
+      "_id": 30064771079,
+      "signature": "",
+      "code": "sys->close(self->d->infh)",
+      "typeFullName": "ANY",
+      "lineNumber": 12,
+      "order": 1,
+      "methodFullName": "<operator>.pointerCall",
+      "dynamicTypeHintFullName": [],
+      "dispatchType": "DYNAMIC_DISPATCH",
+      "columnNumber": 27,
+      "_label": "CALL",
+      "possibleTypes": [],
+      "argumentIndex": -1
+    },
+    {
+      "name": "<operator>.indirectFieldAccess",
+      "_id": 30064771080,
+      "signature": "",
+      "code": "sys->close",
+      "typeFullName": "ANY",
+      "lineNumber": 12,
+      "order": 1,
+      "methodFullName": "<operator>.indirectFieldAccess",
+      "dynamicTypeHintFullName": [],
+      "dispatchType": "STATIC_DISPATCH",
+      "columnNumber": 27,
+      "_label": "CALL",
+      "possibleTypes": [],
+      "argumentIndex": -1
+    },
+    {
+      "name": "<operator>.indirectFieldAccess",
+      "_id": 30064771081,
+      "signature": "",
+      "code": "self->d->infh",
+      "typeFullName": "ANY",
+      "lineNumber": 12,
+      "order": 2,
+      "methodFullName": "<operator>.indirectFieldAccess",
+      "dynamicTypeHintFullName": [],
+      "dispatchType": "STATIC_DISPATCH",
+      "columnNumber": 38,
+      "_label": "CALL",
+      "possibleTypes": [],
+      "argumentIndex": 1
+    },
+    {
+      "name": "<operator>.indirectFieldAccess",
+      "_id": 30064771082,
+      "signature": "",
+      "code": "self->d",
+      "typeFullName": "ANY",
+      "lineNumber": 12,
+      "order": 1,
+      "methodFullName": "<operator>.indirectFieldAccess",
+      "dynamicTypeHintFullName": [],
+      "dispatchType": "STATIC_DISPATCH",
+      "columnNumber": 38,
+      "_label": "CALL",
+      "possibleTypes": [],
+      "argumentIndex": 1
+    },
+    {
+      "name": "<operator>.indirectFieldAccess",
+      "_id": 30064771083,
+      "signature": "",
+      "code": "self->d->state",
+      "typeFullName": "ANY",
+      "lineNumber": 13,
+      "order": 1,
+      "methodFullName": "<operator>.indirectFieldAccess",
+      "dynamicTypeHintFullName": [],
+      "dispatchType": "STATIC_DISPATCH",
+      "columnNumber": 11,
+      "_label": "CALL",
+      "possibleTypes": [],
+      "argumentIndex": -1
+    },
+    {
+      "name": "<operator>.indirectFieldAccess",
+      "_id": 30064771084,
+      "signature": "",
+      "code": "self->d",
+      "typeFullName": "ANY",
+      "lineNumber": 13,
+      "order": 1,
+      "methodFullName": "<operator>.indirectFieldAccess",
+      "dynamicTypeHintFullName": [],
+      "dispatchType": "STATIC_DISPATCH",
+      "columnNumber": 11,
+      "_label": "CALL",
+      "possibleTypes": [],
+      "argumentIndex": 1
+    },
+    {
+      "name": "lzxd_free",
+      "_id": 30064771085,
+      "signature": "",
+      "code": "lzxd_free(self->d->state)",
+      "typeFullName": "ANY",
+      "lineNumber": 13,
+      "order": 1,
+      "methodFullName": "lzxd_free",
+      "dynamicTypeHintFullName": [],
+      "dispatchType": "STATIC_DISPATCH",
+      "columnNumber": 27,
+      "_label": "CALL",
+      "possibleTypes": [],
+      "argumentIndex": -1
+    },
+    {
+      "name": "<operator>.indirectFieldAccess",
+      "_id": 30064771086,
+      "signature": "",
+      "code": "self->d->state",
+      "typeFullName": "ANY",
+      "lineNumber": 13,
+      "order": 1,
+      "methodFullName": "<operator>.indirectFieldAccess",
+      "dynamicTypeHintFullName": [],
+      "dispatchType": "STATIC_DISPATCH",
+      "columnNumber": 37,
+      "_label": "CALL",
+      "possibleTypes": [],
+      "argumentIndex": 1
+    },
+    {
+      "name": "<operator>.indirectFieldAccess",
+      "_id": 30064771087,
+      "signature": "",
+      "code": "self->d",
+      "typeFullName": "ANY",
+      "lineNumber": 13,
+      "order": 1,
+      "methodFullName": "<operator>.indirectFieldAccess",
+      "dynamicTypeHintFullName": [],
+      "dispatchType": "STATIC_DISPATCH",
+      "columnNumber": 37,
+      "_label": "CALL",
+      "possibleTypes": [],
+      "argumentIndex": 1
+    },
+    {
+      "name": "<operator>.pointerCall",
+      "_id": 30064771088,
+      "signature": "",
+      "code": "sys->free(self->d)",
+      "typeFullName": "ANY",
+      "lineNumber": 14,
+      "order": 3,
+      "methodFullName": "<operator>.pointerCall",
+      "dynamicTypeHintFullName": [],
+      "dispatchType": "DYNAMIC_DISPATCH",
+      "columnNumber": 7,
+      "_label": "CALL",
+      "possibleTypes": [],
+      "argumentIndex": -1
+    },
+    {
+      "name": "<operator>.indirectFieldAccess",
+      "_id": 30064771089,
+      "signature": "",
+      "code": "sys->free",
+      "typeFullName": "ANY",
+      "lineNumber": 14,
+      "order": 1,
+      "methodFullName": "<operator>.indirectFieldAccess",
+      "dynamicTypeHintFullName": [],
+      "dispatchType": "STATIC_DISPATCH",
+      "columnNumber": 7,
+      "_label": "CALL",
+      "possibleTypes": [],
+      "argumentIndex": -1
+    },
+    {
+      "name": "<operator>.indirectFieldAccess",
+      "_id": 30064771090,
+      "signature": "",
+      "code": "self->d",
+      "typeFullName": "ANY",
+      "lineNumber": 14,
+      "order": 2,
+      "methodFullName": "<operator>.indirectFieldAccess",
+      "dynamicTypeHintFullName": [],
+      "dispatchType": "STATIC_DISPATCH",
+      "columnNumber": 17,
+      "_label": "CALL",
+      "possibleTypes": [],
+      "argumentIndex": 1
+    },
+    {
+      "name": "<operator>.pointerCall",
+      "_id": 30064771091,
+      "signature": "",
+      "code": "sys->free(self)",
+      "typeFullName": "ANY",
+      "lineNumber": 16,
+      "order": 4,
+      "methodFullName": "<operator>.pointerCall",
+      "dynamicTypeHintFullName": [],
+      "dispatchType": "DYNAMIC_DISPATCH",
+      "columnNumber": 5,
+      "_label": "CALL",
+      "possibleTypes": [],
+      "argumentIndex": -1
+    },
+    {
+      "name": "<operator>.indirectFieldAccess",
+      "_id": 30064771092,
+      "signature": "",
+      "code": "sys->free",
+      "typeFullName": "ANY",
+      "lineNumber": 16,
+      "order": 1,
+      "methodFullName": "<operator>.indirectFieldAccess",
+      "dynamicTypeHintFullName": [],
+      "dispatchType": "STATIC_DISPATCH",
+      "columnNumber": 5,
+      "_label": "CALL",
+      "possibleTypes": [],
+      "argumentIndex": -1
+    },
+    {
+      "parserTypeName": "CASTIfStatement",
+      "_id": 47244640256,
+      "code": "if (self) {\n    struct mspack_system *sys = self->system;\n    if (self->d) {\n      if (self->d->infh)  sys->close(self->d->infh);\n      if (self->d->state) lzxd_free(self->d->state);\n      sys->free(self->d);\n    }\n    sys->free(self);\n  }",
+      "lineNumber": 9,
+      "order": 3,
+      "controlStructureType": "IF",
+      "_label": "CONTROL_STRUCTURE",
+      "argumentIndex": -1,
+      "columnNumber": 3
+    },
+    {
+      "parserTypeName": "CASTIfStatement",
+      "_id": 47244640257,
+      "code": "if (self->d) {\n      if (self->d->infh)  sys->close(self->d->infh);\n      if (self->d->state) lzxd_free(self->d->state);\n      sys->free(self->d);\n    }",
+      "lineNumber": 11,
+      "order": 3,
+      "controlStructureType": "IF",
+      "_label": "CONTROL_STRUCTURE",
+      "argumentIndex": -1,
+      "columnNumber": 5
+    },
+    {
+      "parserTypeName": "CASTIfStatement",
+      "_id": 47244640258,
+      "code": "if (self->d->infh)  sys->close(self->d->infh);",
+      "lineNumber": 12,
+      "order": 1,
+      "controlStructureType": "IF",
+      "_label": "CONTROL_STRUCTURE",
+      "argumentIndex": -1,
+      "columnNumber": 7
+    },
+    {
+      "parserTypeName": "CASTIfStatement",
+      "_id": 47244640259,
+      "code": "if (self->d->state) lzxd_free(self->d->state);",
+      "lineNumber": 13,
+      "order": 2,
+      "controlStructureType": "IF",
+      "_label": "CONTROL_STRUCTURE",
+      "argumentIndex": -1,
+      "columnNumber": 7
+    },
+    {
+      "name": "stddef.h",
+      "_id": 51539607552,
+      "version": "include",
+      "dependencyGroupId": "stddef.h",
+      "_label": "DEPENDENCY"
+    },
+    {
+      "name": "stdint.h",
+      "_id": 51539607553,
+      "version": "include",
+      "dependencyGroupId": "stdint.h",
+      "_label": "DEPENDENCY"
+    },
+    {
+      "name": "stdbool.h",
+      "_id": 51539607554,
+      "version": "include",
+      "dependencyGroupId": "stdbool.h",
+      "_label": "DEPENDENCY"
+    },
+    {
+      "_id": 55834574848,
+      "code": "system",
+      "order": 2,
+      "_label": "FIELD_IDENTIFIER",
+      "argumentIndex": 2,
+      "canonicalName": "system",
+      "lineNumber": 10,
+      "columnNumber": 33
+    },
+    {
+      "_id": 55834574849,
+      "code": "d",
+      "order": 2,
+      "_label": "FIELD_IDENTIFIER",
+      "argumentIndex": 2,
+      "canonicalName": "d",
+      "lineNumber": 11,
+      "columnNumber": 9
+    },
+    {
+      "_id": 55834574850,
+      "code": "d",
+      "order": 2,
+      "_label": "FIELD_IDENTIFIER",
+      "argumentIndex": 2,
+      "canonicalName": "d",
+      "lineNumber": 12,
+      "columnNumber": 11
+    },
+    {
+      "_id": 55834574851,
+      "code": "infh",
+      "order": 2,
+      "_label": "FIELD_IDENTIFIER",
+      "argumentIndex": 2,
+      "canonicalName": "infh",
+      "lineNumber": 12,
+      "columnNumber": 11
+    },
+    {
+      "_id": 55834574852,
+      "code": "close",
+      "order": 2,
+      "_label": "FIELD_IDENTIFIER",
+      "argumentIndex": 2,
+      "canonicalName": "close",
+      "lineNumber": 12,
+      "columnNumber": 27
+    },
+    {
+      "_id": 55834574853,
+      "code": "d",
+      "order": 2,
+      "_label": "FIELD_IDENTIFIER",
+      "argumentIndex": 2,
+      "canonicalName": "d",
+      "lineNumber": 12,
+      "columnNumber": 38
+    },
+    {
+      "_id": 55834574854,
+      "code": "infh",
+      "order": 2,
+      "_label": "FIELD_IDENTIFIER",
+      "argumentIndex": 2,
+      "canonicalName": "infh",
+      "lineNumber": 12,
+      "columnNumber": 38
+    },
+    {
+      "_id": 55834574855,
+      "code": "d",
+      "order": 2,
+      "_label": "FIELD_IDENTIFIER",
+      "argumentIndex": 2,
+      "canonicalName": "d",
+      "lineNumber": 13,
+      "columnNumber": 11
+    },
+    {
+      "_id": 55834574856,
+      "code": "state",
+      "order": 2,
+      "_label": "FIELD_IDENTIFIER",
+      "argumentIndex": 2,
+      "canonicalName": "state",
+      "lineNumber": 13,
+      "columnNumber": 11
+    },
+    {
+      "_id": 55834574857,
+      "code": "d",
+      "order": 2,
+      "_label": "FIELD_IDENTIFIER",
+      "argumentIndex": 2,
+      "canonicalName": "d",
+      "lineNumber": 13,
+      "columnNumber": 37
+    },
+    {
+      "_id": 55834574858,
+      "code": "state",
+      "order": 2,
+      "_label": "FIELD_IDENTIFIER",
+      "argumentIndex": 2,
+      "canonicalName": "state",
+      "lineNumber": 13,
+      "columnNumber": 37
+    },
+    {
+      "_id": 55834574859,
+      "code": "free",
+      "order": 2,
+      "_label": "FIELD_IDENTIFIER",
+      "argumentIndex": 2,
+      "canonicalName": "free",
+      "lineNumber": 14,
+      "columnNumber": 7
+    },
+    {
+      "_id": 55834574860,
+      "code": "d",
+      "order": 2,
+      "_label": "FIELD_IDENTIFIER",
+      "argumentIndex": 2,
+      "canonicalName": "d",
+      "lineNumber": 14,
+      "columnNumber": 17
+    },
+    {
+      "_id": 55834574861,
+      "code": "free",
+      "order": 2,
+      "_label": "FIELD_IDENTIFIER",
+      "argumentIndex": 2,
+      "canonicalName": "free",
+      "lineNumber": 16,
+      "columnNumber": 5
+    },
+    {
+      "name": "4fd9ccaa54e1aebde1e4b95fb0163b699fd7bcc8_1.c",
+      "_id": 60129542144,
+      "code": "<empty>",
+      "order": 0,
+      "content": "<empty>",
+      "_label": "FILE"
+    },
+    {
+      "name": "<includes>",
+      "_id": 60129542145,
+      "code": "<empty>",
+      "order": 1,
+      "content": "<empty>",
+      "_label": "FILE"
+    },
+    {
+      "name": "<unknown>",
+      "_id": 60129542146,
+      "code": "<empty>",
+      "order": 0,
+      "content": "<empty>",
+      "_label": "FILE"
+    },
+    {
+      "dynamicTypeHintFullName": [],
+      "name": "self",
+      "_id": 68719476736,
+      "code": "self",
+      "typeFullName": "mschm_decompressor_p*",
+      "lineNumber": 8,
+      "order": 1,
+      "_label": "IDENTIFIER",
+      "columnNumber": 32,
+      "possibleTypes": [],
+      "argumentIndex": 1
+    },
+    {
+      "dynamicTypeHintFullName": [],
+      "name": "base",
+      "_id": 68719476737,
+      "code": "base",
+      "typeFullName": "mschm_decompressor*",
+      "lineNumber": 8,
+      "order": 2,
+      "_label": "IDENTIFIER",
+      "columnNumber": 71,
+      "possibleTypes": [],
+      "argumentIndex": 2
+    },
+    {
+      "dynamicTypeHintFullName": [],
+      "name": "self",
+      "_id": 68719476738,
+      "code": "self",
+      "typeFullName": "mschm_decompressor_p*",
+      "lineNumber": 9,
+      "order": 1,
+      "_label": "IDENTIFIER",
+      "columnNumber": 7,
+      "possibleTypes": [],
+      "argumentIndex": -1
+    },
+    {
+      "dynamicTypeHintFullName": [],
+      "name": "sys",
+      "_id": 68719476739,
+      "code": "sys",
+      "typeFullName": "mspack_system*",
+      "lineNumber": 10,
+      "order": 1,
+      "_label": "IDENTIFIER",
+      "columnNumber": 27,
+      "possibleTypes": [],
+      "argumentIndex": 1
+    },
+    {
+      "dynamicTypeHintFullName": [],
+      "name": "self",
+      "_id": 68719476740,
+      "code": "self",
+      "typeFullName": "mschm_decompressor_p*",
+      "lineNumber": 10,
+      "order": 1,
+      "_label": "IDENTIFIER",
+      "columnNumber": 33,
+      "possibleTypes": [],
+      "argumentIndex": 1
+    },
+    {
+      "dynamicTypeHintFullName": [],
+      "name": "self",
+      "_id": 68719476741,
+      "code": "self",
+      "typeFullName": "mschm_decompressor_p*",
+      "lineNumber": 11,
+      "order": 1,
+      "_label": "IDENTIFIER",
+      "columnNumber": 9,
+      "possibleTypes": [],
+      "argumentIndex": 1
+    },
+    {
+      "dynamicTypeHintFullName": [],
+      "name": "self",
+      "_id": 68719476742,
+      "code": "self",
+      "typeFullName": "mschm_decompressor_p*",
+      "lineNumber": 12,
+      "order": 1,
+      "_label": "IDENTIFIER",
+      "columnNumber": 11,
+      "possibleTypes": [],
+      "argumentIndex": 1
+    },
+    {
+      "dynamicTypeHintFullName": [],
+      "name": "sys",
+      "_id": 68719476743,
+      "code": "sys",
+      "typeFullName": "mspack_system*",
+      "lineNumber": 12,
+      "order": 1,
+      "_label": "IDENTIFIER",
+      "columnNumber": 27,
+      "possibleTypes": [],
+      "argumentIndex": 1
+    },
+    {
+      "dynamicTypeHintFullName": [],
+      "name": "self",
+      "_id": 68719476744,
+      "code": "self",
+      "typeFullName": "mschm_decompressor_p*",
+      "lineNumber": 12,
+      "order": 1,
+      "_label": "IDENTIFIER",
+      "columnNumber": 38,
+      "possibleTypes": [],
+      "argumentIndex": 1
+    },
+    {
+      "dynamicTypeHintFullName": [],
+      "name": "self",
+      "_id": 68719476745,
+      "code": "self",
+      "typeFullName": "mschm_decompressor_p*",
+      "lineNumber": 13,
+      "order": 1,
+      "_label": "IDENTIFIER",
+      "columnNumber": 11,
+      "possibleTypes": [],
+      "argumentIndex": 1
+    },
+    {
+      "dynamicTypeHintFullName": [],
+      "name": "self",
+      "_id": 68719476746,
+      "code": "self",
+      "typeFullName": "mschm_decompressor_p*",
+      "lineNumber": 13,
+      "order": 1,
+      "_label": "IDENTIFIER",
+      "columnNumber": 37,
+      "possibleTypes": [],
+      "argumentIndex": 1
+    },
+    {
+      "dynamicTypeHintFullName": [],
+      "name": "sys",
+      "_id": 68719476747,
+      "code": "sys",
+      "typeFullName": "mspack_system*",
+      "lineNumber": 14,
+      "order": 1,
+      "_label": "IDENTIFIER",
+      "columnNumber": 7,
+      "possibleTypes": [],
+      "argumentIndex": 1
+    },
+    {
+      "dynamicTypeHintFullName": [],
+      "name": "self",
+      "_id": 68719476748,
+      "code": "self",
+      "typeFullName": "mschm_decompressor_p*",
+      "lineNumber": 14,
+      "order": 1,
+      "_label": "IDENTIFIER",
+      "columnNumber": 17,
+      "possibleTypes": [],
+      "argumentIndex": 1
+    },
+    {
+      "dynamicTypeHintFullName": [],
+      "name": "sys",
+      "_id": 68719476749,
+      "code": "sys",
+      "typeFullName": "mspack_system*",
+      "lineNumber": 16,
+      "order": 1,
+      "_label": "IDENTIFIER",
+      "columnNumber": 5,
+      "possibleTypes": [],
+      "argumentIndex": 1
+    },
+    {
+      "dynamicTypeHintFullName": [],
+      "name": "self",
+      "_id": 68719476750,
+      "code": "self",
+      "typeFullName": "mschm_decompressor_p*",
+      "lineNumber": 16,
+      "order": 2,
+      "_label": "IDENTIFIER",
+      "columnNumber": 15,
+      "possibleTypes": [],
+      "argumentIndex": 1
+    },
+    {
+      "_id": 73014444032,
+      "importedAs": "stddef.h",
+      "code": "#include <stddef.h>",
+      "lineNumber": 3,
+      "order": 1,
+      "importedEntity": "stddef.h",
+      "_label": "IMPORT",
+      "columnNumber": 1
+    },
+    {
+      "_id": 73014444033,
+      "importedAs": "stdint.h",
+      "code": "#include <stdint.h>",
+      "lineNumber": 4,
+      "order": 2,
+      "importedEntity": "stdint.h",
+      "_label": "IMPORT",
+      "columnNumber": 1
+    },
+    {
+      "_id": 73014444034,
+      "importedAs": "stdbool.h",
+      "code": "#include <stdbool.h>",
+      "lineNumber": 5,
+      "order": 3,
+      "importedEntity": "stdbool.h",
+      "_label": "IMPORT",
+      "columnNumber": 1
+    },
+    {
+      "dynamicTypeHintFullName": [],
+      "name": "self",
+      "_id": 94489280512,
+      "genericSignature": "<empty>",
+      "typeFullName": "mschm_decompressor_p*",
+      "lineNumber": 8,
+      "order": 1,
+      "_label": "LOCAL",
+      "possibleTypes": [],
+      "code": "struct mschm_decompressor_p *self",
+      "columnNumber": 32
+    },
+    {
+      "dynamicTypeHintFullName": [],
+      "name": "sys",
+      "_id": 94489280513,
+      "genericSignature": "<empty>",
+      "typeFullName": "mspack_system*",
+      "lineNumber": 10,
+      "order": 1,
+      "_label": "LOCAL",
+      "possibleTypes": [],
+      "code": "struct mspack_system *sys",
+      "columnNumber": 27
+    },
+    {
+      "_id": 103079215104,
+      "version": "0.1",
+      "language": "NEWC",
+      "_label": "META_DATA",
+      "overlays": [
+        "base",
+        "controlflow",
+        "typerel",
+        "callgraph",
+        "dataflowOss"
+      ],
+      "root": "C:\\Users\\USER\\Desktop\\Thesis Research\\Implementation\\Thesis-causal-vul\\work\\src\\test\\shard_4fd9"
+    },
+    {
+      "name": "mspack_destroy_chm_decompressor",
+      "astParentFullName": "4fd9ccaa54e1aebde1e4b95fb0163b699fd7bcc8_1.c:<global>",
+      "_id": 107374182400,
+      "signature": "void(mschm_decompressor*)",
+      "astParentType": "TYPE_DECL",
+      "lineNumberEnd": 18,
+      "_label": "METHOD",
+      "columnNumberEnd": 1,
+      "fullName": "mspack_destroy_chm_decompressor",
+      "genericSignature": "<empty>",
+      "code": "void mspack_destroy_chm_decompressor(struct mschm_decompressor *base) {\n  struct mschm_decompressor_p *self = (struct mschm_decompressor_p *) base;\n  if (self) {\n    struct mspack_system *sys = self->system;\n    if (self->d) {\n      if (self->d->infh)  sys->close(self->d->infh);\n      if (self->d->state) lzxd_free(self->d->state);\n      sys->free(self->d);\n    }\n    sys->free(self);\n  }\n}",
+      "isExternal": false,
+      "lineNumber": 7,
+      "columnNumber": 1,
+      "order": 1,
+      "filename": "4fd9ccaa54e1aebde1e4b95fb0163b699fd7bcc8_1.c"
+    },
+    {
+      "name": "<global>",
+      "astParentFullName": "4fd9ccaa54e1aebde1e4b95fb0163b699fd7bcc8_1.c:<global>",
+      "_id": 107374182401,
+      "signature": "",
+      "astParentType": "TYPE_DECL",
+      "lineNumberEnd": 18,
+      "_label": "METHOD",
+      "columnNumberEnd": 1,
+      "fullName": "4fd9ccaa54e1aebde1e4b95fb0163b699fd7bcc8_1.c:<global>",
+      "genericSignature": "<empty>",
+      "code": "<global>",
+      "isExternal": false,
+      "lineNumber": 1,
+      "columnNumber": 1,
+      "order": 1,
+      "filename": "4fd9ccaa54e1aebde1e4b95fb0163b699fd7bcc8_1.c"
+    },
+    {
+      "name": "<global>",
+      "astParentFullName": "<includes>:<global>",
+      "_id": 107374182402,
+      "signature": "",
+      "astParentType": "NAMESPACE_BLOCK",
+      "_label": "METHOD",
+      "fullName": "<includes>:<global>",
+      "genericSignature": "<empty>",
+      "code": "<global>",
+      "isExternal": false,
+      "lineNumber": 1,
+      "order": 1,
+      "filename": "<includes>"
+    },
+    {
+      "name": "<operator>.indirectFieldAccess",
+      "astParentFullName": "<global>",
+      "_id": 107374182403,
+      "signature": "",
+      "astParentType": "NAMESPACE_BLOCK",
+      "_label": "METHOD",
+      "fullName": "<operator>.indirectFieldAccess",
+      "genericSignature": "<empty>",
+      "code": "<empty>",
+      "isExternal": true,
+      "order": 0,
+      "filename": "<empty>"
+    },
+    {
+      "name": "<operator>.cast",
+      "astParentFullName": "<global>",
+      "_id": 107374182404,
+      "signature": "",
+      "astParentType": "NAMESPACE_BLOCK",
+      "_label": "METHOD",
+      "fullName": "<operator>.cast",
+      "genericSignature": "<empty>",
+      "code": "<empty>",
+      "isExternal": true,
+      "order": 0,
+      "filename": "<empty>"
+    },
+    {
+      "name": "lzxd_free",
+      "astParentFullName": "<global>",
+      "_id": 107374182405,
+      "signature": "",
+      "astParentType": "NAMESPACE_BLOCK",
+      "_label": "METHOD",
+      "fullName": "lzxd_free",
+      "genericSignature": "<empty>",
+      "code": "<empty>",
+      "isExternal": true,
+      "order": 0,
+      "filename": "<empty>"
+    },
+    {
+      "name": "<operator>.assignment",
+      "astParentFullName": "<global>",
+      "_id": 107374182406,
+      "signature": "",
+      "astParentType": "NAMESPACE_BLOCK",
+      "_label": "METHOD",
+      "fullName": "<operator>.assignment",
+      "genericSignature": "<empty>",
+      "code": "<empty>",
+      "isExternal": true,
+      "order": 0,
+      "filename": "<empty>"
+    },
+    {
+      "name": "<operator>.pointerCall",
+      "astParentFullName": "<global>",
+      "_id": 107374182407,
+      "signature": "",
+      "astParentType": "NAMESPACE_BLOCK",
+      "_label": "METHOD",
+      "fullName": "<operator>.pointerCall",
+      "genericSignature": "<empty>",
+      "code": "<empty>",
+      "isExternal": true,
+      "order": 0,
+      "filename": "<empty>"
+    },
+    {
+      "dynamicTypeHintFullName": [],
+      "name": "base",
+      "_id": 111669149696,
+      "evaluationStrategy": "BY_VALUE",
+      "isVariadic": false,
+      "typeFullName": "mschm_decompressor*",
+      "lineNumber": 7,
+      "order": 1,
+      "_label": "METHOD_PARAMETER_IN",
+      "possibleTypes": [],
+      "index": 1,
+      "code": "struct mschm_decompressor *base",
+      "columnNumber": 38
+    },
+    {
+      "dynamicTypeHintFullName": [],
+      "name": "p1",
+      "_id": 111669149697,
+      "evaluationStrategy": "BY_VALUE",
+      "isVariadic": false,
+      "typeFullName": "ANY",
+      "order": 1,
+      "_label": "METHOD_PARAMETER_IN",
+      "possibleTypes": [],
+      "index": 1,
+      "code": "p1"
+    },
+    {
+      "dynamicTypeHintFullName": [],
+      "name": "p2",
+      "_id": 111669149698,
+      "evaluationStrategy": "BY_VALUE",
+      "isVariadic": false,
+      "typeFullName": "ANY",
+      "order": 2,
+      "_label": "METHOD_PARAMETER_IN",
+      "possibleTypes": [],
+      "index": 2,
+      "code": "p2"
+    },
+    {
+      "dynamicTypeHintFullName": [],
+      "name": "p1",
+      "_id": 111669149699,
+      "evaluationStrategy": "BY_VALUE",
+      "isVariadic": false,
+      "typeFullName": "ANY",
+      "order": 1,
+      "_label": "METHOD_PARAMETER_IN",
+      "possibleTypes": [],
+      "index": 1,
+      "code": "p1"
+    },
+    {
+      "dynamicTypeHintFullName": [],
+      "name": "p2",
+      "_id": 111669149700,
+      "evaluationStrategy": "BY_VALUE",
+      "isVariadic": false,
+      "typeFullName": "ANY",
+      "order": 2,
+      "_label": "METHOD_PARAMETER_IN",
+      "possibleTypes": [],
+      "index": 2,
+      "code": "p2"
+    },
+    {
+      "dynamicTypeHintFullName": [],
+      "name": "p1",
+      "_id": 111669149701,
+      "evaluationStrategy": "BY_VALUE",
+      "isVariadic": false,
+      "typeFullName": "ANY",
+      "order": 1,
+      "_label": "METHOD_PARAMETER_IN",
+      "possibleTypes": [],
+      "index": 1,
+      "code": "p1"
+    },
+    {
+      "dynamicTypeHintFullName": [],
+      "name": "p1",
+      "_id": 111669149702,
+      "evaluationStrategy": "BY_VALUE",
+      "isVariadic": false,
+      "typeFullName": "ANY",
+      "order": 1,
+      "_label": "METHOD_PARAMETER_IN",
+      "possibleTypes": [],
+      "index": 1,
+      "code": "p1"
+    },
+    {
+      "dynamicTypeHintFullName": [],
+      "name": "p2",
+      "_id": 111669149703,
+      "evaluationStrategy": "BY_VALUE",
+      "isVariadic": false,
+      "typeFullName": "ANY",
+      "order": 2,
+      "_label": "METHOD_PARAMETER_IN",
+      "possibleTypes": [],
+      "index": 2,
+      "code": "p2"
+    },
+    {
+      "dynamicTypeHintFullName": [],
+      "name": "p1",
+      "_id": 111669149704,
+      "evaluationStrategy": "BY_VALUE",
+      "isVariadic": false,
+      "typeFullName": "ANY",
+      "order": 1,
+      "_label": "METHOD_PARAMETER_IN",
+      "possibleTypes": [],
+      "index": 1,
+      "code": "p1"
+    },
+    {
+      "name": "base",
+      "_id": 115964116992,
+      "evaluationStrategy": "BY_VALUE",
+      "isVariadic": false,
+      "code": "struct mschm_decompressor *base",
+      "typeFullName": "mschm_decompressor*",
+      "lineNumber": 7,
+      "order": 1,
+      "_label": "METHOD_PARAMETER_OUT",
+      "index": 1,
+      "columnNumber": 38
+    },
+    {
+      "name": "p1",
+      "_id": 115964116993,
+      "evaluationStrategy": "BY_VALUE",
+      "isVariadic": false,
+      "code": "p1",
+      "typeFullName": "ANY",
+      "order": 1,
+      "_label": "METHOD_PARAMETER_OUT",
+      "index": 1
+    },
+    {
+      "name": "p2",
+      "_id": 115964116994,
+      "evaluationStrategy": "BY_VALUE",
+      "isVariadic": false,
+      "code": "p2",
+      "typeFullName": "ANY",
+      "order": 2,
+      "_label": "METHOD_PARAMETER_OUT",
+      "index": 2
+    },
+    {
+      "name": "p1",
+      "_id": 115964116995,
+      "evaluationStrategy": "BY_VALUE",
+      "isVariadic": false,
+      "code": "p1",
+      "typeFullName": "ANY",
+      "order": 1,
+      "_label": "METHOD_PARAMETER_OUT",
+      "index": 1
+    },
+    {
+      "name": "p2",
+      "_id": 115964116996,
+      "evaluationStrategy": "BY_VALUE",
+      "isVariadic": false,
+      "code": "p2",
+      "typeFullName": "ANY",
+      "order": 2,
+      "_label": "METHOD_PARAMETER_OUT",
+      "index": 2
+    },
+    {
+      "name": "p1",
+      "_id": 115964116997,
+      "evaluationStrategy": "BY_VALUE",
+      "isVariadic": false,
+      "code": "p1",
+      "typeFullName": "ANY",
+      "order": 1,
+      "_label": "METHOD_PARAMETER_OUT",
+      "index": 1
+    },
+    {
+      "name": "p1",
+      "_id": 115964116998,
+      "evaluationStrategy": "BY_VALUE",
+      "isVariadic": false,
+      "code": "p1",
+      "typeFullName": "ANY",
+      "order": 1,
+      "_label": "METHOD_PARAMETER_OUT",
+      "index": 1
+    },
+    {
+      "name": "p2",
+      "_id": 115964116999,
+      "evaluationStrategy": "BY_VALUE",
+      "isVariadic": false,
+      "code": "p2",
+      "typeFullName": "ANY",
+      "order": 2,
+      "_label": "METHOD_PARAMETER_OUT",
+      "index": 2
+    },
+    {
+      "name": "p1",
+      "_id": 115964117000,
+      "evaluationStrategy": "BY_VALUE",
+      "isVariadic": false,
+      "code": "p1",
+      "typeFullName": "ANY",
+      "order": 1,
+      "_label": "METHOD_PARAMETER_OUT",
+      "index": 1
+    },
+    {
+      "dynamicTypeHintFullName": [],
+      "_id": 120259084288,
+      "code": "mspack_destroy_chm_decompressor",
+      "typeFullName": "mspack_destroy_chm_decompressor",
+      "lineNumber": 7,
+      "order": 1,
+      "methodFullName": "mspack_destroy_chm_decompressor",
+      "_label": "METHOD_REF",
+      "columnNumber": 1,
+      "possibleTypes": [],
+      "argumentIndex": -1
+    },
+    {
+      "dynamicTypeHintFullName": [],
+      "_id": 124554051584,
+      "evaluationStrategy": "BY_VALUE",
+      "code": "RET",
+      "typeFullName": "void",
+      "lineNumber": 7,
+      "order": 3,
+      "_label": "METHOD_RETURN",
+      "possibleTypes": [],
+      "columnNumber": 1
+    },
+    {
+      "dynamicTypeHintFullName": [],
+      "_id": 124554051585,
+      "evaluationStrategy": "BY_VALUE",
+      "code": "RET",
+      "typeFullName": "ANY",
+      "lineNumber": 1,
+      "order": 2,
+      "_label": "METHOD_RETURN",
+      "possibleTypes": [],
+      "columnNumber": 1
+    },
+    {
+      "dynamicTypeHintFullName": [],
+      "_id": 124554051586,
+      "evaluationStrategy": "BY_VALUE",
+      "code": "RET",
+      "typeFullName": "ANY",
+      "lineNumber": 1,
+      "order": 2,
+      "_label": "METHOD_RETURN",
+      "possibleTypes": []
+    },
+    {
+      "dynamicTypeHintFullName": [],
+      "_id": 124554051587,
+      "evaluationStrategy": "BY_VALUE",
+      "code": "RET",
+      "typeFullName": "ANY",
+      "order": 2,
+      "_label": "METHOD_RETURN",
+      "possibleTypes": []
+    },
+    {
+      "dynamicTypeHintFullName": [],
+      "_id": 124554051588,
+      "evaluationStrategy": "BY_VALUE",
+      "code": "RET",
+      "typeFullName": "ANY",
+      "order": 2,
+      "_label": "METHOD_RETURN",
+      "possibleTypes": []
+    },
+    {
+      "dynamicTypeHintFullName": [],
+      "_id": 124554051589,
+      "evaluationStrategy": "BY_VALUE",
+      "code": "RET",
+      "typeFullName": "ANY",
+      "order": 2,
+      "_label": "METHOD_RETURN",
+      "possibleTypes": []
+    },
+    {
+      "dynamicTypeHintFullName": [],
+      "_id": 124554051590,
+      "evaluationStrategy": "BY_VALUE",
+      "code": "RET",
+      "typeFullName": "ANY",
+      "order": 2,
+      "_label": "METHOD_RETURN",
+      "possibleTypes": []
+    },
+    {
+      "dynamicTypeHintFullName": [],
+      "_id": 124554051591,
+      "evaluationStrategy": "BY_VALUE",
+      "code": "RET",
+      "typeFullName": "ANY",
+      "order": 2,
+      "_label": "METHOD_RETURN",
+      "possibleTypes": []
+    },
+    {
+      "name": "<global>",
+      "_id": 133143986176,
+      "code": "<empty>",
+      "order": -1,
+      "_label": "NAMESPACE"
+    },
+    {
+      "name": "<global>",
+      "_id": 137438953472,
+      "fullName": "<global>",
+      "code": "<empty>",
+      "_label": "NAMESPACE_BLOCK",
+      "order": 1,
+      "filename": "<unknown>"
+    },
+    {
+      "name": "<global>",
+      "_id": 137438953473,
+      "fullName": "4fd9ccaa54e1aebde1e4b95fb0163b699fd7bcc8_1.c:<global>",
+      "code": "<empty>",
+      "_label": "NAMESPACE_BLOCK",
+      "order": 1,
+      "filename": "4fd9ccaa54e1aebde1e4b95fb0163b699fd7bcc8_1.c"
+    },
+    {
+      "name": "<global>",
+      "_id": 137438953474,
+      "fullName": "<includes>:<global>",
+      "code": "<empty>",
+      "_label": "NAMESPACE_BLOCK",
+      "order": 1,
+      "filename": "<includes>"
+    },
+    {
+      "name": "ANY",
+      "_id": 158913789952,
+      "fullName": "ANY",
+      "typeDeclFullName": "ANY",
+      "_label": "TYPE"
+    },
+    {
+      "name": "mschm_decompressor*",
+      "_id": 158913789953,
+      "fullName": "mschm_decompressor*",
+      "typeDeclFullName": "mschm_decompressor*",
+      "_label": "TYPE"
+    },
+    {
+      "name": "mschm_decompressor_p",
+      "_id": 158913789954,
+      "fullName": "mschm_decompressor_p",
+      "typeDeclFullName": "mschm_decompressor_p",
+      "_label": "TYPE"
+    },
+    {
+      "name": "mschm_decompressor_p*",
+      "_id": 158913789955,
+      "fullName": "mschm_decompressor_p*",
+      "typeDeclFullName": "mschm_decompressor_p*",
+      "_label": "TYPE"
+    },
+    {
+      "name": "mspack_destroy_chm_decompressor",
+      "_id": 158913789956,
+      "fullName": "mspack_destroy_chm_decompressor",
+      "typeDeclFullName": "mspack_destroy_chm_decompressor",
+      "_label": "TYPE"
+    },
+    {
+      "name": "mspack_system",
+      "_id": 158913789957,
+      "fullName": "mspack_system",
+      "typeDeclFullName": "mspack_system",
+      "_label": "TYPE"
+    },
+    {
+      "name": "mspack_system*",
+      "_id": 158913789958,
+      "fullName": "mspack_system*",
+      "typeDeclFullName": "mspack_system*",
+      "_label": "TYPE"
+    },
+    {
+      "name": "void",
+      "_id": 158913789959,
+      "fullName": "void",
+      "typeDeclFullName": "void",
+      "_label": "TYPE"
+    },
+    {
+      "inheritsFromTypeFullName": [],
+      "name": "mspack_destroy_chm_decompressor",
+      "astParentFullName": "4fd9ccaa54e1aebde1e4b95fb0163b699fd7bcc8_1.c:<global>",
+      "_id": 167503724544,
+      "astParentType": "TYPE_DECL",
+      "lineNumber": 7,
+      "_label": "TYPE_DECL",
+      "fullName": "mspack_destroy_chm_decompressor",
+      "genericSignature": "<empty>",
+      "code": "mspack_destroy_chm_decompressor",
+      "isExternal": false,
+      "columnNumber": 1,
+      "order": 1,
+      "filename": "4fd9ccaa54e1aebde1e4b95fb0163b699fd7bcc8_1.c"
+    },
+    {
+      "inheritsFromTypeFullName": [],
+      "name": "<global>",
+      "astParentFullName": "4fd9ccaa54e1aebde1e4b95fb0163b699fd7bcc8_1.c:<global>",
+      "_id": 167503724545,
+      "astParentType": "NAMESPACE_BLOCK",
+      "lineNumber": 1,
+      "_label": "TYPE_DECL",
+      "fullName": "4fd9ccaa54e1aebde1e4b95fb0163b699fd7bcc8_1.c:<global>",
+      "genericSignature": "<empty>",
+      "code": "<global>",
+      "isExternal": false,
+      "columnNumber": 1,
+      "order": 4,
+      "filename": "4fd9ccaa54e1aebde1e4b95fb0163b699fd7bcc8_1.c"
+    },
+    {
+      "inheritsFromTypeFullName": [],
+      "name": "ANY",
+      "astParentFullName": "<includes>:<global>",
+      "_id": 167503724546,
+      "astParentType": "NAMESPACE_BLOCK",
+      "_label": "TYPE_DECL",
+      "fullName": "ANY",
+      "genericSignature": "<empty>",
+      "code": "ANY",
+      "isExternal": true,
+      "order": -1,
+      "filename": "<includes>"
+    },
+    {
+      "inheritsFromTypeFullName": [],
+      "name": "mschm_decompressor*",
+      "astParentFullName": "<includes>:<global>",
+      "_id": 167503724547,
+      "astParentType": "NAMESPACE_BLOCK",
+      "_label": "TYPE_DECL",
+      "fullName": "mschm_decompressor*",
+      "genericSignature": "<empty>",
+      "code": "mschm_decompressor*",
+      "isExternal": true,
+      "order": -1,
+      "filename": "<includes>"
+    },
+    {
+      "inheritsFromTypeFullName": [],
+      "name": "mschm_decompressor_p",
+      "astParentFullName": "<includes>:<global>",
+      "_id": 167503724548,
+      "astParentType": "NAMESPACE_BLOCK",
+      "_label": "TYPE_DECL",
+      "fullName": "mschm_decompressor_p",
+      "genericSignature": "<empty>",
+      "code": "mschm_decompressor_p",
+      "isExternal": true,
+      "order": -1,
+      "filename": "<includes>"
+    },
+    {
+      "inheritsFromTypeFullName": [],
+      "name": "mschm_decompressor_p*",
+      "astParentFullName": "<includes>:<global>",
+      "_id": 167503724549,
+      "astParentType": "NAMESPACE_BLOCK",
+      "_label": "TYPE_DECL",
+      "fullName": "mschm_decompressor_p*",
+      "genericSignature": "<empty>",
+      "code": "mschm_decompressor_p*",
+      "isExternal": true,
+      "order": -1,
+      "filename": "<includes>"
+    },
+    {
+      "inheritsFromTypeFullName": [],
+      "name": "mspack_system",
+      "astParentFullName": "<includes>:<global>",
+      "_id": 167503724550,
+      "astParentType": "NAMESPACE_BLOCK",
+      "_label": "TYPE_DECL",
+      "fullName": "mspack_system",
+      "genericSignature": "<empty>",
+      "code": "mspack_system",
+      "isExternal": true,
+      "order": -1,
+      "filename": "<includes>"
+    },
+    {
+      "inheritsFromTypeFullName": [],
+      "name": "mspack_system*",
+      "astParentFullName": "<includes>:<global>",
+      "_id": 167503724551,
+      "astParentType": "NAMESPACE_BLOCK",
+      "_label": "TYPE_DECL",
+      "fullName": "mspack_system*",
+      "genericSignature": "<empty>",
+      "code": "mspack_system*",
+      "isExternal": true,
+      "order": -1,
+      "filename": "<includes>"
+    },
+    {
+      "inheritsFromTypeFullName": [],
+      "name": "void",
+      "astParentFullName": "<includes>:<global>",
+      "_id": 167503724552,
+      "astParentType": "NAMESPACE_BLOCK",
+      "_label": "TYPE_DECL",
+      "fullName": "void",
+      "genericSignature": "<empty>",
+      "code": "void",
+      "isExternal": true,
+      "order": -1,
+      "filename": "<includes>"
+    },
+    {
+      "dynamicTypeHintFullName": [],
+      "_id": 176093659136,
+      "code": "struct mschm_decompressor_p *",
+      "typeFullName": "mschm_decompressor_p",
+      "lineNumber": 8,
+      "order": 1,
+      "_label": "TYPE_REF",
+      "columnNumber": 40,
+      "possibleTypes": [],
+      "argumentIndex": 1
+    }
+  ],
+  "edges": {
+    "AST": [
+      {
+        "src": 107374182400,
+        "dst": 111669149696,
+        "label": "AST"
+      },
+      {
+        "src": 107374182400,
+        "dst": 115964116992,
+        "label": "AST"
+      },
+      {
+        "src": 107374182400,
+        "dst": 25769803776,
+        "label": "AST"
+      },
+      {
+        "src": 107374182400,
+        "dst": 124554051584,
+        "label": "AST"
+      },
+      {
+        "src": 25769803776,
+        "dst": 94489280512,
+        "label": "AST"
+      },
+      {
+        "src": 25769803776,
+        "dst": 30064771072,
+        "label": "AST"
+      },
+      {
+        "src": 25769803776,
+        "dst": 47244640256,
+        "label": "AST"
+      },
+      {
+        "src": 30064771072,
+        "dst": 68719476736,
+        "label": "AST"
+      },
+      {
+        "src": 30064771072,
+        "dst": 30064771073,
+        "label": "AST"
+      },
+      {
+        "src": 30064771073,
+        "dst": 176093659136,
+        "label": "AST"
+      },
+      {
+        "src": 30064771073,
+        "dst": 68719476737,
+        "label": "AST"
+      },
+      {
+        "src": 47244640256,
+        "dst": 68719476738,
+        "label": "AST"
+      },
+      {
+        "src": 47244640256,
+        "dst": 25769803777,
+        "label": "AST"
+      },
+      {
+        "src": 25769803777,
+        "dst": 94489280513,
+        "label": "AST"
+      },
+      {
+        "src": 25769803777,
+        "dst": 30064771074,
+        "label": "AST"
+      },
+      {
+        "src": 25769803777,
+        "dst": 47244640257,
+        "label": "AST"
+      },
+      {
+        "src": 25769803777,
+        "dst": 30064771091,
+        "label": "AST"
+      },
+      {
+        "src": 30064771074,
+        "dst": 68719476739,
+        "label": "AST"
+      },
+      {
+        "src": 30064771074,
+        "dst": 30064771075,
+        "label": "AST"
+      },
+      {
+        "src": 30064771075,
+        "dst": 68719476740,
+        "label": "AST"
+      },
+      {
+        "src": 30064771075,
+        "dst": 55834574848,
+        "label": "AST"
+      },
+      {
+        "src": 47244640257,
+        "dst": 30064771076,
+        "label": "AST"
+      },
+      {
+        "src": 47244640257,
+        "dst": 25769803778,
+        "label": "AST"
+      },
+      {
+        "src": 30064771076,
+        "dst": 68719476741,
+        "label": "AST"
+      },
+      {
+        "src": 30064771076,
+        "dst": 55834574849,
+        "label": "AST"
+      },
+      {
+        "src": 25769803778,
+        "dst": 47244640258,
+        "label": "AST"
+      },
+      {
+        "src": 25769803778,
+        "dst": 47244640259,
+        "label": "AST"
+      },
+      {
+        "src": 25769803778,
+        "dst": 30064771088,
+        "label": "AST"
+      },
+      {
+        "src": 47244640258,
+        "dst": 30064771077,
+        "label": "AST"
+      },
+      {
+        "src": 47244640258,
+        "dst": 25769803779,
+        "label": "AST"
+      },
+      {
+        "src": 30064771077,
+        "dst": 30064771078,
+        "label": "AST"
+      },
+      {
+        "src": 30064771077,
+        "dst": 55834574851,
+        "label": "AST"
+      },
+      {
+        "src": 30064771078,
+        "dst": 68719476742,
+        "label": "AST"
+      },
+      {
+        "src": 30064771078,
+        "dst": 55834574850,
+        "label": "AST"
+      },
+      {
+        "src": 25769803779,
+        "dst": 30064771079,
+        "label": "AST"
+      },
+      {
+        "src": 30064771079,
+        "dst": 30064771080,
+        "label": "AST"
+      },
+      {
+        "src": 30064771079,
+        "dst": 30064771081,
+        "label": "AST"
+      },
+      {
+        "src": 30064771080,
+        "dst": 68719476743,
+        "label": "AST"
+      },
+      {
+        "src": 30064771080,
+        "dst": 55834574852,
+        "label": "AST"
+      },
+      {
+        "src": 30064771081,
+        "dst": 30064771082,
+        "label": "AST"
+      },
+      {
+        "src": 30064771081,
+        "dst": 55834574854,
+        "label": "AST"
+      },
+      {
+        "src": 30064771082,
+        "dst": 68719476744,
+        "label": "AST"
+      },
+      {
+        "src": 30064771082,
+        "dst": 55834574853,
+        "label": "AST"
+      },
+      {
+        "src": 47244640259,
+        "dst": 30064771083,
+        "label": "AST"
+      },
+      {
+        "src": 47244640259,
+        "dst": 25769803780,
+        "label": "AST"
+      },
+      {
+        "src": 30064771083,
+        "dst": 30064771084,
+        "label": "AST"
+      },
+      {
+        "src": 30064771083,
+        "dst": 55834574856,
+        "label": "AST"
+      },
+      {
+        "src": 30064771084,
+        "dst": 68719476745,
+        "label": "AST"
+      },
+      {
+        "src": 30064771084,
+        "dst": 55834574855,
+        "label": "AST"
+      },
+      {
+        "src": 25769803780,
+        "dst": 30064771085,
+        "label": "AST"
+      },
+      {
+        "src": 30064771085,
+        "dst": 30064771086,
+        "label": "AST"
+      },
+      {
+        "src": 30064771086,
+        "dst": 30064771087,
+        "label": "AST"
+      },
+      {
+        "src": 30064771086,
+        "dst": 55834574858,
+        "label": "AST"
+      },
+      {
+        "src": 30064771087,
+        "dst": 68719476746,
+        "label": "AST"
+      },
+      {
+        "src": 30064771087,
+        "dst": 55834574857,
+        "label": "AST"
+      },
+      {
+        "src": 30064771088,
+        "dst": 30064771089,
+        "label": "AST"
+      },
+      {
+        "src": 30064771088,
+        "dst": 30064771090,
+        "label": "AST"
+      },
+      {
+        "src": 30064771089,
+        "dst": 68719476747,
+        "label": "AST"
+      },
+      {
+        "src": 30064771089,
+        "dst": 55834574859,
+        "label": "AST"
+      },
+      {
+        "src": 30064771090,
+        "dst": 68719476748,
+        "label": "AST"
+      },
+      {
+        "src": 30064771090,
+        "dst": 55834574860,
+        "label": "AST"
+      },
+      {
+        "src": 30064771091,
+        "dst": 30064771092,
+        "label": "AST"
+      },
+      {
+        "src": 30064771091,
+        "dst": 68719476750,
+        "label": "AST"
+      },
+      {
+        "src": 30064771092,
+        "dst": 68719476749,
+        "label": "AST"
+      },
+      {
+        "src": 30064771092,
+        "dst": 55834574861,
+        "label": "AST"
+      },
+      {
+        "src": 107374182401,
+        "dst": 107374182400,
+        "label": "AST"
+      },
+      {
+        "src": 107374182401,
+        "dst": 25769803781,
+        "label": "AST"
+      },
+      {
+        "src": 107374182401,
+        "dst": 124554051585,
+        "label": "AST"
+      },
+      {
+        "src": 25769803781,
+        "dst": 120259084288,
+        "label": "AST"
+      },
+      {
+        "src": 107374182402,
+        "dst": 25769803782,
+        "label": "AST"
+      },
+      {
+        "src": 107374182402,
+        "dst": 124554051586,
+        "label": "AST"
+      },
+      {
+        "src": 107374182403,
+        "dst": 111669149697,
+        "label": "AST"
+      },
+      {
+        "src": 107374182403,
+        "dst": 25769803783,
+        "label": "AST"
+      },
+      {
+        "src": 107374182403,
+        "dst": 115964116993,
+        "label": "AST"
+      },
+      {
+        "src": 107374182403,
+        "dst": 111669149698,
+        "label": "AST"
+      },
+      {
+        "src": 107374182403,
+        "dst": 124554051587,
+        "label": "AST"
+      },
+      {
+        "src": 107374182403,
+        "dst": 115964116994,
+        "label": "AST"
+      },
+      {
+        "src": 107374182404,
+        "dst": 111669149699,
+        "label": "AST"
+      },
+      {
+        "src": 107374182404,
+        "dst": 25769803784,
+        "label": "AST"
+      },
+      {
+        "src": 107374182404,
+        "dst": 115964116995,
+        "label": "AST"
+      },
+      {
+        "src": 107374182404,
+        "dst": 111669149700,
+        "label": "AST"
+      },
+      {
+        "src": 107374182404,
+        "dst": 124554051588,
+        "label": "AST"
+      },
+      {
+        "src": 107374182404,
+        "dst": 115964116996,
+        "label": "AST"
+      },
+      {
+        "src": 107374182405,
+        "dst": 111669149701,
+        "label": "AST"
+      },
+      {
+        "src": 107374182405,
+        "dst": 25769803785,
+        "label": "AST"
+      },
+      {
+        "src": 107374182405,
+        "dst": 115964116997,
+        "label": "AST"
+      },
+      {
+        "src": 107374182405,
+        "dst": 124554051589,
+        "label": "AST"
+      },
+      {
+        "src": 107374182406,
+        "dst": 111669149702,
+        "label": "AST"
+      },
+      {
+        "src": 107374182406,
+        "dst": 25769803786,
+        "label": "AST"
+      },
+      {
+        "src": 107374182406,
+        "dst": 115964116998,
+        "label": "AST"
+      },
+      {
+        "src": 107374182406,
+        "dst": 111669149703,
+        "label": "AST"
+      },
+      {
+        "src": 107374182406,
+        "dst": 124554051590,
+        "label": "AST"
+      },
+      {
+        "src": 107374182406,
+        "dst": 115964116999,
+        "label": "AST"
+      },
+      {
+        "src": 107374182407,
+        "dst": 111669149704,
+        "label": "AST"
+      },
+      {
+        "src": 107374182407,
+        "dst": 25769803787,
+        "label": "AST"
+      },
+      {
+        "src": 107374182407,
+        "dst": 115964117000,
+        "label": "AST"
+      },
+      {
+        "src": 107374182407,
+        "dst": 124554051591,
+        "label": "AST"
+      }
+    ],
+    "CFG": [
+      {
+        "src": 30064771072,
+        "dst": 68719476738,
+        "label": "CFG"
+      },
+      {
+        "src": 68719476736,
+        "dst": 176093659136,
+        "label": "CFG"
+      },
+      {
+        "src": 30064771073,
+        "dst": 30064771072,
+        "label": "CFG"
+      },
+      {
+        "src": 68719476738,
+        "dst": 68719476739,
+        "label": "CFG"
+      },
+      {
+        "src": 176093659136,
+        "dst": 68719476737,
+        "label": "CFG"
+      },
+      {
+        "src": 68719476737,
+        "dst": 30064771073,
+        "label": "CFG"
+      },
+      {
+        "src": 30064771074,
+        "dst": 68719476741,
+        "label": "CFG"
+      },
+      {
+        "src": 68719476739,
+        "dst": 68719476740,
+        "label": "CFG"
+      },
+      {
+        "src": 30064771075,
+        "dst": 30064771074,
+        "label": "CFG"
+      },
+      {
+        "src": 30064771076,
+        "dst": 68719476742,
+        "label": "CFG"
+      },
+      {
+        "src": 30064771076,
+        "dst": 68719476749,
+        "label": "CFG"
+      },
+      {
+        "src": 30064771092,
+        "dst": 68719476750,
+        "label": "CFG"
+      },
+      {
+        "src": 68719476750,
+        "dst": 30064771091,
+        "label": "CFG"
+      },
+      {
+        "src": 68719476740,
+        "dst": 55834574848,
+        "label": "CFG"
+      },
+      {
+        "src": 55834574848,
+        "dst": 30064771075,
+        "label": "CFG"
+      },
+      {
+        "src": 68719476741,
+        "dst": 55834574849,
+        "label": "CFG"
+      },
+      {
+        "src": 55834574849,
+        "dst": 30064771076,
+        "label": "CFG"
+      },
+      {
+        "src": 30064771088,
+        "dst": 68719476749,
+        "label": "CFG"
+      },
+      {
+        "src": 68719476749,
+        "dst": 55834574861,
+        "label": "CFG"
+      },
+      {
+        "src": 55834574861,
+        "dst": 30064771092,
+        "label": "CFG"
+      },
+      {
+        "src": 30064771077,
+        "dst": 68719476743,
+        "label": "CFG"
+      },
+      {
+        "src": 30064771077,
+        "dst": 68719476745,
+        "label": "CFG"
+      },
+      {
+        "src": 30064771083,
+        "dst": 68719476746,
+        "label": "CFG"
+      },
+      {
+        "src": 30064771083,
+        "dst": 68719476747,
+        "label": "CFG"
+      },
+      {
+        "src": 30064771089,
+        "dst": 68719476748,
+        "label": "CFG"
+      },
+      {
+        "src": 30064771090,
+        "dst": 30064771088,
+        "label": "CFG"
+      },
+      {
+        "src": 30064771078,
+        "dst": 55834574851,
+        "label": "CFG"
+      },
+      {
+        "src": 55834574851,
+        "dst": 30064771077,
+        "label": "CFG"
+      },
+      {
+        "src": 30064771079,
+        "dst": 68719476745,
+        "label": "CFG"
+      },
+      {
+        "src": 30064771084,
+        "dst": 55834574856,
+        "label": "CFG"
+      },
+      {
+        "src": 55834574856,
+        "dst": 30064771083,
+        "label": "CFG"
+      },
+      {
+        "src": 30064771085,
+        "dst": 68719476747,
+        "label": "CFG"
+      },
+      {
+        "src": 68719476747,
+        "dst": 55834574859,
+        "label": "CFG"
+      },
+      {
+        "src": 55834574859,
+        "dst": 30064771089,
+        "label": "CFG"
+      },
+      {
+        "src": 68719476748,
+        "dst": 55834574860,
+        "label": "CFG"
+      },
+      {
+        "src": 55834574860,
+        "dst": 30064771090,
+        "label": "CFG"
+      },
+      {
+        "src": 68719476742,
+        "dst": 55834574850,
+        "label": "CFG"
+      },
+      {
+        "src": 55834574850,
+        "dst": 30064771078,
+        "label": "CFG"
+      },
+      {
+        "src": 30064771080,
+        "dst": 68719476744,
+        "label": "CFG"
+      },
+      {
+        "src": 30064771081,
+        "dst": 30064771079,
+        "label": "CFG"
+      },
+      {
+        "src": 68719476745,
+        "dst": 55834574855,
+        "label": "CFG"
+      },
+      {
+        "src": 55834574855,
+        "dst": 30064771084,
+        "label": "CFG"
+      },
+      {
+        "src": 30064771086,
+        "dst": 30064771085,
+        "label": "CFG"
+      },
+      {
+        "src": 68719476743,
+        "dst": 55834574852,
+        "label": "CFG"
+      },
+      {
+        "src": 55834574852,
+        "dst": 30064771080,
+        "label": "CFG"
+      },
+      {
+        "src": 30064771082,
+        "dst": 55834574854,
+        "label": "CFG"
+      },
+      {
+        "src": 55834574854,
+        "dst": 30064771081,
+        "label": "CFG"
+      },
+      {
+        "src": 30064771087,
+        "dst": 55834574858,
+        "label": "CFG"
+      },
+      {
+        "src": 55834574858,
+        "dst": 30064771086,
+        "label": "CFG"
+      },
+      {
+        "src": 68719476744,
+        "dst": 55834574853,
+        "label": "CFG"
+      },
+      {
+        "src": 55834574853,
+        "dst": 30064771082,
+        "label": "CFG"
+      },
+      {
+        "src": 68719476746,
+        "dst": 55834574857,
+        "label": "CFG"
+      },
+      {
+        "src": 55834574857,
+        "dst": 30064771087,
+        "label": "CFG"
+      },
+      {
+        "src": 107374182400,
+        "dst": 68719476736,
+        "label": "CFG"
+      }
+    ],
+    "DFG": [
+      {
+        "src": 30064771072,
+        "dst": 68719476738,
+        "label": "DFG"
+      },
+      {
+        "src": 30064771072,
+        "dst": 30064771074,
+        "label": "DFG"
+      },
+      {
+        "src": 30064771074,
+        "dst": 30064771091,
+        "label": "DFG"
+      },
+      {
+        "src": 30064771072,
+        "dst": 30064771091,
+        "label": "DFG"
+      },
+      {
+        "src": 30064771072,
+        "dst": 30064771075,
+        "label": "DFG"
+      },
+      {
+        "src": 30064771072,
+        "dst": 30064771076,
+        "label": "DFG"
+      },
+      {
+        "src": 30064771074,
+        "dst": 30064771092,
+        "label": "DFG"
+      },
+      {
+        "src": 30064771072,
+        "dst": 68719476750,
+        "label": "DFG"
+      },
+      {
+        "src": 30064771072,
+        "dst": 68719476740,
+        "label": "DFG"
+      },
+      {
+        "src": 30064771072,
+        "dst": 68719476741,
+        "label": "DFG"
+      },
+      {
+        "src": 30064771074,
+        "dst": 30064771088,
+        "label": "DFG"
+      },
+      {
+        "src": 30064771072,
+        "dst": 30064771088,
+        "label": "DFG"
+      },
+      {
+        "src": 30064771074,
+        "dst": 68719476749,
+        "label": "DFG"
+      },
+      {
+        "src": 30064771072,
+        "dst": 30064771077,
+        "label": "DFG"
+      },
+      {
+        "src": 30064771072,
+        "dst": 30064771083,
+        "label": "DFG"
+      },
+      {
+        "src": 30064771074,
+        "dst": 30064771089,
+        "label": "DFG"
+      },
+      {
+        "src": 30064771072,
+        "dst": 30064771090,
+        "label": "DFG"
+      },
+      {
+        "src": 30064771072,
+        "dst": 30064771078,
+        "label": "DFG"
+      },
+      {
+        "src": 30064771074,
+        "dst": 30064771079,
+        "label": "DFG"
+      },
+      {
+        "src": 30064771072,
+        "dst": 30064771079,
+        "label": "DFG"
+      },
+      {
+        "src": 30064771072,
+        "dst": 30064771084,
+        "label": "DFG"
+      },
+      {
+        "src": 30064771072,
+        "dst": 30064771085,
+        "label": "DFG"
+      },
+      {
+        "src": 30064771074,
+        "dst": 68719476747,
+        "label": "DFG"
+      },
+      {
+        "src": 30064771072,
+        "dst": 68719476748,
+        "label": "DFG"
+      },
+      {
+        "src": 30064771072,
+        "dst": 68719476742,
+        "label": "DFG"
+      },
+      {
+        "src": 30064771074,
+        "dst": 30064771080,
+        "label": "DFG"
+      },
+      {
+        "src": 30064771072,
+        "dst": 30064771081,
+        "label": "DFG"
+      },
+      {
+        "src": 30064771072,
+        "dst": 68719476745,
+        "label": "DFG"
+      },
+      {
+        "src": 30064771072,
+        "dst": 30064771086,
+        "label": "DFG"
+      },
+      {
+        "src": 30064771074,
+        "dst": 68719476743,
+        "label": "DFG"
+      },
+      {
+        "src": 30064771072,
+        "dst": 30064771082,
+        "label": "DFG"
+      },
+      {
+        "src": 30064771072,
+        "dst": 30064771087,
+        "label": "DFG"
+      },
+      {
+        "src": 30064771072,
+        "dst": 68719476744,
+        "label": "DFG"
+      },
+      {
+        "src": 30064771072,
+        "dst": 68719476746,
+        "label": "DFG"
+      }
+    ],
+    "CALL": [
+      {
+        "src": 30064771072,
+        "dst": 107374182406,
+        "label": "CALL"
+      },
+      {
+        "src": 30064771073,
+        "dst": 107374182404,
+        "label": "CALL"
+      },
+      {
+        "src": 30064771074,
+        "dst": 107374182406,
+        "label": "CALL"
+      },
+      {
+        "src": 30064771075,
+        "dst": 107374182403,
+        "label": "CALL"
+      },
+      {
+        "src": 30064771076,
+        "dst": 107374182403,
+        "label": "CALL"
+      },
+      {
+        "src": 30064771077,
+        "dst": 107374182403,
+        "label": "CALL"
+      },
+      {
+        "src": 30064771078,
+        "dst": 107374182403,
+        "label": "CALL"
+      },
+      {
+        "src": 30064771079,
+        "dst": 107374182407,
+        "label": "CALL"
+      },
+      {
+        "src": 30064771080,
+        "dst": 107374182403,
+        "label": "CALL"
+      },
+      {
+        "src": 30064771081,
+        "dst": 107374182403,
+        "label": "CALL"
+      },
+      {
+        "src": 30064771082,
+        "dst": 107374182403,
+        "label": "CALL"
+      },
+      {
+        "src": 30064771083,
+        "dst": 107374182403,
+        "label": "CALL"
+      },
+      {
+        "src": 30064771084,
+        "dst": 107374182403,
+        "label": "CALL"
+      },
+      {
+        "src": 30064771085,
+        "dst": 107374182405,
+        "label": "CALL"
+      },
+      {
+        "src": 30064771086,
+        "dst": 107374182403,
+        "label": "CALL"
+      },
+      {
+        "src": 30064771087,
+        "dst": 107374182403,
+        "label": "CALL"
+      },
+      {
+        "src": 30064771088,
+        "dst": 107374182407,
+        "label": "CALL"
+      },
+      {
+        "src": 30064771089,
+        "dst": 107374182403,
+        "label": "CALL"
+      },
+      {
+        "src": 30064771090,
+        "dst": 107374182403,
+        "label": "CALL"
+      },
+      {
+        "src": 30064771091,
+        "dst": 107374182407,
+        "label": "CALL"
+      },
+      {
+        "src": 30064771092,
+        "dst": 107374182403,
+        "label": "CALL"
+      }
+    ],
+    "ARG2PARAM": [
+      {
+        "src": 68719476736,
+        "dst": 111669149702,
+        "label": "ARG2PARAM"
+      },
+      {
+        "src": 30064771073,
+        "dst": 111669149703,
+        "label": "ARG2PARAM"
+      },
+      {
+        "src": 176093659136,
+        "dst": 111669149699,
+        "label": "ARG2PARAM"
+      },
+      {
+        "src": 68719476737,
+        "dst": 111669149700,
+        "label": "ARG2PARAM"
+      },
+      {
+        "src": 68719476739,
+        "dst": 111669149702,
+        "label": "ARG2PARAM"
+      },
+      {
+        "src": 30064771075,
+        "dst": 111669149703,
+        "label": "ARG2PARAM"
+      },
+      {
+        "src": 68719476740,
+        "dst": 111669149697,
+        "label": "ARG2PARAM"
+      },
+      {
+        "src": 55834574848,
+        "dst": 111669149698,
+        "label": "ARG2PARAM"
+      },
+      {
+        "src": 68719476741,
+        "dst": 111669149697,
+        "label": "ARG2PARAM"
+      },
+      {
+        "src": 55834574849,
+        "dst": 111669149698,
+        "label": "ARG2PARAM"
+      },
+      {
+        "src": 30064771078,
+        "dst": 111669149697,
+        "label": "ARG2PARAM"
+      },
+      {
+        "src": 55834574851,
+        "dst": 111669149698,
+        "label": "ARG2PARAM"
+      },
+      {
+        "src": 68719476742,
+        "dst": 111669149697,
+        "label": "ARG2PARAM"
+      },
+      {
+        "src": 55834574850,
+        "dst": 111669149698,
+        "label": "ARG2PARAM"
+      },
+      {
+        "src": 30064771081,
+        "dst": 111669149704,
+        "label": "ARG2PARAM"
+      },
+      {
+        "src": 68719476743,
+        "dst": 111669149697,
+        "label": "ARG2PARAM"
+      },
+      {
+        "src": 55834574852,
+        "dst": 111669149698,
+        "label": "ARG2PARAM"
+      },
+      {
+        "src": 30064771082,
+        "dst": 111669149697,
+        "label": "ARG2PARAM"
+      },
+      {
+        "src": 55834574854,
+        "dst": 111669149698,
+        "label": "ARG2PARAM"
+      },
+      {
+        "src": 68719476744,
+        "dst": 111669149697,
+        "label": "ARG2PARAM"
+      },
+      {
+        "src": 55834574853,
+        "dst": 111669149698,
+        "label": "ARG2PARAM"
+      },
+      {
+        "src": 30064771084,
+        "dst": 111669149697,
+        "label": "ARG2PARAM"
+      },
+      {
+        "src": 55834574856,
+        "dst": 111669149698,
+        "label": "ARG2PARAM"
+      },
+      {
+        "src": 68719476745,
+        "dst": 111669149697,
+        "label": "ARG2PARAM"
+      },
+      {
+        "src": 55834574855,
+        "dst": 111669149698,
+        "label": "ARG2PARAM"
+      },
+      {
+        "src": 30064771086,
+        "dst": 111669149701,
+        "label": "ARG2PARAM"
+      },
+      {
+        "src": 30064771087,
+        "dst": 111669149697,
+        "label": "ARG2PARAM"
+      },
+      {
+        "src": 55834574858,
+        "dst": 111669149698,
+        "label": "ARG2PARAM"
+      },
+      {
+        "src": 68719476746,
+        "dst": 111669149697,
+        "label": "ARG2PARAM"
+      },
+      {
+        "src": 55834574857,
+        "dst": 111669149698,
+        "label": "ARG2PARAM"
+      },
+      {
+        "src": 30064771090,
+        "dst": 111669149704,
+        "label": "ARG2PARAM"
+      },
+      {
+        "src": 68719476747,
+        "dst": 111669149697,
+        "label": "ARG2PARAM"
+      },
+      {
+        "src": 55834574859,
+        "dst": 111669149698,
+        "label": "ARG2PARAM"
+      },
+      {
+        "src": 68719476748,
+        "dst": 111669149697,
+        "label": "ARG2PARAM"
+      },
+      {
+        "src": 55834574860,
+        "dst": 111669149698,
+        "label": "ARG2PARAM"
+      },
+      {
+        "src": 68719476750,
+        "dst": 111669149704,
+        "label": "ARG2PARAM"
+      },
+      {
+        "src": 68719476749,
+        "dst": 111669149697,
+        "label": "ARG2PARAM"
+      },
+      {
+        "src": 55834574861,
+        "dst": 111669149698,
+        "label": "ARG2PARAM"
+      }
+    ],
+    "RET2CALL": [
+      {
+        "src": 124554051590,
+        "dst": 30064771072,
+        "label": "RET2CALL"
+      },
+      {
+        "src": 124554051588,
+        "dst": 30064771073,
+        "label": "RET2CALL"
+      },
+      {
+        "src": 124554051590,
+        "dst": 30064771074,
+        "label": "RET2CALL"
+      },
+      {
+        "src": 124554051587,
+        "dst": 30064771075,
+        "label": "RET2CALL"
+      },
+      {
+        "src": 124554051587,
+        "dst": 30064771076,
+        "label": "RET2CALL"
+      },
+      {
+        "src": 124554051587,
+        "dst": 30064771077,
+        "label": "RET2CALL"
+      },
+      {
+        "src": 124554051587,
+        "dst": 30064771078,
+        "label": "RET2CALL"
+      },
+      {
+        "src": 124554051591,
+        "dst": 30064771079,
+        "label": "RET2CALL"
+      },
+      {
+        "src": 124554051587,
+        "dst": 30064771080,
+        "label": "RET2CALL"
+      },
+      {
+        "src": 124554051587,
+        "dst": 30064771081,
+        "label": "RET2CALL"
+      },
+      {
+        "src": 124554051587,
+        "dst": 30064771082,
+        "label": "RET2CALL"
+      },
+      {
+        "src": 124554051587,
+        "dst": 30064771083,
+        "label": "RET2CALL"
+      },
+      {
+        "src": 124554051587,
+        "dst": 30064771084,
+        "label": "RET2CALL"
+      },
+      {
+        "src": 124554051589,
+        "dst": 30064771085,
+        "label": "RET2CALL"
+      },
+      {
+        "src": 124554051587,
+        "dst": 30064771086,
+        "label": "RET2CALL"
+      },
+      {
+        "src": 124554051587,
+        "dst": 30064771087,
+        "label": "RET2CALL"
+      },
+      {
+        "src": 124554051591,
+        "dst": 30064771088,
+        "label": "RET2CALL"
+      },
+      {
+        "src": 124554051587,
+        "dst": 30064771089,
+        "label": "RET2CALL"
+      },
+      {
+        "src": 124554051587,
+        "dst": 30064771090,
+        "label": "RET2CALL"
+      },
+      {
+        "src": 124554051591,
+        "dst": 30064771091,
+        "label": "RET2CALL"
+      },
+      {
+        "src": 124554051587,
+        "dst": 30064771092,
+        "label": "RET2CALL"
+      }
+    ],
+    "RET2LHS": [
+      {
+        "src": 124554051588,
+        "dst": 68719476736,
+        "label": "RET2LHS"
+      },
+      {
+        "src": 124554051587,
+        "dst": 68719476739,
+        "label": "RET2LHS"
+      }
+    ]
+  }
+}

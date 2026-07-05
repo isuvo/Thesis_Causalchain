@@ -1,0 +1,83 @@
+{
+  "config": {
+    "epochs": 5,
+    "hidden": 64,
+    "layers": 3,
+    "lr": 0.002,
+    "wd": 0.0001,
+    "neg_pos_ratio": 20,
+    "device": "cuda",
+    "relations": [
+      "DFG",
+      "CFG",
+      "CALL",
+      "ARG2PARAM",
+      "RET2CALL",
+      "RET2LHS"
+    ],
+    "add_summary_edges": true,
+    "slice_mode": "beam",
+    "beam": {
+      "k": 8,
+      "width": 24,
+      "max_hops": 5,
+      "alpha_node": 0.7
+    }
+  },
+  "thresholds_by_source": {
+    "default": 0.25
+  },
+  "reports": {
+    "train": {
+      "split": "train",
+      "overall": {
+        "precision": null,
+        "recall": null,
+        "f1": 0.0
+      },
+      "thresholds": {
+        "default": 0.25
+      },
+      "n_graphs_used": 256,
+      "CCS_mean": 1.7604287541606034e-09,
+      "CFAM_mean": 0.00473637799934622
+    },
+    "valid": {
+      "split": "valid",
+      "overall": {
+        "precision": null,
+        "recall": null,
+        "f1": 0.0
+      },
+      "thresholds": {
+        "default": 0.25
+      },
+      "n_graphs_used": 256,
+      "CCS_mean": 8.885483272769168e-09,
+      "CFAM_mean": 0.023241107463901175
+    },
+    "test": {
+      "split": "test",
+      "overall": {
+        "precision": null,
+        "recall": null,
+        "f1": 0.0
+      },
+      "thresholds": {
+        "default": 0.25
+      },
+      "n_graphs_used": 256,
+      "CCS_mean": 7.967474468378866e-09,
+      "CFAM_mean": 0.02330953156784581
+    }
+  },
+  "notes": {
+    "interprocedural": "CALL/ARG2PARAM/RET2CALL/RET2LHS (+DFG_THIN) participate in beam transitions.",
+    "beam_guidance": "learned relation gates + bilinear edge scorer; no fixed ordering.",
+    "objective": "focal(class-weights + hard-negatives) + edge participation + monotonicity + path ranking.",
+    "CCS": "p(x) vs p(do(x')) by zeroing beam slice features.",
+    "CFAM": "grad-norm attribution mass on beam slice / total.",
+    "multi_root": "top-K seed nodes \u2192 multiple chains.",
+    "saving": "out\\cvul\\1760989836"
+  }
+}

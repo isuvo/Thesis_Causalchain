@@ -1,0 +1,19 @@
+Root → … → Sink (by P) (hops=5)
+
+[ROOT] }
+  (STMT, lib/wrap.c, line 25, P=0.473)
+   └──[CFG] exact=CFG_REV
+[→] return tmp3;
+  (RET, lib/wrap.c, line 24, P=0.577)
+   └──[DFG] exact=DFG_REV
+[→] char tmp3[300];
+  (DECL, lib/wrap.c, line 8, P=0.497)
+   └──[CFG] exact=CFG_REV
+[→] char tmp2[300];
+  (DECL, lib/wrap.c, line 7, P=0.497)
+   └──[CPG/DFG] exact=DFG,ARG2PARAM
+[→] strcpy(tmp2, "");
+  (CALL:strcpy, lib/wrap.c, line 16, P=0.486)
+   └──[CFG] exact=CFG_REV
+[SINK] char* wrap_b(char* in) {
+  (STMT, lib/wrap.c, line 15, P=0.628)

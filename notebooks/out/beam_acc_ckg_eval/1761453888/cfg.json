@@ -1,0 +1,13 @@
+{
+  "ckpt": "out/cvul/1760989836/model.pt",
+  "valid": "Dataset/valid/hetero_ready_gcbert",
+  "test": "Dataset/test/hetero_ready_gcbert",
+  "ckg": "ckg/ckg.json",
+  "beam": {
+    "SEED_K": 8,
+    "WIDTH": 24,
+    "HOPS": 5,
+    "ALPHA_NODE": 0.7
+  },
+  "lambda_prior": 0.15
+}

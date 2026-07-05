@@ -1,0 +1,22 @@
+Root → … → Sink (hops=6)
+
+[ROOT] P=0.357  char* pass(char* s){
+   (label=BLOCK, file=toy.c, line=19)
+   └──[CFG]
+[→] P=0.449  return s;
+   (label=BLOCK, file=toy.c, line=20)
+   └──[CFG]
+[→] P=0.419  }
+   (label=BLOCK, file=toy.c, line=21)
+   └──[CFG]
+[→] P=0.396  void sink(char* cmd){
+   (label=BLOCK, file=toy.c, line=22)
+   └──[CPG]
+[→] P=0.463  sink(z);
+   (label=CALL, file=toy.c, line=14)
+   └──[CFG]
+[→] P=0.453  char* z = pass(b);
+   (label=BLOCK, file=toy.c, line=13)
+   └──[CFG]
+[SINK] P=0.554  b[63]=0;
+   (label=BLOCK, file=toy.c, line=12)

@@ -1,0 +1,223 @@
+{
+  "hops": 11,
+  "nodes": [
+    {
+      "index": 0,
+      "file": "app/main.c",
+      "line": 12,
+      "label": "Stmt",
+      "code": "char buf[256];",
+      "prob": 0.46331295371055603
+    },
+    {
+      "index": 1,
+      "file": "app/main.c",
+      "line": 17,
+      "label": "Stmt",
+      "code": "char* p = wrap_a(buf);",
+      "prob": 0.588381826877594
+    },
+    {
+      "index": 2,
+      "file": "app/main.c",
+      "line": 18,
+      "label": "Stmt",
+      "code": "p = wrap_b(p);",
+      "prob": 0.5350789427757263
+    },
+    {
+      "index": 3,
+      "file": "app/main.c",
+      "line": 19,
+      "label": "Stmt",
+      "code": "p = wrap_c(p);",
+      "prob": 0.48005738854408264
+    },
+    {
+      "index": 4,
+      "file": "app/main.c",
+      "line": 21,
+      "label": "Stmt",
+      "code": "run_system(p);",
+      "prob": 0.42060422897338867
+    },
+    {
+      "index": 5,
+      "file": "app/main.c",
+      "line": 9,
+      "label": "Stmt",
+      "code": "extern void run_system(char* cmd);",
+      "prob": 0.5504376888275146
+    },
+    {
+      "index": 6,
+      "file": "app/main.c",
+      "line": 8,
+      "label": "Stmt",
+      "code": "extern char* wrap_c(char* in);",
+      "prob": 0.5081663727760315
+    },
+    {
+      "index": 7,
+      "file": "app/main.c",
+      "line": 7,
+      "label": "Stmt",
+      "code": "extern char* wrap_b(char* in);",
+      "prob": 0.5733454823493958
+    },
+    {
+      "index": 8,
+      "file": "app/main.c",
+      "line": 6,
+      "label": "Stmt",
+      "code": "extern char* wrap_a(char* in);",
+      "prob": 0.49352940917015076
+    },
+    {
+      "index": 9,
+      "file": "app/main.c",
+      "line": 4,
+      "label": "Stmt",
+      "code": "#include <string.h>",
+      "prob": 0.4963003695011139
+    },
+    {
+      "index": 10,
+      "file": "app/main.c",
+      "line": 3,
+      "label": "Stmt",
+      "code": "#include <stdlib.h>",
+      "prob": 0.5093393921852112
+    },
+    {
+      "index": 11,
+      "file": "app/main.c",
+      "line": 2,
+      "label": "Stmt",
+      "code": "#include <stdio.h>",
+      "prob": 0.5219775438308716
+    }
+  ],
+  "edges": [
+    {
+      "from_index": 0,
+      "to_index": 1,
+      "families": [
+        "DFG"
+      ],
+      "exact": [
+        "DFG"
+      ]
+    },
+    {
+      "from_index": 1,
+      "to_index": 2,
+      "families": [
+        "CFG"
+      ],
+      "exact": [
+        "CFG"
+      ]
+    },
+    {
+      "from_index": 2,
+      "to_index": 3,
+      "families": [
+        "CFG",
+        "DFG"
+      ],
+      "exact": [
+        "CFG",
+        "DFG"
+      ]
+    },
+    {
+      "from_index": 3,
+      "to_index": 4,
+      "families": [
+        "DFG"
+      ],
+      "exact": [
+        "DFG"
+      ]
+    },
+    {
+      "from_index": 4,
+      "to_index": 5,
+      "families": [
+        "CPG"
+      ],
+      "exact": [
+        "CALL"
+      ]
+    },
+    {
+      "from_index": 5,
+      "to_index": 6,
+      "families": [
+        "CFG"
+      ],
+      "exact": [
+        "CFG_REV"
+      ]
+    },
+    {
+      "from_index": 6,
+      "to_index": 7,
+      "families": [
+        "CFG"
+      ],
+      "exact": [
+        "CFG_REV"
+      ]
+    },
+    {
+      "from_index": 7,
+      "to_index": 8,
+      "families": [
+        "CFG"
+      ],
+      "exact": [
+        "CFG_REV"
+      ]
+    },
+    {
+      "from_index": 8,
+      "to_index": 9,
+      "families": [
+        "CFG"
+      ],
+      "exact": [
+        "CFG_REV"
+      ]
+    },
+    {
+      "from_index": 9,
+      "to_index": 10,
+      "families": [
+        "CFG"
+      ],
+      "exact": [
+        "CFG_REV"
+      ]
+    },
+    {
+      "from_index": 10,
+      "to_index": 11,
+      "families": [
+        "CFG"
+      ],
+      "exact": [
+        "CFG_REV"
+      ]
+    }
+  ],
+  "params": {
+    "MAX_HOPS": 12,
+    "BEAM_WIDTH": 24,
+    "TIME_BUDGET_S": 3.5,
+    "SINK_PROB_THR": 0.55,
+    "TOPK_SINKS_PER_GRAPH": 30,
+    "DEMO_ID": 1
+  }
+}

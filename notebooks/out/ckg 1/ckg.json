@@ -1,0 +1,332 @@
+{
+  "meta": {
+    "created_at": "2025-10-20 18:36:42",
+    "graphs_used": 200,
+    "mined_from": "C:\\Users\\MSHUVO23\\Desktop\\Thesis Research\\Thesis-causal-vul\\notebooks\\Dataset\\train\\hetero_ready_gcbert"
+  },
+  "relations": [
+    "DFG",
+    "CFG",
+    "CALL",
+    "ARG2PARAM",
+    "RET2CALL",
+    "RET2LHS",
+    "DFG_THIN"
+  ],
+  "edge_prior_count": {
+    "DFG": 10,
+    "CFG": 783,
+    "CALL": 1181,
+    "ARG2PARAM": 745,
+    "RET2CALL": 18,
+    "RET2LHS": 0,
+    "DFG_THIN": 233
+  },
+  "edge_prior_prob": {
+    "DFG": 0.003367003367003367,
+    "CFG": 0.2636363636363636,
+    "CALL": 0.39764309764309763,
+    "ARG2PARAM": 0.25084175084175087,
+    "RET2CALL": 0.006060606060606061,
+    "RET2LHS": 0.0,
+    "DFG_THIN": 0.07845117845117845
+  },
+  "bigram_count": {
+    "DFG": {
+      "DFG": 2,
+      "CFG": 4,
+      "CALL": 3,
+      "ARG2PARAM": 0,
+      "RET2CALL": 0,
+      "RET2LHS": 0,
+      "DFG_THIN": 0
+    },
+    "CFG": {
+      "DFG": 2,
+      "CFG": 294,
+      "CALL": 232,
+      "ARG2PARAM": 186,
+      "RET2CALL": 1,
+      "RET2LHS": 0,
+      "DFG_THIN": 26
+    },
+    "CALL": {
+      "DFG": 0,
+      "CFG": 4,
+      "CALL": 868,
+      "ARG2PARAM": 0,
+      "RET2CALL": 0,
+      "RET2LHS": 0,
+      "DFG_THIN": 0
+    },
+    "ARG2PARAM": {
+      "DFG": 0,
+      "CFG": 0,
+      "CALL": 0,
+      "ARG2PARAM": 462,
+      "RET2CALL": 0,
+      "RET2LHS": 0,
+      "DFG_THIN": 128
+    },
+    "RET2CALL": {
+      "DFG": 0,
+      "CFG": 4,
+      "CALL": 0,
+      "ARG2PARAM": 0,
+      "RET2CALL": 9,
+      "RET2LHS": 0,
+      "DFG_THIN": 2
+    },
+    "RET2LHS": {
+      "DFG": 0,
+      "CFG": 0,
+      "CALL": 0,
+      "ARG2PARAM": 0,
+      "RET2CALL": 0,
+      "RET2LHS": 0,
+      "DFG_THIN": 0
+    },
+    "DFG_THIN": {
+      "DFG": 0,
+      "CFG": 3,
+      "CALL": 0,
+      "ARG2PARAM": 75,
+      "RET2CALL": 1,
+      "RET2LHS": 0,
+      "DFG_THIN": 70
+    }
+  },
+  "bigram_prob": {
+    "DFG": {
+      "DFG": 0.2222222222222222,
+      "CFG": 0.4444444444444444,
+      "CALL": 0.3333333333333333,
+      "ARG2PARAM": 0.0,
+      "RET2CALL": 0.0,
+      "RET2LHS": 0.0,
+      "DFG_THIN": 0.0
+    },
+    "CFG": {
+      "DFG": 0.002699055330634278,
+      "CFG": 0.3967611336032389,
+      "CALL": 0.31309041835357626,
+      "ARG2PARAM": 0.25101214574898784,
+      "RET2CALL": 0.001349527665317139,
+      "RET2LHS": 0.0,
+      "DFG_THIN": 0.03508771929824561
+    },
+    "CALL": {
+      "DFG": 0.0,
+      "CFG": 0.0045871559633027525,
+      "CALL": 0.9954128440366973,
+      "ARG2PARAM": 0.0,
+      "RET2CALL": 0.0,
+      "RET2LHS": 0.0,
+      "DFG_THIN": 0.0
+    },
+    "ARG2PARAM": {
+      "DFG": 0.0,
+      "CFG": 0.0,
+      "CALL": 0.0,
+      "ARG2PARAM": 0.7830508474576271,
+      "RET2CALL": 0.0,
+      "RET2LHS": 0.0,
+      "DFG_THIN": 0.21694915254237288
+    },
+    "RET2CALL": {
+      "DFG": 0.0,
+      "CFG": 0.26666666666666666,
+      "CALL": 0.0,
+      "ARG2PARAM": 0.0,
+      "RET2CALL": 0.6,
+      "RET2LHS": 0.0,
+      "DFG_THIN": 0.13333333333333333
+    },
+    "RET2LHS": {
+      "DFG": 0.0,
+      "CFG": 0.0,
+      "CALL": 0.0,
+      "ARG2PARAM": 0.0,
+      "RET2CALL": 0.0,
+      "RET2LHS": 0.0,
+      "DFG_THIN": 0.0
+    },
+    "DFG_THIN": {
+      "DFG": 0.0,
+      "CFG": 0.020134228187919462,
+      "CALL": 0.0,
+      "ARG2PARAM": 0.5033557046979866,
+      "RET2CALL": 0.006711409395973154,
+      "RET2LHS": 0.0,
+      "DFG_THIN": 0.4697986577181208
+    }
+  },
+  "start_count": {},
+  "end_count": {},
+  "hop_histogram": {
+    "5": 594,
+    "0": 6
+  },
+  "motifs_topk": [
+    {
+      "count": 868,
+      "rels": [
+        "CALL",
+        "CALL",
+        "CALL"
+      ]
+    },
+    {
+      "count": 462,
+      "rels": [
+        "ARG2PARAM",
+        "ARG2PARAM",
+        "ARG2PARAM"
+      ]
+    },
+    {
+      "count": 294,
+      "rels": [
+        "CFG",
+        "CFG",
+        "CFG"
+      ]
+    },
+    {
+      "count": 232,
+      "rels": [
+        "CFG",
+        "CALL",
+        "CALL"
+      ]
+    },
+    {
+      "count": 186,
+      "rels": [
+        "CFG",
+        "ARG2PARAM",
+        "ARG2PARAM"
+      ]
+    },
+    {
+      "count": 75,
+      "rels": [
+        "ARG2PARAM",
+        "DFG_THIN",
+        "ARG2PARAM"
+      ]
+    },
+    {
+      "count": 75,
+      "rels": [
+        "DFG_THIN",
+        "ARG2PARAM",
+        "ARG2PARAM"
+      ]
+    },
+    {
+      "count": 70,
+      "rels": [
+        "DFG_THIN",
+        "DFG_THIN",
+        "ARG2PARAM"
+      ]
+    },
+    {
+      "count": 26,
+      "rels": [
+        "CFG",
+        "DFG_THIN",
+        "ARG2PARAM"
+      ]
+    },
+    {
+      "count": 9,
+      "rels": [
+        "RET2CALL",
+        "RET2CALL",
+        "RET2CALL"
+      ]
+    },
+    {
+      "count": 4,
+      "rels": [
+        "DFG",
+        "CFG",
+        "CFG"
+      ]
+    },
+    {
+      "count": 4,
+      "rels": [
+        "CALL",
+        "CFG",
+        "CFG"
+      ]
+    },
+    {
+      "count": 4,
+      "rels": [
+        "RET2CALL",
+        "CFG",
+        "CFG"
+      ]
+    },
+    {
+      "count": 3,
+      "rels": [
+        "DFG",
+        "CALL",
+        "CALL"
+      ]
+    },
+    {
+      "count": 3,
+      "rels": [
+        "DFG_THIN",
+        "CFG",
+        "CFG"
+      ]
+    },
+    {
+      "count": 2,
+      "rels": [
+        "DFG",
+        "DFG",
+        "CFG"
+      ]
+    },
+    {
+      "count": 2,
+      "rels": [
+        "CFG",
+        "DFG",
+        "CFG"
+      ]
+    },
+    {
+      "count": 2,
+      "rels": [
+        "RET2CALL",
+        "DFG_THIN",
+        "ARG2PARAM"
+      ]
+    },
+    {
+      "count": 1,
+      "rels": [
+        "CFG",
+        "RET2CALL",
+        "RET2CALL"
+      ]
+    },
+    {
+      "count": 1,
+      "rels": [
+        "DFG_THIN",
+        "RET2CALL",
+        "RET2CALL"
+      ]
+    }
+  ]
+}

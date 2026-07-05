@@ -1,0 +1,89 @@
+{
+  "splits": {
+    "train": {
+      "conventional": {},
+      "causal": {},
+      "beam": {},
+      "chains": {}
+    },
+    "valid": {
+      "conventional": {
+        "accuracy": 0.492,
+        "precision": 0.0582,
+        "recall": 1.0,
+        "f1": 0.108,
+        "n_graphs": 70
+      },
+      "causal": {
+        "ccs_mean": null,
+        "cfam_mean": null,
+        "dcr_mean": null,
+        "n": 2906
+      },
+      "beam": {
+        "avg_beam_steps": 4.901927047487956,
+        "interproc_hop_ratio": null,
+        "records": 1
+      },
+      "chains": {
+        "chain_coverage": 0.006949912698140984,
+        "avg_chain_length": 1.001539408866995,
+        "path_monotonicity_rate": 0.999384236453202,
+        "call_edge_usage_rate": 0.036581616968951736,
+        "interprocedurality_rate": null,
+        "validity_rate": null,
+        "graphs_total": 2905
+      }
+    },
+    "test": {
+      "conventional": {
+        "accuracy": 0.489,
+        "precision": 0.0604,
+        "recall": 1.0,
+        "f1": 0.112,
+        "n_graphs": 78
+      },
+      "causal": {
+        "ccs_mean": null,
+        "cfam_mean": null,
+        "dcr_mean": null,
+        "n": 5830
+      },
+      "beam": {
+        "avg_beam_steps": 4.88336192109777,
+        "interproc_hop_ratio": null,
+        "records": 2
+      },
+      "chains": {
+        "chain_coverage": 0.005129656751135343,
+        "avg_chain_length": 1.0201535508637236,
+        "path_monotonicity_rate": 0.9961612284069098,
+        "call_edge_usage_rate": 0.5846660395108184,
+        "interprocedurality_rate": null,
+        "validity_rate": null,
+        "graphs_total": 2915
+      }
+    }
+  },
+  "meta": {
+    "generated_at": "2025-10-27T05:34:12.019061Z",
+    "sources": {
+      "reports": "/mnt/data/reports.json",
+      "ckg_used": "/mnt/data/ckg_used.json",
+      "beam_report_md": "/mnt/data/beam_report.md"
+    },
+    "notes": [
+      "Conventional classification metrics in reports.json are placeholders (0.0).",
+      "CKG prior is decoding-only; values below are mined from training graphs."
+    ]
+  },
+  "config": {},
+  "ckg": {},
+  "runtime_eval_params": {
+    "device": "CUDA",
+    "bfs_forced": true,
+    "max_nodes": 5000,
+    "max_edges": 15000,
+    "threshold": 0.5
+  }
+}

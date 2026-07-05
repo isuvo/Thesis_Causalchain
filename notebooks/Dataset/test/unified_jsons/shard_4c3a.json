@@ -1,0 +1,4398 @@
+{"meta":{"tool":"joern","source":"C:/Users/USER/Desktop/Thesis Research/Implementation/Thesis-causal-vul/work/src/test/shard_4c3a","n_nodes":302,"n_edges":{"AST":224,"CFG":107,"DFG":20},"dfg_status":"rd_intra_proc"},"nodes":[
+  {
+    "name":"mp_capable_print",
+    "_id":21474836480,
+    "signature":"int(netdissect_options*,u_char*,u_int,u_char)",
+    "methodFullName":"mp_capable_print",
+    "_label":"BINDING"
+  },
+  {
+    "name":"mp_dss_len",
+    "_id":21474836481,
+    "signature":"u_int(mp_dss*,int)",
+    "methodFullName":"mp_dss_len",
+    "_label":"BINDING"
+  },
+  {
+    "dynamicTypeHintFullName":[
+      
+    ],
+    "_id":25769803776,
+    "code":"{\n        const struct mp_capable *mpc = (const struct mp_capable *) opt;\n\n        if (!(opt_len == 12 && flags & TH_SYN) &&\n            !(opt_len == 20 && (flags & (TH_SYN | TH_ACK)) == TH_ACK))\n                return 0;\n\n        if (MP_CAPABLE_OPT_VERSION(mpc->sub_ver) != 0) {\n                ND_PRINT((ndo, \" Unknown Version (%d)\", MP_CAPABLE_OPT_VERSION(mpc->sub_ver)));\n                return 1;\n        }\n\n        if (mpc->flags & MP_CAPABLE_C)\n                ND_PRINT((ndo, \" csum\"));\n        ND_PRINT((ndo, \" {0x%\" PRIx64, EXTRACT_64BITS(mpc->sender_key)));\n        if (opt_len == 20) /* ACK */\n                ND_PRINT((ndo, \",0x%\" PRIx64, EXTRACT_64BITS(mpc->receiver_key)));\n        ND_PRINT((ndo, \"}\"));\n        return 1;\n}",
+    "typeFullName":"void",
+    "lineNumber":10,
+    "order":5,
+    "_label":"BLOCK",
+    "columnNumber":1,
+    "possibleTypes":[
+      
+    ],
+    "argumentIndex":-1
+  },
+  {
+    "dynamicTypeHintFullName":[
+      
+    ],
+    "_id":25769803777,
+    "code":"<empty>",
+    "typeFullName":"ANY",
+    "lineNumber":15,
+    "order":2,
+    "_label":"BLOCK",
+    "columnNumber":17,
+    "possibleTypes":[
+      
+    ],
+    "argumentIndex":-1
+  },
+  {
+    "dynamicTypeHintFullName":[
+      
+    ],
+    "_id":25769803778,
+    "code":"{\n                ND_PRINT((ndo, \" Unknown Version (%d)\", MP_CAPABLE_OPT_VERSION(mpc->sub_ver)));\n                return 1;\n        }",
+    "typeFullName":"void",
+    "lineNumber":17,
+    "order":2,
+    "_label":"BLOCK",
+    "columnNumber":56,
+    "possibleTypes":[
+      
+    ],
+    "argumentIndex":-1
+  },
+  {
+    "dynamicTypeHintFullName":[
+      
+    ],
+    "_id":25769803779,
+    "code":"<empty>",
+    "typeFullName":"ANY",
+    "lineNumber":18,
+    "order":1,
+    "_label":"BLOCK",
+    "columnNumber":27,
+    "possibleTypes":[
+      
+    ],
+    "argumentIndex":1
+  },
+  {
+    "dynamicTypeHintFullName":[
+      
+    ],
+    "_id":25769803780,
+    "code":"<empty>",
+    "typeFullName":"ANY",
+    "lineNumber":23,
+    "order":2,
+    "_label":"BLOCK",
+    "columnNumber":17,
+    "possibleTypes":[
+      
+    ],
+    "argumentIndex":-1
+  },
+  {
+    "dynamicTypeHintFullName":[
+      
+    ],
+    "_id":25769803781,
+    "code":"<empty>",
+    "typeFullName":"ANY",
+    "lineNumber":23,
+    "order":1,
+    "_label":"BLOCK",
+    "columnNumber":27,
+    "possibleTypes":[
+      
+    ],
+    "argumentIndex":1
+  },
+  {
+    "dynamicTypeHintFullName":[
+      
+    ],
+    "_id":25769803782,
+    "code":"<empty>",
+    "typeFullName":"ANY",
+    "lineNumber":27,
+    "order":1,
+    "_label":"BLOCK",
+    "columnNumber":19,
+    "possibleTypes":[
+      
+    ],
+    "argumentIndex":1
+  },
+  {
+    "dynamicTypeHintFullName":[
+      
+    ],
+    "_id":25769803783,
+    "code":"<empty>",
+    "typeFullName":"ANY",
+    "lineNumber":1,
+    "order":1,
+    "_label":"BLOCK",
+    "columnNumber":1,
+    "possibleTypes":[
+      
+    ],
+    "argumentIndex":-1
+  },
+  {
+    "dynamicTypeHintFullName":[
+      
+    ],
+    "_id":25769803784,
+    "code":"{\n        u_int len;\n\n        len = 4;\n        if (m->flags & MP_DSS_A) {\n                /* Ack present - 4 or 8 octets */\n                len += (m->flags & MP_DSS_a) ? 8 : 4;\n        }\n        if (m->flags & MP_DSS_M) {\n                /*\n                 * Data Sequence Number (DSN), Subflow Sequence Number (SSN),\n                 * Data-Level Length present, and Checksum possibly present.\n                 * All but the Checksum are 10 bytes if the m flag is\n                 * clear (4-byte DSN) and 14 bytes if the m flag is set\n                 * (8-byte DSN).\n                 */\n                len += (m->flags & MP_DSS_m) ? 14 : 10;\n\n                /*\n                 * The Checksum is present only if negotiated.\n                 */\n                if (csum)\n                        len += 2;\n\t}\n\treturn len;\n}",
+    "typeFullName":"void",
+    "lineNumber":8,
+    "order":3,
+    "_label":"BLOCK",
+    "columnNumber":1,
+    "possibleTypes":[
+      
+    ],
+    "argumentIndex":-1
+  },
+  {
+    "dynamicTypeHintFullName":[
+      
+    ],
+    "_id":25769803785,
+    "code":"{\n                /* Ack present - 4 or 8 octets */\n                len += (m->flags & MP_DSS_a) ? 8 : 4;\n        }",
+    "typeFullName":"void",
+    "lineNumber":12,
+    "order":2,
+    "_label":"BLOCK",
+    "columnNumber":34,
+    "possibleTypes":[
+      
+    ],
+    "argumentIndex":-1
+  },
+  {
+    "dynamicTypeHintFullName":[
+      
+    ],
+    "_id":25769803786,
+    "code":"{\n                /*\n                 * Data Sequence Number (DSN), Subflow Sequence Number (SSN),\n                 * Data-Level Length present, and Checksum possibly present.\n                 * All but the Checksum are 10 bytes if the m flag is\n                 * clear (4-byte DSN) and 14 bytes if the m flag is set\n                 * (8-byte DSN).\n                 */\n                len += (m->flags & MP_DSS_m) ? 14 : 10;\n\n                /*\n                 * The Checksum is present only if negotiated.\n                 */\n                if (csum)\n                        len += 2;\n\t}",
+    "typeFullName":"void",
+    "lineNumber":16,
+    "order":2,
+    "_label":"BLOCK",
+    "columnNumber":34,
+    "possibleTypes":[
+      
+    ],
+    "argumentIndex":-1
+  },
+  {
+    "dynamicTypeHintFullName":[
+      
+    ],
+    "_id":25769803787,
+    "code":"<empty>",
+    "typeFullName":"ANY",
+    "lineNumber":30,
+    "order":2,
+    "_label":"BLOCK",
+    "columnNumber":25,
+    "possibleTypes":[
+      
+    ],
+    "argumentIndex":-1
+  },
+  {
+    "dynamicTypeHintFullName":[
+      
+    ],
+    "_id":25769803788,
+    "code":"<empty>",
+    "typeFullName":"ANY",
+    "lineNumber":1,
+    "order":1,
+    "_label":"BLOCK",
+    "columnNumber":1,
+    "possibleTypes":[
+      
+    ],
+    "argumentIndex":-1
+  },
+  {
+    "dynamicTypeHintFullName":[
+      
+    ],
+    "_id":25769803789,
+    "code":"<empty>",
+    "typeFullName":"ANY",
+    "lineNumber":1,
+    "order":1,
+    "_label":"BLOCK",
+    "columnNumber":1,
+    "possibleTypes":[
+      
+    ],
+    "argumentIndex":-1
+  },
+  {
+    "dynamicTypeHintFullName":[
+      
+    ],
+    "_id":25769803790,
+    "code":"<empty>",
+    "typeFullName":"ANY",
+    "order":1,
+    "_label":"BLOCK",
+    "possibleTypes":[
+      
+    ],
+    "argumentIndex":-1
+  },
+  {
+    "dynamicTypeHintFullName":[
+      
+    ],
+    "_id":25769803791,
+    "code":"<empty>",
+    "typeFullName":"ANY",
+    "order":1,
+    "_label":"BLOCK",
+    "possibleTypes":[
+      
+    ],
+    "argumentIndex":1
+  },
+  {
+    "dynamicTypeHintFullName":[
+      
+    ],
+    "_id":25769803792,
+    "code":"<empty>",
+    "typeFullName":"ANY",
+    "order":1,
+    "_label":"BLOCK",
+    "possibleTypes":[
+      
+    ],
+    "argumentIndex":1
+  },
+  {
+    "dynamicTypeHintFullName":[
+      
+    ],
+    "_id":25769803793,
+    "code":"<empty>",
+    "typeFullName":"ANY",
+    "order":1,
+    "_label":"BLOCK",
+    "possibleTypes":[
+      
+    ],
+    "argumentIndex":1
+  },
+  {
+    "dynamicTypeHintFullName":[
+      
+    ],
+    "_id":25769803794,
+    "code":"<empty>",
+    "typeFullName":"ANY",
+    "order":1,
+    "_label":"BLOCK",
+    "possibleTypes":[
+      
+    ],
+    "argumentIndex":1
+  },
+  {
+    "dynamicTypeHintFullName":[
+      
+    ],
+    "_id":25769803795,
+    "code":"<empty>",
+    "typeFullName":"ANY",
+    "order":1,
+    "_label":"BLOCK",
+    "possibleTypes":[
+      
+    ],
+    "argumentIndex":1
+  },
+  {
+    "dynamicTypeHintFullName":[
+      
+    ],
+    "_id":25769803796,
+    "code":"<empty>",
+    "typeFullName":"ANY",
+    "order":1,
+    "_label":"BLOCK",
+    "possibleTypes":[
+      
+    ],
+    "argumentIndex":1
+  },
+  {
+    "dynamicTypeHintFullName":[
+      
+    ],
+    "_id":25769803797,
+    "code":"<empty>",
+    "typeFullName":"ANY",
+    "order":1,
+    "_label":"BLOCK",
+    "possibleTypes":[
+      
+    ],
+    "argumentIndex":1
+  },
+  {
+    "dynamicTypeHintFullName":[
+      
+    ],
+    "_id":25769803798,
+    "code":"<empty>",
+    "typeFullName":"ANY",
+    "order":1,
+    "_label":"BLOCK",
+    "possibleTypes":[
+      
+    ],
+    "argumentIndex":1
+  },
+  {
+    "dynamicTypeHintFullName":[
+      
+    ],
+    "_id":25769803799,
+    "code":"<empty>",
+    "typeFullName":"ANY",
+    "order":1,
+    "_label":"BLOCK",
+    "possibleTypes":[
+      
+    ],
+    "argumentIndex":1
+  },
+  {
+    "dynamicTypeHintFullName":[
+      
+    ],
+    "_id":25769803800,
+    "code":"<empty>",
+    "typeFullName":"ANY",
+    "order":1,
+    "_label":"BLOCK",
+    "possibleTypes":[
+      
+    ],
+    "argumentIndex":1
+  },
+  {
+    "dynamicTypeHintFullName":[
+      
+    ],
+    "_id":25769803801,
+    "code":"<empty>",
+    "typeFullName":"ANY",
+    "order":1,
+    "_label":"BLOCK",
+    "possibleTypes":[
+      
+    ],
+    "argumentIndex":1
+  },
+  {
+    "dynamicTypeHintFullName":[
+      
+    ],
+    "_id":25769803802,
+    "code":"<empty>",
+    "typeFullName":"ANY",
+    "order":1,
+    "_label":"BLOCK",
+    "possibleTypes":[
+      
+    ],
+    "argumentIndex":1
+  },
+  {
+    "dynamicTypeHintFullName":[
+      
+    ],
+    "_id":25769803803,
+    "code":"<empty>",
+    "typeFullName":"ANY",
+    "order":1,
+    "_label":"BLOCK",
+    "possibleTypes":[
+      
+    ],
+    "argumentIndex":1
+  },
+  {
+    "name":"<operator>.assignment",
+    "_id":30064771072,
+    "signature":"",
+    "code":"*mpc = (const struct mp_capable *) opt",
+    "typeFullName":"void",
+    "lineNumber":11,
+    "order":2,
+    "methodFullName":"<operator>.assignment",
+    "dynamicTypeHintFullName":[
+      
+    ],
+    "dispatchType":"STATIC_DISPATCH",
+    "columnNumber":33,
+    "_label":"CALL",
+    "possibleTypes":[
+      
+    ],
+    "argumentIndex":-1
+  },
+  {
+    "name":"<operator>.cast",
+    "_id":30064771073,
+    "signature":"",
+    "code":"(const struct mp_capable *) opt",
+    "typeFullName":"mp_capable",
+    "lineNumber":11,
+    "order":2,
+    "methodFullName":"<operator>.cast",
+    "dynamicTypeHintFullName":[
+      
+    ],
+    "dispatchType":"STATIC_DISPATCH",
+    "columnNumber":40,
+    "_label":"CALL",
+    "possibleTypes":[
+      
+    ],
+    "argumentIndex":2
+  },
+  {
+    "name":"<operator>.logicalAnd",
+    "_id":30064771074,
+    "signature":"",
+    "code":"!(opt_len == 12 && flags & TH_SYN) &&\n            !(opt_len == 20 && (flags & (TH_SYN | TH_ACK)) == TH_ACK)",
+    "typeFullName":"ANY",
+    "lineNumber":13,
+    "order":1,
+    "methodFullName":"<operator>.logicalAnd",
+    "dynamicTypeHintFullName":[
+      
+    ],
+    "dispatchType":"STATIC_DISPATCH",
+    "columnNumber":13,
+    "_label":"CALL",
+    "possibleTypes":[
+      
+    ],
+    "argumentIndex":-1
+  },
+  {
+    "name":"<operator>.logicalNot",
+    "_id":30064771075,
+    "signature":"",
+    "code":"!(opt_len == 12 && flags & TH_SYN)",
+    "typeFullName":"ANY",
+    "lineNumber":13,
+    "order":1,
+    "methodFullName":"<operator>.logicalNot",
+    "dynamicTypeHintFullName":[
+      
+    ],
+    "dispatchType":"STATIC_DISPATCH",
+    "columnNumber":13,
+    "_label":"CALL",
+    "possibleTypes":[
+      
+    ],
+    "argumentIndex":1
+  },
+  {
+    "name":"<operator>.logicalAnd",
+    "_id":30064771076,
+    "signature":"",
+    "code":"opt_len == 12 && flags & TH_SYN",
+    "typeFullName":"ANY",
+    "lineNumber":13,
+    "order":1,
+    "methodFullName":"<operator>.logicalAnd",
+    "dynamicTypeHintFullName":[
+      
+    ],
+    "dispatchType":"STATIC_DISPATCH",
+    "columnNumber":15,
+    "_label":"CALL",
+    "possibleTypes":[
+      
+    ],
+    "argumentIndex":1
+  },
+  {
+    "name":"<operator>.equals",
+    "_id":30064771077,
+    "signature":"",
+    "code":"opt_len == 12",
+    "typeFullName":"ANY",
+    "lineNumber":13,
+    "order":1,
+    "methodFullName":"<operator>.equals",
+    "dynamicTypeHintFullName":[
+      
+    ],
+    "dispatchType":"STATIC_DISPATCH",
+    "columnNumber":15,
+    "_label":"CALL",
+    "possibleTypes":[
+      
+    ],
+    "argumentIndex":1
+  },
+  {
+    "name":"<operator>.and",
+    "_id":30064771078,
+    "signature":"",
+    "code":"flags & TH_SYN",
+    "typeFullName":"ANY",
+    "lineNumber":13,
+    "order":2,
+    "methodFullName":"<operator>.and",
+    "dynamicTypeHintFullName":[
+      
+    ],
+    "dispatchType":"STATIC_DISPATCH",
+    "columnNumber":32,
+    "_label":"CALL",
+    "possibleTypes":[
+      
+    ],
+    "argumentIndex":2
+  },
+  {
+    "name":"<operator>.logicalNot",
+    "_id":30064771079,
+    "signature":"",
+    "code":"!(opt_len == 20 && (flags & (TH_SYN | TH_ACK)) == TH_ACK)",
+    "typeFullName":"ANY",
+    "lineNumber":14,
+    "order":2,
+    "methodFullName":"<operator>.logicalNot",
+    "dynamicTypeHintFullName":[
+      
+    ],
+    "dispatchType":"STATIC_DISPATCH",
+    "columnNumber":13,
+    "_label":"CALL",
+    "possibleTypes":[
+      
+    ],
+    "argumentIndex":2
+  },
+  {
+    "name":"<operator>.logicalAnd",
+    "_id":30064771080,
+    "signature":"",
+    "code":"opt_len == 20 && (flags & (TH_SYN | TH_ACK)) == TH_ACK",
+    "typeFullName":"ANY",
+    "lineNumber":14,
+    "order":1,
+    "methodFullName":"<operator>.logicalAnd",
+    "dynamicTypeHintFullName":[
+      
+    ],
+    "dispatchType":"STATIC_DISPATCH",
+    "columnNumber":15,
+    "_label":"CALL",
+    "possibleTypes":[
+      
+    ],
+    "argumentIndex":1
+  },
+  {
+    "name":"<operator>.equals",
+    "_id":30064771081,
+    "signature":"",
+    "code":"opt_len == 20",
+    "typeFullName":"ANY",
+    "lineNumber":14,
+    "order":1,
+    "methodFullName":"<operator>.equals",
+    "dynamicTypeHintFullName":[
+      
+    ],
+    "dispatchType":"STATIC_DISPATCH",
+    "columnNumber":15,
+    "_label":"CALL",
+    "possibleTypes":[
+      
+    ],
+    "argumentIndex":1
+  },
+  {
+    "name":"<operator>.equals",
+    "_id":30064771082,
+    "signature":"",
+    "code":"(flags & (TH_SYN | TH_ACK)) == TH_ACK",
+    "typeFullName":"ANY",
+    "lineNumber":14,
+    "order":2,
+    "methodFullName":"<operator>.equals",
+    "dynamicTypeHintFullName":[
+      
+    ],
+    "dispatchType":"STATIC_DISPATCH",
+    "columnNumber":32,
+    "_label":"CALL",
+    "possibleTypes":[
+      
+    ],
+    "argumentIndex":2
+  },
+  {
+    "name":"<operator>.and",
+    "_id":30064771083,
+    "signature":"",
+    "code":"flags & (TH_SYN | TH_ACK)",
+    "typeFullName":"ANY",
+    "lineNumber":14,
+    "order":1,
+    "methodFullName":"<operator>.and",
+    "dynamicTypeHintFullName":[
+      
+    ],
+    "dispatchType":"STATIC_DISPATCH",
+    "columnNumber":33,
+    "_label":"CALL",
+    "possibleTypes":[
+      
+    ],
+    "argumentIndex":1
+  },
+  {
+    "name":"<operator>.or",
+    "_id":30064771084,
+    "signature":"",
+    "code":"TH_SYN | TH_ACK",
+    "typeFullName":"ANY",
+    "lineNumber":14,
+    "order":2,
+    "methodFullName":"<operator>.or",
+    "dynamicTypeHintFullName":[
+      
+    ],
+    "dispatchType":"STATIC_DISPATCH",
+    "columnNumber":42,
+    "_label":"CALL",
+    "possibleTypes":[
+      
+    ],
+    "argumentIndex":2
+  },
+  {
+    "name":"<operator>.notEquals",
+    "_id":30064771085,
+    "signature":"",
+    "code":"MP_CAPABLE_OPT_VERSION(mpc->sub_ver) != 0",
+    "typeFullName":"ANY",
+    "lineNumber":17,
+    "order":1,
+    "methodFullName":"<operator>.notEquals",
+    "dynamicTypeHintFullName":[
+      
+    ],
+    "dispatchType":"STATIC_DISPATCH",
+    "columnNumber":13,
+    "_label":"CALL",
+    "possibleTypes":[
+      
+    ],
+    "argumentIndex":-1
+  },
+  {
+    "name":"MP_CAPABLE_OPT_VERSION",
+    "_id":30064771086,
+    "signature":"",
+    "code":"MP_CAPABLE_OPT_VERSION(mpc->sub_ver)",
+    "typeFullName":"ANY",
+    "lineNumber":17,
+    "order":1,
+    "methodFullName":"MP_CAPABLE_OPT_VERSION",
+    "dynamicTypeHintFullName":[
+      
+    ],
+    "dispatchType":"STATIC_DISPATCH",
+    "columnNumber":13,
+    "_label":"CALL",
+    "possibleTypes":[
+      
+    ],
+    "argumentIndex":1
+  },
+  {
+    "name":"<operator>.indirectFieldAccess",
+    "_id":30064771087,
+    "signature":"",
+    "code":"mpc->sub_ver",
+    "typeFullName":"ANY",
+    "lineNumber":17,
+    "order":1,
+    "methodFullName":"<operator>.indirectFieldAccess",
+    "dynamicTypeHintFullName":[
+      
+    ],
+    "dispatchType":"STATIC_DISPATCH",
+    "columnNumber":36,
+    "_label":"CALL",
+    "possibleTypes":[
+      
+    ],
+    "argumentIndex":1
+  },
+  {
+    "name":"ND_PRINT",
+    "_id":30064771088,
+    "signature":"",
+    "code":"ND_PRINT((ndo, \" Unknown Version (%d)\", MP_CAPABLE_OPT_VERSION(mpc->sub_ver)))",
+    "typeFullName":"ANY",
+    "lineNumber":18,
+    "order":1,
+    "methodFullName":"ND_PRINT",
+    "dynamicTypeHintFullName":[
+      
+    ],
+    "dispatchType":"STATIC_DISPATCH",
+    "columnNumber":17,
+    "_label":"CALL",
+    "possibleTypes":[
+      
+    ],
+    "argumentIndex":-1
+  },
+  {
+    "name":"MP_CAPABLE_OPT_VERSION",
+    "_id":30064771089,
+    "signature":"",
+    "code":"MP_CAPABLE_OPT_VERSION(mpc->sub_ver)",
+    "typeFullName":"ANY",
+    "lineNumber":18,
+    "order":3,
+    "methodFullName":"MP_CAPABLE_OPT_VERSION",
+    "dynamicTypeHintFullName":[
+      
+    ],
+    "dispatchType":"STATIC_DISPATCH",
+    "columnNumber":57,
+    "_label":"CALL",
+    "possibleTypes":[
+      
+    ],
+    "argumentIndex":-1
+  },
+  {
+    "name":"<operator>.indirectFieldAccess",
+    "_id":30064771090,
+    "signature":"",
+    "code":"mpc->sub_ver",
+    "typeFullName":"ANY",
+    "lineNumber":18,
+    "order":1,
+    "methodFullName":"<operator>.indirectFieldAccess",
+    "dynamicTypeHintFullName":[
+      
+    ],
+    "dispatchType":"STATIC_DISPATCH",
+    "columnNumber":80,
+    "_label":"CALL",
+    "possibleTypes":[
+      
+    ],
+    "argumentIndex":1
+  },
+  {
+    "name":"<operator>.and",
+    "_id":30064771091,
+    "signature":"",
+    "code":"mpc->flags & MP_CAPABLE_C",
+    "typeFullName":"ANY",
+    "lineNumber":22,
+    "order":1,
+    "methodFullName":"<operator>.and",
+    "dynamicTypeHintFullName":[
+      
+    ],
+    "dispatchType":"STATIC_DISPATCH",
+    "columnNumber":13,
+    "_label":"CALL",
+    "possibleTypes":[
+      
+    ],
+    "argumentIndex":-1
+  },
+  {
+    "name":"<operator>.indirectFieldAccess",
+    "_id":30064771092,
+    "signature":"",
+    "code":"mpc->flags",
+    "typeFullName":"ANY",
+    "lineNumber":22,
+    "order":1,
+    "methodFullName":"<operator>.indirectFieldAccess",
+    "dynamicTypeHintFullName":[
+      
+    ],
+    "dispatchType":"STATIC_DISPATCH",
+    "columnNumber":13,
+    "_label":"CALL",
+    "possibleTypes":[
+      
+    ],
+    "argumentIndex":1
+  },
+  {
+    "name":"ND_PRINT",
+    "_id":30064771093,
+    "signature":"",
+    "code":"ND_PRINT((ndo, \" csum\"))",
+    "typeFullName":"ANY",
+    "lineNumber":23,
+    "order":1,
+    "methodFullName":"ND_PRINT",
+    "dynamicTypeHintFullName":[
+      
+    ],
+    "dispatchType":"STATIC_DISPATCH",
+    "columnNumber":17,
+    "_label":"CALL",
+    "possibleTypes":[
+      
+    ],
+    "argumentIndex":-1
+  },
+  {
+    "name":"ND_PRINT",
+    "_id":30064771094,
+    "signature":"",
+    "code":"ND_PRINT((ndo, \"}\"))",
+    "typeFullName":"ANY",
+    "lineNumber":27,
+    "order":6,
+    "methodFullName":"ND_PRINT",
+    "dynamicTypeHintFullName":[
+      
+    ],
+    "dispatchType":"STATIC_DISPATCH",
+    "columnNumber":9,
+    "_label":"CALL",
+    "possibleTypes":[
+      
+    ],
+    "argumentIndex":-1
+  },
+  {
+    "name":"<operator>.assignment",
+    "_id":30064771095,
+    "signature":"",
+    "code":"len = 4",
+    "typeFullName":"ANY",
+    "lineNumber":11,
+    "order":2,
+    "methodFullName":"<operator>.assignment",
+    "dynamicTypeHintFullName":[
+      
+    ],
+    "dispatchType":"STATIC_DISPATCH",
+    "columnNumber":9,
+    "_label":"CALL",
+    "possibleTypes":[
+      
+    ],
+    "argumentIndex":-1
+  },
+  {
+    "name":"<operator>.and",
+    "_id":30064771096,
+    "signature":"",
+    "code":"m->flags & MP_DSS_A",
+    "typeFullName":"ANY",
+    "lineNumber":12,
+    "order":1,
+    "methodFullName":"<operator>.and",
+    "dynamicTypeHintFullName":[
+      
+    ],
+    "dispatchType":"STATIC_DISPATCH",
+    "columnNumber":13,
+    "_label":"CALL",
+    "possibleTypes":[
+      
+    ],
+    "argumentIndex":-1
+  },
+  {
+    "name":"<operator>.indirectFieldAccess",
+    "_id":30064771097,
+    "signature":"",
+    "code":"m->flags",
+    "typeFullName":"ANY",
+    "lineNumber":12,
+    "order":1,
+    "methodFullName":"<operator>.indirectFieldAccess",
+    "dynamicTypeHintFullName":[
+      
+    ],
+    "dispatchType":"STATIC_DISPATCH",
+    "columnNumber":13,
+    "_label":"CALL",
+    "possibleTypes":[
+      
+    ],
+    "argumentIndex":1
+  },
+  {
+    "name":"<operator>.assignmentPlus",
+    "_id":30064771098,
+    "signature":"",
+    "code":"len += (m->flags & MP_DSS_a) ? 8 : 4",
+    "typeFullName":"ANY",
+    "lineNumber":14,
+    "order":1,
+    "methodFullName":"<operator>.assignmentPlus",
+    "dynamicTypeHintFullName":[
+      
+    ],
+    "dispatchType":"STATIC_DISPATCH",
+    "columnNumber":17,
+    "_label":"CALL",
+    "possibleTypes":[
+      
+    ],
+    "argumentIndex":-1
+  },
+  {
+    "name":"<operator>.conditional",
+    "_id":30064771099,
+    "signature":"",
+    "code":"(m->flags & MP_DSS_a) ? 8 : 4",
+    "typeFullName":"ANY",
+    "lineNumber":14,
+    "order":2,
+    "methodFullName":"<operator>.conditional",
+    "dynamicTypeHintFullName":[
+      
+    ],
+    "dispatchType":"STATIC_DISPATCH",
+    "columnNumber":24,
+    "_label":"CALL",
+    "possibleTypes":[
+      
+    ],
+    "argumentIndex":2
+  },
+  {
+    "name":"<operator>.and",
+    "_id":30064771100,
+    "signature":"",
+    "code":"m->flags & MP_DSS_a",
+    "typeFullName":"ANY",
+    "lineNumber":14,
+    "order":1,
+    "methodFullName":"<operator>.and",
+    "dynamicTypeHintFullName":[
+      
+    ],
+    "dispatchType":"STATIC_DISPATCH",
+    "columnNumber":25,
+    "_label":"CALL",
+    "possibleTypes":[
+      
+    ],
+    "argumentIndex":1
+  },
+  {
+    "name":"<operator>.indirectFieldAccess",
+    "_id":30064771101,
+    "signature":"",
+    "code":"m->flags",
+    "typeFullName":"ANY",
+    "lineNumber":14,
+    "order":1,
+    "methodFullName":"<operator>.indirectFieldAccess",
+    "dynamicTypeHintFullName":[
+      
+    ],
+    "dispatchType":"STATIC_DISPATCH",
+    "columnNumber":25,
+    "_label":"CALL",
+    "possibleTypes":[
+      
+    ],
+    "argumentIndex":1
+  },
+  {
+    "name":"<operator>.and",
+    "_id":30064771102,
+    "signature":"",
+    "code":"m->flags & MP_DSS_M",
+    "typeFullName":"ANY",
+    "lineNumber":16,
+    "order":1,
+    "methodFullName":"<operator>.and",
+    "dynamicTypeHintFullName":[
+      
+    ],
+    "dispatchType":"STATIC_DISPATCH",
+    "columnNumber":13,
+    "_label":"CALL",
+    "possibleTypes":[
+      
+    ],
+    "argumentIndex":-1
+  },
+  {
+    "name":"<operator>.indirectFieldAccess",
+    "_id":30064771103,
+    "signature":"",
+    "code":"m->flags",
+    "typeFullName":"ANY",
+    "lineNumber":16,
+    "order":1,
+    "methodFullName":"<operator>.indirectFieldAccess",
+    "dynamicTypeHintFullName":[
+      
+    ],
+    "dispatchType":"STATIC_DISPATCH",
+    "columnNumber":13,
+    "_label":"CALL",
+    "possibleTypes":[
+      
+    ],
+    "argumentIndex":1
+  },
+  {
+    "name":"<operator>.assignmentPlus",
+    "_id":30064771104,
+    "signature":"",
+    "code":"len += (m->flags & MP_DSS_m) ? 14 : 10",
+    "typeFullName":"ANY",
+    "lineNumber":24,
+    "order":1,
+    "methodFullName":"<operator>.assignmentPlus",
+    "dynamicTypeHintFullName":[
+      
+    ],
+    "dispatchType":"STATIC_DISPATCH",
+    "columnNumber":17,
+    "_label":"CALL",
+    "possibleTypes":[
+      
+    ],
+    "argumentIndex":-1
+  },
+  {
+    "name":"<operator>.conditional",
+    "_id":30064771105,
+    "signature":"",
+    "code":"(m->flags & MP_DSS_m) ? 14 : 10",
+    "typeFullName":"ANY",
+    "lineNumber":24,
+    "order":2,
+    "methodFullName":"<operator>.conditional",
+    "dynamicTypeHintFullName":[
+      
+    ],
+    "dispatchType":"STATIC_DISPATCH",
+    "columnNumber":24,
+    "_label":"CALL",
+    "possibleTypes":[
+      
+    ],
+    "argumentIndex":2
+  },
+  {
+    "name":"<operator>.and",
+    "_id":30064771106,
+    "signature":"",
+    "code":"m->flags & MP_DSS_m",
+    "typeFullName":"ANY",
+    "lineNumber":24,
+    "order":1,
+    "methodFullName":"<operator>.and",
+    "dynamicTypeHintFullName":[
+      
+    ],
+    "dispatchType":"STATIC_DISPATCH",
+    "columnNumber":25,
+    "_label":"CALL",
+    "possibleTypes":[
+      
+    ],
+    "argumentIndex":1
+  },
+  {
+    "name":"<operator>.indirectFieldAccess",
+    "_id":30064771107,
+    "signature":"",
+    "code":"m->flags",
+    "typeFullName":"ANY",
+    "lineNumber":24,
+    "order":1,
+    "methodFullName":"<operator>.indirectFieldAccess",
+    "dynamicTypeHintFullName":[
+      
+    ],
+    "dispatchType":"STATIC_DISPATCH",
+    "columnNumber":25,
+    "_label":"CALL",
+    "possibleTypes":[
+      
+    ],
+    "argumentIndex":1
+  },
+  {
+    "name":"<operator>.assignmentPlus",
+    "_id":30064771108,
+    "signature":"",
+    "code":"len += 2",
+    "typeFullName":"ANY",
+    "lineNumber":30,
+    "order":1,
+    "methodFullName":"<operator>.assignmentPlus",
+    "dynamicTypeHintFullName":[
+      
+    ],
+    "dispatchType":"STATIC_DISPATCH",
+    "columnNumber":25,
+    "_label":"CALL",
+    "possibleTypes":[
+      
+    ],
+    "argumentIndex":-1
+  },
+  {
+    "parserTypeName":"CASTIfStatement",
+    "_id":47244640256,
+    "code":"if (!(opt_len == 12 && flags & TH_SYN) &&\n            !(opt_len == 20 && (flags & (TH_SYN | TH_ACK)) == TH_ACK))\n                return 0;",
+    "lineNumber":13,
+    "order":3,
+    "controlStructureType":"IF",
+    "_label":"CONTROL_STRUCTURE",
+    "argumentIndex":-1,
+    "columnNumber":9
+  },
+  {
+    "parserTypeName":"CASTIfStatement",
+    "_id":47244640257,
+    "code":"if (MP_CAPABLE_OPT_VERSION(mpc->sub_ver) != 0) {\n                ND_PRINT((ndo, \" Unknown Version (%d)\", MP_CAPABLE_OPT_VERSION(mpc->sub_ver)));\n                return 1;\n        }",
+    "lineNumber":17,
+    "order":4,
+    "controlStructureType":"IF",
+    "_label":"CONTROL_STRUCTURE",
+    "argumentIndex":-1,
+    "columnNumber":9
+  },
+  {
+    "parserTypeName":"CASTIfStatement",
+    "_id":47244640258,
+    "code":"if (mpc->flags & MP_CAPABLE_C)\n                ND_PRINT((ndo, \" csum\"));",
+    "lineNumber":22,
+    "order":5,
+    "controlStructureType":"IF",
+    "_label":"CONTROL_STRUCTURE",
+    "argumentIndex":-1,
+    "columnNumber":9
+  },
+  {
+    "parserTypeName":"CASTIfStatement",
+    "_id":47244640259,
+    "code":"if (m->flags & MP_DSS_A) {\n                /* Ack present - 4 or 8 octets */\n                len += (m->flags & MP_DSS_a) ? 8 : 4;\n        }",
+    "lineNumber":12,
+    "order":3,
+    "controlStructureType":"IF",
+    "_label":"CONTROL_STRUCTURE",
+    "argumentIndex":-1,
+    "columnNumber":9
+  },
+  {
+    "parserTypeName":"CASTIfStatement",
+    "_id":47244640260,
+    "code":"if (m->flags & MP_DSS_M) {\n                /*\n                 * Data Sequence Number (DSN), Subflow Sequence Number (SSN),\n                 * Data-Level Length present, and Checksum possibly present.\n                 * All but the Checksum are 10 bytes if the m flag is\n                 * clear (4-byte DSN) and 14 bytes if the m flag is set\n                 * (8-byte DSN).\n                 */\n                len += (m->flags & MP_DSS_m) ? 14 : 10;\n\n                /*\n                 * The Checksum is present only if negotiated.\n                 */\n                if (csum)\n                        len += 2;\n\t}",
+    "lineNumber":16,
+    "order":4,
+    "controlStructureType":"IF",
+    "_label":"CONTROL_STRUCTURE",
+    "argumentIndex":-1,
+    "columnNumber":9
+  },
+  {
+    "parserTypeName":"CASTIfStatement",
+    "_id":47244640261,
+    "code":"if (csum)\n                        len += 2;",
+    "lineNumber":29,
+    "order":2,
+    "controlStructureType":"IF",
+    "_label":"CONTROL_STRUCTURE",
+    "argumentIndex":-1,
+    "columnNumber":17
+  },
+  {
+    "name":"stddef.h",
+    "_id":51539607552,
+    "version":"include",
+    "dependencyGroupId":"stddef.h",
+    "_label":"DEPENDENCY"
+  },
+  {
+    "name":"stdint.h",
+    "_id":51539607553,
+    "version":"include",
+    "dependencyGroupId":"stdint.h",
+    "_label":"DEPENDENCY"
+  },
+  {
+    "name":"stdbool.h",
+    "_id":51539607554,
+    "version":"include",
+    "dependencyGroupId":"stdbool.h",
+    "_label":"DEPENDENCY"
+  },
+  {
+    "name":"stddef.h",
+    "_id":51539607555,
+    "version":"include",
+    "dependencyGroupId":"stddef.h",
+    "_label":"DEPENDENCY"
+  },
+  {
+    "name":"stdint.h",
+    "_id":51539607556,
+    "version":"include",
+    "dependencyGroupId":"stdint.h",
+    "_label":"DEPENDENCY"
+  },
+  {
+    "name":"stdbool.h",
+    "_id":51539607557,
+    "version":"include",
+    "dependencyGroupId":"stdbool.h",
+    "_label":"DEPENDENCY"
+  },
+  {
+    "name":"stddef.h",
+    "_id":51539607558,
+    "version":"include",
+    "dependencyGroupId":"stddef.h",
+    "_label":"DEPENDENCY"
+  },
+  {
+    "name":"stdint.h",
+    "_id":51539607559,
+    "version":"include",
+    "dependencyGroupId":"stdint.h",
+    "_label":"DEPENDENCY"
+  },
+  {
+    "name":"stdbool.h",
+    "_id":51539607560,
+    "version":"include",
+    "dependencyGroupId":"stdbool.h",
+    "_label":"DEPENDENCY"
+  },
+  {
+    "_id":55834574848,
+    "code":"sub_ver",
+    "order":2,
+    "_label":"FIELD_IDENTIFIER",
+    "argumentIndex":2,
+    "canonicalName":"sub_ver",
+    "lineNumber":17,
+    "columnNumber":36
+  },
+  {
+    "_id":55834574849,
+    "code":"sub_ver",
+    "order":2,
+    "_label":"FIELD_IDENTIFIER",
+    "argumentIndex":2,
+    "canonicalName":"sub_ver",
+    "lineNumber":18,
+    "columnNumber":80
+  },
+  {
+    "_id":55834574850,
+    "code":"flags",
+    "order":2,
+    "_label":"FIELD_IDENTIFIER",
+    "argumentIndex":2,
+    "canonicalName":"flags",
+    "lineNumber":22,
+    "columnNumber":13
+  },
+  {
+    "_id":55834574851,
+    "code":"flags",
+    "order":2,
+    "_label":"FIELD_IDENTIFIER",
+    "argumentIndex":2,
+    "canonicalName":"flags",
+    "lineNumber":12,
+    "columnNumber":13
+  },
+  {
+    "_id":55834574852,
+    "code":"flags",
+    "order":2,
+    "_label":"FIELD_IDENTIFIER",
+    "argumentIndex":2,
+    "canonicalName":"flags",
+    "lineNumber":14,
+    "columnNumber":25
+  },
+  {
+    "_id":55834574853,
+    "code":"flags",
+    "order":2,
+    "_label":"FIELD_IDENTIFIER",
+    "argumentIndex":2,
+    "canonicalName":"flags",
+    "lineNumber":16,
+    "columnNumber":13
+  },
+  {
+    "_id":55834574854,
+    "code":"flags",
+    "order":2,
+    "_label":"FIELD_IDENTIFIER",
+    "argumentIndex":2,
+    "canonicalName":"flags",
+    "lineNumber":24,
+    "columnNumber":25
+  },
+  {
+    "name":"4c3aee4bb0294c232d56b6d34e9eeb74f630fe8c_1.c",
+    "_id":60129542144,
+    "code":"<empty>",
+    "order":0,
+    "content":"<empty>",
+    "_label":"FILE"
+  },
+  {
+    "name":"4c3aee4bb0294c232d56b6d34e9eeb74f630fe8c_3.c",
+    "_id":60129542145,
+    "code":"<empty>",
+    "order":0,
+    "content":"<empty>",
+    "_label":"FILE"
+  },
+  {
+    "name":"4c3aee4bb0294c232d56b6d34e9eeb74f630fe8c_8.c",
+    "_id":60129542146,
+    "code":"<empty>",
+    "order":0,
+    "content":"<empty>",
+    "_label":"FILE"
+  },
+  {
+    "name":"<includes>",
+    "_id":60129542147,
+    "code":"<empty>",
+    "order":1,
+    "content":"<empty>",
+    "_label":"FILE"
+  },
+  {
+    "name":"<unknown>",
+    "_id":60129542148,
+    "code":"<empty>",
+    "order":0,
+    "content":"<empty>",
+    "_label":"FILE"
+  },
+  {
+    "dynamicTypeHintFullName":[
+      
+    ],
+    "name":"mpc",
+    "_id":68719476736,
+    "code":"mpc",
+    "typeFullName":"mp_capable*",
+    "lineNumber":11,
+    "order":1,
+    "_label":"IDENTIFIER",
+    "columnNumber":34,
+    "possibleTypes":[
+      
+    ],
+    "argumentIndex":1
+  },
+  {
+    "dynamicTypeHintFullName":[
+      
+    ],
+    "name":"opt",
+    "_id":68719476737,
+    "code":"opt",
+    "typeFullName":"u_char*",
+    "lineNumber":11,
+    "order":2,
+    "_label":"IDENTIFIER",
+    "columnNumber":68,
+    "possibleTypes":[
+      
+    ],
+    "argumentIndex":2
+  },
+  {
+    "dynamicTypeHintFullName":[
+      
+    ],
+    "name":"opt_len",
+    "_id":68719476738,
+    "code":"opt_len",
+    "typeFullName":"u_int",
+    "lineNumber":13,
+    "order":1,
+    "_label":"IDENTIFIER",
+    "columnNumber":15,
+    "possibleTypes":[
+      
+    ],
+    "argumentIndex":1
+  },
+  {
+    "dynamicTypeHintFullName":[
+      
+    ],
+    "name":"flags",
+    "_id":68719476739,
+    "code":"flags",
+    "typeFullName":"u_char",
+    "lineNumber":13,
+    "order":1,
+    "_label":"IDENTIFIER",
+    "columnNumber":32,
+    "possibleTypes":[
+      
+    ],
+    "argumentIndex":1
+  },
+  {
+    "dynamicTypeHintFullName":[
+      
+    ],
+    "name":"TH_SYN",
+    "_id":68719476740,
+    "code":"<unknown> TH_SYN",
+    "typeFullName":"ANY",
+    "lineNumber":13,
+    "order":2,
+    "_label":"IDENTIFIER",
+    "columnNumber":40,
+    "possibleTypes":[
+      
+    ],
+    "argumentIndex":2
+  },
+  {
+    "dynamicTypeHintFullName":[
+      
+    ],
+    "name":"opt_len",
+    "_id":68719476741,
+    "code":"opt_len",
+    "typeFullName":"u_int",
+    "lineNumber":14,
+    "order":1,
+    "_label":"IDENTIFIER",
+    "columnNumber":15,
+    "possibleTypes":[
+      
+    ],
+    "argumentIndex":1
+  },
+  {
+    "dynamicTypeHintFullName":[
+      
+    ],
+    "name":"flags",
+    "_id":68719476742,
+    "code":"flags",
+    "typeFullName":"u_char",
+    "lineNumber":14,
+    "order":1,
+    "_label":"IDENTIFIER",
+    "columnNumber":33,
+    "possibleTypes":[
+      
+    ],
+    "argumentIndex":1
+  },
+  {
+    "dynamicTypeHintFullName":[
+      
+    ],
+    "name":"TH_SYN",
+    "_id":68719476743,
+    "code":"<unknown> TH_SYN",
+    "typeFullName":"ANY",
+    "lineNumber":14,
+    "order":1,
+    "_label":"IDENTIFIER",
+    "columnNumber":42,
+    "possibleTypes":[
+      
+    ],
+    "argumentIndex":1
+  },
+  {
+    "dynamicTypeHintFullName":[
+      
+    ],
+    "name":"TH_ACK",
+    "_id":68719476744,
+    "code":"<unknown> TH_ACK",
+    "typeFullName":"ANY",
+    "lineNumber":14,
+    "order":2,
+    "_label":"IDENTIFIER",
+    "columnNumber":51,
+    "possibleTypes":[
+      
+    ],
+    "argumentIndex":2
+  },
+  {
+    "dynamicTypeHintFullName":[
+      
+    ],
+    "name":"TH_ACK",
+    "_id":68719476745,
+    "code":"<unknown> TH_ACK",
+    "typeFullName":"ANY",
+    "lineNumber":14,
+    "order":2,
+    "_label":"IDENTIFIER",
+    "columnNumber":63,
+    "possibleTypes":[
+      
+    ],
+    "argumentIndex":2
+  },
+  {
+    "dynamicTypeHintFullName":[
+      
+    ],
+    "name":"mpc",
+    "_id":68719476746,
+    "code":"mpc",
+    "typeFullName":"mp_capable*",
+    "lineNumber":17,
+    "order":1,
+    "_label":"IDENTIFIER",
+    "columnNumber":36,
+    "possibleTypes":[
+      
+    ],
+    "argumentIndex":1
+  },
+  {
+    "dynamicTypeHintFullName":[
+      
+    ],
+    "name":"ndo",
+    "_id":68719476747,
+    "code":"ndo",
+    "typeFullName":"netdissect_options*",
+    "lineNumber":18,
+    "order":1,
+    "_label":"IDENTIFIER",
+    "columnNumber":27,
+    "possibleTypes":[
+      
+    ],
+    "argumentIndex":-1
+  },
+  {
+    "dynamicTypeHintFullName":[
+      
+    ],
+    "name":"mpc",
+    "_id":68719476748,
+    "code":"mpc",
+    "typeFullName":"mp_capable*",
+    "lineNumber":18,
+    "order":1,
+    "_label":"IDENTIFIER",
+    "columnNumber":80,
+    "possibleTypes":[
+      
+    ],
+    "argumentIndex":1
+  },
+  {
+    "dynamicTypeHintFullName":[
+      
+    ],
+    "name":"mpc",
+    "_id":68719476749,
+    "code":"mpc",
+    "typeFullName":"mp_capable*",
+    "lineNumber":22,
+    "order":1,
+    "_label":"IDENTIFIER",
+    "columnNumber":13,
+    "possibleTypes":[
+      
+    ],
+    "argumentIndex":1
+  },
+  {
+    "dynamicTypeHintFullName":[
+      
+    ],
+    "name":"MP_CAPABLE_C",
+    "_id":68719476750,
+    "code":"<unknown> MP_CAPABLE_C",
+    "typeFullName":"ANY",
+    "lineNumber":22,
+    "order":2,
+    "_label":"IDENTIFIER",
+    "columnNumber":26,
+    "possibleTypes":[
+      
+    ],
+    "argumentIndex":2
+  },
+  {
+    "dynamicTypeHintFullName":[
+      
+    ],
+    "name":"ndo",
+    "_id":68719476751,
+    "code":"ndo",
+    "typeFullName":"netdissect_options*",
+    "lineNumber":23,
+    "order":1,
+    "_label":"IDENTIFIER",
+    "columnNumber":27,
+    "possibleTypes":[
+      
+    ],
+    "argumentIndex":-1
+  },
+  {
+    "dynamicTypeHintFullName":[
+      
+    ],
+    "name":"ndo",
+    "_id":68719476752,
+    "code":"ndo",
+    "typeFullName":"netdissect_options*",
+    "lineNumber":27,
+    "order":1,
+    "_label":"IDENTIFIER",
+    "columnNumber":19,
+    "possibleTypes":[
+      
+    ],
+    "argumentIndex":-1
+  },
+  {
+    "dynamicTypeHintFullName":[
+      
+    ],
+    "name":"len",
+    "_id":68719476753,
+    "code":"len",
+    "typeFullName":"u_int",
+    "lineNumber":11,
+    "order":1,
+    "_label":"IDENTIFIER",
+    "columnNumber":9,
+    "possibleTypes":[
+      
+    ],
+    "argumentIndex":1
+  },
+  {
+    "dynamicTypeHintFullName":[
+      
+    ],
+    "name":"m",
+    "_id":68719476754,
+    "code":"m",
+    "typeFullName":"mp_dss*",
+    "lineNumber":12,
+    "order":1,
+    "_label":"IDENTIFIER",
+    "columnNumber":13,
+    "possibleTypes":[
+      
+    ],
+    "argumentIndex":1
+  },
+  {
+    "dynamicTypeHintFullName":[
+      
+    ],
+    "name":"MP_DSS_A",
+    "_id":68719476755,
+    "code":"<unknown> MP_DSS_A",
+    "typeFullName":"ANY",
+    "lineNumber":12,
+    "order":2,
+    "_label":"IDENTIFIER",
+    "columnNumber":24,
+    "possibleTypes":[
+      
+    ],
+    "argumentIndex":2
+  },
+  {
+    "dynamicTypeHintFullName":[
+      
+    ],
+    "name":"len",
+    "_id":68719476756,
+    "code":"len",
+    "typeFullName":"u_int",
+    "lineNumber":14,
+    "order":1,
+    "_label":"IDENTIFIER",
+    "columnNumber":17,
+    "possibleTypes":[
+      
+    ],
+    "argumentIndex":1
+  },
+  {
+    "dynamicTypeHintFullName":[
+      
+    ],
+    "name":"m",
+    "_id":68719476757,
+    "code":"m",
+    "typeFullName":"mp_dss*",
+    "lineNumber":14,
+    "order":1,
+    "_label":"IDENTIFIER",
+    "columnNumber":25,
+    "possibleTypes":[
+      
+    ],
+    "argumentIndex":1
+  },
+  {
+    "dynamicTypeHintFullName":[
+      
+    ],
+    "name":"MP_DSS_a",
+    "_id":68719476758,
+    "code":"<unknown> MP_DSS_a",
+    "typeFullName":"ANY",
+    "lineNumber":14,
+    "order":2,
+    "_label":"IDENTIFIER",
+    "columnNumber":36,
+    "possibleTypes":[
+      
+    ],
+    "argumentIndex":2
+  },
+  {
+    "dynamicTypeHintFullName":[
+      
+    ],
+    "name":"m",
+    "_id":68719476759,
+    "code":"m",
+    "typeFullName":"mp_dss*",
+    "lineNumber":16,
+    "order":1,
+    "_label":"IDENTIFIER",
+    "columnNumber":13,
+    "possibleTypes":[
+      
+    ],
+    "argumentIndex":1
+  },
+  {
+    "dynamicTypeHintFullName":[
+      
+    ],
+    "name":"MP_DSS_M",
+    "_id":68719476760,
+    "code":"<unknown> MP_DSS_M",
+    "typeFullName":"ANY",
+    "lineNumber":16,
+    "order":2,
+    "_label":"IDENTIFIER",
+    "columnNumber":24,
+    "possibleTypes":[
+      
+    ],
+    "argumentIndex":2
+  },
+  {
+    "dynamicTypeHintFullName":[
+      
+    ],
+    "name":"len",
+    "_id":68719476761,
+    "code":"len",
+    "typeFullName":"u_int",
+    "lineNumber":24,
+    "order":1,
+    "_label":"IDENTIFIER",
+    "columnNumber":17,
+    "possibleTypes":[
+      
+    ],
+    "argumentIndex":1
+  },
+  {
+    "dynamicTypeHintFullName":[
+      
+    ],
+    "name":"m",
+    "_id":68719476762,
+    "code":"m",
+    "typeFullName":"mp_dss*",
+    "lineNumber":24,
+    "order":1,
+    "_label":"IDENTIFIER",
+    "columnNumber":25,
+    "possibleTypes":[
+      
+    ],
+    "argumentIndex":1
+  },
+  {
+    "dynamicTypeHintFullName":[
+      
+    ],
+    "name":"MP_DSS_m",
+    "_id":68719476763,
+    "code":"<unknown> MP_DSS_m",
+    "typeFullName":"ANY",
+    "lineNumber":24,
+    "order":2,
+    "_label":"IDENTIFIER",
+    "columnNumber":36,
+    "possibleTypes":[
+      
+    ],
+    "argumentIndex":2
+  },
+  {
+    "dynamicTypeHintFullName":[
+      
+    ],
+    "name":"csum",
+    "_id":68719476764,
+    "code":"csum",
+    "typeFullName":"int",
+    "lineNumber":29,
+    "order":1,
+    "_label":"IDENTIFIER",
+    "columnNumber":21,
+    "possibleTypes":[
+      
+    ],
+    "argumentIndex":-1
+  },
+  {
+    "dynamicTypeHintFullName":[
+      
+    ],
+    "name":"len",
+    "_id":68719476765,
+    "code":"len",
+    "typeFullName":"u_int",
+    "lineNumber":30,
+    "order":1,
+    "_label":"IDENTIFIER",
+    "columnNumber":25,
+    "possibleTypes":[
+      
+    ],
+    "argumentIndex":1
+  },
+  {
+    "dynamicTypeHintFullName":[
+      
+    ],
+    "name":"len",
+    "_id":68719476766,
+    "code":"len",
+    "typeFullName":"u_int",
+    "lineNumber":32,
+    "order":1,
+    "_label":"IDENTIFIER",
+    "columnNumber":9,
+    "possibleTypes":[
+      
+    ],
+    "argumentIndex":-1
+  },
+  {
+    "_id":73014444032,
+    "importedAs":"stddef.h",
+    "code":"#include <stddef.h>",
+    "lineNumber":3,
+    "order":1,
+    "importedEntity":"stddef.h",
+    "_label":"IMPORT",
+    "columnNumber":1
+  },
+  {
+    "_id":73014444033,
+    "importedAs":"stdint.h",
+    "code":"#include <stdint.h>",
+    "lineNumber":4,
+    "order":2,
+    "importedEntity":"stdint.h",
+    "_label":"IMPORT",
+    "columnNumber":1
+  },
+  {
+    "_id":73014444034,
+    "importedAs":"stdbool.h",
+    "code":"#include <stdbool.h>",
+    "lineNumber":5,
+    "order":3,
+    "importedEntity":"stdbool.h",
+    "_label":"IMPORT",
+    "columnNumber":1
+  },
+  {
+    "_id":73014444035,
+    "importedAs":"stddef.h",
+    "code":"#include <stddef.h>",
+    "lineNumber":3,
+    "order":1,
+    "importedEntity":"stddef.h",
+    "_label":"IMPORT",
+    "columnNumber":1
+  },
+  {
+    "_id":73014444036,
+    "importedAs":"stdint.h",
+    "code":"#include <stdint.h>",
+    "lineNumber":4,
+    "order":2,
+    "importedEntity":"stdint.h",
+    "_label":"IMPORT",
+    "columnNumber":1
+  },
+  {
+    "_id":73014444037,
+    "importedAs":"stdbool.h",
+    "code":"#include <stdbool.h>",
+    "lineNumber":5,
+    "order":3,
+    "importedEntity":"stdbool.h",
+    "_label":"IMPORT",
+    "columnNumber":1
+  },
+  {
+    "_id":73014444038,
+    "importedAs":"stddef.h",
+    "code":"#include <stddef.h>",
+    "lineNumber":3,
+    "order":1,
+    "importedEntity":"stddef.h",
+    "_label":"IMPORT",
+    "columnNumber":1
+  },
+  {
+    "_id":73014444039,
+    "importedAs":"stdint.h",
+    "code":"#include <stdint.h>",
+    "lineNumber":4,
+    "order":2,
+    "importedEntity":"stdint.h",
+    "_label":"IMPORT",
+    "columnNumber":1
+  },
+  {
+    "_id":73014444040,
+    "importedAs":"stdbool.h",
+    "code":"#include <stdbool.h>",
+    "lineNumber":5,
+    "order":3,
+    "importedEntity":"stdbool.h",
+    "_label":"IMPORT",
+    "columnNumber":1
+  },
+  {
+    "dynamicTypeHintFullName":[
+      
+    ],
+    "_id":90194313216,
+    "code":"12",
+    "typeFullName":"int",
+    "lineNumber":13,
+    "order":2,
+    "_label":"LITERAL",
+    "columnNumber":26,
+    "possibleTypes":[
+      
+    ],
+    "argumentIndex":2
+  },
+  {
+    "dynamicTypeHintFullName":[
+      
+    ],
+    "_id":90194313217,
+    "code":"20",
+    "typeFullName":"int",
+    "lineNumber":14,
+    "order":2,
+    "_label":"LITERAL",
+    "columnNumber":26,
+    "possibleTypes":[
+      
+    ],
+    "argumentIndex":2
+  },
+  {
+    "dynamicTypeHintFullName":[
+      
+    ],
+    "_id":90194313218,
+    "code":"0",
+    "typeFullName":"int",
+    "lineNumber":15,
+    "order":1,
+    "_label":"LITERAL",
+    "columnNumber":24,
+    "possibleTypes":[
+      
+    ],
+    "argumentIndex":-1
+  },
+  {
+    "dynamicTypeHintFullName":[
+      
+    ],
+    "_id":90194313219,
+    "code":"0",
+    "typeFullName":"int",
+    "lineNumber":17,
+    "order":2,
+    "_label":"LITERAL",
+    "columnNumber":53,
+    "possibleTypes":[
+      
+    ],
+    "argumentIndex":2
+  },
+  {
+    "dynamicTypeHintFullName":[
+      
+    ],
+    "_id":90194313220,
+    "code":"\" Unknown Version (%d)\"",
+    "typeFullName":"char*",
+    "lineNumber":18,
+    "order":2,
+    "_label":"LITERAL",
+    "columnNumber":32,
+    "possibleTypes":[
+      
+    ],
+    "argumentIndex":-1
+  },
+  {
+    "dynamicTypeHintFullName":[
+      
+    ],
+    "_id":90194313221,
+    "code":"1",
+    "typeFullName":"int",
+    "lineNumber":19,
+    "order":1,
+    "_label":"LITERAL",
+    "columnNumber":24,
+    "possibleTypes":[
+      
+    ],
+    "argumentIndex":-1
+  },
+  {
+    "dynamicTypeHintFullName":[
+      
+    ],
+    "_id":90194313222,
+    "code":"\" csum\"",
+    "typeFullName":"char*",
+    "lineNumber":23,
+    "order":2,
+    "_label":"LITERAL",
+    "columnNumber":32,
+    "possibleTypes":[
+      
+    ],
+    "argumentIndex":-1
+  },
+  {
+    "dynamicTypeHintFullName":[
+      
+    ],
+    "_id":90194313223,
+    "code":"\"}\"",
+    "typeFullName":"char*",
+    "lineNumber":27,
+    "order":2,
+    "_label":"LITERAL",
+    "columnNumber":24,
+    "possibleTypes":[
+      
+    ],
+    "argumentIndex":-1
+  },
+  {
+    "dynamicTypeHintFullName":[
+      
+    ],
+    "_id":90194313224,
+    "code":"1",
+    "typeFullName":"int",
+    "lineNumber":28,
+    "order":1,
+    "_label":"LITERAL",
+    "columnNumber":16,
+    "possibleTypes":[
+      
+    ],
+    "argumentIndex":-1
+  },
+  {
+    "dynamicTypeHintFullName":[
+      
+    ],
+    "_id":90194313225,
+    "code":"4",
+    "typeFullName":"int",
+    "lineNumber":11,
+    "order":2,
+    "_label":"LITERAL",
+    "columnNumber":15,
+    "possibleTypes":[
+      
+    ],
+    "argumentIndex":2
+  },
+  {
+    "dynamicTypeHintFullName":[
+      
+    ],
+    "_id":90194313226,
+    "code":"8",
+    "typeFullName":"int",
+    "lineNumber":14,
+    "order":2,
+    "_label":"LITERAL",
+    "columnNumber":48,
+    "possibleTypes":[
+      
+    ],
+    "argumentIndex":2
+  },
+  {
+    "dynamicTypeHintFullName":[
+      
+    ],
+    "_id":90194313227,
+    "code":"4",
+    "typeFullName":"int",
+    "lineNumber":14,
+    "order":3,
+    "_label":"LITERAL",
+    "columnNumber":52,
+    "possibleTypes":[
+      
+    ],
+    "argumentIndex":3
+  },
+  {
+    "dynamicTypeHintFullName":[
+      
+    ],
+    "_id":90194313228,
+    "code":"14",
+    "typeFullName":"int",
+    "lineNumber":24,
+    "order":2,
+    "_label":"LITERAL",
+    "columnNumber":48,
+    "possibleTypes":[
+      
+    ],
+    "argumentIndex":2
+  },
+  {
+    "dynamicTypeHintFullName":[
+      
+    ],
+    "_id":90194313229,
+    "code":"10",
+    "typeFullName":"int",
+    "lineNumber":24,
+    "order":3,
+    "_label":"LITERAL",
+    "columnNumber":53,
+    "possibleTypes":[
+      
+    ],
+    "argumentIndex":3
+  },
+  {
+    "dynamicTypeHintFullName":[
+      
+    ],
+    "_id":90194313230,
+    "code":"2",
+    "typeFullName":"int",
+    "lineNumber":30,
+    "order":2,
+    "_label":"LITERAL",
+    "columnNumber":32,
+    "possibleTypes":[
+      
+    ],
+    "argumentIndex":2
+  },
+  {
+    "dynamicTypeHintFullName":[
+      
+    ],
+    "name":"mpc",
+    "_id":94489280512,
+    "genericSignature":"<empty>",
+    "typeFullName":"mp_capable*",
+    "lineNumber":11,
+    "order":1,
+    "_label":"LOCAL",
+    "possibleTypes":[
+      
+    ],
+    "code":"const struct mp_capable *mpc",
+    "columnNumber":34
+  },
+  {
+    "dynamicTypeHintFullName":[
+      
+    ],
+    "name":"MP_CAPABLE_C",
+    "_id":94489280513,
+    "genericSignature":"<empty>",
+    "typeFullName":"ANY",
+    "lineNumber":22,
+    "order":0,
+    "_label":"LOCAL",
+    "possibleTypes":[
+      
+    ],
+    "code":"<unknown> MP_CAPABLE_C",
+    "columnNumber":26
+  },
+  {
+    "dynamicTypeHintFullName":[
+      
+    ],
+    "name":"TH_ACK",
+    "_id":94489280514,
+    "genericSignature":"<empty>",
+    "typeFullName":"ANY",
+    "lineNumber":14,
+    "order":0,
+    "_label":"LOCAL",
+    "possibleTypes":[
+      
+    ],
+    "code":"<unknown> TH_ACK",
+    "columnNumber":51
+  },
+  {
+    "dynamicTypeHintFullName":[
+      
+    ],
+    "name":"TH_SYN",
+    "_id":94489280515,
+    "genericSignature":"<empty>",
+    "typeFullName":"ANY",
+    "lineNumber":13,
+    "order":0,
+    "_label":"LOCAL",
+    "possibleTypes":[
+      
+    ],
+    "code":"<unknown> TH_SYN",
+    "columnNumber":40
+  },
+  {
+    "dynamicTypeHintFullName":[
+      
+    ],
+    "name":"len",
+    "_id":94489280516,
+    "genericSignature":"<empty>",
+    "typeFullName":"u_int",
+    "lineNumber":9,
+    "order":1,
+    "_label":"LOCAL",
+    "possibleTypes":[
+      
+    ],
+    "code":"u_int len",
+    "columnNumber":15
+  },
+  {
+    "dynamicTypeHintFullName":[
+      
+    ],
+    "name":"MP_DSS_m",
+    "_id":94489280517,
+    "genericSignature":"<empty>",
+    "typeFullName":"ANY",
+    "lineNumber":24,
+    "order":0,
+    "_label":"LOCAL",
+    "possibleTypes":[
+      
+    ],
+    "code":"<unknown> MP_DSS_m",
+    "columnNumber":36
+  },
+  {
+    "dynamicTypeHintFullName":[
+      
+    ],
+    "name":"MP_DSS_M",
+    "_id":94489280518,
+    "genericSignature":"<empty>",
+    "typeFullName":"ANY",
+    "lineNumber":16,
+    "order":0,
+    "_label":"LOCAL",
+    "possibleTypes":[
+      
+    ],
+    "code":"<unknown> MP_DSS_M",
+    "columnNumber":24
+  },
+  {
+    "dynamicTypeHintFullName":[
+      
+    ],
+    "name":"MP_DSS_a",
+    "_id":94489280519,
+    "genericSignature":"<empty>",
+    "typeFullName":"ANY",
+    "lineNumber":14,
+    "order":0,
+    "_label":"LOCAL",
+    "possibleTypes":[
+      
+    ],
+    "code":"<unknown> MP_DSS_a",
+    "columnNumber":36
+  },
+  {
+    "dynamicTypeHintFullName":[
+      
+    ],
+    "name":"MP_DSS_A",
+    "_id":94489280520,
+    "genericSignature":"<empty>",
+    "typeFullName":"ANY",
+    "lineNumber":12,
+    "order":0,
+    "_label":"LOCAL",
+    "possibleTypes":[
+      
+    ],
+    "code":"<unknown> MP_DSS_A",
+    "columnNumber":24
+  },
+  {
+    "_id":103079215104,
+    "version":"0.1",
+    "language":"NEWC",
+    "_label":"META_DATA",
+    "overlays":[
+      "base",
+      "controlflow",
+      "typerel",
+      "callgraph",
+      "dataflowOss"
+    ],
+    "root":"C:\\Users\\USER\\Desktop\\Thesis Research\\Implementation\\Thesis-causal-vul\\work\\src\\test\\shard_4c3a"
+  },
+  {
+    "name":"mp_capable_print",
+    "astParentFullName":"4c3aee4bb0294c232d56b6d34e9eeb74f630fe8c_1.c:<global>",
+    "_id":107374182400,
+    "signature":"int(netdissect_options*,u_char*,u_int,u_char)",
+    "astParentType":"TYPE_DECL",
+    "lineNumberEnd":29,
+    "_label":"METHOD",
+    "columnNumberEnd":1,
+    "fullName":"mp_capable_print",
+    "genericSignature":"<empty>",
+    "code":"static int\nmp_capable_print(netdissect_options *ndo,\n                 const u_char *opt, u_int opt_len, u_char flags)\n{\n        const struct mp_capable *mpc = (const struct mp_capable *) opt;\n\n        if (!(opt_len == 12 && flags & TH_SYN) &&\n            !(opt_len == 20 && (flags & (TH_SYN | TH_ACK)) == TH_ACK))\n                return 0;\n\n        if (MP_CAPABLE_OPT_VERSION(mpc->sub_ver) != 0) {\n                ND_PRINT((ndo, \" Unknown Version (%d)\", MP_CAPABLE_OPT_VERSION(mpc->sub_ver)));\n                return 1;\n        }\n\n        if (mpc->flags & MP_CAPABLE_C)\n                ND_PRINT((ndo, \" csum\"));\n        ND_PRINT((ndo, \" {0x%\" PRIx64, EXTRACT_64BITS(mpc->sender_key)));\n        if (opt_len == 20) /* ACK */\n                ND_PRINT((ndo, \",0x%\" PRIx64, EXTRACT_64BITS(mpc->receiver_key)));\n        ND_PRINT((ndo, \"}\"));\n        return 1;\n}",
+    "isExternal":false,
+    "lineNumber":7,
+    "columnNumber":1,
+    "order":1,
+    "filename":"4c3aee4bb0294c232d56b6d34e9eeb74f630fe8c_1.c"
+  },
+  {
+    "name":"<global>",
+    "astParentFullName":"4c3aee4bb0294c232d56b6d34e9eeb74f630fe8c_1.c:<global>",
+    "_id":107374182401,
+    "signature":"",
+    "astParentType":"TYPE_DECL",
+    "lineNumberEnd":29,
+    "_label":"METHOD",
+    "columnNumberEnd":1,
+    "fullName":"4c3aee4bb0294c232d56b6d34e9eeb74f630fe8c_1.c:<global>",
+    "genericSignature":"<empty>",
+    "code":"<global>",
+    "isExternal":false,
+    "lineNumber":1,
+    "columnNumber":1,
+    "order":1,
+    "filename":"4c3aee4bb0294c232d56b6d34e9eeb74f630fe8c_1.c"
+  },
+  {
+    "name":"mp_dss_len",
+    "astParentFullName":"4c3aee4bb0294c232d56b6d34e9eeb74f630fe8c_3.c:<global>",
+    "_id":107374182402,
+    "signature":"u_int(mp_dss*,int)",
+    "astParentType":"TYPE_DECL",
+    "lineNumberEnd":33,
+    "_label":"METHOD",
+    "columnNumberEnd":1,
+    "fullName":"mp_dss_len",
+    "genericSignature":"<empty>",
+    "code":"static u_int mp_dss_len(const  struct mp_dss *m, int csum)\n{\n        u_int len;\n\n        len = 4;\n        if (m->flags & MP_DSS_A) {\n                /* Ack present - 4 or 8 octets */\n                len += (m->flags & MP_DSS_a) ? 8 : 4;\n        }\n        if (m->flags & MP_DSS_M) {\n                /*\n                 * Data Sequence Number (DSN), Subflow Sequence Number (SSN),\n                 * Data-Level Length present, and Checksum possibly present.\n                 * All but the Checksum are 10 bytes if the m flag is\n                 * clear (4-byte DSN) and 14 bytes if the m flag is set\n                 * (8-byte DSN).\n                 */\n                len += (m->flags & MP_DSS_m) ? 14 : 10;\n\n                /*\n                 * The Checksum is present only if negotiated.\n                 */\n                if (csum)\n                        len += 2;\n\t}\n\treturn len;\n}",
+    "isExternal":false,
+    "lineNumber":7,
+    "columnNumber":1,
+    "order":1,
+    "filename":"4c3aee4bb0294c232d56b6d34e9eeb74f630fe8c_3.c"
+  },
+  {
+    "name":"<global>",
+    "astParentFullName":"4c3aee4bb0294c232d56b6d34e9eeb74f630fe8c_3.c:<global>",
+    "_id":107374182403,
+    "signature":"",
+    "astParentType":"TYPE_DECL",
+    "lineNumberEnd":33,
+    "_label":"METHOD",
+    "columnNumberEnd":1,
+    "fullName":"4c3aee4bb0294c232d56b6d34e9eeb74f630fe8c_3.c:<global>",
+    "genericSignature":"<empty>",
+    "code":"<global>",
+    "isExternal":false,
+    "lineNumber":1,
+    "columnNumber":1,
+    "order":1,
+    "filename":"4c3aee4bb0294c232d56b6d34e9eeb74f630fe8c_3.c"
+  },
+  {
+    "name":"<global>",
+    "astParentFullName":"4c3aee4bb0294c232d56b6d34e9eeb74f630fe8c_8.c:<global>",
+    "_id":107374182404,
+    "signature":"",
+    "astParentType":"TYPE_DECL",
+    "lineNumberEnd":16,
+    "_label":"METHOD",
+    "columnNumberEnd":1,
+    "fullName":"4c3aee4bb0294c232d56b6d34e9eeb74f630fe8c_8.c:<global>",
+    "genericSignature":"<empty>",
+    "code":"<global>",
+    "isExternal":false,
+    "lineNumber":1,
+    "columnNumber":1,
+    "order":1,
+    "filename":"4c3aee4bb0294c232d56b6d34e9eeb74f630fe8c_8.c"
+  },
+  {
+    "name":"<global>",
+    "astParentFullName":"<includes>:<global>",
+    "_id":107374182405,
+    "signature":"",
+    "astParentType":"NAMESPACE_BLOCK",
+    "_label":"METHOD",
+    "fullName":"<includes>:<global>",
+    "genericSignature":"<empty>",
+    "code":"<global>",
+    "isExternal":false,
+    "lineNumber":1,
+    "order":1,
+    "filename":"<includes>"
+  },
+  {
+    "name":"<operator>.logicalAnd",
+    "astParentFullName":"<global>",
+    "_id":107374182406,
+    "signature":"",
+    "astParentType":"NAMESPACE_BLOCK",
+    "_label":"METHOD",
+    "fullName":"<operator>.logicalAnd",
+    "genericSignature":"<empty>",
+    "code":"<empty>",
+    "isExternal":true,
+    "order":0,
+    "filename":"<empty>"
+  },
+  {
+    "name":"<operator>.and",
+    "astParentFullName":"<global>",
+    "_id":107374182407,
+    "signature":"",
+    "astParentType":"NAMESPACE_BLOCK",
+    "_label":"METHOD",
+    "fullName":"<operator>.and",
+    "genericSignature":"<empty>",
+    "code":"<empty>",
+    "isExternal":true,
+    "order":0,
+    "filename":"<empty>"
+  },
+  {
+    "name":"<operator>.logicalNot",
+    "astParentFullName":"<global>",
+    "_id":107374182408,
+    "signature":"",
+    "astParentType":"NAMESPACE_BLOCK",
+    "_label":"METHOD",
+    "fullName":"<operator>.logicalNot",
+    "genericSignature":"<empty>",
+    "code":"<empty>",
+    "isExternal":true,
+    "order":0,
+    "filename":"<empty>"
+  },
+  {
+    "name":"<operator>.indirectFieldAccess",
+    "astParentFullName":"<global>",
+    "_id":107374182409,
+    "signature":"",
+    "astParentType":"NAMESPACE_BLOCK",
+    "_label":"METHOD",
+    "fullName":"<operator>.indirectFieldAccess",
+    "genericSignature":"<empty>",
+    "code":"<empty>",
+    "isExternal":true,
+    "order":0,
+    "filename":"<empty>"
+  },
+  {
+    "name":"ND_PRINT",
+    "astParentFullName":"<global>",
+    "_id":107374182410,
+    "signature":"",
+    "astParentType":"NAMESPACE_BLOCK",
+    "_label":"METHOD",
+    "fullName":"ND_PRINT",
+    "genericSignature":"<empty>",
+    "code":"<empty>",
+    "isExternal":true,
+    "order":0,
+    "filename":"<empty>"
+  },
+  {
+    "name":"<operator>.notEquals",
+    "astParentFullName":"<global>",
+    "_id":107374182411,
+    "signature":"",
+    "astParentType":"NAMESPACE_BLOCK",
+    "_label":"METHOD",
+    "fullName":"<operator>.notEquals",
+    "genericSignature":"<empty>",
+    "code":"<empty>",
+    "isExternal":true,
+    "order":0,
+    "filename":"<empty>"
+  },
+  {
+    "name":"<operator>.assignmentPlus",
+    "astParentFullName":"<global>",
+    "_id":107374182412,
+    "signature":"",
+    "astParentType":"NAMESPACE_BLOCK",
+    "_label":"METHOD",
+    "fullName":"<operator>.assignmentPlus",
+    "genericSignature":"<empty>",
+    "code":"<empty>",
+    "isExternal":true,
+    "order":0,
+    "filename":"<empty>"
+  },
+  {
+    "name":"<operator>.cast",
+    "astParentFullName":"<global>",
+    "_id":107374182413,
+    "signature":"",
+    "astParentType":"NAMESPACE_BLOCK",
+    "_label":"METHOD",
+    "fullName":"<operator>.cast",
+    "genericSignature":"<empty>",
+    "code":"<empty>",
+    "isExternal":true,
+    "order":0,
+    "filename":"<empty>"
+  },
+  {
+    "name":"<operator>.equals",
+    "astParentFullName":"<global>",
+    "_id":107374182414,
+    "signature":"",
+    "astParentType":"NAMESPACE_BLOCK",
+    "_label":"METHOD",
+    "fullName":"<operator>.equals",
+    "genericSignature":"<empty>",
+    "code":"<empty>",
+    "isExternal":true,
+    "order":0,
+    "filename":"<empty>"
+  },
+  {
+    "name":"MP_CAPABLE_OPT_VERSION",
+    "astParentFullName":"<global>",
+    "_id":107374182415,
+    "signature":"",
+    "astParentType":"NAMESPACE_BLOCK",
+    "_label":"METHOD",
+    "fullName":"MP_CAPABLE_OPT_VERSION",
+    "genericSignature":"<empty>",
+    "code":"<empty>",
+    "isExternal":true,
+    "order":0,
+    "filename":"<empty>"
+  },
+  {
+    "name":"<operator>.conditional",
+    "astParentFullName":"<global>",
+    "_id":107374182416,
+    "signature":"",
+    "astParentType":"NAMESPACE_BLOCK",
+    "_label":"METHOD",
+    "fullName":"<operator>.conditional",
+    "genericSignature":"<empty>",
+    "code":"<empty>",
+    "isExternal":true,
+    "order":0,
+    "filename":"<empty>"
+  },
+  {
+    "name":"<operator>.or",
+    "astParentFullName":"<global>",
+    "_id":107374182417,
+    "signature":"",
+    "astParentType":"NAMESPACE_BLOCK",
+    "_label":"METHOD",
+    "fullName":"<operator>.or",
+    "genericSignature":"<empty>",
+    "code":"<empty>",
+    "isExternal":true,
+    "order":0,
+    "filename":"<empty>"
+  },
+  {
+    "name":"<operator>.assignment",
+    "astParentFullName":"<global>",
+    "_id":107374182418,
+    "signature":"",
+    "astParentType":"NAMESPACE_BLOCK",
+    "_label":"METHOD",
+    "fullName":"<operator>.assignment",
+    "genericSignature":"<empty>",
+    "code":"<empty>",
+    "isExternal":true,
+    "order":0,
+    "filename":"<empty>"
+  },
+  {
+    "dynamicTypeHintFullName":[
+      
+    ],
+    "name":"ndo",
+    "_id":111669149696,
+    "evaluationStrategy":"BY_VALUE",
+    "isVariadic":false,
+    "typeFullName":"netdissect_options*",
+    "lineNumber":8,
+    "order":1,
+    "_label":"METHOD_PARAMETER_IN",
+    "possibleTypes":[
+      
+    ],
+    "index":1,
+    "code":"netdissect_options *ndo",
+    "columnNumber":18
+  },
+  {
+    "dynamicTypeHintFullName":[
+      
+    ],
+    "name":"opt",
+    "_id":111669149697,
+    "evaluationStrategy":"BY_VALUE",
+    "isVariadic":false,
+    "typeFullName":"u_char*",
+    "lineNumber":9,
+    "order":2,
+    "_label":"METHOD_PARAMETER_IN",
+    "possibleTypes":[
+      
+    ],
+    "index":2,
+    "code":"const u_char *opt",
+    "columnNumber":18
+  },
+  {
+    "dynamicTypeHintFullName":[
+      
+    ],
+    "name":"opt_len",
+    "_id":111669149698,
+    "evaluationStrategy":"BY_VALUE",
+    "isVariadic":false,
+    "typeFullName":"u_int",
+    "lineNumber":9,
+    "order":3,
+    "_label":"METHOD_PARAMETER_IN",
+    "possibleTypes":[
+      
+    ],
+    "index":3,
+    "code":"u_int opt_len",
+    "columnNumber":37
+  },
+  {
+    "dynamicTypeHintFullName":[
+      
+    ],
+    "name":"flags",
+    "_id":111669149699,
+    "evaluationStrategy":"BY_VALUE",
+    "isVariadic":false,
+    "typeFullName":"u_char",
+    "lineNumber":9,
+    "order":4,
+    "_label":"METHOD_PARAMETER_IN",
+    "possibleTypes":[
+      
+    ],
+    "index":4,
+    "code":"u_char flags",
+    "columnNumber":52
+  },
+  {
+    "dynamicTypeHintFullName":[
+      
+    ],
+    "name":"m",
+    "_id":111669149700,
+    "evaluationStrategy":"BY_VALUE",
+    "isVariadic":false,
+    "typeFullName":"mp_dss*",
+    "lineNumber":7,
+    "order":1,
+    "_label":"METHOD_PARAMETER_IN",
+    "possibleTypes":[
+      
+    ],
+    "index":1,
+    "code":"const  struct mp_dss *m",
+    "columnNumber":25
+  },
+  {
+    "dynamicTypeHintFullName":[
+      
+    ],
+    "name":"csum",
+    "_id":111669149701,
+    "evaluationStrategy":"BY_VALUE",
+    "isVariadic":false,
+    "typeFullName":"int",
+    "lineNumber":7,
+    "order":2,
+    "_label":"METHOD_PARAMETER_IN",
+    "possibleTypes":[
+      
+    ],
+    "index":2,
+    "code":"int csum",
+    "columnNumber":50
+  },
+  {
+    "dynamicTypeHintFullName":[
+      
+    ],
+    "name":"p1",
+    "_id":111669149702,
+    "evaluationStrategy":"BY_VALUE",
+    "isVariadic":false,
+    "typeFullName":"ANY",
+    "order":1,
+    "_label":"METHOD_PARAMETER_IN",
+    "possibleTypes":[
+      
+    ],
+    "index":1,
+    "code":"p1"
+  },
+  {
+    "dynamicTypeHintFullName":[
+      
+    ],
+    "name":"p2",
+    "_id":111669149703,
+    "evaluationStrategy":"BY_VALUE",
+    "isVariadic":false,
+    "typeFullName":"ANY",
+    "order":2,
+    "_label":"METHOD_PARAMETER_IN",
+    "possibleTypes":[
+      
+    ],
+    "index":2,
+    "code":"p2"
+  },
+  {
+    "dynamicTypeHintFullName":[
+      
+    ],
+    "name":"p1",
+    "_id":111669149704,
+    "evaluationStrategy":"BY_VALUE",
+    "isVariadic":false,
+    "typeFullName":"ANY",
+    "order":1,
+    "_label":"METHOD_PARAMETER_IN",
+    "possibleTypes":[
+      
+    ],
+    "index":1,
+    "code":"p1"
+  },
+  {
+    "dynamicTypeHintFullName":[
+      
+    ],
+    "name":"p2",
+    "_id":111669149705,
+    "evaluationStrategy":"BY_VALUE",
+    "isVariadic":false,
+    "typeFullName":"ANY",
+    "order":2,
+    "_label":"METHOD_PARAMETER_IN",
+    "possibleTypes":[
+      
+    ],
+    "index":2,
+    "code":"p2"
+  },
+  {
+    "dynamicTypeHintFullName":[
+      
+    ],
+    "name":"p1",
+    "_id":111669149706,
+    "evaluationStrategy":"BY_VALUE",
+    "isVariadic":false,
+    "typeFullName":"ANY",
+    "order":1,
+    "_label":"METHOD_PARAMETER_IN",
+    "possibleTypes":[
+      
+    ],
+    "index":1,
+    "code":"p1"
+  },
+  {
+    "dynamicTypeHintFullName":[
+      
+    ],
+    "name":"p1",
+    "_id":111669149707,
+    "evaluationStrategy":"BY_VALUE",
+    "isVariadic":false,
+    "typeFullName":"ANY",
+    "order":1,
+    "_label":"METHOD_PARAMETER_IN",
+    "possibleTypes":[
+      
+    ],
+    "index":1,
+    "code":"p1"
+  },
+  {
+    "dynamicTypeHintFullName":[
+      
+    ],
+    "name":"p2",
+    "_id":111669149708,
+    "evaluationStrategy":"BY_VALUE",
+    "isVariadic":false,
+    "typeFullName":"ANY",
+    "order":2,
+    "_label":"METHOD_PARAMETER_IN",
+    "possibleTypes":[
+      
+    ],
+    "index":2,
+    "code":"p2"
+  },
+  {
+    "dynamicTypeHintFullName":[
+      
+    ],
+    "name":"p1",
+    "_id":111669149709,
+    "evaluationStrategy":"BY_VALUE",
+    "isVariadic":false,
+    "typeFullName":"ANY",
+    "order":1,
+    "_label":"METHOD_PARAMETER_IN",
+    "possibleTypes":[
+      
+    ],
+    "index":1,
+    "code":"p1"
+  },
+  {
+    "dynamicTypeHintFullName":[
+      
+    ],
+    "name":"p1",
+    "_id":111669149710,
+    "evaluationStrategy":"BY_VALUE",
+    "isVariadic":false,
+    "typeFullName":"ANY",
+    "order":1,
+    "_label":"METHOD_PARAMETER_IN",
+    "possibleTypes":[
+      
+    ],
+    "index":1,
+    "code":"p1"
+  },
+  {
+    "dynamicTypeHintFullName":[
+      
+    ],
+    "name":"p2",
+    "_id":111669149711,
+    "evaluationStrategy":"BY_VALUE",
+    "isVariadic":false,
+    "typeFullName":"ANY",
+    "order":2,
+    "_label":"METHOD_PARAMETER_IN",
+    "possibleTypes":[
+      
+    ],
+    "index":2,
+    "code":"p2"
+  },
+  {
+    "dynamicTypeHintFullName":[
+      
+    ],
+    "name":"p1",
+    "_id":111669149712,
+    "evaluationStrategy":"BY_VALUE",
+    "isVariadic":false,
+    "typeFullName":"ANY",
+    "order":1,
+    "_label":"METHOD_PARAMETER_IN",
+    "possibleTypes":[
+      
+    ],
+    "index":1,
+    "code":"p1"
+  },
+  {
+    "dynamicTypeHintFullName":[
+      
+    ],
+    "name":"p2",
+    "_id":111669149713,
+    "evaluationStrategy":"BY_VALUE",
+    "isVariadic":false,
+    "typeFullName":"ANY",
+    "order":2,
+    "_label":"METHOD_PARAMETER_IN",
+    "possibleTypes":[
+      
+    ],
+    "index":2,
+    "code":"p2"
+  },
+  {
+    "dynamicTypeHintFullName":[
+      
+    ],
+    "name":"p1",
+    "_id":111669149714,
+    "evaluationStrategy":"BY_VALUE",
+    "isVariadic":false,
+    "typeFullName":"ANY",
+    "order":1,
+    "_label":"METHOD_PARAMETER_IN",
+    "possibleTypes":[
+      
+    ],
+    "index":1,
+    "code":"p1"
+  },
+  {
+    "dynamicTypeHintFullName":[
+      
+    ],
+    "name":"p2",
+    "_id":111669149715,
+    "evaluationStrategy":"BY_VALUE",
+    "isVariadic":false,
+    "typeFullName":"ANY",
+    "order":2,
+    "_label":"METHOD_PARAMETER_IN",
+    "possibleTypes":[
+      
+    ],
+    "index":2,
+    "code":"p2"
+  },
+  {
+    "dynamicTypeHintFullName":[
+      
+    ],
+    "name":"p1",
+    "_id":111669149716,
+    "evaluationStrategy":"BY_VALUE",
+    "isVariadic":false,
+    "typeFullName":"ANY",
+    "order":1,
+    "_label":"METHOD_PARAMETER_IN",
+    "possibleTypes":[
+      
+    ],
+    "index":1,
+    "code":"p1"
+  },
+  {
+    "dynamicTypeHintFullName":[
+      
+    ],
+    "name":"p2",
+    "_id":111669149717,
+    "evaluationStrategy":"BY_VALUE",
+    "isVariadic":false,
+    "typeFullName":"ANY",
+    "order":2,
+    "_label":"METHOD_PARAMETER_IN",
+    "possibleTypes":[
+      
+    ],
+    "index":2,
+    "code":"p2"
+  },
+  {
+    "dynamicTypeHintFullName":[
+      
+    ],
+    "name":"p1",
+    "_id":111669149718,
+    "evaluationStrategy":"BY_VALUE",
+    "isVariadic":false,
+    "typeFullName":"ANY",
+    "order":1,
+    "_label":"METHOD_PARAMETER_IN",
+    "possibleTypes":[
+      
+    ],
+    "index":1,
+    "code":"p1"
+  },
+  {
+    "dynamicTypeHintFullName":[
+      
+    ],
+    "name":"p1",
+    "_id":111669149719,
+    "evaluationStrategy":"BY_VALUE",
+    "isVariadic":false,
+    "typeFullName":"ANY",
+    "order":1,
+    "_label":"METHOD_PARAMETER_IN",
+    "possibleTypes":[
+      
+    ],
+    "index":1,
+    "code":"p1"
+  },
+  {
+    "dynamicTypeHintFullName":[
+      
+    ],
+    "name":"p2",
+    "_id":111669149720,
+    "evaluationStrategy":"BY_VALUE",
+    "isVariadic":false,
+    "typeFullName":"ANY",
+    "order":2,
+    "_label":"METHOD_PARAMETER_IN",
+    "possibleTypes":[
+      
+    ],
+    "index":2,
+    "code":"p2"
+  },
+  {
+    "dynamicTypeHintFullName":[
+      
+    ],
+    "name":"p3",
+    "_id":111669149721,
+    "evaluationStrategy":"BY_VALUE",
+    "isVariadic":false,
+    "typeFullName":"ANY",
+    "order":3,
+    "_label":"METHOD_PARAMETER_IN",
+    "possibleTypes":[
+      
+    ],
+    "index":3,
+    "code":"p3"
+  },
+  {
+    "dynamicTypeHintFullName":[
+      
+    ],
+    "name":"p1",
+    "_id":111669149722,
+    "evaluationStrategy":"BY_VALUE",
+    "isVariadic":false,
+    "typeFullName":"ANY",
+    "order":1,
+    "_label":"METHOD_PARAMETER_IN",
+    "possibleTypes":[
+      
+    ],
+    "index":1,
+    "code":"p1"
+  },
+  {
+    "dynamicTypeHintFullName":[
+      
+    ],
+    "name":"p2",
+    "_id":111669149723,
+    "evaluationStrategy":"BY_VALUE",
+    "isVariadic":false,
+    "typeFullName":"ANY",
+    "order":2,
+    "_label":"METHOD_PARAMETER_IN",
+    "possibleTypes":[
+      
+    ],
+    "index":2,
+    "code":"p2"
+  },
+  {
+    "dynamicTypeHintFullName":[
+      
+    ],
+    "name":"p1",
+    "_id":111669149724,
+    "evaluationStrategy":"BY_VALUE",
+    "isVariadic":false,
+    "typeFullName":"ANY",
+    "order":1,
+    "_label":"METHOD_PARAMETER_IN",
+    "possibleTypes":[
+      
+    ],
+    "index":1,
+    "code":"p1"
+  },
+  {
+    "dynamicTypeHintFullName":[
+      
+    ],
+    "name":"p2",
+    "_id":111669149725,
+    "evaluationStrategy":"BY_VALUE",
+    "isVariadic":false,
+    "typeFullName":"ANY",
+    "order":2,
+    "_label":"METHOD_PARAMETER_IN",
+    "possibleTypes":[
+      
+    ],
+    "index":2,
+    "code":"p2"
+  },
+  {
+    "name":"ndo",
+    "_id":115964116992,
+    "evaluationStrategy":"BY_VALUE",
+    "isVariadic":false,
+    "code":"netdissect_options *ndo",
+    "typeFullName":"netdissect_options*",
+    "lineNumber":8,
+    "order":1,
+    "_label":"METHOD_PARAMETER_OUT",
+    "index":1,
+    "columnNumber":18
+  },
+  {
+    "name":"opt",
+    "_id":115964116993,
+    "evaluationStrategy":"BY_VALUE",
+    "isVariadic":false,
+    "code":"const u_char *opt",
+    "typeFullName":"u_char*",
+    "lineNumber":9,
+    "order":2,
+    "_label":"METHOD_PARAMETER_OUT",
+    "index":2,
+    "columnNumber":18
+  },
+  {
+    "name":"opt_len",
+    "_id":115964116994,
+    "evaluationStrategy":"BY_VALUE",
+    "isVariadic":false,
+    "code":"u_int opt_len",
+    "typeFullName":"u_int",
+    "lineNumber":9,
+    "order":3,
+    "_label":"METHOD_PARAMETER_OUT",
+    "index":3,
+    "columnNumber":37
+  },
+  {
+    "name":"flags",
+    "_id":115964116995,
+    "evaluationStrategy":"BY_VALUE",
+    "isVariadic":false,
+    "code":"u_char flags",
+    "typeFullName":"u_char",
+    "lineNumber":9,
+    "order":4,
+    "_label":"METHOD_PARAMETER_OUT",
+    "index":4,
+    "columnNumber":52
+  },
+  {
+    "name":"m",
+    "_id":115964116996,
+    "evaluationStrategy":"BY_VALUE",
+    "isVariadic":false,
+    "code":"const  struct mp_dss *m",
+    "typeFullName":"mp_dss*",
+    "lineNumber":7,
+    "order":1,
+    "_label":"METHOD_PARAMETER_OUT",
+    "index":1,
+    "columnNumber":25
+  },
+  {
+    "name":"csum",
+    "_id":115964116997,
+    "evaluationStrategy":"BY_VALUE",
+    "isVariadic":false,
+    "code":"int csum",
+    "typeFullName":"int",
+    "lineNumber":7,
+    "order":2,
+    "_label":"METHOD_PARAMETER_OUT",
+    "index":2,
+    "columnNumber":50
+  },
+  {
+    "name":"p1",
+    "_id":115964116998,
+    "evaluationStrategy":"BY_VALUE",
+    "isVariadic":false,
+    "code":"p1",
+    "typeFullName":"ANY",
+    "order":1,
+    "_label":"METHOD_PARAMETER_OUT",
+    "index":1
+  },
+  {
+    "name":"p2",
+    "_id":115964116999,
+    "evaluationStrategy":"BY_VALUE",
+    "isVariadic":false,
+    "code":"p2",
+    "typeFullName":"ANY",
+    "order":2,
+    "_label":"METHOD_PARAMETER_OUT",
+    "index":2
+  },
+  {
+    "name":"p1",
+    "_id":115964117000,
+    "evaluationStrategy":"BY_VALUE",
+    "isVariadic":false,
+    "code":"p1",
+    "typeFullName":"ANY",
+    "order":1,
+    "_label":"METHOD_PARAMETER_OUT",
+    "index":1
+  },
+  {
+    "name":"p2",
+    "_id":115964117001,
+    "evaluationStrategy":"BY_VALUE",
+    "isVariadic":false,
+    "code":"p2",
+    "typeFullName":"ANY",
+    "order":2,
+    "_label":"METHOD_PARAMETER_OUT",
+    "index":2
+  },
+  {
+    "name":"p1",
+    "_id":115964117002,
+    "evaluationStrategy":"BY_VALUE",
+    "isVariadic":false,
+    "code":"p1",
+    "typeFullName":"ANY",
+    "order":1,
+    "_label":"METHOD_PARAMETER_OUT",
+    "index":1
+  },
+  {
+    "name":"p1",
+    "_id":115964117003,
+    "evaluationStrategy":"BY_VALUE",
+    "isVariadic":false,
+    "code":"p1",
+    "typeFullName":"ANY",
+    "order":1,
+    "_label":"METHOD_PARAMETER_OUT",
+    "index":1
+  },
+  {
+    "name":"p2",
+    "_id":115964117004,
+    "evaluationStrategy":"BY_VALUE",
+    "isVariadic":false,
+    "code":"p2",
+    "typeFullName":"ANY",
+    "order":2,
+    "_label":"METHOD_PARAMETER_OUT",
+    "index":2
+  },
+  {
+    "name":"p1",
+    "_id":115964117005,
+    "evaluationStrategy":"BY_VALUE",
+    "isVariadic":false,
+    "code":"p1",
+    "typeFullName":"ANY",
+    "order":1,
+    "_label":"METHOD_PARAMETER_OUT",
+    "index":1
+  },
+  {
+    "name":"p1",
+    "_id":115964117006,
+    "evaluationStrategy":"BY_VALUE",
+    "isVariadic":false,
+    "code":"p1",
+    "typeFullName":"ANY",
+    "order":1,
+    "_label":"METHOD_PARAMETER_OUT",
+    "index":1
+  },
+  {
+    "name":"p2",
+    "_id":115964117007,
+    "evaluationStrategy":"BY_VALUE",
+    "isVariadic":false,
+    "code":"p2",
+    "typeFullName":"ANY",
+    "order":2,
+    "_label":"METHOD_PARAMETER_OUT",
+    "index":2
+  },
+  {
+    "name":"p1",
+    "_id":115964117008,
+    "evaluationStrategy":"BY_VALUE",
+    "isVariadic":false,
+    "code":"p1",
+    "typeFullName":"ANY",
+    "order":1,
+    "_label":"METHOD_PARAMETER_OUT",
+    "index":1
+  },
+  {
+    "name":"p2",
+    "_id":115964117009,
+    "evaluationStrategy":"BY_VALUE",
+    "isVariadic":false,
+    "code":"p2",
+    "typeFullName":"ANY",
+    "order":2,
+    "_label":"METHOD_PARAMETER_OUT",
+    "index":2
+  },
+  {
+    "name":"p1",
+    "_id":115964117010,
+    "evaluationStrategy":"BY_VALUE",
+    "isVariadic":false,
+    "code":"p1",
+    "typeFullName":"ANY",
+    "order":1,
+    "_label":"METHOD_PARAMETER_OUT",
+    "index":1
+  },
+  {
+    "name":"p2",
+    "_id":115964117011,
+    "evaluationStrategy":"BY_VALUE",
+    "isVariadic":false,
+    "code":"p2",
+    "typeFullName":"ANY",
+    "order":2,
+    "_label":"METHOD_PARAMETER_OUT",
+    "index":2
+  },
+  {
+    "name":"p1",
+    "_id":115964117012,
+    "evaluationStrategy":"BY_VALUE",
+    "isVariadic":false,
+    "code":"p1",
+    "typeFullName":"ANY",
+    "order":1,
+    "_label":"METHOD_PARAMETER_OUT",
+    "index":1
+  },
+  {
+    "name":"p2",
+    "_id":115964117013,
+    "evaluationStrategy":"BY_VALUE",
+    "isVariadic":false,
+    "code":"p2",
+    "typeFullName":"ANY",
+    "order":2,
+    "_label":"METHOD_PARAMETER_OUT",
+    "index":2
+  },
+  {
+    "name":"p1",
+    "_id":115964117014,
+    "evaluationStrategy":"BY_VALUE",
+    "isVariadic":false,
+    "code":"p1",
+    "typeFullName":"ANY",
+    "order":1,
+    "_label":"METHOD_PARAMETER_OUT",
+    "index":1
+  },
+  {
+    "name":"p1",
+    "_id":115964117015,
+    "evaluationStrategy":"BY_VALUE",
+    "isVariadic":false,
+    "code":"p1",
+    "typeFullName":"ANY",
+    "order":1,
+    "_label":"METHOD_PARAMETER_OUT",
+    "index":1
+  },
+  {
+    "name":"p2",
+    "_id":115964117016,
+    "evaluationStrategy":"BY_VALUE",
+    "isVariadic":false,
+    "code":"p2",
+    "typeFullName":"ANY",
+    "order":2,
+    "_label":"METHOD_PARAMETER_OUT",
+    "index":2
+  },
+  {
+    "name":"p3",
+    "_id":115964117017,
+    "evaluationStrategy":"BY_VALUE",
+    "isVariadic":false,
+    "code":"p3",
+    "typeFullName":"ANY",
+    "order":3,
+    "_label":"METHOD_PARAMETER_OUT",
+    "index":3
+  },
+  {
+    "name":"p1",
+    "_id":115964117018,
+    "evaluationStrategy":"BY_VALUE",
+    "isVariadic":false,
+    "code":"p1",
+    "typeFullName":"ANY",
+    "order":1,
+    "_label":"METHOD_PARAMETER_OUT",
+    "index":1
+  },
+  {
+    "name":"p2",
+    "_id":115964117019,
+    "evaluationStrategy":"BY_VALUE",
+    "isVariadic":false,
+    "code":"p2",
+    "typeFullName":"ANY",
+    "order":2,
+    "_label":"METHOD_PARAMETER_OUT",
+    "index":2
+  },
+  {
+    "name":"p1",
+    "_id":115964117020,
+    "evaluationStrategy":"BY_VALUE",
+    "isVariadic":false,
+    "code":"p1",
+    "typeFullName":"ANY",
+    "order":1,
+    "_label":"METHOD_PARAMETER_OUT",
+    "index":1
+  },
+  {
+    "name":"p2",
+    "_id":115964117021,
+    "evaluationStrategy":"BY_VALUE",
+    "isVariadic":false,
+    "code":"p2",
+    "typeFullName":"ANY",
+    "order":2,
+    "_label":"METHOD_PARAMETER_OUT",
+    "index":2
+  },
+  {
+    "dynamicTypeHintFullName":[
+      
+    ],
+    "_id":120259084288,
+    "code":"mp_capable_print",
+    "typeFullName":"mp_capable_print",
+    "lineNumber":7,
+    "order":1,
+    "methodFullName":"mp_capable_print",
+    "_label":"METHOD_REF",
+    "columnNumber":1,
+    "possibleTypes":[
+      
+    ],
+    "argumentIndex":-1
+  },
+  {
+    "dynamicTypeHintFullName":[
+      
+    ],
+    "_id":120259084289,
+    "code":"mp_dss_len",
+    "typeFullName":"mp_dss_len",
+    "lineNumber":7,
+    "order":1,
+    "methodFullName":"mp_dss_len",
+    "_label":"METHOD_REF",
+    "columnNumber":1,
+    "possibleTypes":[
+      
+    ],
+    "argumentIndex":-1
+  },
+  {
+    "dynamicTypeHintFullName":[
+      
+    ],
+    "_id":124554051584,
+    "evaluationStrategy":"BY_VALUE",
+    "code":"RET",
+    "typeFullName":"int",
+    "lineNumber":7,
+    "order":7,
+    "_label":"METHOD_RETURN",
+    "possibleTypes":[
+      
+    ],
+    "columnNumber":1
+  },
+  {
+    "dynamicTypeHintFullName":[
+      
+    ],
+    "_id":124554051585,
+    "evaluationStrategy":"BY_VALUE",
+    "code":"RET",
+    "typeFullName":"ANY",
+    "lineNumber":1,
+    "order":2,
+    "_label":"METHOD_RETURN",
+    "possibleTypes":[
+      
+    ],
+    "columnNumber":1
+  },
+  {
+    "dynamicTypeHintFullName":[
+      
+    ],
+    "_id":124554051586,
+    "evaluationStrategy":"BY_VALUE",
+    "code":"RET",
+    "typeFullName":"u_int",
+    "lineNumber":7,
+    "order":5,
+    "_label":"METHOD_RETURN",
+    "possibleTypes":[
+      
+    ],
+    "columnNumber":1
+  },
+  {
+    "dynamicTypeHintFullName":[
+      
+    ],
+    "_id":124554051587,
+    "evaluationStrategy":"BY_VALUE",
+    "code":"RET",
+    "typeFullName":"ANY",
+    "lineNumber":1,
+    "order":2,
+    "_label":"METHOD_RETURN",
+    "possibleTypes":[
+      
+    ],
+    "columnNumber":1
+  },
+  {
+    "dynamicTypeHintFullName":[
+      
+    ],
+    "_id":124554051588,
+    "evaluationStrategy":"BY_VALUE",
+    "code":"RET",
+    "typeFullName":"ANY",
+    "lineNumber":1,
+    "order":2,
+    "_label":"METHOD_RETURN",
+    "possibleTypes":[
+      
+    ],
+    "columnNumber":1
+  },
+  {
+    "dynamicTypeHintFullName":[
+      
+    ],
+    "_id":124554051589,
+    "evaluationStrategy":"BY_VALUE",
+    "code":"RET",
+    "typeFullName":"ANY",
+    "lineNumber":1,
+    "order":2,
+    "_label":"METHOD_RETURN",
+    "possibleTypes":[
+      
+    ]
+  },
+  {
+    "dynamicTypeHintFullName":[
+      
+    ],
+    "_id":124554051590,
+    "evaluationStrategy":"BY_VALUE",
+    "code":"RET",
+    "typeFullName":"ANY",
+    "order":2,
+    "_label":"METHOD_RETURN",
+    "possibleTypes":[
+      
+    ]
+  },
+  {
+    "dynamicTypeHintFullName":[
+      
+    ],
+    "_id":124554051591,
+    "evaluationStrategy":"BY_VALUE",
+    "code":"RET",
+    "typeFullName":"ANY",
+    "order":2,
+    "_label":"METHOD_RETURN",
+    "possibleTypes":[
+      
+    ]
+  },
+  {
+    "dynamicTypeHintFullName":[
+      
+    ],
+    "_id":124554051592,
+    "evaluationStrategy":"BY_VALUE",
+    "code":"RET",
+    "typeFullName":"ANY",
+    "order":2,
+    "_label":"METHOD_RETURN",
+    "possibleTypes":[
+      
+    ]
+  },
+  {
+    "dynamicTypeHintFullName":[
+      
+    ],
+    "_id":124554051593,
+    "evaluationStrategy":"BY_VALUE",
+    "code":"RET",
+    "typeFullName":"ANY",
+    "order":2,
+    "_label":"METHOD_RETURN",
+    "possibleTypes":[
+      
+    ]
+  },
+  {
+    "dynamicTypeHintFullName":[
+      
+    ],
+    "_id":124554051594,
+    "evaluationStrategy":"BY_VALUE",
+    "code":"RET",
+    "typeFullName":"ANY",
+    "order":2,
+    "_label":"METHOD_RETURN",
+    "possibleTypes":[
+      
+    ]
+  },
+  {
+    "dynamicTypeHintFullName":[
+      
+    ],
+    "_id":124554051595,
+    "evaluationStrategy":"BY_VALUE",
+    "code":"RET",
+    "typeFullName":"ANY",
+    "order":2,
+    "_label":"METHOD_RETURN",
+    "possibleTypes":[
+      
+    ]
+  },
+  {
+    "dynamicTypeHintFullName":[
+      
+    ],
+    "_id":124554051596,
+    "evaluationStrategy":"BY_VALUE",
+    "code":"RET",
+    "typeFullName":"ANY",
+    "order":2,
+    "_label":"METHOD_RETURN",
+    "possibleTypes":[
+      
+    ]
+  },
+  {
+    "dynamicTypeHintFullName":[
+      
+    ],
+    "_id":124554051597,
+    "evaluationStrategy":"BY_VALUE",
+    "code":"RET",
+    "typeFullName":"ANY",
+    "order":2,
+    "_label":"METHOD_RETURN",
+    "possibleTypes":[
+      
+    ]
+  },
+  {
+    "dynamicTypeHintFullName":[
+      
+    ],
+    "_id":124554051598,
+    "evaluationStrategy":"BY_VALUE",
+    "code":"RET",
+    "typeFullName":"ANY",
+    "order":2,
+    "_label":"METHOD_RETURN",
+    "possibleTypes":[
+      
+    ]
+  },
+  {
+    "dynamicTypeHintFullName":[
+      
+    ],
+    "_id":124554051599,
+    "evaluationStrategy":"BY_VALUE",
+    "code":"RET",
+    "typeFullName":"ANY",
+    "order":2,
+    "_label":"METHOD_RETURN",
+    "possibleTypes":[
+      
+    ]
+  },
+  {
+    "dynamicTypeHintFullName":[
+      
+    ],
+    "_id":124554051600,
+    "evaluationStrategy":"BY_VALUE",
+    "code":"RET",
+    "typeFullName":"ANY",
+    "order":2,
+    "_label":"METHOD_RETURN",
+    "possibleTypes":[
+      
+    ]
+  },
+  {
+    "dynamicTypeHintFullName":[
+      
+    ],
+    "_id":124554051601,
+    "evaluationStrategy":"BY_VALUE",
+    "code":"RET",
+    "typeFullName":"ANY",
+    "order":2,
+    "_label":"METHOD_RETURN",
+    "possibleTypes":[
+      
+    ]
+  },
+  {
+    "dynamicTypeHintFullName":[
+      
+    ],
+    "_id":124554051602,
+    "evaluationStrategy":"BY_VALUE",
+    "code":"RET",
+    "typeFullName":"ANY",
+    "order":2,
+    "_label":"METHOD_RETURN",
+    "possibleTypes":[
+      
+    ]
+  },
+  {
+    "_id":128849018880,
+    "modifierType":"STATIC",
+    "code":"<empty>",
+    "lineNumber":7,
+    "order":6,
+    "_label":"MODIFIER",
+    "columnNumber":1
+  },
+  {
+    "_id":128849018881,
+    "modifierType":"STATIC",
+    "code":"<empty>",
+    "lineNumber":7,
+    "order":4,
+    "_label":"MODIFIER",
+    "columnNumber":1
+  },
+  {
+    "name":"<global>",
+    "_id":133143986176,
+    "code":"<empty>",
+    "order":-1,
+    "_label":"NAMESPACE"
+  },
+  {
+    "name":"<global>",
+    "_id":137438953472,
+    "fullName":"<global>",
+    "code":"<empty>",
+    "_label":"NAMESPACE_BLOCK",
+    "order":1,
+    "filename":"<unknown>"
+  },
+  {
+    "name":"<global>",
+    "_id":137438953473,
+    "fullName":"4c3aee4bb0294c232d56b6d34e9eeb74f630fe8c_1.c:<global>",
+    "code":"<empty>",
+    "_label":"NAMESPACE_BLOCK",
+    "order":1,
+    "filename":"4c3aee4bb0294c232d56b6d34e9eeb74f630fe8c_1.c"
+  },
+  {
+    "name":"<global>",
+    "_id":137438953474,
+    "fullName":"4c3aee4bb0294c232d56b6d34e9eeb74f630fe8c_3.c:<global>",
+    "code":"<empty>",
+    "_label":"NAMESPACE_BLOCK",
+    "order":1,
+    "filename":"4c3aee4bb0294c232d56b6d34e9eeb74f630fe8c_3.c"
+  },
+  {
+    "name":"<global>",
+    "_id":137438953475,
+    "fullName":"4c3aee4bb0294c232d56b6d34e9eeb74f630fe8c_8.c:<global>",
+    "code":"<empty>",
+    "_label":"NAMESPACE_BLOCK",
+    "order":1,
+    "filename":"4c3aee4bb0294c232d56b6d34e9eeb74f630fe8c_8.c"
+  },
+  {
+    "name":"<global>",
+    "_id":137438953476,
+    "fullName":"<includes>:<global>",
+    "code":"<empty>",
+    "_label":"NAMESPACE_BLOCK",
+    "order":1,
+    "filename":"<includes>"
+  },
+  {
+    "_id":141733920768,
+    "code":"return 0;",
+    "lineNumber":15,
+    "order":1,
+    "_label":"RETURN",
+    "argumentIndex":-1,
+    "columnNumber":17
+  },
+  {
+    "_id":141733920769,
+    "code":"return 1;",
+    "lineNumber":19,
+    "order":2,
+    "_label":"RETURN",
+    "argumentIndex":-1,
+    "columnNumber":17
+  },
+  {
+    "_id":141733920770,
+    "code":"return 1;",
+    "lineNumber":28,
+    "order":7,
+    "_label":"RETURN",
+    "argumentIndex":-1,
+    "columnNumber":9
+  },
+  {
+    "_id":141733920771,
+    "code":"return len;",
+    "lineNumber":32,
+    "order":5,
+    "_label":"RETURN",
+    "argumentIndex":-1,
+    "columnNumber":2
+  },
+  {
+    "name":"ANY",
+    "_id":158913789952,
+    "fullName":"ANY",
+    "typeDeclFullName":"ANY",
+    "_label":"TYPE"
+  },
+  {
+    "name":"char*",
+    "_id":158913789953,
+    "fullName":"char*",
+    "typeDeclFullName":"char*",
+    "_label":"TYPE"
+  },
+  {
+    "name":"int",
+    "_id":158913789954,
+    "fullName":"int",
+    "typeDeclFullName":"int",
+    "_label":"TYPE"
+  },
+  {
+    "name":"mp_capable",
+    "_id":158913789955,
+    "fullName":"mp_capable",
+    "typeDeclFullName":"mp_capable",
+    "_label":"TYPE"
+  },
+  {
+    "name":"mp_capable*",
+    "_id":158913789956,
+    "fullName":"mp_capable*",
+    "typeDeclFullName":"mp_capable*",
+    "_label":"TYPE"
+  },
+  {
+    "name":"mp_capable_print",
+    "_id":158913789957,
+    "fullName":"mp_capable_print",
+    "typeDeclFullName":"mp_capable_print",
+    "_label":"TYPE"
+  },
+  {
+    "name":"mp_dss*",
+    "_id":158913789958,
+    "fullName":"mp_dss*",
+    "typeDeclFullName":"mp_dss*",
+    "_label":"TYPE"
+  },
+  {
+    "name":"mp_dss_len",
+    "_id":158913789959,
+    "fullName":"mp_dss_len",
+    "typeDeclFullName":"mp_dss_len",
+    "_label":"TYPE"
+  },
+  {
+    "name":"netdissect_options*",
+    "_id":158913789960,
+    "fullName":"netdissect_options*",
+    "typeDeclFullName":"netdissect_options*",
+    "_label":"TYPE"
+  },
+  {
+    "name":"u_char",
+    "_id":158913789961,
+    "fullName":"u_char",
+    "typeDeclFullName":"u_char",
+    "_label":"TYPE"
+  },
+  {
+    "name":"u_char*",
+    "_id":158913789962,
+    "fullName":"u_char*",
+    "typeDeclFullName":"u_char*",
+    "_label":"TYPE"
+  },
+  {
+    "name":"u_int",
+    "_id":158913789963,
+    "fullName":"u_int",
+    "typeDeclFullName":"u_int",
+    "_label":"TYPE"
+  },
+  {
+    "name":"void",
+    "_id":158913789964,
+    "fullName":"void",
+    "typeDeclFullName":"void",
+    "_label":"TYPE"
+  },
+  {
+    "inheritsFromTypeFullName":[
+      
+    ],
+    "name":"mp_capable_print",
+    "astParentFullName":"4c3aee4bb0294c232d56b6d34e9eeb74f630fe8c_1.c:<global>",
+    "_id":167503724544,
+    "astParentType":"TYPE_DECL",
+    "lineNumber":7,
+    "_label":"TYPE_DECL",
+    "fullName":"mp_capable_print",
+    "genericSignature":"<empty>",
+    "code":"mp_capable_print",
+    "isExternal":false,
+    "columnNumber":1,
+    "order":1,
+    "filename":"4c3aee4bb0294c232d56b6d34e9eeb74f630fe8c_1.c"
+  },
+  {
+    "inheritsFromTypeFullName":[
+      
+    ],
+    "name":"<global>",
+    "astParentFullName":"4c3aee4bb0294c232d56b6d34e9eeb74f630fe8c_1.c:<global>",
+    "_id":167503724545,
+    "astParentType":"NAMESPACE_BLOCK",
+    "lineNumber":1,
+    "_label":"TYPE_DECL",
+    "fullName":"4c3aee4bb0294c232d56b6d34e9eeb74f630fe8c_1.c:<global>",
+    "genericSignature":"<empty>",
+    "code":"<global>",
+    "isExternal":false,
+    "columnNumber":1,
+    "order":4,
+    "filename":"4c3aee4bb0294c232d56b6d34e9eeb74f630fe8c_1.c"
+  },
+  {
+    "inheritsFromTypeFullName":[
+      
+    ],
+    "name":"mp_dss_len",
+    "astParentFullName":"4c3aee4bb0294c232d56b6d34e9eeb74f630fe8c_3.c:<global>",
+    "_id":167503724546,
+    "astParentType":"TYPE_DECL",
+    "lineNumber":7,
+    "_label":"TYPE_DECL",
+    "fullName":"mp_dss_len",
+    "genericSignature":"<empty>",
+    "code":"mp_dss_len",
+    "isExternal":false,
+    "columnNumber":1,
+    "order":1,
+    "filename":"4c3aee4bb0294c232d56b6d34e9eeb74f630fe8c_3.c"
+  },
+  {
+    "inheritsFromTypeFullName":[
+      
+    ],
+    "name":"<global>",
+    "astParentFullName":"4c3aee4bb0294c232d56b6d34e9eeb74f630fe8c_3.c:<global>",
+    "_id":167503724547,
+    "astParentType":"NAMESPACE_BLOCK",
+    "lineNumber":1,
+    "_label":"TYPE_DECL",
+    "fullName":"4c3aee4bb0294c232d56b6d34e9eeb74f630fe8c_3.c:<global>",
+    "genericSignature":"<empty>",
+    "code":"<global>",
+    "isExternal":false,
+    "columnNumber":1,
+    "order":4,
+    "filename":"4c3aee4bb0294c232d56b6d34e9eeb74f630fe8c_3.c"
+  },
+  {
+    "inheritsFromTypeFullName":[
+      
+    ],
+    "name":"<global>",
+    "astParentFullName":"4c3aee4bb0294c232d56b6d34e9eeb74f630fe8c_8.c:<global>",
+    "_id":167503724548,
+    "astParentType":"NAMESPACE_BLOCK",
+    "lineNumber":1,
+    "_label":"TYPE_DECL",
+    "fullName":"4c3aee4bb0294c232d56b6d34e9eeb74f630fe8c_8.c:<global>",
+    "genericSignature":"<empty>",
+    "code":"<global>",
+    "isExternal":false,
+    "columnNumber":1,
+    "order":4,
+    "filename":"4c3aee4bb0294c232d56b6d34e9eeb74f630fe8c_8.c"
+  },
+  {
+    "inheritsFromTypeFullName":[
+      
+    ],
+    "name":"ANY",
+    "astParentFullName":"<includes>:<global>",
+    "_id":167503724549,
+    "astParentType":"NAMESPACE_BLOCK",
+    "_label":"TYPE_DECL",
+    "fullName":"ANY",
+    "genericSignature":"<empty>",
+    "code":"ANY",
+    "isExternal":true,
+    "order":-1,
+    "filename":"<includes>"
+  },
+  {
+    "inheritsFromTypeFullName":[
+      
+    ],
+    "name":"char*",
+    "astParentFullName":"<includes>:<global>",
+    "_id":167503724550,
+    "astParentType":"NAMESPACE_BLOCK",
+    "_label":"TYPE_DECL",
+    "fullName":"char*",
+    "genericSignature":"<empty>",
+    "code":"char*",
+    "isExternal":true,
+    "order":-1,
+    "filename":"<includes>"
+  },
+  {
+    "inheritsFromTypeFullName":[
+      
+    ],
+    "name":"int",
+    "astParentFullName":"<includes>:<global>",
+    "_id":167503724551,
+    "astParentType":"NAMESPACE_BLOCK",
+    "_label":"TYPE_DECL",
+    "fullName":"int",
+    "genericSignature":"<empty>",
+    "code":"int",
+    "isExternal":true,
+    "order":-1,
+    "filename":"<includes>"
+  },
+  {
+    "inheritsFromTypeFullName":[
+      
+    ],
+    "name":"mp_capable",
+    "astParentFullName":"<includes>:<global>",
+    "_id":167503724552,
+    "astParentType":"NAMESPACE_BLOCK",
+    "_label":"TYPE_DECL",
+    "fullName":"mp_capable",
+    "genericSignature":"<empty>",
+    "code":"mp_capable",
+    "isExternal":true,
+    "order":-1,
+    "filename":"<includes>"
+  },
+  {
+    "inheritsFromTypeFullName":[
+      
+    ],
+    "name":"mp_capable*",
+    "astParentFullName":"<includes>:<global>",
+    "_id":167503724553,
+    "astParentType":"NAMESPACE_BLOCK",
+    "_label":"TYPE_DECL",
+    "fullName":"mp_capable*",
+    "genericSignature":"<empty>",
+    "code":"mp_capable*",
+    "isExternal":true,
+    "order":-1,
+    "filename":"<includes>"
+  },
+  {
+    "inheritsFromTypeFullName":[
+      
+    ],
+    "name":"mp_dss*",
+    "astParentFullName":"<includes>:<global>",
+    "_id":167503724554,
+    "astParentType":"NAMESPACE_BLOCK",
+    "_label":"TYPE_DECL",
+    "fullName":"mp_dss*",
+    "genericSignature":"<empty>",
+    "code":"mp_dss*",
+    "isExternal":true,
+    "order":-1,
+    "filename":"<includes>"
+  },
+  {
+    "inheritsFromTypeFullName":[
+      
+    ],
+    "name":"netdissect_options*",
+    "astParentFullName":"<includes>:<global>",
+    "_id":167503724555,
+    "astParentType":"NAMESPACE_BLOCK",
+    "_label":"TYPE_DECL",
+    "fullName":"netdissect_options*",
+    "genericSignature":"<empty>",
+    "code":"netdissect_options*",
+    "isExternal":true,
+    "order":-1,
+    "filename":"<includes>"
+  },
+  {
+    "inheritsFromTypeFullName":[
+      
+    ],
+    "name":"u_char",
+    "astParentFullName":"<includes>:<global>",
+    "_id":167503724556,
+    "astParentType":"NAMESPACE_BLOCK",
+    "_label":"TYPE_DECL",
+    "fullName":"u_char",
+    "genericSignature":"<empty>",
+    "code":"u_char",
+    "isExternal":true,
+    "order":-1,
+    "filename":"<includes>"
+  },
+  {
+    "inheritsFromTypeFullName":[
+      
+    ],
+    "name":"u_char*",
+    "astParentFullName":"<includes>:<global>",
+    "_id":167503724557,
+    "astParentType":"NAMESPACE_BLOCK",
+    "_label":"TYPE_DECL",
+    "fullName":"u_char*",
+    "genericSignature":"<empty>",
+    "code":"u_char*",
+    "isExternal":true,
+    "order":-1,
+    "filename":"<includes>"
+  },
+  {
+    "inheritsFromTypeFullName":[
+      
+    ],
+    "name":"u_int",
+    "astParentFullName":"<includes>:<global>",
+    "_id":167503724558,
+    "astParentType":"NAMESPACE_BLOCK",
+    "_label":"TYPE_DECL",
+    "fullName":"u_int",
+    "genericSignature":"<empty>",
+    "code":"u_int",
+    "isExternal":true,
+    "order":-1,
+    "filename":"<includes>"
+  },
+  {
+    "inheritsFromTypeFullName":[
+      
+    ],
+    "name":"void",
+    "astParentFullName":"<includes>:<global>",
+    "_id":167503724559,
+    "astParentType":"NAMESPACE_BLOCK",
+    "_label":"TYPE_DECL",
+    "fullName":"void",
+    "genericSignature":"<empty>",
+    "code":"void",
+    "isExternal":true,
+    "order":-1,
+    "filename":"<includes>"
+  },
+  {
+    "dynamicTypeHintFullName":[
+      
+    ],
+    "_id":176093659136,
+    "code":"const struct mp_capable *",
+    "typeFullName":"mp_capable",
+    "lineNumber":11,
+    "order":1,
+    "_label":"TYPE_REF",
+    "columnNumber":41,
+    "possibleTypes":[
+      
+    ],
+    "argumentIndex":1
+  },
+  {
+    "dynamicTypeHintFullName":[
+      
+    ],
+    "parserTypeName":"CASTProblemDeclaration",
+    "_id":180388626432,
+    "code":"static int\nmp_fail_print(netdissect_options *ndo,\n              const u_char *opt, u_int opt_len, u_char flags _U_)\n{\n        if (opt_len != 12)\n                return 0;\n\n        ND_PRINT((ndo, \" seq %\" PRIu64, EXTRACT_64BITS(opt + 4)));\n        return 1;\n}",
+    "typeFullName":"<empty>",
+    "lineNumber":7,
+    "order":1,
+    "containedRef":"<empty>",
+    "_label":"UNKNOWN",
+    "columnNumber":1,
+    "possibleTypes":[
+      
+    ],
+    "argumentIndex":-1
+  }
+],"edges":{"AST":[{"src":107374182400,"dst":111669149696,"label":"AST"},{"src":107374182400,"dst":115964116992,"label":"AST"},{"src":107374182400,"dst":111669149697,"label":"AST"},{"src":107374182400,"dst":115964116993,"label":"AST"},{"src":107374182400,"dst":111669149698,"label":"AST"},{"src":107374182400,"dst":115964116994,"label":"AST"},{"src":107374182400,"dst":111669149699,"label":"AST"},{"src":107374182400,"dst":115964116995,"label":"AST"},{"src":107374182400,"dst":25769803776,"label":"AST"},{"src":107374182400,"dst":128849018880,"label":"AST"},{"src":107374182400,"dst":124554051584,"label":"AST"},{"src":25769803776,"dst":94489280513,"label":"AST"},{"src":25769803776,"dst":94489280514,"label":"AST"},{"src":25769803776,"dst":94489280515,"label":"AST"},{"src":25769803776,"dst":94489280512,"label":"AST"},{"src":25769803776,"dst":30064771072,"label":"AST"},{"src":25769803776,"dst":47244640256,"label":"AST"},{"src":25769803776,"dst":47244640257,"label":"AST"},{"src":25769803776,"dst":47244640258,"label":"AST"},{"src":25769803776,"dst":30064771094,"label":"AST"},{"src":25769803776,"dst":141733920770,"label":"AST"},{"src":30064771072,"dst":68719476736,"label":"AST"},{"src":30064771072,"dst":30064771073,"label":"AST"},{"src":30064771073,"dst":176093659136,"label":"AST"},{"src":30064771073,"dst":68719476737,"label":"AST"},{"src":47244640256,"dst":30064771074,"label":"AST"},{"src":47244640256,"dst":25769803777,"label":"AST"},{"src":30064771074,"dst":30064771075,"label":"AST"},{"src":30064771074,"dst":30064771079,"label":"AST"},{"src":30064771075,"dst":30064771076,"label":"AST"},{"src":30064771076,"dst":30064771077,"label":"AST"},{"src":30064771076,"dst":30064771078,"label":"AST"},{"src":30064771077,"dst":68719476738,"label":"AST"},{"src":30064771077,"dst":90194313216,"label":"AST"},{"src":30064771078,"dst":68719476739,"label":"AST"},{"src":30064771078,"dst":68719476740,"label":"AST"},{"src":30064771079,"dst":30064771080,"label":"AST"},{"src":30064771080,"dst":30064771081,"label":"AST"},{"src":30064771080,"dst":30064771082,"label":"AST"},{"src":30064771081,"dst":68719476741,"label":"AST"},{"src":30064771081,"dst":90194313217,"label":"AST"},{"src":30064771082,"dst":30064771083,"label":"AST"},{"src":30064771082,"dst":68719476745,"label":"AST"},{"src":30064771083,"dst":68719476742,"label":"AST"},{"src":30064771083,"dst":30064771084,"label":"AST"},{"src":30064771084,"dst":68719476743,"label":"AST"},{"src":30064771084,"dst":68719476744,"label":"AST"},{"src":25769803777,"dst":141733920768,"label":"AST"},{"src":141733920768,"dst":90194313218,"label":"AST"},{"src":47244640257,"dst":30064771085,"label":"AST"},{"src":47244640257,"dst":25769803778,"label":"AST"},{"src":30064771085,"dst":30064771086,"label":"AST"},{"src":30064771085,"dst":90194313219,"label":"AST"},{"src":30064771086,"dst":30064771087,"label":"AST"},{"src":30064771087,"dst":68719476746,"label":"AST"},{"src":30064771087,"dst":55834574848,"label":"AST"},{"src":25769803778,"dst":30064771088,"label":"AST"},{"src":25769803778,"dst":141733920769,"label":"AST"},{"src":30064771088,"dst":25769803779,"label":"AST"},{"src":25769803779,"dst":68719476747,"label":"AST"},{"src":25769803779,"dst":90194313220,"label":"AST"},{"src":25769803779,"dst":30064771089,"label":"AST"},{"src":30064771089,"dst":30064771090,"label":"AST"},{"src":30064771090,"dst":68719476748,"label":"AST"},{"src":30064771090,"dst":55834574849,"label":"AST"},{"src":141733920769,"dst":90194313221,"label":"AST"},{"src":47244640258,"dst":30064771091,"label":"AST"},{"src":47244640258,"dst":25769803780,"label":"AST"},{"src":30064771091,"dst":30064771092,"label":"AST"},{"src":30064771091,"dst":68719476750,"label":"AST"},{"src":30064771092,"dst":68719476749,"label":"AST"},{"src":30064771092,"dst":55834574850,"label":"AST"},{"src":25769803780,"dst":30064771093,"label":"AST"},{"src":30064771093,"dst":25769803781,"label":"AST"},{"src":25769803781,"dst":68719476751,"label":"AST"},{"src":25769803781,"dst":90194313222,"label":"AST"},{"src":30064771094,"dst":25769803782,"label":"AST"},{"src":25769803782,"dst":68719476752,"label":"AST"},{"src":25769803782,"dst":90194313223,"label":"AST"},{"src":141733920770,"dst":90194313224,"label":"AST"},{"src":107374182401,"dst":107374182400,"label":"AST"},{"src":107374182401,"dst":25769803783,"label":"AST"},{"src":107374182401,"dst":124554051585,"label":"AST"},{"src":25769803783,"dst":120259084288,"label":"AST"},{"src":107374182402,"dst":111669149700,"label":"AST"},{"src":107374182402,"dst":115964116996,"label":"AST"},{"src":107374182402,"dst":111669149701,"label":"AST"},{"src":107374182402,"dst":115964116997,"label":"AST"},{"src":107374182402,"dst":25769803784,"label":"AST"},{"src":107374182402,"dst":128849018881,"label":"AST"},{"src":107374182402,"dst":124554051586,"label":"AST"},{"src":25769803784,"dst":94489280517,"label":"AST"},{"src":25769803784,"dst":94489280518,"label":"AST"},{"src":25769803784,"dst":94489280519,"label":"AST"},{"src":25769803784,"dst":94489280520,"label":"AST"},{"src":25769803784,"dst":94489280516,"label":"AST"},{"src":25769803784,"dst":30064771095,"label":"AST"},{"src":25769803784,"dst":47244640259,"label":"AST"},{"src":25769803784,"dst":47244640260,"label":"AST"},{"src":25769803784,"dst":141733920771,"label":"AST"},{"src":30064771095,"dst":68719476753,"label":"AST"},{"src":30064771095,"dst":90194313225,"label":"AST"},{"src":47244640259,"dst":30064771096,"label":"AST"},{"src":47244640259,"dst":25769803785,"label":"AST"},{"src":30064771096,"dst":30064771097,"label":"AST"},{"src":30064771096,"dst":68719476755,"label":"AST"},{"src":30064771097,"dst":68719476754,"label":"AST"},{"src":30064771097,"dst":55834574851,"label":"AST"},{"src":25769803785,"dst":30064771098,"label":"AST"},{"src":30064771098,"dst":68719476756,"label":"AST"},{"src":30064771098,"dst":30064771099,"label":"AST"},{"src":30064771099,"dst":30064771100,"label":"AST"},{"src":30064771099,"dst":90194313226,"label":"AST"},{"src":30064771099,"dst":90194313227,"label":"AST"},{"src":30064771100,"dst":30064771101,"label":"AST"},{"src":30064771100,"dst":68719476758,"label":"AST"},{"src":30064771101,"dst":68719476757,"label":"AST"},{"src":30064771101,"dst":55834574852,"label":"AST"},{"src":47244640260,"dst":30064771102,"label":"AST"},{"src":47244640260,"dst":25769803786,"label":"AST"},{"src":30064771102,"dst":30064771103,"label":"AST"},{"src":30064771102,"dst":68719476760,"label":"AST"},{"src":30064771103,"dst":68719476759,"label":"AST"},{"src":30064771103,"dst":55834574853,"label":"AST"},{"src":25769803786,"dst":30064771104,"label":"AST"},{"src":25769803786,"dst":47244640261,"label":"AST"},{"src":30064771104,"dst":68719476761,"label":"AST"},{"src":30064771104,"dst":30064771105,"label":"AST"},{"src":30064771105,"dst":30064771106,"label":"AST"},{"src":30064771105,"dst":90194313228,"label":"AST"},{"src":30064771105,"dst":90194313229,"label":"AST"},{"src":30064771106,"dst":30064771107,"label":"AST"},{"src":30064771106,"dst":68719476763,"label":"AST"},{"src":30064771107,"dst":68719476762,"label":"AST"},{"src":30064771107,"dst":55834574854,"label":"AST"},{"src":47244640261,"dst":68719476764,"label":"AST"},{"src":47244640261,"dst":25769803787,"label":"AST"},{"src":25769803787,"dst":30064771108,"label":"AST"},{"src":30064771108,"dst":68719476765,"label":"AST"},{"src":30064771108,"dst":90194313230,"label":"AST"},{"src":141733920771,"dst":68719476766,"label":"AST"},{"src":107374182403,"dst":107374182402,"label":"AST"},{"src":107374182403,"dst":25769803788,"label":"AST"},{"src":107374182403,"dst":124554051587,"label":"AST"},{"src":25769803788,"dst":120259084289,"label":"AST"},{"src":107374182404,"dst":25769803789,"label":"AST"},{"src":107374182404,"dst":124554051588,"label":"AST"},{"src":25769803789,"dst":180388626432,"label":"AST"},{"src":107374182405,"dst":25769803790,"label":"AST"},{"src":107374182405,"dst":124554051589,"label":"AST"},{"src":107374182406,"dst":111669149702,"label":"AST"},{"src":107374182406,"dst":25769803791,"label":"AST"},{"src":107374182406,"dst":115964116998,"label":"AST"},{"src":107374182406,"dst":111669149703,"label":"AST"},{"src":107374182406,"dst":124554051590,"label":"AST"},{"src":107374182406,"dst":115964116999,"label":"AST"},{"src":107374182407,"dst":111669149704,"label":"AST"},{"src":107374182407,"dst":25769803792,"label":"AST"},{"src":107374182407,"dst":115964117000,"label":"AST"},{"src":107374182407,"dst":111669149705,"label":"AST"},{"src":107374182407,"dst":124554051591,"label":"AST"},{"src":107374182407,"dst":115964117001,"label":"AST"},{"src":107374182408,"dst":111669149706,"label":"AST"},{"src":107374182408,"dst":25769803793,"label":"AST"},{"src":107374182408,"dst":115964117002,"label":"AST"},{"src":107374182408,"dst":124554051592,"label":"AST"},{"src":107374182409,"dst":111669149707,"label":"AST"},{"src":107374182409,"dst":25769803794,"label":"AST"},{"src":107374182409,"dst":115964117003,"label":"AST"},{"src":107374182409,"dst":111669149708,"label":"AST"},{"src":107374182409,"dst":124554051593,"label":"AST"},{"src":107374182409,"dst":115964117004,"label":"AST"},{"src":107374182410,"dst":111669149709,"label":"AST"},{"src":107374182410,"dst":25769803795,"label":"AST"},{"src":107374182410,"dst":115964117005,"label":"AST"},{"src":107374182410,"dst":124554051594,"label":"AST"},{"src":107374182411,"dst":111669149710,"label":"AST"},{"src":107374182411,"dst":25769803796,"label":"AST"},{"src":107374182411,"dst":115964117006,"label":"AST"},{"src":107374182411,"dst":111669149711,"label":"AST"},{"src":107374182411,"dst":124554051595,"label":"AST"},{"src":107374182411,"dst":115964117007,"label":"AST"},{"src":107374182412,"dst":111669149712,"label":"AST"},{"src":107374182412,"dst":25769803797,"label":"AST"},{"src":107374182412,"dst":115964117008,"label":"AST"},{"src":107374182412,"dst":111669149713,"label":"AST"},{"src":107374182412,"dst":124554051596,"label":"AST"},{"src":107374182412,"dst":115964117009,"label":"AST"},{"src":107374182413,"dst":111669149714,"label":"AST"},{"src":107374182413,"dst":25769803798,"label":"AST"},{"src":107374182413,"dst":115964117010,"label":"AST"},{"src":107374182413,"dst":111669149715,"label":"AST"},{"src":107374182413,"dst":124554051597,"label":"AST"},{"src":107374182413,"dst":115964117011,"label":"AST"},{"src":107374182414,"dst":111669149716,"label":"AST"},{"src":107374182414,"dst":25769803799,"label":"AST"},{"src":107374182414,"dst":115964117012,"label":"AST"},{"src":107374182414,"dst":111669149717,"label":"AST"},{"src":107374182414,"dst":124554051598,"label":"AST"},{"src":107374182414,"dst":115964117013,"label":"AST"},{"src":107374182415,"dst":111669149718,"label":"AST"},{"src":107374182415,"dst":25769803800,"label":"AST"},{"src":107374182415,"dst":115964117014,"label":"AST"},{"src":107374182415,"dst":124554051599,"label":"AST"},{"src":107374182416,"dst":111669149719,"label":"AST"},{"src":107374182416,"dst":25769803801,"label":"AST"},{"src":107374182416,"dst":115964117015,"label":"AST"},{"src":107374182416,"dst":111669149720,"label":"AST"},{"src":107374182416,"dst":124554051600,"label":"AST"},{"src":107374182416,"dst":115964117016,"label":"AST"},{"src":107374182416,"dst":111669149721,"label":"AST"},{"src":107374182416,"dst":115964117017,"label":"AST"},{"src":107374182417,"dst":111669149722,"label":"AST"},{"src":107374182417,"dst":25769803802,"label":"AST"},{"src":107374182417,"dst":115964117018,"label":"AST"},{"src":107374182417,"dst":111669149723,"label":"AST"},{"src":107374182417,"dst":124554051601,"label":"AST"},{"src":107374182417,"dst":115964117019,"label":"AST"},{"src":107374182418,"dst":111669149724,"label":"AST"},{"src":107374182418,"dst":25769803803,"label":"AST"},{"src":107374182418,"dst":115964117020,"label":"AST"},{"src":107374182418,"dst":111669149725,"label":"AST"},{"src":107374182418,"dst":124554051602,"label":"AST"},{"src":107374182418,"dst":115964117021,"label":"AST"}],"CFG":[{"src":30064771072,"dst":68719476738,"label":"CFG"},{"src":30064771094,"dst":90194313224,"label":"CFG"},{"src":68719476736,"dst":176093659136,"label":"CFG"},{"src":30064771073,"dst":30064771072,"label":"CFG"},{"src":30064771074,"dst":90194313218,"label":"CFG"},{"src":30064771074,"dst":68719476746,"label":"CFG"},{"src":30064771085,"dst":68719476747,"label":"CFG"},{"src":30064771085,"dst":68719476749,"label":"CFG"},{"src":30064771091,"dst":68719476751,"label":"CFG"},{"src":30064771091,"dst":68719476752,"label":"CFG"},{"src":25769803782,"dst":30064771094,"label":"CFG"},{"src":90194313224,"dst":141733920770,"label":"CFG"},{"src":176093659136,"dst":68719476737,"label":"CFG"},{"src":68719476737,"dst":30064771073,"label":"CFG"},{"src":30064771075,"dst":68719476741,"label":"CFG"},{"src":30064771075,"dst":30064771074,"label":"CFG"},{"src":30064771079,"dst":30064771074,"label":"CFG"},{"src":30064771086,"dst":90194313219,"label":"CFG"},{"src":90194313219,"dst":30064771085,"label":"CFG"},{"src":30064771088,"dst":90194313221,"label":"CFG"},{"src":30064771092,"dst":68719476750,"label":"CFG"},{"src":68719476750,"dst":30064771091,"label":"CFG"},{"src":30064771093,"dst":68719476752,"label":"CFG"},{"src":68719476752,"dst":90194313223,"label":"CFG"},{"src":90194313223,"dst":25769803782,"label":"CFG"},{"src":30064771076,"dst":30064771075,"label":"CFG"},{"src":30064771080,"dst":30064771079,"label":"CFG"},{"src":90194313218,"dst":141733920768,"label":"CFG"},{"src":30064771087,"dst":30064771086,"label":"CFG"},{"src":25769803779,"dst":30064771088,"label":"CFG"},{"src":90194313221,"dst":141733920769,"label":"CFG"},{"src":68719476749,"dst":55834574850,"label":"CFG"},{"src":55834574850,"dst":30064771092,"label":"CFG"},{"src":25769803781,"dst":30064771093,"label":"CFG"},{"src":30064771077,"dst":68719476739,"label":"CFG"},{"src":30064771077,"dst":30064771076,"label":"CFG"},{"src":30064771078,"dst":30064771076,"label":"CFG"},{"src":30064771081,"dst":68719476742,"label":"CFG"},{"src":30064771081,"dst":30064771080,"label":"CFG"},{"src":30064771082,"dst":30064771080,"label":"CFG"},{"src":68719476746,"dst":55834574848,"label":"CFG"},{"src":55834574848,"dst":30064771087,"label":"CFG"},{"src":68719476747,"dst":90194313220,"label":"CFG"},{"src":90194313220,"dst":68719476748,"label":"CFG"},{"src":30064771089,"dst":25769803779,"label":"CFG"},{"src":68719476751,"dst":90194313222,"label":"CFG"},{"src":90194313222,"dst":25769803781,"label":"CFG"},{"src":68719476738,"dst":90194313216,"label":"CFG"},{"src":90194313216,"dst":30064771077,"label":"CFG"},{"src":68719476739,"dst":68719476740,"label":"CFG"},{"src":68719476740,"dst":30064771078,"label":"CFG"},{"src":68719476741,"dst":90194313217,"label":"CFG"},{"src":90194313217,"dst":30064771081,"label":"CFG"},{"src":30064771083,"dst":68719476745,"label":"CFG"},{"src":68719476745,"dst":30064771082,"label":"CFG"},{"src":30064771090,"dst":30064771089,"label":"CFG"},{"src":68719476742,"dst":68719476743,"label":"CFG"},{"src":30064771084,"dst":30064771083,"label":"CFG"},{"src":68719476748,"dst":55834574849,"label":"CFG"},{"src":55834574849,"dst":30064771090,"label":"CFG"},{"src":68719476743,"dst":68719476744,"label":"CFG"},{"src":68719476744,"dst":30064771084,"label":"CFG"},{"src":107374182400,"dst":68719476736,"label":"CFG"},{"src":30064771095,"dst":68719476754,"label":"CFG"},{"src":68719476753,"dst":90194313225,"label":"CFG"},{"src":90194313225,"dst":30064771095,"label":"CFG"},{"src":30064771096,"dst":68719476756,"label":"CFG"},{"src":30064771096,"dst":68719476759,"label":"CFG"},{"src":30064771102,"dst":68719476761,"label":"CFG"},{"src":30064771102,"dst":68719476766,"label":"CFG"},{"src":68719476766,"dst":141733920771,"label":"CFG"},{"src":30064771097,"dst":68719476755,"label":"CFG"},{"src":68719476755,"dst":30064771096,"label":"CFG"},{"src":30064771098,"dst":68719476759,"label":"CFG"},{"src":30064771103,"dst":68719476760,"label":"CFG"},{"src":68719476760,"dst":30064771102,"label":"CFG"},{"src":30064771104,"dst":68719476764,"label":"CFG"},{"src":68719476754,"dst":55834574851,"label":"CFG"},{"src":55834574851,"dst":30064771097,"label":"CFG"},{"src":68719476756,"dst":68719476757,"label":"CFG"},{"src":30064771099,"dst":30064771098,"label":"CFG"},{"src":68719476759,"dst":55834574853,"label":"CFG"},{"src":55834574853,"dst":30064771103,"label":"CFG"},{"src":68719476761,"dst":68719476762,"label":"CFG"},{"src":30064771105,"dst":30064771104,"label":"CFG"},{"src":68719476764,"dst":68719476765,"label":"CFG"},{"src":68719476764,"dst":68719476766,"label":"CFG"},{"src":30064771100,"dst":90194313226,"label":"CFG"},{"src":30064771100,"dst":90194313227,"label":"CFG"},{"src":90194313226,"dst":30064771099,"label":"CFG"},{"src":90194313227,"dst":30064771099,"label":"CFG"},{"src":30064771106,"dst":90194313228,"label":"CFG"},{"src":30064771106,"dst":90194313229,"label":"CFG"},{"src":90194313228,"dst":30064771105,"label":"CFG"},{"src":90194313229,"dst":30064771105,"label":"CFG"},{"src":30064771108,"dst":68719476766,"label":"CFG"},{"src":30064771101,"dst":68719476758,"label":"CFG"},{"src":68719476758,"dst":30064771100,"label":"CFG"},{"src":30064771107,"dst":68719476763,"label":"CFG"},{"src":68719476763,"dst":30064771106,"label":"CFG"},{"src":68719476765,"dst":90194313230,"label":"CFG"},{"src":90194313230,"dst":30064771108,"label":"CFG"},{"src":68719476757,"dst":55834574852,"label":"CFG"},{"src":55834574852,"dst":30064771101,"label":"CFG"},{"src":68719476762,"dst":55834574854,"label":"CFG"},{"src":55834574854,"dst":30064771107,"label":"CFG"},{"src":107374182402,"dst":68719476753,"label":"CFG"}],"DFG":[{"src":30064771072,"dst":30064771085,"label":"DFG"},{"src":30064771072,"dst":30064771091,"label":"DFG"},{"src":30064771072,"dst":30064771086,"label":"DFG"},{"src":30064771072,"dst":30064771088,"label":"DFG"},{"src":30064771072,"dst":30064771092,"label":"DFG"},{"src":30064771072,"dst":30064771087,"label":"DFG"},{"src":30064771072,"dst":25769803779,"label":"DFG"},{"src":30064771072,"dst":68719476749,"label":"DFG"},{"src":30064771072,"dst":68719476746,"label":"DFG"},{"src":30064771072,"dst":30064771089,"label":"DFG"},{"src":30064771072,"dst":30064771090,"label":"DFG"},{"src":30064771072,"dst":68719476748,"label":"DFG"},{"src":30064771095,"dst":141733920771,"label":"DFG"},{"src":30064771095,"dst":68719476766,"label":"DFG"},{"src":30064771095,"dst":30064771098,"label":"DFG"},{"src":30064771095,"dst":30064771104,"label":"DFG"},{"src":30064771095,"dst":68719476756,"label":"DFG"},{"src":30064771095,"dst":68719476761,"label":"DFG"},{"src":30064771095,"dst":30064771108,"label":"DFG"},{"src":30064771095,"dst":68719476765,"label":"DFG"}]}}

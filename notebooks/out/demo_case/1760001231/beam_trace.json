@@ -1,0 +1,1264 @@
+[
+  [
+    {
+      "depth": 1,
+      "rank": 1,
+      "cum_score": 2.132478654384613,
+      "step_delta": 1.5258357524871826,
+      "last_node": 29,
+      "edge_family": "DFG",
+      "last_fmt": "#29 p=0.526 CALL:snprintf lib/wrap.c:12",
+      "path_idxs": [
+        24,
+        29
+      ]
+    },
+    {
+      "depth": 1,
+      "rank": 2,
+      "cum_score": 2.132478654384613,
+      "step_delta": 1.5258357524871826,
+      "last_node": 29,
+      "edge_family": "DFG",
+      "last_fmt": "#29 p=0.526 CALL:snprintf lib/wrap.c:12",
+      "path_idxs": [
+        24,
+        29
+      ]
+    },
+    {
+      "depth": 1,
+      "rank": 3,
+      "cum_score": 2.130381941795349,
+      "step_delta": 1.5237390398979187,
+      "last_node": 30,
+      "edge_family": "DFG",
+      "last_fmt": "#30 p=0.524 RET lib/wrap.c:13",
+      "path_idxs": [
+        24,
+        30
+      ]
+    },
+    {
+      "depth": 1,
+      "rank": 4,
+      "cum_score": 2.129055142402649,
+      "step_delta": 1.5379328727722168,
+      "last_node": 42,
+      "edge_family": "DFG",
+      "last_fmt": "#42 p=0.538 RET lib/wrap.c:27",
+      "path_idxs": [
+        26,
+        42
+      ]
+    },
+    {
+      "depth": 1,
+      "rank": 5,
+      "cum_score": 2.1100995540618896,
+      "step_delta": 1.5265681743621826,
+      "last_node": 37,
+      "edge_family": "DFG",
+      "last_fmt": "#37 p=0.527 RET lib/wrap.c:21",
+      "path_idxs": [
+        25,
+        37
+      ]
+    },
+    {
+      "depth": 1,
+      "rank": 6,
+      "cum_score": 2.0870302319526672,
+      "step_delta": 1.507845163345337,
+      "last_node": 12,
+      "edge_family": "DFG",
+      "last_fmt": "#12 p=0.508 ASSIGN app/main.c:16",
+      "path_idxs": [
+        8,
+        12
+      ]
+    }
+  ],
+  [
+    {
+      "depth": 2,
+      "rank": 1,
+      "cum_score": 3.411462217569351,
+      "step_delta": 1.3989111185073853,
+      "last_node": 17,
+      "edge_family": "DFG",
+      "last_fmt": "#17 p=0.399 CALL:run_system app/main.c:21",
+      "path_idxs": [
+        14,
+        15,
+        17
+      ]
+    },
+    {
+      "depth": 2,
+      "rank": 2,
+      "cum_score": 3.411462217569351,
+      "step_delta": 1.3989111185073853,
+      "last_node": 17,
+      "edge_family": "DFG",
+      "last_fmt": "#17 p=0.399 CALL:run_system app/main.c:21",
+      "path_idxs": [
+        14,
+        15,
+        17
+      ]
+    },
+    {
+      "depth": 2,
+      "rank": 3,
+      "cum_score": 3.166282069683075,
+      "step_delta": 1.153730970621109,
+      "last_node": 6,
+      "edge_family": "CPG",
+      "last_fmt": "#6 p=0.454 STMT app/main.c:9",
+      "path_idxs": [
+        14,
+        15,
+        6
+      ]
+    },
+    {
+      "depth": 2,
+      "rank": 4,
+      "cum_score": 3.166282069683075,
+      "step_delta": 1.153730970621109,
+      "last_node": 6,
+      "edge_family": "CPG",
+      "last_fmt": "#6 p=0.454 STMT app/main.c:9",
+      "path_idxs": [
+        14,
+        15,
+        6
+      ]
+    },
+    {
+      "depth": 2,
+      "rank": 5,
+      "cum_score": 3.097448867559433,
+      "step_delta": 1.153730970621109,
+      "last_node": 6,
+      "edge_family": "CPG",
+      "last_fmt": "#6 p=0.454 STMT app/main.c:9",
+      "path_idxs": [
+        15,
+        17,
+        6
+      ]
+    },
+    {
+      "depth": 2,
+      "rank": 6,
+      "cum_score": 3.0562176942825316,
+      "step_delta": 0.9237390398979187,
+      "last_node": 30,
+      "edge_family": "CFG",
+      "last_fmt": "#30 p=0.524 RET lib/wrap.c:13",
+      "path_idxs": [
+        24,
+        29,
+        30
+      ]
+    }
+  ],
+  [
+    {
+      "depth": 3,
+      "rank": 1,
+      "cum_score": 4.56519318819046,
+      "step_delta": 1.153730970621109,
+      "last_node": 6,
+      "edge_family": "CPG",
+      "last_fmt": "#6 p=0.454 STMT app/main.c:9",
+      "path_idxs": [
+        14,
+        15,
+        17,
+        6
+      ]
+    },
+    {
+      "depth": 3,
+      "rank": 2,
+      "cum_score": 4.56519318819046,
+      "step_delta": 1.153730970621109,
+      "last_node": 6,
+      "edge_family": "CPG",
+      "last_fmt": "#6 p=0.454 STMT app/main.c:9",
+      "path_idxs": [
+        14,
+        15,
+        17,
+        6
+      ]
+    },
+    {
+      "depth": 3,
+      "rank": 3,
+      "cum_score": 4.315511637926102,
+      "step_delta": 0.9040494203567505,
+      "last_node": 16,
+      "edge_family": "CFG",
+      "last_fmt": "#16 p=0.504 STMT app/main.c:20",
+      "path_idxs": [
+        14,
+        15,
+        17,
+        16
+      ]
+    },
+    {
+      "depth": 3,
+      "rank": 4,
+      "cum_score": 4.315511637926102,
+      "step_delta": 0.9040494203567505,
+      "last_node": 16,
+      "edge_family": "CFG",
+      "last_fmt": "#16 p=0.504 STMT app/main.c:20",
+      "path_idxs": [
+        14,
+        15,
+        17,
+        16
+      ]
+    },
+    {
+      "depth": 3,
+      "rank": 5,
+      "cum_score": 4.2809307217597965,
+      "step_delta": 0.869468504190445,
+      "last_node": 18,
+      "edge_family": "CFG",
+      "last_fmt": "#18 p=0.469 STMT app/main.c:22",
+      "path_idxs": [
+        14,
+        15,
+        17,
+        18
+      ]
+    },
+    {
+      "depth": 3,
+      "rank": 6,
+      "cum_score": 4.2809307217597965,
+      "step_delta": 0.869468504190445,
+      "last_node": 18,
+      "edge_family": "CFG",
+      "last_fmt": "#18 p=0.469 STMT app/main.c:22",
+      "path_idxs": [
+        14,
+        15,
+        17,
+        18
+      ]
+    }
+  ],
+  [
+    {
+      "depth": 4,
+      "rank": 1,
+      "cum_score": 5.477430200576783,
+      "step_delta": 0.912237012386322,
+      "last_node": 5,
+      "edge_family": "CFG",
+      "last_fmt": "#5 p=0.512 STMT app/main.c:8",
+      "path_idxs": [
+        14,
+        15,
+        17,
+        6,
+        5
+      ]
+    },
+    {
+      "depth": 4,
+      "rank": 2,
+      "cum_score": 5.477430200576783,
+      "step_delta": 0.912237012386322,
+      "last_node": 5,
+      "edge_family": "CFG",
+      "last_fmt": "#5 p=0.512 STMT app/main.c:8",
+      "path_idxs": [
+        14,
+        15,
+        17,
+        6,
+        5
+      ]
+    },
+    {
+      "depth": 4,
+      "rank": 3,
+      "cum_score": 5.442977702617646,
+      "step_delta": 0.8777845144271851,
+      "last_node": 7,
+      "edge_family": "CFG",
+      "last_fmt": "#7 p=0.478 ROOT app/main.c:11",
+      "path_idxs": [
+        14,
+        15,
+        17,
+        6,
+        7
+      ]
+    },
+    {
+      "depth": 4,
+      "rank": 4,
+      "cum_score": 5.442977702617646,
+      "step_delta": 0.8777845144271851,
+      "last_node": 7,
+      "edge_family": "CFG",
+      "last_fmt": "#7 p=0.478 ROOT app/main.c:11",
+      "path_idxs": [
+        14,
+        15,
+        17,
+        6,
+        7
+      ]
+    },
+    {
+      "depth": 4,
+      "rank": 5,
+      "cum_score": 5.398914533853531,
+      "step_delta": 1.5448067784309387,
+      "last_node": 15,
+      "edge_family": "DFG",
+      "last_fmt": "#15 p=0.545 ASSIGN app/main.c:19",
+      "path_idxs": [
+        8,
+        12,
+        13,
+        14,
+        15
+      ]
+    },
+    {
+      "depth": 4,
+      "rank": 6,
+      "cum_score": 5.398914533853531,
+      "step_delta": 1.5448067784309387,
+      "last_node": 15,
+      "edge_family": "DFG",
+      "last_fmt": "#15 p=0.545 ASSIGN app/main.c:19",
+      "path_idxs": [
+        8,
+        12,
+        13,
+        14,
+        15
+      ]
+    }
+  ],
+  [
+    {
+      "depth": 5,
+      "rank": 1,
+      "cum_score": 6.797825652360916,
+      "step_delta": 1.3989111185073853,
+      "last_node": 17,
+      "edge_family": "DFG",
+      "last_fmt": "#17 p=0.399 CALL:run_system app/main.c:21",
+      "path_idxs": [
+        8,
+        12,
+        13,
+        14,
+        15,
+        17
+      ]
+    },
+    {
+      "depth": 5,
+      "rank": 2,
+      "cum_score": 6.797825652360916,
+      "step_delta": 1.3989111185073853,
+      "last_node": 17,
+      "edge_family": "DFG",
+      "last_fmt": "#17 p=0.399 CALL:run_system app/main.c:21",
+      "path_idxs": [
+        8,
+        12,
+        13,
+        14,
+        15,
+        17
+      ]
+    },
+    {
+      "depth": 5,
+      "rank": 3,
+      "cum_score": 6.797825652360916,
+      "step_delta": 1.3989111185073853,
+      "last_node": 17,
+      "edge_family": "DFG",
+      "last_fmt": "#17 p=0.399 CALL:run_system app/main.c:21",
+      "path_idxs": [
+        8,
+        12,
+        13,
+        14,
+        15,
+        17
+      ]
+    },
+    {
+      "depth": 5,
+      "rank": 4,
+      "cum_score": 6.797825652360916,
+      "step_delta": 1.3989111185073853,
+      "last_node": 17,
+      "edge_family": "DFG",
+      "last_fmt": "#17 p=0.399 CALL:run_system app/main.c:21",
+      "path_idxs": [
+        8,
+        12,
+        13,
+        14,
+        15,
+        17
+      ]
+    },
+    {
+      "depth": 5,
+      "rank": 5,
+      "cum_score": 6.55264550447464,
+      "step_delta": 1.153730970621109,
+      "last_node": 6,
+      "edge_family": "CPG",
+      "last_fmt": "#6 p=0.454 STMT app/main.c:9",
+      "path_idxs": [
+        8,
+        12,
+        13,
+        14,
+        15,
+        6
+      ]
+    },
+    {
+      "depth": 5,
+      "rank": 6,
+      "cum_score": 6.55264550447464,
+      "step_delta": 1.153730970621109,
+      "last_node": 6,
+      "edge_family": "CPG",
+      "last_fmt": "#6 p=0.454 STMT app/main.c:9",
+      "path_idxs": [
+        8,
+        12,
+        13,
+        14,
+        15,
+        6
+      ]
+    }
+  ],
+  [
+    {
+      "depth": 6,
+      "rank": 1,
+      "cum_score": 7.951556622982025,
+      "step_delta": 1.153730970621109,
+      "last_node": 6,
+      "edge_family": "CPG",
+      "last_fmt": "#6 p=0.454 STMT app/main.c:9",
+      "path_idxs": [
+        8,
+        12,
+        13,
+        14,
+        15,
+        17,
+        6
+      ]
+    },
+    {
+      "depth": 6,
+      "rank": 2,
+      "cum_score": 7.951556622982025,
+      "step_delta": 1.153730970621109,
+      "last_node": 6,
+      "edge_family": "CPG",
+      "last_fmt": "#6 p=0.454 STMT app/main.c:9",
+      "path_idxs": [
+        8,
+        12,
+        13,
+        14,
+        15,
+        17,
+        6
+      ]
+    },
+    {
+      "depth": 6,
+      "rank": 3,
+      "cum_score": 7.951556622982025,
+      "step_delta": 1.153730970621109,
+      "last_node": 6,
+      "edge_family": "CPG",
+      "last_fmt": "#6 p=0.454 STMT app/main.c:9",
+      "path_idxs": [
+        8,
+        12,
+        13,
+        14,
+        15,
+        17,
+        6
+      ]
+    },
+    {
+      "depth": 6,
+      "rank": 4,
+      "cum_score": 7.951556622982025,
+      "step_delta": 1.153730970621109,
+      "last_node": 6,
+      "edge_family": "CPG",
+      "last_fmt": "#6 p=0.454 STMT app/main.c:9",
+      "path_idxs": [
+        8,
+        12,
+        13,
+        14,
+        15,
+        17,
+        6
+      ]
+    },
+    {
+      "depth": 6,
+      "rank": 5,
+      "cum_score": 7.930007934570313,
+      "step_delta": 1.507845163345337,
+      "last_node": 12,
+      "edge_family": "DFG",
+      "last_fmt": "#12 p=0.508 ASSIGN app/main.c:16",
+      "path_idxs": [
+        14,
+        15,
+        17,
+        6,
+        7,
+        8,
+        12
+      ]
+    },
+    {
+      "depth": 6,
+      "rank": 6,
+      "cum_score": 7.930007934570313,
+      "step_delta": 1.507845163345337,
+      "last_node": 12,
+      "edge_family": "DFG",
+      "last_fmt": "#12 p=0.508 ASSIGN app/main.c:16",
+      "path_idxs": [
+        14,
+        15,
+        17,
+        6,
+        7,
+        8,
+        12
+      ]
+    }
+  ],
+  [
+    {
+      "depth": 7,
+      "rank": 1,
+      "cum_score": 8.863793635368348,
+      "step_delta": 0.912237012386322,
+      "last_node": 5,
+      "edge_family": "CFG",
+      "last_fmt": "#5 p=0.512 STMT app/main.c:8",
+      "path_idxs": [
+        8,
+        12,
+        13,
+        14,
+        15,
+        17,
+        6,
+        5
+      ]
+    },
+    {
+      "depth": 7,
+      "rank": 2,
+      "cum_score": 8.863793635368348,
+      "step_delta": 0.912237012386322,
+      "last_node": 5,
+      "edge_family": "CFG",
+      "last_fmt": "#5 p=0.512 STMT app/main.c:8",
+      "path_idxs": [
+        8,
+        12,
+        13,
+        14,
+        15,
+        17,
+        6,
+        5
+      ]
+    },
+    {
+      "depth": 7,
+      "rank": 3,
+      "cum_score": 8.863793635368348,
+      "step_delta": 0.912237012386322,
+      "last_node": 5,
+      "edge_family": "CFG",
+      "last_fmt": "#5 p=0.512 STMT app/main.c:8",
+      "path_idxs": [
+        8,
+        12,
+        13,
+        14,
+        15,
+        17,
+        6,
+        5
+      ]
+    },
+    {
+      "depth": 7,
+      "rank": 4,
+      "cum_score": 8.863793635368348,
+      "step_delta": 0.912237012386322,
+      "last_node": 5,
+      "edge_family": "CFG",
+      "last_fmt": "#5 p=0.512 STMT app/main.c:8",
+      "path_idxs": [
+        8,
+        12,
+        13,
+        14,
+        15,
+        17,
+        6,
+        5
+      ]
+    },
+    {
+      "depth": 7,
+      "rank": 5,
+      "cum_score": 8.82934113740921,
+      "step_delta": 0.8777845144271851,
+      "last_node": 7,
+      "edge_family": "CFG",
+      "last_fmt": "#7 p=0.478 ROOT app/main.c:11",
+      "path_idxs": [
+        8,
+        12,
+        13,
+        14,
+        15,
+        17,
+        6,
+        7
+      ]
+    },
+    {
+      "depth": 7,
+      "rank": 6,
+      "cum_score": 8.82934113740921,
+      "step_delta": 0.8777845144271851,
+      "last_node": 7,
+      "edge_family": "CFG",
+      "last_fmt": "#7 p=0.478 ROOT app/main.c:11",
+      "path_idxs": [
+        8,
+        12,
+        13,
+        14,
+        15,
+        17,
+        6,
+        7
+      ]
+    }
+  ],
+  [
+    {
+      "depth": 8,
+      "rank": 1,
+      "cum_score": 9.753525543212891,
+      "step_delta": 0.8897319078445435,
+      "last_node": 4,
+      "edge_family": "CFG",
+      "last_fmt": "#4 p=0.490 STMT app/main.c:7",
+      "path_idxs": [
+        8,
+        12,
+        13,
+        14,
+        15,
+        17,
+        6,
+        5,
+        4
+      ]
+    },
+    {
+      "depth": 8,
+      "rank": 2,
+      "cum_score": 9.753525543212891,
+      "step_delta": 0.8897319078445435,
+      "last_node": 4,
+      "edge_family": "CFG",
+      "last_fmt": "#4 p=0.490 STMT app/main.c:7",
+      "path_idxs": [
+        8,
+        12,
+        13,
+        14,
+        15,
+        17,
+        6,
+        5,
+        4
+      ]
+    },
+    {
+      "depth": 8,
+      "rank": 3,
+      "cum_score": 9.753525543212891,
+      "step_delta": 0.8897319078445435,
+      "last_node": 4,
+      "edge_family": "CFG",
+      "last_fmt": "#4 p=0.490 STMT app/main.c:7",
+      "path_idxs": [
+        8,
+        12,
+        13,
+        14,
+        15,
+        17,
+        6,
+        5,
+        4
+      ]
+    },
+    {
+      "depth": 8,
+      "rank": 4,
+      "cum_score": 9.753525543212891,
+      "step_delta": 0.8897319078445435,
+      "last_node": 4,
+      "edge_family": "CFG",
+      "last_fmt": "#4 p=0.490 STMT app/main.c:7",
+      "path_idxs": [
+        8,
+        12,
+        13,
+        14,
+        15,
+        17,
+        6,
+        5,
+        4
+      ]
+    },
+    {
+      "depth": 8,
+      "rank": 5,
+      "cum_score": 9.680904585123063,
+      "step_delta": 0.9214802026748657,
+      "last_node": 10,
+      "edge_family": "CFG",
+      "last_fmt": "#10 p=0.521 COND app/main.c:14",
+      "path_idxs": [
+        14,
+        15,
+        17,
+        6,
+        7,
+        8,
+        12,
+        11,
+        10
+      ]
+    },
+    {
+      "depth": 8,
+      "rank": 6,
+      "cum_score": 9.680904585123063,
+      "step_delta": 0.9214802026748657,
+      "last_node": 10,
+      "edge_family": "CFG",
+      "last_fmt": "#10 p=0.521 COND app/main.c:14",
+      "path_idxs": [
+        14,
+        15,
+        17,
+        6,
+        7,
+        8,
+        12,
+        11,
+        10
+      ]
+    }
+  ],
+  [
+    {
+      "depth": 9,
+      "rank": 1,
+      "cum_score": 10.639759880304338,
+      "step_delta": 0.886234337091446,
+      "last_node": 3,
+      "edge_family": "CFG",
+      "last_fmt": "#3 p=0.486 STMT app/main.c:6",
+      "path_idxs": [
+        8,
+        12,
+        13,
+        14,
+        15,
+        17,
+        6,
+        5,
+        4,
+        3
+      ]
+    },
+    {
+      "depth": 9,
+      "rank": 2,
+      "cum_score": 10.639759880304338,
+      "step_delta": 0.886234337091446,
+      "last_node": 3,
+      "edge_family": "CFG",
+      "last_fmt": "#3 p=0.486 STMT app/main.c:6",
+      "path_idxs": [
+        8,
+        12,
+        13,
+        14,
+        15,
+        17,
+        6,
+        5,
+        4,
+        3
+      ]
+    },
+    {
+      "depth": 9,
+      "rank": 3,
+      "cum_score": 10.639759880304338,
+      "step_delta": 0.886234337091446,
+      "last_node": 3,
+      "edge_family": "CFG",
+      "last_fmt": "#3 p=0.486 STMT app/main.c:6",
+      "path_idxs": [
+        8,
+        12,
+        13,
+        14,
+        15,
+        17,
+        6,
+        5,
+        4,
+        3
+      ]
+    },
+    {
+      "depth": 9,
+      "rank": 4,
+      "cum_score": 10.639759880304338,
+      "step_delta": 0.886234337091446,
+      "last_node": 3,
+      "edge_family": "CFG",
+      "last_fmt": "#3 p=0.486 STMT app/main.c:6",
+      "path_idxs": [
+        8,
+        12,
+        13,
+        14,
+        15,
+        17,
+        6,
+        5,
+        4,
+        3
+      ]
+    },
+    {
+      "depth": 9,
+      "rank": 5,
+      "cum_score": 10.580237787961961,
+      "step_delta": 0.9214802026748657,
+      "last_node": 10,
+      "edge_family": "CFG",
+      "last_fmt": "#10 p=0.521 COND app/main.c:14",
+      "path_idxs": [
+        14,
+        15,
+        17,
+        6,
+        7,
+        8,
+        13,
+        12,
+        11,
+        10
+      ]
+    },
+    {
+      "depth": 9,
+      "rank": 6,
+      "cum_score": 10.580237787961961,
+      "step_delta": 0.9214802026748657,
+      "last_node": 10,
+      "edge_family": "CFG",
+      "last_fmt": "#10 p=0.521 COND app/main.c:14",
+      "path_idxs": [
+        14,
+        15,
+        17,
+        6,
+        7,
+        8,
+        13,
+        12,
+        11,
+        10
+      ]
+    }
+  ],
+  [
+    {
+      "depth": 10,
+      "rank": 1,
+      "cum_score": 11.534713691473009,
+      "step_delta": 0.8949538111686707,
+      "last_node": 2,
+      "edge_family": "CFG",
+      "last_fmt": "#2 p=0.495 STMT app/main.c:4",
+      "path_idxs": [
+        8,
+        12,
+        13,
+        14,
+        15,
+        17,
+        6,
+        5,
+        4,
+        3,
+        2
+      ]
+    },
+    {
+      "depth": 10,
+      "rank": 2,
+      "cum_score": 11.534713691473009,
+      "step_delta": 0.8949538111686707,
+      "last_node": 2,
+      "edge_family": "CFG",
+      "last_fmt": "#2 p=0.495 STMT app/main.c:4",
+      "path_idxs": [
+        8,
+        12,
+        13,
+        14,
+        15,
+        17,
+        6,
+        5,
+        4,
+        3,
+        2
+      ]
+    },
+    {
+      "depth": 10,
+      "rank": 3,
+      "cum_score": 11.534713691473009,
+      "step_delta": 0.8949538111686707,
+      "last_node": 2,
+      "edge_family": "CFG",
+      "last_fmt": "#2 p=0.495 STMT app/main.c:4",
+      "path_idxs": [
+        8,
+        12,
+        13,
+        14,
+        15,
+        17,
+        6,
+        5,
+        4,
+        3,
+        2
+      ]
+    },
+    {
+      "depth": 10,
+      "rank": 4,
+      "cum_score": 11.534713691473009,
+      "step_delta": 0.8949538111686707,
+      "last_node": 2,
+      "edge_family": "CFG",
+      "last_fmt": "#2 p=0.495 STMT app/main.c:4",
+      "path_idxs": [
+        8,
+        12,
+        13,
+        14,
+        15,
+        17,
+        6,
+        5,
+        4,
+        3,
+        2
+      ]
+    },
+    {
+      "depth": 10,
+      "rank": 5,
+      "cum_score": 11.411816006898881,
+      "step_delta": 0.8315782189369202,
+      "last_node": 9,
+      "edge_family": "CFG",
+      "last_fmt": "#9 p=0.432 ROOT app/main.c:13",
+      "path_idxs": [
+        14,
+        15,
+        17,
+        6,
+        7,
+        8,
+        13,
+        12,
+        11,
+        10,
+        9
+      ]
+    },
+    {
+      "depth": 10,
+      "rank": 6,
+      "cum_score": 11.411816006898881,
+      "step_delta": 0.8315782189369202,
+      "last_node": 9,
+      "edge_family": "CFG",
+      "last_fmt": "#9 p=0.432 ROOT app/main.c:13",
+      "path_idxs": [
+        14,
+        15,
+        17,
+        6,
+        7,
+        8,
+        13,
+        12,
+        11,
+        10,
+        9
+      ]
+    }
+  ],
+  [
+    {
+      "depth": 11,
+      "rank": 1,
+      "cum_score": 12.42484584450722,
+      "step_delta": 0.8901321530342102,
+      "last_node": 1,
+      "edge_family": "CFG",
+      "last_fmt": "#1 p=0.490 STMT app/main.c:3",
+      "path_idxs": [
+        8,
+        12,
+        13,
+        14,
+        15,
+        17,
+        6,
+        5,
+        4,
+        3,
+        2,
+        1
+      ]
+    },
+    {
+      "depth": 11,
+      "rank": 2,
+      "cum_score": 12.42484584450722,
+      "step_delta": 0.8901321530342102,
+      "last_node": 1,
+      "edge_family": "CFG",
+      "last_fmt": "#1 p=0.490 STMT app/main.c:3",
+      "path_idxs": [
+        8,
+        12,
+        13,
+        14,
+        15,
+        17,
+        6,
+        5,
+        4,
+        3,
+        2,
+        1
+      ]
+    },
+    {
+      "depth": 11,
+      "rank": 3,
+      "cum_score": 12.42484584450722,
+      "step_delta": 0.8901321530342102,
+      "last_node": 1,
+      "edge_family": "CFG",
+      "last_fmt": "#1 p=0.490 STMT app/main.c:3",
+      "path_idxs": [
+        8,
+        12,
+        13,
+        14,
+        15,
+        17,
+        6,
+        5,
+        4,
+        3,
+        2,
+        1
+      ]
+    },
+    {
+      "depth": 11,
+      "rank": 4,
+      "cum_score": 12.42484584450722,
+      "step_delta": 0.8901321530342102,
+      "last_node": 1,
+      "edge_family": "CFG",
+      "last_fmt": "#1 p=0.490 STMT app/main.c:3",
+      "path_idxs": [
+        8,
+        12,
+        13,
+        14,
+        15,
+        17,
+        6,
+        5,
+        4,
+        3,
+        2,
+        1
+      ]
+    }
+  ],
+  [
+    {
+      "depth": 12,
+      "rank": 1,
+      "cum_score": 13.368965500593188,
+      "step_delta": 0.944119656085968,
+      "last_node": 0,
+      "edge_family": "CFG",
+      "last_fmt": "#0 p=0.544 STMT app/main.c:2",
+      "path_idxs": [
+        8,
+        12,
+        13,
+        14,
+        15,
+        17,
+        6,
+        5,
+        4,
+        3,
+        2,
+        1,
+        0
+      ]
+    },
+    {
+      "depth": 12,
+      "rank": 2,
+      "cum_score": 13.368965500593188,
+      "step_delta": 0.944119656085968,
+      "last_node": 0,
+      "edge_family": "CFG",
+      "last_fmt": "#0 p=0.544 STMT app/main.c:2",
+      "path_idxs": [
+        8,
+        12,
+        13,
+        14,
+        15,
+        17,
+        6,
+        5,
+        4,
+        3,
+        2,
+        1,
+        0
+      ]
+    },
+    {
+      "depth": 12,
+      "rank": 3,
+      "cum_score": 13.368965500593188,
+      "step_delta": 0.944119656085968,
+      "last_node": 0,
+      "edge_family": "CFG",
+      "last_fmt": "#0 p=0.544 STMT app/main.c:2",
+      "path_idxs": [
+        8,
+        12,
+        13,
+        14,
+        15,
+        17,
+        6,
+        5,
+        4,
+        3,
+        2,
+        1,
+        0
+      ]
+    },
+    {
+      "depth": 12,
+      "rank": 4,
+      "cum_score": 13.368965500593188,
+      "step_delta": 0.944119656085968,
+      "last_node": 0,
+      "edge_family": "CFG",
+      "last_fmt": "#0 p=0.544 STMT app/main.c:2",
+      "path_idxs": [
+        8,
+        12,
+        13,
+        14,
+        15,
+        17,
+        6,
+        5,
+        4,
+        3,
+        2,
+        1,
+        0
+      ]
+    }
+  ]
+]

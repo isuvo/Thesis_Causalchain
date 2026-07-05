@@ -1,0 +1,25 @@
+Root → … → Sink (hops=7)
+
+[ROOT] P=0.325  char* s1 = stage_clean(buf);
+   (label=BLOCK, file=app/main4.c, line=24)
+   └──[CFG]
+[→] P=0.422  char* s2 = stage_route(s1);
+   (label=BLOCK, file=app/main4.c, line=25)
+   └──[CFG]
+[→] P=0.352  stage_execute(s2);
+   (label=CALL, file=app/main4.c, line=26)
+   └──[CPG]
+[→] P=0.419  void stage_execute(char* cmd) {
+   (label=BLOCK, file=lib/shell4.c, line=33)
+   └──[CFG]
+[→] P=0.501  }
+   (label=BLOCK, file=lib/shell4.c, line=31)
+   └──[CFG]
+[→] P=0.441  return c;
+   (label=BLOCK, file=lib/shell4.c, line=30)
+   └──[DFG]
+[→] P=0.451  char c = in[i];
+   (label=BLOCK, file=lib/process4.c, line=38)
+   └──[DFG]
+[SINK] P=0.547  clean_buf3[i] = (char)(c - 'A' + 'a');
+   (label=BLOCK, file=lib/process4.c, line=40)

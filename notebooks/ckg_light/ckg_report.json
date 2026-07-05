@@ -1,0 +1,131 @@
+{
+  "meta": {
+    "created_at": "2025-10-22 03:33:03",
+    "graphs_used": 3438,
+    "mined_from": "C:\\Users\\MSHUVO23\\Desktop\\Thesis Research\\Thesis-causal-vul\\notebooks\\Dataset\\train\\hetero_ready_gcbert"
+  },
+  "relations": [
+    "RET2LHS",
+    "RET2CALL",
+    "CALL",
+    "DFG_THIN",
+    "ARG2PARAM"
+  ],
+  "edge_prior_count": {
+    "RET2LHS": 0,
+    "RET2CALL": 0,
+    "CALL": 0,
+    "DFG_THIN": 3,
+    "ARG2PARAM": 0
+  },
+  "edge_prior_prob": {
+    "RET2LHS": 0.0,
+    "RET2CALL": 0.0,
+    "CALL": 0.0,
+    "DFG_THIN": 1.0,
+    "ARG2PARAM": 0.0
+  },
+  "bigram_count": {
+    "RET2LHS": {
+      "RET2LHS": 0,
+      "RET2CALL": 0,
+      "CALL": 0,
+      "DFG_THIN": 0,
+      "ARG2PARAM": 0
+    },
+    "RET2CALL": {
+      "RET2LHS": 0,
+      "RET2CALL": 0,
+      "CALL": 0,
+      "DFG_THIN": 0,
+      "ARG2PARAM": 0
+    },
+    "CALL": {
+      "RET2LHS": 0,
+      "RET2CALL": 0,
+      "CALL": 0,
+      "DFG_THIN": 0,
+      "ARG2PARAM": 0
+    },
+    "DFG_THIN": {
+      "RET2LHS": 0,
+      "RET2CALL": 0,
+      "CALL": 0,
+      "DFG_THIN": 1,
+      "ARG2PARAM": 0
+    },
+    "ARG2PARAM": {
+      "RET2LHS": 0,
+      "RET2CALL": 0,
+      "CALL": 0,
+      "DFG_THIN": 0,
+      "ARG2PARAM": 0
+    }
+  },
+  "bigram_prob": {
+    "RET2LHS": {
+      "RET2LHS": 0.0,
+      "RET2CALL": 0.0,
+      "CALL": 0.0,
+      "DFG_THIN": 0.0,
+      "ARG2PARAM": 0.0
+    },
+    "RET2CALL": {
+      "RET2LHS": 0.0,
+      "RET2CALL": 0.0,
+      "CALL": 0.0,
+      "DFG_THIN": 0.0,
+      "ARG2PARAM": 0.0
+    },
+    "CALL": {
+      "RET2LHS": 0.0,
+      "RET2CALL": 0.0,
+      "CALL": 0.0,
+      "DFG_THIN": 0.0,
+      "ARG2PARAM": 0.0
+    },
+    "DFG_THIN": {
+      "RET2LHS": 0.0,
+      "RET2CALL": 0.0,
+      "CALL": 0.0,
+      "DFG_THIN": 1.0,
+      "ARG2PARAM": 0.0
+    },
+    "ARG2PARAM": {
+      "RET2LHS": 0.0,
+      "RET2CALL": 0.0,
+      "CALL": 0.0,
+      "DFG_THIN": 0.0,
+      "ARG2PARAM": 0.0
+    }
+  },
+  "start_count": {
+    "RET2LHS": 0,
+    "RET2CALL": 0,
+    "CALL": 0,
+    "DFG_THIN": 2,
+    "ARG2PARAM": 0
+  },
+  "end_count": {
+    "RET2LHS": 0,
+    "RET2CALL": 0,
+    "CALL": 0,
+    "DFG_THIN": 2,
+    "ARG2PARAM": 0
+  },
+  "hop_histogram": {
+    "0": 3436,
+    "1": 1,
+    "2": 1
+  },
+  "motifs_topk": [
+    {
+      "count": 1,
+      "rels": [
+        "DFG_THIN",
+        "DFG_THIN",
+        "DFG_THIN"
+      ]
+    }
+  ]
+}

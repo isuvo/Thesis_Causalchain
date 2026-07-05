@@ -1,0 +1,21 @@
+idx,_id,file,lineNumber,_label,code,P
+0,0,toy.c,2,BLOCK,#include <stdio.h>,0.5086453557014465
+1,1,toy.c,3,BLOCK,#include <string.h>,0.5128358602523804
+2,2,toy.c,5,BLOCK,char* pass(char* s);,0.4877427816390991
+3,3,toy.c,6,BLOCK,void sink(char* cmd);,0.4346471428871155
+4,4,toy.c,8,BLOCK,"int main(int argc, char** argv){",0.48373621702194214
+5,5,toy.c,9,BLOCK,char b[64];,0.4764055013656616
+6,6,toy.c,10,CALL,if(argc>1){,0.4356319308280945
+7,7,toy.c,11,CALL,"strncpy(b, argv[1], 63);",0.410902738571167
+8,8,toy.c,12,BLOCK,b[63]=0;,0.48525723814964294
+9,9,toy.c,13,BLOCK,char* z = pass(b);,0.5338455438613892
+10,10,toy.c,14,CALL,sink(z);,0.4410006105899811
+11,11,toy.c,15,BLOCK,},0.4070468842983246
+12,12,toy.c,16,BLOCK,return 0;,0.47909656167030334
+13,13,toy.c,17,BLOCK,},0.450653076171875
+14,14,toy.c,19,BLOCK,char* pass(char* s){,0.38791364431381226
+15,15,toy.c,20,BLOCK,return s;,0.45005449652671814
+16,16,toy.c,21,BLOCK,},0.4577893018722534
+17,17,toy.c,22,BLOCK,void sink(char* cmd){,0.44674795866012573
+18,18,toy.c,23,CALL,puts(cmd); // model must decide; P drives sink choice,0.43542224168777466
+19,19,toy.c,24,BLOCK,},0.5293221473693848

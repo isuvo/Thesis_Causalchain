@@ -1,0 +1,80 @@
+[depth 1]
+  # 1  score=2.132  step=+1.526  DFG  #29 p=0.526 CALL:snprintf lib/wrap.c:12
+  # 2  score=2.132  step=+1.526  DFG  #29 p=0.526 CALL:snprintf lib/wrap.c:12
+  # 3  score=2.130  step=+1.524  DFG  #30 p=0.524 RET lib/wrap.c:13
+  # 4  score=2.129  step=+1.538  DFG  #42 p=0.538 RET lib/wrap.c:27
+  # 5  score=2.110  step=+1.527  DFG  #37 p=0.527 RET lib/wrap.c:21
+  # 6  score=2.087  step=+1.508  DFG  #12 p=0.508 ASSIGN app/main.c:16
+[depth 2]
+  # 1  score=3.411  step=+1.399  DFG  #17 p=0.399 CALL:run_system app/main.c:21
+  # 2  score=3.411  step=+1.399  DFG  #17 p=0.399 CALL:run_system app/main.c:21
+  # 3  score=3.166  step=+1.154  CPG  #6 p=0.454 STMT app/main.c:9
+  # 4  score=3.166  step=+1.154  CPG  #6 p=0.454 STMT app/main.c:9
+  # 5  score=3.097  step=+1.154  CPG  #6 p=0.454 STMT app/main.c:9
+  # 6  score=3.056  step=+0.924  CFG  #30 p=0.524 RET lib/wrap.c:13
+[depth 3]
+  # 1  score=4.565  step=+1.154  CPG  #6 p=0.454 STMT app/main.c:9
+  # 2  score=4.565  step=+1.154  CPG  #6 p=0.454 STMT app/main.c:9
+  # 3  score=4.316  step=+0.904  CFG  #16 p=0.504 STMT app/main.c:20
+  # 4  score=4.316  step=+0.904  CFG  #16 p=0.504 STMT app/main.c:20
+  # 5  score=4.281  step=+0.869  CFG  #18 p=0.469 STMT app/main.c:22
+  # 6  score=4.281  step=+0.869  CFG  #18 p=0.469 STMT app/main.c:22
+[depth 4]
+  # 1  score=5.477  step=+0.912  CFG  #5 p=0.512 STMT app/main.c:8
+  # 2  score=5.477  step=+0.912  CFG  #5 p=0.512 STMT app/main.c:8
+  # 3  score=5.443  step=+0.878  CFG  #7 p=0.478 ROOT app/main.c:11
+  # 4  score=5.443  step=+0.878  CFG  #7 p=0.478 ROOT app/main.c:11
+  # 5  score=5.399  step=+1.545  DFG  #15 p=0.545 ASSIGN app/main.c:19
+  # 6  score=5.399  step=+1.545  DFG  #15 p=0.545 ASSIGN app/main.c:19
+[depth 5]
+  # 1  score=6.798  step=+1.399  DFG  #17 p=0.399 CALL:run_system app/main.c:21
+  # 2  score=6.798  step=+1.399  DFG  #17 p=0.399 CALL:run_system app/main.c:21
+  # 3  score=6.798  step=+1.399  DFG  #17 p=0.399 CALL:run_system app/main.c:21
+  # 4  score=6.798  step=+1.399  DFG  #17 p=0.399 CALL:run_system app/main.c:21
+  # 5  score=6.553  step=+1.154  CPG  #6 p=0.454 STMT app/main.c:9
+  # 6  score=6.553  step=+1.154  CPG  #6 p=0.454 STMT app/main.c:9
+[depth 6]
+  # 1  score=7.952  step=+1.154  CPG  #6 p=0.454 STMT app/main.c:9
+  # 2  score=7.952  step=+1.154  CPG  #6 p=0.454 STMT app/main.c:9
+  # 3  score=7.952  step=+1.154  CPG  #6 p=0.454 STMT app/main.c:9
+  # 4  score=7.952  step=+1.154  CPG  #6 p=0.454 STMT app/main.c:9
+  # 5  score=7.930  step=+1.508  DFG  #12 p=0.508 ASSIGN app/main.c:16
+  # 6  score=7.930  step=+1.508  DFG  #12 p=0.508 ASSIGN app/main.c:16
+[depth 7]
+  # 1  score=8.864  step=+0.912  CFG  #5 p=0.512 STMT app/main.c:8
+  # 2  score=8.864  step=+0.912  CFG  #5 p=0.512 STMT app/main.c:8
+  # 3  score=8.864  step=+0.912  CFG  #5 p=0.512 STMT app/main.c:8
+  # 4  score=8.864  step=+0.912  CFG  #5 p=0.512 STMT app/main.c:8
+  # 5  score=8.829  step=+0.878  CFG  #7 p=0.478 ROOT app/main.c:11
+  # 6  score=8.829  step=+0.878  CFG  #7 p=0.478 ROOT app/main.c:11
+[depth 8]
+  # 1  score=9.754  step=+0.890  CFG  #4 p=0.490 STMT app/main.c:7
+  # 2  score=9.754  step=+0.890  CFG  #4 p=0.490 STMT app/main.c:7
+  # 3  score=9.754  step=+0.890  CFG  #4 p=0.490 STMT app/main.c:7
+  # 4  score=9.754  step=+0.890  CFG  #4 p=0.490 STMT app/main.c:7
+  # 5  score=9.681  step=+0.921  CFG  #10 p=0.521 COND app/main.c:14
+  # 6  score=9.681  step=+0.921  CFG  #10 p=0.521 COND app/main.c:14
+[depth 9]
+  # 1  score=10.640  step=+0.886  CFG  #3 p=0.486 STMT app/main.c:6
+  # 2  score=10.640  step=+0.886  CFG  #3 p=0.486 STMT app/main.c:6
+  # 3  score=10.640  step=+0.886  CFG  #3 p=0.486 STMT app/main.c:6
+  # 4  score=10.640  step=+0.886  CFG  #3 p=0.486 STMT app/main.c:6
+  # 5  score=10.580  step=+0.921  CFG  #10 p=0.521 COND app/main.c:14
+  # 6  score=10.580  step=+0.921  CFG  #10 p=0.521 COND app/main.c:14
+[depth 10]
+  # 1  score=11.535  step=+0.895  CFG  #2 p=0.495 STMT app/main.c:4
+  # 2  score=11.535  step=+0.895  CFG  #2 p=0.495 STMT app/main.c:4
+  # 3  score=11.535  step=+0.895  CFG  #2 p=0.495 STMT app/main.c:4
+  # 4  score=11.535  step=+0.895  CFG  #2 p=0.495 STMT app/main.c:4
+  # 5  score=11.412  step=+0.832  CFG  #9 p=0.432 ROOT app/main.c:13
+  # 6  score=11.412  step=+0.832  CFG  #9 p=0.432 ROOT app/main.c:13
+[depth 11]
+  # 1  score=12.425  step=+0.890  CFG  #1 p=0.490 STMT app/main.c:3
+  # 2  score=12.425  step=+0.890  CFG  #1 p=0.490 STMT app/main.c:3
+  # 3  score=12.425  step=+0.890  CFG  #1 p=0.490 STMT app/main.c:3
+  # 4  score=12.425  step=+0.890  CFG  #1 p=0.490 STMT app/main.c:3
+[depth 12]
+  # 1  score=13.369  step=+0.944  CFG  #0 p=0.544 STMT app/main.c:2
+  # 2  score=13.369  step=+0.944  CFG  #0 p=0.544 STMT app/main.c:2
+  # 3  score=13.369  step=+0.944  CFG  #0 p=0.544 STMT app/main.c:2
+  # 4  score=13.369  step=+0.944  CFG  #0 p=0.544 STMT app/main.c:2

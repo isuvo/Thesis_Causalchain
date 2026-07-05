@@ -1,0 +1,1042 @@
+{
+  "nodes": [
+    {
+      "_id": 0,
+      "file": "demo2/main.c",
+      "line": 2,
+      "code": "#include <stdio.h>",
+      "_label": "STMT",
+      "nodeType": "STMT"
+    },
+    {
+      "_id": 1,
+      "file": "demo2/main.c",
+      "line": 3,
+      "code": "#include <stdlib.h>",
+      "_label": "STMT",
+      "nodeType": "STMT"
+    },
+    {
+      "_id": 2,
+      "file": "demo2/main.c",
+      "line": 4,
+      "code": "#include <string.h>",
+      "_label": "STMT",
+      "nodeType": "STMT"
+    },
+    {
+      "_id": 3,
+      "file": "demo2/main.c",
+      "line": 6,
+      "code": "extern char* stage1_normalize(const char* in);",
+      "_label": "STMT",
+      "nodeType": "STMT"
+    },
+    {
+      "_id": 4,
+      "file": "demo2/main.c",
+      "line": 7,
+      "code": "extern char* stage2_expand(char* in);",
+      "_label": "STMT",
+      "nodeType": "STMT"
+    },
+    {
+      "_id": 5,
+      "file": "demo2/main.c",
+      "line": 8,
+      "code": "extern char* stage3_flag(char* in);",
+      "_label": "STMT",
+      "nodeType": "STMT"
+    },
+    {
+      "_id": 6,
+      "file": "demo2/main.c",
+      "line": 9,
+      "code": "extern void  do_exec(char* cmd);",
+      "_label": "STMT",
+      "nodeType": "STMT"
+    },
+    {
+      "_id": 7,
+      "file": "demo2/main.c",
+      "line": 11,
+      "code": "int main(void) {",
+      "_label": "STMT",
+      "nodeType": "STMT"
+    },
+    {
+      "_id": 8,
+      "file": "demo2/main.c",
+      "line": 12,
+      "code": "char in[256];",
+      "_label": "DECL",
+      "nodeType": "DECL"
+    },
+    {
+      "_id": 9,
+      "file": "demo2/main.c",
+      "line": 13,
+      "code": "char* p = NULL;",
+      "_label": "ASSIGN",
+      "nodeType": "ASSIGN"
+    },
+    {
+      "_id": 10,
+      "file": "demo2/main.c",
+      "line": 14,
+      "code": "if (fgets(in, sizeof(in), stdin)) {",
+      "_label": "COND",
+      "nodeType": "COND"
+    },
+    {
+      "_id": 11,
+      "file": "demo2/main.c",
+      "line": 15,
+      "code": "p = stage1_normalize(in);",
+      "_label": "ASSIGN",
+      "nodeType": "ASSIGN"
+    },
+    {
+      "_id": 12,
+      "file": "demo2/main.c",
+      "line": 16,
+      "code": "p = stage2_expand(p);",
+      "_label": "ASSIGN",
+      "nodeType": "ASSIGN"
+    },
+    {
+      "_id": 13,
+      "file": "demo2/main.c",
+      "line": 17,
+      "code": "p = stage3_flag(p);",
+      "_label": "ASSIGN",
+      "nodeType": "ASSIGN"
+    },
+    {
+      "_id": 14,
+      "file": "demo2/main.c",
+      "line": 18,
+      "code": "do_exec(p);",
+      "_label": "CALL:do_exec",
+      "nodeType": "CALL:do_exec"
+    },
+    {
+      "_id": 15,
+      "file": "demo2/main.c",
+      "line": 19,
+      "code": "}",
+      "_label": "STMT",
+      "nodeType": "STMT"
+    },
+    {
+      "_id": 16,
+      "file": "demo2/main.c",
+      "line": 20,
+      "code": "return 0;",
+      "_label": "RET",
+      "nodeType": "RET"
+    },
+    {
+      "_id": 17,
+      "file": "demo2/main.c",
+      "line": 21,
+      "code": "}",
+      "_label": "STMT",
+      "nodeType": "STMT"
+    },
+    {
+      "_id": 18,
+      "file": "demo2/transform.c",
+      "line": 2,
+      "code": "#include <stdio.h>",
+      "_label": "STMT",
+      "nodeType": "STMT"
+    },
+    {
+      "_id": 19,
+      "file": "demo2/transform.c",
+      "line": 3,
+      "code": "#include <stdlib.h>",
+      "_label": "STMT",
+      "nodeType": "STMT"
+    },
+    {
+      "_id": 20,
+      "file": "demo2/transform.c",
+      "line": 4,
+      "code": "#include <string.h>",
+      "_label": "STMT",
+      "nodeType": "STMT"
+    },
+    {
+      "_id": 21,
+      "file": "demo2/transform.c",
+      "line": 6,
+      "code": "static char buf1[300];",
+      "_label": "DECL",
+      "nodeType": "DECL"
+    },
+    {
+      "_id": 22,
+      "file": "demo2/transform.c",
+      "line": 7,
+      "code": "static char buf2[300];",
+      "_label": "DECL",
+      "nodeType": "DECL"
+    },
+    {
+      "_id": 23,
+      "file": "demo2/transform.c",
+      "line": 8,
+      "code": "static char buf3[300];",
+      "_label": "DECL",
+      "nodeType": "DECL"
+    },
+    {
+      "_id": 24,
+      "file": "demo2/transform.c",
+      "line": 10,
+      "code": "char* stage1_normalize(const char* in) {",
+      "_label": "STMT",
+      "nodeType": "STMT"
+    },
+    {
+      "_id": 25,
+      "file": "demo2/transform.c",
+      "line": 11,
+      "code": "snprintf(buf1, sizeof(buf1), \"%s\", in);",
+      "_label": "CALL:snprintf",
+      "nodeType": "CALL:snprintf"
+    },
+    {
+      "_id": 26,
+      "file": "demo2/transform.c",
+      "line": 12,
+      "code": "return buf1;",
+      "_label": "RET",
+      "nodeType": "RET"
+    },
+    {
+      "_id": 27,
+      "file": "demo2/transform.c",
+      "line": 13,
+      "code": "}",
+      "_label": "STMT",
+      "nodeType": "STMT"
+    },
+    {
+      "_id": 28,
+      "file": "demo2/transform.c",
+      "line": 15,
+      "code": "char* stage2_expand(char* in) {",
+      "_label": "STMT",
+      "nodeType": "STMT"
+    },
+    {
+      "_id": 29,
+      "file": "demo2/transform.c",
+      "line": 16,
+      "code": "strcpy(buf2, \"sh -c \");",
+      "_label": "CALL:strcpy",
+      "nodeType": "CALL:strcpy"
+    },
+    {
+      "_id": 30,
+      "file": "demo2/transform.c",
+      "line": 17,
+      "code": "strcat(buf2, in);",
+      "_label": "CALL:strcat",
+      "nodeType": "CALL:strcat"
+    },
+    {
+      "_id": 31,
+      "file": "demo2/transform.c",
+      "line": 18,
+      "code": "return buf2;",
+      "_label": "RET",
+      "nodeType": "RET"
+    },
+    {
+      "_id": 32,
+      "file": "demo2/transform.c",
+      "line": 19,
+      "code": "}",
+      "_label": "STMT",
+      "nodeType": "STMT"
+    },
+    {
+      "_id": 33,
+      "file": "demo2/transform.c",
+      "line": 21,
+      "code": "char* stage3_flag(char* in) {",
+      "_label": "STMT",
+      "nodeType": "STMT"
+    },
+    {
+      "_id": 34,
+      "file": "demo2/transform.c",
+      "line": 22,
+      "code": "sprintf(buf3, \"%s %s\", in, \"--debug\");",
+      "_label": "CALL:sprintf",
+      "nodeType": "CALL:sprintf"
+    },
+    {
+      "_id": 35,
+      "file": "demo2/transform.c",
+      "line": 23,
+      "code": "return buf3;",
+      "_label": "RET",
+      "nodeType": "RET"
+    },
+    {
+      "_id": 36,
+      "file": "demo2/transform.c",
+      "line": 24,
+      "code": "}",
+      "_label": "STMT",
+      "nodeType": "STMT"
+    },
+    {
+      "_id": 37,
+      "file": "demo2/sink.c",
+      "line": 2,
+      "code": "#include <stdio.h>",
+      "_label": "STMT",
+      "nodeType": "STMT"
+    },
+    {
+      "_id": 38,
+      "file": "demo2/sink.c",
+      "line": 3,
+      "code": "#include <stdlib.h>",
+      "_label": "STMT",
+      "nodeType": "STMT"
+    },
+    {
+      "_id": 39,
+      "file": "demo2/sink.c",
+      "line": 5,
+      "code": "void do_exec(char* cmd) {",
+      "_label": "STMT",
+      "nodeType": "STMT"
+    },
+    {
+      "_id": 40,
+      "file": "demo2/sink.c",
+      "line": 6,
+      "code": "system(cmd);",
+      "_label": "CALL:system",
+      "nodeType": "CALL:system"
+    },
+    {
+      "_id": 41,
+      "file": "demo2/sink.c",
+      "line": 7,
+      "code": "}",
+      "_label": "STMT",
+      "nodeType": "STMT"
+    }
+  ],
+  "edges": [
+    {
+      "type": "CFG",
+      "src": 0,
+      "dst": 1
+    },
+    {
+      "type": "CFG",
+      "src": 1,
+      "dst": 2
+    },
+    {
+      "type": "CFG",
+      "src": 2,
+      "dst": 3
+    },
+    {
+      "type": "CFG",
+      "src": 3,
+      "dst": 4
+    },
+    {
+      "type": "CFG",
+      "src": 4,
+      "dst": 5
+    },
+    {
+      "type": "CFG",
+      "src": 5,
+      "dst": 6
+    },
+    {
+      "type": "CFG",
+      "src": 6,
+      "dst": 7
+    },
+    {
+      "type": "CFG",
+      "src": 7,
+      "dst": 8
+    },
+    {
+      "type": "CFG",
+      "src": 8,
+      "dst": 9
+    },
+    {
+      "type": "CFG",
+      "src": 9,
+      "dst": 10
+    },
+    {
+      "type": "CFG",
+      "src": 10,
+      "dst": 11
+    },
+    {
+      "type": "CFG",
+      "src": 11,
+      "dst": 12
+    },
+    {
+      "type": "CFG",
+      "src": 12,
+      "dst": 13
+    },
+    {
+      "type": "CFG",
+      "src": 13,
+      "dst": 14
+    },
+    {
+      "type": "CFG",
+      "src": 14,
+      "dst": 15
+    },
+    {
+      "type": "CFG",
+      "src": 15,
+      "dst": 16
+    },
+    {
+      "type": "CFG",
+      "src": 16,
+      "dst": 17
+    },
+    {
+      "type": "CFG",
+      "src": 18,
+      "dst": 19
+    },
+    {
+      "type": "CFG",
+      "src": 19,
+      "dst": 20
+    },
+    {
+      "type": "CFG",
+      "src": 20,
+      "dst": 21
+    },
+    {
+      "type": "CFG",
+      "src": 21,
+      "dst": 22
+    },
+    {
+      "type": "CFG",
+      "src": 22,
+      "dst": 23
+    },
+    {
+      "type": "CFG",
+      "src": 23,
+      "dst": 24
+    },
+    {
+      "type": "CFG",
+      "src": 24,
+      "dst": 25
+    },
+    {
+      "type": "CFG",
+      "src": 25,
+      "dst": 26
+    },
+    {
+      "type": "CFG",
+      "src": 26,
+      "dst": 27
+    },
+    {
+      "type": "CFG",
+      "src": 27,
+      "dst": 28
+    },
+    {
+      "type": "CFG",
+      "src": 28,
+      "dst": 29
+    },
+    {
+      "type": "CFG",
+      "src": 29,
+      "dst": 30
+    },
+    {
+      "type": "CFG",
+      "src": 30,
+      "dst": 31
+    },
+    {
+      "type": "CFG",
+      "src": 31,
+      "dst": 32
+    },
+    {
+      "type": "CFG",
+      "src": 32,
+      "dst": 33
+    },
+    {
+      "type": "CFG",
+      "src": 33,
+      "dst": 34
+    },
+    {
+      "type": "CFG",
+      "src": 34,
+      "dst": 35
+    },
+    {
+      "type": "CFG",
+      "src": 35,
+      "dst": 36
+    },
+    {
+      "type": "CFG",
+      "src": 37,
+      "dst": 38
+    },
+    {
+      "type": "CFG",
+      "src": 38,
+      "dst": 39
+    },
+    {
+      "type": "CFG",
+      "src": 39,
+      "dst": 40
+    },
+    {
+      "type": "CFG",
+      "src": 40,
+      "dst": 41
+    },
+    {
+      "type": "DFG",
+      "src": 8,
+      "dst": 10
+    },
+    {
+      "type": "DFG",
+      "src": 8,
+      "dst": 10
+    },
+    {
+      "type": "DFG",
+      "src": 8,
+      "dst": 11
+    },
+    {
+      "type": "DFG",
+      "src": 11,
+      "dst": 12
+    },
+    {
+      "type": "DFG",
+      "src": 11,
+      "dst": 12
+    },
+    {
+      "type": "DFG",
+      "src": 12,
+      "dst": 13
+    },
+    {
+      "type": "DFG",
+      "src": 12,
+      "dst": 13
+    },
+    {
+      "type": "DFG",
+      "src": 13,
+      "dst": 14
+    },
+    {
+      "type": "DFG",
+      "src": 21,
+      "dst": 25
+    },
+    {
+      "type": "DFG",
+      "src": 21,
+      "dst": 25
+    },
+    {
+      "type": "DFG",
+      "src": 21,
+      "dst": 26
+    },
+    {
+      "type": "DFG",
+      "src": 22,
+      "dst": 29
+    },
+    {
+      "type": "DFG",
+      "src": 22,
+      "dst": 30
+    },
+    {
+      "type": "DFG",
+      "src": 22,
+      "dst": 31
+    },
+    {
+      "type": "DFG",
+      "src": 23,
+      "dst": 34
+    },
+    {
+      "type": "DFG",
+      "src": 23,
+      "dst": 35
+    },
+    {
+      "type": "CALL",
+      "src": 10,
+      "dst": 10
+    },
+    {
+      "type": "ARG2PARAM",
+      "src": 8,
+      "dst": 10
+    },
+    {
+      "type": "ARG2PARAM",
+      "src": 8,
+      "dst": 10
+    },
+    {
+      "type": "CALL",
+      "src": 14,
+      "dst": 6
+    },
+    {
+      "type": "ARG2PARAM",
+      "src": 13,
+      "dst": 6
+    },
+    {
+      "type": "CALL",
+      "src": 25,
+      "dst": 25
+    },
+    {
+      "type": "ARG2PARAM",
+      "src": 21,
+      "dst": 25
+    },
+    {
+      "type": "ARG2PARAM",
+      "src": 21,
+      "dst": 25
+    },
+    {
+      "type": "CALL",
+      "src": 29,
+      "dst": 29
+    },
+    {
+      "type": "ARG2PARAM",
+      "src": 22,
+      "dst": 29
+    },
+    {
+      "type": "CALL",
+      "src": 30,
+      "dst": 30
+    },
+    {
+      "type": "ARG2PARAM",
+      "src": 22,
+      "dst": 30
+    },
+    {
+      "type": "CALL",
+      "src": 34,
+      "dst": 34
+    },
+    {
+      "type": "ARG2PARAM",
+      "src": 23,
+      "dst": 34
+    },
+    {
+      "type": "CALL",
+      "src": 40,
+      "dst": 40
+    },
+    {
+      "type": "DFG_REV",
+      "src": 10,
+      "dst": 8
+    },
+    {
+      "type": "DFG_REV",
+      "src": 10,
+      "dst": 8
+    },
+    {
+      "type": "DFG_REV",
+      "src": 11,
+      "dst": 8
+    },
+    {
+      "type": "DFG_REV",
+      "src": 12,
+      "dst": 11
+    },
+    {
+      "type": "DFG_REV",
+      "src": 12,
+      "dst": 11
+    },
+    {
+      "type": "DFG_REV",
+      "src": 13,
+      "dst": 12
+    },
+    {
+      "type": "DFG_REV",
+      "src": 13,
+      "dst": 12
+    },
+    {
+      "type": "DFG_REV",
+      "src": 14,
+      "dst": 13
+    },
+    {
+      "type": "DFG_REV",
+      "src": 25,
+      "dst": 21
+    },
+    {
+      "type": "DFG_REV",
+      "src": 25,
+      "dst": 21
+    },
+    {
+      "type": "DFG_REV",
+      "src": 26,
+      "dst": 21
+    },
+    {
+      "type": "DFG_REV",
+      "src": 29,
+      "dst": 22
+    },
+    {
+      "type": "DFG_REV",
+      "src": 30,
+      "dst": 22
+    },
+    {
+      "type": "DFG_REV",
+      "src": 31,
+      "dst": 22
+    },
+    {
+      "type": "DFG_REV",
+      "src": 34,
+      "dst": 23
+    },
+    {
+      "type": "DFG_REV",
+      "src": 35,
+      "dst": 23
+    },
+    {
+      "type": "CALL_REV",
+      "src": 10,
+      "dst": 10
+    },
+    {
+      "type": "CALL_REV",
+      "src": 6,
+      "dst": 14
+    },
+    {
+      "type": "CALL_REV",
+      "src": 25,
+      "dst": 25
+    },
+    {
+      "type": "CALL_REV",
+      "src": 29,
+      "dst": 29
+    },
+    {
+      "type": "CALL_REV",
+      "src": 30,
+      "dst": 30
+    },
+    {
+      "type": "CALL_REV",
+      "src": 34,
+      "dst": 34
+    },
+    {
+      "type": "CALL_REV",
+      "src": 40,
+      "dst": 40
+    },
+    {
+      "type": "CFG_REV",
+      "src": 1,
+      "dst": 0
+    },
+    {
+      "type": "CFG_REV",
+      "src": 2,
+      "dst": 1
+    },
+    {
+      "type": "CFG_REV",
+      "src": 3,
+      "dst": 2
+    },
+    {
+      "type": "CFG_REV",
+      "src": 4,
+      "dst": 3
+    },
+    {
+      "type": "CFG_REV",
+      "src": 5,
+      "dst": 4
+    },
+    {
+      "type": "CFG_REV",
+      "src": 6,
+      "dst": 5
+    },
+    {
+      "type": "CFG_REV",
+      "src": 7,
+      "dst": 6
+    },
+    {
+      "type": "CFG_REV",
+      "src": 8,
+      "dst": 7
+    },
+    {
+      "type": "CFG_REV",
+      "src": 9,
+      "dst": 8
+    },
+    {
+      "type": "CFG_REV",
+      "src": 10,
+      "dst": 9
+    },
+    {
+      "type": "CFG_REV",
+      "src": 11,
+      "dst": 10
+    },
+    {
+      "type": "CFG_REV",
+      "src": 12,
+      "dst": 11
+    },
+    {
+      "type": "CFG_REV",
+      "src": 13,
+      "dst": 12
+    },
+    {
+      "type": "CFG_REV",
+      "src": 14,
+      "dst": 13
+    },
+    {
+      "type": "CFG_REV",
+      "src": 15,
+      "dst": 14
+    },
+    {
+      "type": "CFG_REV",
+      "src": 16,
+      "dst": 15
+    },
+    {
+      "type": "CFG_REV",
+      "src": 17,
+      "dst": 16
+    },
+    {
+      "type": "CFG_REV",
+      "src": 19,
+      "dst": 18
+    },
+    {
+      "type": "CFG_REV",
+      "src": 20,
+      "dst": 19
+    },
+    {
+      "type": "CFG_REV",
+      "src": 21,
+      "dst": 20
+    },
+    {
+      "type": "CFG_REV",
+      "src": 22,
+      "dst": 21
+    },
+    {
+      "type": "CFG_REV",
+      "src": 23,
+      "dst": 22
+    },
+    {
+      "type": "CFG_REV",
+      "src": 24,
+      "dst": 23
+    },
+    {
+      "type": "CFG_REV",
+      "src": 25,
+      "dst": 24
+    },
+    {
+      "type": "CFG_REV",
+      "src": 26,
+      "dst": 25
+    },
+    {
+      "type": "CFG_REV",
+      "src": 27,
+      "dst": 26
+    },
+    {
+      "type": "CFG_REV",
+      "src": 28,
+      "dst": 27
+    },
+    {
+      "type": "CFG_REV",
+      "src": 29,
+      "dst": 28
+    },
+    {
+      "type": "CFG_REV",
+      "src": 30,
+      "dst": 29
+    },
+    {
+      "type": "CFG_REV",
+      "src": 31,
+      "dst": 30
+    },
+    {
+      "type": "CFG_REV",
+      "src": 32,
+      "dst": 31
+    },
+    {
+      "type": "CFG_REV",
+      "src": 33,
+      "dst": 32
+    },
+    {
+      "type": "CFG_REV",
+      "src": 34,
+      "dst": 33
+    },
+    {
+      "type": "CFG_REV",
+      "src": 35,
+      "dst": 34
+    },
+    {
+      "type": "CFG_REV",
+      "src": 36,
+      "dst": 35
+    },
+    {
+      "type": "CFG_REV",
+      "src": 38,
+      "dst": 37
+    },
+    {
+      "type": "CFG_REV",
+      "src": 39,
+      "dst": 38
+    },
+    {
+      "type": "CFG_REV",
+      "src": 40,
+      "dst": 39
+    },
+    {
+      "type": "CFG_REV",
+      "src": 41,
+      "dst": 40
+    },
+    {
+      "type": "ARG2PARAM_REV",
+      "src": 10,
+      "dst": 8
+    },
+    {
+      "type": "ARG2PARAM_REV",
+      "src": 10,
+      "dst": 8
+    },
+    {
+      "type": "ARG2PARAM_REV",
+      "src": 6,
+      "dst": 13
+    },
+    {
+      "type": "ARG2PARAM_REV",
+      "src": 25,
+      "dst": 21
+    },
+    {
+      "type": "ARG2PARAM_REV",
+      "src": 25,
+      "dst": 21
+    },
+    {
+      "type": "ARG2PARAM_REV",
+      "src": 29,
+      "dst": 22
+    },
+    {
+      "type": "ARG2PARAM_REV",
+      "src": 30,
+      "dst": 22
+    },
+    {
+      "type": "ARG2PARAM_REV",
+      "src": 34,
+      "dst": 23
+    }
+  ]
+}

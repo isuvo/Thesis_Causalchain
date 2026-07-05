@@ -1,0 +1,45 @@
+{
+  "demo": "longhop_exec",
+  "hops": 1,
+  "indices": [
+    48,
+    49
+  ],
+  "nodes": [
+    {
+      "index": 0,
+      "graph_idx": 48,
+      "P": 0.35422560572624207,
+      "file": "lib/sink.c",
+      "lineNumber": 13,
+      "_label": "CALL",
+      "code": "if (n >= sizeof(local)) {",
+      "role": "ROOT"
+    },
+    {
+      "index": 1,
+      "graph_idx": 49,
+      "P": 0.5106156468391418,
+      "file": "lib/sink.c",
+      "lineNumber": 14,
+      "_label": "BLOCK",
+      "code": "n = sizeof(local) - 1;",
+      "role": "SINK"
+    }
+  ],
+  "edges": [
+    {
+      "from_index": 0,
+      "to_index": 1,
+      "families": [
+        "CFG",
+        "CPG"
+      ]
+    }
+  ],
+  "params": {
+    "MAX_HOPS": 12,
+    "BEAM_WIDTH": 24,
+    "TIME_BUDGET_S": 3.0
+  }
+}

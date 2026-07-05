@@ -1,0 +1,13 @@
+Root → … → Sink (hops=3)
+
+[ROOT] P=0.378  snprintf(cmd_buf3, sizeof(cmd_buf3), "%s --marker=end", in);
+   (label=CALL, file=lib/chain_exec3.c, line=21)
+   └──[CPG/DFG]
+[→] P=0.592  end = sizeof(norm_buf2) - 1;
+   (label=BLOCK, file=lib/normalize3.c, line=32)
+   └──[CPG]
+[→] P=0.410  while (end > 0 && (in[end - 1] == ' ' || in[end - 1] == '\t')) {
+   (label=CALL, file=lib/normalize3.c, line=28)
+   └──[CFG/DFG]
+[SINK] P=0.664  size_t end = len;
+   (label=BLOCK, file=lib/normalize3.c, line=27)

@@ -1,0 +1,111 @@
+idx,_id,file,lineNumber,_label,code,P
+0,0,app/main.c,2,BLOCK,#include <stdio.h>,0.4212380051612854
+1,1,app/main.c,3,BLOCK,#include <stdlib.h>,0.4979674220085144
+2,2,app/main.c,4,BLOCK,#include <string.h>,0.4798089861869812
+3,3,app/main.c,6,BLOCK,char* stage_clean(char* in);,0.5433996319770813
+4,4,app/main.c,7,BLOCK,char* stage_route(char* in);,0.49411800503730774
+5,5,app/main.c,8,BLOCK,void stage_execute(char* cmd);,0.5416128039360046
+6,6,app/main.c,10,BLOCK,"int main(int argc, char** argv) {",0.5652473568916321
+7,7,app/main.c,11,BLOCK,char buf[256];,0.438915491104126
+8,8,app/main.c,12,BLOCK,size_t n;,0.45881494879722595
+9,9,app/main.c,14,CALL,"memset(buf, 0, sizeof(buf));",0.4884328842163086
+10,10,app/main.c,15,CALL,"if (fgets(buf, sizeof(buf), stdin) == NULL) {",0.4611619710922241
+11,11,app/main.c,16,BLOCK,return 0;,0.45800936222076416
+12,12,app/main.c,17,BLOCK,},0.4461697041988373
+13,13,app/main.c,19,BLOCK,n = strlen(buf);,0.5196774005889893
+14,14,app/main.c,20,CALL,if (n > 0 && (buf[n - 1] == '\n' || buf[n - 1] == '\r')) {,0.4241967499256134
+15,15,app/main.c,21,BLOCK,buf[n - 1] = '\0';,0.3959111273288727
+16,16,app/main.c,22,BLOCK,},0.4522714614868164
+17,17,app/main.c,24,BLOCK,char* s1 = stage_clean(buf);,0.5212461948394775
+18,18,app/main.c,25,BLOCK,char* s2 = stage_route(s1);,0.47558969259262085
+19,19,app/main.c,26,CALL,stage_execute(s2);,0.4689429998397827
+20,20,app/main.c,27,BLOCK,return 0;,0.4889884293079376
+21,21,app/main.c,28,BLOCK,},0.4352719485759735
+22,22,lib/process.c,2,BLOCK,#include <stdio.h>,0.4227866530418396
+23,23,lib/process.c,3,BLOCK,#include <stdlib.h>,0.5114544034004211
+24,24,lib/process.c,4,BLOCK,#include <string.h>,0.5313162207603455
+25,25,lib/process.c,6,BLOCK,static char clean_buf1[256];,0.514488697052002
+26,26,lib/process.c,7,BLOCK,static char clean_buf2[256];,0.4922246038913727
+27,27,lib/process.c,8,BLOCK,static char clean_buf3[256];,0.48710545897483826
+28,28,lib/process.c,10,BLOCK,static char* remove_control_chars(char* in) {,0.5439266562461853
+29,29,lib/process.c,11,BLOCK,size_t i = 0;,0.46772268414497375
+30,30,lib/process.c,12,BLOCK,size_t j = 0;,0.5461057424545288
+31,31,lib/process.c,13,CALL,while (in[i] != '\0' && j < sizeof(clean_buf1) - 1) {,0.4356483817100525
+32,32,lib/process.c,14,BLOCK,unsigned char c = (unsigned char)in[i];,0.45609456300735474
+33,33,lib/process.c,15,CALL,if (c >= 32 || c == '\t') {,0.4335557222366333
+34,34,lib/process.c,16,BLOCK,clean_buf1[j] = in[i];,0.3810040354728699
+35,35,lib/process.c,17,BLOCK,j++;,0.508197009563446
+36,36,lib/process.c,18,BLOCK,},0.5157310366630554
+37,37,lib/process.c,19,BLOCK,i++;,0.4985298216342926
+38,38,lib/process.c,20,BLOCK,},0.4787747263908386
+39,39,lib/process.c,21,BLOCK,clean_buf1[j] = '\0';,0.45091214776039124
+40,40,lib/process.c,22,BLOCK,return clean_buf1;,0.48559293150901794
+41,41,lib/process.c,23,BLOCK,},0.46154579520225525
+42,42,lib/process.c,25,BLOCK,static char* shorten_if_too_long(char* in) {,0.5053748488426208
+43,43,lib/process.c,26,BLOCK,size_t len = strlen(in);,0.5254930257797241
+44,44,lib/process.c,27,CALL,if (len >= sizeof(clean_buf2)) {,0.4452735483646393
+45,45,lib/process.c,28,BLOCK,len = sizeof(clean_buf2) - 1;,0.4567452073097229
+46,46,lib/process.c,29,BLOCK,},0.43958234786987305
+47,47,lib/process.c,30,CALL,"memcpy(clean_buf2, in, len);",0.4791891276836395
+48,48,lib/process.c,31,BLOCK,clean_buf2[len] = '\0';,0.4351571500301361
+49,49,lib/process.c,32,BLOCK,return clean_buf2;,0.517662525177002
+50,50,lib/process.c,33,BLOCK,},0.4895920157432556
+51,51,lib/process.c,35,BLOCK,static char* normalize_case(char* in) {,0.5612125396728516
+52,52,lib/process.c,36,BLOCK,size_t i = 0;,0.5474219918251038
+53,53,lib/process.c,37,CALL,while (in[i] != '\0' && i < sizeof(clean_buf3) - 1) {,0.4640145003795624
+54,54,lib/process.c,38,BLOCK,char c = in[i];,0.5176895260810852
+55,55,lib/process.c,39,CALL,if (c >= 'A' && c <= 'Z') {,0.39995667338371277
+56,56,lib/process.c,40,BLOCK,clean_buf3[i] = (char)(c - 'A' + 'a');,0.3795161545276642
+57,57,lib/process.c,41,BLOCK,} else {,0.41568827629089355
+58,58,lib/process.c,42,BLOCK,clean_buf3[i] = c;,0.4546734094619751
+59,59,lib/process.c,43,BLOCK,},0.5010875463485718
+60,60,lib/process.c,44,BLOCK,i++;,0.5078755021095276
+61,61,lib/process.c,45,BLOCK,},0.487988144159317
+62,62,lib/process.c,46,BLOCK,clean_buf3[i] = '\0';,0.47785669565200806
+63,63,lib/process.c,47,BLOCK,return clean_buf3;,0.48367825150489807
+64,64,lib/process.c,48,BLOCK,},0.443156898021698
+65,65,lib/process.c,50,BLOCK,char* stage_clean(char* in) {,0.5510526895523071
+66,66,lib/process.c,51,BLOCK,char* a = remove_control_chars(in);,0.45185673236846924
+67,67,lib/process.c,52,BLOCK,char* b = shorten_if_too_long(a);,0.4291125535964966
+68,68,lib/process.c,53,BLOCK,char* c = normalize_case(b);,0.4632786214351654
+69,69,lib/process.c,54,BLOCK,return c;,0.5066545009613037
+70,70,lib/process.c,55,BLOCK,},0.452424556016922
+71,71,lib/shell.c,2,BLOCK,#include <stdio.h>,0.422850102186203
+72,72,lib/shell.c,3,BLOCK,#include <stdlib.h>,0.5115728974342346
+73,73,lib/shell.c,4,BLOCK,#include <string.h>,0.5308778285980225
+74,74,lib/shell.c,6,BLOCK,static char route_buf1[512];,0.5189086198806763
+75,75,lib/shell.c,7,BLOCK,static char route_buf2[512];,0.5099522471427917
+76,76,lib/shell.c,8,BLOCK,static char route_buf3[512];,0.5071197748184204
+77,77,lib/shell.c,9,BLOCK,static char exec_local[512];,0.496506005525589
+78,78,lib/shell.c,11,BLOCK,static char* build_prefix(char* in) {,0.4879017472267151
+79,79,lib/shell.c,12,CALL,"snprintf(route_buf1, sizeof(route_buf1), ""runner %s"", in);",0.48398062586784363
+80,80,lib/shell.c,13,BLOCK,return route_buf1;,0.5067805051803589
+81,81,lib/shell.c,14,BLOCK,},0.44806402921676636
+82,82,lib/shell.c,16,BLOCK,static char* add_route_flags(char* in) {,0.48073795437812805
+83,83,lib/shell.c,17,CALL,"snprintf(route_buf2, sizeof(route_buf2), ""%s --channel=cli --retry=0"", in);",0.41299307346343994
+84,84,lib/shell.c,18,BLOCK,return route_buf2;,0.47910526394844055
+85,85,lib/shell.c,19,BLOCK,},0.45878908038139343
+86,86,lib/shell.c,21,BLOCK,static char* finalize_route(char* in) {,0.4816586673259735
+87,87,lib/shell.c,22,CALL,"snprintf(route_buf3, sizeof(route_buf3), ""%s --complete"", in);",0.4716334342956543
+88,88,lib/shell.c,23,BLOCK,return route_buf3;,0.5001514554023743
+89,89,lib/shell.c,24,BLOCK,},0.4290087819099426
+90,90,lib/shell.c,26,BLOCK,char* stage_route(char* in) {,0.5332202315330505
+91,91,lib/shell.c,27,BLOCK,char* a = build_prefix(in);,0.4503098726272583
+92,92,lib/shell.c,28,BLOCK,char* b = add_route_flags(a);,0.4286351203918457
+93,93,lib/shell.c,29,BLOCK,char* c = finalize_route(b);,0.45775043964385986
+94,94,lib/shell.c,30,BLOCK,return c;,0.47058337926864624
+95,95,lib/shell.c,31,BLOCK,},0.518921434879303
+96,96,lib/shell.c,33,BLOCK,void stage_execute(char* cmd) {,0.4540979564189911
+97,97,lib/shell.c,34,BLOCK,size_t n;,0.500988781452179
+98,98,lib/shell.c,35,CALL,if (cmd == NULL) {,0.46693798899650574
+99,99,lib/shell.c,36,BLOCK,return;,0.4364393651485443
+100,100,lib/shell.c,37,BLOCK,},0.43883755803108215
+101,101,lib/shell.c,38,BLOCK,n = strlen(cmd);,0.5267902612686157
+102,102,lib/shell.c,39,CALL,if (n >= sizeof(exec_local)) {,0.43643203377723694
+103,103,lib/shell.c,40,BLOCK,n = sizeof(exec_local) - 1;,0.467456191778183
+104,104,lib/shell.c,41,BLOCK,},0.42727264761924744
+105,105,lib/shell.c,42,CALL,"memset(exec_local, 0, sizeof(exec_local));",0.5136942267417908
+106,106,lib/shell.c,43,CALL,"strncpy(exec_local, cmd, n);",0.3988628089427948
+107,107,lib/shell.c,44,BLOCK,exec_local[n] = '\0';,0.4483889639377594
+108,108,lib/shell.c,45,CALL,system(exec_local); /* external command execution */,0.5473679304122925
+109,109,lib/shell.c,46,BLOCK,},0.42024117708206177

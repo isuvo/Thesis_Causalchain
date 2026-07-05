@@ -1,0 +1,28 @@
+Root → … → Sink (hops=8)
+
+[ROOT] if (argc > 1) {
+  (Stmt, app/main.c, line 14)
+   └──[CFG] exact=CFG
+[→] strncpy(buf, argv[1], sizeof(buf)-1);
+  (ROOT, app/main.c, line 15)
+   └──[DFG] exact=DFG_REV
+[→] char buf[256];
+  (Stmt, app/main.c, line 12)
+   └──[DFG] exact=DFG
+[→] buf[sizeof(buf)-1] = '\0';
+  (Stmt, app/main.c, line 16)
+   └──[CFG] exact=CFG
+[→] char* p = wrap_a(buf);
+  (Stmt, app/main.c, line 17)
+   └──[DFG] exact=DFG_REV
+[→] p = wrap_c(p);
+  (Stmt, app/main.c, line 19)
+   └──[CPG] exact=ARG2PARAM
+[→] void run_system(char* cmd) {
+  (Stmt, lib/sink.c, line 6)
+   └──[CPG] exact=CALL_REV
+[→] run_system(p);
+  (Stmt, app/main.c, line 21)
+   └──[CFG] exact=CFG_REV
+[SINK] // final call: dangerous sink
+  (Stmt, app/main.c, line 20)

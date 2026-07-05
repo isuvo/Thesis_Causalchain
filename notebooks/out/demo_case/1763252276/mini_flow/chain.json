@@ -1,0 +1,44 @@
+{
+  "demo": "mini_flow",
+  "hops": 1,
+  "indices": [
+    15,
+    16
+  ],
+  "nodes": [
+    {
+      "index": 0,
+      "graph_idx": 15,
+      "P": 0.3963926136493683,
+      "file": "toy.c",
+      "lineNumber": 20,
+      "_label": "BLOCK",
+      "code": "return s;",
+      "role": "ROOT"
+    },
+    {
+      "index": 1,
+      "graph_idx": 16,
+      "P": 0.601416826248169,
+      "file": "toy.c",
+      "lineNumber": 21,
+      "_label": "BLOCK",
+      "code": "}",
+      "role": "SINK"
+    }
+  ],
+  "edges": [
+    {
+      "from_index": 0,
+      "to_index": 1,
+      "families": [
+        "CFG"
+      ]
+    }
+  ],
+  "params": {
+    "MAX_HOPS": 12,
+    "BEAM_WIDTH": 24,
+    "TIME_BUDGET_S": 3.0
+  }
+}

@@ -1,0 +1,48 @@
+[depth 1]
+  # 1  score=1.714  step=+1.163  CPG  #5 p=0.463 CALL:do_exec mini/main.c:9
+  # 2  score=1.714  step=+1.251  CPG  #1 p=0.551 STMT mini/main.c:4
+  # 3  score=1.541  step=+0.951  CFG  #1 p=0.551 STMT mini/main.c:4
+  # 4  score=1.541  step=+0.990  CFG  #2 p=0.590 STMT mini/main.c:6
+  # 5  score=1.541  step=+0.951  CFG  #3 p=0.551 COND mini/main.c:7
+  # 6  score=1.541  step=+0.990  CFG  #2 p=0.590 STMT mini/main.c:6
+[depth 2]
+  # 1  score=2.704  step=+0.990  CFG  #2 p=0.590 STMT mini/main.c:6
+  # 2  score=2.704  step=+1.163  CPG  #5 p=0.463 CALL:do_exec mini/main.c:9
+  # 3  score=2.583  step=+0.869  CFG  #6 p=0.469 STMT mini/main.c:10
+  # 4  score=2.583  step=+1.251  CPG  #1 p=0.551 STMT mini/main.c:4
+  # 5  score=2.567  step=+0.854  CFG  #0 p=0.454 STMT mini/main.c:2
+  # 6  score=2.567  step=+1.163  CPG  #5 p=0.463 CALL:do_exec mini/main.c:9
+[depth 3]
+  # 1  score=3.655  step=+0.951  CFG  #3 p=0.551 COND mini/main.c:7
+  # 2  score=3.655  step=+1.163  CPG  #5 p=0.463 CALL:do_exec mini/main.c:9
+  # 3  score=3.573  step=+0.869  CFG  #6 p=0.469 STMT mini/main.c:10
+  # 4  score=3.573  step=+0.990  CFG  #2 p=0.590 STMT mini/main.c:6
+  # 5  score=3.548  step=+0.844  CFG  #4 p=0.444 ASSIGN mini/main.c:8
+  # 6  score=3.548  step=+0.990  CFG  #2 p=0.590 STMT mini/main.c:6
+[depth 4]
+  # 1  score=4.524  step=+0.869  CFG  #6 p=0.469 STMT mini/main.c:10
+  # 2  score=4.524  step=+0.951  CFG  #3 p=0.551 COND mini/main.c:7
+  # 3  score=4.499  step=+0.844  CFG  #4 p=0.444 ASSIGN mini/main.c:8
+  # 4  score=4.499  step=+0.844  CFG  #4 p=0.444 ASSIGN mini/main.c:8
+  # 5  score=4.499  step=+0.990  CFG  #2 p=0.590 STMT mini/main.c:6
+  # 6  score=4.499  step=+0.990  CFG  #2 p=0.590 STMT mini/main.c:6
+[depth 5]
+  # 1  score=5.385  step=+0.861  CFG  #7 p=0.461 RET mini/main.c:11
+  # 2  score=5.385  step=+0.951  CFG  #3 p=0.551 COND mini/main.c:7
+  # 3  score=5.368  step=+0.844  CFG  #4 p=0.444 ASSIGN mini/main.c:8
+  # 4  score=5.368  step=+0.869  CFG  #6 p=0.469 STMT mini/main.c:10
+  # 5  score=5.353  step=+0.854  CFG  #0 p=0.454 STMT mini/main.c:2
+  # 6  score=5.353  step=+0.990  CFG  #2 p=0.590 STMT mini/main.c:6
+[depth 6]
+  # 1  score=6.229  step=+0.844  CFG  #4 p=0.444 ASSIGN mini/main.c:8
+  # 2  score=6.229  step=+0.861  CFG  #7 p=0.461 RET mini/main.c:11
+  # 3  score=6.160  step=+0.774  CFG  #8 p=0.374 STMT mini/main.c:12
+  # 4  score=5.929  step=+0.861  CFG  #7 p=0.461 RET mini/main.c:11
+  # 5  score=5.922  step=+0.854  CFG  #0 p=0.454 STMT mini/main.c:2
+  # 6  score=5.922  step=+0.869  CFG  #6 p=0.469 STMT mini/main.c:10
+[depth 7]
+  # 1  score=7.004  step=+0.774  CFG  #8 p=0.374 STMT mini/main.c:12
+  # 2  score=6.783  step=+0.861  CFG  #7 p=0.461 RET mini/main.c:11
+  # 3  score=6.704  step=+0.774  CFG  #8 p=0.374 STMT mini/main.c:12
+[depth 8]
+  # 1  score=7.557  step=+0.774  CFG  #8 p=0.374 STMT mini/main.c:12

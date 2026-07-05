@@ -1,0 +1,232 @@
+{
+  "nodes": [
+    {
+      "_id": 0,
+      "file": "mini/main.c",
+      "line": 2,
+      "code": "#include <stdlib.h>",
+      "_label": "STMT",
+      "nodeType": "STMT"
+    },
+    {
+      "_id": 1,
+      "file": "mini/main.c",
+      "line": 4,
+      "code": "extern void do_exec(char* cmd);",
+      "_label": "STMT",
+      "nodeType": "STMT"
+    },
+    {
+      "_id": 2,
+      "file": "mini/main.c",
+      "line": 6,
+      "code": "int main(int argc, char** argv) {",
+      "_label": "ROOT",
+      "nodeType": "ROOT"
+    },
+    {
+      "_id": 3,
+      "file": "mini/main.c",
+      "line": 7,
+      "code": "if (argc > 1) {",
+      "_label": "COND",
+      "nodeType": "COND"
+    },
+    {
+      "_id": 4,
+      "file": "mini/main.c",
+      "line": 8,
+      "code": "char* p = argv[1];",
+      "_label": "ROOT",
+      "nodeType": "ROOT"
+    },
+    {
+      "_id": 5,
+      "file": "mini/main.c",
+      "line": 9,
+      "code": "do_exec(p);",
+      "_label": "CALL:do_exec",
+      "nodeType": "CALL:do_exec"
+    },
+    {
+      "_id": 6,
+      "file": "mini/main.c",
+      "line": 10,
+      "code": "}",
+      "_label": "STMT",
+      "nodeType": "STMT"
+    },
+    {
+      "_id": 7,
+      "file": "mini/main.c",
+      "line": 11,
+      "code": "return 0;",
+      "_label": "RET",
+      "nodeType": "RET"
+    },
+    {
+      "_id": 8,
+      "file": "mini/main.c",
+      "line": 12,
+      "code": "}",
+      "_label": "STMT",
+      "nodeType": "STMT"
+    },
+    {
+      "_id": 9,
+      "file": "mini/sink.c",
+      "line": 3,
+      "code": "void do_exec(char* cmd) {",
+      "_label": "STMT",
+      "nodeType": "STMT"
+    },
+    {
+      "_id": 10,
+      "file": "mini/sink.c",
+      "line": 4,
+      "code": "system(cmd);                // SINK",
+      "_label": "SINK",
+      "nodeType": "SINK"
+    },
+    {
+      "_id": 11,
+      "file": "mini/sink.c",
+      "line": 5,
+      "code": "}",
+      "_label": "STMT",
+      "nodeType": "STMT"
+    }
+  ],
+  "edges": [
+    {
+      "type": "CFG",
+      "src": 0,
+      "dst": 1
+    },
+    {
+      "type": "CFG",
+      "src": 1,
+      "dst": 2
+    },
+    {
+      "type": "CFG",
+      "src": 2,
+      "dst": 3
+    },
+    {
+      "type": "CFG",
+      "src": 3,
+      "dst": 4
+    },
+    {
+      "type": "CFG",
+      "src": 4,
+      "dst": 5
+    },
+    {
+      "type": "CFG",
+      "src": 5,
+      "dst": 6
+    },
+    {
+      "type": "CFG",
+      "src": 6,
+      "dst": 7
+    },
+    {
+      "type": "CFG",
+      "src": 7,
+      "dst": 8
+    },
+    {
+      "type": "CFG",
+      "src": 9,
+      "dst": 10
+    },
+    {
+      "type": "CFG",
+      "src": 10,
+      "dst": 11
+    },
+    {
+      "type": "CALL",
+      "src": 3,
+      "dst": 3
+    },
+    {
+      "type": "CALL",
+      "src": 5,
+      "dst": 1
+    },
+    {
+      "type": "CALL",
+      "src": 10,
+      "dst": 10
+    },
+    {
+      "type": "CALL_REV",
+      "src": 3,
+      "dst": 3
+    },
+    {
+      "type": "CALL_REV",
+      "src": 1,
+      "dst": 5
+    },
+    {
+      "type": "CALL_REV",
+      "src": 10,
+      "dst": 10
+    },
+    {
+      "type": "CFG_REV",
+      "src": 1,
+      "dst": 0
+    },
+    {
+      "type": "CFG_REV",
+      "src": 2,
+      "dst": 1
+    },
+    {
+      "type": "CFG_REV",
+      "src": 3,
+      "dst": 2
+    },
+    {
+      "type": "CFG_REV",
+      "src": 4,
+      "dst": 3
+    },
+    {
+      "type": "CFG_REV",
+      "src": 5,
+      "dst": 4
+    },
+    {
+      "type": "CFG_REV",
+      "src": 6,
+      "dst": 5
+    },
+    {
+      "type": "CFG_REV",
+      "src": 7,
+      "dst": 6
+    },
+    {
+      "type": "CFG_REV",
+      "src": 8,
+      "dst": 7
+    },
+    {
+      "type": "CFG_REV",
+      "src": 10,
+      "dst": 9
+    },
+    {
+      "type": "CFG_REV",
+      "src": 11,
+      "dst": 10
+    }
+  ]
+}

@@ -1,0 +1,21 @@
+idx,_id,file,lineNumber,_label,code,P
+0,0,toy.c,2,BLOCK,#include <stdio.h>,0.5611155033111572
+1,1,toy.c,3,BLOCK,#include <string.h>,0.533059298992157
+2,2,toy.c,5,BLOCK,char* pass(char* s);,0.5159299969673157
+3,3,toy.c,6,BLOCK,void sink(char* cmd);,0.5299464464187622
+4,4,toy.c,8,BLOCK,"int main(int argc, char** argv){",0.4722220301628113
+5,5,toy.c,9,BLOCK,char b[64];,0.5334731936454773
+6,6,toy.c,10,CALL,if(argc>1){,0.5037320256233215
+7,7,toy.c,11,CALL,"strncpy(b, argv[1], 63);",0.43057960271835327
+8,8,toy.c,12,BLOCK,b[63]=0;,0.5073046088218689
+9,9,toy.c,13,BLOCK,char* z = pass(b);,0.5469549298286438
+10,10,toy.c,14,CALL,sink(z);,0.47739502787590027
+11,11,toy.c,15,BLOCK,},0.4224487543106079
+12,12,toy.c,16,BLOCK,return 0;,0.4529477655887604
+13,13,toy.c,17,BLOCK,},0.5862425565719604
+14,14,toy.c,19,BLOCK,char* pass(char* s){,0.4480680525302887
+15,15,toy.c,20,BLOCK,return s;,0.3963926136493683
+16,16,toy.c,21,BLOCK,},0.601416826248169
+17,17,toy.c,22,BLOCK,void sink(char* cmd){,0.497234582901001
+18,18,toy.c,23,CALL,puts(cmd);,0.4755691587924957
+19,19,toy.c,24,BLOCK,},0.4539390802383423

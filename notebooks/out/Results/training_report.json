@@ -1,0 +1,13 @@
+{
+  "phase": "train",
+  "steps": 17190,
+  "avg_loss": 0.9529057450354134,
+  "graphs_seen": 17190,
+  "graphs_with_any_pos": 17060,
+  "graphs_with_inter_pos": 17060,
+  "best_inter_recall": 1.0,
+  "log_jsonl": "out/cagat_acc_interproc_train\\training_log.jsonl",
+  "summary_json": "out/cagat_acc_interproc_train\\train_summary.json",
+  "ckpt_last": "out/cagat_acc_interproc_train\\ckpt_cagat_acc_interproc.pt",
+  "ckpt_best": "out/cagat_acc_interproc_train\\best_model.pt"
+}

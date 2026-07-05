@@ -1,0 +1,243 @@
+source .venv/Scripts/activate
+For PS: .venv/Scripts/activate
+pip install -r requirements.txt
+
+joern --version
+java -version
+
+#activate joern
+export JOERN_HOME="/c/tools/joern"
+export PATH="$JOERN_HOME:$PATH"
+
+"/c/tools/joern/joern-parse.bat" --help
+
+# step 1 - .c files from diversevul - venv must be activated  
+============================================================
+python -m src.preprocess.step1_prepare_diversevul `
+  --in  "data\dataset\DiverseVul\diversevul_20230702.json" `
+  --out "work\diversevul_step1"
+
+
+P.S copy Joern from c/tools/joern -> root/external/joern 
+Activate joern and verify its working before running the below script. 
+
+
+# step 2 - Generate PDG using .sc script PDG = CFG + DDG
+=============================================================
+
+# 1) Make batch folders of, say, 2,000 files each
+
+$src = "work\diversevul_step1\funcs"
+$dstRoot = "work\funcs_batches"
+Remove-Item -Recurse -Force $dstRoot -ErrorAction SilentlyContinue
+New-Item -ItemType Directory -Force -Path $dstRoot | Out-Null
+
+$batchSize = 2000
+$files = Get-ChildItem $src -Filter *.c
+for ($i=0; $i -lt $files.Count; $i += $batchSize) {
+  $batch = $files[$i..([Math]::Min($i+$batchSize-1,$files.Count-1))]
+  $bdir = Join-Path $dstRoot ("b_{0:d3}" -f ($i/$batchSize))
+  New-Item -ItemType Directory -Force -Path $bdir | Out-Null
+  $batch | Copy-Item -Destination $bdir
+}
+
+# 2) For each batch: (a) build a CPG with c2cpg (b) run exporter on that CPG
+$joern = "external\joern"
+$pdgOut = "work\diversevul_pdg"
+New-Item -ItemType Directory -Force -Path $pdgOut | Out-Null
+
+Get-ChildItem $dstRoot -Directory | ForEach-Object {
+  $b = $_.FullName
+  $cpgBin = Join-Path $b "cpg.bin"
+
+  & "$joern\c2cpg.bat" -J-Xmx6g $b --output $cpgBin
+
+  $env:CPG_PATH   = (Resolve-Path $cpgBin).Path
+  $env:OUT_DIR    = (Resolve-Path $pdgOut).Path
+  $env:SENSI_PATH = (Resolve-Path 'src\preprocess\external\sensiAPI.txt').Path
+  $env:LOG_PATH   = "$env:OUT_DIR\export_batch_$($_.Name).log"
+
+  & "$joern\joern.bat" --script "tools\export_pdg_env.sc"
+  Remove-Item -Recurse -Force "workspace" -ErrorAction SilentlyContinue
+}
+
+
+# 3) Clean and slice - From diversevul_pdg(original) create diversevul_pdg_clean; diversevul_slices; pdg_bad
+python -m src.preprocess.step2c_pipeline_validate_and_slice `
+  --src   work\diversevul_pdg `
+  --clean work\diversevul_pdg_clean `
+  --out   work\diversevul_slices `
+  --bad   work\pdg_bad `
+  --sensi src\preprocess\external\sensiAPI.txt `
+  --require_ddg `
+  --copy_bad
+
+
+# step 3 - save embeddings, use graphcodebert and save the pt to be trained for GNN and attention 
+================================================================================
+
+python -m src.preprocess.embed_lines_gcbert \
+  --slices work/diversevul_step2/diversevul_slices \
+  --model microsoft/graphcodebert-base \
+  --device cpu \
+  --batch_size 16
+
+---diversevul_slices(sliced ussing sensiapi)
+
+python -m src.preprocess.slices_to_pyg_gcbert \
+  --slices work/diversevul_step2/diversevul_slices \
+  --sensi_file src/preprocess/external/sensiAPI.txt \
+  --out_dir work/pyg_diversevul_tf \
+  --cache_db work/embeddings/line_cache.sqlite
+
+
+---diversevul_pdg_clean
+
+python -m src.preprocess.slices_to_pyg_gcbert \
+  --slices work/diversevul_step2/diversevul_pdg_clean \
+  --sensi_file src/preprocess/external/sensiAPI.txt \
+  --out_dir work/pyg_diversevul_clean \
+  --cache_db work/embeddings/line_cache.sqlite
+
+# step 4 - Train the GNN w/ seed-conditioned attention
+================================================================================
+
+Script: src/step4_train_gnn_attn.py
+# From repo root, venv active
+python -m src.step4_train_gnn_attn `
+  --data_dir "work\pyg_diversevul_tf" `
+  --out_dir  "work\models" `
+  --epochs 80 `
+  --batch_size 64 `
+  --hidden 192 `
+  --attn_hidden 192 `
+  --lr 5e-4 `
+  --loss focal `
+  --gamma 2.0 `
+  --sampler weighted `
+  --progress tqdm `
+  --num_workers 0 `
+  --clean_out
+
+Step 5 — Export attention-guided causal chains (batch)
+================================================================================
+
+Script: src/step5_export_chains.py
+
+python -m src.step5_export_chains `
+  --data_dir "work\pyg_diversevul_tf" `
+  --model   "work\models\gcbert_gnn_attn.pt" `
+  --cfg     "work\models\gcbert_gnn_attn.cfg.json" `
+  --out     "work\chains\chains_diversevul.jsonl" `
+  --num_graphs 1000 `
+  --topk_nodes 12 `
+  --k_paths 3 `
+  --max_len 8 `
+  --clean_out
+
+
+Step 6 — Evaluate the trained model on the held-out test split
+================================================================================
+
+Script: src/step6_eval_report.py
+
+A) Evaluate the model you just trained locally
+
+# from repo root, venv active
+python -m src.step6_eval_report `
+  --data_dir "work\pyg_diversevul_tf" `
+  --model    "work\models\gcbert_gnn_attn.pt" `
+  --cfg      "work\models\gcbert_gnn_attn.cfg.json" `
+  --out      "work\eval\diversevul_eval_local.json" `
+  --thr 0.5 `
+  --find_best_thr
+
+B) Evaluate the Colab-trained model you copied back
+
+python -m src.step6_eval_report `
+  --data_dir "work\pyg_diversevul_tf" `
+  --model    "work\models_colab\gcbert_gnn_attn.pt" `
+  --cfg      "work\models_colab\gcbert_gnn_attn.cfg.json" `
+  --out      "work\eval\diversevul_eval_colab.json" `
+  --thr 0.5 `
+  --find_best_thr
+
+
+Step 6 - Pretty single-slice inference (one code slice → one beautiful chain)
+=================================================================================
+
+Script: src/infer_one_slice_pretty.py
+
+python -u -m src.infer_one_slice_pretty `
+  --slice_json "work\demo_slices\multi_class_vuln.slice.json" `
+  --model      "work\models\gcbert_gnn_attn.pt" `
+  --cfg        "work\models\gcbert_gnn_attn.cfg.json" `
+  --sensi_file "src\preprocess\external\sensiAPI.txt" `
+  --max_len 12 `
+  --print_topk 12 `
+  --hide_trivial_topn `
+  --min_attn 0.03 `
+  --thr 0.9 `
+  --hf_local_only
+
+
+# Imp command 
+
+# --- CONFIG ---
+$split    = "train"
+$Croot    = "work\src\$split"
+$Froot    = "F:\work\src\$split"
+
+# --- TOTAL SHARDS (ground truth) ---
+$shards = (Get-ChildItem $Croot -Directory |
+  Where-Object { @('unified_jsons','unified_aug','hetero_ready','logs') -notcontains $_.Name }).Count
+
+# --- CURRENT COUNTS ON F ---
+$json     = (Get-ChildItem "$Froot\unified_jsons" -Filter *.json -EA SilentlyContinue).Count
+$aug      = (Get-ChildItem "$Froot\unified_aug"   -Filter *.json -EA SilentlyContinue).Count
+$pt       = (Get-ChildItem "$Froot\hetero_ready"  -Filter *.pt   -EA SilentlyContinue).Count
+$badJson  = (Get-ChildItem "$Froot\bad_json"      -Filter *.json -EA SilentlyContinue).Count
+$badAug   = (Get-ChildItem "$Froot\bad_aug"       -Filter *.json -EA SilentlyContinue).Count
+
+# --- EXPECTATIONS ---
+$expected_unified = $shards                                  # max unified_jsons (assuming Joern succeeds per shard)
+$expected_aug     = $shards - $badJson                       # max augmented (bad_json cannot be augmented)
+$expected_pt      = $shards - ($badJson + $badAug)           # max hetero_ready .pt
+
+"TOTAL shards     = $shards"
+"NOW: json=$json  aug=$aug  pt=$pt  bad_json=$badJson  bad_aug=$badAug"
+"EXPECTED (final): unified_jsons ≈ $expected_unified ; hetero_ready(.pt) ≈ $expected_pt"
+------------------------
+
+# Generate unified_json to hetero_ready PyTorch
+
+1) unified_json
+tools/unify_from_dir_rd_fix2.sc
+joern --script tools/unify_from_dir_rd_fix2.sc --params 'in="data/data/dataset/ReposVul_c_cpp",out="work/unified_json"'
+
+2) aug_json
+src/preprocess/step2c_pipeline_validate_and_slice.py
+python -m src.preprocess.step2c_pipeline_validate_and_slice --in work/unified_json --out work/aug_json
+
+3) hetero_ready
+Script (convert slices/aug JSON → PyG graphs): src/preprocess/slices_to_pyg_gcbert.py
+python -m src.preprocess.slices_to_pyg_gcbert --in work/aug_json --out work/reposvul_pyg
+
+Script (tag + add reverse edges → final “hetero_ready”): tools/tag_and_reverse_pyg.py
+python -m tools.tag_and_reverse_pyg --in work/reposvul_pyg --out work/reposvul_pyg/hetero_ready
+
+4) validate .pt
+src/tools/inspect_pt
+python -m src.tools.inspect_pt --pt work/reposvul_pyg/hetero_ready/shard_00b2.pt
+
+sample output:
+Num edge types: 14
+  ET: ('node', 'AST', 'node') E= 263
+  ET: ('node', 'CFG', 'node') E= 175
+  ET: ('node', 'DFG', 'node') E= 273
+  ET: ('node', 'CALL', 'node') E= 55
+  ET: ('node', 'ARG2PARAM', 'node') E= 106
+  ET: ('node', 'RET2CALL', 'node') E= 55
+  ET: ('node', 'RET2LHS', 'node') E= 20
+  ET: ('node', 'AST_REV', 'node') E= 263
+Node feature dim: 23

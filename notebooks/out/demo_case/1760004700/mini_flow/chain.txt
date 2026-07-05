@@ -1,0 +1,19 @@
+Root → … → Sink (hops=5)
+
+[ROOT] P=0.388  char* pass(char* s){
+   (label=BLOCK, file=toy.c, line=19)
+   └──[CFG]
+[→] P=0.451  }
+   (label=BLOCK, file=toy.c, line=17)
+   └──[CFG]
+[→] P=0.479  return 0;
+   (label=BLOCK, file=toy.c, line=16)
+   └──[CFG]
+[→] P=0.407  }
+   (label=BLOCK, file=toy.c, line=15)
+   └──[CFG]
+[→] P=0.441  sink(z);
+   (label=CALL, file=toy.c, line=14)
+   └──[CFG]
+[SINK] P=0.534  char* z = pass(b);
+   (label=BLOCK, file=toy.c, line=13)

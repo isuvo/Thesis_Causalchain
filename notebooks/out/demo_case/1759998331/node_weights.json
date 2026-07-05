@@ -1,0 +1,425 @@
+[
+  {
+    "idx": 0,
+    "prob": 0.5930107831954956,
+    "nid": 0,
+    "file": "demo2/main.c",
+    "line": 2,
+    "label": "Stmt",
+    "code": "#include <stdio.h>"
+  },
+  {
+    "idx": 1,
+    "prob": 0.517278254032135,
+    "nid": 1,
+    "file": "demo2/main.c",
+    "line": 3,
+    "label": "Stmt",
+    "code": "#include <stdlib.h>"
+  },
+  {
+    "idx": 2,
+    "prob": 0.5173066258430481,
+    "nid": 2,
+    "file": "demo2/main.c",
+    "line": 4,
+    "label": "Stmt",
+    "code": "#include <string.h>"
+  },
+  {
+    "idx": 3,
+    "prob": 0.4966363310813904,
+    "nid": 3,
+    "file": "demo2/main.c",
+    "line": 6,
+    "label": "Stmt",
+    "code": "extern char* stage1_normalize(const char* in);"
+  },
+  {
+    "idx": 4,
+    "prob": 0.5014327764511108,
+    "nid": 4,
+    "file": "demo2/main.c",
+    "line": 7,
+    "label": "Stmt",
+    "code": "extern char* stage2_expand(char* in);"
+  },
+  {
+    "idx": 5,
+    "prob": 0.4843941330909729,
+    "nid": 5,
+    "file": "demo2/main.c",
+    "line": 8,
+    "label": "Stmt",
+    "code": "extern char* stage3_flag(char* in);"
+  },
+  {
+    "idx": 6,
+    "prob": 0.44876009225845337,
+    "nid": 6,
+    "file": "demo2/main.c",
+    "line": 9,
+    "label": "Stmt",
+    "code": "extern void  do_exec(char* cmd);"
+  },
+  {
+    "idx": 7,
+    "prob": 0.520294725894928,
+    "nid": 7,
+    "file": "demo2/main.c",
+    "line": 11,
+    "label": "Stmt",
+    "code": "int main(void) {"
+  },
+  {
+    "idx": 8,
+    "prob": 0.5289629697799683,
+    "nid": 8,
+    "file": "demo2/main.c",
+    "line": 12,
+    "label": "Stmt",
+    "code": "char in[256];"
+  },
+  {
+    "idx": 9,
+    "prob": 0.502173125743866,
+    "nid": 9,
+    "file": "demo2/main.c",
+    "line": 13,
+    "label": "Stmt",
+    "code": "char* p = NULL;"
+  },
+  {
+    "idx": 10,
+    "prob": 0.5463030338287354,
+    "nid": 10,
+    "file": "demo2/main.c",
+    "line": 15,
+    "label": "ROOT",
+    "code": "// ROOT: untrusted stdin"
+  },
+  {
+    "idx": 11,
+    "prob": 0.4488370716571808,
+    "nid": 11,
+    "file": "demo2/main.c",
+    "line": 16,
+    "label": "ROOT",
+    "code": "if (fgets(in, sizeof(in), stdin)) {"
+  },
+  {
+    "idx": 12,
+    "prob": 0.4785071909427643,
+    "nid": 12,
+    "file": "demo2/main.c",
+    "line": 17,
+    "label": "Stmt",
+    "code": "p = stage1_normalize(in);"
+  },
+  {
+    "idx": 13,
+    "prob": 0.498940110206604,
+    "nid": 13,
+    "file": "demo2/main.c",
+    "line": 18,
+    "label": "Stmt",
+    "code": "p = stage2_expand(p);"
+  },
+  {
+    "idx": 14,
+    "prob": 0.5153781175613403,
+    "nid": 14,
+    "file": "demo2/main.c",
+    "line": 19,
+    "label": "Stmt",
+    "code": "p = stage3_flag(p);"
+  },
+  {
+    "idx": 15,
+    "prob": 0.5100271105766296,
+    "nid": 15,
+    "file": "demo2/main.c",
+    "line": 20,
+    "label": "Stmt",
+    "code": "do_exec(p);   // sink wrapper"
+  },
+  {
+    "idx": 16,
+    "prob": 0.5154007077217102,
+    "nid": 16,
+    "file": "demo2/main.c",
+    "line": 21,
+    "label": "Stmt",
+    "code": "}"
+  },
+  {
+    "idx": 17,
+    "prob": 0.512054979801178,
+    "nid": 17,
+    "file": "demo2/main.c",
+    "line": 22,
+    "label": "Stmt",
+    "code": "return 0;"
+  },
+  {
+    "idx": 18,
+    "prob": 0.5134307146072388,
+    "nid": 18,
+    "file": "demo2/main.c",
+    "line": 23,
+    "label": "Stmt",
+    "code": "}"
+  },
+  {
+    "idx": 19,
+    "prob": 0.5838179588317871,
+    "nid": 19,
+    "file": "demo2/transform.c",
+    "line": 2,
+    "label": "Stmt",
+    "code": "#include <stdio.h>"
+  },
+  {
+    "idx": 20,
+    "prob": 0.5081171989440918,
+    "nid": 20,
+    "file": "demo2/transform.c",
+    "line": 3,
+    "label": "Stmt",
+    "code": "#include <stdlib.h>"
+  },
+  {
+    "idx": 21,
+    "prob": 0.5484259724617004,
+    "nid": 21,
+    "file": "demo2/transform.c",
+    "line": 4,
+    "label": "Stmt",
+    "code": "#include <string.h>"
+  },
+  {
+    "idx": 22,
+    "prob": 0.5752031803131104,
+    "nid": 22,
+    "file": "demo2/transform.c",
+    "line": 6,
+    "label": "Stmt",
+    "code": "static char buf1[300];"
+  },
+  {
+    "idx": 23,
+    "prob": 0.5697640180587769,
+    "nid": 23,
+    "file": "demo2/transform.c",
+    "line": 7,
+    "label": "Stmt",
+    "code": "static char buf2[300];"
+  },
+  {
+    "idx": 24,
+    "prob": 0.5731955766677856,
+    "nid": 24,
+    "file": "demo2/transform.c",
+    "line": 8,
+    "label": "Stmt",
+    "code": "static char buf3[300];"
+  },
+  {
+    "idx": 25,
+    "prob": 0.4762037992477417,
+    "nid": 25,
+    "file": "demo2/transform.c",
+    "line": 10,
+    "label": "Stmt",
+    "code": "char* stage1_normalize(const char* in) {"
+  },
+  {
+    "idx": 26,
+    "prob": 0.5183846950531006,
+    "nid": 26,
+    "file": "demo2/transform.c",
+    "line": 11,
+    "label": "Stmt",
+    "code": "// trim newline (pretend)"
+  },
+  {
+    "idx": 27,
+    "prob": 0.46577784419059753,
+    "nid": 27,
+    "file": "demo2/transform.c",
+    "line": 12,
+    "label": "Stmt",
+    "code": "snprintf(buf1, sizeof(buf1), \"%s\", in);"
+  },
+  {
+    "idx": 28,
+    "prob": 0.5065138936042786,
+    "nid": 28,
+    "file": "demo2/transform.c",
+    "line": 13,
+    "label": "Stmt",
+    "code": "return buf1;"
+  },
+  {
+    "idx": 29,
+    "prob": 0.5185353755950928,
+    "nid": 29,
+    "file": "demo2/transform.c",
+    "line": 14,
+    "label": "Stmt",
+    "code": "}"
+  },
+  {
+    "idx": 30,
+    "prob": 0.5085760951042175,
+    "nid": 30,
+    "file": "demo2/transform.c",
+    "line": 16,
+    "label": "Stmt",
+    "code": "char* stage2_expand(char* in) {"
+  },
+  {
+    "idx": 31,
+    "prob": 0.5129960775375366,
+    "nid": 31,
+    "file": "demo2/transform.c",
+    "line": 17,
+    "label": "Stmt",
+    "code": "// append subcommand"
+  },
+  {
+    "idx": 32,
+    "prob": 0.4124913811683655,
+    "nid": 32,
+    "file": "demo2/transform.c",
+    "line": 18,
+    "label": "Stmt",
+    "code": "strcpy(buf2, \"sh -c \");"
+  },
+  {
+    "idx": 33,
+    "prob": 0.430679053068161,
+    "nid": 33,
+    "file": "demo2/transform.c",
+    "line": 19,
+    "label": "Stmt",
+    "code": "strcat(buf2, in);"
+  },
+  {
+    "idx": 34,
+    "prob": 0.525640070438385,
+    "nid": 34,
+    "file": "demo2/transform.c",
+    "line": 20,
+    "label": "Stmt",
+    "code": "return buf2;"
+  },
+  {
+    "idx": 35,
+    "prob": 0.5144412517547607,
+    "nid": 35,
+    "file": "demo2/transform.c",
+    "line": 21,
+    "label": "Stmt",
+    "code": "}"
+  },
+  {
+    "idx": 36,
+    "prob": 0.5081128478050232,
+    "nid": 36,
+    "file": "demo2/transform.c",
+    "line": 23,
+    "label": "Stmt",
+    "code": "char* stage3_flag(char* in) {"
+  },
+  {
+    "idx": 37,
+    "prob": 0.5168631076812744,
+    "nid": 37,
+    "file": "demo2/transform.c",
+    "line": 24,
+    "label": "Stmt",
+    "code": "// add a flag"
+  },
+  {
+    "idx": 38,
+    "prob": 0.43136897683143616,
+    "nid": 38,
+    "file": "demo2/transform.c",
+    "line": 25,
+    "label": "Stmt",
+    "code": "sprintf(buf3, \"%s %s\", in, \"--debug\");"
+  },
+  {
+    "idx": 39,
+    "prob": 0.5014240145683289,
+    "nid": 39,
+    "file": "demo2/transform.c",
+    "line": 26,
+    "label": "Stmt",
+    "code": "return buf3;"
+  },
+  {
+    "idx": 40,
+    "prob": 0.5018250942230225,
+    "nid": 40,
+    "file": "demo2/transform.c",
+    "line": 27,
+    "label": "Stmt",
+    "code": "}"
+  },
+  {
+    "idx": 41,
+    "prob": 0.5931252837181091,
+    "nid": 41,
+    "file": "demo2/sink.c",
+    "line": 2,
+    "label": "Stmt",
+    "code": "#include <stdio.h>"
+  },
+  {
+    "idx": 42,
+    "prob": 0.5223289132118225,
+    "nid": 42,
+    "file": "demo2/sink.c",
+    "line": 3,
+    "label": "Stmt",
+    "code": "#include <stdlib.h>"
+  },
+  {
+    "idx": 43,
+    "prob": 0.5010668039321899,
+    "nid": 43,
+    "file": "demo2/sink.c",
+    "line": 5,
+    "label": "Stmt",
+    "code": "void do_exec(char* cmd) {"
+  },
+  {
+    "idx": 44,
+    "prob": 0.5376697778701782,
+    "nid": 44,
+    "file": "demo2/sink.c",
+    "line": 6,
+    "label": "Stmt",
+    "code": "// SINK"
+  },
+  {
+    "idx": 45,
+    "prob": 0.5026330351829529,
+    "nid": 45,
+    "file": "demo2/sink.c",
+    "line": 7,
+    "label": "SINK",
+    "code": "system(cmd);"
+  },
+  {
+    "idx": 46,
+    "prob": 0.528301477432251,
+    "nid": 46,
+    "file": "demo2/sink.c",
+    "line": 8,
+    "label": "Stmt",
+    "code": "}"
+  }
+]

@@ -1,0 +1,90 @@
+{
+  "config": {
+    "epochs": 10,
+    "hidden": 64,
+    "layers": 3,
+    "lr": 0.002,
+    "wd": 0.0001,
+    "neg_pos_ratio": 20,
+    "device": "cuda",
+    "dataset_weights": {
+      "default": 1.0
+    },
+    "relations": [
+      "ARG2PARAM",
+      "CALL",
+      "CFG",
+      "DFG",
+      "RET2CALL",
+      "RET2LHS"
+    ],
+    "add_summary_edges": true
+  },
+  "thresholds_by_source": {},
+  "reports": {
+    "valid": {
+      "split": "valid",
+      "overall": {
+        "precision": null,
+        "recall": null,
+        "f1": 0.0
+      },
+      "thresholds": {},
+      "n_graphs_used": 0,
+      "per_source": {},
+      "CCS_mean": null,
+      "CFAM_mean": null,
+      "CCS_count": 0,
+      "CFAM_count": 0
+    },
+    "train": {
+      "split": "train",
+      "overall": {
+        "precision": null,
+        "recall": null,
+        "f1": 0.0
+      },
+      "thresholds": {
+        "default": 0.05
+      },
+      "n_graphs_used": 0,
+      "per_source": {},
+      "CCS_mean": null,
+      "CFAM_mean": null,
+      "CCS_count": 0,
+      "CFAM_count": 0
+    },
+    "test": {
+      "split": "test",
+      "overall": {
+        "precision": null,
+        "recall": null,
+        "f1": 0.0
+      },
+      "thresholds": {
+        "default": 0.05
+      },
+      "n_graphs_used": 0,
+      "per_source": {},
+      "CCS_mean": null,
+      "CFAM_mean": null,
+      "CCS_count": 0,
+      "CFAM_count": 0
+    }
+  },
+  "demo": {
+    "meta": {
+      "split": null,
+      "graph_path": null
+    },
+    "paths": []
+  },
+  "notes": {
+    "interprocedural": "DFG/CFG/CALL/ARG2PARAM/RET2CALL/RET2LHS + optional DFG_THIN summary; multi-root OK.",
+    "beam_guidance": "learned per-relation gates via rel_emb + edge_head; no fixed ordering.",
+    "CCS": "p(X) vs p(do(X')) by zeroing causal-slice features; slice from labels or provided causal_nodes.",
+    "CFAM": "grad-norm attribution mass on hidden h over causal vs causal+spurious; uses provided sets if present.",
+    "calibration": "per-source thresholds chosen on valid to maximize F1; applied to other splits.",
+    "provenance": "each graph carries 'source' from sidecar JSON; per-source training weights applied."
+  }
+}

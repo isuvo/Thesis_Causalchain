@@ -1,0 +1,4 @@
+split,avg_beam_steps,interproc_hop_ratio,beam_width,beam_horizon
+valid,4.901927047487956,,,
+test,4.88336192109777,,,
+test,4.88336192109777,,,

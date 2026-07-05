@@ -1,0 +1,66 @@
+[BASE]     Dataset\train\hetero_ready\shard_0003.pt
+[GCBERT]   Dataset\train\hetero_ready_gcbert\shard_0003.pt
+
+=== hetero_ready ===
+Node types: ['node']
+Edge types: node:AST:node, node:CFG:node, node:DFG:node, node:CALL:node, node:ARG2PARAM:node, node:RET2CALL:node, node:RET2LHS:node, node:AST_REV:node, node:CFG_REV:node, node:DFG_REV:node, node:CALL_REV:node, node:ARG2PARAM_REV:node, node:RET2CALL_REV:node, node:RET2LHS_REV:node
+Nodes: store=node, num=3141, in_dim_total=25, feature_mem≈306.74KB
+  features: x=(3141, 25) float32
+  extras:   (none)
+Edges:
+  (node -AST→ node): 2470
+  (node -CFG→ node): 1457
+  (node -DFG→ node): 697
+  (node -CALL→ node): 608
+  (node -ARG2PARAM→ node): 1097
+  (node -RET2CALL→ node): 608
+  (node -RET2LHS→ node): 96
+  (node -AST_REV→ node): 2470
+  (node -CFG_REV→ node): 1457
+  (node -DFG_REV→ node): 697
+  (node -CALL_REV→ node): 608
+  (node -ARG2PARAM_REV→ node): 1097
+  (node -RET2CALL_REV→ node): 608
+  (node -RET2LHS_REV→ node): 96
+Inter-procedural counts: {'CALL': 608, 'ARG2PARAM': 1097, 'RET2CALL': 608, 'RET2LHS': 96, 'CALL_REV': 608, 'ARG2PARAM_REV': 1097, 'RET2CALL_REV': 608, 'RET2LHS_REV': 96}
+Total edges: 14066
+
+=== hetero_ready_gcbert ===
+Node types: ['node']
+Edge types: node:AST:node, node:CFG:node, node:DFG:node, node:CALL:node, node:ARG2PARAM:node, node:RET2CALL:node, node:RET2LHS:node, node:AST_REV:node, node:CFG_REV:node, node:DFG_REV:node, node:CALL_REV:node, node:ARG2PARAM_REV:node, node:RET2CALL_REV:node, node:RET2LHS_REV:node
+Nodes: store=node, num=3141, in_dim_total=793, feature_mem≈9.50MB
+  features: x_text=(3141, 768) float32, x=(3141, 25) float32
+  extras:   nid=(3141,)
+Edges:
+  (node -AST→ node): 2470
+  (node -CFG→ node): 1457
+  (node -DFG→ node): 697
+  (node -CALL→ node): 608
+  (node -ARG2PARAM→ node): 1097
+  (node -RET2CALL→ node): 608
+  (node -RET2LHS→ node): 96
+  (node -AST_REV→ node): 2470
+  (node -CFG_REV→ node): 1457
+  (node -DFG_REV→ node): 697
+  (node -CALL_REV→ node): 608
+  (node -ARG2PARAM_REV→ node): 1097
+  (node -RET2CALL_REV→ node): 608
+  (node -RET2LHS_REV→ node): 96
+Inter-procedural counts: {'CALL': 608, 'ARG2PARAM': 1097, 'RET2CALL': 608, 'RET2LHS': 96, 'CALL_REV': 608, 'ARG2PARAM_REV': 1097, 'RET2CALL_REV': 608, 'RET2LHS_REV': 96}
+Total edges: 14066
+
+=== Quick comparison (hetero_ready  vs  hetero_ready_gcbert) ===
+- Nodes:  3141 (base)  vs  3141 (gcbert)  -> same
+- In-dim: 25 (base) vs  793 (gcbert) -> ↑ enriched
+- Features present:
+    base:    x=yes, x_text=no
+    gcbert:  x=yes, x_text=yes
+- Relation families:
+    base-only: (none)
+    gcbert-only: (none)
+- Inter-procedural edges total (CALL/ARG2PARAM/RET2*): base=4818  vs  gcbert=4818 (same)
+- Feature memory: base≈306.74KB  vs  gcbert≈9.50MB
+
+Summary:
+  • GraphCodeBERT embeddings (x_text) increase node feature dimensionality.
+  • Inter-procedural topology appears unchanged (same CALL/ARG2PARAM/RET2* counts).

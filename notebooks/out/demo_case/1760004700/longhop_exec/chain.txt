@@ -1,0 +1,10 @@
+Root → … → Sink (hops=2)
+
+[ROOT] P=0.408  }
+   (label=BLOCK, file=app/main.c, line=20)
+   └──[CFG]
+[→] P=0.499  run_system(p);
+   (label=CALL, file=app/main.c, line=19)
+   └──[CFG/DFG]
+[SINK] P=0.644  p = wrap_c(p);
+   (label=BLOCK, file=app/main.c, line=18)

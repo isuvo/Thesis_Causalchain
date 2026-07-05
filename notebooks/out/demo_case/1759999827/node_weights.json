@@ -1,0 +1,272 @@
+[
+  {
+    "idx": 0,
+    "prob": 0.475597083568573,
+    "nid": 0,
+    "file": "med/main.c",
+    "line": 2,
+    "label": "STMT",
+    "code": "#include <stdlib.h>"
+  },
+  {
+    "idx": 1,
+    "prob": 0.46038082242012024,
+    "nid": 1,
+    "file": "med/main.c",
+    "line": 3,
+    "label": "STMT",
+    "code": "#include <string.h>"
+  },
+  {
+    "idx": 2,
+    "prob": 0.42669862508773804,
+    "nid": 2,
+    "file": "med/main.c",
+    "line": 5,
+    "label": "STMT",
+    "code": "extern char* wrap1(char* in);"
+  },
+  {
+    "idx": 3,
+    "prob": 0.4411318004131317,
+    "nid": 3,
+    "file": "med/main.c",
+    "line": 6,
+    "label": "STMT",
+    "code": "extern char* wrap2(char* in);"
+  },
+  {
+    "idx": 4,
+    "prob": 0.42760321497917175,
+    "nid": 4,
+    "file": "med/main.c",
+    "line": 7,
+    "label": "STMT",
+    "code": "extern void  do_exec(char* cmd);"
+  },
+  {
+    "idx": 5,
+    "prob": 0.4651867151260376,
+    "nid": 5,
+    "file": "med/main.c",
+    "line": 9,
+    "label": "ROOT",
+    "code": "int main(int argc, char** argv) {"
+  },
+  {
+    "idx": 6,
+    "prob": 0.36956530809402466,
+    "nid": 6,
+    "file": "med/main.c",
+    "line": 10,
+    "label": "COND",
+    "code": "if (argc > 1) {"
+  },
+  {
+    "idx": 7,
+    "prob": 0.3884802460670471,
+    "nid": 7,
+    "file": "med/main.c",
+    "line": 11,
+    "label": "ROOT",
+    "code": "char* p = argv[1];      // ROOT"
+  },
+  {
+    "idx": 8,
+    "prob": 0.50750333070755,
+    "nid": 8,
+    "file": "med/main.c",
+    "line": 12,
+    "label": "ASSIGN",
+    "code": "p = wrap1(p);           // hop 1"
+  },
+  {
+    "idx": 9,
+    "prob": 0.526168167591095,
+    "nid": 9,
+    "file": "med/main.c",
+    "line": 13,
+    "label": "ASSIGN",
+    "code": "p = wrap2(p);           // hop 2"
+  },
+  {
+    "idx": 10,
+    "prob": 0.4169505536556244,
+    "nid": 10,
+    "file": "med/main.c",
+    "line": 14,
+    "label": "CALL:do_exec",
+    "code": "do_exec(p);             // hop 3 \u2192 then into sink and system"
+  },
+  {
+    "idx": 11,
+    "prob": 0.4620121717453003,
+    "nid": 11,
+    "file": "med/main.c",
+    "line": 15,
+    "label": "STMT",
+    "code": "}"
+  },
+  {
+    "idx": 12,
+    "prob": 0.390794962644577,
+    "nid": 12,
+    "file": "med/main.c",
+    "line": 16,
+    "label": "RET",
+    "code": "return 0;"
+  },
+  {
+    "idx": 13,
+    "prob": 0.37823522090911865,
+    "nid": 13,
+    "file": "med/main.c",
+    "line": 17,
+    "label": "STMT",
+    "code": "}"
+  },
+  {
+    "idx": 14,
+    "prob": 0.4734916388988495,
+    "nid": 14,
+    "file": "med/wrap.c",
+    "line": 2,
+    "label": "STMT",
+    "code": "#include <string.h>"
+  },
+  {
+    "idx": 15,
+    "prob": 0.45387306809425354,
+    "nid": 15,
+    "file": "med/wrap.c",
+    "line": 3,
+    "label": "DECL",
+    "code": "static char b1[256];"
+  },
+  {
+    "idx": 16,
+    "prob": 0.4344106912612915,
+    "nid": 16,
+    "file": "med/wrap.c",
+    "line": 4,
+    "label": "DECL",
+    "code": "static char b2[256];"
+  },
+  {
+    "idx": 17,
+    "prob": 0.4002619981765747,
+    "nid": 17,
+    "file": "med/wrap.c",
+    "line": 6,
+    "label": "STMT",
+    "code": "char* wrap1(char* in) {         // callee head"
+  },
+  {
+    "idx": 18,
+    "prob": 0.3914974629878998,
+    "nid": 18,
+    "file": "med/wrap.c",
+    "line": 7,
+    "label": "CALL:snprintf",
+    "code": "snprintf(b1, sizeof(b1), \"%s\", in);"
+  },
+  {
+    "idx": 19,
+    "prob": 0.4870585799217224,
+    "nid": 19,
+    "file": "med/wrap.c",
+    "line": 8,
+    "label": "RET",
+    "code": "return b1;"
+  },
+  {
+    "idx": 20,
+    "prob": 0.42267292737960815,
+    "nid": 20,
+    "file": "med/wrap.c",
+    "line": 9,
+    "label": "STMT",
+    "code": "}"
+  },
+  {
+    "idx": 21,
+    "prob": 0.41117241978645325,
+    "nid": 21,
+    "file": "med/wrap.c",
+    "line": 11,
+    "label": "STMT",
+    "code": "char* wrap2(char* in) {         // callee head"
+  },
+  {
+    "idx": 22,
+    "prob": 0.3960173726081848,
+    "nid": 22,
+    "file": "med/wrap.c",
+    "line": 12,
+    "label": "CALL:strcpy",
+    "code": "strcpy(b2, in);"
+  },
+  {
+    "idx": 23,
+    "prob": 0.4072572886943817,
+    "nid": 23,
+    "file": "med/wrap.c",
+    "line": 13,
+    "label": "CALL:strcat",
+    "code": "strcat(b2, \" --opt\");"
+  },
+  {
+    "idx": 24,
+    "prob": 0.48150914907455444,
+    "nid": 24,
+    "file": "med/wrap.c",
+    "line": 14,
+    "label": "RET",
+    "code": "return b2;"
+  },
+  {
+    "idx": 25,
+    "prob": 0.38282498717308044,
+    "nid": 25,
+    "file": "med/wrap.c",
+    "line": 15,
+    "label": "STMT",
+    "code": "}"
+  },
+  {
+    "idx": 26,
+    "prob": 0.5165201425552368,
+    "nid": 26,
+    "file": "med/sink.c",
+    "line": 2,
+    "label": "STMT",
+    "code": "#include <stdlib.h>"
+  },
+  {
+    "idx": 27,
+    "prob": 0.45068225264549255,
+    "nid": 27,
+    "file": "med/sink.c",
+    "line": 3,
+    "label": "STMT",
+    "code": "void do_exec(char* cmd) {"
+  },
+  {
+    "idx": 28,
+    "prob": 0.44048798084259033,
+    "nid": 28,
+    "file": "med/sink.c",
+    "line": 4,
+    "label": "SINK",
+    "code": "system(cmd);                // SINK"
+  },
+  {
+    "idx": 29,
+    "prob": 0.4608902335166931,
+    "nid": 29,
+    "file": "med/sink.c",
+    "line": 5,
+    "label": "STMT",
+    "code": "}"
+  }
+]

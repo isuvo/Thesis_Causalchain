@@ -1,0 +1,119 @@
+[
+  {
+    "idx": 0,
+    "P": 0.45474183559417725,
+    "nid": 0,
+    "file": "mini/main.c",
+    "line": 2,
+    "label": "STMT",
+    "code": "#include <stdlib.h>"
+  },
+  {
+    "idx": 1,
+    "P": 0.4519090950489044,
+    "nid": 1,
+    "file": "mini/main.c",
+    "line": 4,
+    "label": "STMT",
+    "code": "extern void do_exec(char* cmd);"
+  },
+  {
+    "idx": 2,
+    "P": 0.3954930305480957,
+    "nid": 2,
+    "file": "mini/main.c",
+    "line": 6,
+    "label": "STMT",
+    "code": "int main(int argc, char** argv) {"
+  },
+  {
+    "idx": 3,
+    "P": 0.41690272092819214,
+    "nid": 3,
+    "file": "mini/main.c",
+    "line": 7,
+    "label": "COND",
+    "code": "if (argc > 1) {"
+  },
+  {
+    "idx": 4,
+    "P": 0.4832696318626404,
+    "nid": 4,
+    "file": "mini/main.c",
+    "line": 8,
+    "label": "ASSIGN",
+    "code": "char* p = argv[1];"
+  },
+  {
+    "idx": 5,
+    "P": 0.427118182182312,
+    "nid": 5,
+    "file": "mini/main.c",
+    "line": 9,
+    "label": "CALL:do_exec",
+    "code": "do_exec(p);"
+  },
+  {
+    "idx": 6,
+    "P": 0.3923931121826172,
+    "nid": 6,
+    "file": "mini/main.c",
+    "line": 10,
+    "label": "STMT",
+    "code": "}"
+  },
+  {
+    "idx": 7,
+    "P": 0.3675108850002289,
+    "nid": 7,
+    "file": "mini/main.c",
+    "line": 11,
+    "label": "RET",
+    "code": "return 0;"
+  },
+  {
+    "idx": 8,
+    "P": 0.3325805366039276,
+    "nid": 8,
+    "file": "mini/main.c",
+    "line": 12,
+    "label": "STMT",
+    "code": "}"
+  },
+  {
+    "idx": 9,
+    "P": 0.5137788653373718,
+    "nid": 9,
+    "file": "mini/sink.c",
+    "line": 2,
+    "label": "STMT",
+    "code": "#include <stdlib.h>"
+  },
+  {
+    "idx": 10,
+    "P": 0.41035768389701843,
+    "nid": 10,
+    "file": "mini/sink.c",
+    "line": 4,
+    "label": "STMT",
+    "code": "void do_exec(char* cmd) {"
+  },
+  {
+    "idx": 11,
+    "P": 0.44614672660827637,
+    "nid": 11,
+    "file": "mini/sink.c",
+    "line": 5,
+    "label": "CALL:system",
+    "code": "system(cmd);"
+  },
+  {
+    "idx": 12,
+    "P": 0.3981698751449585,
+    "nid": 12,
+    "file": "mini/sink.c",
+    "line": 6,
+    "label": "STMT",
+    "code": "}"
+  }
+]

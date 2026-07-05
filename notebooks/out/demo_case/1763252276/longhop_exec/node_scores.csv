@@ -1,0 +1,57 @@
+idx,_id,file,lineNumber,_label,code,P
+0,0,app/main.c,2,BLOCK,#include <stdio.h>,0.4590987265110016
+1,1,app/main.c,3,BLOCK,#include <stdlib.h>,0.4521900415420532
+2,2,app/main.c,4,BLOCK,#include <string.h>,0.44352179765701294
+3,3,app/main.c,6,BLOCK,extern char* wrap_a(char* in);,0.4542697072029114
+4,4,app/main.c,7,BLOCK,extern char* wrap_b(char* in);,0.4478546679019928
+5,5,app/main.c,8,BLOCK,extern char* wrap_c(char* in);,0.4401801526546478
+6,6,app/main.c,9,BLOCK,extern void run_system(char* cmd);,0.4256061017513275
+7,7,app/main.c,11,BLOCK,"int main(int argc, char** argv) {",0.419189453125
+8,8,app/main.c,12,BLOCK,char buf[256];,0.3774189054965973
+9,9,app/main.c,13,CALL,if (argc > 1) {,0.40887296199798584
+10,10,app/main.c,14,CALL,"strncpy(buf, argv[1], sizeof(buf)-1);",0.3742232918739319
+11,11,app/main.c,15,BLOCK,buf[sizeof(buf)-1] = '\0';,0.3882952630519867
+12,12,app/main.c,16,BLOCK,char* p = wrap_a(buf);,0.40884673595428467
+13,13,app/main.c,17,BLOCK,p = wrap_b(p);,0.42446351051330566
+14,14,app/main.c,18,BLOCK,p = wrap_c(p);,0.3869224786758423
+15,15,app/main.c,19,CALL,run_system(p);,0.4520901143550873
+16,16,app/main.c,20,BLOCK,},0.38112789392471313
+17,17,app/main.c,21,BLOCK,return 0;,0.4310727119445801
+18,18,app/main.c,22,BLOCK,},0.3728950321674347
+19,19,lib/wrap.c,2,BLOCK,#include <stdio.h>,0.465335875749588
+20,20,lib/wrap.c,3,BLOCK,#include <stdlib.h>,0.42619460821151733
+21,21,lib/wrap.c,4,BLOCK,#include <string.h>,0.4343692362308502
+22,22,lib/wrap.c,6,BLOCK,static char tmp1[300];,0.4481828510761261
+23,23,lib/wrap.c,7,BLOCK,static char tmp2[300];,0.47263678908348083
+24,24,lib/wrap.c,8,BLOCK,static char tmp3[300];,0.4191189110279083
+25,25,lib/wrap.c,10,BLOCK,char* wrap_a(char* in) {,0.4283798635005951
+26,26,lib/wrap.c,11,CALL,"snprintf(tmp1, sizeof(tmp1), ""%s"", in);",0.4091111719608307
+27,27,lib/wrap.c,12,BLOCK,return tmp1;,0.43855687975883484
+28,28,lib/wrap.c,13,BLOCK,},0.39943233132362366
+29,29,lib/wrap.c,15,BLOCK,char* wrap_b(char* in) {,0.42490890622138977
+30,30,lib/wrap.c,16,CALL,"strcat(tmp2, in);",0.37352409958839417
+31,31,lib/wrap.c,17,CALL,"strcat(tmp2, "" --verbose"");",0.44998183846473694
+32,32,lib/wrap.c,18,BLOCK,return tmp2;,0.4563012719154358
+33,33,lib/wrap.c,19,BLOCK,},0.39629045128822327
+34,34,lib/wrap.c,21,BLOCK,char* wrap_c(char* in) {,0.4314771592617035
+35,35,lib/wrap.c,22,CALL,"sprintf(tmp3, ""%s %s"", in, ""--force"");",0.4041007161140442
+36,36,lib/wrap.c,23,BLOCK,return tmp3;,0.459840327501297
+37,37,lib/wrap.c,24,BLOCK,},0.3813020884990692
+38,38,lib/sink.c,2,BLOCK,#include <stdio.h>,0.45881739258766174
+39,39,lib/sink.c,3,BLOCK,#include <stdlib.h>,0.4419727921485901
+40,40,lib/sink.c,4,BLOCK,#include <string.h>,0.3877324163913727
+41,41,lib/sink.c,6,BLOCK,void run_system(char* cmd) {,0.41657090187072754
+42,42,lib/sink.c,7,BLOCK,char local[512];,0.4132636487483978
+43,43,lib/sink.c,8,BLOCK,size_t n;,0.39468008279800415
+44,44,lib/sink.c,9,CALL,if (cmd == NULL) {,0.39425620436668396
+45,45,lib/sink.c,10,BLOCK,return;,0.4014528691768646
+46,46,lib/sink.c,11,BLOCK,},0.3734520673751831
+47,47,lib/sink.c,12,BLOCK,n = strlen(cmd);,0.49078643321990967
+48,48,lib/sink.c,13,CALL,if (n >= sizeof(local)) {,0.41802725195884705
+49,49,lib/sink.c,14,BLOCK,n = sizeof(local) - 1;,0.46682196855545044
+50,50,lib/sink.c,15,BLOCK,},0.3336573541164398
+51,51,lib/sink.c,16,CALL,"memset(local, 0, sizeof(local));",0.42227187752723694
+52,52,lib/sink.c,17,CALL,"strncpy(local, cmd, n);",0.4120141565799713
+53,53,lib/sink.c,18,BLOCK,local[n] = '\0';,0.44829076528549194
+54,54,lib/sink.c,19,CALL,system(local); /* external command execution */,0.45556697249412537
+55,55,lib/sink.c,20,BLOCK,},0.37985387444496155

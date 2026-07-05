@@ -1,0 +1,152 @@
+{
+  "demo": "threefile_chain2",
+  "hops": 7,
+  "indices": [
+    17,
+    18,
+    19,
+    96,
+    95,
+    94,
+    54,
+    56
+  ],
+  "nodes": [
+    {
+      "index": 0,
+      "graph_idx": 17,
+      "P": 0.3252137005329132,
+      "file": "app/main4.c",
+      "lineNumber": 24,
+      "_label": "BLOCK",
+      "code": "char* s1 = stage_clean(buf);",
+      "role": "ROOT"
+    },
+    {
+      "index": 1,
+      "graph_idx": 18,
+      "P": 0.4223373532295227,
+      "file": "app/main4.c",
+      "lineNumber": 25,
+      "_label": "BLOCK",
+      "code": "char* s2 = stage_route(s1);",
+      "role": "MID"
+    },
+    {
+      "index": 2,
+      "graph_idx": 19,
+      "P": 0.35189905762672424,
+      "file": "app/main4.c",
+      "lineNumber": 26,
+      "_label": "CALL",
+      "code": "stage_execute(s2);",
+      "role": "MID"
+    },
+    {
+      "index": 3,
+      "graph_idx": 96,
+      "P": 0.418609082698822,
+      "file": "lib/shell4.c",
+      "lineNumber": 33,
+      "_label": "BLOCK",
+      "code": "void stage_execute(char* cmd) {",
+      "role": "MID"
+    },
+    {
+      "index": 4,
+      "graph_idx": 95,
+      "P": 0.5005003809928894,
+      "file": "lib/shell4.c",
+      "lineNumber": 31,
+      "_label": "BLOCK",
+      "code": "}",
+      "role": "MID"
+    },
+    {
+      "index": 5,
+      "graph_idx": 94,
+      "P": 0.44115912914276123,
+      "file": "lib/shell4.c",
+      "lineNumber": 30,
+      "_label": "BLOCK",
+      "code": "return c;",
+      "role": "MID"
+    },
+    {
+      "index": 6,
+      "graph_idx": 54,
+      "P": 0.4512307047843933,
+      "file": "lib/process4.c",
+      "lineNumber": 38,
+      "_label": "BLOCK",
+      "code": "char c = in[i];",
+      "role": "MID"
+    },
+    {
+      "index": 7,
+      "graph_idx": 56,
+      "P": 0.5469685196876526,
+      "file": "lib/process4.c",
+      "lineNumber": 40,
+      "_label": "BLOCK",
+      "code": "clean_buf3[i] = (char)(c - 'A' + 'a');",
+      "role": "SINK"
+    }
+  ],
+  "edges": [
+    {
+      "from_index": 0,
+      "to_index": 1,
+      "families": [
+        "CFG"
+      ]
+    },
+    {
+      "from_index": 1,
+      "to_index": 2,
+      "families": [
+        "CFG"
+      ]
+    },
+    {
+      "from_index": 2,
+      "to_index": 3,
+      "families": [
+        "CPG"
+      ]
+    },
+    {
+      "from_index": 3,
+      "to_index": 4,
+      "families": [
+        "CFG"
+      ]
+    },
+    {
+      "from_index": 4,
+      "to_index": 5,
+      "families": [
+        "CFG"
+      ]
+    },
+    {
+      "from_index": 5,
+      "to_index": 6,
+      "families": [
+        "DFG"
+      ]
+    },
+    {
+      "from_index": 6,
+      "to_index": 7,
+      "families": [
+        "DFG"
+      ]
+    }
+  ],
+  "params": {
+    "MAX_HOPS": 12,
+    "BEAM_WIDTH": 24,
+    "TIME_BUDGET_S": 3.0
+  }
+}

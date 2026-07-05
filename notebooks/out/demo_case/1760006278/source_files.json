@@ -1,0 +1,5 @@
+{
+  "app/main.c": "\n#include <stdio.h>\n#include <stdlib.h>\n#include <string.h>\n\nextern char* wrap_a(char* in);\nextern char* wrap_b(char* in);\nextern char* wrap_c(char* in);\nextern void run_system(char* cmd);\n\nint main(int argc, char** argv) {\n    char buf[256];\n    if (argc > 1) {\n        strncpy(buf, argv[1], sizeof(buf)-1);\n        buf[sizeof(buf)-1] = '\\0';\n        char* p = wrap_a(buf);\n        p = wrap_b(p);\n        p = wrap_c(p);\n        run_system(p);\n    }\n    return 0;\n}\n",
+  "lib/wrap.c": "\n#include <stdio.h>\n#include <stdlib.h>\n#include <string.h>\n\nchar tmp1[300];\nchar tmp2[300];\nchar tmp3[300];\n\nchar* wrap_a(char* in) {\n    snprintf(tmp1, sizeof(tmp1), \"%s\", in);\n    return tmp1;\n}\n\nchar* wrap_b(char* in) {\n    strcpy(tmp2, \"\");\n    strcat(tmp2, in);\n    strcat(tmp2, \" --verbose\");\n    return tmp2;\n}\n\nchar* wrap_c(char* in) {\n    sprintf(tmp3, \"%s %s\", in, \"--force\");\n    return tmp3;\n}\n",
+  "lib/sink.c": "\n#include <stdio.h>\n#include <stdlib.h>\n#include <string.h>\n\nvoid run_system(char* cmd) {\n    system(cmd);\n}\n"
+}

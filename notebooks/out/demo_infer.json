@@ -1,0 +1,137 @@
+{
+  "meta": {
+    "graph_path": "Dataset\\train\\hetero_ready_gcbert\\shard_0003.pt",
+    "ckpt": "C:\\Users\\MSHUVO23\\Desktop\\Thesis Research\\Thesis-causal-vul\\notebooks\\out\\cvul\\1760989836\\model.pt",
+    "ckg": "C:\\Users\\MSHUVO23\\Desktop\\Thesis Research\\Thesis-causal-vul\\notebooks\\ckg\\ckg.json",
+    "device": "cuda",
+    "seed_k": 8,
+    "beam_width": 24,
+    "max_hops": 5,
+    "alpha_node": 0.7,
+    "lambda_prior": 0.15
+  },
+  "chain": {
+    "nodes": [
+      51,
+      1213,
+      2249,
+      2249,
+      2249,
+      2249
+    ],
+    "rels": [
+      "DFG_THIN",
+      "ARG2PARAM",
+      "DFG_THIN",
+      "ARG2PARAM",
+      "DFG_THIN"
+    ],
+    "score": 0.6125538118295143,
+    "hops": [
+      {
+        "hop": 1,
+        "from": 51,
+        "to": 1213,
+        "rel": "DFG_THIN",
+        "scores": {
+          "node_logp": -0.7011017203330994,
+          "edge": -0.05841371417045593,
+          "prior_edge": -0.48822150965516603,
+          "prior_bigram": 0.0,
+          "prior_motif": 0.0
+        },
+        "motif": "",
+        "ACC": [
+          "CFG-unknown",
+          "DFG-ok",
+          "Interproc-na"
+        ],
+        "reason": "highest total score; ACC checks passed"
+      },
+      {
+        "hop": 2,
+        "from": 1213,
+        "to": 2249,
+        "rel": "ARG2PARAM",
+        "scores": {
+          "node_logp": -0.017497319728136063,
+          "edge": 4.034315586090088,
+          "prior_edge": -0.3601348572133279,
+          "prior_bigram": -0.2266285625642479,
+          "prior_motif": 0.0
+        },
+        "motif": "",
+        "ACC": [
+          "CFG-unknown",
+          "DFG-unknown",
+          "Interproc-ok"
+        ],
+        "reason": "highest total score; ACC checks passed"
+      },
+      {
+        "hop": 3,
+        "from": 1214,
+        "to": 2249,
+        "rel": "DFG_THIN",
+        "scores": {
+          "node_logp": -0.017497319728136063,
+          "edge": 4.076459884643555,
+          "prior_edge": -0.48822150965516603,
+          "prior_bigram": -0.2035752988847003,
+          "prior_motif": 0.0
+        },
+        "motif": "",
+        "ACC": [
+          "CFG-unknown",
+          "DFG-ok",
+          "Interproc-na"
+        ],
+        "reason": "highest total score; ACC checks passed"
+      },
+      {
+        "hop": 4,
+        "from": 1214,
+        "to": 2249,
+        "rel": "ARG2PARAM",
+        "scores": {
+          "node_logp": -0.017497319728136063,
+          "edge": 4.076456546783447,
+          "prior_edge": -0.3601348572133279,
+          "prior_bigram": -0.2266285625642479,
+          "prior_motif": 0.0
+        },
+        "motif": "",
+        "ACC": [
+          "CFG-unknown",
+          "DFG-unknown",
+          "Interproc-ok"
+        ],
+        "reason": "highest total score; ACC checks passed"
+      },
+      {
+        "hop": 5,
+        "from": 1214,
+        "to": 2249,
+        "rel": "DFG_THIN",
+        "scores": {
+          "node_logp": -0.017497319728136063,
+          "edge": 4.076459884643555,
+          "prior_edge": -0.48822150965516603,
+          "prior_bigram": -0.2035752988847003,
+          "prior_motif": 0.0
+        },
+        "motif": "",
+        "ACC": [
+          "CFG-unknown",
+          "DFG-ok",
+          "Interproc-na"
+        ],
+        "reason": "highest total score; ACC checks passed"
+      }
+    ]
+  },
+  "metrics": {
+    "CFAM": 0.0005818824214681745,
+    "CCS": 1.0746958878371515e-11
+  }
+}

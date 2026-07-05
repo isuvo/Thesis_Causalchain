@@ -1,0 +1,46 @@
+{
+  "reports": [
+    {
+      "phase": "chain_eval",
+      "split": "valid",
+      "graphs_total": 2905,
+      "sinks_considered": 467344,
+      "sinks_linked": 3248,
+      "chain_coverage": 0.006949912698140984,
+      "avg_chain_length": 1.001539408866995,
+      "path_monotonicity_rate": 0.999384236453202,
+      "call_edge_usage_rate": 0.036581616968951736,
+      "details_jsonl": "out/cagat_acc_interproc_train\\chains_valid.jsonl",
+      "params": {
+        "MAX_HOPS": 8,
+        "BEAM_WIDTH": 16,
+        "TIME_BUDGET_S": 2.0,
+        "MONO_SLACK": 0.08,
+        "TOPK_SINKS_PER_GRAPH": 20,
+        "SINK_PROB_THR": 0.6
+      }
+
+      
+    },
+    {
+      "phase": "chain_eval",
+      "split": "test",
+      "graphs_total": 2915,
+      "sinks_considered": 406265,
+      "sinks_linked": 2084,
+      "chain_coverage": 0.005129656751135343,
+      "avg_chain_length": 1.0201535508637236,
+      "path_monotonicity_rate": 0.9961612284069098,
+      "call_edge_usage_rate": 0.5846660395108184,
+      "details_jsonl": "out/cagat_acc_interproc_train\\chains_test.jsonl",
+      "params": {
+        "MAX_HOPS": 8,
+        "BEAM_WIDTH": 16,
+        "TIME_BUDGET_S": 2.0,
+        "MONO_SLACK": 0.08,
+        "TOPK_SINKS_PER_GRAPH": 20,
+        "SINK_PROB_THR": 0.6
+      }
+    }
+  ]
+}

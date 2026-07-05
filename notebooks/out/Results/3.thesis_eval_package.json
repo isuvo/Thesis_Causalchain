@@ -1,0 +1,404 @@
+{
+  "meta": {
+    "generated_at": "2025-10-27T05:42:23Z",
+    "source_files": {
+      "chains_report_all": "/mnt/data/chains_report_all.json",
+      "label_counts_fixed": "/mnt/data/label_counts_fixed.json",
+      "metrics_report": "/mnt/data/metrics_report.json",
+      "metrics_report_all_sources": "/mnt/data/metrics_report_all_sources.json",
+      "metrics_report_robust": "/mnt/data/metrics_report_robust.json",
+      "model_eval_metrics": "/mnt/data/model_eval_metrics.json",
+      "results_compiled": "/mnt/data/results_compiled.json",
+      "train_summary": "/mnt/data/train_summary.json",
+      "training_report": "/mnt/data/training_report.json"
+    },
+    "notes": [
+      "Observed conventional metrics are split by label-source buckets; 'mined' often lacks labels -> zeros.",
+      "CKG prior is used only during decoding; training objective unchanged.",
+      "Expected targets are reported separately and include midpoints for convenience."
+    ]
+  },
+  "dataset_label_balance": {
+    "splits": [
+      {
+        "split": "train",
+        "graphs_total": 3438,
+        "graphs_with_json_or_pos": 3436,
+        "vulnerable_nodes_total": 9946,
+        "non_vulnerable_nodes_total": 25173258,
+        "pos_ratio": 0.0003949457741755179
+      },
+      {
+        "split": "valid",
+        "graphs_total": 2905,
+        "graphs_with_json_or_pos": 2905,
+        "vulnerable_nodes_total": 1455,
+        "non_vulnerable_nodes_total": 3970281,
+        "pos_ratio": 0.0003663385481814501
+      },
+      {
+        "split": "test",
+        "graphs_total": 2915,
+        "graphs_with_json_or_pos": 2915,
+        "vulnerable_nodes_total": 1316,
+        "non_vulnerable_nodes_total": 3973974,
+        "pos_ratio": 0.00033104503067700724
+      }
+    ],
+    "evidence": {
+      "node_text_rx": 1074
+    }
+  },
+  "observed": {
+    "conventional_by_label_source": {
+      "validation": {
+        "mined": {
+          "n_graphs": 2058,
+          "accuracy": 0.44,
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0
+        },
+        "heuristic": {
+          "n_graphs": 777,
+          "accuracy": 0.405,
+          "precision": 0.00261,
+          "recall": 0.817,
+          "f1": 0.00505
+        },
+        "bootstrap": {
+          "n_graphs": 70,
+          "accuracy": 0.492,
+          "precision": 0.0582,
+          "recall": 1.0,
+          "f1": 0.108
+        },
+        "pooled_mAP": {
+          "global": 0.00151,
+          "inter": 0.00274
+        }
+      },
+      "test": {
+        "mined": {
+          "n_graphs": 2025,
+          "accuracy": 0.443,
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0
+        },
+        "heuristic": {
+          "n_graphs": 812,
+          "accuracy": 0.402,
+          "precision": 0.00187,
+          "recall": 0.815,
+          "f1": 0.00366
+        },
+        "bootstrap": {
+          "n_graphs": 78,
+          "accuracy": 0.489,
+          "precision": 0.0604,
+          "recall": 1.0,
+          "f1": 0.112
+        },
+        "pooled_mAP": {
+          "global": 0.00167,
+          "inter": 0.00279
+        }
+      }
+    },
+    "causal_and_beam": {
+      "valid": {
+        "n_graphs": 2906,
+        "threshold_used": 0.05,
+        "beam": {
+          "avg_steps": 4.901927047487956,
+          "interproc_ratio": 0.41204117916952965
+        },
+        "causal": {
+          "cfam_mean": 0.03713512300016863,
+          "ccs_mean": 2.103382822502565e-05
+        }
+      },
+      "test": {
+        "n_graphs": 2915,
+        "threshold_used": 0.05,
+        "beam": {
+          "avg_steps": 4.88336192109777,
+          "interproc_ratio": 0.4147284162378449
+        },
+        "causal": {
+          "cfam_mean": 0.03802854397785558,
+          "ccs_mean": 2.992976884928558e-05
+        }
+      }
+    },
+    "chain_mining": {
+      "valid": {
+        "graphs_total": 2905,
+        "sinks_considered": 467344,
+        "sinks_linked": 3248,
+        "chain_coverage": 0.006949912698140984,
+        "avg_chain_length": 1.001539408866995,
+        "path_monotonicity_rate": 0.999384236453202,
+        "call_edge_usage_rate": 0.036581616968951736,
+        "beam_params": {
+          "MAX_HOPS": 8,
+          "BEAM_WIDTH": 16,
+          "TIME_BUDGET_S": 2.0,
+          "MONO_SLACK": 0.08,
+          "TOPK_SINKS_PER_GRAPH": 20,
+          "SINK_PROB_THR": 0.6
+        }
+      },
+      "test": {
+        "graphs_total": 2915,
+        "sinks_considered": 406265,
+        "sinks_linked": 2084,
+        "chain_coverage": 0.005129656751135343,
+        "avg_chain_length": 1.0201535508637236,
+        "path_monotonicity_rate": 0.9961612284069098,
+        "call_edge_usage_rate": 0.5846660395108184,
+        "beam_params": {
+          "MAX_HOPS": 8,
+          "BEAM_WIDTH": 16,
+          "TIME_BUDGET_S": 2.0,
+          "MONO_SLACK": 0.08,
+          "TOPK_SINKS_PER_GRAPH": 20,
+          "SINK_PROB_THR": 0.6
+        }
+      }
+    },
+    "robustness_diagnostics": {
+      "valid": {
+        "path_monotonicity_avg": null,
+        "call_chain_coherence_avg": 0.23544000245487515,
+        "call_chain_pairs_used": 820174
+      },
+      "test": {
+        "path_monotonicity_avg": null,
+        "call_chain_coherence_avg": 0.19578031284842037,
+        "call_chain_pairs_used": 823385
+      }
+    }
+  },
+  "expected_targets": {
+    "conventional_metrics": {
+      "macro_f1_range": [
+        0.35,
+        0.55
+      ],
+      "auprc_range": [
+        0.2,
+        0.4
+      ]
+    },
+    "causal_metrics": {
+      "cfam_mean_range": [
+        0.12,
+        0.25
+      ],
+      "ccs_minor_edits_max": 0.005,
+      "dcr_minor_edits_min": 0.75,
+      "chain_validity_rate_min": 0.85,
+      "ipa_rate_min": 0.6,
+      "motif_coverage_k500_min": 0.3
+    },
+    "decoding_profile": {
+      "avg_steps_range": [
+        4,
+        7
+      ],
+      "interproc_hop_ratio_range": [
+        0.35,
+        0.55
+      ]
+    }
+  },
+  "expected_conventional_midpoints": {
+    "macro_f1_expected": 0.45,
+    "auprc_expected": 0.3
+  },
+  "ckg_prior": {
+    "graphs_used": 3438,
+    "relations": [
+      "DFG",
+      "CFG",
+      "CALL",
+      "ARG2PARAM",
+      "RET2CALL",
+      "RET2LHS",
+      "DFG_THIN"
+    ],
+    "edge_prior_prob": {
+      "DFG": 0.004169714703730797,
+      "CFG": 0.47439648866130213,
+      "CALL": 0.3902706656912948,
+      "ARG2PARAM": 0.09063643013899049,
+      "RET2CALL": 0.0019019751280175566,
+      "RET2LHS": 3.65764447695684e-05,
+      "DFG_THIN": 0.03858814923189466
+    },
+    "bigram_prob_sample": {
+      "DFG": {
+        "DFG": 0.6091954022988506,
+        "CFG": 0.12643678160919541,
+        "CALL": 0.011494252873563218,
+        "ARG2PARAM": 0.06896551724137931,
+        "RET2CALL": 0.0
+      },
+      "CFG": {
+        "DFG": 0.00408905043162199,
+        "CFG": 0.5834620626987733,
+        "CALL": 0.3085870059064062,
+        "ARG2PARAM": 0.08532485233984552,
+        "RET2CALL": 9.086778736937755e-05
+      },
+      "CALL": {
+        "DFG": 0.0,
+        "CFG": 0.0007084159818645508,
+        "CALL": 0.9992915840181354,
+        "ARG2PARAM": 0.0,
+        "RET2CALL": 0.0
+      },
+      "ARG2PARAM": {
+        "DFG": 0.0,
+        "CFG": 0.0,
+        "CALL": 0.0,
+        "ARG2PARAM": 0.7426114991939817,
+        "RET2CALL": 0.0
+      },
+      "RET2CALL": {
+        "DFG": 0.04,
+        "CFG": 0.3,
+        "CALL": 0.56,
+        "ARG2PARAM": 0.06,
+        "RET2CALL": 0.0
+      },
+      "RET2LHS": {
+        "DFG": 0.0,
+        "CFG": 0.0,
+        "CALL": 0.0,
+        "ARG2PARAM": 0.0,
+        "RET2CALL": 0.0
+      },
+      "DFG_THIN": {
+        "DFG": 0.006756756756756757,
+        "CFG": 0.05405405405405406,
+        "CALL": 0.04954954954954955,
+        "ARG2PARAM": 0.22072072072072071,
+        "RET2CALL": 0.0022522522522522522
+      }
+    },
+    "top_motifs": [
+      {
+        "count": 3943,
+        "rels": [
+          "CFG",
+          "CFG",
+          "CFG"
+        ]
+      },
+      {
+        "count": 3489,
+        "rels": [
+          "CALL",
+          "CALL",
+          "CALL"
+        ]
+      },
+      {
+        "count": 3343,
+        "rels": [
+          "CFG",
+          "CALL",
+          "CALL"
+        ]
+      },
+      {
+        "count": 810,
+        "rels": [
+          "CFG",
+          "ARG2PARAM",
+          "ARG2PARAM"
+        ]
+      },
+      {
+        "count": 480,
+        "rels": [
+          "ARG2PARAM",
+          "ARG2PARAM",
+          "ARG2PARAM"
+        ]
+      },
+      {
+        "count": 348,
+        "rels": [
+          "ARG2PARAM",
+          "ARG2PARAM",
+          "DFG_THIN"
+        ]
+      },
+      {
+        "count": 288,
+        "rels": [
+          "CFG",
+          "CFG",
+          "CALL"
+        ]
+      },
+      {
+        "count": 180,
+        "rels": [
+          "CFG",
+          "CFG",
+          "ARG2PARAM"
+        ]
+      },
+      {
+        "count": 135,
+        "rels": [
+          "CFG",
+          "DFG_THIN",
+          "DFG_THIN"
+        ]
+      },
+      {
+        "count": 116,
+        "rels": [
+          "CFG",
+          "ARG2PARAM",
+          "DFG_THIN"
+        ]
+      }
+    ],
+    "smoothing_eps": 0.001,
+    "temperature": 1.0,
+    "trigram_topK": 500,
+    "prior_weights": {
+      "beta1": 0.3,
+      "beta2": 0.6,
+      "beta3": 0.1
+    },
+    "mixture_lambda": 0.2
+  },
+  "training_summary": {
+    "train_summary": {
+      "loss_avg": 0.9529057450354134,
+      "steps": 17190,
+      "epochs": 5
+    },
+    "training_report": {
+      "phase": "train",
+      "steps": 17190,
+      "avg_loss": 0.9529057450354134,
+      "graphs_seen": 17190,
+      "graphs_with_any_pos": 17060,
+      "graphs_with_inter_pos": 17060,
+      "best_inter_recall": 1.0,
+      "log_jsonl": "out/cagat_acc_interproc_train\\training_log.jsonl",
+      "summary_json": "out/cagat_acc_interproc_train\\train_summary.json",
+      "ckpt_last": "out/cagat_acc_interproc_train\\ckpt_cagat_acc_interproc.pt",
+      "ckpt_best": "out/cagat_acc_interproc_train\\best_model.pt"
+    }
+  }
+}

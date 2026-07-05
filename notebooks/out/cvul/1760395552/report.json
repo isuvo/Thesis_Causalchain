@@ -1,0 +1,183 @@
+{
+  "config": {
+    "epochs": 10,
+    "hidden": 64,
+    "layers": 3,
+    "lr": 0.002,
+    "wd": 0.0001,
+    "neg_pos_ratio": 20,
+    "device": "cuda",
+    "dataset_weights": {
+      "default": 1.0
+    },
+    "relations": [
+      "ARG2PARAM",
+      "CALL",
+      "CFG",
+      "DFG",
+      "RET2CALL",
+      "RET2LHS"
+    ],
+    "add_summary_edges": true,
+    "label_keys": [
+      "y",
+      "label",
+      "labels",
+      "vulnerable",
+      "is_sink",
+      "target",
+      "targets"
+    ],
+    "sink_keys": [
+      "sinks",
+      "sink_nodes"
+    ],
+    "path_keys": [
+      "vulnerable_paths",
+      "paths_idx"
+    ]
+  },
+  "thresholds_by_source": {
+    "default": 0.25
+  },
+  "reports": {
+    "train": {
+      "split": "train",
+      "overall": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0
+      },
+      "thresholds": {
+        "default": 0.05
+      },
+      "n_graphs_used": 0,
+      "per_source": {},
+      "CCS_mean": null,
+      "CFAM_mean": null,
+      "CCS_count": 0,
+      "CFAM_count": 0
+    },
+    "valid": {
+      "split": "valid",
+      "overall": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0
+      },
+      "thresholds": {
+        "default": 0.25
+      },
+      "n_graphs_used": 0,
+      "per_source": {},
+      "CCS_mean": null,
+      "CFAM_mean": null,
+      "CCS_count": 0,
+      "CFAM_count": 0
+    },
+    "test": {
+      "split": "test",
+      "overall": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0
+      },
+      "thresholds": {
+        "default": 0.05
+      },
+      "n_graphs_used": 0,
+      "per_source": {},
+      "CCS_mean": null,
+      "CFAM_mean": null,
+      "CCS_count": 0,
+      "CFAM_count": 0
+    }
+  },
+  "demo": {
+    "meta": {
+      "split": "valid",
+      "graph_path": "Dataset\\valid\\hetero_ready_gcbert\\shard_0003.pt"
+    },
+    "paths": [
+      {
+        "score": -0.8635938227176665,
+        "nodes": [
+          109,
+          34
+        ]
+      },
+      {
+        "score": -0.8712946087121963,
+        "nodes": [
+          109,
+          40
+        ]
+      },
+      {
+        "score": -0.8777746498584748,
+        "nodes": [
+          23,
+          42
+        ]
+      },
+      {
+        "score": -0.8903922840952873,
+        "nodes": [
+          17,
+          61
+        ]
+      },
+      {
+        "score": -0.9098777621984482,
+        "nodes": [
+          23,
+          59
+        ]
+      },
+      {
+        "score": -0.9338618226349353,
+        "nodes": [
+          113,
+          22
+        ]
+      },
+      {
+        "score": -0.9382798098027706,
+        "nodes": [
+          109,
+          16
+        ]
+      },
+      {
+        "score": -0.9441604085266591,
+        "nodes": [
+          17,
+          44
+        ]
+      },
+      {
+        "score": -0.9447669923305512,
+        "nodes": [
+          23,
+          80
+        ]
+      },
+      {
+        "score": -0.9496274925768375,
+        "nodes": [
+          109,
+          21
+        ]
+      }
+    ]
+  },
+  "notes": {
+    "interprocedural": "DFG/CFG/CALL/ARG2PARAM/RET2CALL/RET2LHS (+DFG_THIN optional); multi-root beam.",
+    "beam_guidance": "learned per-relation gates (RelGate); no fixed ordering.",
+    "objective": "node (focal+class-weights+hard-neg), edge participation, next-hop ranking, monotonicity.",
+    "CCS": "p(x) vs p(do(x')) by zeroing strict causal-slice (annotated or sliced roots\u2192sinks).",
+    "CFAM": "grad-norm attribution mass on causal / (causal+spurious).",
+    "calibration": "per-source thresholds tuned on valid; used in summaries.",
+    "provenance": "source field if present; else 'default'."
+  }
+}

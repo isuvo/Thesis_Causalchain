@@ -1,0 +1,28 @@
+Start → … → Target(P-high) (hops=8)
+
+[START] #include <stdlib.h>
+  (STMT, mini/main.c, line 2, p=0.454)
+   └──[CFG] exact=CFG
+[→] extern void do_exec(char* cmd);
+  (STMT, mini/main.c, line 4, p=0.551)
+   └──[CFG] exact=CFG
+[→] int main(int argc, char** argv) {
+  (STMT, mini/main.c, line 6, p=0.590)
+   └──[CFG] exact=CFG
+[→] if (argc > 1) {
+  (COND, mini/main.c, line 7, p=0.551)
+   └──[CFG] exact=CFG
+[→] char* p = argv[1];
+  (ASSIGN, mini/main.c, line 8, p=0.444)
+   └──[CFG] exact=CFG
+[→] do_exec(p);
+  (CALL:do_exec, mini/main.c, line 9, p=0.463)
+   └──[CFG] exact=CFG
+[→] }
+  (STMT, mini/main.c, line 10, p=0.469)
+   └──[CFG] exact=CFG
+[→] return 0;
+  (RET, mini/main.c, line 11, p=0.461)
+   └──[CFG] exact=CFG
+[TARGET] }
+  (STMT, mini/main.c, line 12, p=0.374)

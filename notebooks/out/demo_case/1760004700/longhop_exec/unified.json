@@ -1,0 +1,1109 @@
+{
+  "meta": {
+    "tool": "demo",
+    "demo_name": "longhop_exec",
+    "n_nodes": 44,
+    "n_edges": {
+      "ARG2PARAM": 1,
+      "ARG2PARAM_REV": 1,
+      "CALL": 8,
+      "CALL_REV": 8,
+      "CFG": 41,
+      "CFG_REV": 41,
+      "DFG": 5,
+      "DFG_REV": 5,
+      "RET2CALL": 8,
+      "RET2CALL_REV": 8
+    }
+  },
+  "nodes": [
+    {
+      "_id": 0,
+      "code": "#include <stdio.h>",
+      "typeFullName": "ANY",
+      "lineNumber": 2,
+      "order": 1,
+      "_label": "BLOCK",
+      "file": "app/main.c",
+      "nodeType": "BLOCK"
+    },
+    {
+      "_id": 1,
+      "code": "#include <stdlib.h>",
+      "typeFullName": "ANY",
+      "lineNumber": 3,
+      "order": 2,
+      "_label": "BLOCK",
+      "file": "app/main.c",
+      "nodeType": "BLOCK"
+    },
+    {
+      "_id": 2,
+      "code": "#include <string.h>",
+      "typeFullName": "ANY",
+      "lineNumber": 4,
+      "order": 3,
+      "_label": "BLOCK",
+      "file": "app/main.c",
+      "nodeType": "BLOCK"
+    },
+    {
+      "_id": 3,
+      "code": "extern char* wrap_a(char* in);",
+      "typeFullName": "ANY",
+      "lineNumber": 6,
+      "order": 4,
+      "_label": "BLOCK",
+      "file": "app/main.c",
+      "nodeType": "BLOCK"
+    },
+    {
+      "_id": 4,
+      "code": "extern char* wrap_b(char* in);",
+      "typeFullName": "ANY",
+      "lineNumber": 7,
+      "order": 5,
+      "_label": "BLOCK",
+      "file": "app/main.c",
+      "nodeType": "BLOCK"
+    },
+    {
+      "_id": 5,
+      "code": "extern char* wrap_c(char* in);",
+      "typeFullName": "ANY",
+      "lineNumber": 8,
+      "order": 6,
+      "_label": "BLOCK",
+      "file": "app/main.c",
+      "nodeType": "BLOCK"
+    },
+    {
+      "_id": 6,
+      "code": "extern void run_system(char* cmd);",
+      "typeFullName": "ANY",
+      "lineNumber": 9,
+      "order": 7,
+      "_label": "BLOCK",
+      "file": "app/main.c",
+      "nodeType": "BLOCK"
+    },
+    {
+      "_id": 7,
+      "code": "int main(int argc, char** argv) {",
+      "typeFullName": "ANY",
+      "lineNumber": 11,
+      "order": 8,
+      "_label": "BLOCK",
+      "file": "app/main.c",
+      "nodeType": "BLOCK"
+    },
+    {
+      "_id": 8,
+      "code": "char buf[256];",
+      "typeFullName": "ANY",
+      "lineNumber": 12,
+      "order": 9,
+      "_label": "BLOCK",
+      "file": "app/main.c",
+      "nodeType": "BLOCK"
+    },
+    {
+      "_id": 9,
+      "code": "if (argc > 1) {",
+      "typeFullName": "ANY",
+      "lineNumber": 13,
+      "order": 10,
+      "_label": "CALL",
+      "file": "app/main.c",
+      "nodeType": "CALL",
+      "name": "if",
+      "methodFullName": "if:<unresolvedSignature>"
+    },
+    {
+      "_id": 10,
+      "code": "strncpy(buf, argv[1], sizeof(buf)-1);",
+      "typeFullName": "ANY",
+      "lineNumber": 14,
+      "order": 11,
+      "_label": "CALL",
+      "file": "app/main.c",
+      "nodeType": "CALL",
+      "name": "strncpy",
+      "methodFullName": "strncpy:<unresolvedSignature>"
+    },
+    {
+      "_id": 11,
+      "code": "buf[sizeof(buf)-1] = '\\0';",
+      "typeFullName": "ANY",
+      "lineNumber": 15,
+      "order": 12,
+      "_label": "BLOCK",
+      "file": "app/main.c",
+      "nodeType": "BLOCK"
+    },
+    {
+      "_id": 12,
+      "code": "char* p = wrap_a(buf);",
+      "typeFullName": "ANY",
+      "lineNumber": 16,
+      "order": 13,
+      "_label": "BLOCK",
+      "file": "app/main.c",
+      "nodeType": "BLOCK"
+    },
+    {
+      "_id": 13,
+      "code": "p = wrap_b(p);",
+      "typeFullName": "ANY",
+      "lineNumber": 17,
+      "order": 14,
+      "_label": "BLOCK",
+      "file": "app/main.c",
+      "nodeType": "BLOCK"
+    },
+    {
+      "_id": 14,
+      "code": "p = wrap_c(p);",
+      "typeFullName": "ANY",
+      "lineNumber": 18,
+      "order": 15,
+      "_label": "BLOCK",
+      "file": "app/main.c",
+      "nodeType": "BLOCK"
+    },
+    {
+      "_id": 15,
+      "code": "run_system(p);",
+      "typeFullName": "ANY",
+      "lineNumber": 19,
+      "order": 16,
+      "_label": "CALL",
+      "file": "app/main.c",
+      "nodeType": "CALL",
+      "name": "run_system",
+      "methodFullName": "run_system:<unresolvedSignature>"
+    },
+    {
+      "_id": 16,
+      "code": "}",
+      "typeFullName": "ANY",
+      "lineNumber": 20,
+      "order": 17,
+      "_label": "BLOCK",
+      "file": "app/main.c",
+      "nodeType": "BLOCK"
+    },
+    {
+      "_id": 17,
+      "code": "return 0;",
+      "typeFullName": "ANY",
+      "lineNumber": 21,
+      "order": 18,
+      "_label": "BLOCK",
+      "file": "app/main.c",
+      "nodeType": "BLOCK"
+    },
+    {
+      "_id": 18,
+      "code": "}",
+      "typeFullName": "ANY",
+      "lineNumber": 22,
+      "order": 19,
+      "_label": "BLOCK",
+      "file": "app/main.c",
+      "nodeType": "BLOCK"
+    },
+    {
+      "_id": 19,
+      "code": "#include <stdio.h>",
+      "typeFullName": "ANY",
+      "lineNumber": 2,
+      "order": 1,
+      "_label": "BLOCK",
+      "file": "lib/wrap.c",
+      "nodeType": "BLOCK"
+    },
+    {
+      "_id": 20,
+      "code": "#include <stdlib.h>",
+      "typeFullName": "ANY",
+      "lineNumber": 3,
+      "order": 2,
+      "_label": "BLOCK",
+      "file": "lib/wrap.c",
+      "nodeType": "BLOCK"
+    },
+    {
+      "_id": 21,
+      "code": "#include <string.h>",
+      "typeFullName": "ANY",
+      "lineNumber": 4,
+      "order": 3,
+      "_label": "BLOCK",
+      "file": "lib/wrap.c",
+      "nodeType": "BLOCK"
+    },
+    {
+      "_id": 22,
+      "code": "static char tmp1[300];",
+      "typeFullName": "ANY",
+      "lineNumber": 6,
+      "order": 4,
+      "_label": "BLOCK",
+      "file": "lib/wrap.c",
+      "nodeType": "BLOCK"
+    },
+    {
+      "_id": 23,
+      "code": "static char tmp2[300];",
+      "typeFullName": "ANY",
+      "lineNumber": 7,
+      "order": 5,
+      "_label": "BLOCK",
+      "file": "lib/wrap.c",
+      "nodeType": "BLOCK"
+    },
+    {
+      "_id": 24,
+      "code": "static char tmp3[300];",
+      "typeFullName": "ANY",
+      "lineNumber": 8,
+      "order": 6,
+      "_label": "BLOCK",
+      "file": "lib/wrap.c",
+      "nodeType": "BLOCK"
+    },
+    {
+      "_id": 25,
+      "code": "char* wrap_a(char* in) {",
+      "typeFullName": "ANY",
+      "lineNumber": 10,
+      "order": 7,
+      "_label": "BLOCK",
+      "file": "lib/wrap.c",
+      "nodeType": "BLOCK"
+    },
+    {
+      "_id": 26,
+      "code": "snprintf(tmp1, sizeof(tmp1), \"%s\", in);",
+      "typeFullName": "ANY",
+      "lineNumber": 11,
+      "order": 8,
+      "_label": "CALL",
+      "file": "lib/wrap.c",
+      "nodeType": "CALL",
+      "name": "snprintf",
+      "methodFullName": "snprintf:<unresolvedSignature>"
+    },
+    {
+      "_id": 27,
+      "code": "return tmp1;",
+      "typeFullName": "ANY",
+      "lineNumber": 12,
+      "order": 9,
+      "_label": "BLOCK",
+      "file": "lib/wrap.c",
+      "nodeType": "BLOCK"
+    },
+    {
+      "_id": 28,
+      "code": "}",
+      "typeFullName": "ANY",
+      "lineNumber": 13,
+      "order": 10,
+      "_label": "BLOCK",
+      "file": "lib/wrap.c",
+      "nodeType": "BLOCK"
+    },
+    {
+      "_id": 29,
+      "code": "char* wrap_b(char* in) {",
+      "typeFullName": "ANY",
+      "lineNumber": 15,
+      "order": 11,
+      "_label": "BLOCK",
+      "file": "lib/wrap.c",
+      "nodeType": "BLOCK"
+    },
+    {
+      "_id": 30,
+      "code": "strcat(tmp2, in);",
+      "typeFullName": "ANY",
+      "lineNumber": 16,
+      "order": 12,
+      "_label": "CALL",
+      "file": "lib/wrap.c",
+      "nodeType": "CALL",
+      "name": "strcat",
+      "methodFullName": "strcat:<unresolvedSignature>"
+    },
+    {
+      "_id": 31,
+      "code": "strcat(tmp2, \" --verbose\");",
+      "typeFullName": "ANY",
+      "lineNumber": 17,
+      "order": 13,
+      "_label": "CALL",
+      "file": "lib/wrap.c",
+      "nodeType": "CALL",
+      "name": "strcat",
+      "methodFullName": "strcat:<unresolvedSignature>"
+    },
+    {
+      "_id": 32,
+      "code": "return tmp2;",
+      "typeFullName": "ANY",
+      "lineNumber": 18,
+      "order": 14,
+      "_label": "BLOCK",
+      "file": "lib/wrap.c",
+      "nodeType": "BLOCK"
+    },
+    {
+      "_id": 33,
+      "code": "}",
+      "typeFullName": "ANY",
+      "lineNumber": 19,
+      "order": 15,
+      "_label": "BLOCK",
+      "file": "lib/wrap.c",
+      "nodeType": "BLOCK"
+    },
+    {
+      "_id": 34,
+      "code": "char* wrap_c(char* in) {",
+      "typeFullName": "ANY",
+      "lineNumber": 21,
+      "order": 16,
+      "_label": "BLOCK",
+      "file": "lib/wrap.c",
+      "nodeType": "BLOCK"
+    },
+    {
+      "_id": 35,
+      "code": "sprintf(tmp3, \"%s %s\", in, \"--force\");",
+      "typeFullName": "ANY",
+      "lineNumber": 22,
+      "order": 17,
+      "_label": "CALL",
+      "file": "lib/wrap.c",
+      "nodeType": "CALL",
+      "name": "sprintf",
+      "methodFullName": "sprintf:<unresolvedSignature>"
+    },
+    {
+      "_id": 36,
+      "code": "return tmp3;",
+      "typeFullName": "ANY",
+      "lineNumber": 23,
+      "order": 18,
+      "_label": "BLOCK",
+      "file": "lib/wrap.c",
+      "nodeType": "BLOCK"
+    },
+    {
+      "_id": 37,
+      "code": "}",
+      "typeFullName": "ANY",
+      "lineNumber": 24,
+      "order": 19,
+      "_label": "BLOCK",
+      "file": "lib/wrap.c",
+      "nodeType": "BLOCK"
+    },
+    {
+      "_id": 38,
+      "code": "#include <stdio.h>",
+      "typeFullName": "ANY",
+      "lineNumber": 2,
+      "order": 1,
+      "_label": "BLOCK",
+      "file": "lib/sink.c",
+      "nodeType": "BLOCK"
+    },
+    {
+      "_id": 39,
+      "code": "#include <stdlib.h>",
+      "typeFullName": "ANY",
+      "lineNumber": 3,
+      "order": 2,
+      "_label": "BLOCK",
+      "file": "lib/sink.c",
+      "nodeType": "BLOCK"
+    },
+    {
+      "_id": 40,
+      "code": "#include <string.h>",
+      "typeFullName": "ANY",
+      "lineNumber": 4,
+      "order": 3,
+      "_label": "BLOCK",
+      "file": "lib/sink.c",
+      "nodeType": "BLOCK"
+    },
+    {
+      "_id": 41,
+      "code": "void run_system(char* cmd) {",
+      "typeFullName": "ANY",
+      "lineNumber": 6,
+      "order": 4,
+      "_label": "BLOCK",
+      "file": "lib/sink.c",
+      "nodeType": "BLOCK"
+    },
+    {
+      "_id": 42,
+      "code": "system(cmd);",
+      "typeFullName": "ANY",
+      "lineNumber": 7,
+      "order": 5,
+      "_label": "CALL",
+      "file": "lib/sink.c",
+      "nodeType": "CALL",
+      "name": "system",
+      "methodFullName": "system:<unresolvedSignature>"
+    },
+    {
+      "_id": 43,
+      "code": "}",
+      "typeFullName": "ANY",
+      "lineNumber": 8,
+      "order": 6,
+      "_label": "BLOCK",
+      "file": "lib/sink.c",
+      "nodeType": "BLOCK"
+    }
+  ],
+  "edges": [
+    {
+      "type": "CFG",
+      "src": 0,
+      "dst": 1
+    },
+    {
+      "type": "CFG",
+      "src": 1,
+      "dst": 2
+    },
+    {
+      "type": "CFG",
+      "src": 2,
+      "dst": 3
+    },
+    {
+      "type": "CFG",
+      "src": 3,
+      "dst": 4
+    },
+    {
+      "type": "CFG",
+      "src": 4,
+      "dst": 5
+    },
+    {
+      "type": "CFG",
+      "src": 5,
+      "dst": 6
+    },
+    {
+      "type": "CFG",
+      "src": 6,
+      "dst": 7
+    },
+    {
+      "type": "CFG",
+      "src": 7,
+      "dst": 8
+    },
+    {
+      "type": "CFG",
+      "src": 8,
+      "dst": 9
+    },
+    {
+      "type": "CFG",
+      "src": 9,
+      "dst": 10
+    },
+    {
+      "type": "CFG",
+      "src": 10,
+      "dst": 11
+    },
+    {
+      "type": "CFG",
+      "src": 11,
+      "dst": 12
+    },
+    {
+      "type": "CFG",
+      "src": 12,
+      "dst": 13
+    },
+    {
+      "type": "CFG",
+      "src": 13,
+      "dst": 14
+    },
+    {
+      "type": "CFG",
+      "src": 14,
+      "dst": 15
+    },
+    {
+      "type": "CFG",
+      "src": 15,
+      "dst": 16
+    },
+    {
+      "type": "CFG",
+      "src": 16,
+      "dst": 17
+    },
+    {
+      "type": "CFG",
+      "src": 17,
+      "dst": 18
+    },
+    {
+      "type": "CFG",
+      "src": 19,
+      "dst": 20
+    },
+    {
+      "type": "CFG",
+      "src": 20,
+      "dst": 21
+    },
+    {
+      "type": "CFG",
+      "src": 21,
+      "dst": 22
+    },
+    {
+      "type": "CFG",
+      "src": 22,
+      "dst": 23
+    },
+    {
+      "type": "CFG",
+      "src": 23,
+      "dst": 24
+    },
+    {
+      "type": "CFG",
+      "src": 24,
+      "dst": 25
+    },
+    {
+      "type": "CFG",
+      "src": 25,
+      "dst": 26
+    },
+    {
+      "type": "CFG",
+      "src": 26,
+      "dst": 27
+    },
+    {
+      "type": "CFG",
+      "src": 27,
+      "dst": 28
+    },
+    {
+      "type": "CFG",
+      "src": 28,
+      "dst": 29
+    },
+    {
+      "type": "CFG",
+      "src": 29,
+      "dst": 30
+    },
+    {
+      "type": "CFG",
+      "src": 30,
+      "dst": 31
+    },
+    {
+      "type": "CFG",
+      "src": 31,
+      "dst": 32
+    },
+    {
+      "type": "CFG",
+      "src": 32,
+      "dst": 33
+    },
+    {
+      "type": "CFG",
+      "src": 33,
+      "dst": 34
+    },
+    {
+      "type": "CFG",
+      "src": 34,
+      "dst": 35
+    },
+    {
+      "type": "CFG",
+      "src": 35,
+      "dst": 36
+    },
+    {
+      "type": "CFG",
+      "src": 36,
+      "dst": 37
+    },
+    {
+      "type": "CFG",
+      "src": 38,
+      "dst": 39
+    },
+    {
+      "type": "CFG",
+      "src": 39,
+      "dst": 40
+    },
+    {
+      "type": "CFG",
+      "src": 40,
+      "dst": 41
+    },
+    {
+      "type": "CFG",
+      "src": 41,
+      "dst": 42
+    },
+    {
+      "type": "CFG",
+      "src": 42,
+      "dst": 43
+    },
+    {
+      "type": "DFG",
+      "src": 13,
+      "dst": 13
+    },
+    {
+      "type": "DFG",
+      "src": 13,
+      "dst": 13
+    },
+    {
+      "type": "DFG",
+      "src": 14,
+      "dst": 14
+    },
+    {
+      "type": "DFG",
+      "src": 14,
+      "dst": 14
+    },
+    {
+      "type": "DFG",
+      "src": 14,
+      "dst": 15
+    },
+    {
+      "type": "CALL",
+      "src": 9,
+      "dst": 9
+    },
+    {
+      "type": "RET2CALL",
+      "src": 9,
+      "dst": 9
+    },
+    {
+      "type": "CALL",
+      "src": 10,
+      "dst": 10
+    },
+    {
+      "type": "RET2CALL",
+      "src": 10,
+      "dst": 10
+    },
+    {
+      "type": "CALL",
+      "src": 15,
+      "dst": 6
+    },
+    {
+      "type": "ARG2PARAM",
+      "src": 14,
+      "dst": 6
+    },
+    {
+      "type": "RET2CALL",
+      "src": 6,
+      "dst": 15
+    },
+    {
+      "type": "CALL",
+      "src": 26,
+      "dst": 26
+    },
+    {
+      "type": "RET2CALL",
+      "src": 26,
+      "dst": 26
+    },
+    {
+      "type": "CALL",
+      "src": 30,
+      "dst": 30
+    },
+    {
+      "type": "RET2CALL",
+      "src": 30,
+      "dst": 30
+    },
+    {
+      "type": "CALL",
+      "src": 31,
+      "dst": 31
+    },
+    {
+      "type": "RET2CALL",
+      "src": 31,
+      "dst": 31
+    },
+    {
+      "type": "CALL",
+      "src": 35,
+      "dst": 35
+    },
+    {
+      "type": "RET2CALL",
+      "src": 35,
+      "dst": 35
+    },
+    {
+      "type": "CALL",
+      "src": 42,
+      "dst": 42
+    },
+    {
+      "type": "RET2CALL",
+      "src": 42,
+      "dst": 42
+    },
+    {
+      "type": "CFG_REV",
+      "src": 1,
+      "dst": 0
+    },
+    {
+      "type": "CFG_REV",
+      "src": 2,
+      "dst": 1
+    },
+    {
+      "type": "CFG_REV",
+      "src": 3,
+      "dst": 2
+    },
+    {
+      "type": "CFG_REV",
+      "src": 4,
+      "dst": 3
+    },
+    {
+      "type": "CFG_REV",
+      "src": 5,
+      "dst": 4
+    },
+    {
+      "type": "CFG_REV",
+      "src": 6,
+      "dst": 5
+    },
+    {
+      "type": "CFG_REV",
+      "src": 7,
+      "dst": 6
+    },
+    {
+      "type": "CFG_REV",
+      "src": 8,
+      "dst": 7
+    },
+    {
+      "type": "CFG_REV",
+      "src": 9,
+      "dst": 8
+    },
+    {
+      "type": "CFG_REV",
+      "src": 10,
+      "dst": 9
+    },
+    {
+      "type": "CFG_REV",
+      "src": 11,
+      "dst": 10
+    },
+    {
+      "type": "CFG_REV",
+      "src": 12,
+      "dst": 11
+    },
+    {
+      "type": "CFG_REV",
+      "src": 13,
+      "dst": 12
+    },
+    {
+      "type": "CFG_REV",
+      "src": 14,
+      "dst": 13
+    },
+    {
+      "type": "CFG_REV",
+      "src": 15,
+      "dst": 14
+    },
+    {
+      "type": "CFG_REV",
+      "src": 16,
+      "dst": 15
+    },
+    {
+      "type": "CFG_REV",
+      "src": 17,
+      "dst": 16
+    },
+    {
+      "type": "CFG_REV",
+      "src": 18,
+      "dst": 17
+    },
+    {
+      "type": "CFG_REV",
+      "src": 20,
+      "dst": 19
+    },
+    {
+      "type": "CFG_REV",
+      "src": 21,
+      "dst": 20
+    },
+    {
+      "type": "CFG_REV",
+      "src": 22,
+      "dst": 21
+    },
+    {
+      "type": "CFG_REV",
+      "src": 23,
+      "dst": 22
+    },
+    {
+      "type": "CFG_REV",
+      "src": 24,
+      "dst": 23
+    },
+    {
+      "type": "CFG_REV",
+      "src": 25,
+      "dst": 24
+    },
+    {
+      "type": "CFG_REV",
+      "src": 26,
+      "dst": 25
+    },
+    {
+      "type": "CFG_REV",
+      "src": 27,
+      "dst": 26
+    },
+    {
+      "type": "CFG_REV",
+      "src": 28,
+      "dst": 27
+    },
+    {
+      "type": "CFG_REV",
+      "src": 29,
+      "dst": 28
+    },
+    {
+      "type": "CFG_REV",
+      "src": 30,
+      "dst": 29
+    },
+    {
+      "type": "CFG_REV",
+      "src": 31,
+      "dst": 30
+    },
+    {
+      "type": "CFG_REV",
+      "src": 32,
+      "dst": 31
+    },
+    {
+      "type": "CFG_REV",
+      "src": 33,
+      "dst": 32
+    },
+    {
+      "type": "CFG_REV",
+      "src": 34,
+      "dst": 33
+    },
+    {
+      "type": "CFG_REV",
+      "src": 35,
+      "dst": 34
+    },
+    {
+      "type": "CFG_REV",
+      "src": 36,
+      "dst": 35
+    },
+    {
+      "type": "CFG_REV",
+      "src": 37,
+      "dst": 36
+    },
+    {
+      "type": "CFG_REV",
+      "src": 39,
+      "dst": 38
+    },
+    {
+      "type": "CFG_REV",
+      "src": 40,
+      "dst": 39
+    },
+    {
+      "type": "CFG_REV",
+      "src": 41,
+      "dst": 40
+    },
+    {
+      "type": "CFG_REV",
+      "src": 42,
+      "dst": 41
+    },
+    {
+      "type": "CFG_REV",
+      "src": 43,
+      "dst": 42
+    },
+    {
+      "type": "DFG_REV",
+      "src": 13,
+      "dst": 13
+    },
+    {
+      "type": "DFG_REV",
+      "src": 13,
+      "dst": 13
+    },
+    {
+      "type": "DFG_REV",
+      "src": 14,
+      "dst": 14
+    },
+    {
+      "type": "DFG_REV",
+      "src": 14,
+      "dst": 14
+    },
+    {
+      "type": "DFG_REV",
+      "src": 15,
+      "dst": 14
+    },
+    {
+      "type": "CALL_REV",
+      "src": 9,
+      "dst": 9
+    },
+    {
+      "type": "CALL_REV",
+      "src": 10,
+      "dst": 10
+    },
+    {
+      "type": "CALL_REV",
+      "src": 6,
+      "dst": 15
+    },
+    {
+      "type": "CALL_REV",
+      "src": 26,
+      "dst": 26
+    },
+    {
+      "type": "CALL_REV",
+      "src": 30,
+      "dst": 30
+    },
+    {
+      "type": "CALL_REV",
+      "src": 31,
+      "dst": 31
+    },
+    {
+      "type": "CALL_REV",
+      "src": 35,
+      "dst": 35
+    },
+    {
+      "type": "CALL_REV",
+      "src": 42,
+      "dst": 42
+    },
+    {
+      "type": "ARG2PARAM_REV",
+      "src": 6,
+      "dst": 14
+    },
+    {
+      "type": "RET2CALL_REV",
+      "src": 9,
+      "dst": 9
+    },
+    {
+      "type": "RET2CALL_REV",
+      "src": 10,
+      "dst": 10
+    },
+    {
+      "type": "RET2CALL_REV",
+      "src": 15,
+      "dst": 6
+    },
+    {
+      "type": "RET2CALL_REV",
+      "src": 26,
+      "dst": 26
+    },
+    {
+      "type": "RET2CALL_REV",
+      "src": 30,
+      "dst": 30
+    },
+    {
+      "type": "RET2CALL_REV",
+      "src": 31,
+      "dst": 31
+    },
+    {
+      "type": "RET2CALL_REV",
+      "src": 35,
+      "dst": 35
+    },
+    {
+      "type": "RET2CALL_REV",
+      "src": 42,
+      "dst": 42
+    }
+  ]
+}

@@ -1,0 +1,112 @@
+{
+  "config": {
+    "epochs": 10,
+    "hidden": 64,
+    "layers": 3,
+    "lr": 0.002,
+    "wd": 0.0001,
+    "neg_pos_ratio": 20,
+    "device": "cuda",
+    "dataset_weights": {
+      "default": 1.0
+    },
+    "relations": [
+      "ARG2PARAM",
+      "CALL",
+      "CFG",
+      "DFG",
+      "RET2CALL",
+      "RET2LHS"
+    ],
+    "add_summary_edges": true,
+    "label_keys": [
+      "y",
+      "label",
+      "labels",
+      "vulnerable",
+      "is_sink",
+      "target",
+      "targets"
+    ],
+    "sink_keys": [
+      "sinks",
+      "sink_nodes"
+    ],
+    "path_keys": [
+      "vulnerable_paths",
+      "paths_idx"
+    ]
+  },
+  "thresholds_by_source": {
+    "default": 0.25
+  },
+  "reports": {
+    "train": {
+      "split": "train",
+      "overall": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0
+      },
+      "thresholds": {
+        "default": 0.05
+      },
+      "n_graphs_used": 0,
+      "per_source": {},
+      "CCS_mean": null,
+      "CFAM_mean": null,
+      "CCS_count": 0,
+      "CFAM_count": 0
+    },
+    "valid": {
+      "split": "valid",
+      "overall": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0
+      },
+      "thresholds": {
+        "default": 0.25
+      },
+      "n_graphs_used": 0,
+      "per_source": {},
+      "CCS_mean": null,
+      "CFAM_mean": null,
+      "CCS_count": 0,
+      "CFAM_count": 0
+    },
+    "test": {
+      "split": "test",
+      "overall": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0
+      },
+      "thresholds": {
+        "default": 0.05
+      },
+      "n_graphs_used": 0,
+      "per_source": {},
+      "CCS_mean": null,
+      "CFAM_mean": null,
+      "CCS_count": 0,
+      "CFAM_count": 0
+    }
+  },
+  "demo": {
+    "meta": {
+      "split": "valid",
+      "graph_path": "Dataset\\valid\\hetero_ready_gcbert\\shard_0003.pt"
+    },
+    "paths": []
+  },
+  "notes": {
+    "interprocedural": "DFG/CFG/CALL/ARG2PARAM/RET2CALL/RET2LHS (+DFG_THIN optional); multi-root beam.",
+    "beam_guidance": "learned per-relation gates (RelGate); no fixed ordering.",
+    "objective": "node (focal+class-weights+hard-neg), edge participation, next-hop ranking, monotonicity.",
+    "CCS": "p(x) vs p(do(x')) by zeroing strict causal-slice (annotated or from provided paths).",
+    "CFAM": "grad-norm attribution mass on causal / (causal+spurious).",
+    "calibration": "per-source thresholds tuned on valid; used in summaries.",
+    "provenance": "per-graph 'source' via sidecar or in-graph; default otherwise."
+  }
+}

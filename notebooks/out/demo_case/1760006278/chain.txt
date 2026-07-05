@@ -1,0 +1,16 @@
+Root → … → Sink (by P) (hops=4)
+
+[ROOT] extern void run_system(char* cmd);
+  (STMT, app/main.c, line 9, P=0.390)
+   └──[CPG] exact=CALL_REV
+[→] run_system(p);
+  (CALL:run_system, app/main.c, line 19, P=0.411)
+   └──[CFG] exact=CFG
+[→] }
+  (STMT, app/main.c, line 20, P=0.475)
+   └──[CFG] exact=CFG
+[→] return 0;
+  (RET, app/main.c, line 21, P=0.532)
+   └──[CFG] exact=CFG
+[SINK] }
+  (STMT, app/main.c, line 22, P=0.630)

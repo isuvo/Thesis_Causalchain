@@ -1,0 +1,35 @@
+{
+  "epochs": 10,
+  "hidden": 64,
+  "layers": 3,
+  "lr": 0.002,
+  "wd": 0.0001,
+  "neg_pos_ratio": 20,
+  "device": "cuda",
+  "dataset_weights": {
+    "default": 1.0
+  },
+  "relations": [
+    "ARG2PARAM",
+    "CALL",
+    "CFG",
+    "DFG",
+    "RET2CALL",
+    "RET2LHS"
+  ],
+  "add_summary_edges": true,
+  "label_keys": [
+    "y",
+    "label",
+    "is_sink",
+    "vulnerable"
+  ],
+  "sink_keys": [
+    "sinks",
+    "sink_nodes"
+  ],
+  "path_keys": [
+    "vulnerable_paths",
+    "paths_idx"
+  ]
+}

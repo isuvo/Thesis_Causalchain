@@ -1,0 +1,175 @@
+{
+  "hops": 8,
+  "nodes": [
+    {
+      "index": 0,
+      "file": "mini/main.c",
+      "line": 2,
+      "label": "STMT",
+      "code": "#include <stdlib.h>",
+      "prob": 0.4538377821445465
+    },
+    {
+      "index": 1,
+      "file": "mini/main.c",
+      "line": 4,
+      "label": "STMT",
+      "code": "extern void do_exec(char* cmd);",
+      "prob": 0.5510416030883789
+    },
+    {
+      "index": 2,
+      "file": "mini/main.c",
+      "line": 6,
+      "label": "STMT",
+      "code": "int main(int argc, char** argv) {",
+      "prob": 0.5903682708740234
+    },
+    {
+      "index": 3,
+      "file": "mini/main.c",
+      "line": 7,
+      "label": "COND",
+      "code": "if (argc > 1) {",
+      "prob": 0.5509324073791504
+    },
+    {
+      "index": 4,
+      "file": "mini/main.c",
+      "line": 8,
+      "label": "ASSIGN",
+      "code": "char* p = argv[1];",
+      "prob": 0.44392266869544983
+    },
+    {
+      "index": 5,
+      "file": "mini/main.c",
+      "line": 9,
+      "label": "CALL:do_exec",
+      "code": "do_exec(p);",
+      "prob": 0.4625537693500519
+    },
+    {
+      "index": 6,
+      "file": "mini/main.c",
+      "line": 10,
+      "label": "STMT",
+      "code": "}",
+      "prob": 0.4691384732723236
+    },
+    {
+      "index": 7,
+      "file": "mini/main.c",
+      "line": 11,
+      "label": "RET",
+      "code": "return 0;",
+      "prob": 0.4611015319824219
+    },
+    {
+      "index": 8,
+      "file": "mini/main.c",
+      "line": 12,
+      "label": "STMT",
+      "code": "}",
+      "prob": 0.37449270486831665
+    }
+  ],
+  "edges": [
+    {
+      "from_index": 0,
+      "to_index": 1,
+      "families": [
+        "CFG"
+      ],
+      "exact": [
+        "CFG"
+      ]
+    },
+    {
+      "from_index": 1,
+      "to_index": 2,
+      "families": [
+        "CFG"
+      ],
+      "exact": [
+        "CFG"
+      ]
+    },
+    {
+      "from_index": 2,
+      "to_index": 3,
+      "families": [
+        "CFG"
+      ],
+      "exact": [
+        "CFG"
+      ]
+    },
+    {
+      "from_index": 3,
+      "to_index": 4,
+      "families": [
+        "CFG"
+      ],
+      "exact": [
+        "CFG"
+      ]
+    },
+    {
+      "from_index": 4,
+      "to_index": 5,
+      "families": [
+        "CFG"
+      ],
+      "exact": [
+        "CFG"
+      ]
+    },
+    {
+      "from_index": 5,
+      "to_index": 6,
+      "families": [
+        "CFG"
+      ],
+      "exact": [
+        "CFG"
+      ]
+    },
+    {
+      "from_index": 6,
+      "to_index": 7,
+      "families": [
+        "CFG"
+      ],
+      "exact": [
+        "CFG"
+      ]
+    },
+    {
+      "from_index": 7,
+      "to_index": 8,
+      "families": [
+        "CFG"
+      ],
+      "exact": [
+        "CFG"
+      ]
+    }
+  ],
+  "params": {
+    "MAX_HOPS": 12,
+    "BEAM_WIDTH": 24,
+    "TIME_BUDGET_S": 3.5,
+    "SINK_PROB_THR": 0.55,
+    "TOPK_SINKS_PER_GRAPH": 20,
+    "TOPK_STARTS_BY_P": 128,
+    "INCLUDE_START_NODE_P": true,
+    "EDGE_BONUS": {
+      "DFG": 1.0,
+      "CPG": 0.7,
+      "CFG": 0.4,
+      "AST": 0.2
+    },
+    "DEMO_ID": 3
+  }
+}

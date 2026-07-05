@@ -1,0 +1,7 @@
+Root → … → Sink (hops=1)
+
+[ROOT] P=0.354  if (n >= sizeof(local)) {
+   (label=CALL, file=lib/sink.c, line=13)
+   └──[CFG/CPG]
+[SINK] P=0.511  n = sizeof(local) - 1;
+   (label=BLOCK, file=lib/sink.c, line=14)

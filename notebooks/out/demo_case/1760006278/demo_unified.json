@@ -1,0 +1,1136 @@
+{
+  "nodes": [
+    {
+      "_id": 0,
+      "file": "app/main.c",
+      "line": 2,
+      "code": "#include <stdio.h>",
+      "_label": "STMT",
+      "nodeType": "STMT"
+    },
+    {
+      "_id": 1,
+      "file": "app/main.c",
+      "line": 3,
+      "code": "#include <stdlib.h>",
+      "_label": "STMT",
+      "nodeType": "STMT"
+    },
+    {
+      "_id": 2,
+      "file": "app/main.c",
+      "line": 4,
+      "code": "#include <string.h>",
+      "_label": "STMT",
+      "nodeType": "STMT"
+    },
+    {
+      "_id": 3,
+      "file": "app/main.c",
+      "line": 6,
+      "code": "extern char* wrap_a(char* in);",
+      "_label": "STMT",
+      "nodeType": "STMT"
+    },
+    {
+      "_id": 4,
+      "file": "app/main.c",
+      "line": 7,
+      "code": "extern char* wrap_b(char* in);",
+      "_label": "STMT",
+      "nodeType": "STMT"
+    },
+    {
+      "_id": 5,
+      "file": "app/main.c",
+      "line": 8,
+      "code": "extern char* wrap_c(char* in);",
+      "_label": "STMT",
+      "nodeType": "STMT"
+    },
+    {
+      "_id": 6,
+      "file": "app/main.c",
+      "line": 9,
+      "code": "extern void run_system(char* cmd);",
+      "_label": "STMT",
+      "nodeType": "STMT"
+    },
+    {
+      "_id": 7,
+      "file": "app/main.c",
+      "line": 11,
+      "code": "int main(int argc, char** argv) {",
+      "_label": "STMT",
+      "nodeType": "STMT"
+    },
+    {
+      "_id": 8,
+      "file": "app/main.c",
+      "line": 12,
+      "code": "char buf[256];",
+      "_label": "DECL",
+      "nodeType": "DECL"
+    },
+    {
+      "_id": 9,
+      "file": "app/main.c",
+      "line": 13,
+      "code": "if (argc > 1) {",
+      "_label": "COND",
+      "nodeType": "COND"
+    },
+    {
+      "_id": 10,
+      "file": "app/main.c",
+      "line": 14,
+      "code": "strncpy(buf, argv[1], sizeof(buf)-1);",
+      "_label": "CALL:strncpy",
+      "nodeType": "CALL:strncpy"
+    },
+    {
+      "_id": 11,
+      "file": "app/main.c",
+      "line": 15,
+      "code": "buf[sizeof(buf)-1] = '\\0';",
+      "_label": "ASSIGN",
+      "nodeType": "ASSIGN"
+    },
+    {
+      "_id": 12,
+      "file": "app/main.c",
+      "line": 16,
+      "code": "char* p = wrap_a(buf);",
+      "_label": "ASSIGN",
+      "nodeType": "ASSIGN"
+    },
+    {
+      "_id": 13,
+      "file": "app/main.c",
+      "line": 17,
+      "code": "p = wrap_b(p);",
+      "_label": "ASSIGN",
+      "nodeType": "ASSIGN"
+    },
+    {
+      "_id": 14,
+      "file": "app/main.c",
+      "line": 18,
+      "code": "p = wrap_c(p);",
+      "_label": "ASSIGN",
+      "nodeType": "ASSIGN"
+    },
+    {
+      "_id": 15,
+      "file": "app/main.c",
+      "line": 19,
+      "code": "run_system(p);",
+      "_label": "CALL:run_system",
+      "nodeType": "CALL:run_system"
+    },
+    {
+      "_id": 16,
+      "file": "app/main.c",
+      "line": 20,
+      "code": "}",
+      "_label": "STMT",
+      "nodeType": "STMT"
+    },
+    {
+      "_id": 17,
+      "file": "app/main.c",
+      "line": 21,
+      "code": "return 0;",
+      "_label": "RET",
+      "nodeType": "RET"
+    },
+    {
+      "_id": 18,
+      "file": "app/main.c",
+      "line": 22,
+      "code": "}",
+      "_label": "STMT",
+      "nodeType": "STMT"
+    },
+    {
+      "_id": 19,
+      "file": "lib/wrap.c",
+      "line": 2,
+      "code": "#include <stdio.h>",
+      "_label": "STMT",
+      "nodeType": "STMT"
+    },
+    {
+      "_id": 20,
+      "file": "lib/wrap.c",
+      "line": 3,
+      "code": "#include <stdlib.h>",
+      "_label": "STMT",
+      "nodeType": "STMT"
+    },
+    {
+      "_id": 21,
+      "file": "lib/wrap.c",
+      "line": 4,
+      "code": "#include <string.h>",
+      "_label": "STMT",
+      "nodeType": "STMT"
+    },
+    {
+      "_id": 22,
+      "file": "lib/wrap.c",
+      "line": 6,
+      "code": "char tmp1[300];",
+      "_label": "DECL",
+      "nodeType": "DECL"
+    },
+    {
+      "_id": 23,
+      "file": "lib/wrap.c",
+      "line": 7,
+      "code": "char tmp2[300];",
+      "_label": "DECL",
+      "nodeType": "DECL"
+    },
+    {
+      "_id": 24,
+      "file": "lib/wrap.c",
+      "line": 8,
+      "code": "char tmp3[300];",
+      "_label": "DECL",
+      "nodeType": "DECL"
+    },
+    {
+      "_id": 25,
+      "file": "lib/wrap.c",
+      "line": 10,
+      "code": "char* wrap_a(char* in) {",
+      "_label": "STMT",
+      "nodeType": "STMT"
+    },
+    {
+      "_id": 26,
+      "file": "lib/wrap.c",
+      "line": 11,
+      "code": "snprintf(tmp1, sizeof(tmp1), \"%s\", in);",
+      "_label": "CALL:snprintf",
+      "nodeType": "CALL:snprintf"
+    },
+    {
+      "_id": 27,
+      "file": "lib/wrap.c",
+      "line": 12,
+      "code": "return tmp1;",
+      "_label": "RET",
+      "nodeType": "RET"
+    },
+    {
+      "_id": 28,
+      "file": "lib/wrap.c",
+      "line": 13,
+      "code": "}",
+      "_label": "STMT",
+      "nodeType": "STMT"
+    },
+    {
+      "_id": 29,
+      "file": "lib/wrap.c",
+      "line": 15,
+      "code": "char* wrap_b(char* in) {",
+      "_label": "STMT",
+      "nodeType": "STMT"
+    },
+    {
+      "_id": 30,
+      "file": "lib/wrap.c",
+      "line": 16,
+      "code": "strcpy(tmp2, \"\");",
+      "_label": "CALL:strcpy",
+      "nodeType": "CALL:strcpy"
+    },
+    {
+      "_id": 31,
+      "file": "lib/wrap.c",
+      "line": 17,
+      "code": "strcat(tmp2, in);",
+      "_label": "CALL:strcat",
+      "nodeType": "CALL:strcat"
+    },
+    {
+      "_id": 32,
+      "file": "lib/wrap.c",
+      "line": 18,
+      "code": "strcat(tmp2, \" --verbose\");",
+      "_label": "CALL:strcat",
+      "nodeType": "CALL:strcat"
+    },
+    {
+      "_id": 33,
+      "file": "lib/wrap.c",
+      "line": 19,
+      "code": "return tmp2;",
+      "_label": "RET",
+      "nodeType": "RET"
+    },
+    {
+      "_id": 34,
+      "file": "lib/wrap.c",
+      "line": 20,
+      "code": "}",
+      "_label": "STMT",
+      "nodeType": "STMT"
+    },
+    {
+      "_id": 35,
+      "file": "lib/wrap.c",
+      "line": 22,
+      "code": "char* wrap_c(char* in) {",
+      "_label": "STMT",
+      "nodeType": "STMT"
+    },
+    {
+      "_id": 36,
+      "file": "lib/wrap.c",
+      "line": 23,
+      "code": "sprintf(tmp3, \"%s %s\", in, \"--force\");",
+      "_label": "CALL:sprintf",
+      "nodeType": "CALL:sprintf"
+    },
+    {
+      "_id": 37,
+      "file": "lib/wrap.c",
+      "line": 24,
+      "code": "return tmp3;",
+      "_label": "RET",
+      "nodeType": "RET"
+    },
+    {
+      "_id": 38,
+      "file": "lib/wrap.c",
+      "line": 25,
+      "code": "}",
+      "_label": "STMT",
+      "nodeType": "STMT"
+    },
+    {
+      "_id": 39,
+      "file": "lib/sink.c",
+      "line": 2,
+      "code": "#include <stdio.h>",
+      "_label": "STMT",
+      "nodeType": "STMT"
+    },
+    {
+      "_id": 40,
+      "file": "lib/sink.c",
+      "line": 3,
+      "code": "#include <stdlib.h>",
+      "_label": "STMT",
+      "nodeType": "STMT"
+    },
+    {
+      "_id": 41,
+      "file": "lib/sink.c",
+      "line": 4,
+      "code": "#include <string.h>",
+      "_label": "STMT",
+      "nodeType": "STMT"
+    },
+    {
+      "_id": 42,
+      "file": "lib/sink.c",
+      "line": 6,
+      "code": "void run_system(char* cmd) {",
+      "_label": "STMT",
+      "nodeType": "STMT"
+    },
+    {
+      "_id": 43,
+      "file": "lib/sink.c",
+      "line": 7,
+      "code": "system(cmd);",
+      "_label": "CALL:system",
+      "nodeType": "CALL:system"
+    },
+    {
+      "_id": 44,
+      "file": "lib/sink.c",
+      "line": 8,
+      "code": "}",
+      "_label": "STMT",
+      "nodeType": "STMT"
+    }
+  ],
+  "edges": [
+    {
+      "type": "CFG",
+      "src": 0,
+      "dst": 1
+    },
+    {
+      "type": "CFG",
+      "src": 1,
+      "dst": 2
+    },
+    {
+      "type": "CFG",
+      "src": 2,
+      "dst": 3
+    },
+    {
+      "type": "CFG",
+      "src": 3,
+      "dst": 4
+    },
+    {
+      "type": "CFG",
+      "src": 4,
+      "dst": 5
+    },
+    {
+      "type": "CFG",
+      "src": 5,
+      "dst": 6
+    },
+    {
+      "type": "CFG",
+      "src": 6,
+      "dst": 7
+    },
+    {
+      "type": "CFG",
+      "src": 7,
+      "dst": 8
+    },
+    {
+      "type": "CFG",
+      "src": 8,
+      "dst": 9
+    },
+    {
+      "type": "CFG",
+      "src": 9,
+      "dst": 10
+    },
+    {
+      "type": "CFG",
+      "src": 10,
+      "dst": 11
+    },
+    {
+      "type": "CFG",
+      "src": 11,
+      "dst": 12
+    },
+    {
+      "type": "CFG",
+      "src": 12,
+      "dst": 13
+    },
+    {
+      "type": "CFG",
+      "src": 13,
+      "dst": 14
+    },
+    {
+      "type": "CFG",
+      "src": 14,
+      "dst": 15
+    },
+    {
+      "type": "CFG",
+      "src": 15,
+      "dst": 16
+    },
+    {
+      "type": "CFG",
+      "src": 16,
+      "dst": 17
+    },
+    {
+      "type": "CFG",
+      "src": 17,
+      "dst": 18
+    },
+    {
+      "type": "CFG",
+      "src": 19,
+      "dst": 20
+    },
+    {
+      "type": "CFG",
+      "src": 20,
+      "dst": 21
+    },
+    {
+      "type": "CFG",
+      "src": 21,
+      "dst": 22
+    },
+    {
+      "type": "CFG",
+      "src": 22,
+      "dst": 23
+    },
+    {
+      "type": "CFG",
+      "src": 23,
+      "dst": 24
+    },
+    {
+      "type": "CFG",
+      "src": 24,
+      "dst": 25
+    },
+    {
+      "type": "CFG",
+      "src": 25,
+      "dst": 26
+    },
+    {
+      "type": "CFG",
+      "src": 26,
+      "dst": 27
+    },
+    {
+      "type": "CFG",
+      "src": 27,
+      "dst": 28
+    },
+    {
+      "type": "CFG",
+      "src": 28,
+      "dst": 29
+    },
+    {
+      "type": "CFG",
+      "src": 29,
+      "dst": 30
+    },
+    {
+      "type": "CFG",
+      "src": 30,
+      "dst": 31
+    },
+    {
+      "type": "CFG",
+      "src": 31,
+      "dst": 32
+    },
+    {
+      "type": "CFG",
+      "src": 32,
+      "dst": 33
+    },
+    {
+      "type": "CFG",
+      "src": 33,
+      "dst": 34
+    },
+    {
+      "type": "CFG",
+      "src": 34,
+      "dst": 35
+    },
+    {
+      "type": "CFG",
+      "src": 35,
+      "dst": 36
+    },
+    {
+      "type": "CFG",
+      "src": 36,
+      "dst": 37
+    },
+    {
+      "type": "CFG",
+      "src": 37,
+      "dst": 38
+    },
+    {
+      "type": "CFG",
+      "src": 39,
+      "dst": 40
+    },
+    {
+      "type": "CFG",
+      "src": 40,
+      "dst": 41
+    },
+    {
+      "type": "CFG",
+      "src": 41,
+      "dst": 42
+    },
+    {
+      "type": "CFG",
+      "src": 42,
+      "dst": 43
+    },
+    {
+      "type": "CFG",
+      "src": 43,
+      "dst": 44
+    },
+    {
+      "type": "DFG",
+      "src": 8,
+      "dst": 10
+    },
+    {
+      "type": "DFG",
+      "src": 8,
+      "dst": 10
+    },
+    {
+      "type": "DFG",
+      "src": 8,
+      "dst": 11
+    },
+    {
+      "type": "DFG",
+      "src": 8,
+      "dst": 11
+    },
+    {
+      "type": "DFG",
+      "src": 8,
+      "dst": 12
+    },
+    {
+      "type": "DFG",
+      "src": 13,
+      "dst": 14
+    },
+    {
+      "type": "DFG",
+      "src": 13,
+      "dst": 14
+    },
+    {
+      "type": "DFG",
+      "src": 14,
+      "dst": 15
+    },
+    {
+      "type": "DFG",
+      "src": 22,
+      "dst": 26
+    },
+    {
+      "type": "DFG",
+      "src": 22,
+      "dst": 26
+    },
+    {
+      "type": "DFG",
+      "src": 22,
+      "dst": 27
+    },
+    {
+      "type": "DFG",
+      "src": 23,
+      "dst": 30
+    },
+    {
+      "type": "DFG",
+      "src": 23,
+      "dst": 31
+    },
+    {
+      "type": "DFG",
+      "src": 23,
+      "dst": 32
+    },
+    {
+      "type": "DFG",
+      "src": 23,
+      "dst": 33
+    },
+    {
+      "type": "DFG",
+      "src": 24,
+      "dst": 36
+    },
+    {
+      "type": "DFG",
+      "src": 24,
+      "dst": 37
+    },
+    {
+      "type": "CALL",
+      "src": 9,
+      "dst": 9
+    },
+    {
+      "type": "CALL",
+      "src": 10,
+      "dst": 10
+    },
+    {
+      "type": "ARG2PARAM",
+      "src": 8,
+      "dst": 10
+    },
+    {
+      "type": "ARG2PARAM",
+      "src": 8,
+      "dst": 10
+    },
+    {
+      "type": "CALL",
+      "src": 15,
+      "dst": 6
+    },
+    {
+      "type": "ARG2PARAM",
+      "src": 14,
+      "dst": 6
+    },
+    {
+      "type": "CALL",
+      "src": 26,
+      "dst": 26
+    },
+    {
+      "type": "ARG2PARAM",
+      "src": 22,
+      "dst": 26
+    },
+    {
+      "type": "ARG2PARAM",
+      "src": 22,
+      "dst": 26
+    },
+    {
+      "type": "CALL",
+      "src": 30,
+      "dst": 30
+    },
+    {
+      "type": "ARG2PARAM",
+      "src": 23,
+      "dst": 30
+    },
+    {
+      "type": "CALL",
+      "src": 31,
+      "dst": 31
+    },
+    {
+      "type": "ARG2PARAM",
+      "src": 23,
+      "dst": 31
+    },
+    {
+      "type": "CALL",
+      "src": 32,
+      "dst": 32
+    },
+    {
+      "type": "ARG2PARAM",
+      "src": 23,
+      "dst": 32
+    },
+    {
+      "type": "CALL",
+      "src": 36,
+      "dst": 36
+    },
+    {
+      "type": "ARG2PARAM",
+      "src": 24,
+      "dst": 36
+    },
+    {
+      "type": "CALL",
+      "src": 43,
+      "dst": 43
+    },
+    {
+      "type": "DFG_REV",
+      "src": 10,
+      "dst": 8
+    },
+    {
+      "type": "DFG_REV",
+      "src": 10,
+      "dst": 8
+    },
+    {
+      "type": "DFG_REV",
+      "src": 11,
+      "dst": 8
+    },
+    {
+      "type": "DFG_REV",
+      "src": 11,
+      "dst": 8
+    },
+    {
+      "type": "DFG_REV",
+      "src": 12,
+      "dst": 8
+    },
+    {
+      "type": "DFG_REV",
+      "src": 14,
+      "dst": 13
+    },
+    {
+      "type": "DFG_REV",
+      "src": 14,
+      "dst": 13
+    },
+    {
+      "type": "DFG_REV",
+      "src": 15,
+      "dst": 14
+    },
+    {
+      "type": "DFG_REV",
+      "src": 26,
+      "dst": 22
+    },
+    {
+      "type": "DFG_REV",
+      "src": 26,
+      "dst": 22
+    },
+    {
+      "type": "DFG_REV",
+      "src": 27,
+      "dst": 22
+    },
+    {
+      "type": "DFG_REV",
+      "src": 30,
+      "dst": 23
+    },
+    {
+      "type": "DFG_REV",
+      "src": 31,
+      "dst": 23
+    },
+    {
+      "type": "DFG_REV",
+      "src": 32,
+      "dst": 23
+    },
+    {
+      "type": "DFG_REV",
+      "src": 33,
+      "dst": 23
+    },
+    {
+      "type": "DFG_REV",
+      "src": 36,
+      "dst": 24
+    },
+    {
+      "type": "DFG_REV",
+      "src": 37,
+      "dst": 24
+    },
+    {
+      "type": "CALL_REV",
+      "src": 9,
+      "dst": 9
+    },
+    {
+      "type": "CALL_REV",
+      "src": 10,
+      "dst": 10
+    },
+    {
+      "type": "CALL_REV",
+      "src": 6,
+      "dst": 15
+    },
+    {
+      "type": "CALL_REV",
+      "src": 26,
+      "dst": 26
+    },
+    {
+      "type": "CALL_REV",
+      "src": 30,
+      "dst": 30
+    },
+    {
+      "type": "CALL_REV",
+      "src": 31,
+      "dst": 31
+    },
+    {
+      "type": "CALL_REV",
+      "src": 32,
+      "dst": 32
+    },
+    {
+      "type": "CALL_REV",
+      "src": 36,
+      "dst": 36
+    },
+    {
+      "type": "CALL_REV",
+      "src": 43,
+      "dst": 43
+    },
+    {
+      "type": "CFG_REV",
+      "src": 1,
+      "dst": 0
+    },
+    {
+      "type": "CFG_REV",
+      "src": 2,
+      "dst": 1
+    },
+    {
+      "type": "CFG_REV",
+      "src": 3,
+      "dst": 2
+    },
+    {
+      "type": "CFG_REV",
+      "src": 4,
+      "dst": 3
+    },
+    {
+      "type": "CFG_REV",
+      "src": 5,
+      "dst": 4
+    },
+    {
+      "type": "CFG_REV",
+      "src": 6,
+      "dst": 5
+    },
+    {
+      "type": "CFG_REV",
+      "src": 7,
+      "dst": 6
+    },
+    {
+      "type": "CFG_REV",
+      "src": 8,
+      "dst": 7
+    },
+    {
+      "type": "CFG_REV",
+      "src": 9,
+      "dst": 8
+    },
+    {
+      "type": "CFG_REV",
+      "src": 10,
+      "dst": 9
+    },
+    {
+      "type": "CFG_REV",
+      "src": 11,
+      "dst": 10
+    },
+    {
+      "type": "CFG_REV",
+      "src": 12,
+      "dst": 11
+    },
+    {
+      "type": "CFG_REV",
+      "src": 13,
+      "dst": 12
+    },
+    {
+      "type": "CFG_REV",
+      "src": 14,
+      "dst": 13
+    },
+    {
+      "type": "CFG_REV",
+      "src": 15,
+      "dst": 14
+    },
+    {
+      "type": "CFG_REV",
+      "src": 16,
+      "dst": 15
+    },
+    {
+      "type": "CFG_REV",
+      "src": 17,
+      "dst": 16
+    },
+    {
+      "type": "CFG_REV",
+      "src": 18,
+      "dst": 17
+    },
+    {
+      "type": "CFG_REV",
+      "src": 20,
+      "dst": 19
+    },
+    {
+      "type": "CFG_REV",
+      "src": 21,
+      "dst": 20
+    },
+    {
+      "type": "CFG_REV",
+      "src": 22,
+      "dst": 21
+    },
+    {
+      "type": "CFG_REV",
+      "src": 23,
+      "dst": 22
+    },
+    {
+      "type": "CFG_REV",
+      "src": 24,
+      "dst": 23
+    },
+    {
+      "type": "CFG_REV",
+      "src": 25,
+      "dst": 24
+    },
+    {
+      "type": "CFG_REV",
+      "src": 26,
+      "dst": 25
+    },
+    {
+      "type": "CFG_REV",
+      "src": 27,
+      "dst": 26
+    },
+    {
+      "type": "CFG_REV",
+      "src": 28,
+      "dst": 27
+    },
+    {
+      "type": "CFG_REV",
+      "src": 29,
+      "dst": 28
+    },
+    {
+      "type": "CFG_REV",
+      "src": 30,
+      "dst": 29
+    },
+    {
+      "type": "CFG_REV",
+      "src": 31,
+      "dst": 30
+    },
+    {
+      "type": "CFG_REV",
+      "src": 32,
+      "dst": 31
+    },
+    {
+      "type": "CFG_REV",
+      "src": 33,
+      "dst": 32
+    },
+    {
+      "type": "CFG_REV",
+      "src": 34,
+      "dst": 33
+    },
+    {
+      "type": "CFG_REV",
+      "src": 35,
+      "dst": 34
+    },
+    {
+      "type": "CFG_REV",
+      "src": 36,
+      "dst": 35
+    },
+    {
+      "type": "CFG_REV",
+      "src": 37,
+      "dst": 36
+    },
+    {
+      "type": "CFG_REV",
+      "src": 38,
+      "dst": 37
+    },
+    {
+      "type": "CFG_REV",
+      "src": 40,
+      "dst": 39
+    },
+    {
+      "type": "CFG_REV",
+      "src": 41,
+      "dst": 40
+    },
+    {
+      "type": "CFG_REV",
+      "src": 42,
+      "dst": 41
+    },
+    {
+      "type": "CFG_REV",
+      "src": 43,
+      "dst": 42
+    },
+    {
+      "type": "CFG_REV",
+      "src": 44,
+      "dst": 43
+    },
+    {
+      "type": "ARG2PARAM_REV",
+      "src": 10,
+      "dst": 8
+    },
+    {
+      "type": "ARG2PARAM_REV",
+      "src": 10,
+      "dst": 8
+    },
+    {
+      "type": "ARG2PARAM_REV",
+      "src": 6,
+      "dst": 14
+    },
+    {
+      "type": "ARG2PARAM_REV",
+      "src": 26,
+      "dst": 22
+    },
+    {
+      "type": "ARG2PARAM_REV",
+      "src": 26,
+      "dst": 22
+    },
+    {
+      "type": "ARG2PARAM_REV",
+      "src": 30,
+      "dst": 23
+    },
+    {
+      "type": "ARG2PARAM_REV",
+      "src": 31,
+      "dst": 23
+    },
+    {
+      "type": "ARG2PARAM_REV",
+      "src": 32,
+      "dst": 23
+    },
+    {
+      "type": "ARG2PARAM_REV",
+      "src": 36,
+      "dst": 24
+    }
+  ]
+}

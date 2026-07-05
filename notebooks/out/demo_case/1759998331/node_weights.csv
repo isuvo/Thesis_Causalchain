@@ -1,0 +1,48 @@
+idx,prob,file,line,label,code
+0,0.593011,demo2/main.c,2,Stmt,#include <stdio.h>
+1,0.517278,demo2/main.c,3,Stmt,#include <stdlib.h>
+2,0.517307,demo2/main.c,4,Stmt,#include <string.h>
+3,0.496636,demo2/main.c,6,Stmt,extern char* stage1_normalize(const char* in);
+4,0.501433,demo2/main.c,7,Stmt,extern char* stage2_expand(char* in);
+5,0.484394,demo2/main.c,8,Stmt,extern char* stage3_flag(char* in);
+6,0.448760,demo2/main.c,9,Stmt,extern void  do_exec(char* cmd);
+7,0.520295,demo2/main.c,11,Stmt,int main(void) {
+8,0.528963,demo2/main.c,12,Stmt,char in[256];
+9,0.502173,demo2/main.c,13,Stmt,char* p = NULL;
+10,0.546303,demo2/main.c,15,ROOT,// ROOT: untrusted stdin
+11,0.448837,demo2/main.c,16,ROOT,"if (fgets(in, sizeof(in), stdin)) {"
+12,0.478507,demo2/main.c,17,Stmt,p = stage1_normalize(in);
+13,0.498940,demo2/main.c,18,Stmt,p = stage2_expand(p);
+14,0.515378,demo2/main.c,19,Stmt,p = stage3_flag(p);
+15,0.510027,demo2/main.c,20,Stmt,do_exec(p);   // sink wrapper
+16,0.515401,demo2/main.c,21,Stmt,}
+17,0.512055,demo2/main.c,22,Stmt,return 0;
+18,0.513431,demo2/main.c,23,Stmt,}
+19,0.583818,demo2/transform.c,2,Stmt,#include <stdio.h>
+20,0.508117,demo2/transform.c,3,Stmt,#include <stdlib.h>
+21,0.548426,demo2/transform.c,4,Stmt,#include <string.h>
+22,0.575203,demo2/transform.c,6,Stmt,static char buf1[300];
+23,0.569764,demo2/transform.c,7,Stmt,static char buf2[300];
+24,0.573196,demo2/transform.c,8,Stmt,static char buf3[300];
+25,0.476204,demo2/transform.c,10,Stmt,char* stage1_normalize(const char* in) {
+26,0.518385,demo2/transform.c,11,Stmt,// trim newline (pretend)
+27,0.465778,demo2/transform.c,12,Stmt,"snprintf(buf1, sizeof(buf1), ""%s"", in);"
+28,0.506514,demo2/transform.c,13,Stmt,return buf1;
+29,0.518535,demo2/transform.c,14,Stmt,}
+30,0.508576,demo2/transform.c,16,Stmt,char* stage2_expand(char* in) {
+31,0.512996,demo2/transform.c,17,Stmt,// append subcommand
+32,0.412491,demo2/transform.c,18,Stmt,"strcpy(buf2, ""sh -c "");"
+33,0.430679,demo2/transform.c,19,Stmt,"strcat(buf2, in);"
+34,0.525640,demo2/transform.c,20,Stmt,return buf2;
+35,0.514441,demo2/transform.c,21,Stmt,}
+36,0.508113,demo2/transform.c,23,Stmt,char* stage3_flag(char* in) {
+37,0.516863,demo2/transform.c,24,Stmt,// add a flag
+38,0.431369,demo2/transform.c,25,Stmt,"sprintf(buf3, ""%s %s"", in, ""--debug"");"
+39,0.501424,demo2/transform.c,26,Stmt,return buf3;
+40,0.501825,demo2/transform.c,27,Stmt,}
+41,0.593125,demo2/sink.c,2,Stmt,#include <stdio.h>
+42,0.522329,demo2/sink.c,3,Stmt,#include <stdlib.h>
+43,0.501067,demo2/sink.c,5,Stmt,void do_exec(char* cmd) {
+44,0.537670,demo2/sink.c,6,Stmt,// SINK
+45,0.502633,demo2/sink.c,7,SINK,system(cmd);
+46,0.528301,demo2/sink.c,8,Stmt,}

@@ -1,0 +1,3599 @@
+{"meta":{"tool":"joern","source":"C:/Users/USER/Desktop/Thesis Research/Implementation/Thesis-causal-vul/work/src/test/shard_1ca6","n_nodes":253,"n_edges":{"AST":181,"CFG":57,"DFG":14},"dfg_status":"rd_intra_proc"},"nodes":[
+  {
+    "name":"Synchronize",
+    "_id":21474836480,
+    "signature":"void()",
+    "methodFullName":"CPCIDSKBinarySegment.Synchronize:void()",
+    "_label":"BINDING"
+  },
+  {
+    "name":"SetBuffer",
+    "_id":21474836481,
+    "signature":"void(char*,unsigned int)",
+    "methodFullName":"CPCIDSKBinarySegment.SetBuffer:void(char*,unsigned int)",
+    "_label":"BINDING"
+  },
+  {
+    "dynamicTypeHintFullName":[
+      
+    ],
+    "_id":25769803776,
+    "code":"{\n    if(mbModified)\n    {\n        this->Write();\n    }\n}",
+    "typeFullName":"void",
+    "lineNumber":10,
+    "order":2,
+    "_label":"BLOCK",
+    "columnNumber":1,
+    "possibleTypes":[
+      
+    ],
+    "argumentIndex":-1
+  },
+  {
+    "dynamicTypeHintFullName":[
+      
+    ],
+    "_id":25769803777,
+    "code":"{\n        this->Write();\n    }",
+    "typeFullName":"void",
+    "lineNumber":12,
+    "order":2,
+    "_label":"BLOCK",
+    "columnNumber":5,
+    "possibleTypes":[
+      
+    ],
+    "argumentIndex":-1
+  },
+  {
+    "dynamicTypeHintFullName":[
+      
+    ],
+    "_id":25769803778,
+    "code":"<empty>",
+    "typeFullName":"ANY",
+    "lineNumber":1,
+    "order":1,
+    "_label":"BLOCK",
+    "columnNumber":1,
+    "possibleTypes":[
+      
+    ],
+    "argumentIndex":-1
+  },
+  {
+    "dynamicTypeHintFullName":[
+      
+    ],
+    "_id":25769803779,
+    "code":"{\n    // Round the buffer size up to the next multiple of 512.\n    int nNumBlocks = nBufSize / 512 + ((0 == nBufSize % 512) ? 0 : 1);\n    unsigned int nAllocBufSize = 512 * nNumBlocks;\n\n    seg_data.SetSize((int)nAllocBufSize);\n    data_size = nAllocBufSize + 1024; // Incl. header\n\n    memcpy(seg_data.buffer, pabyBuf, nBufSize);\n\n    // Fill unused data at end with zeroes.\n    if (nBufSize < nAllocBufSize)\n    {\n        memset(seg_data.buffer + nBufSize, 0,\n            nAllocBufSize - nBufSize);\n    }\n    mbModified = true;\n\n    return;\n}",
+    "typeFullName":"void",
+    "lineNumber":12,
+    "order":4,
+    "_label":"BLOCK",
+    "columnNumber":1,
+    "possibleTypes":[
+      
+    ],
+    "argumentIndex":-1
+  },
+  {
+    "dynamicTypeHintFullName":[
+      
+    ],
+    "_id":25769803780,
+    "code":"{\n        memset(seg_data.buffer + nBufSize, 0,\n            nAllocBufSize - nBufSize);\n    }",
+    "typeFullName":"void",
+    "lineNumber":24,
+    "order":2,
+    "_label":"BLOCK",
+    "columnNumber":5,
+    "possibleTypes":[
+      
+    ],
+    "argumentIndex":-1
+  },
+  {
+    "dynamicTypeHintFullName":[
+      
+    ],
+    "_id":25769803781,
+    "code":"<empty>",
+    "typeFullName":"ANY",
+    "lineNumber":1,
+    "order":1,
+    "_label":"BLOCK",
+    "columnNumber":1,
+    "possibleTypes":[
+      
+    ],
+    "argumentIndex":-1
+  },
+  {
+    "dynamicTypeHintFullName":[
+      
+    ],
+    "_id":25769803782,
+    "code":"<empty>",
+    "typeFullName":"ANY",
+    "order":1,
+    "_label":"BLOCK",
+    "possibleTypes":[
+      
+    ],
+    "argumentIndex":-1
+  },
+  {
+    "dynamicTypeHintFullName":[
+      
+    ],
+    "_id":25769803783,
+    "code":"<empty>",
+    "typeFullName":"ANY",
+    "order":1,
+    "_label":"BLOCK",
+    "possibleTypes":[
+      
+    ],
+    "argumentIndex":1
+  },
+  {
+    "dynamicTypeHintFullName":[
+      
+    ],
+    "_id":25769803784,
+    "code":"<empty>",
+    "typeFullName":"ANY",
+    "order":1,
+    "_label":"BLOCK",
+    "possibleTypes":[
+      
+    ],
+    "argumentIndex":1
+  },
+  {
+    "dynamicTypeHintFullName":[
+      
+    ],
+    "_id":25769803785,
+    "code":"<empty>",
+    "typeFullName":"ANY",
+    "order":1,
+    "_label":"BLOCK",
+    "possibleTypes":[
+      
+    ],
+    "argumentIndex":1
+  },
+  {
+    "dynamicTypeHintFullName":[
+      
+    ],
+    "_id":25769803786,
+    "code":"<empty>",
+    "typeFullName":"ANY",
+    "order":1,
+    "_label":"BLOCK",
+    "possibleTypes":[
+      
+    ],
+    "argumentIndex":1
+  },
+  {
+    "dynamicTypeHintFullName":[
+      
+    ],
+    "_id":25769803787,
+    "code":"<empty>",
+    "typeFullName":"ANY",
+    "order":1,
+    "_label":"BLOCK",
+    "possibleTypes":[
+      
+    ],
+    "argumentIndex":1
+  },
+  {
+    "dynamicTypeHintFullName":[
+      
+    ],
+    "_id":25769803788,
+    "code":"<empty>",
+    "typeFullName":"ANY",
+    "order":1,
+    "_label":"BLOCK",
+    "possibleTypes":[
+      
+    ],
+    "argumentIndex":1
+  },
+  {
+    "dynamicTypeHintFullName":[
+      
+    ],
+    "_id":25769803789,
+    "code":"<empty>",
+    "typeFullName":"ANY",
+    "order":1,
+    "_label":"BLOCK",
+    "possibleTypes":[
+      
+    ],
+    "argumentIndex":1
+  },
+  {
+    "dynamicTypeHintFullName":[
+      
+    ],
+    "_id":25769803790,
+    "code":"<empty>",
+    "typeFullName":"ANY",
+    "order":1,
+    "_label":"BLOCK",
+    "possibleTypes":[
+      
+    ],
+    "argumentIndex":1
+  },
+  {
+    "dynamicTypeHintFullName":[
+      
+    ],
+    "_id":25769803791,
+    "code":"<empty>",
+    "typeFullName":"ANY",
+    "order":1,
+    "_label":"BLOCK",
+    "possibleTypes":[
+      
+    ],
+    "argumentIndex":1
+  },
+  {
+    "dynamicTypeHintFullName":[
+      
+    ],
+    "_id":25769803792,
+    "code":"<empty>",
+    "typeFullName":"ANY",
+    "order":1,
+    "_label":"BLOCK",
+    "possibleTypes":[
+      
+    ],
+    "argumentIndex":1
+  },
+  {
+    "dynamicTypeHintFullName":[
+      
+    ],
+    "_id":25769803793,
+    "code":"<empty>",
+    "typeFullName":"ANY",
+    "order":1,
+    "_label":"BLOCK",
+    "possibleTypes":[
+      
+    ],
+    "argumentIndex":1
+  },
+  {
+    "dynamicTypeHintFullName":[
+      
+    ],
+    "_id":25769803794,
+    "code":"<empty>",
+    "typeFullName":"ANY",
+    "order":1,
+    "_label":"BLOCK",
+    "possibleTypes":[
+      
+    ],
+    "argumentIndex":1
+  },
+  {
+    "dynamicTypeHintFullName":[
+      
+    ],
+    "_id":25769803795,
+    "code":"<empty>",
+    "typeFullName":"ANY",
+    "order":1,
+    "_label":"BLOCK",
+    "possibleTypes":[
+      
+    ],
+    "argumentIndex":1
+  },
+  {
+    "dynamicTypeHintFullName":[
+      
+    ],
+    "_id":25769803796,
+    "code":"<empty>",
+    "typeFullName":"ANY",
+    "order":1,
+    "_label":"BLOCK",
+    "possibleTypes":[
+      
+    ],
+    "argumentIndex":1
+  },
+  {
+    "dynamicTypeHintFullName":[
+      
+    ],
+    "_id":25769803797,
+    "code":"<empty>",
+    "typeFullName":"ANY",
+    "order":1,
+    "_label":"BLOCK",
+    "possibleTypes":[
+      
+    ],
+    "argumentIndex":1
+  },
+  {
+    "name":"Write",
+    "_id":30064771072,
+    "signature":"<unresolvedSignature>",
+    "code":"this->Write()",
+    "typeFullName":"ANY",
+    "lineNumber":13,
+    "order":1,
+    "methodFullName":"<unresolvedNamespace>.Write:<unresolvedSignature>(0)",
+    "dynamicTypeHintFullName":[
+      
+    ],
+    "dispatchType":"STATIC_DISPATCH",
+    "columnNumber":9,
+    "_label":"CALL",
+    "possibleTypes":[
+      
+    ],
+    "argumentIndex":-1
+  },
+  {
+    "name":"<operator>.assignment",
+    "_id":30064771073,
+    "signature":"",
+    "code":"nNumBlocks = nBufSize / 512 + ((0 == nBufSize % 512) ? 0 : 1)",
+    "typeFullName":"void",
+    "lineNumber":14,
+    "order":2,
+    "methodFullName":"<operator>.assignment",
+    "dynamicTypeHintFullName":[
+      
+    ],
+    "dispatchType":"STATIC_DISPATCH",
+    "columnNumber":9,
+    "_label":"CALL",
+    "possibleTypes":[
+      
+    ],
+    "argumentIndex":-1
+  },
+  {
+    "name":"<operator>.addition",
+    "_id":30064771074,
+    "signature":"",
+    "code":"nBufSize / 512 + ((0 == nBufSize % 512) ? 0 : 1)",
+    "typeFullName":"ANY",
+    "lineNumber":14,
+    "order":2,
+    "methodFullName":"<operator>.addition",
+    "dynamicTypeHintFullName":[
+      
+    ],
+    "dispatchType":"STATIC_DISPATCH",
+    "columnNumber":22,
+    "_label":"CALL",
+    "possibleTypes":[
+      
+    ],
+    "argumentIndex":2
+  },
+  {
+    "name":"<operator>.division",
+    "_id":30064771075,
+    "signature":"",
+    "code":"nBufSize / 512",
+    "typeFullName":"ANY",
+    "lineNumber":14,
+    "order":1,
+    "methodFullName":"<operator>.division",
+    "dynamicTypeHintFullName":[
+      
+    ],
+    "dispatchType":"STATIC_DISPATCH",
+    "columnNumber":22,
+    "_label":"CALL",
+    "possibleTypes":[
+      
+    ],
+    "argumentIndex":1
+  },
+  {
+    "name":"<operator>.conditional",
+    "_id":30064771076,
+    "signature":"",
+    "code":"(0 == nBufSize % 512) ? 0 : 1",
+    "typeFullName":"ANY",
+    "lineNumber":14,
+    "order":2,
+    "methodFullName":"<operator>.conditional",
+    "dynamicTypeHintFullName":[
+      
+    ],
+    "dispatchType":"STATIC_DISPATCH",
+    "columnNumber":40,
+    "_label":"CALL",
+    "possibleTypes":[
+      
+    ],
+    "argumentIndex":2
+  },
+  {
+    "name":"<operator>.equals",
+    "_id":30064771077,
+    "signature":"",
+    "code":"0 == nBufSize % 512",
+    "typeFullName":"ANY",
+    "lineNumber":14,
+    "order":1,
+    "methodFullName":"<operator>.equals",
+    "dynamicTypeHintFullName":[
+      
+    ],
+    "dispatchType":"STATIC_DISPATCH",
+    "columnNumber":41,
+    "_label":"CALL",
+    "possibleTypes":[
+      
+    ],
+    "argumentIndex":1
+  },
+  {
+    "name":"<operator>.modulo",
+    "_id":30064771078,
+    "signature":"",
+    "code":"nBufSize % 512",
+    "typeFullName":"ANY",
+    "lineNumber":14,
+    "order":2,
+    "methodFullName":"<operator>.modulo",
+    "dynamicTypeHintFullName":[
+      
+    ],
+    "dispatchType":"STATIC_DISPATCH",
+    "columnNumber":46,
+    "_label":"CALL",
+    "possibleTypes":[
+      
+    ],
+    "argumentIndex":2
+  },
+  {
+    "name":"<operator>.assignment",
+    "_id":30064771079,
+    "signature":"",
+    "code":"nAllocBufSize = 512 * nNumBlocks",
+    "typeFullName":"void",
+    "lineNumber":15,
+    "order":4,
+    "methodFullName":"<operator>.assignment",
+    "dynamicTypeHintFullName":[
+      
+    ],
+    "dispatchType":"STATIC_DISPATCH",
+    "columnNumber":18,
+    "_label":"CALL",
+    "possibleTypes":[
+      
+    ],
+    "argumentIndex":-1
+  },
+  {
+    "name":"<operator>.multiplication",
+    "_id":30064771080,
+    "signature":"",
+    "code":"512 * nNumBlocks",
+    "typeFullName":"ANY",
+    "lineNumber":15,
+    "order":2,
+    "methodFullName":"<operator>.multiplication",
+    "dynamicTypeHintFullName":[
+      
+    ],
+    "dispatchType":"STATIC_DISPATCH",
+    "columnNumber":34,
+    "_label":"CALL",
+    "possibleTypes":[
+      
+    ],
+    "argumentIndex":2
+  },
+  {
+    "name":"SetSize",
+    "_id":30064771081,
+    "signature":"<unresolvedSignature>",
+    "code":"seg_data.SetSize((int)nAllocBufSize)",
+    "typeFullName":"ANY",
+    "lineNumber":17,
+    "order":5,
+    "methodFullName":"<unresolvedNamespace>.SetSize:<unresolvedSignature>(1)",
+    "dynamicTypeHintFullName":[
+      
+    ],
+    "dispatchType":"STATIC_DISPATCH",
+    "columnNumber":5,
+    "_label":"CALL",
+    "possibleTypes":[
+      
+    ],
+    "argumentIndex":-1
+  },
+  {
+    "name":"<operator>.cast",
+    "_id":30064771082,
+    "signature":"",
+    "code":"(int)nAllocBufSize",
+    "typeFullName":"int",
+    "lineNumber":17,
+    "order":2,
+    "methodFullName":"<operator>.cast",
+    "dynamicTypeHintFullName":[
+      
+    ],
+    "dispatchType":"STATIC_DISPATCH",
+    "columnNumber":22,
+    "_label":"CALL",
+    "possibleTypes":[
+      
+    ],
+    "argumentIndex":1
+  },
+  {
+    "name":"<operator>.assignment",
+    "_id":30064771083,
+    "signature":"",
+    "code":"data_size = nAllocBufSize + 1024",
+    "typeFullName":"ANY",
+    "lineNumber":18,
+    "order":6,
+    "methodFullName":"<operator>.assignment",
+    "dynamicTypeHintFullName":[
+      
+    ],
+    "dispatchType":"STATIC_DISPATCH",
+    "columnNumber":5,
+    "_label":"CALL",
+    "possibleTypes":[
+      
+    ],
+    "argumentIndex":-1
+  },
+  {
+    "name":"<operator>.addition",
+    "_id":30064771084,
+    "signature":"",
+    "code":"nAllocBufSize + 1024",
+    "typeFullName":"ANY",
+    "lineNumber":18,
+    "order":2,
+    "methodFullName":"<operator>.addition",
+    "dynamicTypeHintFullName":[
+      
+    ],
+    "dispatchType":"STATIC_DISPATCH",
+    "columnNumber":17,
+    "_label":"CALL",
+    "possibleTypes":[
+      
+    ],
+    "argumentIndex":2
+  },
+  {
+    "name":"memcpy",
+    "_id":30064771085,
+    "signature":"<unresolvedSignature>",
+    "code":"memcpy(seg_data.buffer, pabyBuf, nBufSize)",
+    "typeFullName":"ANY",
+    "lineNumber":20,
+    "order":7,
+    "methodFullName":"<unresolvedNamespace>.memcpy:<unresolvedSignature>(3)",
+    "dynamicTypeHintFullName":[
+      
+    ],
+    "dispatchType":"STATIC_DISPATCH",
+    "columnNumber":5,
+    "_label":"CALL",
+    "possibleTypes":[
+      
+    ],
+    "argumentIndex":-1
+  },
+  {
+    "name":"<operator>.fieldAccess",
+    "_id":30064771086,
+    "signature":"",
+    "code":"seg_data.buffer",
+    "typeFullName":"ANY",
+    "lineNumber":20,
+    "order":1,
+    "methodFullName":"<operator>.fieldAccess",
+    "dynamicTypeHintFullName":[
+      
+    ],
+    "dispatchType":"STATIC_DISPATCH",
+    "columnNumber":12,
+    "_label":"CALL",
+    "possibleTypes":[
+      
+    ],
+    "argumentIndex":1
+  },
+  {
+    "name":"<operator>.lessThan",
+    "_id":30064771087,
+    "signature":"",
+    "code":"nBufSize < nAllocBufSize",
+    "typeFullName":"ANY",
+    "lineNumber":23,
+    "order":1,
+    "methodFullName":"<operator>.lessThan",
+    "dynamicTypeHintFullName":[
+      
+    ],
+    "dispatchType":"STATIC_DISPATCH",
+    "columnNumber":9,
+    "_label":"CALL",
+    "possibleTypes":[
+      
+    ],
+    "argumentIndex":-1
+  },
+  {
+    "name":"memset",
+    "_id":30064771088,
+    "signature":"<unresolvedSignature>",
+    "code":"memset(seg_data.buffer + nBufSize, 0,\n            nAllocBufSize - nBufSize)",
+    "typeFullName":"ANY",
+    "lineNumber":25,
+    "order":1,
+    "methodFullName":"<unresolvedNamespace>.memset:<unresolvedSignature>(3)",
+    "dynamicTypeHintFullName":[
+      
+    ],
+    "dispatchType":"STATIC_DISPATCH",
+    "columnNumber":9,
+    "_label":"CALL",
+    "possibleTypes":[
+      
+    ],
+    "argumentIndex":-1
+  },
+  {
+    "name":"<operator>.addition",
+    "_id":30064771089,
+    "signature":"",
+    "code":"seg_data.buffer + nBufSize",
+    "typeFullName":"ANY",
+    "lineNumber":25,
+    "order":1,
+    "methodFullName":"<operator>.addition",
+    "dynamicTypeHintFullName":[
+      
+    ],
+    "dispatchType":"STATIC_DISPATCH",
+    "columnNumber":16,
+    "_label":"CALL",
+    "possibleTypes":[
+      
+    ],
+    "argumentIndex":1
+  },
+  {
+    "name":"<operator>.fieldAccess",
+    "_id":30064771090,
+    "signature":"",
+    "code":"seg_data.buffer",
+    "typeFullName":"ANY",
+    "lineNumber":25,
+    "order":1,
+    "methodFullName":"<operator>.fieldAccess",
+    "dynamicTypeHintFullName":[
+      
+    ],
+    "dispatchType":"STATIC_DISPATCH",
+    "columnNumber":16,
+    "_label":"CALL",
+    "possibleTypes":[
+      
+    ],
+    "argumentIndex":1
+  },
+  {
+    "name":"<operator>.subtraction",
+    "_id":30064771091,
+    "signature":"",
+    "code":"nAllocBufSize - nBufSize",
+    "typeFullName":"ANY",
+    "lineNumber":26,
+    "order":3,
+    "methodFullName":"<operator>.subtraction",
+    "dynamicTypeHintFullName":[
+      
+    ],
+    "dispatchType":"STATIC_DISPATCH",
+    "columnNumber":13,
+    "_label":"CALL",
+    "possibleTypes":[
+      
+    ],
+    "argumentIndex":3
+  },
+  {
+    "name":"<operator>.assignment",
+    "_id":30064771092,
+    "signature":"",
+    "code":"mbModified = true",
+    "typeFullName":"ANY",
+    "lineNumber":28,
+    "order":9,
+    "methodFullName":"<operator>.assignment",
+    "dynamicTypeHintFullName":[
+      
+    ],
+    "dispatchType":"STATIC_DISPATCH",
+    "columnNumber":5,
+    "_label":"CALL",
+    "possibleTypes":[
+      
+    ],
+    "argumentIndex":-1
+  },
+  {
+    "parserTypeName":"CPPASTIfStatement",
+    "_id":47244640256,
+    "code":"if(mbModified)\n    {\n        this->Write();\n    }",
+    "lineNumber":11,
+    "order":1,
+    "controlStructureType":"IF",
+    "_label":"CONTROL_STRUCTURE",
+    "argumentIndex":-1,
+    "columnNumber":5
+  },
+  {
+    "parserTypeName":"CPPASTIfStatement",
+    "_id":47244640257,
+    "code":"if (nBufSize < nAllocBufSize)\n    {\n        memset(seg_data.buffer + nBufSize, 0,\n            nAllocBufSize - nBufSize);\n    }",
+    "lineNumber":23,
+    "order":8,
+    "controlStructureType":"IF",
+    "_label":"CONTROL_STRUCTURE",
+    "argumentIndex":-1,
+    "columnNumber":5
+  },
+  {
+    "name":"stddef.h",
+    "_id":51539607552,
+    "version":"include",
+    "dependencyGroupId":"stddef.h",
+    "_label":"DEPENDENCY"
+  },
+  {
+    "name":"stdint.h",
+    "_id":51539607553,
+    "version":"include",
+    "dependencyGroupId":"stdint.h",
+    "_label":"DEPENDENCY"
+  },
+  {
+    "name":"stdbool.h",
+    "_id":51539607554,
+    "version":"include",
+    "dependencyGroupId":"stdbool.h",
+    "_label":"DEPENDENCY"
+  },
+  {
+    "name":"string",
+    "_id":51539607555,
+    "version":"include",
+    "dependencyGroupId":"string",
+    "_label":"DEPENDENCY"
+  },
+  {
+    "name":"vector",
+    "_id":51539607556,
+    "version":"include",
+    "dependencyGroupId":"vector",
+    "_label":"DEPENDENCY"
+  },
+  {
+    "name":"stddef.h",
+    "_id":51539607557,
+    "version":"include",
+    "dependencyGroupId":"stddef.h",
+    "_label":"DEPENDENCY"
+  },
+  {
+    "name":"stdint.h",
+    "_id":51539607558,
+    "version":"include",
+    "dependencyGroupId":"stdint.h",
+    "_label":"DEPENDENCY"
+  },
+  {
+    "name":"stdbool.h",
+    "_id":51539607559,
+    "version":"include",
+    "dependencyGroupId":"stdbool.h",
+    "_label":"DEPENDENCY"
+  },
+  {
+    "name":"string",
+    "_id":51539607560,
+    "version":"include",
+    "dependencyGroupId":"string",
+    "_label":"DEPENDENCY"
+  },
+  {
+    "name":"vector",
+    "_id":51539607561,
+    "version":"include",
+    "dependencyGroupId":"vector",
+    "_label":"DEPENDENCY"
+  },
+  {
+    "_id":55834574848,
+    "code":"buffer",
+    "order":2,
+    "_label":"FIELD_IDENTIFIER",
+    "argumentIndex":2,
+    "canonicalName":"buffer",
+    "lineNumber":20,
+    "columnNumber":12
+  },
+  {
+    "_id":55834574849,
+    "code":"buffer",
+    "order":2,
+    "_label":"FIELD_IDENTIFIER",
+    "argumentIndex":2,
+    "canonicalName":"buffer",
+    "lineNumber":25,
+    "columnNumber":16
+  },
+  {
+    "name":"1ca6a3e5168c200763fa46d8aa7e698d0b757e7e_4.cpp",
+    "_id":60129542144,
+    "code":"<empty>",
+    "order":0,
+    "content":"<empty>",
+    "_label":"FILE"
+  },
+  {
+    "name":"1ca6a3e5168c200763fa46d8aa7e698d0b757e7e_5.cpp",
+    "_id":60129542145,
+    "code":"<empty>",
+    "order":0,
+    "content":"<empty>",
+    "_label":"FILE"
+  },
+  {
+    "name":"<includes>",
+    "_id":60129542146,
+    "code":"<empty>",
+    "order":1,
+    "content":"<empty>",
+    "_label":"FILE"
+  },
+  {
+    "name":"<unknown>",
+    "_id":60129542147,
+    "code":"<empty>",
+    "order":0,
+    "content":"<empty>",
+    "_label":"FILE"
+  },
+  {
+    "dynamicTypeHintFullName":[
+      
+    ],
+    "name":"mbModified",
+    "_id":68719476736,
+    "code":"<unknown> mbModified",
+    "typeFullName":"ANY",
+    "lineNumber":11,
+    "order":1,
+    "_label":"IDENTIFIER",
+    "columnNumber":8,
+    "possibleTypes":[
+      
+    ],
+    "argumentIndex":-1
+  },
+  {
+    "dynamicTypeHintFullName":[
+      
+    ],
+    "name":"this",
+    "_id":68719476737,
+    "code":"this",
+    "typeFullName":"ANY",
+    "lineNumber":13,
+    "order":1,
+    "_label":"IDENTIFIER",
+    "columnNumber":9,
+    "possibleTypes":[
+      
+    ],
+    "argumentIndex":0
+  },
+  {
+    "dynamicTypeHintFullName":[
+      
+    ],
+    "name":"nNumBlocks",
+    "_id":68719476738,
+    "code":"nNumBlocks",
+    "typeFullName":"int",
+    "lineNumber":14,
+    "order":1,
+    "_label":"IDENTIFIER",
+    "columnNumber":9,
+    "possibleTypes":[
+      
+    ],
+    "argumentIndex":1
+  },
+  {
+    "dynamicTypeHintFullName":[
+      
+    ],
+    "name":"nBufSize",
+    "_id":68719476739,
+    "code":"nBufSize",
+    "typeFullName":"unsigned int",
+    "lineNumber":14,
+    "order":1,
+    "_label":"IDENTIFIER",
+    "columnNumber":22,
+    "possibleTypes":[
+      
+    ],
+    "argumentIndex":1
+  },
+  {
+    "dynamicTypeHintFullName":[
+      
+    ],
+    "name":"nBufSize",
+    "_id":68719476740,
+    "code":"nBufSize",
+    "typeFullName":"unsigned int",
+    "lineNumber":14,
+    "order":1,
+    "_label":"IDENTIFIER",
+    "columnNumber":46,
+    "possibleTypes":[
+      
+    ],
+    "argumentIndex":1
+  },
+  {
+    "dynamicTypeHintFullName":[
+      
+    ],
+    "name":"nAllocBufSize",
+    "_id":68719476741,
+    "code":"nAllocBufSize",
+    "typeFullName":"unsigned int",
+    "lineNumber":15,
+    "order":1,
+    "_label":"IDENTIFIER",
+    "columnNumber":18,
+    "possibleTypes":[
+      
+    ],
+    "argumentIndex":1
+  },
+  {
+    "dynamicTypeHintFullName":[
+      
+    ],
+    "name":"nNumBlocks",
+    "_id":68719476742,
+    "code":"nNumBlocks",
+    "typeFullName":"int",
+    "lineNumber":15,
+    "order":2,
+    "_label":"IDENTIFIER",
+    "columnNumber":40,
+    "possibleTypes":[
+      
+    ],
+    "argumentIndex":2
+  },
+  {
+    "dynamicTypeHintFullName":[
+      
+    ],
+    "name":"seg_data",
+    "_id":68719476743,
+    "code":"<unknown> seg_data",
+    "typeFullName":"ANY",
+    "lineNumber":17,
+    "order":1,
+    "_label":"IDENTIFIER",
+    "columnNumber":5,
+    "possibleTypes":[
+      
+    ],
+    "argumentIndex":0
+  },
+  {
+    "dynamicTypeHintFullName":[
+      
+    ],
+    "name":"nAllocBufSize",
+    "_id":68719476744,
+    "code":"nAllocBufSize",
+    "typeFullName":"unsigned int",
+    "lineNumber":17,
+    "order":2,
+    "_label":"IDENTIFIER",
+    "columnNumber":27,
+    "possibleTypes":[
+      
+    ],
+    "argumentIndex":2
+  },
+  {
+    "dynamicTypeHintFullName":[
+      
+    ],
+    "name":"data_size",
+    "_id":68719476745,
+    "code":"<unknown> data_size",
+    "typeFullName":"ANY",
+    "lineNumber":18,
+    "order":1,
+    "_label":"IDENTIFIER",
+    "columnNumber":5,
+    "possibleTypes":[
+      
+    ],
+    "argumentIndex":1
+  },
+  {
+    "dynamicTypeHintFullName":[
+      
+    ],
+    "name":"nAllocBufSize",
+    "_id":68719476746,
+    "code":"nAllocBufSize",
+    "typeFullName":"unsigned int",
+    "lineNumber":18,
+    "order":1,
+    "_label":"IDENTIFIER",
+    "columnNumber":17,
+    "possibleTypes":[
+      
+    ],
+    "argumentIndex":1
+  },
+  {
+    "dynamicTypeHintFullName":[
+      
+    ],
+    "name":"seg_data",
+    "_id":68719476747,
+    "code":"<unknown> seg_data",
+    "typeFullName":"ANY",
+    "lineNumber":20,
+    "order":1,
+    "_label":"IDENTIFIER",
+    "columnNumber":12,
+    "possibleTypes":[
+      
+    ],
+    "argumentIndex":1
+  },
+  {
+    "dynamicTypeHintFullName":[
+      
+    ],
+    "name":"pabyBuf",
+    "_id":68719476748,
+    "code":"pabyBuf",
+    "typeFullName":"char*",
+    "lineNumber":20,
+    "order":2,
+    "_label":"IDENTIFIER",
+    "columnNumber":29,
+    "possibleTypes":[
+      
+    ],
+    "argumentIndex":2
+  },
+  {
+    "dynamicTypeHintFullName":[
+      
+    ],
+    "name":"nBufSize",
+    "_id":68719476749,
+    "code":"nBufSize",
+    "typeFullName":"unsigned int",
+    "lineNumber":20,
+    "order":3,
+    "_label":"IDENTIFIER",
+    "columnNumber":38,
+    "possibleTypes":[
+      
+    ],
+    "argumentIndex":3
+  },
+  {
+    "dynamicTypeHintFullName":[
+      
+    ],
+    "name":"nBufSize",
+    "_id":68719476750,
+    "code":"nBufSize",
+    "typeFullName":"unsigned int",
+    "lineNumber":23,
+    "order":1,
+    "_label":"IDENTIFIER",
+    "columnNumber":9,
+    "possibleTypes":[
+      
+    ],
+    "argumentIndex":1
+  },
+  {
+    "dynamicTypeHintFullName":[
+      
+    ],
+    "name":"nAllocBufSize",
+    "_id":68719476751,
+    "code":"nAllocBufSize",
+    "typeFullName":"unsigned int",
+    "lineNumber":23,
+    "order":2,
+    "_label":"IDENTIFIER",
+    "columnNumber":20,
+    "possibleTypes":[
+      
+    ],
+    "argumentIndex":2
+  },
+  {
+    "dynamicTypeHintFullName":[
+      
+    ],
+    "name":"seg_data",
+    "_id":68719476752,
+    "code":"<unknown> seg_data",
+    "typeFullName":"ANY",
+    "lineNumber":25,
+    "order":1,
+    "_label":"IDENTIFIER",
+    "columnNumber":16,
+    "possibleTypes":[
+      
+    ],
+    "argumentIndex":1
+  },
+  {
+    "dynamicTypeHintFullName":[
+      
+    ],
+    "name":"nBufSize",
+    "_id":68719476753,
+    "code":"nBufSize",
+    "typeFullName":"unsigned int",
+    "lineNumber":25,
+    "order":2,
+    "_label":"IDENTIFIER",
+    "columnNumber":34,
+    "possibleTypes":[
+      
+    ],
+    "argumentIndex":2
+  },
+  {
+    "dynamicTypeHintFullName":[
+      
+    ],
+    "name":"nAllocBufSize",
+    "_id":68719476754,
+    "code":"nAllocBufSize",
+    "typeFullName":"unsigned int",
+    "lineNumber":26,
+    "order":1,
+    "_label":"IDENTIFIER",
+    "columnNumber":13,
+    "possibleTypes":[
+      
+    ],
+    "argumentIndex":1
+  },
+  {
+    "dynamicTypeHintFullName":[
+      
+    ],
+    "name":"nBufSize",
+    "_id":68719476755,
+    "code":"nBufSize",
+    "typeFullName":"unsigned int",
+    "lineNumber":26,
+    "order":2,
+    "_label":"IDENTIFIER",
+    "columnNumber":29,
+    "possibleTypes":[
+      
+    ],
+    "argumentIndex":2
+  },
+  {
+    "dynamicTypeHintFullName":[
+      
+    ],
+    "name":"mbModified",
+    "_id":68719476756,
+    "code":"<unknown> mbModified",
+    "typeFullName":"ANY",
+    "lineNumber":28,
+    "order":1,
+    "_label":"IDENTIFIER",
+    "columnNumber":5,
+    "possibleTypes":[
+      
+    ],
+    "argumentIndex":1
+  },
+  {
+    "_id":73014444032,
+    "importedAs":"stddef.h",
+    "code":"#include <stddef.h>",
+    "lineNumber":3,
+    "order":1,
+    "importedEntity":"stddef.h",
+    "_label":"IMPORT",
+    "columnNumber":1
+  },
+  {
+    "_id":73014444033,
+    "importedAs":"stdint.h",
+    "code":"#include <stdint.h>",
+    "lineNumber":4,
+    "order":2,
+    "importedEntity":"stdint.h",
+    "_label":"IMPORT",
+    "columnNumber":1
+  },
+  {
+    "_id":73014444034,
+    "importedAs":"stdbool.h",
+    "code":"#include <stdbool.h>",
+    "lineNumber":5,
+    "order":3,
+    "importedEntity":"stdbool.h",
+    "_label":"IMPORT",
+    "columnNumber":1
+  },
+  {
+    "_id":73014444035,
+    "importedAs":"string",
+    "code":"#include <string>",
+    "lineNumber":6,
+    "order":4,
+    "importedEntity":"string",
+    "_label":"IMPORT",
+    "columnNumber":1
+  },
+  {
+    "_id":73014444036,
+    "importedAs":"vector",
+    "code":"#include <vector>",
+    "lineNumber":7,
+    "order":5,
+    "importedEntity":"vector",
+    "_label":"IMPORT",
+    "columnNumber":1
+  },
+  {
+    "_id":73014444037,
+    "importedAs":"stddef.h",
+    "code":"#include <stddef.h>",
+    "lineNumber":3,
+    "order":1,
+    "importedEntity":"stddef.h",
+    "_label":"IMPORT",
+    "columnNumber":1
+  },
+  {
+    "_id":73014444038,
+    "importedAs":"stdint.h",
+    "code":"#include <stdint.h>",
+    "lineNumber":4,
+    "order":2,
+    "importedEntity":"stdint.h",
+    "_label":"IMPORT",
+    "columnNumber":1
+  },
+  {
+    "_id":73014444039,
+    "importedAs":"stdbool.h",
+    "code":"#include <stdbool.h>",
+    "lineNumber":5,
+    "order":3,
+    "importedEntity":"stdbool.h",
+    "_label":"IMPORT",
+    "columnNumber":1
+  },
+  {
+    "_id":73014444040,
+    "importedAs":"string",
+    "code":"#include <string>",
+    "lineNumber":6,
+    "order":4,
+    "importedEntity":"string",
+    "_label":"IMPORT",
+    "columnNumber":1
+  },
+  {
+    "_id":73014444041,
+    "importedAs":"vector",
+    "code":"#include <vector>",
+    "lineNumber":7,
+    "order":5,
+    "importedEntity":"vector",
+    "_label":"IMPORT",
+    "columnNumber":1
+  },
+  {
+    "dynamicTypeHintFullName":[
+      
+    ],
+    "_id":90194313216,
+    "code":"512",
+    "typeFullName":"int",
+    "lineNumber":14,
+    "order":2,
+    "_label":"LITERAL",
+    "columnNumber":33,
+    "possibleTypes":[
+      
+    ],
+    "argumentIndex":2
+  },
+  {
+    "dynamicTypeHintFullName":[
+      
+    ],
+    "_id":90194313217,
+    "code":"0",
+    "typeFullName":"int",
+    "lineNumber":14,
+    "order":1,
+    "_label":"LITERAL",
+    "columnNumber":41,
+    "possibleTypes":[
+      
+    ],
+    "argumentIndex":1
+  },
+  {
+    "dynamicTypeHintFullName":[
+      
+    ],
+    "_id":90194313218,
+    "code":"512",
+    "typeFullName":"int",
+    "lineNumber":14,
+    "order":2,
+    "_label":"LITERAL",
+    "columnNumber":57,
+    "possibleTypes":[
+      
+    ],
+    "argumentIndex":2
+  },
+  {
+    "dynamicTypeHintFullName":[
+      
+    ],
+    "_id":90194313219,
+    "code":"0",
+    "typeFullName":"int",
+    "lineNumber":14,
+    "order":2,
+    "_label":"LITERAL",
+    "columnNumber":64,
+    "possibleTypes":[
+      
+    ],
+    "argumentIndex":2
+  },
+  {
+    "dynamicTypeHintFullName":[
+      
+    ],
+    "_id":90194313220,
+    "code":"1",
+    "typeFullName":"int",
+    "lineNumber":14,
+    "order":3,
+    "_label":"LITERAL",
+    "columnNumber":68,
+    "possibleTypes":[
+      
+    ],
+    "argumentIndex":3
+  },
+  {
+    "dynamicTypeHintFullName":[
+      
+    ],
+    "_id":90194313221,
+    "code":"512",
+    "typeFullName":"int",
+    "lineNumber":15,
+    "order":1,
+    "_label":"LITERAL",
+    "columnNumber":34,
+    "possibleTypes":[
+      
+    ],
+    "argumentIndex":1
+  },
+  {
+    "dynamicTypeHintFullName":[
+      
+    ],
+    "_id":90194313222,
+    "code":"1024",
+    "typeFullName":"int",
+    "lineNumber":18,
+    "order":2,
+    "_label":"LITERAL",
+    "columnNumber":33,
+    "possibleTypes":[
+      
+    ],
+    "argumentIndex":2
+  },
+  {
+    "dynamicTypeHintFullName":[
+      
+    ],
+    "_id":90194313223,
+    "code":"0",
+    "typeFullName":"int",
+    "lineNumber":25,
+    "order":2,
+    "_label":"LITERAL",
+    "columnNumber":44,
+    "possibleTypes":[
+      
+    ],
+    "argumentIndex":2
+  },
+  {
+    "dynamicTypeHintFullName":[
+      
+    ],
+    "_id":90194313224,
+    "code":"true",
+    "typeFullName":"bool",
+    "lineNumber":28,
+    "order":2,
+    "_label":"LITERAL",
+    "columnNumber":18,
+    "possibleTypes":[
+      
+    ],
+    "argumentIndex":2
+  },
+  {
+    "dynamicTypeHintFullName":[
+      
+    ],
+    "name":"mbModified",
+    "_id":94489280512,
+    "genericSignature":"<empty>",
+    "typeFullName":"ANY",
+    "lineNumber":11,
+    "order":0,
+    "_label":"LOCAL",
+    "possibleTypes":[
+      
+    ],
+    "code":"<unknown> mbModified",
+    "columnNumber":8
+  },
+  {
+    "dynamicTypeHintFullName":[
+      
+    ],
+    "name":"nNumBlocks",
+    "_id":94489280513,
+    "genericSignature":"<empty>",
+    "typeFullName":"int",
+    "lineNumber":14,
+    "order":1,
+    "_label":"LOCAL",
+    "possibleTypes":[
+      
+    ],
+    "code":"int nNumBlocks",
+    "columnNumber":9
+  },
+  {
+    "dynamicTypeHintFullName":[
+      
+    ],
+    "name":"nAllocBufSize",
+    "_id":94489280514,
+    "genericSignature":"<empty>",
+    "typeFullName":"unsigned int",
+    "lineNumber":15,
+    "order":3,
+    "_label":"LOCAL",
+    "possibleTypes":[
+      
+    ],
+    "code":"unsigned int nAllocBufSize",
+    "columnNumber":18
+  },
+  {
+    "dynamicTypeHintFullName":[
+      
+    ],
+    "name":"mbModified",
+    "_id":94489280515,
+    "genericSignature":"<empty>",
+    "typeFullName":"ANY",
+    "lineNumber":28,
+    "order":0,
+    "_label":"LOCAL",
+    "possibleTypes":[
+      
+    ],
+    "code":"<unknown> mbModified",
+    "columnNumber":5
+  },
+  {
+    "dynamicTypeHintFullName":[
+      
+    ],
+    "name":"seg_data",
+    "_id":94489280516,
+    "genericSignature":"<empty>",
+    "typeFullName":"ANY",
+    "lineNumber":17,
+    "order":0,
+    "_label":"LOCAL",
+    "possibleTypes":[
+      
+    ],
+    "code":"<unknown> seg_data",
+    "columnNumber":5
+  },
+  {
+    "dynamicTypeHintFullName":[
+      
+    ],
+    "name":"data_size",
+    "_id":94489280517,
+    "genericSignature":"<empty>",
+    "typeFullName":"ANY",
+    "lineNumber":18,
+    "order":0,
+    "_label":"LOCAL",
+    "possibleTypes":[
+      
+    ],
+    "code":"<unknown> data_size",
+    "columnNumber":5
+  },
+  {
+    "_id":103079215104,
+    "version":"0.1",
+    "language":"NEWC",
+    "_label":"META_DATA",
+    "overlays":[
+      "base",
+      "controlflow",
+      "typerel",
+      "callgraph",
+      "dataflowOss"
+    ],
+    "root":"C:\\Users\\USER\\Desktop\\Thesis Research\\Implementation\\Thesis-causal-vul\\work\\src\\test\\shard_1ca6"
+  },
+  {
+    "name":"Synchronize",
+    "astParentFullName":"1ca6a3e5168c200763fa46d8aa7e698d0b757e7e_4.cpp:<global>",
+    "_id":107374182400,
+    "signature":"void()",
+    "astParentType":"TYPE_DECL",
+    "lineNumberEnd":15,
+    "_label":"METHOD",
+    "columnNumberEnd":1,
+    "fullName":"CPCIDSKBinarySegment.Synchronize:void()",
+    "genericSignature":"<empty>",
+    "code":"void CPCIDSKBinarySegment::Synchronize()\n{\n    if(mbModified)\n    {\n        this->Write();\n    }\n}",
+    "isExternal":false,
+    "lineNumber":9,
+    "columnNumber":1,
+    "order":1,
+    "filename":"1ca6a3e5168c200763fa46d8aa7e698d0b757e7e_4.cpp"
+  },
+  {
+    "name":"<global>",
+    "astParentFullName":"1ca6a3e5168c200763fa46d8aa7e698d0b757e7e_4.cpp:<global>",
+    "_id":107374182401,
+    "signature":"",
+    "astParentType":"TYPE_DECL",
+    "lineNumberEnd":15,
+    "_label":"METHOD",
+    "columnNumberEnd":1,
+    "fullName":"1ca6a3e5168c200763fa46d8aa7e698d0b757e7e_4.cpp:<global>",
+    "genericSignature":"<empty>",
+    "code":"<global>",
+    "isExternal":false,
+    "lineNumber":1,
+    "columnNumber":1,
+    "order":1,
+    "filename":"1ca6a3e5168c200763fa46d8aa7e698d0b757e7e_4.cpp"
+  },
+  {
+    "name":"SetBuffer",
+    "astParentFullName":"1ca6a3e5168c200763fa46d8aa7e698d0b757e7e_5.cpp:<global>",
+    "_id":107374182402,
+    "signature":"void(char*,unsigned int)",
+    "astParentType":"TYPE_DECL",
+    "lineNumberEnd":31,
+    "_label":"METHOD",
+    "columnNumberEnd":1,
+    "fullName":"CPCIDSKBinarySegment.SetBuffer:void(char*,unsigned int)",
+    "genericSignature":"<empty>",
+    "code":"void\nCPCIDSKBinarySegment::SetBuffer(const char* pabyBuf,\n                                unsigned int nBufSize)\n{\n    // Round the buffer size up to the next multiple of 512.\n    int nNumBlocks = nBufSize / 512 + ((0 == nBufSize % 512) ? 0 : 1);\n    unsigned int nAllocBufSize = 512 * nNumBlocks;\n\n    seg_data.SetSize((int)nAllocBufSize);\n    data_size = nAllocBufSize + 1024; // Incl. header\n\n    memcpy(seg_data.buffer, pabyBuf, nBufSize);\n\n    // Fill unused data at end with zeroes.\n    if (nBufSize < nAllocBufSize)\n    {\n        memset(seg_data.buffer + nBufSize, 0,\n            nAllocBufSize - nBufSize);\n    }\n    mbModified = true;\n\n    return;\n}",
+    "isExternal":false,
+    "lineNumber":9,
+    "columnNumber":1,
+    "order":1,
+    "filename":"1ca6a3e5168c200763fa46d8aa7e698d0b757e7e_5.cpp"
+  },
+  {
+    "name":"<global>",
+    "astParentFullName":"1ca6a3e5168c200763fa46d8aa7e698d0b757e7e_5.cpp:<global>",
+    "_id":107374182403,
+    "signature":"",
+    "astParentType":"TYPE_DECL",
+    "lineNumberEnd":31,
+    "_label":"METHOD",
+    "columnNumberEnd":1,
+    "fullName":"1ca6a3e5168c200763fa46d8aa7e698d0b757e7e_5.cpp:<global>",
+    "genericSignature":"<empty>",
+    "code":"<global>",
+    "isExternal":false,
+    "lineNumber":1,
+    "columnNumber":1,
+    "order":1,
+    "filename":"1ca6a3e5168c200763fa46d8aa7e698d0b757e7e_5.cpp"
+  },
+  {
+    "name":"<global>",
+    "astParentFullName":"<includes>:<global>",
+    "_id":107374182404,
+    "signature":"",
+    "astParentType":"NAMESPACE_BLOCK",
+    "_label":"METHOD",
+    "fullName":"<includes>:<global>",
+    "genericSignature":"<empty>",
+    "code":"<global>",
+    "isExternal":false,
+    "lineNumber":1,
+    "order":1,
+    "filename":"<includes>"
+  },
+  {
+    "name":"<operator>.division",
+    "astParentFullName":"<global>",
+    "_id":107374182405,
+    "signature":"",
+    "astParentType":"NAMESPACE_BLOCK",
+    "_label":"METHOD",
+    "fullName":"<operator>.division",
+    "genericSignature":"<empty>",
+    "code":"<empty>",
+    "isExternal":true,
+    "order":0,
+    "filename":"<empty>"
+  },
+  {
+    "name":"memset",
+    "astParentFullName":"<global>",
+    "_id":107374182406,
+    "signature":"<unresolvedSignature>",
+    "astParentType":"NAMESPACE_BLOCK",
+    "_label":"METHOD",
+    "fullName":"<unresolvedNamespace>.memset:<unresolvedSignature>(3)",
+    "genericSignature":"<empty>",
+    "code":"<empty>",
+    "isExternal":true,
+    "order":0,
+    "filename":"<empty>"
+  },
+  {
+    "name":"SetSize",
+    "astParentFullName":"<global>",
+    "_id":107374182407,
+    "signature":"<unresolvedSignature>",
+    "astParentType":"NAMESPACE_BLOCK",
+    "_label":"METHOD",
+    "fullName":"<unresolvedNamespace>.SetSize:<unresolvedSignature>(1)",
+    "genericSignature":"<empty>",
+    "code":"<empty>",
+    "isExternal":true,
+    "order":0,
+    "filename":"<empty>"
+  },
+  {
+    "name":"<operator>.lessThan",
+    "astParentFullName":"<global>",
+    "_id":107374182408,
+    "signature":"",
+    "astParentType":"NAMESPACE_BLOCK",
+    "_label":"METHOD",
+    "fullName":"<operator>.lessThan",
+    "genericSignature":"<empty>",
+    "code":"<empty>",
+    "isExternal":true,
+    "order":0,
+    "filename":"<empty>"
+  },
+  {
+    "name":"<operator>.fieldAccess",
+    "astParentFullName":"<global>",
+    "_id":107374182409,
+    "signature":"",
+    "astParentType":"NAMESPACE_BLOCK",
+    "_label":"METHOD",
+    "fullName":"<operator>.fieldAccess",
+    "genericSignature":"<empty>",
+    "code":"<empty>",
+    "isExternal":true,
+    "order":0,
+    "filename":"<empty>"
+  },
+  {
+    "name":"<operator>.multiplication",
+    "astParentFullName":"<global>",
+    "_id":107374182410,
+    "signature":"",
+    "astParentType":"NAMESPACE_BLOCK",
+    "_label":"METHOD",
+    "fullName":"<operator>.multiplication",
+    "genericSignature":"<empty>",
+    "code":"<empty>",
+    "isExternal":true,
+    "order":0,
+    "filename":"<empty>"
+  },
+  {
+    "name":"<operator>.subtraction",
+    "astParentFullName":"<global>",
+    "_id":107374182411,
+    "signature":"",
+    "astParentType":"NAMESPACE_BLOCK",
+    "_label":"METHOD",
+    "fullName":"<operator>.subtraction",
+    "genericSignature":"<empty>",
+    "code":"<empty>",
+    "isExternal":true,
+    "order":0,
+    "filename":"<empty>"
+  },
+  {
+    "name":"<operator>.addition",
+    "astParentFullName":"<global>",
+    "_id":107374182412,
+    "signature":"",
+    "astParentType":"NAMESPACE_BLOCK",
+    "_label":"METHOD",
+    "fullName":"<operator>.addition",
+    "genericSignature":"<empty>",
+    "code":"<empty>",
+    "isExternal":true,
+    "order":0,
+    "filename":"<empty>"
+  },
+  {
+    "name":"memcpy",
+    "astParentFullName":"<global>",
+    "_id":107374182413,
+    "signature":"<unresolvedSignature>",
+    "astParentType":"NAMESPACE_BLOCK",
+    "_label":"METHOD",
+    "fullName":"<unresolvedNamespace>.memcpy:<unresolvedSignature>(3)",
+    "genericSignature":"<empty>",
+    "code":"<empty>",
+    "isExternal":true,
+    "order":0,
+    "filename":"<empty>"
+  },
+  {
+    "name":"<operator>.cast",
+    "astParentFullName":"<global>",
+    "_id":107374182414,
+    "signature":"",
+    "astParentType":"NAMESPACE_BLOCK",
+    "_label":"METHOD",
+    "fullName":"<operator>.cast",
+    "genericSignature":"<empty>",
+    "code":"<empty>",
+    "isExternal":true,
+    "order":0,
+    "filename":"<empty>"
+  },
+  {
+    "name":"<operator>.equals",
+    "astParentFullName":"<global>",
+    "_id":107374182415,
+    "signature":"",
+    "astParentType":"NAMESPACE_BLOCK",
+    "_label":"METHOD",
+    "fullName":"<operator>.equals",
+    "genericSignature":"<empty>",
+    "code":"<empty>",
+    "isExternal":true,
+    "order":0,
+    "filename":"<empty>"
+  },
+  {
+    "name":"Write",
+    "astParentFullName":"<global>",
+    "_id":107374182416,
+    "signature":"<unresolvedSignature>",
+    "astParentType":"NAMESPACE_BLOCK",
+    "_label":"METHOD",
+    "fullName":"<unresolvedNamespace>.Write:<unresolvedSignature>(0)",
+    "genericSignature":"<empty>",
+    "code":"<empty>",
+    "isExternal":true,
+    "order":0,
+    "filename":"<empty>"
+  },
+  {
+    "name":"<operator>.modulo",
+    "astParentFullName":"<global>",
+    "_id":107374182417,
+    "signature":"",
+    "astParentType":"NAMESPACE_BLOCK",
+    "_label":"METHOD",
+    "fullName":"<operator>.modulo",
+    "genericSignature":"<empty>",
+    "code":"<empty>",
+    "isExternal":true,
+    "order":0,
+    "filename":"<empty>"
+  },
+  {
+    "name":"<operator>.conditional",
+    "astParentFullName":"<global>",
+    "_id":107374182418,
+    "signature":"",
+    "astParentType":"NAMESPACE_BLOCK",
+    "_label":"METHOD",
+    "fullName":"<operator>.conditional",
+    "genericSignature":"<empty>",
+    "code":"<empty>",
+    "isExternal":true,
+    "order":0,
+    "filename":"<empty>"
+  },
+  {
+    "name":"<operator>.assignment",
+    "astParentFullName":"<global>",
+    "_id":107374182419,
+    "signature":"",
+    "astParentType":"NAMESPACE_BLOCK",
+    "_label":"METHOD",
+    "fullName":"<operator>.assignment",
+    "genericSignature":"<empty>",
+    "code":"<empty>",
+    "isExternal":true,
+    "order":0,
+    "filename":"<empty>"
+  },
+  {
+    "dynamicTypeHintFullName":[
+      
+    ],
+    "name":"this",
+    "_id":111669149696,
+    "evaluationStrategy":"BY_SHARING",
+    "isVariadic":false,
+    "typeFullName":"CPCIDSKBinarySegment*",
+    "lineNumber":9,
+    "order":0,
+    "_label":"METHOD_PARAMETER_IN",
+    "possibleTypes":[
+      
+    ],
+    "index":0,
+    "code":"this",
+    "columnNumber":1
+  },
+  {
+    "dynamicTypeHintFullName":[
+      
+    ],
+    "name":"this",
+    "_id":111669149697,
+    "evaluationStrategy":"BY_SHARING",
+    "isVariadic":false,
+    "typeFullName":"CPCIDSKBinarySegment*",
+    "lineNumber":9,
+    "order":0,
+    "_label":"METHOD_PARAMETER_IN",
+    "possibleTypes":[
+      
+    ],
+    "index":0,
+    "code":"this",
+    "columnNumber":1
+  },
+  {
+    "dynamicTypeHintFullName":[
+      
+    ],
+    "name":"pabyBuf",
+    "_id":111669149698,
+    "evaluationStrategy":"BY_VALUE",
+    "isVariadic":false,
+    "typeFullName":"char*",
+    "lineNumber":10,
+    "order":1,
+    "_label":"METHOD_PARAMETER_IN",
+    "possibleTypes":[
+      
+    ],
+    "index":1,
+    "code":"const char* pabyBuf",
+    "columnNumber":33
+  },
+  {
+    "dynamicTypeHintFullName":[
+      
+    ],
+    "name":"nBufSize",
+    "_id":111669149699,
+    "evaluationStrategy":"BY_VALUE",
+    "isVariadic":false,
+    "typeFullName":"unsigned int",
+    "lineNumber":11,
+    "order":2,
+    "_label":"METHOD_PARAMETER_IN",
+    "possibleTypes":[
+      
+    ],
+    "index":2,
+    "code":"unsigned int nBufSize",
+    "columnNumber":33
+  },
+  {
+    "dynamicTypeHintFullName":[
+      
+    ],
+    "name":"p1",
+    "_id":111669149700,
+    "evaluationStrategy":"BY_VALUE",
+    "isVariadic":false,
+    "typeFullName":"ANY",
+    "order":1,
+    "_label":"METHOD_PARAMETER_IN",
+    "possibleTypes":[
+      
+    ],
+    "index":1,
+    "code":"p1"
+  },
+  {
+    "dynamicTypeHintFullName":[
+      
+    ],
+    "name":"p2",
+    "_id":111669149701,
+    "evaluationStrategy":"BY_VALUE",
+    "isVariadic":false,
+    "typeFullName":"ANY",
+    "order":2,
+    "_label":"METHOD_PARAMETER_IN",
+    "possibleTypes":[
+      
+    ],
+    "index":2,
+    "code":"p2"
+  },
+  {
+    "dynamicTypeHintFullName":[
+      
+    ],
+    "name":"p1",
+    "_id":111669149702,
+    "evaluationStrategy":"BY_VALUE",
+    "isVariadic":false,
+    "typeFullName":"ANY",
+    "order":1,
+    "_label":"METHOD_PARAMETER_IN",
+    "possibleTypes":[
+      
+    ],
+    "index":1,
+    "code":"p1"
+  },
+  {
+    "dynamicTypeHintFullName":[
+      
+    ],
+    "name":"p2",
+    "_id":111669149703,
+    "evaluationStrategy":"BY_VALUE",
+    "isVariadic":false,
+    "typeFullName":"ANY",
+    "order":2,
+    "_label":"METHOD_PARAMETER_IN",
+    "possibleTypes":[
+      
+    ],
+    "index":2,
+    "code":"p2"
+  },
+  {
+    "dynamicTypeHintFullName":[
+      
+    ],
+    "name":"p3",
+    "_id":111669149704,
+    "evaluationStrategy":"BY_VALUE",
+    "isVariadic":false,
+    "typeFullName":"ANY",
+    "order":3,
+    "_label":"METHOD_PARAMETER_IN",
+    "possibleTypes":[
+      
+    ],
+    "index":3,
+    "code":"p3"
+  },
+  {
+    "dynamicTypeHintFullName":[
+      
+    ],
+    "name":"p0",
+    "_id":111669149705,
+    "evaluationStrategy":"BY_VALUE",
+    "isVariadic":false,
+    "typeFullName":"ANY",
+    "order":0,
+    "_label":"METHOD_PARAMETER_IN",
+    "possibleTypes":[
+      
+    ],
+    "index":0,
+    "code":"p0"
+  },
+  {
+    "dynamicTypeHintFullName":[
+      
+    ],
+    "name":"p1",
+    "_id":111669149706,
+    "evaluationStrategy":"BY_VALUE",
+    "isVariadic":false,
+    "typeFullName":"ANY",
+    "order":1,
+    "_label":"METHOD_PARAMETER_IN",
+    "possibleTypes":[
+      
+    ],
+    "index":1,
+    "code":"p1"
+  },
+  {
+    "dynamicTypeHintFullName":[
+      
+    ],
+    "name":"p1",
+    "_id":111669149707,
+    "evaluationStrategy":"BY_VALUE",
+    "isVariadic":false,
+    "typeFullName":"ANY",
+    "order":1,
+    "_label":"METHOD_PARAMETER_IN",
+    "possibleTypes":[
+      
+    ],
+    "index":1,
+    "code":"p1"
+  },
+  {
+    "dynamicTypeHintFullName":[
+      
+    ],
+    "name":"p2",
+    "_id":111669149708,
+    "evaluationStrategy":"BY_VALUE",
+    "isVariadic":false,
+    "typeFullName":"ANY",
+    "order":2,
+    "_label":"METHOD_PARAMETER_IN",
+    "possibleTypes":[
+      
+    ],
+    "index":2,
+    "code":"p2"
+  },
+  {
+    "dynamicTypeHintFullName":[
+      
+    ],
+    "name":"p1",
+    "_id":111669149709,
+    "evaluationStrategy":"BY_VALUE",
+    "isVariadic":false,
+    "typeFullName":"ANY",
+    "order":1,
+    "_label":"METHOD_PARAMETER_IN",
+    "possibleTypes":[
+      
+    ],
+    "index":1,
+    "code":"p1"
+  },
+  {
+    "dynamicTypeHintFullName":[
+      
+    ],
+    "name":"p2",
+    "_id":111669149710,
+    "evaluationStrategy":"BY_VALUE",
+    "isVariadic":false,
+    "typeFullName":"ANY",
+    "order":2,
+    "_label":"METHOD_PARAMETER_IN",
+    "possibleTypes":[
+      
+    ],
+    "index":2,
+    "code":"p2"
+  },
+  {
+    "dynamicTypeHintFullName":[
+      
+    ],
+    "name":"p1",
+    "_id":111669149711,
+    "evaluationStrategy":"BY_VALUE",
+    "isVariadic":false,
+    "typeFullName":"ANY",
+    "order":1,
+    "_label":"METHOD_PARAMETER_IN",
+    "possibleTypes":[
+      
+    ],
+    "index":1,
+    "code":"p1"
+  },
+  {
+    "dynamicTypeHintFullName":[
+      
+    ],
+    "name":"p2",
+    "_id":111669149712,
+    "evaluationStrategy":"BY_VALUE",
+    "isVariadic":false,
+    "typeFullName":"ANY",
+    "order":2,
+    "_label":"METHOD_PARAMETER_IN",
+    "possibleTypes":[
+      
+    ],
+    "index":2,
+    "code":"p2"
+  },
+  {
+    "dynamicTypeHintFullName":[
+      
+    ],
+    "name":"p1",
+    "_id":111669149713,
+    "evaluationStrategy":"BY_VALUE",
+    "isVariadic":false,
+    "typeFullName":"ANY",
+    "order":1,
+    "_label":"METHOD_PARAMETER_IN",
+    "possibleTypes":[
+      
+    ],
+    "index":1,
+    "code":"p1"
+  },
+  {
+    "dynamicTypeHintFullName":[
+      
+    ],
+    "name":"p2",
+    "_id":111669149714,
+    "evaluationStrategy":"BY_VALUE",
+    "isVariadic":false,
+    "typeFullName":"ANY",
+    "order":2,
+    "_label":"METHOD_PARAMETER_IN",
+    "possibleTypes":[
+      
+    ],
+    "index":2,
+    "code":"p2"
+  },
+  {
+    "dynamicTypeHintFullName":[
+      
+    ],
+    "name":"p1",
+    "_id":111669149715,
+    "evaluationStrategy":"BY_VALUE",
+    "isVariadic":false,
+    "typeFullName":"ANY",
+    "order":1,
+    "_label":"METHOD_PARAMETER_IN",
+    "possibleTypes":[
+      
+    ],
+    "index":1,
+    "code":"p1"
+  },
+  {
+    "dynamicTypeHintFullName":[
+      
+    ],
+    "name":"p2",
+    "_id":111669149716,
+    "evaluationStrategy":"BY_VALUE",
+    "isVariadic":false,
+    "typeFullName":"ANY",
+    "order":2,
+    "_label":"METHOD_PARAMETER_IN",
+    "possibleTypes":[
+      
+    ],
+    "index":2,
+    "code":"p2"
+  },
+  {
+    "dynamicTypeHintFullName":[
+      
+    ],
+    "name":"p1",
+    "_id":111669149717,
+    "evaluationStrategy":"BY_VALUE",
+    "isVariadic":false,
+    "typeFullName":"ANY",
+    "order":1,
+    "_label":"METHOD_PARAMETER_IN",
+    "possibleTypes":[
+      
+    ],
+    "index":1,
+    "code":"p1"
+  },
+  {
+    "dynamicTypeHintFullName":[
+      
+    ],
+    "name":"p2",
+    "_id":111669149718,
+    "evaluationStrategy":"BY_VALUE",
+    "isVariadic":false,
+    "typeFullName":"ANY",
+    "order":2,
+    "_label":"METHOD_PARAMETER_IN",
+    "possibleTypes":[
+      
+    ],
+    "index":2,
+    "code":"p2"
+  },
+  {
+    "dynamicTypeHintFullName":[
+      
+    ],
+    "name":"p3",
+    "_id":111669149719,
+    "evaluationStrategy":"BY_VALUE",
+    "isVariadic":false,
+    "typeFullName":"ANY",
+    "order":3,
+    "_label":"METHOD_PARAMETER_IN",
+    "possibleTypes":[
+      
+    ],
+    "index":3,
+    "code":"p3"
+  },
+  {
+    "dynamicTypeHintFullName":[
+      
+    ],
+    "name":"p1",
+    "_id":111669149720,
+    "evaluationStrategy":"BY_VALUE",
+    "isVariadic":false,
+    "typeFullName":"ANY",
+    "order":1,
+    "_label":"METHOD_PARAMETER_IN",
+    "possibleTypes":[
+      
+    ],
+    "index":1,
+    "code":"p1"
+  },
+  {
+    "dynamicTypeHintFullName":[
+      
+    ],
+    "name":"p2",
+    "_id":111669149721,
+    "evaluationStrategy":"BY_VALUE",
+    "isVariadic":false,
+    "typeFullName":"ANY",
+    "order":2,
+    "_label":"METHOD_PARAMETER_IN",
+    "possibleTypes":[
+      
+    ],
+    "index":2,
+    "code":"p2"
+  },
+  {
+    "dynamicTypeHintFullName":[
+      
+    ],
+    "name":"p1",
+    "_id":111669149722,
+    "evaluationStrategy":"BY_VALUE",
+    "isVariadic":false,
+    "typeFullName":"ANY",
+    "order":1,
+    "_label":"METHOD_PARAMETER_IN",
+    "possibleTypes":[
+      
+    ],
+    "index":1,
+    "code":"p1"
+  },
+  {
+    "dynamicTypeHintFullName":[
+      
+    ],
+    "name":"p2",
+    "_id":111669149723,
+    "evaluationStrategy":"BY_VALUE",
+    "isVariadic":false,
+    "typeFullName":"ANY",
+    "order":2,
+    "_label":"METHOD_PARAMETER_IN",
+    "possibleTypes":[
+      
+    ],
+    "index":2,
+    "code":"p2"
+  },
+  {
+    "dynamicTypeHintFullName":[
+      
+    ],
+    "name":"p0",
+    "_id":111669149724,
+    "evaluationStrategy":"BY_VALUE",
+    "isVariadic":false,
+    "typeFullName":"ANY",
+    "order":0,
+    "_label":"METHOD_PARAMETER_IN",
+    "possibleTypes":[
+      
+    ],
+    "index":0,
+    "code":"p0"
+  },
+  {
+    "dynamicTypeHintFullName":[
+      
+    ],
+    "name":"p1",
+    "_id":111669149725,
+    "evaluationStrategy":"BY_VALUE",
+    "isVariadic":false,
+    "typeFullName":"ANY",
+    "order":1,
+    "_label":"METHOD_PARAMETER_IN",
+    "possibleTypes":[
+      
+    ],
+    "index":1,
+    "code":"p1"
+  },
+  {
+    "dynamicTypeHintFullName":[
+      
+    ],
+    "name":"p2",
+    "_id":111669149726,
+    "evaluationStrategy":"BY_VALUE",
+    "isVariadic":false,
+    "typeFullName":"ANY",
+    "order":2,
+    "_label":"METHOD_PARAMETER_IN",
+    "possibleTypes":[
+      
+    ],
+    "index":2,
+    "code":"p2"
+  },
+  {
+    "dynamicTypeHintFullName":[
+      
+    ],
+    "name":"p1",
+    "_id":111669149727,
+    "evaluationStrategy":"BY_VALUE",
+    "isVariadic":false,
+    "typeFullName":"ANY",
+    "order":1,
+    "_label":"METHOD_PARAMETER_IN",
+    "possibleTypes":[
+      
+    ],
+    "index":1,
+    "code":"p1"
+  },
+  {
+    "dynamicTypeHintFullName":[
+      
+    ],
+    "name":"p2",
+    "_id":111669149728,
+    "evaluationStrategy":"BY_VALUE",
+    "isVariadic":false,
+    "typeFullName":"ANY",
+    "order":2,
+    "_label":"METHOD_PARAMETER_IN",
+    "possibleTypes":[
+      
+    ],
+    "index":2,
+    "code":"p2"
+  },
+  {
+    "dynamicTypeHintFullName":[
+      
+    ],
+    "name":"p3",
+    "_id":111669149729,
+    "evaluationStrategy":"BY_VALUE",
+    "isVariadic":false,
+    "typeFullName":"ANY",
+    "order":3,
+    "_label":"METHOD_PARAMETER_IN",
+    "possibleTypes":[
+      
+    ],
+    "index":3,
+    "code":"p3"
+  },
+  {
+    "dynamicTypeHintFullName":[
+      
+    ],
+    "name":"p1",
+    "_id":111669149730,
+    "evaluationStrategy":"BY_VALUE",
+    "isVariadic":false,
+    "typeFullName":"ANY",
+    "order":1,
+    "_label":"METHOD_PARAMETER_IN",
+    "possibleTypes":[
+      
+    ],
+    "index":1,
+    "code":"p1"
+  },
+  {
+    "dynamicTypeHintFullName":[
+      
+    ],
+    "name":"p2",
+    "_id":111669149731,
+    "evaluationStrategy":"BY_VALUE",
+    "isVariadic":false,
+    "typeFullName":"ANY",
+    "order":2,
+    "_label":"METHOD_PARAMETER_IN",
+    "possibleTypes":[
+      
+    ],
+    "index":2,
+    "code":"p2"
+  },
+  {
+    "name":"this",
+    "_id":115964116992,
+    "evaluationStrategy":"BY_SHARING",
+    "isVariadic":false,
+    "code":"this",
+    "typeFullName":"CPCIDSKBinarySegment*",
+    "lineNumber":9,
+    "order":0,
+    "_label":"METHOD_PARAMETER_OUT",
+    "index":0,
+    "columnNumber":1
+  },
+  {
+    "name":"this",
+    "_id":115964116993,
+    "evaluationStrategy":"BY_SHARING",
+    "isVariadic":false,
+    "code":"this",
+    "typeFullName":"CPCIDSKBinarySegment*",
+    "lineNumber":9,
+    "order":0,
+    "_label":"METHOD_PARAMETER_OUT",
+    "index":0,
+    "columnNumber":1
+  },
+  {
+    "name":"pabyBuf",
+    "_id":115964116994,
+    "evaluationStrategy":"BY_VALUE",
+    "isVariadic":false,
+    "code":"const char* pabyBuf",
+    "typeFullName":"char*",
+    "lineNumber":10,
+    "order":1,
+    "_label":"METHOD_PARAMETER_OUT",
+    "index":1,
+    "columnNumber":33
+  },
+  {
+    "name":"nBufSize",
+    "_id":115964116995,
+    "evaluationStrategy":"BY_VALUE",
+    "isVariadic":false,
+    "code":"unsigned int nBufSize",
+    "typeFullName":"unsigned int",
+    "lineNumber":11,
+    "order":2,
+    "_label":"METHOD_PARAMETER_OUT",
+    "index":2,
+    "columnNumber":33
+  },
+  {
+    "name":"p1",
+    "_id":115964116996,
+    "evaluationStrategy":"BY_VALUE",
+    "isVariadic":false,
+    "code":"p1",
+    "typeFullName":"ANY",
+    "order":1,
+    "_label":"METHOD_PARAMETER_OUT",
+    "index":1
+  },
+  {
+    "name":"p2",
+    "_id":115964116997,
+    "evaluationStrategy":"BY_VALUE",
+    "isVariadic":false,
+    "code":"p2",
+    "typeFullName":"ANY",
+    "order":2,
+    "_label":"METHOD_PARAMETER_OUT",
+    "index":2
+  },
+  {
+    "name":"p1",
+    "_id":115964116998,
+    "evaluationStrategy":"BY_VALUE",
+    "isVariadic":false,
+    "code":"p1",
+    "typeFullName":"ANY",
+    "order":1,
+    "_label":"METHOD_PARAMETER_OUT",
+    "index":1
+  },
+  {
+    "name":"p2",
+    "_id":115964116999,
+    "evaluationStrategy":"BY_VALUE",
+    "isVariadic":false,
+    "code":"p2",
+    "typeFullName":"ANY",
+    "order":2,
+    "_label":"METHOD_PARAMETER_OUT",
+    "index":2
+  },
+  {
+    "name":"p3",
+    "_id":115964117000,
+    "evaluationStrategy":"BY_VALUE",
+    "isVariadic":false,
+    "code":"p3",
+    "typeFullName":"ANY",
+    "order":3,
+    "_label":"METHOD_PARAMETER_OUT",
+    "index":3
+  },
+  {
+    "name":"p0",
+    "_id":115964117001,
+    "evaluationStrategy":"BY_VALUE",
+    "isVariadic":false,
+    "code":"p0",
+    "typeFullName":"ANY",
+    "order":0,
+    "_label":"METHOD_PARAMETER_OUT",
+    "index":0
+  },
+  {
+    "name":"p1",
+    "_id":115964117002,
+    "evaluationStrategy":"BY_VALUE",
+    "isVariadic":false,
+    "code":"p1",
+    "typeFullName":"ANY",
+    "order":1,
+    "_label":"METHOD_PARAMETER_OUT",
+    "index":1
+  },
+  {
+    "name":"p1",
+    "_id":115964117003,
+    "evaluationStrategy":"BY_VALUE",
+    "isVariadic":false,
+    "code":"p1",
+    "typeFullName":"ANY",
+    "order":1,
+    "_label":"METHOD_PARAMETER_OUT",
+    "index":1
+  },
+  {
+    "name":"p2",
+    "_id":115964117004,
+    "evaluationStrategy":"BY_VALUE",
+    "isVariadic":false,
+    "code":"p2",
+    "typeFullName":"ANY",
+    "order":2,
+    "_label":"METHOD_PARAMETER_OUT",
+    "index":2
+  },
+  {
+    "name":"p1",
+    "_id":115964117005,
+    "evaluationStrategy":"BY_VALUE",
+    "isVariadic":false,
+    "code":"p1",
+    "typeFullName":"ANY",
+    "order":1,
+    "_label":"METHOD_PARAMETER_OUT",
+    "index":1
+  },
+  {
+    "name":"p2",
+    "_id":115964117006,
+    "evaluationStrategy":"BY_VALUE",
+    "isVariadic":false,
+    "code":"p2",
+    "typeFullName":"ANY",
+    "order":2,
+    "_label":"METHOD_PARAMETER_OUT",
+    "index":2
+  },
+  {
+    "name":"p1",
+    "_id":115964117007,
+    "evaluationStrategy":"BY_VALUE",
+    "isVariadic":false,
+    "code":"p1",
+    "typeFullName":"ANY",
+    "order":1,
+    "_label":"METHOD_PARAMETER_OUT",
+    "index":1
+  },
+  {
+    "name":"p2",
+    "_id":115964117008,
+    "evaluationStrategy":"BY_VALUE",
+    "isVariadic":false,
+    "code":"p2",
+    "typeFullName":"ANY",
+    "order":2,
+    "_label":"METHOD_PARAMETER_OUT",
+    "index":2
+  },
+  {
+    "name":"p1",
+    "_id":115964117009,
+    "evaluationStrategy":"BY_VALUE",
+    "isVariadic":false,
+    "code":"p1",
+    "typeFullName":"ANY",
+    "order":1,
+    "_label":"METHOD_PARAMETER_OUT",
+    "index":1
+  },
+  {
+    "name":"p2",
+    "_id":115964117010,
+    "evaluationStrategy":"BY_VALUE",
+    "isVariadic":false,
+    "code":"p2",
+    "typeFullName":"ANY",
+    "order":2,
+    "_label":"METHOD_PARAMETER_OUT",
+    "index":2
+  },
+  {
+    "name":"p1",
+    "_id":115964117011,
+    "evaluationStrategy":"BY_VALUE",
+    "isVariadic":false,
+    "code":"p1",
+    "typeFullName":"ANY",
+    "order":1,
+    "_label":"METHOD_PARAMETER_OUT",
+    "index":1
+  },
+  {
+    "name":"p2",
+    "_id":115964117012,
+    "evaluationStrategy":"BY_VALUE",
+    "isVariadic":false,
+    "code":"p2",
+    "typeFullName":"ANY",
+    "order":2,
+    "_label":"METHOD_PARAMETER_OUT",
+    "index":2
+  },
+  {
+    "name":"p1",
+    "_id":115964117013,
+    "evaluationStrategy":"BY_VALUE",
+    "isVariadic":false,
+    "code":"p1",
+    "typeFullName":"ANY",
+    "order":1,
+    "_label":"METHOD_PARAMETER_OUT",
+    "index":1
+  },
+  {
+    "name":"p2",
+    "_id":115964117014,
+    "evaluationStrategy":"BY_VALUE",
+    "isVariadic":false,
+    "code":"p2",
+    "typeFullName":"ANY",
+    "order":2,
+    "_label":"METHOD_PARAMETER_OUT",
+    "index":2
+  },
+  {
+    "name":"p3",
+    "_id":115964117015,
+    "evaluationStrategy":"BY_VALUE",
+    "isVariadic":false,
+    "code":"p3",
+    "typeFullName":"ANY",
+    "order":3,
+    "_label":"METHOD_PARAMETER_OUT",
+    "index":3
+  },
+  {
+    "name":"p1",
+    "_id":115964117016,
+    "evaluationStrategy":"BY_VALUE",
+    "isVariadic":false,
+    "code":"p1",
+    "typeFullName":"ANY",
+    "order":1,
+    "_label":"METHOD_PARAMETER_OUT",
+    "index":1
+  },
+  {
+    "name":"p2",
+    "_id":115964117017,
+    "evaluationStrategy":"BY_VALUE",
+    "isVariadic":false,
+    "code":"p2",
+    "typeFullName":"ANY",
+    "order":2,
+    "_label":"METHOD_PARAMETER_OUT",
+    "index":2
+  },
+  {
+    "name":"p1",
+    "_id":115964117018,
+    "evaluationStrategy":"BY_VALUE",
+    "isVariadic":false,
+    "code":"p1",
+    "typeFullName":"ANY",
+    "order":1,
+    "_label":"METHOD_PARAMETER_OUT",
+    "index":1
+  },
+  {
+    "name":"p2",
+    "_id":115964117019,
+    "evaluationStrategy":"BY_VALUE",
+    "isVariadic":false,
+    "code":"p2",
+    "typeFullName":"ANY",
+    "order":2,
+    "_label":"METHOD_PARAMETER_OUT",
+    "index":2
+  },
+  {
+    "name":"p0",
+    "_id":115964117020,
+    "evaluationStrategy":"BY_VALUE",
+    "isVariadic":false,
+    "code":"p0",
+    "typeFullName":"ANY",
+    "order":0,
+    "_label":"METHOD_PARAMETER_OUT",
+    "index":0
+  },
+  {
+    "name":"p1",
+    "_id":115964117021,
+    "evaluationStrategy":"BY_VALUE",
+    "isVariadic":false,
+    "code":"p1",
+    "typeFullName":"ANY",
+    "order":1,
+    "_label":"METHOD_PARAMETER_OUT",
+    "index":1
+  },
+  {
+    "name":"p2",
+    "_id":115964117022,
+    "evaluationStrategy":"BY_VALUE",
+    "isVariadic":false,
+    "code":"p2",
+    "typeFullName":"ANY",
+    "order":2,
+    "_label":"METHOD_PARAMETER_OUT",
+    "index":2
+  },
+  {
+    "name":"p1",
+    "_id":115964117023,
+    "evaluationStrategy":"BY_VALUE",
+    "isVariadic":false,
+    "code":"p1",
+    "typeFullName":"ANY",
+    "order":1,
+    "_label":"METHOD_PARAMETER_OUT",
+    "index":1
+  },
+  {
+    "name":"p2",
+    "_id":115964117024,
+    "evaluationStrategy":"BY_VALUE",
+    "isVariadic":false,
+    "code":"p2",
+    "typeFullName":"ANY",
+    "order":2,
+    "_label":"METHOD_PARAMETER_OUT",
+    "index":2
+  },
+  {
+    "name":"p3",
+    "_id":115964117025,
+    "evaluationStrategy":"BY_VALUE",
+    "isVariadic":false,
+    "code":"p3",
+    "typeFullName":"ANY",
+    "order":3,
+    "_label":"METHOD_PARAMETER_OUT",
+    "index":3
+  },
+  {
+    "name":"p1",
+    "_id":115964117026,
+    "evaluationStrategy":"BY_VALUE",
+    "isVariadic":false,
+    "code":"p1",
+    "typeFullName":"ANY",
+    "order":1,
+    "_label":"METHOD_PARAMETER_OUT",
+    "index":1
+  },
+  {
+    "name":"p2",
+    "_id":115964117027,
+    "evaluationStrategy":"BY_VALUE",
+    "isVariadic":false,
+    "code":"p2",
+    "typeFullName":"ANY",
+    "order":2,
+    "_label":"METHOD_PARAMETER_OUT",
+    "index":2
+  },
+  {
+    "dynamicTypeHintFullName":[
+      
+    ],
+    "_id":120259084288,
+    "code":"Synchronize",
+    "typeFullName":"CPCIDSKBinarySegment.Synchronize:void()",
+    "lineNumber":9,
+    "order":1,
+    "methodFullName":"CPCIDSKBinarySegment.Synchronize:void()",
+    "_label":"METHOD_REF",
+    "columnNumber":1,
+    "possibleTypes":[
+      
+    ],
+    "argumentIndex":-1
+  },
+  {
+    "dynamicTypeHintFullName":[
+      
+    ],
+    "_id":120259084289,
+    "code":"SetBuffer",
+    "typeFullName":"CPCIDSKBinarySegment.SetBuffer:void(char*,unsigned int)",
+    "lineNumber":9,
+    "order":1,
+    "methodFullName":"CPCIDSKBinarySegment.SetBuffer:void(char*,unsigned int)",
+    "_label":"METHOD_REF",
+    "columnNumber":1,
+    "possibleTypes":[
+      
+    ],
+    "argumentIndex":-1
+  },
+  {
+    "dynamicTypeHintFullName":[
+      
+    ],
+    "_id":124554051584,
+    "evaluationStrategy":"BY_VALUE",
+    "code":"RET",
+    "typeFullName":"void",
+    "lineNumber":9,
+    "order":3,
+    "_label":"METHOD_RETURN",
+    "possibleTypes":[
+      
+    ],
+    "columnNumber":1
+  },
+  {
+    "dynamicTypeHintFullName":[
+      
+    ],
+    "_id":124554051585,
+    "evaluationStrategy":"BY_VALUE",
+    "code":"RET",
+    "typeFullName":"ANY",
+    "lineNumber":1,
+    "order":2,
+    "_label":"METHOD_RETURN",
+    "possibleTypes":[
+      
+    ],
+    "columnNumber":1
+  },
+  {
+    "dynamicTypeHintFullName":[
+      
+    ],
+    "_id":124554051586,
+    "evaluationStrategy":"BY_VALUE",
+    "code":"RET",
+    "typeFullName":"void",
+    "lineNumber":9,
+    "order":5,
+    "_label":"METHOD_RETURN",
+    "possibleTypes":[
+      
+    ],
+    "columnNumber":1
+  },
+  {
+    "dynamicTypeHintFullName":[
+      
+    ],
+    "_id":124554051587,
+    "evaluationStrategy":"BY_VALUE",
+    "code":"RET",
+    "typeFullName":"ANY",
+    "lineNumber":1,
+    "order":2,
+    "_label":"METHOD_RETURN",
+    "possibleTypes":[
+      
+    ],
+    "columnNumber":1
+  },
+  {
+    "dynamicTypeHintFullName":[
+      
+    ],
+    "_id":124554051588,
+    "evaluationStrategy":"BY_VALUE",
+    "code":"RET",
+    "typeFullName":"ANY",
+    "lineNumber":1,
+    "order":2,
+    "_label":"METHOD_RETURN",
+    "possibleTypes":[
+      
+    ]
+  },
+  {
+    "dynamicTypeHintFullName":[
+      
+    ],
+    "_id":124554051589,
+    "evaluationStrategy":"BY_VALUE",
+    "code":"RET",
+    "typeFullName":"ANY",
+    "order":2,
+    "_label":"METHOD_RETURN",
+    "possibleTypes":[
+      
+    ]
+  },
+  {
+    "dynamicTypeHintFullName":[
+      
+    ],
+    "_id":124554051590,
+    "evaluationStrategy":"BY_VALUE",
+    "code":"RET",
+    "typeFullName":"ANY",
+    "order":2,
+    "_label":"METHOD_RETURN",
+    "possibleTypes":[
+      
+    ]
+  },
+  {
+    "dynamicTypeHintFullName":[
+      
+    ],
+    "_id":124554051591,
+    "evaluationStrategy":"BY_VALUE",
+    "code":"RET",
+    "typeFullName":"ANY",
+    "order":2,
+    "_label":"METHOD_RETURN",
+    "possibleTypes":[
+      
+    ]
+  },
+  {
+    "dynamicTypeHintFullName":[
+      
+    ],
+    "_id":124554051592,
+    "evaluationStrategy":"BY_VALUE",
+    "code":"RET",
+    "typeFullName":"ANY",
+    "order":2,
+    "_label":"METHOD_RETURN",
+    "possibleTypes":[
+      
+    ]
+  },
+  {
+    "dynamicTypeHintFullName":[
+      
+    ],
+    "_id":124554051593,
+    "evaluationStrategy":"BY_VALUE",
+    "code":"RET",
+    "typeFullName":"ANY",
+    "order":2,
+    "_label":"METHOD_RETURN",
+    "possibleTypes":[
+      
+    ]
+  },
+  {
+    "dynamicTypeHintFullName":[
+      
+    ],
+    "_id":124554051594,
+    "evaluationStrategy":"BY_VALUE",
+    "code":"RET",
+    "typeFullName":"ANY",
+    "order":2,
+    "_label":"METHOD_RETURN",
+    "possibleTypes":[
+      
+    ]
+  },
+  {
+    "dynamicTypeHintFullName":[
+      
+    ],
+    "_id":124554051595,
+    "evaluationStrategy":"BY_VALUE",
+    "code":"RET",
+    "typeFullName":"ANY",
+    "order":2,
+    "_label":"METHOD_RETURN",
+    "possibleTypes":[
+      
+    ]
+  },
+  {
+    "dynamicTypeHintFullName":[
+      
+    ],
+    "_id":124554051596,
+    "evaluationStrategy":"BY_VALUE",
+    "code":"RET",
+    "typeFullName":"ANY",
+    "order":2,
+    "_label":"METHOD_RETURN",
+    "possibleTypes":[
+      
+    ]
+  },
+  {
+    "dynamicTypeHintFullName":[
+      
+    ],
+    "_id":124554051597,
+    "evaluationStrategy":"BY_VALUE",
+    "code":"RET",
+    "typeFullName":"ANY",
+    "order":2,
+    "_label":"METHOD_RETURN",
+    "possibleTypes":[
+      
+    ]
+  },
+  {
+    "dynamicTypeHintFullName":[
+      
+    ],
+    "_id":124554051598,
+    "evaluationStrategy":"BY_VALUE",
+    "code":"RET",
+    "typeFullName":"ANY",
+    "order":2,
+    "_label":"METHOD_RETURN",
+    "possibleTypes":[
+      
+    ]
+  },
+  {
+    "dynamicTypeHintFullName":[
+      
+    ],
+    "_id":124554051599,
+    "evaluationStrategy":"BY_VALUE",
+    "code":"RET",
+    "typeFullName":"ANY",
+    "order":2,
+    "_label":"METHOD_RETURN",
+    "possibleTypes":[
+      
+    ]
+  },
+  {
+    "dynamicTypeHintFullName":[
+      
+    ],
+    "_id":124554051600,
+    "evaluationStrategy":"BY_VALUE",
+    "code":"RET",
+    "typeFullName":"ANY",
+    "order":2,
+    "_label":"METHOD_RETURN",
+    "possibleTypes":[
+      
+    ]
+  },
+  {
+    "dynamicTypeHintFullName":[
+      
+    ],
+    "_id":124554051601,
+    "evaluationStrategy":"BY_VALUE",
+    "code":"RET",
+    "typeFullName":"ANY",
+    "order":2,
+    "_label":"METHOD_RETURN",
+    "possibleTypes":[
+      
+    ]
+  },
+  {
+    "dynamicTypeHintFullName":[
+      
+    ],
+    "_id":124554051602,
+    "evaluationStrategy":"BY_VALUE",
+    "code":"RET",
+    "typeFullName":"ANY",
+    "order":2,
+    "_label":"METHOD_RETURN",
+    "possibleTypes":[
+      
+    ]
+  },
+  {
+    "dynamicTypeHintFullName":[
+      
+    ],
+    "_id":124554051603,
+    "evaluationStrategy":"BY_VALUE",
+    "code":"RET",
+    "typeFullName":"ANY",
+    "order":2,
+    "_label":"METHOD_RETURN",
+    "possibleTypes":[
+      
+    ]
+  },
+  {
+    "name":"<global>",
+    "_id":133143986176,
+    "code":"<empty>",
+    "order":-1,
+    "_label":"NAMESPACE"
+  },
+  {
+    "name":"<global>",
+    "_id":137438953472,
+    "fullName":"<global>",
+    "code":"<empty>",
+    "_label":"NAMESPACE_BLOCK",
+    "order":1,
+    "filename":"<unknown>"
+  },
+  {
+    "name":"<global>",
+    "_id":137438953473,
+    "fullName":"1ca6a3e5168c200763fa46d8aa7e698d0b757e7e_4.cpp:<global>",
+    "code":"<empty>",
+    "_label":"NAMESPACE_BLOCK",
+    "order":1,
+    "filename":"1ca6a3e5168c200763fa46d8aa7e698d0b757e7e_4.cpp"
+  },
+  {
+    "name":"<global>",
+    "_id":137438953474,
+    "fullName":"1ca6a3e5168c200763fa46d8aa7e698d0b757e7e_5.cpp:<global>",
+    "code":"<empty>",
+    "_label":"NAMESPACE_BLOCK",
+    "order":1,
+    "filename":"1ca6a3e5168c200763fa46d8aa7e698d0b757e7e_5.cpp"
+  },
+  {
+    "name":"<global>",
+    "_id":137438953475,
+    "fullName":"<includes>:<global>",
+    "code":"<empty>",
+    "_label":"NAMESPACE_BLOCK",
+    "order":1,
+    "filename":"<includes>"
+  },
+  {
+    "_id":141733920768,
+    "code":"return;",
+    "lineNumber":30,
+    "order":10,
+    "_label":"RETURN",
+    "argumentIndex":-1,
+    "columnNumber":5
+  },
+  {
+    "name":"ANY",
+    "_id":158913789952,
+    "fullName":"ANY",
+    "typeDeclFullName":"ANY",
+    "_label":"TYPE"
+  },
+  {
+    "name":"CPCIDSKBinarySegment*",
+    "_id":158913789953,
+    "fullName":"CPCIDSKBinarySegment*",
+    "typeDeclFullName":"CPCIDSKBinarySegment*",
+    "_label":"TYPE"
+  },
+  {
+    "name":"SetBuffer",
+    "_id":158913789954,
+    "fullName":"CPCIDSKBinarySegment.SetBuffer:void(char*,unsigned int)",
+    "typeDeclFullName":"CPCIDSKBinarySegment.SetBuffer:void(char*,unsigned int)",
+    "_label":"TYPE"
+  },
+  {
+    "name":"Synchronize",
+    "_id":158913789955,
+    "fullName":"CPCIDSKBinarySegment.Synchronize:void()",
+    "typeDeclFullName":"CPCIDSKBinarySegment.Synchronize:void()",
+    "_label":"TYPE"
+  },
+  {
+    "name":"bool",
+    "_id":158913789956,
+    "fullName":"bool",
+    "typeDeclFullName":"bool",
+    "_label":"TYPE"
+  },
+  {
+    "name":"char*",
+    "_id":158913789957,
+    "fullName":"char*",
+    "typeDeclFullName":"char*",
+    "_label":"TYPE"
+  },
+  {
+    "name":"int",
+    "_id":158913789958,
+    "fullName":"int",
+    "typeDeclFullName":"int",
+    "_label":"TYPE"
+  },
+  {
+    "name":"unsigned",
+    "_id":158913789959,
+    "fullName":"unsigned",
+    "typeDeclFullName":"unsigned",
+    "_label":"TYPE"
+  },
+  {
+    "name":"unsigned int",
+    "_id":158913789960,
+    "fullName":"unsigned int",
+    "typeDeclFullName":"unsigned int",
+    "_label":"TYPE"
+  },
+  {
+    "name":"void",
+    "_id":158913789961,
+    "fullName":"void",
+    "typeDeclFullName":"void",
+    "_label":"TYPE"
+  },
+  {
+    "inheritsFromTypeFullName":[
+      
+    ],
+    "name":"Synchronize",
+    "astParentFullName":"1ca6a3e5168c200763fa46d8aa7e698d0b757e7e_4.cpp:<global>",
+    "_id":167503724544,
+    "astParentType":"TYPE_DECL",
+    "lineNumber":9,
+    "_label":"TYPE_DECL",
+    "fullName":"CPCIDSKBinarySegment.Synchronize:void()",
+    "genericSignature":"<empty>",
+    "code":"CPCIDSKBinarySegment.Synchronize:void()",
+    "isExternal":false,
+    "columnNumber":1,
+    "order":1,
+    "filename":"1ca6a3e5168c200763fa46d8aa7e698d0b757e7e_4.cpp"
+  },
+  {
+    "inheritsFromTypeFullName":[
+      
+    ],
+    "name":"<global>",
+    "astParentFullName":"1ca6a3e5168c200763fa46d8aa7e698d0b757e7e_4.cpp:<global>",
+    "_id":167503724545,
+    "astParentType":"NAMESPACE_BLOCK",
+    "lineNumber":1,
+    "_label":"TYPE_DECL",
+    "fullName":"1ca6a3e5168c200763fa46d8aa7e698d0b757e7e_4.cpp:<global>",
+    "genericSignature":"<empty>",
+    "code":"<global>",
+    "isExternal":false,
+    "columnNumber":1,
+    "order":6,
+    "filename":"1ca6a3e5168c200763fa46d8aa7e698d0b757e7e_4.cpp"
+  },
+  {
+    "inheritsFromTypeFullName":[
+      
+    ],
+    "name":"SetBuffer",
+    "astParentFullName":"1ca6a3e5168c200763fa46d8aa7e698d0b757e7e_5.cpp:<global>",
+    "_id":167503724546,
+    "astParentType":"TYPE_DECL",
+    "lineNumber":9,
+    "_label":"TYPE_DECL",
+    "fullName":"CPCIDSKBinarySegment.SetBuffer:void(char*,unsigned int)",
+    "genericSignature":"<empty>",
+    "code":"CPCIDSKBinarySegment.SetBuffer:void(char*,unsigned int)",
+    "isExternal":false,
+    "columnNumber":1,
+    "order":1,
+    "filename":"1ca6a3e5168c200763fa46d8aa7e698d0b757e7e_5.cpp"
+  },
+  {
+    "inheritsFromTypeFullName":[
+      
+    ],
+    "name":"<global>",
+    "astParentFullName":"1ca6a3e5168c200763fa46d8aa7e698d0b757e7e_5.cpp:<global>",
+    "_id":167503724547,
+    "astParentType":"NAMESPACE_BLOCK",
+    "lineNumber":1,
+    "_label":"TYPE_DECL",
+    "fullName":"1ca6a3e5168c200763fa46d8aa7e698d0b757e7e_5.cpp:<global>",
+    "genericSignature":"<empty>",
+    "code":"<global>",
+    "isExternal":false,
+    "columnNumber":1,
+    "order":6,
+    "filename":"1ca6a3e5168c200763fa46d8aa7e698d0b757e7e_5.cpp"
+  },
+  {
+    "inheritsFromTypeFullName":[
+      
+    ],
+    "name":"ANY",
+    "astParentFullName":"<includes>:<global>",
+    "_id":167503724548,
+    "astParentType":"NAMESPACE_BLOCK",
+    "_label":"TYPE_DECL",
+    "fullName":"ANY",
+    "genericSignature":"<empty>",
+    "code":"ANY",
+    "isExternal":true,
+    "order":-1,
+    "filename":"<includes>"
+  },
+  {
+    "inheritsFromTypeFullName":[
+      
+    ],
+    "name":"CPCIDSKBinarySegment*",
+    "astParentFullName":"<includes>:<global>",
+    "_id":167503724549,
+    "astParentType":"NAMESPACE_BLOCK",
+    "_label":"TYPE_DECL",
+    "fullName":"CPCIDSKBinarySegment*",
+    "genericSignature":"<empty>",
+    "code":"CPCIDSKBinarySegment*",
+    "isExternal":true,
+    "order":-1,
+    "filename":"<includes>"
+  },
+  {
+    "inheritsFromTypeFullName":[
+      
+    ],
+    "name":"bool",
+    "astParentFullName":"<includes>:<global>",
+    "_id":167503724550,
+    "astParentType":"NAMESPACE_BLOCK",
+    "_label":"TYPE_DECL",
+    "fullName":"bool",
+    "genericSignature":"<empty>",
+    "code":"bool",
+    "isExternal":true,
+    "order":-1,
+    "filename":"<includes>"
+  },
+  {
+    "inheritsFromTypeFullName":[
+      
+    ],
+    "name":"char*",
+    "astParentFullName":"<includes>:<global>",
+    "_id":167503724551,
+    "astParentType":"NAMESPACE_BLOCK",
+    "_label":"TYPE_DECL",
+    "fullName":"char*",
+    "genericSignature":"<empty>",
+    "code":"char*",
+    "isExternal":true,
+    "order":-1,
+    "filename":"<includes>"
+  },
+  {
+    "inheritsFromTypeFullName":[
+      
+    ],
+    "name":"int",
+    "astParentFullName":"<includes>:<global>",
+    "_id":167503724552,
+    "astParentType":"NAMESPACE_BLOCK",
+    "_label":"TYPE_DECL",
+    "fullName":"int",
+    "genericSignature":"<empty>",
+    "code":"int",
+    "isExternal":true,
+    "order":-1,
+    "filename":"<includes>"
+  },
+  {
+    "inheritsFromTypeFullName":[
+      
+    ],
+    "name":"unsigned",
+    "astParentFullName":"<includes>:<global>",
+    "_id":167503724553,
+    "astParentType":"NAMESPACE_BLOCK",
+    "_label":"TYPE_DECL",
+    "fullName":"unsigned",
+    "genericSignature":"<empty>",
+    "code":"unsigned",
+    "isExternal":true,
+    "order":-1,
+    "filename":"<includes>"
+  },
+  {
+    "inheritsFromTypeFullName":[
+      
+    ],
+    "name":"unsigned int",
+    "astParentFullName":"<includes>:<global>",
+    "_id":167503724554,
+    "astParentType":"NAMESPACE_BLOCK",
+    "_label":"TYPE_DECL",
+    "fullName":"unsigned int",
+    "genericSignature":"<empty>",
+    "code":"unsigned int",
+    "isExternal":true,
+    "order":-1,
+    "filename":"<includes>"
+  },
+  {
+    "inheritsFromTypeFullName":[
+      
+    ],
+    "name":"void",
+    "astParentFullName":"<includes>:<global>",
+    "_id":167503724555,
+    "astParentType":"NAMESPACE_BLOCK",
+    "_label":"TYPE_DECL",
+    "fullName":"void",
+    "genericSignature":"<empty>",
+    "code":"void",
+    "isExternal":true,
+    "order":-1,
+    "filename":"<includes>"
+  },
+  {
+    "dynamicTypeHintFullName":[
+      
+    ],
+    "_id":176093659136,
+    "code":"int",
+    "typeFullName":"int",
+    "lineNumber":17,
+    "order":1,
+    "_label":"TYPE_REF",
+    "columnNumber":23,
+    "possibleTypes":[
+      
+    ],
+    "argumentIndex":1
+  }
+],"edges":{"AST":[{"src":107374182400,"dst":111669149696,"label":"AST"},{"src":107374182400,"dst":115964116992,"label":"AST"},{"src":107374182400,"dst":25769803776,"label":"AST"},{"src":107374182400,"dst":124554051584,"label":"AST"},{"src":25769803776,"dst":94489280512,"label":"AST"},{"src":25769803776,"dst":47244640256,"label":"AST"},{"src":47244640256,"dst":68719476736,"label":"AST"},{"src":47244640256,"dst":25769803777,"label":"AST"},{"src":25769803777,"dst":30064771072,"label":"AST"},{"src":30064771072,"dst":68719476737,"label":"AST"},{"src":107374182401,"dst":107374182400,"label":"AST"},{"src":107374182401,"dst":25769803778,"label":"AST"},{"src":107374182401,"dst":124554051585,"label":"AST"},{"src":25769803778,"dst":120259084288,"label":"AST"},{"src":107374182402,"dst":111669149697,"label":"AST"},{"src":107374182402,"dst":115964116993,"label":"AST"},{"src":107374182402,"dst":111669149698,"label":"AST"},{"src":107374182402,"dst":115964116994,"label":"AST"},{"src":107374182402,"dst":111669149699,"label":"AST"},{"src":107374182402,"dst":115964116995,"label":"AST"},{"src":107374182402,"dst":25769803779,"label":"AST"},{"src":107374182402,"dst":124554051586,"label":"AST"},{"src":25769803779,"dst":94489280515,"label":"AST"},{"src":25769803779,"dst":94489280516,"label":"AST"},{"src":25769803779,"dst":94489280517,"label":"AST"},{"src":25769803779,"dst":94489280513,"label":"AST"},{"src":25769803779,"dst":30064771073,"label":"AST"},{"src":25769803779,"dst":94489280514,"label":"AST"},{"src":25769803779,"dst":30064771079,"label":"AST"},{"src":25769803779,"dst":30064771081,"label":"AST"},{"src":25769803779,"dst":30064771083,"label":"AST"},{"src":25769803779,"dst":30064771085,"label":"AST"},{"src":25769803779,"dst":47244640257,"label":"AST"},{"src":25769803779,"dst":30064771092,"label":"AST"},{"src":25769803779,"dst":141733920768,"label":"AST"},{"src":30064771073,"dst":68719476738,"label":"AST"},{"src":30064771073,"dst":30064771074,"label":"AST"},{"src":30064771074,"dst":30064771075,"label":"AST"},{"src":30064771074,"dst":30064771076,"label":"AST"},{"src":30064771075,"dst":68719476739,"label":"AST"},{"src":30064771075,"dst":90194313216,"label":"AST"},{"src":30064771076,"dst":30064771077,"label":"AST"},{"src":30064771076,"dst":90194313219,"label":"AST"},{"src":30064771076,"dst":90194313220,"label":"AST"},{"src":30064771077,"dst":90194313217,"label":"AST"},{"src":30064771077,"dst":30064771078,"label":"AST"},{"src":30064771078,"dst":68719476740,"label":"AST"},{"src":30064771078,"dst":90194313218,"label":"AST"},{"src":30064771079,"dst":68719476741,"label":"AST"},{"src":30064771079,"dst":30064771080,"label":"AST"},{"src":30064771080,"dst":90194313221,"label":"AST"},{"src":30064771080,"dst":68719476742,"label":"AST"},{"src":30064771081,"dst":68719476743,"label":"AST"},{"src":30064771081,"dst":30064771082,"label":"AST"},{"src":30064771082,"dst":176093659136,"label":"AST"},{"src":30064771082,"dst":68719476744,"label":"AST"},{"src":30064771083,"dst":68719476745,"label":"AST"},{"src":30064771083,"dst":30064771084,"label":"AST"},{"src":30064771084,"dst":68719476746,"label":"AST"},{"src":30064771084,"dst":90194313222,"label":"AST"},{"src":30064771085,"dst":30064771086,"label":"AST"},{"src":30064771085,"dst":68719476748,"label":"AST"},{"src":30064771085,"dst":68719476749,"label":"AST"},{"src":30064771086,"dst":68719476747,"label":"AST"},{"src":30064771086,"dst":55834574848,"label":"AST"},{"src":47244640257,"dst":30064771087,"label":"AST"},{"src":47244640257,"dst":25769803780,"label":"AST"},{"src":30064771087,"dst":68719476750,"label":"AST"},{"src":30064771087,"dst":68719476751,"label":"AST"},{"src":25769803780,"dst":30064771088,"label":"AST"},{"src":30064771088,"dst":30064771089,"label":"AST"},{"src":30064771088,"dst":90194313223,"label":"AST"},{"src":30064771088,"dst":30064771091,"label":"AST"},{"src":30064771089,"dst":30064771090,"label":"AST"},{"src":30064771089,"dst":68719476753,"label":"AST"},{"src":30064771090,"dst":68719476752,"label":"AST"},{"src":30064771090,"dst":55834574849,"label":"AST"},{"src":30064771091,"dst":68719476754,"label":"AST"},{"src":30064771091,"dst":68719476755,"label":"AST"},{"src":30064771092,"dst":68719476756,"label":"AST"},{"src":30064771092,"dst":90194313224,"label":"AST"},{"src":107374182403,"dst":107374182402,"label":"AST"},{"src":107374182403,"dst":25769803781,"label":"AST"},{"src":107374182403,"dst":124554051587,"label":"AST"},{"src":25769803781,"dst":120259084289,"label":"AST"},{"src":107374182404,"dst":25769803782,"label":"AST"},{"src":107374182404,"dst":124554051588,"label":"AST"},{"src":107374182405,"dst":111669149700,"label":"AST"},{"src":107374182405,"dst":25769803783,"label":"AST"},{"src":107374182405,"dst":115964116996,"label":"AST"},{"src":107374182405,"dst":111669149701,"label":"AST"},{"src":107374182405,"dst":124554051589,"label":"AST"},{"src":107374182405,"dst":115964116997,"label":"AST"},{"src":107374182406,"dst":111669149702,"label":"AST"},{"src":107374182406,"dst":25769803784,"label":"AST"},{"src":107374182406,"dst":115964116998,"label":"AST"},{"src":107374182406,"dst":111669149703,"label":"AST"},{"src":107374182406,"dst":124554051590,"label":"AST"},{"src":107374182406,"dst":115964116999,"label":"AST"},{"src":107374182406,"dst":111669149704,"label":"AST"},{"src":107374182406,"dst":115964117000,"label":"AST"},{"src":107374182407,"dst":111669149705,"label":"AST"},{"src":107374182407,"dst":115964117001,"label":"AST"},{"src":107374182407,"dst":111669149706,"label":"AST"},{"src":107374182407,"dst":25769803785,"label":"AST"},{"src":107374182407,"dst":115964117002,"label":"AST"},{"src":107374182407,"dst":124554051591,"label":"AST"},{"src":107374182408,"dst":111669149707,"label":"AST"},{"src":107374182408,"dst":25769803786,"label":"AST"},{"src":107374182408,"dst":115964117003,"label":"AST"},{"src":107374182408,"dst":111669149708,"label":"AST"},{"src":107374182408,"dst":124554051592,"label":"AST"},{"src":107374182408,"dst":115964117004,"label":"AST"},{"src":107374182409,"dst":111669149709,"label":"AST"},{"src":107374182409,"dst":25769803787,"label":"AST"},{"src":107374182409,"dst":115964117005,"label":"AST"},{"src":107374182409,"dst":111669149710,"label":"AST"},{"src":107374182409,"dst":124554051593,"label":"AST"},{"src":107374182409,"dst":115964117006,"label":"AST"},{"src":107374182410,"dst":111669149711,"label":"AST"},{"src":107374182410,"dst":25769803788,"label":"AST"},{"src":107374182410,"dst":115964117007,"label":"AST"},{"src":107374182410,"dst":111669149712,"label":"AST"},{"src":107374182410,"dst":124554051594,"label":"AST"},{"src":107374182410,"dst":115964117008,"label":"AST"},{"src":107374182411,"dst":111669149713,"label":"AST"},{"src":107374182411,"dst":25769803789,"label":"AST"},{"src":107374182411,"dst":115964117009,"label":"AST"},{"src":107374182411,"dst":111669149714,"label":"AST"},{"src":107374182411,"dst":124554051595,"label":"AST"},{"src":107374182411,"dst":115964117010,"label":"AST"},{"src":107374182412,"dst":111669149715,"label":"AST"},{"src":107374182412,"dst":25769803790,"label":"AST"},{"src":107374182412,"dst":115964117011,"label":"AST"},{"src":107374182412,"dst":111669149716,"label":"AST"},{"src":107374182412,"dst":124554051596,"label":"AST"},{"src":107374182412,"dst":115964117012,"label":"AST"},{"src":107374182413,"dst":111669149717,"label":"AST"},{"src":107374182413,"dst":25769803791,"label":"AST"},{"src":107374182413,"dst":115964117013,"label":"AST"},{"src":107374182413,"dst":111669149718,"label":"AST"},{"src":107374182413,"dst":124554051597,"label":"AST"},{"src":107374182413,"dst":115964117014,"label":"AST"},{"src":107374182413,"dst":111669149719,"label":"AST"},{"src":107374182413,"dst":115964117015,"label":"AST"},{"src":107374182414,"dst":111669149720,"label":"AST"},{"src":107374182414,"dst":25769803792,"label":"AST"},{"src":107374182414,"dst":115964117016,"label":"AST"},{"src":107374182414,"dst":111669149721,"label":"AST"},{"src":107374182414,"dst":124554051598,"label":"AST"},{"src":107374182414,"dst":115964117017,"label":"AST"},{"src":107374182415,"dst":111669149722,"label":"AST"},{"src":107374182415,"dst":25769803793,"label":"AST"},{"src":107374182415,"dst":115964117018,"label":"AST"},{"src":107374182415,"dst":111669149723,"label":"AST"},{"src":107374182415,"dst":124554051599,"label":"AST"},{"src":107374182415,"dst":115964117019,"label":"AST"},{"src":107374182416,"dst":111669149724,"label":"AST"},{"src":107374182416,"dst":115964117020,"label":"AST"},{"src":107374182416,"dst":25769803794,"label":"AST"},{"src":107374182416,"dst":124554051600,"label":"AST"},{"src":107374182417,"dst":111669149725,"label":"AST"},{"src":107374182417,"dst":25769803795,"label":"AST"},{"src":107374182417,"dst":115964117021,"label":"AST"},{"src":107374182417,"dst":111669149726,"label":"AST"},{"src":107374182417,"dst":124554051601,"label":"AST"},{"src":107374182417,"dst":115964117022,"label":"AST"},{"src":107374182418,"dst":111669149727,"label":"AST"},{"src":107374182418,"dst":25769803796,"label":"AST"},{"src":107374182418,"dst":115964117023,"label":"AST"},{"src":107374182418,"dst":111669149728,"label":"AST"},{"src":107374182418,"dst":124554051602,"label":"AST"},{"src":107374182418,"dst":115964117024,"label":"AST"},{"src":107374182418,"dst":111669149729,"label":"AST"},{"src":107374182418,"dst":115964117025,"label":"AST"},{"src":107374182419,"dst":111669149730,"label":"AST"},{"src":107374182419,"dst":25769803797,"label":"AST"},{"src":107374182419,"dst":115964117026,"label":"AST"},{"src":107374182419,"dst":111669149731,"label":"AST"},{"src":107374182419,"dst":124554051603,"label":"AST"},{"src":107374182419,"dst":115964117027,"label":"AST"}],"CFG":[{"src":68719476736,"dst":68719476737,"label":"CFG"},{"src":68719476737,"dst":30064771072,"label":"CFG"},{"src":107374182400,"dst":68719476736,"label":"CFG"},{"src":30064771073,"dst":68719476741,"label":"CFG"},{"src":30064771079,"dst":68719476743,"label":"CFG"},{"src":30064771081,"dst":68719476745,"label":"CFG"},{"src":30064771083,"dst":68719476747,"label":"CFG"},{"src":30064771085,"dst":68719476750,"label":"CFG"},{"src":30064771092,"dst":141733920768,"label":"CFG"},{"src":68719476738,"dst":68719476739,"label":"CFG"},{"src":30064771074,"dst":30064771073,"label":"CFG"},{"src":68719476741,"dst":90194313221,"label":"CFG"},{"src":30064771080,"dst":30064771079,"label":"CFG"},{"src":68719476743,"dst":176093659136,"label":"CFG"},{"src":30064771082,"dst":30064771081,"label":"CFG"},{"src":68719476745,"dst":68719476746,"label":"CFG"},{"src":30064771084,"dst":30064771083,"label":"CFG"},{"src":30064771086,"dst":68719476748,"label":"CFG"},{"src":68719476748,"dst":68719476749,"label":"CFG"},{"src":68719476749,"dst":30064771085,"label":"CFG"},{"src":30064771087,"dst":68719476752,"label":"CFG"},{"src":30064771087,"dst":68719476756,"label":"CFG"},{"src":68719476756,"dst":90194313224,"label":"CFG"},{"src":90194313224,"dst":30064771092,"label":"CFG"},{"src":30064771075,"dst":90194313217,"label":"CFG"},{"src":30064771076,"dst":30064771074,"label":"CFG"},{"src":90194313221,"dst":68719476742,"label":"CFG"},{"src":68719476742,"dst":30064771080,"label":"CFG"},{"src":176093659136,"dst":68719476744,"label":"CFG"},{"src":68719476744,"dst":30064771082,"label":"CFG"},{"src":68719476746,"dst":90194313222,"label":"CFG"},{"src":90194313222,"dst":30064771084,"label":"CFG"},{"src":68719476747,"dst":55834574848,"label":"CFG"},{"src":55834574848,"dst":30064771086,"label":"CFG"},{"src":68719476750,"dst":68719476751,"label":"CFG"},{"src":68719476751,"dst":30064771087,"label":"CFG"},{"src":30064771088,"dst":68719476756,"label":"CFG"},{"src":68719476739,"dst":90194313216,"label":"CFG"},{"src":90194313216,"dst":30064771075,"label":"CFG"},{"src":30064771077,"dst":90194313219,"label":"CFG"},{"src":30064771077,"dst":90194313220,"label":"CFG"},{"src":90194313219,"dst":30064771076,"label":"CFG"},{"src":90194313220,"dst":30064771076,"label":"CFG"},{"src":30064771089,"dst":90194313223,"label":"CFG"},{"src":90194313223,"dst":68719476754,"label":"CFG"},{"src":30064771091,"dst":30064771088,"label":"CFG"},{"src":90194313217,"dst":68719476740,"label":"CFG"},{"src":30064771078,"dst":30064771077,"label":"CFG"},{"src":30064771090,"dst":68719476753,"label":"CFG"},{"src":68719476753,"dst":30064771089,"label":"CFG"},{"src":68719476754,"dst":68719476755,"label":"CFG"},{"src":68719476755,"dst":30064771091,"label":"CFG"},{"src":68719476740,"dst":90194313218,"label":"CFG"},{"src":90194313218,"dst":30064771078,"label":"CFG"},{"src":68719476752,"dst":55834574849,"label":"CFG"},{"src":55834574849,"dst":30064771090,"label":"CFG"},{"src":107374182402,"dst":68719476738,"label":"CFG"}],"DFG":[{"src":30064771073,"dst":30064771079,"label":"DFG"},{"src":30064771079,"dst":30064771081,"label":"DFG"},{"src":30064771079,"dst":30064771083,"label":"DFG"},{"src":30064771073,"dst":30064771080,"label":"DFG"},{"src":30064771079,"dst":30064771082,"label":"DFG"},{"src":30064771079,"dst":30064771084,"label":"DFG"},{"src":30064771079,"dst":30064771087,"label":"DFG"},{"src":30064771073,"dst":68719476742,"label":"DFG"},{"src":30064771079,"dst":68719476744,"label":"DFG"},{"src":30064771079,"dst":68719476746,"label":"DFG"},{"src":30064771079,"dst":68719476751,"label":"DFG"},{"src":30064771079,"dst":30064771088,"label":"DFG"},{"src":30064771079,"dst":30064771091,"label":"DFG"},{"src":30064771079,"dst":68719476754,"label":"DFG"}]}}

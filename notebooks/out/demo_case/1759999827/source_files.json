@@ -1,0 +1,5 @@
+{
+  "med/main.c": "\n#include <stdlib.h>\n#include <string.h>\n\nextern char* wrap1(char* in);\nextern char* wrap2(char* in);\nextern void  do_exec(char* cmd);\n\nint main(int argc, char** argv) {\n    if (argc > 1) {\n        char* p = argv[1];      // ROOT\n        p = wrap1(p);           // hop 1\n        p = wrap2(p);           // hop 2\n        do_exec(p);             // hop 3 \u2192 then into sink and system\n    }\n    return 0;\n}\n",
+  "med/wrap.c": "\n#include <string.h>\nstatic char b1[256];\nstatic char b2[256];\n\nchar* wrap1(char* in) {         // callee head\n    snprintf(b1, sizeof(b1), \"%s\", in);\n    return b1;\n}\n\nchar* wrap2(char* in) {         // callee head\n    strcpy(b2, in);\n    strcat(b2, \" --opt\");\n    return b2;\n}\n",
+  "med/sink.c": "\n#include <stdlib.h>\nvoid do_exec(char* cmd) {\n    system(cmd);                // SINK\n}\n"
+}

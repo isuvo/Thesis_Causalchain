@@ -1,0 +1,14 @@
+idx,P,file,line,label,code
+0,0.454742,mini/main.c,2,STMT,#include <stdlib.h>
+1,0.451909,mini/main.c,4,STMT,extern void do_exec(char* cmd);
+2,0.395493,mini/main.c,6,STMT,"int main(int argc, char** argv) {"
+3,0.416903,mini/main.c,7,COND,if (argc > 1) {
+4,0.483270,mini/main.c,8,ASSIGN,char* p = argv[1];
+5,0.427118,mini/main.c,9,CALL:do_exec,do_exec(p);
+6,0.392393,mini/main.c,10,STMT,}
+7,0.367511,mini/main.c,11,RET,return 0;
+8,0.332581,mini/main.c,12,STMT,}
+9,0.513779,mini/sink.c,2,STMT,#include <stdlib.h>
+10,0.410358,mini/sink.c,4,STMT,void do_exec(char* cmd) {
+11,0.446147,mini/sink.c,5,CALL:system,system(cmd);
+12,0.398170,mini/sink.c,6,STMT,}

@@ -1,0 +1,3221 @@
+{
+  "meta": {
+    "tool": "demo",
+    "demo_name": "threefile_chain2",
+    "n_nodes": 110,
+    "n_edges": {
+      "ARG2PARAM": 16,
+      "ARG2PARAM_REV": 16,
+      "CALL": 18,
+      "CALL_REV": 18,
+      "CFG": 107,
+      "CFG_REV": 107,
+      "DFG": 47,
+      "DFG_REV": 47,
+      "RET2CALL": 8,
+      "RET2CALL_REV": 8,
+      "RET2LHS": 10,
+      "RET2LHS_REV": 10
+    }
+  },
+  "nodes": [
+    {
+      "_id": 0,
+      "code": "#include <stdio.h>",
+      "typeFullName": "ANY",
+      "lineNumber": 2,
+      "order": 1,
+      "_label": "BLOCK",
+      "file": "app/main.c",
+      "nodeType": "BLOCK"
+    },
+    {
+      "_id": 1,
+      "code": "#include <stdlib.h>",
+      "typeFullName": "ANY",
+      "lineNumber": 3,
+      "order": 2,
+      "_label": "BLOCK",
+      "file": "app/main.c",
+      "nodeType": "BLOCK"
+    },
+    {
+      "_id": 2,
+      "code": "#include <string.h>",
+      "typeFullName": "ANY",
+      "lineNumber": 4,
+      "order": 3,
+      "_label": "BLOCK",
+      "file": "app/main.c",
+      "nodeType": "BLOCK"
+    },
+    {
+      "_id": 3,
+      "code": "char* stage_clean(char* in);",
+      "typeFullName": "ANY",
+      "lineNumber": 6,
+      "order": 4,
+      "_label": "BLOCK",
+      "file": "app/main.c",
+      "nodeType": "BLOCK"
+    },
+    {
+      "_id": 4,
+      "code": "char* stage_route(char* in);",
+      "typeFullName": "ANY",
+      "lineNumber": 7,
+      "order": 5,
+      "_label": "BLOCK",
+      "file": "app/main.c",
+      "nodeType": "BLOCK"
+    },
+    {
+      "_id": 5,
+      "code": "void stage_execute(char* cmd);",
+      "typeFullName": "ANY",
+      "lineNumber": 8,
+      "order": 6,
+      "_label": "BLOCK",
+      "file": "app/main.c",
+      "nodeType": "BLOCK"
+    },
+    {
+      "_id": 6,
+      "code": "int main(int argc, char** argv) {",
+      "typeFullName": "ANY",
+      "lineNumber": 10,
+      "order": 7,
+      "_label": "BLOCK",
+      "file": "app/main.c",
+      "nodeType": "BLOCK"
+    },
+    {
+      "_id": 7,
+      "code": "char buf[256];",
+      "typeFullName": "ANY",
+      "lineNumber": 11,
+      "order": 8,
+      "_label": "BLOCK",
+      "file": "app/main.c",
+      "nodeType": "BLOCK"
+    },
+    {
+      "_id": 8,
+      "code": "size_t n;",
+      "typeFullName": "ANY",
+      "lineNumber": 12,
+      "order": 9,
+      "_label": "BLOCK",
+      "file": "app/main.c",
+      "nodeType": "BLOCK"
+    },
+    {
+      "_id": 9,
+      "code": "memset(buf, 0, sizeof(buf));",
+      "typeFullName": "ANY",
+      "lineNumber": 14,
+      "order": 10,
+      "_label": "CALL",
+      "file": "app/main.c",
+      "nodeType": "CALL",
+      "name": "memset",
+      "methodFullName": "memset:<unresolvedSignature>"
+    },
+    {
+      "_id": 10,
+      "code": "if (fgets(buf, sizeof(buf), stdin) == NULL) {",
+      "typeFullName": "ANY",
+      "lineNumber": 15,
+      "order": 11,
+      "_label": "CALL",
+      "file": "app/main.c",
+      "nodeType": "CALL",
+      "name": "if",
+      "methodFullName": "if:<unresolvedSignature>"
+    },
+    {
+      "_id": 11,
+      "code": "return 0;",
+      "typeFullName": "ANY",
+      "lineNumber": 16,
+      "order": 12,
+      "_label": "BLOCK",
+      "file": "app/main.c",
+      "nodeType": "BLOCK"
+    },
+    {
+      "_id": 12,
+      "code": "}",
+      "typeFullName": "ANY",
+      "lineNumber": 17,
+      "order": 13,
+      "_label": "BLOCK",
+      "file": "app/main.c",
+      "nodeType": "BLOCK"
+    },
+    {
+      "_id": 13,
+      "code": "n = strlen(buf);",
+      "typeFullName": "ANY",
+      "lineNumber": 19,
+      "order": 14,
+      "_label": "BLOCK",
+      "file": "app/main.c",
+      "nodeType": "BLOCK"
+    },
+    {
+      "_id": 14,
+      "code": "if (n > 0 && (buf[n - 1] == '\\n' || buf[n - 1] == '\\r')) {",
+      "typeFullName": "ANY",
+      "lineNumber": 20,
+      "order": 15,
+      "_label": "CALL",
+      "file": "app/main.c",
+      "nodeType": "CALL",
+      "name": "if",
+      "methodFullName": "if:<unresolvedSignature>"
+    },
+    {
+      "_id": 15,
+      "code": "buf[n - 1] = '\\0';",
+      "typeFullName": "ANY",
+      "lineNumber": 21,
+      "order": 16,
+      "_label": "BLOCK",
+      "file": "app/main.c",
+      "nodeType": "BLOCK"
+    },
+    {
+      "_id": 16,
+      "code": "}",
+      "typeFullName": "ANY",
+      "lineNumber": 22,
+      "order": 17,
+      "_label": "BLOCK",
+      "file": "app/main.c",
+      "nodeType": "BLOCK"
+    },
+    {
+      "_id": 17,
+      "code": "char* s1 = stage_clean(buf);",
+      "typeFullName": "ANY",
+      "lineNumber": 24,
+      "order": 18,
+      "_label": "BLOCK",
+      "file": "app/main.c",
+      "nodeType": "BLOCK"
+    },
+    {
+      "_id": 18,
+      "code": "char* s2 = stage_route(s1);",
+      "typeFullName": "ANY",
+      "lineNumber": 25,
+      "order": 19,
+      "_label": "BLOCK",
+      "file": "app/main.c",
+      "nodeType": "BLOCK"
+    },
+    {
+      "_id": 19,
+      "code": "stage_execute(s2);",
+      "typeFullName": "ANY",
+      "lineNumber": 26,
+      "order": 20,
+      "_label": "CALL",
+      "file": "app/main.c",
+      "nodeType": "CALL",
+      "name": "stage_execute",
+      "methodFullName": "stage_execute:<unresolvedSignature>"
+    },
+    {
+      "_id": 20,
+      "code": "return 0;",
+      "typeFullName": "ANY",
+      "lineNumber": 27,
+      "order": 21,
+      "_label": "BLOCK",
+      "file": "app/main.c",
+      "nodeType": "BLOCK"
+    },
+    {
+      "_id": 21,
+      "code": "}",
+      "typeFullName": "ANY",
+      "lineNumber": 28,
+      "order": 22,
+      "_label": "BLOCK",
+      "file": "app/main.c",
+      "nodeType": "BLOCK"
+    },
+    {
+      "_id": 22,
+      "code": "#include <stdio.h>",
+      "typeFullName": "ANY",
+      "lineNumber": 2,
+      "order": 1,
+      "_label": "BLOCK",
+      "file": "lib/process.c",
+      "nodeType": "BLOCK"
+    },
+    {
+      "_id": 23,
+      "code": "#include <stdlib.h>",
+      "typeFullName": "ANY",
+      "lineNumber": 3,
+      "order": 2,
+      "_label": "BLOCK",
+      "file": "lib/process.c",
+      "nodeType": "BLOCK"
+    },
+    {
+      "_id": 24,
+      "code": "#include <string.h>",
+      "typeFullName": "ANY",
+      "lineNumber": 4,
+      "order": 3,
+      "_label": "BLOCK",
+      "file": "lib/process.c",
+      "nodeType": "BLOCK"
+    },
+    {
+      "_id": 25,
+      "code": "static char clean_buf1[256];",
+      "typeFullName": "ANY",
+      "lineNumber": 6,
+      "order": 4,
+      "_label": "BLOCK",
+      "file": "lib/process.c",
+      "nodeType": "BLOCK"
+    },
+    {
+      "_id": 26,
+      "code": "static char clean_buf2[256];",
+      "typeFullName": "ANY",
+      "lineNumber": 7,
+      "order": 5,
+      "_label": "BLOCK",
+      "file": "lib/process.c",
+      "nodeType": "BLOCK"
+    },
+    {
+      "_id": 27,
+      "code": "static char clean_buf3[256];",
+      "typeFullName": "ANY",
+      "lineNumber": 8,
+      "order": 6,
+      "_label": "BLOCK",
+      "file": "lib/process.c",
+      "nodeType": "BLOCK"
+    },
+    {
+      "_id": 28,
+      "code": "static char* remove_control_chars(char* in) {",
+      "typeFullName": "ANY",
+      "lineNumber": 10,
+      "order": 7,
+      "_label": "BLOCK",
+      "file": "lib/process.c",
+      "nodeType": "BLOCK"
+    },
+    {
+      "_id": 29,
+      "code": "size_t i = 0;",
+      "typeFullName": "ANY",
+      "lineNumber": 11,
+      "order": 8,
+      "_label": "BLOCK",
+      "file": "lib/process.c",
+      "nodeType": "BLOCK"
+    },
+    {
+      "_id": 30,
+      "code": "size_t j = 0;",
+      "typeFullName": "ANY",
+      "lineNumber": 12,
+      "order": 9,
+      "_label": "BLOCK",
+      "file": "lib/process.c",
+      "nodeType": "BLOCK"
+    },
+    {
+      "_id": 31,
+      "code": "while (in[i] != '\\0' && j < sizeof(clean_buf1) - 1) {",
+      "typeFullName": "ANY",
+      "lineNumber": 13,
+      "order": 10,
+      "_label": "CALL",
+      "file": "lib/process.c",
+      "nodeType": "CALL",
+      "name": "while",
+      "methodFullName": "while:<unresolvedSignature>"
+    },
+    {
+      "_id": 32,
+      "code": "unsigned char c = (unsigned char)in[i];",
+      "typeFullName": "ANY",
+      "lineNumber": 14,
+      "order": 11,
+      "_label": "BLOCK",
+      "file": "lib/process.c",
+      "nodeType": "BLOCK"
+    },
+    {
+      "_id": 33,
+      "code": "if (c >= 32 || c == '\\t') {",
+      "typeFullName": "ANY",
+      "lineNumber": 15,
+      "order": 12,
+      "_label": "CALL",
+      "file": "lib/process.c",
+      "nodeType": "CALL",
+      "name": "if",
+      "methodFullName": "if:<unresolvedSignature>"
+    },
+    {
+      "_id": 34,
+      "code": "clean_buf1[j] = in[i];",
+      "typeFullName": "ANY",
+      "lineNumber": 16,
+      "order": 13,
+      "_label": "BLOCK",
+      "file": "lib/process.c",
+      "nodeType": "BLOCK"
+    },
+    {
+      "_id": 35,
+      "code": "j++;",
+      "typeFullName": "ANY",
+      "lineNumber": 17,
+      "order": 14,
+      "_label": "BLOCK",
+      "file": "lib/process.c",
+      "nodeType": "BLOCK"
+    },
+    {
+      "_id": 36,
+      "code": "}",
+      "typeFullName": "ANY",
+      "lineNumber": 18,
+      "order": 15,
+      "_label": "BLOCK",
+      "file": "lib/process.c",
+      "nodeType": "BLOCK"
+    },
+    {
+      "_id": 37,
+      "code": "i++;",
+      "typeFullName": "ANY",
+      "lineNumber": 19,
+      "order": 16,
+      "_label": "BLOCK",
+      "file": "lib/process.c",
+      "nodeType": "BLOCK"
+    },
+    {
+      "_id": 38,
+      "code": "}",
+      "typeFullName": "ANY",
+      "lineNumber": 20,
+      "order": 17,
+      "_label": "BLOCK",
+      "file": "lib/process.c",
+      "nodeType": "BLOCK"
+    },
+    {
+      "_id": 39,
+      "code": "clean_buf1[j] = '\\0';",
+      "typeFullName": "ANY",
+      "lineNumber": 21,
+      "order": 18,
+      "_label": "BLOCK",
+      "file": "lib/process.c",
+      "nodeType": "BLOCK"
+    },
+    {
+      "_id": 40,
+      "code": "return clean_buf1;",
+      "typeFullName": "ANY",
+      "lineNumber": 22,
+      "order": 19,
+      "_label": "BLOCK",
+      "file": "lib/process.c",
+      "nodeType": "BLOCK"
+    },
+    {
+      "_id": 41,
+      "code": "}",
+      "typeFullName": "ANY",
+      "lineNumber": 23,
+      "order": 20,
+      "_label": "BLOCK",
+      "file": "lib/process.c",
+      "nodeType": "BLOCK"
+    },
+    {
+      "_id": 42,
+      "code": "static char* shorten_if_too_long(char* in) {",
+      "typeFullName": "ANY",
+      "lineNumber": 25,
+      "order": 21,
+      "_label": "BLOCK",
+      "file": "lib/process.c",
+      "nodeType": "BLOCK"
+    },
+    {
+      "_id": 43,
+      "code": "size_t len = strlen(in);",
+      "typeFullName": "ANY",
+      "lineNumber": 26,
+      "order": 22,
+      "_label": "BLOCK",
+      "file": "lib/process.c",
+      "nodeType": "BLOCK"
+    },
+    {
+      "_id": 44,
+      "code": "if (len >= sizeof(clean_buf2)) {",
+      "typeFullName": "ANY",
+      "lineNumber": 27,
+      "order": 23,
+      "_label": "CALL",
+      "file": "lib/process.c",
+      "nodeType": "CALL",
+      "name": "if",
+      "methodFullName": "if:<unresolvedSignature>"
+    },
+    {
+      "_id": 45,
+      "code": "len = sizeof(clean_buf2) - 1;",
+      "typeFullName": "ANY",
+      "lineNumber": 28,
+      "order": 24,
+      "_label": "BLOCK",
+      "file": "lib/process.c",
+      "nodeType": "BLOCK"
+    },
+    {
+      "_id": 46,
+      "code": "}",
+      "typeFullName": "ANY",
+      "lineNumber": 29,
+      "order": 25,
+      "_label": "BLOCK",
+      "file": "lib/process.c",
+      "nodeType": "BLOCK"
+    },
+    {
+      "_id": 47,
+      "code": "memcpy(clean_buf2, in, len);",
+      "typeFullName": "ANY",
+      "lineNumber": 30,
+      "order": 26,
+      "_label": "CALL",
+      "file": "lib/process.c",
+      "nodeType": "CALL",
+      "name": "memcpy",
+      "methodFullName": "memcpy:<unresolvedSignature>"
+    },
+    {
+      "_id": 48,
+      "code": "clean_buf2[len] = '\\0';",
+      "typeFullName": "ANY",
+      "lineNumber": 31,
+      "order": 27,
+      "_label": "BLOCK",
+      "file": "lib/process.c",
+      "nodeType": "BLOCK"
+    },
+    {
+      "_id": 49,
+      "code": "return clean_buf2;",
+      "typeFullName": "ANY",
+      "lineNumber": 32,
+      "order": 28,
+      "_label": "BLOCK",
+      "file": "lib/process.c",
+      "nodeType": "BLOCK"
+    },
+    {
+      "_id": 50,
+      "code": "}",
+      "typeFullName": "ANY",
+      "lineNumber": 33,
+      "order": 29,
+      "_label": "BLOCK",
+      "file": "lib/process.c",
+      "nodeType": "BLOCK"
+    },
+    {
+      "_id": 51,
+      "code": "static char* normalize_case(char* in) {",
+      "typeFullName": "ANY",
+      "lineNumber": 35,
+      "order": 30,
+      "_label": "BLOCK",
+      "file": "lib/process.c",
+      "nodeType": "BLOCK"
+    },
+    {
+      "_id": 52,
+      "code": "size_t i = 0;",
+      "typeFullName": "ANY",
+      "lineNumber": 36,
+      "order": 31,
+      "_label": "BLOCK",
+      "file": "lib/process.c",
+      "nodeType": "BLOCK"
+    },
+    {
+      "_id": 53,
+      "code": "while (in[i] != '\\0' && i < sizeof(clean_buf3) - 1) {",
+      "typeFullName": "ANY",
+      "lineNumber": 37,
+      "order": 32,
+      "_label": "CALL",
+      "file": "lib/process.c",
+      "nodeType": "CALL",
+      "name": "while",
+      "methodFullName": "while:<unresolvedSignature>"
+    },
+    {
+      "_id": 54,
+      "code": "char c = in[i];",
+      "typeFullName": "ANY",
+      "lineNumber": 38,
+      "order": 33,
+      "_label": "BLOCK",
+      "file": "lib/process.c",
+      "nodeType": "BLOCK"
+    },
+    {
+      "_id": 55,
+      "code": "if (c >= 'A' && c <= 'Z') {",
+      "typeFullName": "ANY",
+      "lineNumber": 39,
+      "order": 34,
+      "_label": "CALL",
+      "file": "lib/process.c",
+      "nodeType": "CALL",
+      "name": "if",
+      "methodFullName": "if:<unresolvedSignature>"
+    },
+    {
+      "_id": 56,
+      "code": "clean_buf3[i] = (char)(c - 'A' + 'a');",
+      "typeFullName": "ANY",
+      "lineNumber": 40,
+      "order": 35,
+      "_label": "BLOCK",
+      "file": "lib/process.c",
+      "nodeType": "BLOCK"
+    },
+    {
+      "_id": 57,
+      "code": "} else {",
+      "typeFullName": "ANY",
+      "lineNumber": 41,
+      "order": 36,
+      "_label": "BLOCK",
+      "file": "lib/process.c",
+      "nodeType": "BLOCK"
+    },
+    {
+      "_id": 58,
+      "code": "clean_buf3[i] = c;",
+      "typeFullName": "ANY",
+      "lineNumber": 42,
+      "order": 37,
+      "_label": "BLOCK",
+      "file": "lib/process.c",
+      "nodeType": "BLOCK"
+    },
+    {
+      "_id": 59,
+      "code": "}",
+      "typeFullName": "ANY",
+      "lineNumber": 43,
+      "order": 38,
+      "_label": "BLOCK",
+      "file": "lib/process.c",
+      "nodeType": "BLOCK"
+    },
+    {
+      "_id": 60,
+      "code": "i++;",
+      "typeFullName": "ANY",
+      "lineNumber": 44,
+      "order": 39,
+      "_label": "BLOCK",
+      "file": "lib/process.c",
+      "nodeType": "BLOCK"
+    },
+    {
+      "_id": 61,
+      "code": "}",
+      "typeFullName": "ANY",
+      "lineNumber": 45,
+      "order": 40,
+      "_label": "BLOCK",
+      "file": "lib/process.c",
+      "nodeType": "BLOCK"
+    },
+    {
+      "_id": 62,
+      "code": "clean_buf3[i] = '\\0';",
+      "typeFullName": "ANY",
+      "lineNumber": 46,
+      "order": 41,
+      "_label": "BLOCK",
+      "file": "lib/process.c",
+      "nodeType": "BLOCK"
+    },
+    {
+      "_id": 63,
+      "code": "return clean_buf3;",
+      "typeFullName": "ANY",
+      "lineNumber": 47,
+      "order": 42,
+      "_label": "BLOCK",
+      "file": "lib/process.c",
+      "nodeType": "BLOCK"
+    },
+    {
+      "_id": 64,
+      "code": "}",
+      "typeFullName": "ANY",
+      "lineNumber": 48,
+      "order": 43,
+      "_label": "BLOCK",
+      "file": "lib/process.c",
+      "nodeType": "BLOCK"
+    },
+    {
+      "_id": 65,
+      "code": "char* stage_clean(char* in) {",
+      "typeFullName": "ANY",
+      "lineNumber": 50,
+      "order": 44,
+      "_label": "BLOCK",
+      "file": "lib/process.c",
+      "nodeType": "BLOCK"
+    },
+    {
+      "_id": 66,
+      "code": "char* a = remove_control_chars(in);",
+      "typeFullName": "ANY",
+      "lineNumber": 51,
+      "order": 45,
+      "_label": "BLOCK",
+      "file": "lib/process.c",
+      "nodeType": "BLOCK"
+    },
+    {
+      "_id": 67,
+      "code": "char* b = shorten_if_too_long(a);",
+      "typeFullName": "ANY",
+      "lineNumber": 52,
+      "order": 46,
+      "_label": "BLOCK",
+      "file": "lib/process.c",
+      "nodeType": "BLOCK"
+    },
+    {
+      "_id": 68,
+      "code": "char* c = normalize_case(b);",
+      "typeFullName": "ANY",
+      "lineNumber": 53,
+      "order": 47,
+      "_label": "BLOCK",
+      "file": "lib/process.c",
+      "nodeType": "BLOCK"
+    },
+    {
+      "_id": 69,
+      "code": "return c;",
+      "typeFullName": "ANY",
+      "lineNumber": 54,
+      "order": 48,
+      "_label": "BLOCK",
+      "file": "lib/process.c",
+      "nodeType": "BLOCK"
+    },
+    {
+      "_id": 70,
+      "code": "}",
+      "typeFullName": "ANY",
+      "lineNumber": 55,
+      "order": 49,
+      "_label": "BLOCK",
+      "file": "lib/process.c",
+      "nodeType": "BLOCK"
+    },
+    {
+      "_id": 71,
+      "code": "#include <stdio.h>",
+      "typeFullName": "ANY",
+      "lineNumber": 2,
+      "order": 1,
+      "_label": "BLOCK",
+      "file": "lib/shell.c",
+      "nodeType": "BLOCK"
+    },
+    {
+      "_id": 72,
+      "code": "#include <stdlib.h>",
+      "typeFullName": "ANY",
+      "lineNumber": 3,
+      "order": 2,
+      "_label": "BLOCK",
+      "file": "lib/shell.c",
+      "nodeType": "BLOCK"
+    },
+    {
+      "_id": 73,
+      "code": "#include <string.h>",
+      "typeFullName": "ANY",
+      "lineNumber": 4,
+      "order": 3,
+      "_label": "BLOCK",
+      "file": "lib/shell.c",
+      "nodeType": "BLOCK"
+    },
+    {
+      "_id": 74,
+      "code": "static char route_buf1[512];",
+      "typeFullName": "ANY",
+      "lineNumber": 6,
+      "order": 4,
+      "_label": "BLOCK",
+      "file": "lib/shell.c",
+      "nodeType": "BLOCK"
+    },
+    {
+      "_id": 75,
+      "code": "static char route_buf2[512];",
+      "typeFullName": "ANY",
+      "lineNumber": 7,
+      "order": 5,
+      "_label": "BLOCK",
+      "file": "lib/shell.c",
+      "nodeType": "BLOCK"
+    },
+    {
+      "_id": 76,
+      "code": "static char route_buf3[512];",
+      "typeFullName": "ANY",
+      "lineNumber": 8,
+      "order": 6,
+      "_label": "BLOCK",
+      "file": "lib/shell.c",
+      "nodeType": "BLOCK"
+    },
+    {
+      "_id": 77,
+      "code": "static char exec_local[512];",
+      "typeFullName": "ANY",
+      "lineNumber": 9,
+      "order": 7,
+      "_label": "BLOCK",
+      "file": "lib/shell.c",
+      "nodeType": "BLOCK"
+    },
+    {
+      "_id": 78,
+      "code": "static char* build_prefix(char* in) {",
+      "typeFullName": "ANY",
+      "lineNumber": 11,
+      "order": 8,
+      "_label": "BLOCK",
+      "file": "lib/shell.c",
+      "nodeType": "BLOCK"
+    },
+    {
+      "_id": 79,
+      "code": "snprintf(route_buf1, sizeof(route_buf1), \"runner %s\", in);",
+      "typeFullName": "ANY",
+      "lineNumber": 12,
+      "order": 9,
+      "_label": "CALL",
+      "file": "lib/shell.c",
+      "nodeType": "CALL",
+      "name": "snprintf",
+      "methodFullName": "snprintf:<unresolvedSignature>"
+    },
+    {
+      "_id": 80,
+      "code": "return route_buf1;",
+      "typeFullName": "ANY",
+      "lineNumber": 13,
+      "order": 10,
+      "_label": "BLOCK",
+      "file": "lib/shell.c",
+      "nodeType": "BLOCK"
+    },
+    {
+      "_id": 81,
+      "code": "}",
+      "typeFullName": "ANY",
+      "lineNumber": 14,
+      "order": 11,
+      "_label": "BLOCK",
+      "file": "lib/shell.c",
+      "nodeType": "BLOCK"
+    },
+    {
+      "_id": 82,
+      "code": "static char* add_route_flags(char* in) {",
+      "typeFullName": "ANY",
+      "lineNumber": 16,
+      "order": 12,
+      "_label": "BLOCK",
+      "file": "lib/shell.c",
+      "nodeType": "BLOCK"
+    },
+    {
+      "_id": 83,
+      "code": "snprintf(route_buf2, sizeof(route_buf2), \"%s --channel=cli --retry=0\", in);",
+      "typeFullName": "ANY",
+      "lineNumber": 17,
+      "order": 13,
+      "_label": "CALL",
+      "file": "lib/shell.c",
+      "nodeType": "CALL",
+      "name": "snprintf",
+      "methodFullName": "snprintf:<unresolvedSignature>"
+    },
+    {
+      "_id": 84,
+      "code": "return route_buf2;",
+      "typeFullName": "ANY",
+      "lineNumber": 18,
+      "order": 14,
+      "_label": "BLOCK",
+      "file": "lib/shell.c",
+      "nodeType": "BLOCK"
+    },
+    {
+      "_id": 85,
+      "code": "}",
+      "typeFullName": "ANY",
+      "lineNumber": 19,
+      "order": 15,
+      "_label": "BLOCK",
+      "file": "lib/shell.c",
+      "nodeType": "BLOCK"
+    },
+    {
+      "_id": 86,
+      "code": "static char* finalize_route(char* in) {",
+      "typeFullName": "ANY",
+      "lineNumber": 21,
+      "order": 16,
+      "_label": "BLOCK",
+      "file": "lib/shell.c",
+      "nodeType": "BLOCK"
+    },
+    {
+      "_id": 87,
+      "code": "snprintf(route_buf3, sizeof(route_buf3), \"%s --complete\", in);",
+      "typeFullName": "ANY",
+      "lineNumber": 22,
+      "order": 17,
+      "_label": "CALL",
+      "file": "lib/shell.c",
+      "nodeType": "CALL",
+      "name": "snprintf",
+      "methodFullName": "snprintf:<unresolvedSignature>"
+    },
+    {
+      "_id": 88,
+      "code": "return route_buf3;",
+      "typeFullName": "ANY",
+      "lineNumber": 23,
+      "order": 18,
+      "_label": "BLOCK",
+      "file": "lib/shell.c",
+      "nodeType": "BLOCK"
+    },
+    {
+      "_id": 89,
+      "code": "}",
+      "typeFullName": "ANY",
+      "lineNumber": 24,
+      "order": 19,
+      "_label": "BLOCK",
+      "file": "lib/shell.c",
+      "nodeType": "BLOCK"
+    },
+    {
+      "_id": 90,
+      "code": "char* stage_route(char* in) {",
+      "typeFullName": "ANY",
+      "lineNumber": 26,
+      "order": 20,
+      "_label": "BLOCK",
+      "file": "lib/shell.c",
+      "nodeType": "BLOCK"
+    },
+    {
+      "_id": 91,
+      "code": "char* a = build_prefix(in);",
+      "typeFullName": "ANY",
+      "lineNumber": 27,
+      "order": 21,
+      "_label": "BLOCK",
+      "file": "lib/shell.c",
+      "nodeType": "BLOCK"
+    },
+    {
+      "_id": 92,
+      "code": "char* b = add_route_flags(a);",
+      "typeFullName": "ANY",
+      "lineNumber": 28,
+      "order": 22,
+      "_label": "BLOCK",
+      "file": "lib/shell.c",
+      "nodeType": "BLOCK"
+    },
+    {
+      "_id": 93,
+      "code": "char* c = finalize_route(b);",
+      "typeFullName": "ANY",
+      "lineNumber": 29,
+      "order": 23,
+      "_label": "BLOCK",
+      "file": "lib/shell.c",
+      "nodeType": "BLOCK"
+    },
+    {
+      "_id": 94,
+      "code": "return c;",
+      "typeFullName": "ANY",
+      "lineNumber": 30,
+      "order": 24,
+      "_label": "BLOCK",
+      "file": "lib/shell.c",
+      "nodeType": "BLOCK"
+    },
+    {
+      "_id": 95,
+      "code": "}",
+      "typeFullName": "ANY",
+      "lineNumber": 31,
+      "order": 25,
+      "_label": "BLOCK",
+      "file": "lib/shell.c",
+      "nodeType": "BLOCK"
+    },
+    {
+      "_id": 96,
+      "code": "void stage_execute(char* cmd) {",
+      "typeFullName": "ANY",
+      "lineNumber": 33,
+      "order": 26,
+      "_label": "BLOCK",
+      "file": "lib/shell.c",
+      "nodeType": "BLOCK"
+    },
+    {
+      "_id": 97,
+      "code": "size_t n;",
+      "typeFullName": "ANY",
+      "lineNumber": 34,
+      "order": 27,
+      "_label": "BLOCK",
+      "file": "lib/shell.c",
+      "nodeType": "BLOCK"
+    },
+    {
+      "_id": 98,
+      "code": "if (cmd == NULL) {",
+      "typeFullName": "ANY",
+      "lineNumber": 35,
+      "order": 28,
+      "_label": "CALL",
+      "file": "lib/shell.c",
+      "nodeType": "CALL",
+      "name": "if",
+      "methodFullName": "if:<unresolvedSignature>"
+    },
+    {
+      "_id": 99,
+      "code": "return;",
+      "typeFullName": "ANY",
+      "lineNumber": 36,
+      "order": 29,
+      "_label": "BLOCK",
+      "file": "lib/shell.c",
+      "nodeType": "BLOCK"
+    },
+    {
+      "_id": 100,
+      "code": "}",
+      "typeFullName": "ANY",
+      "lineNumber": 37,
+      "order": 30,
+      "_label": "BLOCK",
+      "file": "lib/shell.c",
+      "nodeType": "BLOCK"
+    },
+    {
+      "_id": 101,
+      "code": "n = strlen(cmd);",
+      "typeFullName": "ANY",
+      "lineNumber": 38,
+      "order": 31,
+      "_label": "BLOCK",
+      "file": "lib/shell.c",
+      "nodeType": "BLOCK"
+    },
+    {
+      "_id": 102,
+      "code": "if (n >= sizeof(exec_local)) {",
+      "typeFullName": "ANY",
+      "lineNumber": 39,
+      "order": 32,
+      "_label": "CALL",
+      "file": "lib/shell.c",
+      "nodeType": "CALL",
+      "name": "if",
+      "methodFullName": "if:<unresolvedSignature>"
+    },
+    {
+      "_id": 103,
+      "code": "n = sizeof(exec_local) - 1;",
+      "typeFullName": "ANY",
+      "lineNumber": 40,
+      "order": 33,
+      "_label": "BLOCK",
+      "file": "lib/shell.c",
+      "nodeType": "BLOCK"
+    },
+    {
+      "_id": 104,
+      "code": "}",
+      "typeFullName": "ANY",
+      "lineNumber": 41,
+      "order": 34,
+      "_label": "BLOCK",
+      "file": "lib/shell.c",
+      "nodeType": "BLOCK"
+    },
+    {
+      "_id": 105,
+      "code": "memset(exec_local, 0, sizeof(exec_local));",
+      "typeFullName": "ANY",
+      "lineNumber": 42,
+      "order": 35,
+      "_label": "CALL",
+      "file": "lib/shell.c",
+      "nodeType": "CALL",
+      "name": "memset",
+      "methodFullName": "memset:<unresolvedSignature>"
+    },
+    {
+      "_id": 106,
+      "code": "strncpy(exec_local, cmd, n);",
+      "typeFullName": "ANY",
+      "lineNumber": 43,
+      "order": 36,
+      "_label": "CALL",
+      "file": "lib/shell.c",
+      "nodeType": "CALL",
+      "name": "strncpy",
+      "methodFullName": "strncpy:<unresolvedSignature>"
+    },
+    {
+      "_id": 107,
+      "code": "exec_local[n] = '\\0';",
+      "typeFullName": "ANY",
+      "lineNumber": 44,
+      "order": 37,
+      "_label": "BLOCK",
+      "file": "lib/shell.c",
+      "nodeType": "BLOCK"
+    },
+    {
+      "_id": 108,
+      "code": "system(exec_local); /* external command execution */",
+      "typeFullName": "ANY",
+      "lineNumber": 45,
+      "order": 38,
+      "_label": "CALL",
+      "file": "lib/shell.c",
+      "nodeType": "CALL",
+      "name": "system",
+      "methodFullName": "system:<unresolvedSignature>"
+    },
+    {
+      "_id": 109,
+      "code": "}",
+      "typeFullName": "ANY",
+      "lineNumber": 46,
+      "order": 39,
+      "_label": "BLOCK",
+      "file": "lib/shell.c",
+      "nodeType": "BLOCK"
+    }
+  ],
+  "edges": [
+    {
+      "type": "CFG",
+      "src": 0,
+      "dst": 1
+    },
+    {
+      "type": "CFG",
+      "src": 1,
+      "dst": 2
+    },
+    {
+      "type": "CFG",
+      "src": 2,
+      "dst": 3
+    },
+    {
+      "type": "CFG",
+      "src": 3,
+      "dst": 4
+    },
+    {
+      "type": "CFG",
+      "src": 4,
+      "dst": 5
+    },
+    {
+      "type": "CFG",
+      "src": 5,
+      "dst": 6
+    },
+    {
+      "type": "CFG",
+      "src": 6,
+      "dst": 7
+    },
+    {
+      "type": "CFG",
+      "src": 7,
+      "dst": 8
+    },
+    {
+      "type": "CFG",
+      "src": 8,
+      "dst": 9
+    },
+    {
+      "type": "CFG",
+      "src": 9,
+      "dst": 10
+    },
+    {
+      "type": "CFG",
+      "src": 10,
+      "dst": 11
+    },
+    {
+      "type": "CFG",
+      "src": 11,
+      "dst": 12
+    },
+    {
+      "type": "CFG",
+      "src": 12,
+      "dst": 13
+    },
+    {
+      "type": "CFG",
+      "src": 13,
+      "dst": 14
+    },
+    {
+      "type": "CFG",
+      "src": 14,
+      "dst": 15
+    },
+    {
+      "type": "CFG",
+      "src": 15,
+      "dst": 16
+    },
+    {
+      "type": "CFG",
+      "src": 16,
+      "dst": 17
+    },
+    {
+      "type": "CFG",
+      "src": 17,
+      "dst": 18
+    },
+    {
+      "type": "CFG",
+      "src": 18,
+      "dst": 19
+    },
+    {
+      "type": "CFG",
+      "src": 19,
+      "dst": 20
+    },
+    {
+      "type": "CFG",
+      "src": 20,
+      "dst": 21
+    },
+    {
+      "type": "CFG",
+      "src": 22,
+      "dst": 23
+    },
+    {
+      "type": "CFG",
+      "src": 23,
+      "dst": 24
+    },
+    {
+      "type": "CFG",
+      "src": 24,
+      "dst": 25
+    },
+    {
+      "type": "CFG",
+      "src": 25,
+      "dst": 26
+    },
+    {
+      "type": "CFG",
+      "src": 26,
+      "dst": 27
+    },
+    {
+      "type": "CFG",
+      "src": 27,
+      "dst": 28
+    },
+    {
+      "type": "CFG",
+      "src": 28,
+      "dst": 29
+    },
+    {
+      "type": "CFG",
+      "src": 29,
+      "dst": 30
+    },
+    {
+      "type": "CFG",
+      "src": 30,
+      "dst": 31
+    },
+    {
+      "type": "CFG",
+      "src": 31,
+      "dst": 32
+    },
+    {
+      "type": "CFG",
+      "src": 32,
+      "dst": 33
+    },
+    {
+      "type": "CFG",
+      "src": 33,
+      "dst": 34
+    },
+    {
+      "type": "CFG",
+      "src": 34,
+      "dst": 35
+    },
+    {
+      "type": "CFG",
+      "src": 35,
+      "dst": 36
+    },
+    {
+      "type": "CFG",
+      "src": 36,
+      "dst": 37
+    },
+    {
+      "type": "CFG",
+      "src": 37,
+      "dst": 38
+    },
+    {
+      "type": "CFG",
+      "src": 38,
+      "dst": 39
+    },
+    {
+      "type": "CFG",
+      "src": 39,
+      "dst": 40
+    },
+    {
+      "type": "CFG",
+      "src": 40,
+      "dst": 41
+    },
+    {
+      "type": "CFG",
+      "src": 41,
+      "dst": 42
+    },
+    {
+      "type": "CFG",
+      "src": 42,
+      "dst": 43
+    },
+    {
+      "type": "CFG",
+      "src": 43,
+      "dst": 44
+    },
+    {
+      "type": "CFG",
+      "src": 44,
+      "dst": 45
+    },
+    {
+      "type": "CFG",
+      "src": 45,
+      "dst": 46
+    },
+    {
+      "type": "CFG",
+      "src": 46,
+      "dst": 47
+    },
+    {
+      "type": "CFG",
+      "src": 47,
+      "dst": 48
+    },
+    {
+      "type": "CFG",
+      "src": 48,
+      "dst": 49
+    },
+    {
+      "type": "CFG",
+      "src": 49,
+      "dst": 50
+    },
+    {
+      "type": "CFG",
+      "src": 50,
+      "dst": 51
+    },
+    {
+      "type": "CFG",
+      "src": 51,
+      "dst": 52
+    },
+    {
+      "type": "CFG",
+      "src": 52,
+      "dst": 53
+    },
+    {
+      "type": "CFG",
+      "src": 53,
+      "dst": 54
+    },
+    {
+      "type": "CFG",
+      "src": 54,
+      "dst": 55
+    },
+    {
+      "type": "CFG",
+      "src": 55,
+      "dst": 56
+    },
+    {
+      "type": "CFG",
+      "src": 56,
+      "dst": 57
+    },
+    {
+      "type": "CFG",
+      "src": 57,
+      "dst": 58
+    },
+    {
+      "type": "CFG",
+      "src": 58,
+      "dst": 59
+    },
+    {
+      "type": "CFG",
+      "src": 59,
+      "dst": 60
+    },
+    {
+      "type": "CFG",
+      "src": 60,
+      "dst": 61
+    },
+    {
+      "type": "CFG",
+      "src": 61,
+      "dst": 62
+    },
+    {
+      "type": "CFG",
+      "src": 62,
+      "dst": 63
+    },
+    {
+      "type": "CFG",
+      "src": 63,
+      "dst": 64
+    },
+    {
+      "type": "CFG",
+      "src": 64,
+      "dst": 65
+    },
+    {
+      "type": "CFG",
+      "src": 65,
+      "dst": 66
+    },
+    {
+      "type": "CFG",
+      "src": 66,
+      "dst": 67
+    },
+    {
+      "type": "CFG",
+      "src": 67,
+      "dst": 68
+    },
+    {
+      "type": "CFG",
+      "src": 68,
+      "dst": 69
+    },
+    {
+      "type": "CFG",
+      "src": 69,
+      "dst": 70
+    },
+    {
+      "type": "CFG",
+      "src": 71,
+      "dst": 72
+    },
+    {
+      "type": "CFG",
+      "src": 72,
+      "dst": 73
+    },
+    {
+      "type": "CFG",
+      "src": 73,
+      "dst": 74
+    },
+    {
+      "type": "CFG",
+      "src": 74,
+      "dst": 75
+    },
+    {
+      "type": "CFG",
+      "src": 75,
+      "dst": 76
+    },
+    {
+      "type": "CFG",
+      "src": 76,
+      "dst": 77
+    },
+    {
+      "type": "CFG",
+      "src": 77,
+      "dst": 78
+    },
+    {
+      "type": "CFG",
+      "src": 78,
+      "dst": 79
+    },
+    {
+      "type": "CFG",
+      "src": 79,
+      "dst": 80
+    },
+    {
+      "type": "CFG",
+      "src": 80,
+      "dst": 81
+    },
+    {
+      "type": "CFG",
+      "src": 81,
+      "dst": 82
+    },
+    {
+      "type": "CFG",
+      "src": 82,
+      "dst": 83
+    },
+    {
+      "type": "CFG",
+      "src": 83,
+      "dst": 84
+    },
+    {
+      "type": "CFG",
+      "src": 84,
+      "dst": 85
+    },
+    {
+      "type": "CFG",
+      "src": 85,
+      "dst": 86
+    },
+    {
+      "type": "CFG",
+      "src": 86,
+      "dst": 87
+    },
+    {
+      "type": "CFG",
+      "src": 87,
+      "dst": 88
+    },
+    {
+      "type": "CFG",
+      "src": 88,
+      "dst": 89
+    },
+    {
+      "type": "CFG",
+      "src": 89,
+      "dst": 90
+    },
+    {
+      "type": "CFG",
+      "src": 90,
+      "dst": 91
+    },
+    {
+      "type": "CFG",
+      "src": 91,
+      "dst": 92
+    },
+    {
+      "type": "CFG",
+      "src": 92,
+      "dst": 93
+    },
+    {
+      "type": "CFG",
+      "src": 93,
+      "dst": 94
+    },
+    {
+      "type": "CFG",
+      "src": 94,
+      "dst": 95
+    },
+    {
+      "type": "CFG",
+      "src": 95,
+      "dst": 96
+    },
+    {
+      "type": "CFG",
+      "src": 96,
+      "dst": 97
+    },
+    {
+      "type": "CFG",
+      "src": 97,
+      "dst": 98
+    },
+    {
+      "type": "CFG",
+      "src": 98,
+      "dst": 99
+    },
+    {
+      "type": "CFG",
+      "src": 99,
+      "dst": 100
+    },
+    {
+      "type": "CFG",
+      "src": 100,
+      "dst": 101
+    },
+    {
+      "type": "CFG",
+      "src": 101,
+      "dst": 102
+    },
+    {
+      "type": "CFG",
+      "src": 102,
+      "dst": 103
+    },
+    {
+      "type": "CFG",
+      "src": 103,
+      "dst": 104
+    },
+    {
+      "type": "CFG",
+      "src": 104,
+      "dst": 105
+    },
+    {
+      "type": "CFG",
+      "src": 105,
+      "dst": 106
+    },
+    {
+      "type": "CFG",
+      "src": 106,
+      "dst": 107
+    },
+    {
+      "type": "CFG",
+      "src": 107,
+      "dst": 108
+    },
+    {
+      "type": "CFG",
+      "src": 108,
+      "dst": 109
+    },
+    {
+      "type": "DFG",
+      "src": 13,
+      "dst": 13
+    },
+    {
+      "type": "DFG",
+      "src": 13,
+      "dst": 14
+    },
+    {
+      "type": "DFG",
+      "src": 13,
+      "dst": 14
+    },
+    {
+      "type": "DFG",
+      "src": 13,
+      "dst": 14
+    },
+    {
+      "type": "DFG",
+      "src": 13,
+      "dst": 14
+    },
+    {
+      "type": "DFG",
+      "src": 13,
+      "dst": 15
+    },
+    {
+      "type": "DFG",
+      "src": 29,
+      "dst": 29
+    },
+    {
+      "type": "DFG",
+      "src": 30,
+      "dst": 30
+    },
+    {
+      "type": "DFG",
+      "src": 29,
+      "dst": 31
+    },
+    {
+      "type": "DFG",
+      "src": 30,
+      "dst": 31
+    },
+    {
+      "type": "DFG",
+      "src": 32,
+      "dst": 32
+    },
+    {
+      "type": "DFG",
+      "src": 29,
+      "dst": 32
+    },
+    {
+      "type": "DFG",
+      "src": 32,
+      "dst": 33
+    },
+    {
+      "type": "DFG",
+      "src": 32,
+      "dst": 33
+    },
+    {
+      "type": "DFG",
+      "src": 30,
+      "dst": 34
+    },
+    {
+      "type": "DFG",
+      "src": 29,
+      "dst": 34
+    },
+    {
+      "type": "DFG",
+      "src": 30,
+      "dst": 35
+    },
+    {
+      "type": "DFG",
+      "src": 29,
+      "dst": 37
+    },
+    {
+      "type": "DFG",
+      "src": 30,
+      "dst": 39
+    },
+    {
+      "type": "DFG",
+      "src": 43,
+      "dst": 43
+    },
+    {
+      "type": "DFG",
+      "src": 43,
+      "dst": 44
+    },
+    {
+      "type": "DFG",
+      "src": 45,
+      "dst": 45
+    },
+    {
+      "type": "DFG",
+      "src": 45,
+      "dst": 47
+    },
+    {
+      "type": "DFG",
+      "src": 45,
+      "dst": 48
+    },
+    {
+      "type": "DFG",
+      "src": 52,
+      "dst": 52
+    },
+    {
+      "type": "DFG",
+      "src": 52,
+      "dst": 53
+    },
+    {
+      "type": "DFG",
+      "src": 52,
+      "dst": 53
+    },
+    {
+      "type": "DFG",
+      "src": 54,
+      "dst": 54
+    },
+    {
+      "type": "DFG",
+      "src": 52,
+      "dst": 54
+    },
+    {
+      "type": "DFG",
+      "src": 54,
+      "dst": 55
+    },
+    {
+      "type": "DFG",
+      "src": 54,
+      "dst": 55
+    },
+    {
+      "type": "DFG",
+      "src": 52,
+      "dst": 56
+    },
+    {
+      "type": "DFG",
+      "src": 54,
+      "dst": 56
+    },
+    {
+      "type": "DFG",
+      "src": 52,
+      "dst": 58
+    },
+    {
+      "type": "DFG",
+      "src": 54,
+      "dst": 58
+    },
+    {
+      "type": "DFG",
+      "src": 52,
+      "dst": 60
+    },
+    {
+      "type": "DFG",
+      "src": 52,
+      "dst": 62
+    },
+    {
+      "type": "DFG",
+      "src": 54,
+      "dst": 68
+    },
+    {
+      "type": "DFG",
+      "src": 54,
+      "dst": 69
+    },
+    {
+      "type": "DFG",
+      "src": 54,
+      "dst": 93
+    },
+    {
+      "type": "DFG",
+      "src": 54,
+      "dst": 94
+    },
+    {
+      "type": "DFG",
+      "src": 13,
+      "dst": 97
+    },
+    {
+      "type": "DFG",
+      "src": 101,
+      "dst": 101
+    },
+    {
+      "type": "DFG",
+      "src": 101,
+      "dst": 102
+    },
+    {
+      "type": "DFG",
+      "src": 103,
+      "dst": 103
+    },
+    {
+      "type": "DFG",
+      "src": 103,
+      "dst": 106
+    },
+    {
+      "type": "DFG",
+      "src": 103,
+      "dst": 107
+    },
+    {
+      "type": "CALL",
+      "src": 9,
+      "dst": 9
+    },
+    {
+      "type": "RET2CALL",
+      "src": 9,
+      "dst": 9
+    },
+    {
+      "type": "CALL",
+      "src": 10,
+      "dst": 10
+    },
+    {
+      "type": "RET2LHS",
+      "src": 10,
+      "dst": 10
+    },
+    {
+      "type": "CALL",
+      "src": 14,
+      "dst": 14
+    },
+    {
+      "type": "ARG2PARAM",
+      "src": 103,
+      "dst": 14
+    },
+    {
+      "type": "ARG2PARAM",
+      "src": 103,
+      "dst": 14
+    },
+    {
+      "type": "ARG2PARAM",
+      "src": 103,
+      "dst": 14
+    },
+    {
+      "type": "ARG2PARAM",
+      "src": 103,
+      "dst": 14
+    },
+    {
+      "type": "RET2LHS",
+      "src": 14,
+      "dst": 14
+    },
+    {
+      "type": "CALL",
+      "src": 19,
+      "dst": 96
+    },
+    {
+      "type": "RET2CALL",
+      "src": 96,
+      "dst": 19
+    },
+    {
+      "type": "CALL",
+      "src": 31,
+      "dst": 31
+    },
+    {
+      "type": "ARG2PARAM",
+      "src": 52,
+      "dst": 31
+    },
+    {
+      "type": "ARG2PARAM",
+      "src": 30,
+      "dst": 31
+    },
+    {
+      "type": "RET2LHS",
+      "src": 31,
+      "dst": 31
+    },
+    {
+      "type": "CALL",
+      "src": 33,
+      "dst": 33
+    },
+    {
+      "type": "ARG2PARAM",
+      "src": 54,
+      "dst": 33
+    },
+    {
+      "type": "ARG2PARAM",
+      "src": 54,
+      "dst": 33
+    },
+    {
+      "type": "RET2LHS",
+      "src": 33,
+      "dst": 33
+    },
+    {
+      "type": "CALL",
+      "src": 44,
+      "dst": 44
+    },
+    {
+      "type": "ARG2PARAM",
+      "src": 45,
+      "dst": 44
+    },
+    {
+      "type": "RET2LHS",
+      "src": 44,
+      "dst": 44
+    },
+    {
+      "type": "CALL",
+      "src": 47,
+      "dst": 47
+    },
+    {
+      "type": "ARG2PARAM",
+      "src": 45,
+      "dst": 47
+    },
+    {
+      "type": "RET2CALL",
+      "src": 47,
+      "dst": 47
+    },
+    {
+      "type": "CALL",
+      "src": 53,
+      "dst": 53
+    },
+    {
+      "type": "ARG2PARAM",
+      "src": 52,
+      "dst": 53
+    },
+    {
+      "type": "ARG2PARAM",
+      "src": 52,
+      "dst": 53
+    },
+    {
+      "type": "RET2LHS",
+      "src": 53,
+      "dst": 53
+    },
+    {
+      "type": "CALL",
+      "src": 55,
+      "dst": 55
+    },
+    {
+      "type": "ARG2PARAM",
+      "src": 54,
+      "dst": 55
+    },
+    {
+      "type": "ARG2PARAM",
+      "src": 54,
+      "dst": 55
+    },
+    {
+      "type": "RET2LHS",
+      "src": 55,
+      "dst": 55
+    },
+    {
+      "type": "CALL",
+      "src": 79,
+      "dst": 79
+    },
+    {
+      "type": "RET2CALL",
+      "src": 79,
+      "dst": 79
+    },
+    {
+      "type": "CALL",
+      "src": 83,
+      "dst": 83
+    },
+    {
+      "type": "RET2LHS",
+      "src": 83,
+      "dst": 83
+    },
+    {
+      "type": "CALL",
+      "src": 87,
+      "dst": 87
+    },
+    {
+      "type": "RET2CALL",
+      "src": 87,
+      "dst": 87
+    },
+    {
+      "type": "CALL",
+      "src": 98,
+      "dst": 98
+    },
+    {
+      "type": "RET2LHS",
+      "src": 98,
+      "dst": 98
+    },
+    {
+      "type": "CALL",
+      "src": 102,
+      "dst": 102
+    },
+    {
+      "type": "ARG2PARAM",
+      "src": 103,
+      "dst": 102
+    },
+    {
+      "type": "RET2LHS",
+      "src": 102,
+      "dst": 102
+    },
+    {
+      "type": "CALL",
+      "src": 105,
+      "dst": 105
+    },
+    {
+      "type": "RET2CALL",
+      "src": 105,
+      "dst": 105
+    },
+    {
+      "type": "CALL",
+      "src": 106,
+      "dst": 106
+    },
+    {
+      "type": "ARG2PARAM",
+      "src": 103,
+      "dst": 106
+    },
+    {
+      "type": "RET2CALL",
+      "src": 106,
+      "dst": 106
+    },
+    {
+      "type": "CALL",
+      "src": 108,
+      "dst": 108
+    },
+    {
+      "type": "RET2CALL",
+      "src": 108,
+      "dst": 108
+    },
+    {
+      "type": "CFG_REV",
+      "src": 1,
+      "dst": 0
+    },
+    {
+      "type": "CFG_REV",
+      "src": 2,
+      "dst": 1
+    },
+    {
+      "type": "CFG_REV",
+      "src": 3,
+      "dst": 2
+    },
+    {
+      "type": "CFG_REV",
+      "src": 4,
+      "dst": 3
+    },
+    {
+      "type": "CFG_REV",
+      "src": 5,
+      "dst": 4
+    },
+    {
+      "type": "CFG_REV",
+      "src": 6,
+      "dst": 5
+    },
+    {
+      "type": "CFG_REV",
+      "src": 7,
+      "dst": 6
+    },
+    {
+      "type": "CFG_REV",
+      "src": 8,
+      "dst": 7
+    },
+    {
+      "type": "CFG_REV",
+      "src": 9,
+      "dst": 8
+    },
+    {
+      "type": "CFG_REV",
+      "src": 10,
+      "dst": 9
+    },
+    {
+      "type": "CFG_REV",
+      "src": 11,
+      "dst": 10
+    },
+    {
+      "type": "CFG_REV",
+      "src": 12,
+      "dst": 11
+    },
+    {
+      "type": "CFG_REV",
+      "src": 13,
+      "dst": 12
+    },
+    {
+      "type": "CFG_REV",
+      "src": 14,
+      "dst": 13
+    },
+    {
+      "type": "CFG_REV",
+      "src": 15,
+      "dst": 14
+    },
+    {
+      "type": "CFG_REV",
+      "src": 16,
+      "dst": 15
+    },
+    {
+      "type": "CFG_REV",
+      "src": 17,
+      "dst": 16
+    },
+    {
+      "type": "CFG_REV",
+      "src": 18,
+      "dst": 17
+    },
+    {
+      "type": "CFG_REV",
+      "src": 19,
+      "dst": 18
+    },
+    {
+      "type": "CFG_REV",
+      "src": 20,
+      "dst": 19
+    },
+    {
+      "type": "CFG_REV",
+      "src": 21,
+      "dst": 20
+    },
+    {
+      "type": "CFG_REV",
+      "src": 23,
+      "dst": 22
+    },
+    {
+      "type": "CFG_REV",
+      "src": 24,
+      "dst": 23
+    },
+    {
+      "type": "CFG_REV",
+      "src": 25,
+      "dst": 24
+    },
+    {
+      "type": "CFG_REV",
+      "src": 26,
+      "dst": 25
+    },
+    {
+      "type": "CFG_REV",
+      "src": 27,
+      "dst": 26
+    },
+    {
+      "type": "CFG_REV",
+      "src": 28,
+      "dst": 27
+    },
+    {
+      "type": "CFG_REV",
+      "src": 29,
+      "dst": 28
+    },
+    {
+      "type": "CFG_REV",
+      "src": 30,
+      "dst": 29
+    },
+    {
+      "type": "CFG_REV",
+      "src": 31,
+      "dst": 30
+    },
+    {
+      "type": "CFG_REV",
+      "src": 32,
+      "dst": 31
+    },
+    {
+      "type": "CFG_REV",
+      "src": 33,
+      "dst": 32
+    },
+    {
+      "type": "CFG_REV",
+      "src": 34,
+      "dst": 33
+    },
+    {
+      "type": "CFG_REV",
+      "src": 35,
+      "dst": 34
+    },
+    {
+      "type": "CFG_REV",
+      "src": 36,
+      "dst": 35
+    },
+    {
+      "type": "CFG_REV",
+      "src": 37,
+      "dst": 36
+    },
+    {
+      "type": "CFG_REV",
+      "src": 38,
+      "dst": 37
+    },
+    {
+      "type": "CFG_REV",
+      "src": 39,
+      "dst": 38
+    },
+    {
+      "type": "CFG_REV",
+      "src": 40,
+      "dst": 39
+    },
+    {
+      "type": "CFG_REV",
+      "src": 41,
+      "dst": 40
+    },
+    {
+      "type": "CFG_REV",
+      "src": 42,
+      "dst": 41
+    },
+    {
+      "type": "CFG_REV",
+      "src": 43,
+      "dst": 42
+    },
+    {
+      "type": "CFG_REV",
+      "src": 44,
+      "dst": 43
+    },
+    {
+      "type": "CFG_REV",
+      "src": 45,
+      "dst": 44
+    },
+    {
+      "type": "CFG_REV",
+      "src": 46,
+      "dst": 45
+    },
+    {
+      "type": "CFG_REV",
+      "src": 47,
+      "dst": 46
+    },
+    {
+      "type": "CFG_REV",
+      "src": 48,
+      "dst": 47
+    },
+    {
+      "type": "CFG_REV",
+      "src": 49,
+      "dst": 48
+    },
+    {
+      "type": "CFG_REV",
+      "src": 50,
+      "dst": 49
+    },
+    {
+      "type": "CFG_REV",
+      "src": 51,
+      "dst": 50
+    },
+    {
+      "type": "CFG_REV",
+      "src": 52,
+      "dst": 51
+    },
+    {
+      "type": "CFG_REV",
+      "src": 53,
+      "dst": 52
+    },
+    {
+      "type": "CFG_REV",
+      "src": 54,
+      "dst": 53
+    },
+    {
+      "type": "CFG_REV",
+      "src": 55,
+      "dst": 54
+    },
+    {
+      "type": "CFG_REV",
+      "src": 56,
+      "dst": 55
+    },
+    {
+      "type": "CFG_REV",
+      "src": 57,
+      "dst": 56
+    },
+    {
+      "type": "CFG_REV",
+      "src": 58,
+      "dst": 57
+    },
+    {
+      "type": "CFG_REV",
+      "src": 59,
+      "dst": 58
+    },
+    {
+      "type": "CFG_REV",
+      "src": 60,
+      "dst": 59
+    },
+    {
+      "type": "CFG_REV",
+      "src": 61,
+      "dst": 60
+    },
+    {
+      "type": "CFG_REV",
+      "src": 62,
+      "dst": 61
+    },
+    {
+      "type": "CFG_REV",
+      "src": 63,
+      "dst": 62
+    },
+    {
+      "type": "CFG_REV",
+      "src": 64,
+      "dst": 63
+    },
+    {
+      "type": "CFG_REV",
+      "src": 65,
+      "dst": 64
+    },
+    {
+      "type": "CFG_REV",
+      "src": 66,
+      "dst": 65
+    },
+    {
+      "type": "CFG_REV",
+      "src": 67,
+      "dst": 66
+    },
+    {
+      "type": "CFG_REV",
+      "src": 68,
+      "dst": 67
+    },
+    {
+      "type": "CFG_REV",
+      "src": 69,
+      "dst": 68
+    },
+    {
+      "type": "CFG_REV",
+      "src": 70,
+      "dst": 69
+    },
+    {
+      "type": "CFG_REV",
+      "src": 72,
+      "dst": 71
+    },
+    {
+      "type": "CFG_REV",
+      "src": 73,
+      "dst": 72
+    },
+    {
+      "type": "CFG_REV",
+      "src": 74,
+      "dst": 73
+    },
+    {
+      "type": "CFG_REV",
+      "src": 75,
+      "dst": 74
+    },
+    {
+      "type": "CFG_REV",
+      "src": 76,
+      "dst": 75
+    },
+    {
+      "type": "CFG_REV",
+      "src": 77,
+      "dst": 76
+    },
+    {
+      "type": "CFG_REV",
+      "src": 78,
+      "dst": 77
+    },
+    {
+      "type": "CFG_REV",
+      "src": 79,
+      "dst": 78
+    },
+    {
+      "type": "CFG_REV",
+      "src": 80,
+      "dst": 79
+    },
+    {
+      "type": "CFG_REV",
+      "src": 81,
+      "dst": 80
+    },
+    {
+      "type": "CFG_REV",
+      "src": 82,
+      "dst": 81
+    },
+    {
+      "type": "CFG_REV",
+      "src": 83,
+      "dst": 82
+    },
+    {
+      "type": "CFG_REV",
+      "src": 84,
+      "dst": 83
+    },
+    {
+      "type": "CFG_REV",
+      "src": 85,
+      "dst": 84
+    },
+    {
+      "type": "CFG_REV",
+      "src": 86,
+      "dst": 85
+    },
+    {
+      "type": "CFG_REV",
+      "src": 87,
+      "dst": 86
+    },
+    {
+      "type": "CFG_REV",
+      "src": 88,
+      "dst": 87
+    },
+    {
+      "type": "CFG_REV",
+      "src": 89,
+      "dst": 88
+    },
+    {
+      "type": "CFG_REV",
+      "src": 90,
+      "dst": 89
+    },
+    {
+      "type": "CFG_REV",
+      "src": 91,
+      "dst": 90
+    },
+    {
+      "type": "CFG_REV",
+      "src": 92,
+      "dst": 91
+    },
+    {
+      "type": "CFG_REV",
+      "src": 93,
+      "dst": 92
+    },
+    {
+      "type": "CFG_REV",
+      "src": 94,
+      "dst": 93
+    },
+    {
+      "type": "CFG_REV",
+      "src": 95,
+      "dst": 94
+    },
+    {
+      "type": "CFG_REV",
+      "src": 96,
+      "dst": 95
+    },
+    {
+      "type": "CFG_REV",
+      "src": 97,
+      "dst": 96
+    },
+    {
+      "type": "CFG_REV",
+      "src": 98,
+      "dst": 97
+    },
+    {
+      "type": "CFG_REV",
+      "src": 99,
+      "dst": 98
+    },
+    {
+      "type": "CFG_REV",
+      "src": 100,
+      "dst": 99
+    },
+    {
+      "type": "CFG_REV",
+      "src": 101,
+      "dst": 100
+    },
+    {
+      "type": "CFG_REV",
+      "src": 102,
+      "dst": 101
+    },
+    {
+      "type": "CFG_REV",
+      "src": 103,
+      "dst": 102
+    },
+    {
+      "type": "CFG_REV",
+      "src": 104,
+      "dst": 103
+    },
+    {
+      "type": "CFG_REV",
+      "src": 105,
+      "dst": 104
+    },
+    {
+      "type": "CFG_REV",
+      "src": 106,
+      "dst": 105
+    },
+    {
+      "type": "CFG_REV",
+      "src": 107,
+      "dst": 106
+    },
+    {
+      "type": "CFG_REV",
+      "src": 108,
+      "dst": 107
+    },
+    {
+      "type": "CFG_REV",
+      "src": 109,
+      "dst": 108
+    },
+    {
+      "type": "DFG_REV",
+      "src": 13,
+      "dst": 13
+    },
+    {
+      "type": "DFG_REV",
+      "src": 14,
+      "dst": 13
+    },
+    {
+      "type": "DFG_REV",
+      "src": 14,
+      "dst": 13
+    },
+    {
+      "type": "DFG_REV",
+      "src": 14,
+      "dst": 13
+    },
+    {
+      "type": "DFG_REV",
+      "src": 14,
+      "dst": 13
+    },
+    {
+      "type": "DFG_REV",
+      "src": 15,
+      "dst": 13
+    },
+    {
+      "type": "DFG_REV",
+      "src": 29,
+      "dst": 29
+    },
+    {
+      "type": "DFG_REV",
+      "src": 30,
+      "dst": 30
+    },
+    {
+      "type": "DFG_REV",
+      "src": 31,
+      "dst": 29
+    },
+    {
+      "type": "DFG_REV",
+      "src": 31,
+      "dst": 30
+    },
+    {
+      "type": "DFG_REV",
+      "src": 32,
+      "dst": 32
+    },
+    {
+      "type": "DFG_REV",
+      "src": 32,
+      "dst": 29
+    },
+    {
+      "type": "DFG_REV",
+      "src": 33,
+      "dst": 32
+    },
+    {
+      "type": "DFG_REV",
+      "src": 33,
+      "dst": 32
+    },
+    {
+      "type": "DFG_REV",
+      "src": 34,
+      "dst": 30
+    },
+    {
+      "type": "DFG_REV",
+      "src": 34,
+      "dst": 29
+    },
+    {
+      "type": "DFG_REV",
+      "src": 35,
+      "dst": 30
+    },
+    {
+      "type": "DFG_REV",
+      "src": 37,
+      "dst": 29
+    },
+    {
+      "type": "DFG_REV",
+      "src": 39,
+      "dst": 30
+    },
+    {
+      "type": "DFG_REV",
+      "src": 43,
+      "dst": 43
+    },
+    {
+      "type": "DFG_REV",
+      "src": 44,
+      "dst": 43
+    },
+    {
+      "type": "DFG_REV",
+      "src": 45,
+      "dst": 45
+    },
+    {
+      "type": "DFG_REV",
+      "src": 47,
+      "dst": 45
+    },
+    {
+      "type": "DFG_REV",
+      "src": 48,
+      "dst": 45
+    },
+    {
+      "type": "DFG_REV",
+      "src": 52,
+      "dst": 52
+    },
+    {
+      "type": "DFG_REV",
+      "src": 53,
+      "dst": 52
+    },
+    {
+      "type": "DFG_REV",
+      "src": 53,
+      "dst": 52
+    },
+    {
+      "type": "DFG_REV",
+      "src": 54,
+      "dst": 54
+    },
+    {
+      "type": "DFG_REV",
+      "src": 54,
+      "dst": 52
+    },
+    {
+      "type": "DFG_REV",
+      "src": 55,
+      "dst": 54
+    },
+    {
+      "type": "DFG_REV",
+      "src": 55,
+      "dst": 54
+    },
+    {
+      "type": "DFG_REV",
+      "src": 56,
+      "dst": 52
+    },
+    {
+      "type": "DFG_REV",
+      "src": 56,
+      "dst": 54
+    },
+    {
+      "type": "DFG_REV",
+      "src": 58,
+      "dst": 52
+    },
+    {
+      "type": "DFG_REV",
+      "src": 58,
+      "dst": 54
+    },
+    {
+      "type": "DFG_REV",
+      "src": 60,
+      "dst": 52
+    },
+    {
+      "type": "DFG_REV",
+      "src": 62,
+      "dst": 52
+    },
+    {
+      "type": "DFG_REV",
+      "src": 68,
+      "dst": 54
+    },
+    {
+      "type": "DFG_REV",
+      "src": 69,
+      "dst": 54
+    },
+    {
+      "type": "DFG_REV",
+      "src": 93,
+      "dst": 54
+    },
+    {
+      "type": "DFG_REV",
+      "src": 94,
+      "dst": 54
+    },
+    {
+      "type": "DFG_REV",
+      "src": 97,
+      "dst": 13
+    },
+    {
+      "type": "DFG_REV",
+      "src": 101,
+      "dst": 101
+    },
+    {
+      "type": "DFG_REV",
+      "src": 102,
+      "dst": 101
+    },
+    {
+      "type": "DFG_REV",
+      "src": 103,
+      "dst": 103
+    },
+    {
+      "type": "DFG_REV",
+      "src": 106,
+      "dst": 103
+    },
+    {
+      "type": "DFG_REV",
+      "src": 107,
+      "dst": 103
+    },
+    {
+      "type": "CALL_REV",
+      "src": 9,
+      "dst": 9
+    },
+    {
+      "type": "CALL_REV",
+      "src": 10,
+      "dst": 10
+    },
+    {
+      "type": "CALL_REV",
+      "src": 14,
+      "dst": 14
+    },
+    {
+      "type": "CALL_REV",
+      "src": 96,
+      "dst": 19
+    },
+    {
+      "type": "CALL_REV",
+      "src": 31,
+      "dst": 31
+    },
+    {
+      "type": "CALL_REV",
+      "src": 33,
+      "dst": 33
+    },
+    {
+      "type": "CALL_REV",
+      "src": 44,
+      "dst": 44
+    },
+    {
+      "type": "CALL_REV",
+      "src": 47,
+      "dst": 47
+    },
+    {
+      "type": "CALL_REV",
+      "src": 53,
+      "dst": 53
+    },
+    {
+      "type": "CALL_REV",
+      "src": 55,
+      "dst": 55
+    },
+    {
+      "type": "CALL_REV",
+      "src": 79,
+      "dst": 79
+    },
+    {
+      "type": "CALL_REV",
+      "src": 83,
+      "dst": 83
+    },
+    {
+      "type": "CALL_REV",
+      "src": 87,
+      "dst": 87
+    },
+    {
+      "type": "CALL_REV",
+      "src": 98,
+      "dst": 98
+    },
+    {
+      "type": "CALL_REV",
+      "src": 102,
+      "dst": 102
+    },
+    {
+      "type": "CALL_REV",
+      "src": 105,
+      "dst": 105
+    },
+    {
+      "type": "CALL_REV",
+      "src": 106,
+      "dst": 106
+    },
+    {
+      "type": "CALL_REV",
+      "src": 108,
+      "dst": 108
+    },
+    {
+      "type": "ARG2PARAM_REV",
+      "src": 14,
+      "dst": 103
+    },
+    {
+      "type": "ARG2PARAM_REV",
+      "src": 14,
+      "dst": 103
+    },
+    {
+      "type": "ARG2PARAM_REV",
+      "src": 14,
+      "dst": 103
+    },
+    {
+      "type": "ARG2PARAM_REV",
+      "src": 14,
+      "dst": 103
+    },
+    {
+      "type": "ARG2PARAM_REV",
+      "src": 31,
+      "dst": 52
+    },
+    {
+      "type": "ARG2PARAM_REV",
+      "src": 31,
+      "dst": 30
+    },
+    {
+      "type": "ARG2PARAM_REV",
+      "src": 33,
+      "dst": 54
+    },
+    {
+      "type": "ARG2PARAM_REV",
+      "src": 33,
+      "dst": 54
+    },
+    {
+      "type": "ARG2PARAM_REV",
+      "src": 44,
+      "dst": 45
+    },
+    {
+      "type": "ARG2PARAM_REV",
+      "src": 47,
+      "dst": 45
+    },
+    {
+      "type": "ARG2PARAM_REV",
+      "src": 53,
+      "dst": 52
+    },
+    {
+      "type": "ARG2PARAM_REV",
+      "src": 53,
+      "dst": 52
+    },
+    {
+      "type": "ARG2PARAM_REV",
+      "src": 55,
+      "dst": 54
+    },
+    {
+      "type": "ARG2PARAM_REV",
+      "src": 55,
+      "dst": 54
+    },
+    {
+      "type": "ARG2PARAM_REV",
+      "src": 102,
+      "dst": 103
+    },
+    {
+      "type": "ARG2PARAM_REV",
+      "src": 106,
+      "dst": 103
+    },
+    {
+      "type": "RET2CALL_REV",
+      "src": 9,
+      "dst": 9
+    },
+    {
+      "type": "RET2CALL_REV",
+      "src": 19,
+      "dst": 96
+    },
+    {
+      "type": "RET2CALL_REV",
+      "src": 47,
+      "dst": 47
+    },
+    {
+      "type": "RET2CALL_REV",
+      "src": 79,
+      "dst": 79
+    },
+    {
+      "type": "RET2CALL_REV",
+      "src": 87,
+      "dst": 87
+    },
+    {
+      "type": "RET2CALL_REV",
+      "src": 105,
+      "dst": 105
+    },
+    {
+      "type": "RET2CALL_REV",
+      "src": 106,
+      "dst": 106
+    },
+    {
+      "type": "RET2CALL_REV",
+      "src": 108,
+      "dst": 108
+    },
+    {
+      "type": "RET2LHS_REV",
+      "src": 10,
+      "dst": 10
+    },
+    {
+      "type": "RET2LHS_REV",
+      "src": 14,
+      "dst": 14
+    },
+    {
+      "type": "RET2LHS_REV",
+      "src": 31,
+      "dst": 31
+    },
+    {
+      "type": "RET2LHS_REV",
+      "src": 33,
+      "dst": 33
+    },
+    {
+      "type": "RET2LHS_REV",
+      "src": 44,
+      "dst": 44
+    },
+    {
+      "type": "RET2LHS_REV",
+      "src": 53,
+      "dst": 53
+    },
+    {
+      "type": "RET2LHS_REV",
+      "src": 55,
+      "dst": 55
+    },
+    {
+      "type": "RET2LHS_REV",
+      "src": 83,
+      "dst": 83
+    },
+    {
+      "type": "RET2LHS_REV",
+      "src": 98,
+      "dst": 98
+    },
+    {
+      "type": "RET2LHS_REV",
+      "src": 102,
+      "dst": 102
+    }
+  ]
+}

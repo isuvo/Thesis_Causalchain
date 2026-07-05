@@ -1,0 +1,242 @@
+{
+  "hops": 12,
+  "nodes": [
+    {
+      "index": 0,
+      "file": "app/main.c",
+      "line": 12,
+      "label": "DECL",
+      "code": "char buf[256];",
+      "prob": 0.5791850686073303
+    },
+    {
+      "index": 1,
+      "file": "app/main.c",
+      "line": 16,
+      "label": "ASSIGN",
+      "code": "buf[sizeof(buf)-1] = '\\0';",
+      "prob": 0.5078451633453369
+    },
+    {
+      "index": 2,
+      "file": "app/main.c",
+      "line": 17,
+      "label": "ASSIGN",
+      "code": "char* p = wrap_a(buf);",
+      "prob": 0.4993332028388977
+    },
+    {
+      "index": 3,
+      "file": "app/main.c",
+      "line": 18,
+      "label": "ASSIGN",
+      "code": "p = wrap_b(p);",
+      "prob": 0.4677443206310272
+    },
+    {
+      "index": 4,
+      "file": "app/main.c",
+      "line": 19,
+      "label": "ASSIGN",
+      "code": "p = wrap_c(p);",
+      "prob": 0.5448067784309387
+    },
+    {
+      "index": 5,
+      "file": "app/main.c",
+      "line": 21,
+      "label": "CALL:run_system",
+      "code": "run_system(p);",
+      "prob": 0.39891111850738525
+    },
+    {
+      "index": 6,
+      "file": "app/main.c",
+      "line": 9,
+      "label": "STMT",
+      "code": "extern void run_system(char* cmd);",
+      "prob": 0.453730970621109
+    },
+    {
+      "index": 7,
+      "file": "app/main.c",
+      "line": 8,
+      "label": "STMT",
+      "code": "extern char* wrap_c(char* in);",
+      "prob": 0.512237012386322
+    },
+    {
+      "index": 8,
+      "file": "app/main.c",
+      "line": 7,
+      "label": "STMT",
+      "code": "extern char* wrap_b(char* in);",
+      "prob": 0.48973190784454346
+    },
+    {
+      "index": 9,
+      "file": "app/main.c",
+      "line": 6,
+      "label": "STMT",
+      "code": "extern char* wrap_a(char* in);",
+      "prob": 0.4862343370914459
+    },
+    {
+      "index": 10,
+      "file": "app/main.c",
+      "line": 4,
+      "label": "STMT",
+      "code": "#include <string.h>",
+      "prob": 0.49495381116867065
+    },
+    {
+      "index": 11,
+      "file": "app/main.c",
+      "line": 3,
+      "label": "STMT",
+      "code": "#include <stdlib.h>",
+      "prob": 0.4901321530342102
+    },
+    {
+      "index": 12,
+      "file": "app/main.c",
+      "line": 2,
+      "label": "STMT",
+      "code": "#include <stdio.h>",
+      "prob": 0.544119656085968
+    }
+  ],
+  "edges": [
+    {
+      "from_index": 0,
+      "to_index": 1,
+      "families": [
+        "DFG"
+      ],
+      "exact": [
+        "DFG"
+      ]
+    },
+    {
+      "from_index": 1,
+      "to_index": 2,
+      "families": [
+        "CFG"
+      ],
+      "exact": [
+        "CFG"
+      ]
+    },
+    {
+      "from_index": 2,
+      "to_index": 3,
+      "families": [
+        "CFG"
+      ],
+      "exact": [
+        "CFG"
+      ]
+    },
+    {
+      "from_index": 3,
+      "to_index": 4,
+      "families": [
+        "CFG",
+        "DFG"
+      ],
+      "exact": [
+        "CFG",
+        "DFG"
+      ]
+    },
+    {
+      "from_index": 4,
+      "to_index": 5,
+      "families": [
+        "DFG"
+      ],
+      "exact": [
+        "DFG"
+      ]
+    },
+    {
+      "from_index": 5,
+      "to_index": 6,
+      "families": [
+        "CPG"
+      ],
+      "exact": [
+        "CALL"
+      ]
+    },
+    {
+      "from_index": 6,
+      "to_index": 7,
+      "families": [
+        "CFG"
+      ],
+      "exact": [
+        "CFG_REV"
+      ]
+    },
+    {
+      "from_index": 7,
+      "to_index": 8,
+      "families": [
+        "CFG"
+      ],
+      "exact": [
+        "CFG_REV"
+      ]
+    },
+    {
+      "from_index": 8,
+      "to_index": 9,
+      "families": [
+        "CFG"
+      ],
+      "exact": [
+        "CFG_REV"
+      ]
+    },
+    {
+      "from_index": 9,
+      "to_index": 10,
+      "families": [
+        "CFG"
+      ],
+      "exact": [
+        "CFG_REV"
+      ]
+    },
+    {
+      "from_index": 10,
+      "to_index": 11,
+      "families": [
+        "CFG"
+      ],
+      "exact": [
+        "CFG_REV"
+      ]
+    },
+    {
+      "from_index": 11,
+      "to_index": 12,
+      "families": [
+        "CFG"
+      ],
+      "exact": [
+        "CFG_REV"
+      ]
+    }
+  ],
+  "params": {
+    "MAX_HOPS": 12,
+    "BEAM_WIDTH": 24,
+    "TIME_BUDGET_S": 3.5,
+    "SINK_PROB_THR": 0.55,
+    "TOPK_SINKS_PER_GRAPH": 30,
+    "DEMO_ID": 1,
+    "INCLUDE_ROOT_SCORE": true
+  }
+}

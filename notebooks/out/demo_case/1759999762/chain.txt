@@ -1,0 +1,28 @@
+Root → … → Sink (hops=8)
+
+[ROOT] }
+  (STMT, mini/main.c, line 12, p=0.500)
+   └──[CFG] exact=CFG_REV
+[→] return 0;
+  (RET, mini/main.c, line 11, p=0.507)
+   └──[CFG] exact=CFG_REV
+[→] }
+  (STMT, mini/main.c, line 10, p=0.491)
+   └──[CFG] exact=CFG_REV
+[→] do_exec(p);
+  (CALL:do_exec, mini/main.c, line 9, p=0.526)
+   └──[CFG] exact=CFG_REV
+[→] char* p = argv[1];
+  (ROOT, mini/main.c, line 8, p=0.557)
+   └──[CFG] exact=CFG_REV
+[→] if (argc > 1) {
+  (COND, mini/main.c, line 7, p=0.433)
+   └──[CFG] exact=CFG_REV
+[→] int main(int argc, char** argv) {
+  (ROOT, mini/main.c, line 6, p=0.453)
+   └──[CFG] exact=CFG_REV
+[→] extern void do_exec(char* cmd);
+  (STMT, mini/main.c, line 4, p=0.476)
+   └──[CFG] exact=CFG_REV
+[SINK] #include <stdlib.h>
+  (STMT, mini/main.c, line 2, p=0.509)

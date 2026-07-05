@@ -1,0 +1,25 @@
+Root → … → Sink (hops=7)
+
+[ROOT] p = wrap1(p);           // hop 1
+  (ASSIGN, med/main.c, line 12, p=0.508)
+   └──[CFG/DFG] exact=CFG,DFG
+[→] p = wrap2(p);           // hop 2
+  (ASSIGN, med/main.c, line 13, p=0.526)
+   └──[CFG/DFG] exact=CFG,DFG
+[→] do_exec(p);             // hop 3 → then into sink and system
+  (CALL:do_exec, med/main.c, line 14, p=0.417)
+   └──[CPG] exact=CALL
+[→] extern void  do_exec(char* cmd);
+  (STMT, med/main.c, line 7, p=0.428)
+   └──[CFG] exact=CFG_REV
+[→] extern char* wrap2(char* in);
+  (STMT, med/main.c, line 6, p=0.441)
+   └──[CFG] exact=CFG_REV
+[→] extern char* wrap1(char* in);
+  (STMT, med/main.c, line 5, p=0.427)
+   └──[CFG] exact=CFG_REV
+[→] #include <string.h>
+  (STMT, med/main.c, line 3, p=0.460)
+   └──[CFG] exact=CFG_REV
+[SINK] #include <stdlib.h>
+  (STMT, med/main.c, line 2, p=0.476)

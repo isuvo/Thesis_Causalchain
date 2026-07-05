@@ -1,0 +1,16 @@
+Root → … → Sink (by P) (hops=4)
+
+[ROOT] }
+  (STMT, demo2/main.c, line 21, P=0.358)
+   └──[CFG] exact=CFG_REV
+[→] return 0;
+  (RET, demo2/main.c, line 20, P=0.451)
+   └──[CFG] exact=CFG_REV
+[→] }
+  (STMT, demo2/main.c, line 19, P=0.448)
+   └──[CFG] exact=CFG_REV
+[→] do_exec(p);
+  (CALL:do_exec, demo2/main.c, line 18, P=0.442)
+   └──[CFG/DFG] exact=DFG_REV,CFG_REV
+[SINK] p = stage3_flag(p);
+  (ASSIGN, demo2/main.c, line 17, P=0.539)

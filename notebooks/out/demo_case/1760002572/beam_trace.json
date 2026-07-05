@@ -1,0 +1,654 @@
+[
+  [
+    {
+      "depth": 1,
+      "rank": 1,
+      "cum_score": 1.7135953724384307,
+      "step_delta": 1.1625537693500518,
+      "last_node": 5,
+      "edge_family": "CPG",
+      "last_fmt": "#5 p=0.463 CALL:do_exec mini/main.c:9",
+      "path_idxs": [
+        1,
+        5
+      ]
+    },
+    {
+      "depth": 1,
+      "rank": 2,
+      "cum_score": 1.7135953724384307,
+      "step_delta": 1.2510416030883789,
+      "last_node": 1,
+      "edge_family": "CPG",
+      "last_fmt": "#1 p=0.551 STMT mini/main.c:4",
+      "path_idxs": [
+        5,
+        1
+      ]
+    },
+    {
+      "depth": 1,
+      "rank": 3,
+      "cum_score": 1.5414098739624023,
+      "step_delta": 0.9510416030883789,
+      "last_node": 1,
+      "edge_family": "CFG",
+      "last_fmt": "#1 p=0.551 STMT mini/main.c:4",
+      "path_idxs": [
+        2,
+        1
+      ]
+    },
+    {
+      "depth": 1,
+      "rank": 4,
+      "cum_score": 1.5414098739624023,
+      "step_delta": 0.9903682708740235,
+      "last_node": 2,
+      "edge_family": "CFG",
+      "last_fmt": "#2 p=0.590 STMT mini/main.c:6",
+      "path_idxs": [
+        1,
+        2
+      ]
+    },
+    {
+      "depth": 1,
+      "rank": 5,
+      "cum_score": 1.5413006782531737,
+      "step_delta": 0.9509324073791504,
+      "last_node": 3,
+      "edge_family": "CFG",
+      "last_fmt": "#3 p=0.551 COND mini/main.c:7",
+      "path_idxs": [
+        2,
+        3
+      ]
+    },
+    {
+      "depth": 1,
+      "rank": 6,
+      "cum_score": 1.5413006782531737,
+      "step_delta": 0.9903682708740235,
+      "last_node": 2,
+      "edge_family": "CFG",
+      "last_fmt": "#2 p=0.590 STMT mini/main.c:6",
+      "path_idxs": [
+        3,
+        2
+      ]
+    }
+  ],
+  [
+    {
+      "depth": 2,
+      "rank": 1,
+      "cum_score": 2.7039636433124543,
+      "step_delta": 0.9903682708740235,
+      "last_node": 2,
+      "edge_family": "CFG",
+      "last_fmt": "#2 p=0.590 STMT mini/main.c:6",
+      "path_idxs": [
+        5,
+        1,
+        2
+      ]
+    },
+    {
+      "depth": 2,
+      "rank": 2,
+      "cum_score": 2.703963643312454,
+      "step_delta": 1.1625537693500518,
+      "last_node": 5,
+      "edge_family": "CPG",
+      "last_fmt": "#5 p=0.463 CALL:do_exec mini/main.c:9",
+      "path_idxs": [
+        2,
+        1,
+        5
+      ]
+    },
+    {
+      "depth": 2,
+      "rank": 3,
+      "cum_score": 2.5827338457107545,
+      "step_delta": 0.8691384732723236,
+      "last_node": 6,
+      "edge_family": "CFG",
+      "last_fmt": "#6 p=0.469 STMT mini/main.c:10",
+      "path_idxs": [
+        1,
+        5,
+        6
+      ]
+    },
+    {
+      "depth": 2,
+      "rank": 4,
+      "cum_score": 2.582733845710754,
+      "step_delta": 1.2510416030883789,
+      "last_node": 1,
+      "edge_family": "CPG",
+      "last_fmt": "#1 p=0.551 STMT mini/main.c:4",
+      "path_idxs": [
+        6,
+        5,
+        1
+      ]
+    },
+    {
+      "depth": 2,
+      "rank": 5,
+      "cum_score": 2.5674331545829774,
+      "step_delta": 0.8538377821445465,
+      "last_node": 0,
+      "edge_family": "CFG",
+      "last_fmt": "#0 p=0.454 STMT mini/main.c:2",
+      "path_idxs": [
+        5,
+        1,
+        0
+      ]
+    },
+    {
+      "depth": 2,
+      "rank": 6,
+      "cum_score": 2.567433154582977,
+      "step_delta": 1.1625537693500518,
+      "last_node": 5,
+      "edge_family": "CPG",
+      "last_fmt": "#5 p=0.463 CALL:do_exec mini/main.c:9",
+      "path_idxs": [
+        0,
+        1,
+        5
+      ]
+    }
+  ],
+  [
+    {
+      "depth": 3,
+      "rank": 1,
+      "cum_score": 3.6548960506916046,
+      "step_delta": 0.9509324073791504,
+      "last_node": 3,
+      "edge_family": "CFG",
+      "last_fmt": "#3 p=0.551 COND mini/main.c:7",
+      "path_idxs": [
+        5,
+        1,
+        2,
+        3
+      ]
+    },
+    {
+      "depth": 3,
+      "rank": 2,
+      "cum_score": 3.6548960506916046,
+      "step_delta": 1.1625537693500518,
+      "last_node": 5,
+      "edge_family": "CPG",
+      "last_fmt": "#5 p=0.463 CALL:do_exec mini/main.c:9",
+      "path_idxs": [
+        3,
+        2,
+        1,
+        5
+      ]
+    },
+    {
+      "depth": 3,
+      "rank": 3,
+      "cum_score": 3.5731021165847774,
+      "step_delta": 0.8691384732723236,
+      "last_node": 6,
+      "edge_family": "CFG",
+      "last_fmt": "#6 p=0.469 STMT mini/main.c:10",
+      "path_idxs": [
+        2,
+        1,
+        5,
+        6
+      ]
+    },
+    {
+      "depth": 3,
+      "rank": 4,
+      "cum_score": 3.5731021165847774,
+      "step_delta": 0.9903682708740235,
+      "last_node": 2,
+      "edge_family": "CFG",
+      "last_fmt": "#2 p=0.590 STMT mini/main.c:6",
+      "path_idxs": [
+        6,
+        5,
+        1,
+        2
+      ]
+    },
+    {
+      "depth": 3,
+      "rank": 5,
+      "cum_score": 3.5478863120079036,
+      "step_delta": 0.8439226686954499,
+      "last_node": 4,
+      "edge_family": "CFG",
+      "last_fmt": "#4 p=0.444 ASSIGN mini/main.c:8",
+      "path_idxs": [
+        2,
+        1,
+        5,
+        4
+      ]
+    },
+    {
+      "depth": 3,
+      "rank": 6,
+      "cum_score": 3.5478863120079036,
+      "step_delta": 0.9903682708740235,
+      "last_node": 2,
+      "edge_family": "CFG",
+      "last_fmt": "#2 p=0.590 STMT mini/main.c:6",
+      "path_idxs": [
+        4,
+        5,
+        1,
+        2
+      ]
+    }
+  ],
+  [
+    {
+      "depth": 4,
+      "rank": 1,
+      "cum_score": 4.524034523963929,
+      "step_delta": 0.8691384732723236,
+      "last_node": 6,
+      "edge_family": "CFG",
+      "last_fmt": "#6 p=0.469 STMT mini/main.c:10",
+      "path_idxs": [
+        3,
+        2,
+        1,
+        5,
+        6
+      ]
+    },
+    {
+      "depth": 4,
+      "rank": 2,
+      "cum_score": 4.524034523963928,
+      "step_delta": 0.9509324073791504,
+      "last_node": 3,
+      "edge_family": "CFG",
+      "last_fmt": "#3 p=0.551 COND mini/main.c:7",
+      "path_idxs": [
+        6,
+        5,
+        1,
+        2,
+        3
+      ]
+    },
+    {
+      "depth": 4,
+      "rank": 3,
+      "cum_score": 4.498818719387055,
+      "step_delta": 0.8439226686954499,
+      "last_node": 4,
+      "edge_family": "CFG",
+      "last_fmt": "#4 p=0.444 ASSIGN mini/main.c:8",
+      "path_idxs": [
+        5,
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "depth": 4,
+      "rank": 4,
+      "cum_score": 4.498818719387055,
+      "step_delta": 0.8439226686954499,
+      "last_node": 4,
+      "edge_family": "CFG",
+      "last_fmt": "#4 p=0.444 ASSIGN mini/main.c:8",
+      "path_idxs": [
+        3,
+        2,
+        1,
+        5,
+        4
+      ]
+    },
+    {
+      "depth": 4,
+      "rank": 5,
+      "cum_score": 4.498818719387055,
+      "step_delta": 0.9903682708740235,
+      "last_node": 2,
+      "edge_family": "CFG",
+      "last_fmt": "#2 p=0.590 STMT mini/main.c:6",
+      "path_idxs": [
+        1,
+        5,
+        4,
+        3,
+        2
+      ]
+    },
+    {
+      "depth": 4,
+      "rank": 6,
+      "cum_score": 4.498818719387055,
+      "step_delta": 0.9903682708740235,
+      "last_node": 2,
+      "edge_family": "CFG",
+      "last_fmt": "#2 p=0.590 STMT mini/main.c:6",
+      "path_idxs": [
+        3,
+        4,
+        5,
+        1,
+        2
+      ]
+    }
+  ],
+  [
+    {
+      "depth": 5,
+      "rank": 1,
+      "cum_score": 5.385136055946351,
+      "step_delta": 0.8611015319824219,
+      "last_node": 7,
+      "edge_family": "CFG",
+      "last_fmt": "#7 p=0.461 RET mini/main.c:11",
+      "path_idxs": [
+        3,
+        2,
+        1,
+        5,
+        6,
+        7
+      ]
+    },
+    {
+      "depth": 5,
+      "rank": 2,
+      "cum_score": 5.385136055946351,
+      "step_delta": 0.9509324073791504,
+      "last_node": 3,
+      "edge_family": "CFG",
+      "last_fmt": "#3 p=0.551 COND mini/main.c:7",
+      "path_idxs": [
+        7,
+        6,
+        5,
+        1,
+        2,
+        3
+      ]
+    },
+    {
+      "depth": 5,
+      "rank": 3,
+      "cum_score": 5.367957192659378,
+      "step_delta": 0.8439226686954499,
+      "last_node": 4,
+      "edge_family": "CFG",
+      "last_fmt": "#4 p=0.444 ASSIGN mini/main.c:8",
+      "path_idxs": [
+        6,
+        5,
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "depth": 5,
+      "rank": 4,
+      "cum_score": 5.367957192659378,
+      "step_delta": 0.8691384732723236,
+      "last_node": 6,
+      "edge_family": "CFG",
+      "last_fmt": "#6 p=0.469 STMT mini/main.c:10",
+      "path_idxs": [
+        4,
+        3,
+        2,
+        1,
+        5,
+        6
+      ]
+    },
+    {
+      "depth": 5,
+      "rank": 5,
+      "cum_score": 5.352656501531601,
+      "step_delta": 0.8538377821445465,
+      "last_node": 0,
+      "edge_family": "CFG",
+      "last_fmt": "#0 p=0.454 STMT mini/main.c:2",
+      "path_idxs": [
+        2,
+        3,
+        4,
+        5,
+        1,
+        0
+      ]
+    },
+    {
+      "depth": 5,
+      "rank": 6,
+      "cum_score": 5.352656501531601,
+      "step_delta": 0.9903682708740235,
+      "last_node": 2,
+      "edge_family": "CFG",
+      "last_fmt": "#2 p=0.590 STMT mini/main.c:6",
+      "path_idxs": [
+        0,
+        1,
+        5,
+        4,
+        3,
+        2
+      ]
+    }
+  ],
+  [
+    {
+      "depth": 6,
+      "rank": 1,
+      "cum_score": 6.229058724641801,
+      "step_delta": 0.8439226686954499,
+      "last_node": 4,
+      "edge_family": "CFG",
+      "last_fmt": "#4 p=0.444 ASSIGN mini/main.c:8",
+      "path_idxs": [
+        7,
+        6,
+        5,
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "depth": 6,
+      "rank": 2,
+      "cum_score": 6.2290587246418,
+      "step_delta": 0.8611015319824219,
+      "last_node": 7,
+      "edge_family": "CFG",
+      "last_fmt": "#7 p=0.461 RET mini/main.c:11",
+      "path_idxs": [
+        4,
+        3,
+        2,
+        1,
+        5,
+        6,
+        7
+      ]
+    },
+    {
+      "depth": 6,
+      "rank": 3,
+      "cum_score": 6.159628760814668,
+      "step_delta": 0.7744927048683167,
+      "last_node": 8,
+      "edge_family": "CFG",
+      "last_fmt": "#8 p=0.374 STMT mini/main.c:12",
+      "path_idxs": [
+        3,
+        2,
+        1,
+        5,
+        6,
+        7,
+        8
+      ]
+    },
+    {
+      "depth": 6,
+      "rank": 4,
+      "cum_score": 5.9290587246418,
+      "step_delta": 0.8611015319824219,
+      "last_node": 7,
+      "edge_family": "CFG",
+      "last_fmt": "#7 p=0.461 RET mini/main.c:11",
+      "path_idxs": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ]
+    },
+    {
+      "depth": 6,
+      "rank": 5,
+      "cum_score": 5.921794974803925,
+      "step_delta": 0.8538377821445465,
+      "last_node": 0,
+      "edge_family": "CFG",
+      "last_fmt": "#0 p=0.454 STMT mini/main.c:2",
+      "path_idxs": [
+        6,
+        5,
+        4,
+        3,
+        2,
+        1,
+        0
+      ]
+    },
+    {
+      "depth": 6,
+      "rank": 6,
+      "cum_score": 5.921794974803925,
+      "step_delta": 0.8691384732723236,
+      "last_node": 6,
+      "edge_family": "CFG",
+      "last_fmt": "#6 p=0.469 STMT mini/main.c:10",
+      "path_idxs": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6
+      ]
+    }
+  ],
+  [
+    {
+      "depth": 7,
+      "rank": 1,
+      "cum_score": 7.003551429510117,
+      "step_delta": 0.7744927048683167,
+      "last_node": 8,
+      "edge_family": "CFG",
+      "last_fmt": "#8 p=0.374 STMT mini/main.c:12",
+      "path_idxs": [
+        4,
+        3,
+        2,
+        1,
+        5,
+        6,
+        7,
+        8
+      ]
+    },
+    {
+      "depth": 7,
+      "rank": 2,
+      "cum_score": 6.782896506786347,
+      "step_delta": 0.8611015319824219,
+      "last_node": 7,
+      "edge_family": "CFG",
+      "last_fmt": "#7 p=0.461 RET mini/main.c:11",
+      "path_idxs": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ]
+    },
+    {
+      "depth": 7,
+      "rank": 3,
+      "cum_score": 6.703551429510117,
+      "step_delta": 0.7744927048683167,
+      "last_node": 8,
+      "edge_family": "CFG",
+      "last_fmt": "#8 p=0.374 STMT mini/main.c:12",
+      "path_idxs": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8
+      ]
+    }
+  ],
+  [
+    {
+      "depth": 8,
+      "rank": 1,
+      "cum_score": 7.557389211654664,
+      "step_delta": 0.7744927048683167,
+      "last_node": 8,
+      "edge_family": "CFG",
+      "last_fmt": "#8 p=0.374 STMT mini/main.c:12",
+      "path_idxs": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8
+      ]
+    }
+  ],
+  []
+]

@@ -1,0 +1,35 @@
+{
+  "checkpoint": "out\\cagat_acc_interproc_train\\best_model.pt",
+  "device": "cuda",
+  "force_bfs": true,
+  "disable_chain_attn": false,
+  "max_nodes": 5000,
+  "max_edges": 15000,
+  "threshold": 0.5,
+  "reports": [
+    {
+      "split": "valid",
+      "graphs_total": 2905,
+      "details_jsonl": "out\\cagat_acc_interproc_train\\metrics_valid.jsonl",
+      "threshold": 0.5,
+      "global_avg": {
+        "note": "no_graphs_with_labels"
+      },
+      "inter_avg": {
+        "note": "no_graphs_with_labels"
+      }
+    },
+    {
+      "split": "test",
+      "graphs_total": 2915,
+      "details_jsonl": "out\\cagat_acc_interproc_train\\metrics_test.jsonl",
+      "threshold": 0.5,
+      "global_avg": {
+        "note": "no_graphs_with_labels"
+      },
+      "inter_avg": {
+        "note": "no_graphs_with_labels"
+      }
+    }
+  ]
+}

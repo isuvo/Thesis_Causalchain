@@ -1,0 +1,1704 @@
+{
+  "meta": {
+    "tool": "joern",
+    "source": "C:/Users/USER/Desktop/Thesis Research/Implementation/Thesis-causal-vul/work/src/test/shard_5563",
+    "n_nodes": 141,
+    "n_edges": {
+      "AST": 32,
+      "CFG": 0,
+      "DFG": 0
+    },
+    "dfg_status": "rd_intra_proc",
+    "cpg_augmented": true,
+    "added_edges": {
+      "CALL": 0,
+      "ARG2PARAM": 0,
+      "RET2CALL": 0,
+      "RET2LHS": 0
+    }
+  },
+  "nodes": [
+    {
+      "dynamicTypeHintFullName": [],
+      "_id": 25769803776,
+      "code": "<empty>",
+      "typeFullName": "ANY",
+      "lineNumber": 1,
+      "order": 1,
+      "_label": "BLOCK",
+      "columnNumber": 1,
+      "possibleTypes": [],
+      "argumentIndex": -1
+    },
+    {
+      "dynamicTypeHintFullName": [],
+      "_id": 25769803777,
+      "code": "<empty>",
+      "typeFullName": "ANY",
+      "lineNumber": 1,
+      "order": 1,
+      "_label": "BLOCK",
+      "columnNumber": 1,
+      "possibleTypes": [],
+      "argumentIndex": -1
+    },
+    {
+      "dynamicTypeHintFullName": [],
+      "_id": 25769803778,
+      "code": "<empty>",
+      "typeFullName": "ANY",
+      "lineNumber": 1,
+      "order": 1,
+      "_label": "BLOCK",
+      "columnNumber": 1,
+      "possibleTypes": [],
+      "argumentIndex": -1
+    },
+    {
+      "dynamicTypeHintFullName": [],
+      "_id": 25769803779,
+      "code": "<empty>",
+      "typeFullName": "ANY",
+      "lineNumber": 1,
+      "order": 1,
+      "_label": "BLOCK",
+      "columnNumber": 1,
+      "possibleTypes": [],
+      "argumentIndex": -1
+    },
+    {
+      "dynamicTypeHintFullName": [],
+      "_id": 25769803780,
+      "code": "<empty>",
+      "typeFullName": "ANY",
+      "lineNumber": 1,
+      "order": 1,
+      "_label": "BLOCK",
+      "columnNumber": 1,
+      "possibleTypes": [],
+      "argumentIndex": -1
+    },
+    {
+      "dynamicTypeHintFullName": [],
+      "_id": 25769803781,
+      "code": "<empty>",
+      "typeFullName": "ANY",
+      "lineNumber": 1,
+      "order": 1,
+      "_label": "BLOCK",
+      "columnNumber": 1,
+      "possibleTypes": [],
+      "argumentIndex": -1
+    },
+    {
+      "dynamicTypeHintFullName": [],
+      "_id": 25769803782,
+      "code": "<empty>",
+      "typeFullName": "ANY",
+      "lineNumber": 1,
+      "order": 1,
+      "_label": "BLOCK",
+      "columnNumber": 1,
+      "possibleTypes": [],
+      "argumentIndex": -1
+    },
+    {
+      "dynamicTypeHintFullName": [],
+      "_id": 25769803783,
+      "code": "<empty>",
+      "typeFullName": "ANY",
+      "lineNumber": 1,
+      "order": 1,
+      "_label": "BLOCK",
+      "columnNumber": 1,
+      "possibleTypes": [],
+      "argumentIndex": -1
+    },
+    {
+      "dynamicTypeHintFullName": [],
+      "_id": 25769803784,
+      "code": "<empty>",
+      "typeFullName": "ANY",
+      "lineNumber": 1,
+      "order": 1,
+      "_label": "BLOCK",
+      "columnNumber": 1,
+      "possibleTypes": [],
+      "argumentIndex": -1
+    },
+    {
+      "dynamicTypeHintFullName": [],
+      "_id": 25769803785,
+      "code": "<empty>",
+      "typeFullName": "ANY",
+      "lineNumber": 1,
+      "order": 1,
+      "_label": "BLOCK",
+      "columnNumber": 1,
+      "possibleTypes": [],
+      "argumentIndex": -1
+    },
+    {
+      "dynamicTypeHintFullName": [],
+      "_id": 25769803786,
+      "code": "<empty>",
+      "typeFullName": "ANY",
+      "order": 1,
+      "_label": "BLOCK",
+      "possibleTypes": [],
+      "argumentIndex": -1
+    },
+    {
+      "name": "stddef.h",
+      "_id": 51539607552,
+      "version": "include",
+      "dependencyGroupId": "stddef.h",
+      "_label": "DEPENDENCY"
+    },
+    {
+      "name": "stdint.h",
+      "_id": 51539607553,
+      "version": "include",
+      "dependencyGroupId": "stdint.h",
+      "_label": "DEPENDENCY"
+    },
+    {
+      "name": "stdbool.h",
+      "_id": 51539607554,
+      "version": "include",
+      "dependencyGroupId": "stdbool.h",
+      "_label": "DEPENDENCY"
+    },
+    {
+      "name": "stddef.h",
+      "_id": 51539607555,
+      "version": "include",
+      "dependencyGroupId": "stddef.h",
+      "_label": "DEPENDENCY"
+    },
+    {
+      "name": "stdint.h",
+      "_id": 51539607556,
+      "version": "include",
+      "dependencyGroupId": "stdint.h",
+      "_label": "DEPENDENCY"
+    },
+    {
+      "name": "stdbool.h",
+      "_id": 51539607557,
+      "version": "include",
+      "dependencyGroupId": "stdbool.h",
+      "_label": "DEPENDENCY"
+    },
+    {
+      "name": "stddef.h",
+      "_id": 51539607558,
+      "version": "include",
+      "dependencyGroupId": "stddef.h",
+      "_label": "DEPENDENCY"
+    },
+    {
+      "name": "stdint.h",
+      "_id": 51539607559,
+      "version": "include",
+      "dependencyGroupId": "stdint.h",
+      "_label": "DEPENDENCY"
+    },
+    {
+      "name": "stdbool.h",
+      "_id": 51539607560,
+      "version": "include",
+      "dependencyGroupId": "stdbool.h",
+      "_label": "DEPENDENCY"
+    },
+    {
+      "name": "stddef.h",
+      "_id": 51539607561,
+      "version": "include",
+      "dependencyGroupId": "stddef.h",
+      "_label": "DEPENDENCY"
+    },
+    {
+      "name": "stdint.h",
+      "_id": 51539607562,
+      "version": "include",
+      "dependencyGroupId": "stdint.h",
+      "_label": "DEPENDENCY"
+    },
+    {
+      "name": "stdbool.h",
+      "_id": 51539607563,
+      "version": "include",
+      "dependencyGroupId": "stdbool.h",
+      "_label": "DEPENDENCY"
+    },
+    {
+      "name": "stddef.h",
+      "_id": 51539607564,
+      "version": "include",
+      "dependencyGroupId": "stddef.h",
+      "_label": "DEPENDENCY"
+    },
+    {
+      "name": "stdint.h",
+      "_id": 51539607565,
+      "version": "include",
+      "dependencyGroupId": "stdint.h",
+      "_label": "DEPENDENCY"
+    },
+    {
+      "name": "stdbool.h",
+      "_id": 51539607566,
+      "version": "include",
+      "dependencyGroupId": "stdbool.h",
+      "_label": "DEPENDENCY"
+    },
+    {
+      "name": "stddef.h",
+      "_id": 51539607567,
+      "version": "include",
+      "dependencyGroupId": "stddef.h",
+      "_label": "DEPENDENCY"
+    },
+    {
+      "name": "stdint.h",
+      "_id": 51539607568,
+      "version": "include",
+      "dependencyGroupId": "stdint.h",
+      "_label": "DEPENDENCY"
+    },
+    {
+      "name": "stdbool.h",
+      "_id": 51539607569,
+      "version": "include",
+      "dependencyGroupId": "stdbool.h",
+      "_label": "DEPENDENCY"
+    },
+    {
+      "name": "stddef.h",
+      "_id": 51539607570,
+      "version": "include",
+      "dependencyGroupId": "stddef.h",
+      "_label": "DEPENDENCY"
+    },
+    {
+      "name": "stdint.h",
+      "_id": 51539607571,
+      "version": "include",
+      "dependencyGroupId": "stdint.h",
+      "_label": "DEPENDENCY"
+    },
+    {
+      "name": "stdbool.h",
+      "_id": 51539607572,
+      "version": "include",
+      "dependencyGroupId": "stdbool.h",
+      "_label": "DEPENDENCY"
+    },
+    {
+      "name": "stddef.h",
+      "_id": 51539607573,
+      "version": "include",
+      "dependencyGroupId": "stddef.h",
+      "_label": "DEPENDENCY"
+    },
+    {
+      "name": "stdint.h",
+      "_id": 51539607574,
+      "version": "include",
+      "dependencyGroupId": "stdint.h",
+      "_label": "DEPENDENCY"
+    },
+    {
+      "name": "stdbool.h",
+      "_id": 51539607575,
+      "version": "include",
+      "dependencyGroupId": "stdbool.h",
+      "_label": "DEPENDENCY"
+    },
+    {
+      "name": "stddef.h",
+      "_id": 51539607576,
+      "version": "include",
+      "dependencyGroupId": "stddef.h",
+      "_label": "DEPENDENCY"
+    },
+    {
+      "name": "stdint.h",
+      "_id": 51539607577,
+      "version": "include",
+      "dependencyGroupId": "stdint.h",
+      "_label": "DEPENDENCY"
+    },
+    {
+      "name": "stdbool.h",
+      "_id": 51539607578,
+      "version": "include",
+      "dependencyGroupId": "stdbool.h",
+      "_label": "DEPENDENCY"
+    },
+    {
+      "name": "stddef.h",
+      "_id": 51539607579,
+      "version": "include",
+      "dependencyGroupId": "stddef.h",
+      "_label": "DEPENDENCY"
+    },
+    {
+      "name": "stdint.h",
+      "_id": 51539607580,
+      "version": "include",
+      "dependencyGroupId": "stdint.h",
+      "_label": "DEPENDENCY"
+    },
+    {
+      "name": "stdbool.h",
+      "_id": 51539607581,
+      "version": "include",
+      "dependencyGroupId": "stdbool.h",
+      "_label": "DEPENDENCY"
+    },
+    {
+      "name": "5563e6ddc3f7cb93d98b491194ceebdee7288d36_11.c",
+      "_id": 60129542144,
+      "code": "<empty>",
+      "order": 0,
+      "content": "<empty>",
+      "_label": "FILE"
+    },
+    {
+      "name": "5563e6ddc3f7cb93d98b491194ceebdee7288d36_15.c",
+      "_id": 60129542145,
+      "code": "<empty>",
+      "order": 0,
+      "content": "<empty>",
+      "_label": "FILE"
+    },
+    {
+      "name": "5563e6ddc3f7cb93d98b491194ceebdee7288d36_24.c",
+      "_id": 60129542146,
+      "code": "<empty>",
+      "order": 0,
+      "content": "<empty>",
+      "_label": "FILE"
+    },
+    {
+      "name": "5563e6ddc3f7cb93d98b491194ceebdee7288d36_32.c",
+      "_id": 60129542147,
+      "code": "<empty>",
+      "order": 0,
+      "content": "<empty>",
+      "_label": "FILE"
+    },
+    {
+      "name": "5563e6ddc3f7cb93d98b491194ceebdee7288d36_51.c",
+      "_id": 60129542148,
+      "code": "<empty>",
+      "order": 0,
+      "content": "<empty>",
+      "_label": "FILE"
+    },
+    {
+      "name": "5563e6ddc3f7cb93d98b491194ceebdee7288d36_58.c",
+      "_id": 60129542149,
+      "code": "<empty>",
+      "order": 0,
+      "content": "<empty>",
+      "_label": "FILE"
+    },
+    {
+      "name": "5563e6ddc3f7cb93d98b491194ceebdee7288d36_69.c",
+      "_id": 60129542150,
+      "code": "<empty>",
+      "order": 0,
+      "content": "<empty>",
+      "_label": "FILE"
+    },
+    {
+      "name": "5563e6ddc3f7cb93d98b491194ceebdee7288d36_73.c",
+      "_id": 60129542151,
+      "code": "<empty>",
+      "order": 0,
+      "content": "<empty>",
+      "_label": "FILE"
+    },
+    {
+      "name": "5563e6ddc3f7cb93d98b491194ceebdee7288d36_86.c",
+      "_id": 60129542152,
+      "code": "<empty>",
+      "order": 0,
+      "content": "<empty>",
+      "_label": "FILE"
+    },
+    {
+      "name": "5563e6ddc3f7cb93d98b491194ceebdee7288d36_90.c",
+      "_id": 60129542153,
+      "code": "<empty>",
+      "order": 0,
+      "content": "<empty>",
+      "_label": "FILE"
+    },
+    {
+      "name": "<includes>",
+      "_id": 60129542154,
+      "code": "<empty>",
+      "order": 1,
+      "content": "<empty>",
+      "_label": "FILE"
+    },
+    {
+      "name": "<unknown>",
+      "_id": 60129542155,
+      "code": "<empty>",
+      "order": 0,
+      "content": "<empty>",
+      "_label": "FILE"
+    },
+    {
+      "_id": 73014444032,
+      "importedAs": "stddef.h",
+      "code": "#include <stddef.h>",
+      "lineNumber": 3,
+      "order": 1,
+      "importedEntity": "stddef.h",
+      "_label": "IMPORT",
+      "columnNumber": 1
+    },
+    {
+      "_id": 73014444033,
+      "importedAs": "stdint.h",
+      "code": "#include <stdint.h>",
+      "lineNumber": 4,
+      "order": 2,
+      "importedEntity": "stdint.h",
+      "_label": "IMPORT",
+      "columnNumber": 1
+    },
+    {
+      "_id": 73014444034,
+      "importedAs": "stdbool.h",
+      "code": "#include <stdbool.h>",
+      "lineNumber": 5,
+      "order": 3,
+      "importedEntity": "stdbool.h",
+      "_label": "IMPORT",
+      "columnNumber": 1
+    },
+    {
+      "_id": 73014444035,
+      "importedAs": "stddef.h",
+      "code": "#include <stddef.h>",
+      "lineNumber": 3,
+      "order": 1,
+      "importedEntity": "stddef.h",
+      "_label": "IMPORT",
+      "columnNumber": 1
+    },
+    {
+      "_id": 73014444036,
+      "importedAs": "stdint.h",
+      "code": "#include <stdint.h>",
+      "lineNumber": 4,
+      "order": 2,
+      "importedEntity": "stdint.h",
+      "_label": "IMPORT",
+      "columnNumber": 1
+    },
+    {
+      "_id": 73014444037,
+      "importedAs": "stdbool.h",
+      "code": "#include <stdbool.h>",
+      "lineNumber": 5,
+      "order": 3,
+      "importedEntity": "stdbool.h",
+      "_label": "IMPORT",
+      "columnNumber": 1
+    },
+    {
+      "_id": 73014444038,
+      "importedAs": "stddef.h",
+      "code": "#include <stddef.h>",
+      "lineNumber": 3,
+      "order": 1,
+      "importedEntity": "stddef.h",
+      "_label": "IMPORT",
+      "columnNumber": 1
+    },
+    {
+      "_id": 73014444039,
+      "importedAs": "stdint.h",
+      "code": "#include <stdint.h>",
+      "lineNumber": 4,
+      "order": 2,
+      "importedEntity": "stdint.h",
+      "_label": "IMPORT",
+      "columnNumber": 1
+    },
+    {
+      "_id": 73014444040,
+      "importedAs": "stdbool.h",
+      "code": "#include <stdbool.h>",
+      "lineNumber": 5,
+      "order": 3,
+      "importedEntity": "stdbool.h",
+      "_label": "IMPORT",
+      "columnNumber": 1
+    },
+    {
+      "_id": 73014444041,
+      "importedAs": "stddef.h",
+      "code": "#include <stddef.h>",
+      "lineNumber": 3,
+      "order": 1,
+      "importedEntity": "stddef.h",
+      "_label": "IMPORT",
+      "columnNumber": 1
+    },
+    {
+      "_id": 73014444042,
+      "importedAs": "stdint.h",
+      "code": "#include <stdint.h>",
+      "lineNumber": 4,
+      "order": 2,
+      "importedEntity": "stdint.h",
+      "_label": "IMPORT",
+      "columnNumber": 1
+    },
+    {
+      "_id": 73014444043,
+      "importedAs": "stdbool.h",
+      "code": "#include <stdbool.h>",
+      "lineNumber": 5,
+      "order": 3,
+      "importedEntity": "stdbool.h",
+      "_label": "IMPORT",
+      "columnNumber": 1
+    },
+    {
+      "_id": 73014444044,
+      "importedAs": "stddef.h",
+      "code": "#include <stddef.h>",
+      "lineNumber": 3,
+      "order": 1,
+      "importedEntity": "stddef.h",
+      "_label": "IMPORT",
+      "columnNumber": 1
+    },
+    {
+      "_id": 73014444045,
+      "importedAs": "stdint.h",
+      "code": "#include <stdint.h>",
+      "lineNumber": 4,
+      "order": 2,
+      "importedEntity": "stdint.h",
+      "_label": "IMPORT",
+      "columnNumber": 1
+    },
+    {
+      "_id": 73014444046,
+      "importedAs": "stdbool.h",
+      "code": "#include <stdbool.h>",
+      "lineNumber": 5,
+      "order": 3,
+      "importedEntity": "stdbool.h",
+      "_label": "IMPORT",
+      "columnNumber": 1
+    },
+    {
+      "_id": 73014444047,
+      "importedAs": "stddef.h",
+      "code": "#include <stddef.h>",
+      "lineNumber": 3,
+      "order": 1,
+      "importedEntity": "stddef.h",
+      "_label": "IMPORT",
+      "columnNumber": 1
+    },
+    {
+      "_id": 73014444048,
+      "importedAs": "stdint.h",
+      "code": "#include <stdint.h>",
+      "lineNumber": 4,
+      "order": 2,
+      "importedEntity": "stdint.h",
+      "_label": "IMPORT",
+      "columnNumber": 1
+    },
+    {
+      "_id": 73014444049,
+      "importedAs": "stdbool.h",
+      "code": "#include <stdbool.h>",
+      "lineNumber": 5,
+      "order": 3,
+      "importedEntity": "stdbool.h",
+      "_label": "IMPORT",
+      "columnNumber": 1
+    },
+    {
+      "_id": 73014444050,
+      "importedAs": "stddef.h",
+      "code": "#include <stddef.h>",
+      "lineNumber": 3,
+      "order": 1,
+      "importedEntity": "stddef.h",
+      "_label": "IMPORT",
+      "columnNumber": 1
+    },
+    {
+      "_id": 73014444051,
+      "importedAs": "stdint.h",
+      "code": "#include <stdint.h>",
+      "lineNumber": 4,
+      "order": 2,
+      "importedEntity": "stdint.h",
+      "_label": "IMPORT",
+      "columnNumber": 1
+    },
+    {
+      "_id": 73014444052,
+      "importedAs": "stdbool.h",
+      "code": "#include <stdbool.h>",
+      "lineNumber": 5,
+      "order": 3,
+      "importedEntity": "stdbool.h",
+      "_label": "IMPORT",
+      "columnNumber": 1
+    },
+    {
+      "_id": 73014444053,
+      "importedAs": "stddef.h",
+      "code": "#include <stddef.h>",
+      "lineNumber": 3,
+      "order": 1,
+      "importedEntity": "stddef.h",
+      "_label": "IMPORT",
+      "columnNumber": 1
+    },
+    {
+      "_id": 73014444054,
+      "importedAs": "stdint.h",
+      "code": "#include <stdint.h>",
+      "lineNumber": 4,
+      "order": 2,
+      "importedEntity": "stdint.h",
+      "_label": "IMPORT",
+      "columnNumber": 1
+    },
+    {
+      "_id": 73014444055,
+      "importedAs": "stdbool.h",
+      "code": "#include <stdbool.h>",
+      "lineNumber": 5,
+      "order": 3,
+      "importedEntity": "stdbool.h",
+      "_label": "IMPORT",
+      "columnNumber": 1
+    },
+    {
+      "_id": 73014444056,
+      "importedAs": "stddef.h",
+      "code": "#include <stddef.h>",
+      "lineNumber": 3,
+      "order": 1,
+      "importedEntity": "stddef.h",
+      "_label": "IMPORT",
+      "columnNumber": 1
+    },
+    {
+      "_id": 73014444057,
+      "importedAs": "stdint.h",
+      "code": "#include <stdint.h>",
+      "lineNumber": 4,
+      "order": 2,
+      "importedEntity": "stdint.h",
+      "_label": "IMPORT",
+      "columnNumber": 1
+    },
+    {
+      "_id": 73014444058,
+      "importedAs": "stdbool.h",
+      "code": "#include <stdbool.h>",
+      "lineNumber": 5,
+      "order": 3,
+      "importedEntity": "stdbool.h",
+      "_label": "IMPORT",
+      "columnNumber": 1
+    },
+    {
+      "_id": 73014444059,
+      "importedAs": "stddef.h",
+      "code": "#include <stddef.h>",
+      "lineNumber": 3,
+      "order": 1,
+      "importedEntity": "stddef.h",
+      "_label": "IMPORT",
+      "columnNumber": 1
+    },
+    {
+      "_id": 73014444060,
+      "importedAs": "stdint.h",
+      "code": "#include <stdint.h>",
+      "lineNumber": 4,
+      "order": 2,
+      "importedEntity": "stdint.h",
+      "_label": "IMPORT",
+      "columnNumber": 1
+    },
+    {
+      "_id": 73014444061,
+      "importedAs": "stdbool.h",
+      "code": "#include <stdbool.h>",
+      "lineNumber": 5,
+      "order": 3,
+      "importedEntity": "stdbool.h",
+      "_label": "IMPORT",
+      "columnNumber": 1
+    },
+    {
+      "_id": 103079215104,
+      "version": "0.1",
+      "language": "NEWC",
+      "_label": "META_DATA",
+      "overlays": [
+        "base",
+        "controlflow",
+        "typerel",
+        "callgraph",
+        "dataflowOss"
+      ],
+      "root": "C:\\Users\\USER\\Desktop\\Thesis Research\\Implementation\\Thesis-causal-vul\\work\\src\\test\\shard_5563"
+    },
+    {
+      "name": "<global>",
+      "astParentFullName": "5563e6ddc3f7cb93d98b491194ceebdee7288d36_11.c:<global>",
+      "_id": 107374182400,
+      "signature": "",
+      "astParentType": "TYPE_DECL",
+      "lineNumberEnd": 51,
+      "_label": "METHOD",
+      "columnNumberEnd": 1,
+      "fullName": "5563e6ddc3f7cb93d98b491194ceebdee7288d36_11.c:<global>",
+      "genericSignature": "<empty>",
+      "code": "<global>",
+      "isExternal": false,
+      "lineNumber": 1,
+      "columnNumber": 1,
+      "order": 1,
+      "filename": "5563e6ddc3f7cb93d98b491194ceebdee7288d36_11.c"
+    },
+    {
+      "name": "<global>",
+      "astParentFullName": "5563e6ddc3f7cb93d98b491194ceebdee7288d36_15.c:<global>",
+      "_id": 107374182401,
+      "signature": "",
+      "astParentType": "TYPE_DECL",
+      "lineNumberEnd": 30,
+      "_label": "METHOD",
+      "columnNumberEnd": 1,
+      "fullName": "5563e6ddc3f7cb93d98b491194ceebdee7288d36_15.c:<global>",
+      "genericSignature": "<empty>",
+      "code": "<global>",
+      "isExternal": false,
+      "lineNumber": 1,
+      "columnNumber": 1,
+      "order": 1,
+      "filename": "5563e6ddc3f7cb93d98b491194ceebdee7288d36_15.c"
+    },
+    {
+      "name": "<global>",
+      "astParentFullName": "5563e6ddc3f7cb93d98b491194ceebdee7288d36_24.c:<global>",
+      "_id": 107374182402,
+      "signature": "",
+      "astParentType": "TYPE_DECL",
+      "lineNumberEnd": 75,
+      "_label": "METHOD",
+      "columnNumberEnd": 1,
+      "fullName": "5563e6ddc3f7cb93d98b491194ceebdee7288d36_24.c:<global>",
+      "genericSignature": "<empty>",
+      "code": "<global>",
+      "isExternal": false,
+      "lineNumber": 1,
+      "columnNumber": 1,
+      "order": 1,
+      "filename": "5563e6ddc3f7cb93d98b491194ceebdee7288d36_24.c"
+    },
+    {
+      "name": "<global>",
+      "astParentFullName": "5563e6ddc3f7cb93d98b491194ceebdee7288d36_32.c:<global>",
+      "_id": 107374182403,
+      "signature": "",
+      "astParentType": "TYPE_DECL",
+      "lineNumberEnd": 12,
+      "_label": "METHOD",
+      "columnNumberEnd": 61,
+      "fullName": "5563e6ddc3f7cb93d98b491194ceebdee7288d36_32.c:<global>",
+      "genericSignature": "<empty>",
+      "code": "<global>",
+      "isExternal": false,
+      "lineNumber": 1,
+      "columnNumber": 1,
+      "order": 1,
+      "filename": "5563e6ddc3f7cb93d98b491194ceebdee7288d36_32.c"
+    },
+    {
+      "name": "<global>",
+      "astParentFullName": "5563e6ddc3f7cb93d98b491194ceebdee7288d36_51.c:<global>",
+      "_id": 107374182404,
+      "signature": "",
+      "astParentType": "TYPE_DECL",
+      "lineNumberEnd": 23,
+      "_label": "METHOD",
+      "columnNumberEnd": 1,
+      "fullName": "5563e6ddc3f7cb93d98b491194ceebdee7288d36_51.c:<global>",
+      "genericSignature": "<empty>",
+      "code": "<global>",
+      "isExternal": false,
+      "lineNumber": 1,
+      "columnNumber": 1,
+      "order": 1,
+      "filename": "5563e6ddc3f7cb93d98b491194ceebdee7288d36_51.c"
+    },
+    {
+      "name": "<global>",
+      "astParentFullName": "5563e6ddc3f7cb93d98b491194ceebdee7288d36_58.c:<global>",
+      "_id": 107374182405,
+      "signature": "",
+      "astParentType": "TYPE_DECL",
+      "lineNumberEnd": 57,
+      "_label": "METHOD",
+      "columnNumberEnd": 1,
+      "fullName": "5563e6ddc3f7cb93d98b491194ceebdee7288d36_58.c:<global>",
+      "genericSignature": "<empty>",
+      "code": "<global>",
+      "isExternal": false,
+      "lineNumber": 1,
+      "columnNumber": 1,
+      "order": 1,
+      "filename": "5563e6ddc3f7cb93d98b491194ceebdee7288d36_58.c"
+    },
+    {
+      "name": "<global>",
+      "astParentFullName": "5563e6ddc3f7cb93d98b491194ceebdee7288d36_69.c:<global>",
+      "_id": 107374182406,
+      "signature": "",
+      "astParentType": "TYPE_DECL",
+      "lineNumberEnd": 47,
+      "_label": "METHOD",
+      "columnNumberEnd": 1,
+      "fullName": "5563e6ddc3f7cb93d98b491194ceebdee7288d36_69.c:<global>",
+      "genericSignature": "<empty>",
+      "code": "<global>",
+      "isExternal": false,
+      "lineNumber": 1,
+      "columnNumber": 1,
+      "order": 1,
+      "filename": "5563e6ddc3f7cb93d98b491194ceebdee7288d36_69.c"
+    },
+    {
+      "name": "<global>",
+      "astParentFullName": "5563e6ddc3f7cb93d98b491194ceebdee7288d36_73.c:<global>",
+      "_id": 107374182407,
+      "signature": "",
+      "astParentType": "TYPE_DECL",
+      "lineNumberEnd": 44,
+      "_label": "METHOD",
+      "columnNumberEnd": 1,
+      "fullName": "5563e6ddc3f7cb93d98b491194ceebdee7288d36_73.c:<global>",
+      "genericSignature": "<empty>",
+      "code": "<global>",
+      "isExternal": false,
+      "lineNumber": 1,
+      "columnNumber": 1,
+      "order": 1,
+      "filename": "5563e6ddc3f7cb93d98b491194ceebdee7288d36_73.c"
+    },
+    {
+      "name": "<global>",
+      "astParentFullName": "5563e6ddc3f7cb93d98b491194ceebdee7288d36_86.c:<global>",
+      "_id": 107374182408,
+      "signature": "",
+      "astParentType": "TYPE_DECL",
+      "lineNumberEnd": 35,
+      "_label": "METHOD",
+      "columnNumberEnd": 1,
+      "fullName": "5563e6ddc3f7cb93d98b491194ceebdee7288d36_86.c:<global>",
+      "genericSignature": "<empty>",
+      "code": "<global>",
+      "isExternal": false,
+      "lineNumber": 1,
+      "columnNumber": 1,
+      "order": 1,
+      "filename": "5563e6ddc3f7cb93d98b491194ceebdee7288d36_86.c"
+    },
+    {
+      "name": "<global>",
+      "astParentFullName": "5563e6ddc3f7cb93d98b491194ceebdee7288d36_90.c:<global>",
+      "_id": 107374182409,
+      "signature": "",
+      "astParentType": "TYPE_DECL",
+      "lineNumberEnd": 40,
+      "_label": "METHOD",
+      "columnNumberEnd": 8,
+      "fullName": "5563e6ddc3f7cb93d98b491194ceebdee7288d36_90.c:<global>",
+      "genericSignature": "<empty>",
+      "code": "<global>",
+      "isExternal": false,
+      "lineNumber": 1,
+      "columnNumber": 1,
+      "order": 1,
+      "filename": "5563e6ddc3f7cb93d98b491194ceebdee7288d36_90.c"
+    },
+    {
+      "name": "<global>",
+      "astParentFullName": "<includes>:<global>",
+      "_id": 107374182410,
+      "signature": "",
+      "astParentType": "NAMESPACE_BLOCK",
+      "_label": "METHOD",
+      "fullName": "<includes>:<global>",
+      "genericSignature": "<empty>",
+      "code": "<global>",
+      "isExternal": false,
+      "lineNumber": 1,
+      "order": 1,
+      "filename": "<includes>"
+    },
+    {
+      "dynamicTypeHintFullName": [],
+      "_id": 124554051584,
+      "evaluationStrategy": "BY_VALUE",
+      "code": "RET",
+      "typeFullName": "ANY",
+      "lineNumber": 1,
+      "order": 2,
+      "_label": "METHOD_RETURN",
+      "possibleTypes": [],
+      "columnNumber": 1
+    },
+    {
+      "dynamicTypeHintFullName": [],
+      "_id": 124554051585,
+      "evaluationStrategy": "BY_VALUE",
+      "code": "RET",
+      "typeFullName": "ANY",
+      "lineNumber": 1,
+      "order": 2,
+      "_label": "METHOD_RETURN",
+      "possibleTypes": [],
+      "columnNumber": 1
+    },
+    {
+      "dynamicTypeHintFullName": [],
+      "_id": 124554051586,
+      "evaluationStrategy": "BY_VALUE",
+      "code": "RET",
+      "typeFullName": "ANY",
+      "lineNumber": 1,
+      "order": 2,
+      "_label": "METHOD_RETURN",
+      "possibleTypes": [],
+      "columnNumber": 1
+    },
+    {
+      "dynamicTypeHintFullName": [],
+      "_id": 124554051587,
+      "evaluationStrategy": "BY_VALUE",
+      "code": "RET",
+      "typeFullName": "ANY",
+      "lineNumber": 1,
+      "order": 2,
+      "_label": "METHOD_RETURN",
+      "possibleTypes": [],
+      "columnNumber": 1
+    },
+    {
+      "dynamicTypeHintFullName": [],
+      "_id": 124554051588,
+      "evaluationStrategy": "BY_VALUE",
+      "code": "RET",
+      "typeFullName": "ANY",
+      "lineNumber": 1,
+      "order": 2,
+      "_label": "METHOD_RETURN",
+      "possibleTypes": [],
+      "columnNumber": 1
+    },
+    {
+      "dynamicTypeHintFullName": [],
+      "_id": 124554051589,
+      "evaluationStrategy": "BY_VALUE",
+      "code": "RET",
+      "typeFullName": "ANY",
+      "lineNumber": 1,
+      "order": 2,
+      "_label": "METHOD_RETURN",
+      "possibleTypes": [],
+      "columnNumber": 1
+    },
+    {
+      "dynamicTypeHintFullName": [],
+      "_id": 124554051590,
+      "evaluationStrategy": "BY_VALUE",
+      "code": "RET",
+      "typeFullName": "ANY",
+      "lineNumber": 1,
+      "order": 2,
+      "_label": "METHOD_RETURN",
+      "possibleTypes": [],
+      "columnNumber": 1
+    },
+    {
+      "dynamicTypeHintFullName": [],
+      "_id": 124554051591,
+      "evaluationStrategy": "BY_VALUE",
+      "code": "RET",
+      "typeFullName": "ANY",
+      "lineNumber": 1,
+      "order": 2,
+      "_label": "METHOD_RETURN",
+      "possibleTypes": [],
+      "columnNumber": 1
+    },
+    {
+      "dynamicTypeHintFullName": [],
+      "_id": 124554051592,
+      "evaluationStrategy": "BY_VALUE",
+      "code": "RET",
+      "typeFullName": "ANY",
+      "lineNumber": 1,
+      "order": 2,
+      "_label": "METHOD_RETURN",
+      "possibleTypes": [],
+      "columnNumber": 1
+    },
+    {
+      "dynamicTypeHintFullName": [],
+      "_id": 124554051593,
+      "evaluationStrategy": "BY_VALUE",
+      "code": "RET",
+      "typeFullName": "ANY",
+      "lineNumber": 1,
+      "order": 2,
+      "_label": "METHOD_RETURN",
+      "possibleTypes": [],
+      "columnNumber": 1
+    },
+    {
+      "dynamicTypeHintFullName": [],
+      "_id": 124554051594,
+      "evaluationStrategy": "BY_VALUE",
+      "code": "RET",
+      "typeFullName": "ANY",
+      "lineNumber": 1,
+      "order": 2,
+      "_label": "METHOD_RETURN",
+      "possibleTypes": []
+    },
+    {
+      "name": "<global>",
+      "_id": 133143986176,
+      "code": "<empty>",
+      "order": -1,
+      "_label": "NAMESPACE"
+    },
+    {
+      "name": "<global>",
+      "_id": 137438953472,
+      "fullName": "<global>",
+      "code": "<empty>",
+      "_label": "NAMESPACE_BLOCK",
+      "order": 1,
+      "filename": "<unknown>"
+    },
+    {
+      "name": "<global>",
+      "_id": 137438953473,
+      "fullName": "5563e6ddc3f7cb93d98b491194ceebdee7288d36_11.c:<global>",
+      "code": "<empty>",
+      "_label": "NAMESPACE_BLOCK",
+      "order": 1,
+      "filename": "5563e6ddc3f7cb93d98b491194ceebdee7288d36_11.c"
+    },
+    {
+      "name": "<global>",
+      "_id": 137438953474,
+      "fullName": "5563e6ddc3f7cb93d98b491194ceebdee7288d36_15.c:<global>",
+      "code": "<empty>",
+      "_label": "NAMESPACE_BLOCK",
+      "order": 1,
+      "filename": "5563e6ddc3f7cb93d98b491194ceebdee7288d36_15.c"
+    },
+    {
+      "name": "<global>",
+      "_id": 137438953475,
+      "fullName": "5563e6ddc3f7cb93d98b491194ceebdee7288d36_24.c:<global>",
+      "code": "<empty>",
+      "_label": "NAMESPACE_BLOCK",
+      "order": 1,
+      "filename": "5563e6ddc3f7cb93d98b491194ceebdee7288d36_24.c"
+    },
+    {
+      "name": "<global>",
+      "_id": 137438953476,
+      "fullName": "5563e6ddc3f7cb93d98b491194ceebdee7288d36_32.c:<global>",
+      "code": "<empty>",
+      "_label": "NAMESPACE_BLOCK",
+      "order": 1,
+      "filename": "5563e6ddc3f7cb93d98b491194ceebdee7288d36_32.c"
+    },
+    {
+      "name": "<global>",
+      "_id": 137438953477,
+      "fullName": "5563e6ddc3f7cb93d98b491194ceebdee7288d36_51.c:<global>",
+      "code": "<empty>",
+      "_label": "NAMESPACE_BLOCK",
+      "order": 1,
+      "filename": "5563e6ddc3f7cb93d98b491194ceebdee7288d36_51.c"
+    },
+    {
+      "name": "<global>",
+      "_id": 137438953478,
+      "fullName": "5563e6ddc3f7cb93d98b491194ceebdee7288d36_58.c:<global>",
+      "code": "<empty>",
+      "_label": "NAMESPACE_BLOCK",
+      "order": 1,
+      "filename": "5563e6ddc3f7cb93d98b491194ceebdee7288d36_58.c"
+    },
+    {
+      "name": "<global>",
+      "_id": 137438953479,
+      "fullName": "5563e6ddc3f7cb93d98b491194ceebdee7288d36_69.c:<global>",
+      "code": "<empty>",
+      "_label": "NAMESPACE_BLOCK",
+      "order": 1,
+      "filename": "5563e6ddc3f7cb93d98b491194ceebdee7288d36_69.c"
+    },
+    {
+      "name": "<global>",
+      "_id": 137438953480,
+      "fullName": "5563e6ddc3f7cb93d98b491194ceebdee7288d36_73.c:<global>",
+      "code": "<empty>",
+      "_label": "NAMESPACE_BLOCK",
+      "order": 1,
+      "filename": "5563e6ddc3f7cb93d98b491194ceebdee7288d36_73.c"
+    },
+    {
+      "name": "<global>",
+      "_id": 137438953481,
+      "fullName": "5563e6ddc3f7cb93d98b491194ceebdee7288d36_86.c:<global>",
+      "code": "<empty>",
+      "_label": "NAMESPACE_BLOCK",
+      "order": 1,
+      "filename": "5563e6ddc3f7cb93d98b491194ceebdee7288d36_86.c"
+    },
+    {
+      "name": "<global>",
+      "_id": 137438953482,
+      "fullName": "5563e6ddc3f7cb93d98b491194ceebdee7288d36_90.c:<global>",
+      "code": "<empty>",
+      "_label": "NAMESPACE_BLOCK",
+      "order": 1,
+      "filename": "5563e6ddc3f7cb93d98b491194ceebdee7288d36_90.c"
+    },
+    {
+      "name": "<global>",
+      "_id": 137438953483,
+      "fullName": "<includes>:<global>",
+      "code": "<empty>",
+      "_label": "NAMESPACE_BLOCK",
+      "order": 1,
+      "filename": "<includes>"
+    },
+    {
+      "name": "ANY",
+      "_id": 158913789952,
+      "fullName": "ANY",
+      "typeDeclFullName": "ANY",
+      "_label": "TYPE"
+    },
+    {
+      "inheritsFromTypeFullName": [],
+      "name": "<global>",
+      "astParentFullName": "5563e6ddc3f7cb93d98b491194ceebdee7288d36_11.c:<global>",
+      "_id": 167503724544,
+      "astParentType": "NAMESPACE_BLOCK",
+      "lineNumber": 1,
+      "_label": "TYPE_DECL",
+      "fullName": "5563e6ddc3f7cb93d98b491194ceebdee7288d36_11.c:<global>",
+      "genericSignature": "<empty>",
+      "code": "<global>",
+      "isExternal": false,
+      "columnNumber": 1,
+      "order": 4,
+      "filename": "5563e6ddc3f7cb93d98b491194ceebdee7288d36_11.c"
+    },
+    {
+      "inheritsFromTypeFullName": [],
+      "name": "<global>",
+      "astParentFullName": "5563e6ddc3f7cb93d98b491194ceebdee7288d36_15.c:<global>",
+      "_id": 167503724545,
+      "astParentType": "NAMESPACE_BLOCK",
+      "lineNumber": 1,
+      "_label": "TYPE_DECL",
+      "fullName": "5563e6ddc3f7cb93d98b491194ceebdee7288d36_15.c:<global>",
+      "genericSignature": "<empty>",
+      "code": "<global>",
+      "isExternal": false,
+      "columnNumber": 1,
+      "order": 4,
+      "filename": "5563e6ddc3f7cb93d98b491194ceebdee7288d36_15.c"
+    },
+    {
+      "inheritsFromTypeFullName": [],
+      "name": "<global>",
+      "astParentFullName": "5563e6ddc3f7cb93d98b491194ceebdee7288d36_24.c:<global>",
+      "_id": 167503724546,
+      "astParentType": "NAMESPACE_BLOCK",
+      "lineNumber": 1,
+      "_label": "TYPE_DECL",
+      "fullName": "5563e6ddc3f7cb93d98b491194ceebdee7288d36_24.c:<global>",
+      "genericSignature": "<empty>",
+      "code": "<global>",
+      "isExternal": false,
+      "columnNumber": 1,
+      "order": 4,
+      "filename": "5563e6ddc3f7cb93d98b491194ceebdee7288d36_24.c"
+    },
+    {
+      "inheritsFromTypeFullName": [],
+      "name": "<global>",
+      "astParentFullName": "5563e6ddc3f7cb93d98b491194ceebdee7288d36_32.c:<global>",
+      "_id": 167503724547,
+      "astParentType": "NAMESPACE_BLOCK",
+      "lineNumber": 1,
+      "_label": "TYPE_DECL",
+      "fullName": "5563e6ddc3f7cb93d98b491194ceebdee7288d36_32.c:<global>",
+      "genericSignature": "<empty>",
+      "code": "<global>",
+      "isExternal": false,
+      "columnNumber": 1,
+      "order": 4,
+      "filename": "5563e6ddc3f7cb93d98b491194ceebdee7288d36_32.c"
+    },
+    {
+      "inheritsFromTypeFullName": [],
+      "name": "<global>",
+      "astParentFullName": "5563e6ddc3f7cb93d98b491194ceebdee7288d36_51.c:<global>",
+      "_id": 167503724548,
+      "astParentType": "NAMESPACE_BLOCK",
+      "lineNumber": 1,
+      "_label": "TYPE_DECL",
+      "fullName": "5563e6ddc3f7cb93d98b491194ceebdee7288d36_51.c:<global>",
+      "genericSignature": "<empty>",
+      "code": "<global>",
+      "isExternal": false,
+      "columnNumber": 1,
+      "order": 4,
+      "filename": "5563e6ddc3f7cb93d98b491194ceebdee7288d36_51.c"
+    },
+    {
+      "inheritsFromTypeFullName": [],
+      "name": "<global>",
+      "astParentFullName": "5563e6ddc3f7cb93d98b491194ceebdee7288d36_58.c:<global>",
+      "_id": 167503724549,
+      "astParentType": "NAMESPACE_BLOCK",
+      "lineNumber": 1,
+      "_label": "TYPE_DECL",
+      "fullName": "5563e6ddc3f7cb93d98b491194ceebdee7288d36_58.c:<global>",
+      "genericSignature": "<empty>",
+      "code": "<global>",
+      "isExternal": false,
+      "columnNumber": 1,
+      "order": 4,
+      "filename": "5563e6ddc3f7cb93d98b491194ceebdee7288d36_58.c"
+    },
+    {
+      "inheritsFromTypeFullName": [],
+      "name": "<global>",
+      "astParentFullName": "5563e6ddc3f7cb93d98b491194ceebdee7288d36_69.c:<global>",
+      "_id": 167503724550,
+      "astParentType": "NAMESPACE_BLOCK",
+      "lineNumber": 1,
+      "_label": "TYPE_DECL",
+      "fullName": "5563e6ddc3f7cb93d98b491194ceebdee7288d36_69.c:<global>",
+      "genericSignature": "<empty>",
+      "code": "<global>",
+      "isExternal": false,
+      "columnNumber": 1,
+      "order": 4,
+      "filename": "5563e6ddc3f7cb93d98b491194ceebdee7288d36_69.c"
+    },
+    {
+      "inheritsFromTypeFullName": [],
+      "name": "<global>",
+      "astParentFullName": "5563e6ddc3f7cb93d98b491194ceebdee7288d36_73.c:<global>",
+      "_id": 167503724551,
+      "astParentType": "NAMESPACE_BLOCK",
+      "lineNumber": 1,
+      "_label": "TYPE_DECL",
+      "fullName": "5563e6ddc3f7cb93d98b491194ceebdee7288d36_73.c:<global>",
+      "genericSignature": "<empty>",
+      "code": "<global>",
+      "isExternal": false,
+      "columnNumber": 1,
+      "order": 4,
+      "filename": "5563e6ddc3f7cb93d98b491194ceebdee7288d36_73.c"
+    },
+    {
+      "inheritsFromTypeFullName": [],
+      "name": "<global>",
+      "astParentFullName": "5563e6ddc3f7cb93d98b491194ceebdee7288d36_86.c:<global>",
+      "_id": 167503724552,
+      "astParentType": "NAMESPACE_BLOCK",
+      "lineNumber": 1,
+      "_label": "TYPE_DECL",
+      "fullName": "5563e6ddc3f7cb93d98b491194ceebdee7288d36_86.c:<global>",
+      "genericSignature": "<empty>",
+      "code": "<global>",
+      "isExternal": false,
+      "columnNumber": 1,
+      "order": 4,
+      "filename": "5563e6ddc3f7cb93d98b491194ceebdee7288d36_86.c"
+    },
+    {
+      "inheritsFromTypeFullName": [],
+      "name": "<global>",
+      "astParentFullName": "5563e6ddc3f7cb93d98b491194ceebdee7288d36_90.c:<global>",
+      "_id": 167503724553,
+      "astParentType": "NAMESPACE_BLOCK",
+      "lineNumber": 1,
+      "_label": "TYPE_DECL",
+      "fullName": "5563e6ddc3f7cb93d98b491194ceebdee7288d36_90.c:<global>",
+      "genericSignature": "<empty>",
+      "code": "<global>",
+      "isExternal": false,
+      "columnNumber": 1,
+      "order": 4,
+      "filename": "5563e6ddc3f7cb93d98b491194ceebdee7288d36_90.c"
+    },
+    {
+      "inheritsFromTypeFullName": [],
+      "name": "ANY",
+      "astParentFullName": "<includes>:<global>",
+      "_id": 167503724554,
+      "astParentType": "NAMESPACE_BLOCK",
+      "_label": "TYPE_DECL",
+      "fullName": "ANY",
+      "genericSignature": "<empty>",
+      "code": "ANY",
+      "isExternal": true,
+      "order": -1,
+      "filename": "<includes>"
+    },
+    {
+      "dynamicTypeHintFullName": [],
+      "parserTypeName": "CASTProblemDeclaration",
+      "_id": 180388626432,
+      "code": "int CLASS canon_600_color(int ratio[2], int mar)\n{\n  int clipped = 0, target, miss;\n\n  if (flash_used)\n  {\n    if (ratio[1] < -104)\n    {\n      ratio[1] = -104;\n      clipped = 1;\n    }\n    if (ratio[1] > 12)\n    {\n      ratio[1] = 12;\n      clipped = 1;\n    }\n  }\n  else\n  {\n    if (ratio[1] < -264 || ratio[1] > 461)\n      return 2;\n    if (ratio[1] < -50)\n    {\n      ratio[1] = -50;\n      clipped = 1;\n    }\n    if (ratio[1] > 307)\n    {\n      ratio[1] = 307;\n      clipped = 1;\n    }\n  }\n  target = flash_used || ratio[1] < 197 ? -38 - (398 * ratio[1] >> 10) : -123 + (48 * ratio[1] >> 10);\n  if (target - mar <= ratio[0] && target + 20 >= ratio[0] && !clipped)\n    return 0;\n  miss = target - ratio[0];\n  if (abs(miss) >= mar * 4)\n    return 2;\n  if (miss < -20)\n    miss = -20;\n  if (miss > mar)\n    miss = mar;\n  ratio[0] = target - miss;\n  return 1;\n}",
+      "typeFullName": "<empty>",
+      "lineNumber": 7,
+      "order": 1,
+      "containedRef": "<empty>",
+      "_label": "UNKNOWN",
+      "columnNumber": 1,
+      "possibleTypes": [],
+      "argumentIndex": -1
+    },
+    {
+      "dynamicTypeHintFullName": [],
+      "parserTypeName": "CASTProblemDeclaration",
+      "_id": 180388626433,
+      "code": "void CLASS canon_600_correct()\n{\n  int row, col, val;\n  static const short mul[4][2] = {{1141, 1145}, {1128, 1109}, {1178, 1149}, {1128, 1109}};\n\n  for (row = 0; row < height; row++)\n  {\n#ifdef LIBRAW_LIBRARY_BUILD\n    checkCancel();\n#endif\n    for (col = 0; col < width; col++)\n    {\n      if ((val = BAYER(row, col) - black) < 0)\n        val = 0;\n      val = val * mul[row & 3][col & 1] >> 9;\n      BAYER(row, col) = val;\n    }\n  }\n  canon_600_fixed_wb(1311);\n  canon_600_auto_wb();\n  canon_600_coeff();\n  maximum = (0x3ff - black) * 1109 >> 9;\n  black = 0;\n}",
+      "typeFullName": "<empty>",
+      "lineNumber": 7,
+      "order": 1,
+      "containedRef": "<empty>",
+      "_label": "UNKNOWN",
+      "columnNumber": 1,
+      "possibleTypes": [],
+      "argumentIndex": -1
+    },
+    {
+      "dynamicTypeHintFullName": [],
+      "parserTypeName": "CASTProblemDeclaration",
+      "_id": 180388626434,
+      "code": "void CLASS lossless_jpeg_load_raw()\n{\n  int jwide, jhigh, jrow, jcol, val, jidx, i, j, row = 0, col = 0;\n  struct jhead jh;\n  ushort *rp;\n\n  if (!ljpeg_start(&jh, 0))\n    return;\n\n  if (jh.wide < 1 || jh.high < 1 || jh.clrs < 1 || jh.bits < 1)\n#ifdef LIBRAW_LIBRARY_BUILD\n    throw LIBRAW_EXCEPTION_IO_CORRUPT;\n#else\n    longjmp(failure, 2);\n#endif\n  jwide = jh.wide * jh.clrs;\n  jhigh = jh.high;\n  if (jh.clrs == 4 && jwide >= raw_width * 2)\n    jhigh *= 2;\n\n#ifdef LIBRAW_LIBRARY_BUILD\n  try\n  {\n#endif\n    for (jrow = 0; jrow < jh.high; jrow++)\n    {\n#ifdef LIBRAW_LIBRARY_BUILD\n      checkCancel();\n#endif\n      rp = ljpeg_row(jrow, &jh);\n      if (load_flags & 1)\n        row = jrow & 1 ? height - 1 - jrow / 2 : jrow / 2;\n      for (jcol = 0; jcol < jwide; jcol++)\n      {\n        val = curve[*rp++];\n        if (cr2_slice[0])\n        {\n          jidx = jrow * jwide + jcol;\n          i = jidx / (cr2_slice[1] * raw_height);\n          if ((j = i >= cr2_slice[0]))\n            i = cr2_slice[0...",
+      "typeFullName": "<empty>",
+      "lineNumber": 7,
+      "order": 1,
+      "containedRef": "<empty>",
+      "_label": "UNKNOWN",
+      "columnNumber": 1,
+      "possibleTypes": [],
+      "argumentIndex": -1
+    },
+    {
+      "dynamicTypeHintFullName": [],
+      "parserTypeName": "CASTProblemDeclaration",
+      "_id": 180388626435,
+      "code": "void CLASS nikon_yuv_load_raw()\n{\n  int row, col, yuv[4], rgb[3], b, c;\n  UINT64 bitbuf = 0;\n  float cmul[4];\n  FORC4 { cmul[c] = cam_mul[c] > 0.001f ? cam_mul[c] : 1.f; }",
+      "typeFullName": "<empty>",
+      "lineNumber": 7,
+      "order": 1,
+      "containedRef": "<empty>",
+      "_label": "UNKNOWN",
+      "columnNumber": 1,
+      "possibleTypes": [],
+      "argumentIndex": -1
+    },
+    {
+      "dynamicTypeHintFullName": [],
+      "parserTypeName": "CASTProblemDeclaration",
+      "_id": 180388626436,
+      "code": "void CLASS unpacked_load_raw_reversed()\n{\n  int row, col, bits = 0;\n  while (1 << ++bits < maximum)\n    ;\n  for (row = raw_height - 1; row >= 0; row--)\n  {\n#ifdef LIBRAW_LIBRARY_BUILD\n    checkCancel();\n#endif\n    read_shorts(&raw_image[row * raw_width], raw_width);\n    for (col = 0; col < raw_width; col++)\n      if ((RAW(row, col) >>= load_flags) >> bits && (unsigned)(row - top_margin) < height &&\n          (unsigned)(col - left_margin) < width)\n        derror();\n  }\n}",
+      "typeFullName": "<empty>",
+      "lineNumber": 7,
+      "order": 1,
+      "containedRef": "<empty>",
+      "_label": "UNKNOWN",
+      "columnNumber": 1,
+      "possibleTypes": [],
+      "argumentIndex": -1
+    },
+    {
+      "dynamicTypeHintFullName": [],
+      "parserTypeName": "CASTProblemDeclaration",
+      "_id": 180388626437,
+      "code": "void CLASS canon_rmf_load_raw()\n{\n  int row, col, bits, orow, ocol, c;\n\n#ifdef LIBRAW_LIBRARY_BUILD\n  int *words = (int *)malloc(sizeof(int) * (raw_width / 3 + 1));\n  merror(words, \"canon_rmf_load_raw\");\n#endif\n  for (row = 0; row < raw_height; row++)\n  {\n#ifdef LIBRAW_LIBRARY_BUILD\n    checkCancel();\n    fread(words, sizeof(int), raw_width / 3, ifp);\n    for (col = 0; col < raw_width - 2; col += 3)\n    {\n      bits = words[col / 3];\n      FORC3\n      {\n        orow = row;\n        if ((ocol = col + c - 4) < 0)\n        {\n          ocol += raw_width;\n          if ((orow -= 2) < 0)\n            orow += raw_height;\n        }\n        RAW(orow, ocol) = curve[bits >> (10 * c + 2) & 0x3ff];\n      }\n    }\n#else\n    for (col = 0; col < raw_width - 2; col += 3)\n    {\n      bits = get4();\n      FORC3\n      {\n        orow = row;\n        if ((ocol = col + c - 4) < 0)\n        {\n          ocol += raw_width;\n          if ((orow -= 2) < 0)\n            orow += raw_height;\n        }\n        RAW(orow, oc...",
+      "typeFullName": "<empty>",
+      "lineNumber": 7,
+      "order": 1,
+      "containedRef": "<empty>",
+      "_label": "UNKNOWN",
+      "columnNumber": 1,
+      "possibleTypes": [],
+      "argumentIndex": -1
+    },
+    {
+      "dynamicTypeHintFullName": [],
+      "parserTypeName": "CASTProblemDeclaration",
+      "_id": 180388626438,
+      "code": "void CLASS kodak_c603_load_raw()\n{\n  uchar *pixel;\n  int row, col, y, cb, cr, rgb[3], c;\n\n  pixel = (uchar *)calloc(raw_width, 3 * sizeof *pixel);\n  merror(pixel, \"kodak_c603_load_raw()\");\n#ifdef LIBRAW_LIBRARY_BUILD\n  try\n  {\n#endif\n    for (row = 0; row < height; row++)\n    {\n#ifdef LIBRAW_LIBRARY_BUILD\n      checkCancel();\n#endif\n      if (~row & 1)\n        if (fread(pixel, raw_width, 3, ifp) < 3)\n          derror();\n      for (col = 0; col < width; col++)\n      {\n        y = pixel[width * 2 * (row & 1) + col];\n        cb = pixel[width + (col & -2)] - 128;\n        cr = pixel[width + (col & -2) + 1] - 128;\n        rgb[1] = y - ((cb + cr + 2) >> 2);\n        rgb[2] = rgb[1] + cb;\n        rgb[0] = rgb[1] + cr;\n        FORC3 image[row * width + col][c] = curve[LIM(rgb[c], 0, 255)];\n      }\n    }\n#ifdef LIBRAW_LIBRARY_BUILD\n  }\n  catch (...)\n  {\n    free(pixel);\n    throw;\n  }\n#endif\n  free(pixel);\n  maximum = curve[0xff];\n}",
+      "typeFullName": "<empty>",
+      "lineNumber": 7,
+      "order": 1,
+      "containedRef": "<empty>",
+      "_label": "UNKNOWN",
+      "columnNumber": 1,
+      "possibleTypes": [],
+      "argumentIndex": -1
+    },
+    {
+      "dynamicTypeHintFullName": [],
+      "parserTypeName": "CASTProblemDeclaration",
+      "_id": 180388626439,
+      "code": "void CLASS kodak_ycbcr_load_raw()\n{\n  short buf[384], *bp;\n  int row, col, len, c, i, j, k, y[2][2], cb, cr, rgb[3];\n  ushort *ip;\n\n  if (!image)\n    return;\n  unsigned int bits = (load_flags && load_flags > 9 && load_flags < 17) ? load_flags : 10;\n  for (row = 0; row < height; row += 2)\n  {\n#ifdef LIBRAW_LIBRARY_BUILD\n    checkCancel();\n#endif\n    for (col = 0; col < width; col += 128)\n    {\n      len = MIN(128, width - col);\n      kodak_65000_decode(buf, len * 3);\n      y[0][1] = y[1][1] = cb = cr = 0;\n      for (bp = buf, i = 0; i < len; i += 2, bp += 2)\n      {\n        cb += bp[4];\n        cr += bp[5];\n        rgb[1] = -((cb + cr + 2) >> 2);\n        rgb[2] = rgb[1] + cb;\n        rgb[0] = rgb[1] + cr;\n        for (j = 0; j < 2; j++)\n          for (k = 0; k < 2; k++)\n          {\n            if ((y[j][k] = y[j][k ^ 1] + *bp++) >> bits)\n              derror();\n            ip = image[(row + j) * width + col + i + k];\n            FORC3 ip[c] = curve[LIM(y[j][k] + rgb[c], 0, 0xfff)];\n ...",
+      "typeFullName": "<empty>",
+      "lineNumber": 7,
+      "order": 1,
+      "containedRef": "<empty>",
+      "_label": "UNKNOWN",
+      "columnNumber": 1,
+      "possibleTypes": [],
+      "argumentIndex": -1
+    },
+    {
+      "dynamicTypeHintFullName": [],
+      "parserTypeName": "CASTProblemDeclaration",
+      "_id": 180388626440,
+      "code": "void CLASS fill_holes(int holes)\n{\n  int row, col, val[4];\n\n  for (row = 2; row < height - 2; row++)\n  {\n    if (!HOLE(row))\n      continue;\n    for (col = 1; col < width - 1; col += 4)\n    {\n      val[0] = RAW(row - 1, col - 1);\n      val[1] = RAW(row - 1, col + 1);\n      val[2] = RAW(row + 1, col - 1);\n      val[3] = RAW(row + 1, col + 1);\n      RAW(row, col) = median4(val);\n    }\n    for (col = 2; col < width - 2; col += 4)\n      if (HOLE(row - 2) || HOLE(row + 2))\n        RAW(row, col) = (RAW(row, col - 2) + RAW(row, col + 2)) >> 1;\n      else\n      {\n        val[0] = RAW(row, col - 2);\n        val[1] = RAW(row, col + 2);\n        val[2] = RAW(row - 2, col);\n        val[3] = RAW(row + 2, col);\n        RAW(row, col) = median4(val);\n      }\n  }\n}",
+      "typeFullName": "<empty>",
+      "lineNumber": 7,
+      "order": 1,
+      "containedRef": "<empty>",
+      "_label": "UNKNOWN",
+      "columnNumber": 1,
+      "possibleTypes": [],
+      "argumentIndex": -1
+    },
+    {
+      "dynamicTypeHintFullName": [],
+      "parserTypeName": "CASTProblemDeclaration",
+      "_id": 180388626441,
+      "code": "void CLASS cielab(ushort rgb[3], short lab[3])\n{\n  int c, i, j, k;\n  float r, xyz[3];\n#ifdef LIBRAW_NOTHREADS\n  static float cbrt[0x10000], xyz_cam[3][4];\n#else\n#define cbrt tls->ahd_data.cbrt\n#define xyz_cam tls->ahd_data.xyz_cam\n#endif\n\n  if (!rgb)\n  {\n#ifndef LIBRAW_NOTHREADS\n    if (cbrt[0] < -1.0f)\n#endif\n      for (i = 0; i < 0x10000; i++)\n      {\n        r = i / 65535.0;\n        cbrt[i] = r > 0.008856 ? pow(r, 1.f / 3.0f) : 7.787f * r + 16.f / 116.0f;\n      }\n    for (i = 0; i < 3; i++)\n      for (j = 0; j < colors; j++)\n        for (xyz_cam[i][j] = k = 0; k < 3; k++)\n          xyz_cam[i][j] += xyz_rgb[i][k] * rgb_cam[k][j] / d65_white[i];\n    return;\n  }\n  xyz[0] = xyz[1] = xyz[2] = 0.5;\n  FORCC\n  {\n    xyz[0] += xyz_cam[0][c] * rgb[c];\n    xyz[1] += xyz_cam[1][c] * rgb[c];\n    xyz[2] += xyz_cam[2][c] * rgb[c];\n  }",
+      "typeFullName": "<empty>",
+      "lineNumber": 7,
+      "order": 1,
+      "containedRef": "<empty>",
+      "_label": "UNKNOWN",
+      "columnNumber": 1,
+      "possibleTypes": [],
+      "argumentIndex": -1
+    }
+  ],
+  "edges": {
+    "AST": [
+      {
+        "src": 107374182400,
+        "dst": 25769803776,
+        "label": "AST"
+      },
+      {
+        "src": 107374182400,
+        "dst": 124554051584,
+        "label": "AST"
+      },
+      {
+        "src": 25769803776,
+        "dst": 180388626432,
+        "label": "AST"
+      },
+      {
+        "src": 107374182401,
+        "dst": 25769803777,
+        "label": "AST"
+      },
+      {
+        "src": 107374182401,
+        "dst": 124554051585,
+        "label": "AST"
+      },
+      {
+        "src": 25769803777,
+        "dst": 180388626433,
+        "label": "AST"
+      },
+      {
+        "src": 107374182402,
+        "dst": 25769803778,
+        "label": "AST"
+      },
+      {
+        "src": 107374182402,
+        "dst": 124554051586,
+        "label": "AST"
+      },
+      {
+        "src": 25769803778,
+        "dst": 180388626434,
+        "label": "AST"
+      },
+      {
+        "src": 107374182403,
+        "dst": 25769803779,
+        "label": "AST"
+      },
+      {
+        "src": 107374182403,
+        "dst": 124554051587,
+        "label": "AST"
+      },
+      {
+        "src": 25769803779,
+        "dst": 180388626435,
+        "label": "AST"
+      },
+      {
+        "src": 107374182404,
+        "dst": 25769803780,
+        "label": "AST"
+      },
+      {
+        "src": 107374182404,
+        "dst": 124554051588,
+        "label": "AST"
+      },
+      {
+        "src": 25769803780,
+        "dst": 180388626436,
+        "label": "AST"
+      },
+      {
+        "src": 107374182405,
+        "dst": 25769803781,
+        "label": "AST"
+      },
+      {
+        "src": 107374182405,
+        "dst": 124554051589,
+        "label": "AST"
+      },
+      {
+        "src": 25769803781,
+        "dst": 180388626437,
+        "label": "AST"
+      },
+      {
+        "src": 107374182406,
+        "dst": 25769803782,
+        "label": "AST"
+      },
+      {
+        "src": 107374182406,
+        "dst": 124554051590,
+        "label": "AST"
+      },
+      {
+        "src": 25769803782,
+        "dst": 180388626438,
+        "label": "AST"
+      },
+      {
+        "src": 107374182407,
+        "dst": 25769803783,
+        "label": "AST"
+      },
+      {
+        "src": 107374182407,
+        "dst": 124554051591,
+        "label": "AST"
+      },
+      {
+        "src": 25769803783,
+        "dst": 180388626439,
+        "label": "AST"
+      },
+      {
+        "src": 107374182408,
+        "dst": 25769803784,
+        "label": "AST"
+      },
+      {
+        "src": 107374182408,
+        "dst": 124554051592,
+        "label": "AST"
+      },
+      {
+        "src": 25769803784,
+        "dst": 180388626440,
+        "label": "AST"
+      },
+      {
+        "src": 107374182409,
+        "dst": 25769803785,
+        "label": "AST"
+      },
+      {
+        "src": 107374182409,
+        "dst": 124554051593,
+        "label": "AST"
+      },
+      {
+        "src": 25769803785,
+        "dst": 180388626441,
+        "label": "AST"
+      },
+      {
+        "src": 107374182410,
+        "dst": 25769803786,
+        "label": "AST"
+      },
+      {
+        "src": 107374182410,
+        "dst": 124554051594,
+        "label": "AST"
+      }
+    ],
+    "CFG": [],
+    "DFG": [],
+    "CALL": [],
+    "ARG2PARAM": [],
+    "RET2CALL": [],
+    "RET2LHS": []
+  }
+}

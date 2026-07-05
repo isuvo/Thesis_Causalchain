@@ -1,0 +1,879 @@
+{
+  "meta": {
+    "graph_path": "Dataset\\valid\\hetero_ready_gcbert\\shard_0003.pt",
+    "ckpt": "C:\\Users\\MSHUVO23\\Desktop\\Thesis Research\\Thesis-causal-vul\\notebooks\\out\\cvul\\1760989836\\model.pt",
+    "ckg": "C:\\Users\\MSHUVO23\\Desktop\\Thesis Research\\Thesis-causal-vul\\notebooks\\ckg\\ckg.json"
+  },
+  "plain_beams": [
+    {
+      "score": -2.891267716884613,
+      "nodes": [
+        35,
+        18,
+        18,
+        18,
+        18,
+        18
+      ],
+      "rels": [
+        "CFG",
+        "CFG",
+        "CFG",
+        "CFG",
+        "CFG"
+      ]
+    },
+    {
+      "score": -2.911627033352852,
+      "nodes": [
+        35,
+        18,
+        18,
+        18,
+        18,
+        18
+      ],
+      "rels": [
+        "CFG",
+        "CFG",
+        "CFG",
+        "CFG",
+        "DFG_THIN"
+      ]
+    },
+    {
+      "score": -2.911627033352852,
+      "nodes": [
+        35,
+        18,
+        18,
+        18,
+        18,
+        18
+      ],
+      "rels": [
+        "CFG",
+        "CFG",
+        "CFG",
+        "DFG_THIN",
+        "CFG"
+      ]
+    },
+    {
+      "score": -2.911627033352852,
+      "nodes": [
+        35,
+        18,
+        18,
+        18,
+        18,
+        18
+      ],
+      "rels": [
+        "CFG",
+        "CFG",
+        "DFG_THIN",
+        "CFG",
+        "CFG"
+      ]
+    },
+    {
+      "score": -2.911627033352852,
+      "nodes": [
+        35,
+        18,
+        18,
+        18,
+        18,
+        18
+      ],
+      "rels": [
+        "CFG",
+        "DFG_THIN",
+        "CFG",
+        "CFG",
+        "CFG"
+      ]
+    },
+    {
+      "score": -2.9116270378232003,
+      "nodes": [
+        35,
+        18,
+        18,
+        18,
+        18,
+        18
+      ],
+      "rels": [
+        "CFG",
+        "CFG",
+        "CFG",
+        "CFG",
+        "RET2CALL"
+      ]
+    },
+    {
+      "score": -2.9116270378232003,
+      "nodes": [
+        35,
+        18,
+        18,
+        18,
+        18,
+        18
+      ],
+      "rels": [
+        "CFG",
+        "CFG",
+        "CFG",
+        "RET2CALL",
+        "CFG"
+      ]
+    },
+    {
+      "score": -2.9116270378232003,
+      "nodes": [
+        35,
+        18,
+        18,
+        18,
+        18,
+        18
+      ],
+      "rels": [
+        "CFG",
+        "CFG",
+        "RET2CALL",
+        "CFG",
+        "CFG"
+      ]
+    },
+    {
+      "score": -2.9116270378232003,
+      "nodes": [
+        35,
+        18,
+        18,
+        18,
+        18,
+        18
+      ],
+      "rels": [
+        "CFG",
+        "RET2CALL",
+        "CFG",
+        "CFG",
+        "CFG"
+      ]
+    },
+    {
+      "score": -2.9146573808044196,
+      "nodes": [
+        35,
+        35,
+        18,
+        18,
+        18,
+        18
+      ],
+      "rels": [
+        "DFG_THIN",
+        "CFG",
+        "CFG",
+        "CFG",
+        "CFG"
+      ]
+    },
+    {
+      "score": -2.914657384157181,
+      "nodes": [
+        35,
+        35,
+        18,
+        18,
+        18,
+        18
+      ],
+      "rels": [
+        "CFG",
+        "CFG",
+        "CFG",
+        "CFG",
+        "CFG"
+      ]
+    },
+    {
+      "score": -2.914657386392355,
+      "nodes": [
+        35,
+        35,
+        18,
+        18,
+        18,
+        18
+      ],
+      "rels": [
+        "DFG",
+        "CFG",
+        "CFG",
+        "CFG",
+        "CFG"
+      ]
+    },
+    {
+      "score": -2.9184423580765726,
+      "nodes": [
+        35,
+        18,
+        18,
+        18,
+        18,
+        36
+      ],
+      "rels": [
+        "CFG",
+        "CFG",
+        "CFG",
+        "CFG",
+        "CFG"
+      ]
+    },
+    {
+      "score": -2.924498372524977,
+      "nodes": [
+        35,
+        18,
+        18,
+        18,
+        18,
+        74
+      ],
+      "rels": [
+        "CFG",
+        "CFG",
+        "CFG",
+        "CFG",
+        "ARG2PARAM"
+      ]
+    },
+    {
+      "score": -2.924498385936022,
+      "nodes": [
+        35,
+        18,
+        18,
+        18,
+        18,
+        74
+      ],
+      "rels": [
+        "CFG",
+        "CFG",
+        "CFG",
+        "CFG",
+        "DFG_THIN"
+      ]
+    },
+    {
+      "score": -2.9319863498210905,
+      "nodes": [
+        35,
+        18,
+        18,
+        18,
+        18,
+        18
+      ],
+      "rels": [
+        "CFG",
+        "CFG",
+        "CFG",
+        "DFG_THIN",
+        "DFG_THIN"
+      ]
+    },
+    {
+      "score": -2.9319863498210905,
+      "nodes": [
+        35,
+        18,
+        18,
+        18,
+        18,
+        18
+      ],
+      "rels": [
+        "CFG",
+        "CFG",
+        "DFG_THIN",
+        "CFG",
+        "DFG_THIN"
+      ]
+    },
+    {
+      "score": -2.9319863498210905,
+      "nodes": [
+        35,
+        18,
+        18,
+        18,
+        18,
+        18
+      ],
+      "rels": [
+        "CFG",
+        "DFG_THIN",
+        "CFG",
+        "CFG",
+        "DFG_THIN"
+      ]
+    },
+    {
+      "score": -2.931986354291439,
+      "nodes": [
+        35,
+        18,
+        18,
+        18,
+        18,
+        18
+      ],
+      "rels": [
+        "CFG",
+        "CFG",
+        "CFG",
+        "DFG_THIN",
+        "RET2CALL"
+      ]
+    },
+    {
+      "score": -2.931986354291439,
+      "nodes": [
+        35,
+        18,
+        18,
+        18,
+        18,
+        18
+      ],
+      "rels": [
+        "CFG",
+        "CFG",
+        "DFG_THIN",
+        "CFG",
+        "RET2CALL"
+      ]
+    },
+    {
+      "score": -2.931986354291439,
+      "nodes": [
+        35,
+        18,
+        18,
+        18,
+        18,
+        18
+      ],
+      "rels": [
+        "CFG",
+        "DFG_THIN",
+        "CFG",
+        "CFG",
+        "RET2CALL"
+      ]
+    },
+    {
+      "score": -2.931986354291439,
+      "nodes": [
+        35,
+        18,
+        18,
+        18,
+        18,
+        18
+      ],
+      "rels": [
+        "CFG",
+        "CFG",
+        "CFG",
+        "RET2CALL",
+        "DFG_THIN"
+      ]
+    },
+    {
+      "score": -2.931986354291439,
+      "nodes": [
+        35,
+        18,
+        18,
+        18,
+        18,
+        18
+      ],
+      "rels": [
+        "CFG",
+        "CFG",
+        "RET2CALL",
+        "CFG",
+        "DFG_THIN"
+      ]
+    },
+    {
+      "score": -2.931986354291439,
+      "nodes": [
+        35,
+        18,
+        18,
+        18,
+        18,
+        18
+      ],
+      "rels": [
+        "CFG",
+        "RET2CALL",
+        "CFG",
+        "CFG",
+        "DFG_THIN"
+      ]
+    }
+  ],
+  "ckg_beams": [
+    {
+      "score": -4.117995025439715,
+      "nodes": [
+        35,
+        72,
+        72,
+        72,
+        72,
+        72
+      ],
+      "rels": [
+        "ARG2PARAM",
+        "ARG2PARAM",
+        "ARG2PARAM",
+        "ARG2PARAM",
+        "ARG2PARAM"
+      ]
+    },
+    {
+      "score": -4.117995025439715,
+      "nodes": [
+        35,
+        72,
+        72,
+        72,
+        72,
+        72
+      ],
+      "rels": [
+        "ARG2PARAM",
+        "ARG2PARAM",
+        "ARG2PARAM",
+        "ARG2PARAM",
+        "ARG2PARAM"
+      ]
+    },
+    {
+      "score": -4.117995025439715,
+      "nodes": [
+        35,
+        72,
+        72,
+        72,
+        72,
+        72
+      ],
+      "rels": [
+        "ARG2PARAM",
+        "ARG2PARAM",
+        "ARG2PARAM",
+        "ARG2PARAM",
+        "ARG2PARAM"
+      ]
+    },
+    {
+      "score": -4.117995025439715,
+      "nodes": [
+        35,
+        72,
+        72,
+        72,
+        72,
+        72
+      ],
+      "rels": [
+        "ARG2PARAM",
+        "ARG2PARAM",
+        "ARG2PARAM",
+        "ARG2PARAM",
+        "ARG2PARAM"
+      ]
+    },
+    {
+      "score": -4.117995025439715,
+      "nodes": [
+        35,
+        72,
+        72,
+        72,
+        72,
+        72
+      ],
+      "rels": [
+        "ARG2PARAM",
+        "ARG2PARAM",
+        "ARG2PARAM",
+        "ARG2PARAM",
+        "ARG2PARAM"
+      ]
+    },
+    {
+      "score": -4.117995025439715,
+      "nodes": [
+        35,
+        72,
+        72,
+        72,
+        72,
+        72
+      ],
+      "rels": [
+        "ARG2PARAM",
+        "ARG2PARAM",
+        "ARG2PARAM",
+        "ARG2PARAM",
+        "ARG2PARAM"
+      ]
+    },
+    {
+      "score": -4.117995025439715,
+      "nodes": [
+        35,
+        72,
+        72,
+        72,
+        72,
+        72
+      ],
+      "rels": [
+        "ARG2PARAM",
+        "ARG2PARAM",
+        "ARG2PARAM",
+        "ARG2PARAM",
+        "ARG2PARAM"
+      ]
+    },
+    {
+      "score": -4.117995025439715,
+      "nodes": [
+        35,
+        72,
+        72,
+        72,
+        72,
+        72
+      ],
+      "rels": [
+        "ARG2PARAM",
+        "ARG2PARAM",
+        "ARG2PARAM",
+        "ARG2PARAM",
+        "ARG2PARAM"
+      ]
+    },
+    {
+      "score": -4.117995025439715,
+      "nodes": [
+        35,
+        72,
+        72,
+        72,
+        72,
+        72
+      ],
+      "rels": [
+        "ARG2PARAM",
+        "ARG2PARAM",
+        "ARG2PARAM",
+        "ARG2PARAM",
+        "ARG2PARAM"
+      ]
+    },
+    {
+      "score": -4.117995025439715,
+      "nodes": [
+        35,
+        72,
+        72,
+        72,
+        72,
+        72
+      ],
+      "rels": [
+        "ARG2PARAM",
+        "ARG2PARAM",
+        "ARG2PARAM",
+        "ARG2PARAM",
+        "ARG2PARAM"
+      ]
+    },
+    {
+      "score": -4.117995025439715,
+      "nodes": [
+        35,
+        72,
+        72,
+        72,
+        72,
+        72
+      ],
+      "rels": [
+        "ARG2PARAM",
+        "ARG2PARAM",
+        "ARG2PARAM",
+        "ARG2PARAM",
+        "ARG2PARAM"
+      ]
+    },
+    {
+      "score": -4.117995025439715,
+      "nodes": [
+        35,
+        72,
+        72,
+        72,
+        72,
+        72
+      ],
+      "rels": [
+        "ARG2PARAM",
+        "ARG2PARAM",
+        "ARG2PARAM",
+        "ARG2PARAM",
+        "ARG2PARAM"
+      ]
+    },
+    {
+      "score": -4.117995025439715,
+      "nodes": [
+        35,
+        72,
+        72,
+        72,
+        72,
+        72
+      ],
+      "rels": [
+        "ARG2PARAM",
+        "ARG2PARAM",
+        "ARG2PARAM",
+        "ARG2PARAM",
+        "ARG2PARAM"
+      ]
+    },
+    {
+      "score": -4.117995025439715,
+      "nodes": [
+        35,
+        72,
+        72,
+        72,
+        72,
+        72
+      ],
+      "rels": [
+        "ARG2PARAM",
+        "ARG2PARAM",
+        "ARG2PARAM",
+        "ARG2PARAM",
+        "ARG2PARAM"
+      ]
+    },
+    {
+      "score": -4.117995025439715,
+      "nodes": [
+        35,
+        72,
+        72,
+        72,
+        72,
+        72
+      ],
+      "rels": [
+        "ARG2PARAM",
+        "ARG2PARAM",
+        "ARG2PARAM",
+        "ARG2PARAM",
+        "ARG2PARAM"
+      ]
+    },
+    {
+      "score": -4.117995025439715,
+      "nodes": [
+        35,
+        72,
+        72,
+        72,
+        72,
+        72
+      ],
+      "rels": [
+        "ARG2PARAM",
+        "ARG2PARAM",
+        "ARG2PARAM",
+        "ARG2PARAM",
+        "ARG2PARAM"
+      ]
+    },
+    {
+      "score": -4.13509935068008,
+      "nodes": [
+        35,
+        18,
+        59,
+        59,
+        59,
+        59
+      ],
+      "rels": [
+        "CFG",
+        "CALL",
+        "CALL",
+        "CALL",
+        "CALL"
+      ]
+    },
+    {
+      "score": -4.13509935068008,
+      "nodes": [
+        35,
+        18,
+        59,
+        59,
+        59,
+        59
+      ],
+      "rels": [
+        "CFG",
+        "CALL",
+        "CALL",
+        "CALL",
+        "CALL"
+      ]
+    },
+    {
+      "score": -4.13509935068008,
+      "nodes": [
+        35,
+        18,
+        59,
+        59,
+        59,
+        59
+      ],
+      "rels": [
+        "CFG",
+        "CALL",
+        "CALL",
+        "CALL",
+        "CALL"
+      ]
+    },
+    {
+      "score": -4.13509935068008,
+      "nodes": [
+        35,
+        18,
+        59,
+        59,
+        59,
+        59
+      ],
+      "rels": [
+        "CFG",
+        "CALL",
+        "CALL",
+        "CALL",
+        "CALL"
+      ]
+    },
+    {
+      "score": -4.13509935068008,
+      "nodes": [
+        35,
+        18,
+        59,
+        59,
+        59,
+        59
+      ],
+      "rels": [
+        "CFG",
+        "CALL",
+        "CALL",
+        "CALL",
+        "CALL"
+      ]
+    },
+    {
+      "score": -4.13509935068008,
+      "nodes": [
+        35,
+        18,
+        59,
+        59,
+        59,
+        59
+      ],
+      "rels": [
+        "CFG",
+        "CALL",
+        "CALL",
+        "CALL",
+        "CALL"
+      ]
+    },
+    {
+      "score": -4.13509935068008,
+      "nodes": [
+        35,
+        18,
+        59,
+        59,
+        59,
+        59
+      ],
+      "rels": [
+        "CFG",
+        "CALL",
+        "CALL",
+        "CALL",
+        "CALL"
+      ]
+    },
+    {
+      "score": -4.13509935068008,
+      "nodes": [
+        35,
+        18,
+        59,
+        59,
+        59,
+        59
+      ],
+      "rels": [
+        "CFG",
+        "CALL",
+        "CALL",
+        "CALL",
+        "CALL"
+      ]
+    }
+  ],
+  "metrics": {
+    "CFAM": 0.03365872122170531,
+    "CCS": 2.5457405072870642e-09
+  }
+}

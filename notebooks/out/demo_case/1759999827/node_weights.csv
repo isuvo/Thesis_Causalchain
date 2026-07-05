@@ -1,0 +1,31 @@
+idx,prob,file,line,label,code
+0,0.475597,med/main.c,2,STMT,#include <stdlib.h>
+1,0.460381,med/main.c,3,STMT,#include <string.h>
+2,0.426699,med/main.c,5,STMT,extern char* wrap1(char* in);
+3,0.441132,med/main.c,6,STMT,extern char* wrap2(char* in);
+4,0.427603,med/main.c,7,STMT,extern void  do_exec(char* cmd);
+5,0.465187,med/main.c,9,ROOT,"int main(int argc, char** argv) {"
+6,0.369565,med/main.c,10,COND,if (argc > 1) {
+7,0.388480,med/main.c,11,ROOT,char* p = argv[1];      // ROOT
+8,0.507503,med/main.c,12,ASSIGN,p = wrap1(p);           // hop 1
+9,0.526168,med/main.c,13,ASSIGN,p = wrap2(p);           // hop 2
+10,0.416951,med/main.c,14,CALL:do_exec,do_exec(p);             // hop 3 → then into sink and system
+11,0.462012,med/main.c,15,STMT,}
+12,0.390795,med/main.c,16,RET,return 0;
+13,0.378235,med/main.c,17,STMT,}
+14,0.473492,med/wrap.c,2,STMT,#include <string.h>
+15,0.453873,med/wrap.c,3,DECL,static char b1[256];
+16,0.434411,med/wrap.c,4,DECL,static char b2[256];
+17,0.400262,med/wrap.c,6,STMT,char* wrap1(char* in) {         // callee head
+18,0.391497,med/wrap.c,7,CALL:snprintf,"snprintf(b1, sizeof(b1), ""%s"", in);"
+19,0.487059,med/wrap.c,8,RET,return b1;
+20,0.422673,med/wrap.c,9,STMT,}
+21,0.411172,med/wrap.c,11,STMT,char* wrap2(char* in) {         // callee head
+22,0.396017,med/wrap.c,12,CALL:strcpy,"strcpy(b2, in);"
+23,0.407257,med/wrap.c,13,CALL:strcat,"strcat(b2, "" --opt"");"
+24,0.481509,med/wrap.c,14,RET,return b2;
+25,0.382825,med/wrap.c,15,STMT,}
+26,0.516520,med/sink.c,2,STMT,#include <stdlib.h>
+27,0.450682,med/sink.c,3,STMT,void do_exec(char* cmd) {
+28,0.440488,med/sink.c,4,SINK,system(cmd);                // SINK
+29,0.460890,med/sink.c,5,STMT,}

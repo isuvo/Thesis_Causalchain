@@ -1,0 +1,13 @@
+idx,prob,file,line,label,code
+0,0.509107,mini/main.c,2,STMT,#include <stdlib.h>
+1,0.475875,mini/main.c,4,STMT,extern void do_exec(char* cmd);
+2,0.452747,mini/main.c,6,ROOT,"int main(int argc, char** argv) {"
+3,0.432980,mini/main.c,7,COND,if (argc > 1) {
+4,0.557033,mini/main.c,8,ROOT,char* p = argv[1];
+5,0.525517,mini/main.c,9,CALL:do_exec,do_exec(p);
+6,0.490651,mini/main.c,10,STMT,}
+7,0.506942,mini/main.c,11,RET,return 0;
+8,0.499586,mini/main.c,12,STMT,}
+9,0.441597,mini/sink.c,3,STMT,void do_exec(char* cmd) {
+10,0.510941,mini/sink.c,4,SINK,system(cmd);                // SINK
+11,0.528821,mini/sink.c,5,STMT,}

@@ -1,0 +1,192 @@
+{
+  "meta": {
+    "derived_from": "/mnt/data/thesis_eval_package.json",
+    "notes": [
+      "Conventional metrics shown for heuristic/bootstrap label sources (mined often lacks labels).",
+      "Causal metrics are CFAM/CCS means; beam diagnostics reported when available.",
+      "CKG top-10 motifs included; prior used only at decoding."
+    ]
+  },
+  "conventional_metrics": [
+    {
+      "split": "valid",
+      "label_source": "heuristic",
+      "n_graphs": 777,
+      "accuracy": 0.405,
+      "precision": 0.00261,
+      "recall": 0.817,
+      "f1": 0.00505
+    },
+    {
+      "split": "valid",
+      "label_source": "bootstrap",
+      "n_graphs": 70,
+      "accuracy": 0.492,
+      "precision": 0.0582,
+      "recall": 1.0,
+      "f1": 0.108
+    },
+    {
+      "split": "test",
+      "label_source": "heuristic",
+      "n_graphs": 812,
+      "accuracy": 0.402,
+      "precision": 0.00187,
+      "recall": 0.815,
+      "f1": 0.00366
+    },
+    {
+      "split": "test",
+      "label_source": "bootstrap",
+      "n_graphs": 78,
+      "accuracy": 0.489,
+      "precision": 0.0604,
+      "recall": 1.0,
+      "f1": 0.112
+    },
+    {
+      "split": "test",
+      "label_source": "heuristic",
+      "n_graphs": 812,
+      "accuracy": 0.402,
+      "precision": 0.00187,
+      "recall": 0.815,
+      "f1": 0.00366
+    },
+    {
+      "split": "test",
+      "label_source": "bootstrap",
+      "n_graphs": 78,
+      "accuracy": 0.489,
+      "precision": 0.0604,
+      "recall": 1.0,
+      "f1": 0.112
+    }
+  ],
+  "causal_metrics": [
+    {
+      "split": "valid",
+      "n_graphs": 2906,
+      "cfam_mean": 0.03713512300016863,
+      "ccs_mean": 2.103382822502565e-05
+    },
+    {
+      "split": "test",
+      "n_graphs": 2915,
+      "cfam_mean": 0.03802854397785558,
+      "ccs_mean": 2.992976884928558e-05
+    },
+    {
+      "split": "test",
+      "n_graphs": 2915,
+      "cfam_mean": 0.03802854397785558,
+      "ccs_mean": 2.992976884928558e-05
+    }
+  ],
+  "beam_diagnostics": [
+    {
+      "split": "valid",
+      "avg_beam_steps": 4.901927047487956,
+      "interproc_hop_ratio": null,
+      "beam_width": null,
+      "beam_horizon": null
+    },
+    {
+      "split": "test",
+      "avg_beam_steps": 4.88336192109777,
+      "interproc_hop_ratio": null,
+      "beam_width": null,
+      "beam_horizon": null
+    },
+    {
+      "split": "test",
+      "avg_beam_steps": 4.88336192109777,
+      "interproc_hop_ratio": null,
+      "beam_width": null,
+      "beam_horizon": null
+    }
+  ],
+  "ckg_top_motifs": [
+    {
+      "rank": 1,
+      "count": 3943,
+      "rels": "CFG\u2192CFG\u2192CFG"
+    },
+    {
+      "rank": 2,
+      "count": 3489,
+      "rels": "CALL\u2192CALL\u2192CALL"
+    },
+    {
+      "rank": 3,
+      "count": 3343,
+      "rels": "CFG\u2192CALL\u2192CALL"
+    },
+    {
+      "rank": 4,
+      "count": 810,
+      "rels": "CFG\u2192ARG2PARAM\u2192ARG2PARAM"
+    },
+    {
+      "rank": 5,
+      "count": 480,
+      "rels": "ARG2PARAM\u2192ARG2PARAM\u2192ARG2PARAM"
+    },
+    {
+      "rank": 6,
+      "count": 348,
+      "rels": "ARG2PARAM\u2192ARG2PARAM\u2192DFG_THIN"
+    },
+    {
+      "rank": 7,
+      "count": 288,
+      "rels": "CFG\u2192CFG\u2192CALL"
+    },
+    {
+      "rank": 8,
+      "count": 180,
+      "rels": "CFG\u2192CFG\u2192ARG2PARAM"
+    },
+    {
+      "rank": 9,
+      "count": 135,
+      "rels": "CFG\u2192DFG_THIN\u2192DFG_THIN"
+    },
+    {
+      "rank": 10,
+      "count": 116,
+      "rels": "CFG\u2192ARG2PARAM\u2192DFG_THIN"
+    }
+  ],
+  "label_balance": {
+    "splits": [
+      {
+        "split": "train",
+        "graphs_total": 3438,
+        "graphs_with_json_or_pos": 3436,
+        "vulnerable_nodes_total": 9946,
+        "non_vulnerable_nodes_total": 25173258,
+        "pos_ratio": 0.0003949457741755179
+      },
+      {
+        "split": "valid",
+        "graphs_total": 2905,
+        "graphs_with_json_or_pos": 2905,
+        "vulnerable_nodes_total": 1455,
+        "non_vulnerable_nodes_total": 3970281,
+        "pos_ratio": 0.0003663385481814501
+      },
+      {
+        "split": "test",
+        "graphs_total": 2915,
+        "graphs_with_json_or_pos": 2915,
+        "vulnerable_nodes_total": 1316,
+        "non_vulnerable_nodes_total": 3973974,
+        "pos_ratio": 0.00033104503067700724
+      }
+    ],
+    "evidence": {
+      "node_text_rx": 1074
+    }
+  }
+}

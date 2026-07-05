@@ -1,0 +1,46 @@
+idx,P,file,line,label,code
+0,0.567809,app/main.c,2,STMT,#include <stdio.h>
+1,0.576976,app/main.c,3,STMT,#include <stdlib.h>
+2,0.528860,app/main.c,4,STMT,#include <string.h>
+3,0.570160,app/main.c,6,STMT,extern char* wrap_a(char* in);
+4,0.526059,app/main.c,7,STMT,extern char* wrap_b(char* in);
+5,0.523244,app/main.c,8,STMT,extern char* wrap_c(char* in);
+6,0.446707,app/main.c,9,STMT,extern void run_system(char* cmd);
+7,0.536582,app/main.c,11,STMT,"int main(int argc, char** argv) {"
+8,0.547188,app/main.c,12,DECL,char buf[256];
+9,0.492090,app/main.c,13,COND,if (argc > 1) {
+10,0.510207,app/main.c,14,CALL:strncpy,"strncpy(buf, argv[1], sizeof(buf)-1);"
+11,0.545152,app/main.c,15,ASSIGN,buf[sizeof(buf)-1] = '\0';
+12,0.502700,app/main.c,16,ASSIGN,char* p = wrap_a(buf);
+13,0.506726,app/main.c,17,ASSIGN,p = wrap_b(p);
+14,0.562949,app/main.c,18,ASSIGN,p = wrap_c(p);
+15,0.508801,app/main.c,19,CALL:run_system,run_system(p);
+16,0.440123,app/main.c,20,STMT,}
+17,0.565077,app/main.c,21,RET,return 0;
+18,0.478730,app/main.c,22,STMT,}
+19,0.565643,lib/wrap.c,2,STMT,#include <stdio.h>
+20,0.570739,lib/wrap.c,3,STMT,#include <stdlib.h>
+21,0.515714,lib/wrap.c,4,STMT,#include <string.h>
+22,0.534957,lib/wrap.c,6,DECL,char tmp1[300];
+23,0.497287,lib/wrap.c,7,DECL,char tmp2[300];
+24,0.496768,lib/wrap.c,8,DECL,char tmp3[300];
+25,0.556532,lib/wrap.c,10,STMT,char* wrap_a(char* in) {
+26,0.498744,lib/wrap.c,11,CALL:snprintf,"snprintf(tmp1, sizeof(tmp1), ""%s"", in);"
+27,0.611925,lib/wrap.c,12,RET,return tmp1;
+28,0.496514,lib/wrap.c,13,STMT,}
+29,0.627614,lib/wrap.c,15,STMT,char* wrap_b(char* in) {
+30,0.486425,lib/wrap.c,16,CALL:strcpy,"strcpy(tmp2, """");"
+31,0.513854,lib/wrap.c,17,CALL:strcat,"strcat(tmp2, in);"
+32,0.514612,lib/wrap.c,18,CALL:strcat,"strcat(tmp2, "" --verbose"");"
+33,0.607476,lib/wrap.c,19,RET,return tmp2;
+34,0.499982,lib/wrap.c,20,STMT,}
+35,0.622629,lib/wrap.c,22,STMT,char* wrap_c(char* in) {
+36,0.474173,lib/wrap.c,23,CALL:sprintf,"sprintf(tmp3, ""%s %s"", in, ""--force"");"
+37,0.576791,lib/wrap.c,24,RET,return tmp3;
+38,0.472852,lib/wrap.c,25,STMT,}
+39,0.568462,lib/sink.c,2,STMT,#include <stdio.h>
+40,0.579093,lib/sink.c,3,STMT,#include <stdlib.h>
+41,0.531836,lib/sink.c,4,STMT,#include <string.h>
+42,0.586575,lib/sink.c,6,STMT,void run_system(char* cmd) {
+43,0.488868,lib/sink.c,7,CALL:system,system(cmd);
+44,0.500560,lib/sink.c,8,STMT,}

@@ -1,0 +1,3718 @@
+{
+  "meta": {
+    "tool": "joern",
+    "source": "C:/Users/USER/Desktop/Thesis Research/Implementation/Thesis-causal-vul/work/src/valid/shard_ccf7",
+    "n_nodes": 203,
+    "n_edges": {
+      "AST": 132,
+      "CFG": 44,
+      "DFG": 12
+    },
+    "dfg_status": "rd_intra_proc",
+    "cpg_augmented": true,
+    "added_edges": {
+      "CALL": 16,
+      "ARG2PARAM": 33,
+      "RET2CALL": 16,
+      "RET2LHS": 2
+    }
+  },
+  "nodes": [
+    {
+      "name": "tcp_get_timestamping_opt_stats",
+      "_id": 21474836480,
+      "signature": "sk_buff(sock*)",
+      "methodFullName": "tcp_get_timestamping_opt_stats",
+      "_label": "BINDING"
+    },
+    {
+      "dynamicTypeHintFullName": [],
+      "_id": 25769803776,
+      "code": "{\n\tconst struct tcp_sock *tp = tcp_sk(sk);\n\tstruct sk_buff *stats;\n\tstruct tcp_info info;\n\n\tstats = alloc_skb(3 * nla_total_size_64bit(sizeof(u64)), GFP_ATOMIC);\n\tif (!stats)\n\t\treturn NULL;\n\n\ttcp_get_info_chrono_stats(tp, &info);\n\tnla_put_u64_64bit(stats, TCP_NLA_BUSY,\n\t\t\t  info.tcpi_busy_time, TCP_NLA_PAD);\n\tnla_put_u64_64bit(stats, TCP_NLA_RWND_LIMITED,\n\t\t\t  info.tcpi_rwnd_limited, TCP_NLA_PAD);\n\tnla_put_u64_64bit(stats, TCP_NLA_SNDBUF_LIMITED,\n\t\t\t  info.tcpi_sndbuf_limited, TCP_NLA_PAD);\n\treturn stats;\n}",
+      "typeFullName": "void",
+      "lineNumber": 8,
+      "order": 2,
+      "_label": "BLOCK",
+      "columnNumber": 1,
+      "possibleTypes": [],
+      "argumentIndex": -1
+    },
+    {
+      "dynamicTypeHintFullName": [],
+      "_id": 25769803777,
+      "code": "<empty>",
+      "typeFullName": "ANY",
+      "lineNumber": 15,
+      "order": 2,
+      "_label": "BLOCK",
+      "columnNumber": 3,
+      "possibleTypes": [],
+      "argumentIndex": -1
+    },
+    {
+      "dynamicTypeHintFullName": [],
+      "_id": 25769803778,
+      "code": "<empty>",
+      "typeFullName": "ANY",
+      "lineNumber": 1,
+      "order": 1,
+      "_label": "BLOCK",
+      "columnNumber": 1,
+      "possibleTypes": [],
+      "argumentIndex": -1
+    },
+    {
+      "dynamicTypeHintFullName": [],
+      "_id": 25769803779,
+      "code": "<empty>",
+      "typeFullName": "ANY",
+      "lineNumber": 1,
+      "order": 1,
+      "_label": "BLOCK",
+      "columnNumber": 1,
+      "possibleTypes": [],
+      "argumentIndex": -1
+    },
+    {
+      "dynamicTypeHintFullName": [],
+      "_id": 25769803780,
+      "code": "<empty>",
+      "typeFullName": "ANY",
+      "lineNumber": 1,
+      "order": 1,
+      "_label": "BLOCK",
+      "columnNumber": 1,
+      "possibleTypes": [],
+      "argumentIndex": -1
+    },
+    {
+      "dynamicTypeHintFullName": [],
+      "_id": 25769803781,
+      "code": "<empty>",
+      "typeFullName": "ANY",
+      "order": 1,
+      "_label": "BLOCK",
+      "possibleTypes": [],
+      "argumentIndex": -1
+    },
+    {
+      "dynamicTypeHintFullName": [],
+      "_id": 25769803782,
+      "code": "<empty>",
+      "typeFullName": "ANY",
+      "order": 1,
+      "_label": "BLOCK",
+      "possibleTypes": [],
+      "argumentIndex": 1
+    },
+    {
+      "dynamicTypeHintFullName": [],
+      "_id": 25769803783,
+      "code": "<empty>",
+      "typeFullName": "ANY",
+      "order": 1,
+      "_label": "BLOCK",
+      "possibleTypes": [],
+      "argumentIndex": 1
+    },
+    {
+      "dynamicTypeHintFullName": [],
+      "_id": 25769803784,
+      "code": "<empty>",
+      "typeFullName": "ANY",
+      "order": 1,
+      "_label": "BLOCK",
+      "possibleTypes": [],
+      "argumentIndex": 1
+    },
+    {
+      "dynamicTypeHintFullName": [],
+      "_id": 25769803785,
+      "code": "<empty>",
+      "typeFullName": "ANY",
+      "order": 1,
+      "_label": "BLOCK",
+      "possibleTypes": [],
+      "argumentIndex": 1
+    },
+    {
+      "dynamicTypeHintFullName": [],
+      "_id": 25769803786,
+      "code": "<empty>",
+      "typeFullName": "ANY",
+      "order": 1,
+      "_label": "BLOCK",
+      "possibleTypes": [],
+      "argumentIndex": 1
+    },
+    {
+      "dynamicTypeHintFullName": [],
+      "_id": 25769803787,
+      "code": "<empty>",
+      "typeFullName": "ANY",
+      "order": 1,
+      "_label": "BLOCK",
+      "possibleTypes": [],
+      "argumentIndex": 1
+    },
+    {
+      "dynamicTypeHintFullName": [],
+      "_id": 25769803788,
+      "code": "<empty>",
+      "typeFullName": "ANY",
+      "order": 1,
+      "_label": "BLOCK",
+      "possibleTypes": [],
+      "argumentIndex": 1
+    },
+    {
+      "dynamicTypeHintFullName": [],
+      "_id": 25769803789,
+      "code": "<empty>",
+      "typeFullName": "ANY",
+      "order": 1,
+      "_label": "BLOCK",
+      "possibleTypes": [],
+      "argumentIndex": 1
+    },
+    {
+      "dynamicTypeHintFullName": [],
+      "_id": 25769803790,
+      "code": "<empty>",
+      "typeFullName": "ANY",
+      "order": 1,
+      "_label": "BLOCK",
+      "possibleTypes": [],
+      "argumentIndex": 1
+    },
+    {
+      "dynamicTypeHintFullName": [],
+      "_id": 25769803791,
+      "code": "<empty>",
+      "typeFullName": "ANY",
+      "order": 1,
+      "_label": "BLOCK",
+      "possibleTypes": [],
+      "argumentIndex": 1
+    },
+    {
+      "dynamicTypeHintFullName": [],
+      "_id": 25769803792,
+      "code": "<empty>",
+      "typeFullName": "ANY",
+      "order": 1,
+      "_label": "BLOCK",
+      "possibleTypes": [],
+      "argumentIndex": 1
+    },
+    {
+      "name": "<operator>.assignment",
+      "_id": 30064771072,
+      "signature": "",
+      "code": "*tp = tcp_sk(sk)",
+      "typeFullName": "void",
+      "lineNumber": 9,
+      "order": 2,
+      "methodFullName": "<operator>.assignment",
+      "dynamicTypeHintFullName": [],
+      "dispatchType": "STATIC_DISPATCH",
+      "columnNumber": 24,
+      "_label": "CALL",
+      "possibleTypes": [],
+      "argumentIndex": -1
+    },
+    {
+      "name": "tcp_sk",
+      "_id": 30064771073,
+      "signature": "",
+      "code": "tcp_sk(sk)",
+      "typeFullName": "ANY",
+      "lineNumber": 9,
+      "order": 2,
+      "methodFullName": "tcp_sk",
+      "dynamicTypeHintFullName": [],
+      "dispatchType": "STATIC_DISPATCH",
+      "columnNumber": 30,
+      "_label": "CALL",
+      "possibleTypes": [],
+      "argumentIndex": 2
+    },
+    {
+      "name": "<operator>.assignment",
+      "_id": 30064771074,
+      "signature": "",
+      "code": "stats = alloc_skb(3 * nla_total_size_64bit(sizeof(u64)), GFP_ATOMIC)",
+      "typeFullName": "ANY",
+      "lineNumber": 13,
+      "order": 5,
+      "methodFullName": "<operator>.assignment",
+      "dynamicTypeHintFullName": [],
+      "dispatchType": "STATIC_DISPATCH",
+      "columnNumber": 2,
+      "_label": "CALL",
+      "possibleTypes": [],
+      "argumentIndex": -1
+    },
+    {
+      "name": "alloc_skb",
+      "_id": 30064771075,
+      "signature": "",
+      "code": "alloc_skb(3 * nla_total_size_64bit(sizeof(u64)), GFP_ATOMIC)",
+      "typeFullName": "ANY",
+      "lineNumber": 13,
+      "order": 2,
+      "methodFullName": "alloc_skb",
+      "dynamicTypeHintFullName": [],
+      "dispatchType": "STATIC_DISPATCH",
+      "columnNumber": 10,
+      "_label": "CALL",
+      "possibleTypes": [],
+      "argumentIndex": 2
+    },
+    {
+      "name": "<operator>.multiplication",
+      "_id": 30064771076,
+      "signature": "",
+      "code": "3 * nla_total_size_64bit(sizeof(u64))",
+      "typeFullName": "ANY",
+      "lineNumber": 13,
+      "order": 1,
+      "methodFullName": "<operator>.multiplication",
+      "dynamicTypeHintFullName": [],
+      "dispatchType": "STATIC_DISPATCH",
+      "columnNumber": 20,
+      "_label": "CALL",
+      "possibleTypes": [],
+      "argumentIndex": 1
+    },
+    {
+      "name": "nla_total_size_64bit",
+      "_id": 30064771077,
+      "signature": "",
+      "code": "nla_total_size_64bit(sizeof(u64))",
+      "typeFullName": "ANY",
+      "lineNumber": 13,
+      "order": 2,
+      "methodFullName": "nla_total_size_64bit",
+      "dynamicTypeHintFullName": [],
+      "dispatchType": "STATIC_DISPATCH",
+      "columnNumber": 24,
+      "_label": "CALL",
+      "possibleTypes": [],
+      "argumentIndex": 2
+    },
+    {
+      "name": "<operator>.sizeOf",
+      "_id": 30064771078,
+      "signature": "",
+      "code": "sizeof(u64)",
+      "typeFullName": "ANY",
+      "lineNumber": 13,
+      "order": 1,
+      "methodFullName": "<operator>.sizeOf",
+      "dynamicTypeHintFullName": [],
+      "dispatchType": "STATIC_DISPATCH",
+      "columnNumber": 45,
+      "_label": "CALL",
+      "possibleTypes": [],
+      "argumentIndex": 1
+    },
+    {
+      "name": "<operator>.logicalNot",
+      "_id": 30064771079,
+      "signature": "",
+      "code": "!stats",
+      "typeFullName": "ANY",
+      "lineNumber": 14,
+      "order": 1,
+      "methodFullName": "<operator>.logicalNot",
+      "dynamicTypeHintFullName": [],
+      "dispatchType": "STATIC_DISPATCH",
+      "columnNumber": 6,
+      "_label": "CALL",
+      "possibleTypes": [],
+      "argumentIndex": -1
+    },
+    {
+      "name": "tcp_get_info_chrono_stats",
+      "_id": 30064771080,
+      "signature": "",
+      "code": "tcp_get_info_chrono_stats(tp, &info)",
+      "typeFullName": "ANY",
+      "lineNumber": 17,
+      "order": 7,
+      "methodFullName": "tcp_get_info_chrono_stats",
+      "dynamicTypeHintFullName": [],
+      "dispatchType": "STATIC_DISPATCH",
+      "columnNumber": 2,
+      "_label": "CALL",
+      "possibleTypes": [],
+      "argumentIndex": -1
+    },
+    {
+      "name": "<operator>.addressOf",
+      "_id": 30064771081,
+      "signature": "",
+      "code": "&info",
+      "typeFullName": "ANY",
+      "lineNumber": 17,
+      "order": 2,
+      "methodFullName": "<operator>.addressOf",
+      "dynamicTypeHintFullName": [],
+      "dispatchType": "STATIC_DISPATCH",
+      "columnNumber": 32,
+      "_label": "CALL",
+      "possibleTypes": [],
+      "argumentIndex": 2
+    },
+    {
+      "name": "nla_put_u64_64bit",
+      "_id": 30064771082,
+      "signature": "",
+      "code": "nla_put_u64_64bit(stats, TCP_NLA_BUSY,\n\t\t\t  info.tcpi_busy_time, TCP_NLA_PAD)",
+      "typeFullName": "ANY",
+      "lineNumber": 18,
+      "order": 8,
+      "methodFullName": "nla_put_u64_64bit",
+      "dynamicTypeHintFullName": [],
+      "dispatchType": "STATIC_DISPATCH",
+      "columnNumber": 2,
+      "_label": "CALL",
+      "possibleTypes": [],
+      "argumentIndex": -1
+    },
+    {
+      "name": "<operator>.fieldAccess",
+      "_id": 30064771083,
+      "signature": "",
+      "code": "info.tcpi_busy_time",
+      "typeFullName": "ANY",
+      "lineNumber": 19,
+      "order": 3,
+      "methodFullName": "<operator>.fieldAccess",
+      "dynamicTypeHintFullName": [],
+      "dispatchType": "STATIC_DISPATCH",
+      "columnNumber": 6,
+      "_label": "CALL",
+      "possibleTypes": [],
+      "argumentIndex": 3
+    },
+    {
+      "name": "nla_put_u64_64bit",
+      "_id": 30064771084,
+      "signature": "",
+      "code": "nla_put_u64_64bit(stats, TCP_NLA_RWND_LIMITED,\n\t\t\t  info.tcpi_rwnd_limited, TCP_NLA_PAD)",
+      "typeFullName": "ANY",
+      "lineNumber": 20,
+      "order": 9,
+      "methodFullName": "nla_put_u64_64bit",
+      "dynamicTypeHintFullName": [],
+      "dispatchType": "STATIC_DISPATCH",
+      "columnNumber": 2,
+      "_label": "CALL",
+      "possibleTypes": [],
+      "argumentIndex": -1
+    },
+    {
+      "name": "<operator>.fieldAccess",
+      "_id": 30064771085,
+      "signature": "",
+      "code": "info.tcpi_rwnd_limited",
+      "typeFullName": "ANY",
+      "lineNumber": 21,
+      "order": 3,
+      "methodFullName": "<operator>.fieldAccess",
+      "dynamicTypeHintFullName": [],
+      "dispatchType": "STATIC_DISPATCH",
+      "columnNumber": 6,
+      "_label": "CALL",
+      "possibleTypes": [],
+      "argumentIndex": 3
+    },
+    {
+      "name": "nla_put_u64_64bit",
+      "_id": 30064771086,
+      "signature": "",
+      "code": "nla_put_u64_64bit(stats, TCP_NLA_SNDBUF_LIMITED,\n\t\t\t  info.tcpi_sndbuf_limited, TCP_NLA_PAD)",
+      "typeFullName": "ANY",
+      "lineNumber": 22,
+      "order": 10,
+      "methodFullName": "nla_put_u64_64bit",
+      "dynamicTypeHintFullName": [],
+      "dispatchType": "STATIC_DISPATCH",
+      "columnNumber": 2,
+      "_label": "CALL",
+      "possibleTypes": [],
+      "argumentIndex": -1
+    },
+    {
+      "name": "<operator>.fieldAccess",
+      "_id": 30064771087,
+      "signature": "",
+      "code": "info.tcpi_sndbuf_limited",
+      "typeFullName": "ANY",
+      "lineNumber": 23,
+      "order": 3,
+      "methodFullName": "<operator>.fieldAccess",
+      "dynamicTypeHintFullName": [],
+      "dispatchType": "STATIC_DISPATCH",
+      "columnNumber": 6,
+      "_label": "CALL",
+      "possibleTypes": [],
+      "argumentIndex": 3
+    },
+    {
+      "parserTypeName": "CASTIfStatement",
+      "_id": 47244640256,
+      "code": "if (!stats)\n\t\treturn NULL;",
+      "lineNumber": 14,
+      "order": 6,
+      "controlStructureType": "IF",
+      "_label": "CONTROL_STRUCTURE",
+      "argumentIndex": -1,
+      "columnNumber": 2
+    },
+    {
+      "name": "stddef.h",
+      "_id": 51539607552,
+      "version": "include",
+      "dependencyGroupId": "stddef.h",
+      "_label": "DEPENDENCY"
+    },
+    {
+      "name": "stdint.h",
+      "_id": 51539607553,
+      "version": "include",
+      "dependencyGroupId": "stdint.h",
+      "_label": "DEPENDENCY"
+    },
+    {
+      "name": "stdbool.h",
+      "_id": 51539607554,
+      "version": "include",
+      "dependencyGroupId": "stdbool.h",
+      "_label": "DEPENDENCY"
+    },
+    {
+      "name": "stddef.h",
+      "_id": 51539607555,
+      "version": "include",
+      "dependencyGroupId": "stddef.h",
+      "_label": "DEPENDENCY"
+    },
+    {
+      "name": "stdint.h",
+      "_id": 51539607556,
+      "version": "include",
+      "dependencyGroupId": "stdint.h",
+      "_label": "DEPENDENCY"
+    },
+    {
+      "name": "stdbool.h",
+      "_id": 51539607557,
+      "version": "include",
+      "dependencyGroupId": "stdbool.h",
+      "_label": "DEPENDENCY"
+    },
+    {
+      "name": "stddef.h",
+      "_id": 51539607558,
+      "version": "include",
+      "dependencyGroupId": "stddef.h",
+      "_label": "DEPENDENCY"
+    },
+    {
+      "name": "stdint.h",
+      "_id": 51539607559,
+      "version": "include",
+      "dependencyGroupId": "stdint.h",
+      "_label": "DEPENDENCY"
+    },
+    {
+      "name": "stdbool.h",
+      "_id": 51539607560,
+      "version": "include",
+      "dependencyGroupId": "stdbool.h",
+      "_label": "DEPENDENCY"
+    },
+    {
+      "_id": 55834574848,
+      "code": "tcpi_busy_time",
+      "order": 2,
+      "_label": "FIELD_IDENTIFIER",
+      "argumentIndex": 2,
+      "canonicalName": "tcpi_busy_time",
+      "lineNumber": 19,
+      "columnNumber": 6
+    },
+    {
+      "_id": 55834574849,
+      "code": "tcpi_rwnd_limited",
+      "order": 2,
+      "_label": "FIELD_IDENTIFIER",
+      "argumentIndex": 2,
+      "canonicalName": "tcpi_rwnd_limited",
+      "lineNumber": 21,
+      "columnNumber": 6
+    },
+    {
+      "_id": 55834574850,
+      "code": "tcpi_sndbuf_limited",
+      "order": 2,
+      "_label": "FIELD_IDENTIFIER",
+      "argumentIndex": 2,
+      "canonicalName": "tcpi_sndbuf_limited",
+      "lineNumber": 23,
+      "columnNumber": 6
+    },
+    {
+      "name": "ccf7abb93af09ad0868ae9033d1ca8108bdaec82_48.c",
+      "_id": 60129542144,
+      "code": "<empty>",
+      "order": 0,
+      "content": "<empty>",
+      "_label": "FILE"
+    },
+    {
+      "name": "ccf7abb93af09ad0868ae9033d1ca8108bdaec82_50.c",
+      "_id": 60129542145,
+      "code": "<empty>",
+      "order": 0,
+      "content": "<empty>",
+      "_label": "FILE"
+    },
+    {
+      "name": "ccf7abb93af09ad0868ae9033d1ca8108bdaec82_55.c",
+      "_id": 60129542146,
+      "code": "<empty>",
+      "order": 0,
+      "content": "<empty>",
+      "_label": "FILE"
+    },
+    {
+      "name": "<includes>",
+      "_id": 60129542147,
+      "code": "<empty>",
+      "order": 1,
+      "content": "<empty>",
+      "_label": "FILE"
+    },
+    {
+      "name": "<unknown>",
+      "_id": 60129542148,
+      "code": "<empty>",
+      "order": 0,
+      "content": "<empty>",
+      "_label": "FILE"
+    },
+    {
+      "dynamicTypeHintFullName": [],
+      "name": "tp",
+      "_id": 68719476736,
+      "code": "tp",
+      "typeFullName": "tcp_sock*",
+      "lineNumber": 9,
+      "order": 1,
+      "_label": "IDENTIFIER",
+      "columnNumber": 25,
+      "possibleTypes": [],
+      "argumentIndex": 1
+    },
+    {
+      "dynamicTypeHintFullName": [],
+      "name": "sk",
+      "_id": 68719476737,
+      "code": "sk",
+      "typeFullName": "sock*",
+      "lineNumber": 9,
+      "order": 1,
+      "_label": "IDENTIFIER",
+      "columnNumber": 37,
+      "possibleTypes": [],
+      "argumentIndex": 1
+    },
+    {
+      "dynamicTypeHintFullName": [],
+      "name": "stats",
+      "_id": 68719476738,
+      "code": "stats",
+      "typeFullName": "sk_buff*",
+      "lineNumber": 13,
+      "order": 1,
+      "_label": "IDENTIFIER",
+      "columnNumber": 2,
+      "possibleTypes": [],
+      "argumentIndex": 1
+    },
+    {
+      "dynamicTypeHintFullName": [],
+      "name": "u64",
+      "_id": 68719476739,
+      "code": "u64",
+      "typeFullName": "u64",
+      "lineNumber": 13,
+      "order": 1,
+      "_label": "IDENTIFIER",
+      "columnNumber": 52,
+      "possibleTypes": [],
+      "argumentIndex": 1
+    },
+    {
+      "dynamicTypeHintFullName": [],
+      "name": "GFP_ATOMIC",
+      "_id": 68719476740,
+      "code": "<unknown> GFP_ATOMIC",
+      "typeFullName": "ANY",
+      "lineNumber": 13,
+      "order": 2,
+      "_label": "IDENTIFIER",
+      "columnNumber": 59,
+      "possibleTypes": [],
+      "argumentIndex": 2
+    },
+    {
+      "dynamicTypeHintFullName": [],
+      "name": "stats",
+      "_id": 68719476741,
+      "code": "stats",
+      "typeFullName": "sk_buff*",
+      "lineNumber": 14,
+      "order": 1,
+      "_label": "IDENTIFIER",
+      "columnNumber": 7,
+      "possibleTypes": [],
+      "argumentIndex": 1
+    },
+    {
+      "dynamicTypeHintFullName": [],
+      "name": "NULL",
+      "_id": 68719476742,
+      "code": "<unknown> NULL",
+      "typeFullName": "ANY",
+      "lineNumber": 15,
+      "order": 1,
+      "_label": "IDENTIFIER",
+      "columnNumber": 10,
+      "possibleTypes": [],
+      "argumentIndex": -1
+    },
+    {
+      "dynamicTypeHintFullName": [],
+      "name": "tp",
+      "_id": 68719476743,
+      "code": "tp",
+      "typeFullName": "tcp_sock*",
+      "lineNumber": 17,
+      "order": 1,
+      "_label": "IDENTIFIER",
+      "columnNumber": 28,
+      "possibleTypes": [],
+      "argumentIndex": 1
+    },
+    {
+      "dynamicTypeHintFullName": [],
+      "name": "info",
+      "_id": 68719476744,
+      "code": "info",
+      "typeFullName": "tcp_info",
+      "lineNumber": 17,
+      "order": 1,
+      "_label": "IDENTIFIER",
+      "columnNumber": 33,
+      "possibleTypes": [],
+      "argumentIndex": 1
+    },
+    {
+      "dynamicTypeHintFullName": [],
+      "name": "stats",
+      "_id": 68719476745,
+      "code": "stats",
+      "typeFullName": "sk_buff*",
+      "lineNumber": 18,
+      "order": 1,
+      "_label": "IDENTIFIER",
+      "columnNumber": 20,
+      "possibleTypes": [],
+      "argumentIndex": 1
+    },
+    {
+      "dynamicTypeHintFullName": [],
+      "name": "TCP_NLA_BUSY",
+      "_id": 68719476746,
+      "code": "<unknown> TCP_NLA_BUSY",
+      "typeFullName": "ANY",
+      "lineNumber": 18,
+      "order": 2,
+      "_label": "IDENTIFIER",
+      "columnNumber": 27,
+      "possibleTypes": [],
+      "argumentIndex": 2
+    },
+    {
+      "dynamicTypeHintFullName": [],
+      "name": "info",
+      "_id": 68719476747,
+      "code": "info",
+      "typeFullName": "tcp_info",
+      "lineNumber": 19,
+      "order": 1,
+      "_label": "IDENTIFIER",
+      "columnNumber": 6,
+      "possibleTypes": [],
+      "argumentIndex": 1
+    },
+    {
+      "dynamicTypeHintFullName": [],
+      "name": "TCP_NLA_PAD",
+      "_id": 68719476748,
+      "code": "<unknown> TCP_NLA_PAD",
+      "typeFullName": "ANY",
+      "lineNumber": 19,
+      "order": 4,
+      "_label": "IDENTIFIER",
+      "columnNumber": 27,
+      "possibleTypes": [],
+      "argumentIndex": 4
+    },
+    {
+      "dynamicTypeHintFullName": [],
+      "name": "stats",
+      "_id": 68719476749,
+      "code": "stats",
+      "typeFullName": "sk_buff*",
+      "lineNumber": 20,
+      "order": 1,
+      "_label": "IDENTIFIER",
+      "columnNumber": 20,
+      "possibleTypes": [],
+      "argumentIndex": 1
+    },
+    {
+      "dynamicTypeHintFullName": [],
+      "name": "TCP_NLA_RWND_LIMITED",
+      "_id": 68719476750,
+      "code": "<unknown> TCP_NLA_RWND_LIMITED",
+      "typeFullName": "ANY",
+      "lineNumber": 20,
+      "order": 2,
+      "_label": "IDENTIFIER",
+      "columnNumber": 27,
+      "possibleTypes": [],
+      "argumentIndex": 2
+    },
+    {
+      "dynamicTypeHintFullName": [],
+      "name": "info",
+      "_id": 68719476751,
+      "code": "info",
+      "typeFullName": "tcp_info",
+      "lineNumber": 21,
+      "order": 1,
+      "_label": "IDENTIFIER",
+      "columnNumber": 6,
+      "possibleTypes": [],
+      "argumentIndex": 1
+    },
+    {
+      "dynamicTypeHintFullName": [],
+      "name": "TCP_NLA_PAD",
+      "_id": 68719476752,
+      "code": "<unknown> TCP_NLA_PAD",
+      "typeFullName": "ANY",
+      "lineNumber": 21,
+      "order": 4,
+      "_label": "IDENTIFIER",
+      "columnNumber": 30,
+      "possibleTypes": [],
+      "argumentIndex": 4
+    },
+    {
+      "dynamicTypeHintFullName": [],
+      "name": "stats",
+      "_id": 68719476753,
+      "code": "stats",
+      "typeFullName": "sk_buff*",
+      "lineNumber": 22,
+      "order": 1,
+      "_label": "IDENTIFIER",
+      "columnNumber": 20,
+      "possibleTypes": [],
+      "argumentIndex": 1
+    },
+    {
+      "dynamicTypeHintFullName": [],
+      "name": "TCP_NLA_SNDBUF_LIMITED",
+      "_id": 68719476754,
+      "code": "<unknown> TCP_NLA_SNDBUF_LIMITED",
+      "typeFullName": "ANY",
+      "lineNumber": 22,
+      "order": 2,
+      "_label": "IDENTIFIER",
+      "columnNumber": 27,
+      "possibleTypes": [],
+      "argumentIndex": 2
+    },
+    {
+      "dynamicTypeHintFullName": [],
+      "name": "info",
+      "_id": 68719476755,
+      "code": "info",
+      "typeFullName": "tcp_info",
+      "lineNumber": 23,
+      "order": 1,
+      "_label": "IDENTIFIER",
+      "columnNumber": 6,
+      "possibleTypes": [],
+      "argumentIndex": 1
+    },
+    {
+      "dynamicTypeHintFullName": [],
+      "name": "TCP_NLA_PAD",
+      "_id": 68719476756,
+      "code": "<unknown> TCP_NLA_PAD",
+      "typeFullName": "ANY",
+      "lineNumber": 23,
+      "order": 4,
+      "_label": "IDENTIFIER",
+      "columnNumber": 32,
+      "possibleTypes": [],
+      "argumentIndex": 4
+    },
+    {
+      "dynamicTypeHintFullName": [],
+      "name": "stats",
+      "_id": 68719476757,
+      "code": "stats",
+      "typeFullName": "sk_buff*",
+      "lineNumber": 24,
+      "order": 1,
+      "_label": "IDENTIFIER",
+      "columnNumber": 9,
+      "possibleTypes": [],
+      "argumentIndex": -1
+    },
+    {
+      "_id": 73014444032,
+      "importedAs": "stddef.h",
+      "code": "#include <stddef.h>",
+      "lineNumber": 3,
+      "order": 1,
+      "importedEntity": "stddef.h",
+      "_label": "IMPORT",
+      "columnNumber": 1
+    },
+    {
+      "_id": 73014444033,
+      "importedAs": "stdint.h",
+      "code": "#include <stdint.h>",
+      "lineNumber": 4,
+      "order": 2,
+      "importedEntity": "stdint.h",
+      "_label": "IMPORT",
+      "columnNumber": 1
+    },
+    {
+      "_id": 73014444034,
+      "importedAs": "stdbool.h",
+      "code": "#include <stdbool.h>",
+      "lineNumber": 5,
+      "order": 3,
+      "importedEntity": "stdbool.h",
+      "_label": "IMPORT",
+      "columnNumber": 1
+    },
+    {
+      "_id": 73014444035,
+      "importedAs": "stddef.h",
+      "code": "#include <stddef.h>",
+      "lineNumber": 3,
+      "order": 1,
+      "importedEntity": "stddef.h",
+      "_label": "IMPORT",
+      "columnNumber": 1
+    },
+    {
+      "_id": 73014444036,
+      "importedAs": "stdint.h",
+      "code": "#include <stdint.h>",
+      "lineNumber": 4,
+      "order": 2,
+      "importedEntity": "stdint.h",
+      "_label": "IMPORT",
+      "columnNumber": 1
+    },
+    {
+      "_id": 73014444037,
+      "importedAs": "stdbool.h",
+      "code": "#include <stdbool.h>",
+      "lineNumber": 5,
+      "order": 3,
+      "importedEntity": "stdbool.h",
+      "_label": "IMPORT",
+      "columnNumber": 1
+    },
+    {
+      "_id": 73014444038,
+      "importedAs": "stddef.h",
+      "code": "#include <stddef.h>",
+      "lineNumber": 3,
+      "order": 1,
+      "importedEntity": "stddef.h",
+      "_label": "IMPORT",
+      "columnNumber": 1
+    },
+    {
+      "_id": 73014444039,
+      "importedAs": "stdint.h",
+      "code": "#include <stdint.h>",
+      "lineNumber": 4,
+      "order": 2,
+      "importedEntity": "stdint.h",
+      "_label": "IMPORT",
+      "columnNumber": 1
+    },
+    {
+      "_id": 73014444040,
+      "importedAs": "stdbool.h",
+      "code": "#include <stdbool.h>",
+      "lineNumber": 5,
+      "order": 3,
+      "importedEntity": "stdbool.h",
+      "_label": "IMPORT",
+      "columnNumber": 1
+    },
+    {
+      "dynamicTypeHintFullName": [],
+      "_id": 90194313216,
+      "code": "3",
+      "typeFullName": "int",
+      "lineNumber": 13,
+      "order": 1,
+      "_label": "LITERAL",
+      "columnNumber": 20,
+      "possibleTypes": [],
+      "argumentIndex": 1
+    },
+    {
+      "dynamicTypeHintFullName": [],
+      "name": "tp",
+      "_id": 94489280512,
+      "genericSignature": "<empty>",
+      "typeFullName": "tcp_sock*",
+      "lineNumber": 9,
+      "order": 1,
+      "_label": "LOCAL",
+      "possibleTypes": [],
+      "code": "const struct tcp_sock *tp",
+      "columnNumber": 25
+    },
+    {
+      "dynamicTypeHintFullName": [],
+      "name": "stats",
+      "_id": 94489280513,
+      "genericSignature": "<empty>",
+      "typeFullName": "sk_buff*",
+      "lineNumber": 10,
+      "order": 3,
+      "_label": "LOCAL",
+      "possibleTypes": [],
+      "code": "struct sk_buff *stats",
+      "columnNumber": 17
+    },
+    {
+      "dynamicTypeHintFullName": [],
+      "name": "info",
+      "_id": 94489280514,
+      "genericSignature": "<empty>",
+      "typeFullName": "tcp_info",
+      "lineNumber": 11,
+      "order": 4,
+      "_label": "LOCAL",
+      "possibleTypes": [],
+      "code": "struct tcp_info info",
+      "columnNumber": 18
+    },
+    {
+      "dynamicTypeHintFullName": [],
+      "name": "TCP_NLA_PAD",
+      "_id": 94489280515,
+      "genericSignature": "<empty>",
+      "typeFullName": "ANY",
+      "lineNumber": 19,
+      "order": 0,
+      "_label": "LOCAL",
+      "possibleTypes": [],
+      "code": "<unknown> TCP_NLA_PAD",
+      "columnNumber": 27
+    },
+    {
+      "dynamicTypeHintFullName": [],
+      "name": "TCP_NLA_SNDBUF_LIMITED",
+      "_id": 94489280516,
+      "genericSignature": "<empty>",
+      "typeFullName": "ANY",
+      "lineNumber": 22,
+      "order": 0,
+      "_label": "LOCAL",
+      "possibleTypes": [],
+      "code": "<unknown> TCP_NLA_SNDBUF_LIMITED",
+      "columnNumber": 27
+    },
+    {
+      "dynamicTypeHintFullName": [],
+      "name": "TCP_NLA_RWND_LIMITED",
+      "_id": 94489280517,
+      "genericSignature": "<empty>",
+      "typeFullName": "ANY",
+      "lineNumber": 20,
+      "order": 0,
+      "_label": "LOCAL",
+      "possibleTypes": [],
+      "code": "<unknown> TCP_NLA_RWND_LIMITED",
+      "columnNumber": 27
+    },
+    {
+      "dynamicTypeHintFullName": [],
+      "name": "TCP_NLA_BUSY",
+      "_id": 94489280518,
+      "genericSignature": "<empty>",
+      "typeFullName": "ANY",
+      "lineNumber": 18,
+      "order": 0,
+      "_label": "LOCAL",
+      "possibleTypes": [],
+      "code": "<unknown> TCP_NLA_BUSY",
+      "columnNumber": 27
+    },
+    {
+      "dynamicTypeHintFullName": [],
+      "name": "NULL",
+      "_id": 94489280519,
+      "genericSignature": "<empty>",
+      "typeFullName": "ANY",
+      "lineNumber": 15,
+      "order": 0,
+      "_label": "LOCAL",
+      "possibleTypes": [],
+      "code": "<unknown> NULL",
+      "columnNumber": 10
+    },
+    {
+      "dynamicTypeHintFullName": [],
+      "name": "GFP_ATOMIC",
+      "_id": 94489280520,
+      "genericSignature": "<empty>",
+      "typeFullName": "ANY",
+      "lineNumber": 13,
+      "order": 0,
+      "_label": "LOCAL",
+      "possibleTypes": [],
+      "code": "<unknown> GFP_ATOMIC",
+      "columnNumber": 59
+    },
+    {
+      "dynamicTypeHintFullName": [],
+      "name": "u64",
+      "_id": 94489280521,
+      "genericSignature": "<empty>",
+      "typeFullName": "u64",
+      "lineNumber": 13,
+      "order": 0,
+      "_label": "LOCAL",
+      "possibleTypes": [],
+      "code": "u64",
+      "columnNumber": 52
+    },
+    {
+      "_id": 103079215104,
+      "version": "0.1",
+      "language": "NEWC",
+      "_label": "META_DATA",
+      "overlays": [
+        "base",
+        "controlflow",
+        "typerel",
+        "callgraph",
+        "dataflowOss"
+      ],
+      "root": "C:\\Users\\USER\\Desktop\\Thesis Research\\Implementation\\Thesis-causal-vul\\work\\src\\valid\\shard_ccf7"
+    },
+    {
+      "name": "tcp_get_timestamping_opt_stats",
+      "astParentFullName": "ccf7abb93af09ad0868ae9033d1ca8108bdaec82_48.c:<global>",
+      "_id": 107374182400,
+      "signature": "sk_buff(sock*)",
+      "astParentType": "TYPE_DECL",
+      "lineNumberEnd": 25,
+      "_label": "METHOD",
+      "columnNumberEnd": 1,
+      "fullName": "tcp_get_timestamping_opt_stats",
+      "genericSignature": "<empty>",
+      "code": "struct sk_buff *tcp_get_timestamping_opt_stats(const struct sock *sk)\n{\n\tconst struct tcp_sock *tp = tcp_sk(sk);\n\tstruct sk_buff *stats;\n\tstruct tcp_info info;\n\n\tstats = alloc_skb(3 * nla_total_size_64bit(sizeof(u64)), GFP_ATOMIC);\n\tif (!stats)\n\t\treturn NULL;\n\n\ttcp_get_info_chrono_stats(tp, &info);\n\tnla_put_u64_64bit(stats, TCP_NLA_BUSY,\n\t\t\t  info.tcpi_busy_time, TCP_NLA_PAD);\n\tnla_put_u64_64bit(stats, TCP_NLA_RWND_LIMITED,\n\t\t\t  info.tcpi_rwnd_limited, TCP_NLA_PAD);\n\tnla_put_u64_64bit(stats, TCP_NLA_SNDBUF_LIMITED,\n\t\t\t  info.tcpi_sndbuf_limited, TCP_NLA_PAD);\n\treturn stats;\n}",
+      "isExternal": false,
+      "lineNumber": 7,
+      "columnNumber": 1,
+      "order": 1,
+      "filename": "ccf7abb93af09ad0868ae9033d1ca8108bdaec82_48.c"
+    },
+    {
+      "name": "<global>",
+      "astParentFullName": "ccf7abb93af09ad0868ae9033d1ca8108bdaec82_48.c:<global>",
+      "_id": 107374182401,
+      "signature": "",
+      "astParentType": "TYPE_DECL",
+      "lineNumberEnd": 25,
+      "_label": "METHOD",
+      "columnNumberEnd": 1,
+      "fullName": "ccf7abb93af09ad0868ae9033d1ca8108bdaec82_48.c:<global>",
+      "genericSignature": "<empty>",
+      "code": "<global>",
+      "isExternal": false,
+      "lineNumber": 1,
+      "columnNumber": 1,
+      "order": 1,
+      "filename": "ccf7abb93af09ad0868ae9033d1ca8108bdaec82_48.c"
+    },
+    {
+      "name": "<global>",
+      "astParentFullName": "ccf7abb93af09ad0868ae9033d1ca8108bdaec82_50.c:<global>",
+      "_id": 107374182402,
+      "signature": "",
+      "astParentType": "TYPE_DECL",
+      "lineNumberEnd": 16,
+      "_label": "METHOD",
+      "columnNumberEnd": 1,
+      "fullName": "ccf7abb93af09ad0868ae9033d1ca8108bdaec82_50.c:<global>",
+      "genericSignature": "<empty>",
+      "code": "<global>",
+      "isExternal": false,
+      "lineNumber": 1,
+      "columnNumber": 1,
+      "order": 1,
+      "filename": "ccf7abb93af09ad0868ae9033d1ca8108bdaec82_50.c"
+    },
+    {
+      "name": "<global>",
+      "astParentFullName": "ccf7abb93af09ad0868ae9033d1ca8108bdaec82_55.c:<global>",
+      "_id": 107374182403,
+      "signature": "",
+      "astParentType": "TYPE_DECL",
+      "lineNumberEnd": 86,
+      "_label": "METHOD",
+      "columnNumberEnd": 1,
+      "fullName": "ccf7abb93af09ad0868ae9033d1ca8108bdaec82_55.c:<global>",
+      "genericSignature": "<empty>",
+      "code": "<global>",
+      "isExternal": false,
+      "lineNumber": 1,
+      "columnNumber": 1,
+      "order": 1,
+      "filename": "ccf7abb93af09ad0868ae9033d1ca8108bdaec82_55.c"
+    },
+    {
+      "name": "<global>",
+      "astParentFullName": "<includes>:<global>",
+      "_id": 107374182404,
+      "signature": "",
+      "astParentType": "NAMESPACE_BLOCK",
+      "_label": "METHOD",
+      "fullName": "<includes>:<global>",
+      "genericSignature": "<empty>",
+      "code": "<global>",
+      "isExternal": false,
+      "lineNumber": 1,
+      "order": 1,
+      "filename": "<includes>"
+    },
+    {
+      "name": "nla_put_u64_64bit",
+      "astParentFullName": "<global>",
+      "_id": 107374182405,
+      "signature": "",
+      "astParentType": "NAMESPACE_BLOCK",
+      "_label": "METHOD",
+      "fullName": "nla_put_u64_64bit",
+      "genericSignature": "<empty>",
+      "code": "<empty>",
+      "isExternal": true,
+      "order": 0,
+      "filename": "<empty>"
+    },
+    {
+      "name": "<operator>.addressOf",
+      "astParentFullName": "<global>",
+      "_id": 107374182406,
+      "signature": "",
+      "astParentType": "NAMESPACE_BLOCK",
+      "_label": "METHOD",
+      "fullName": "<operator>.addressOf",
+      "genericSignature": "<empty>",
+      "code": "<empty>",
+      "isExternal": true,
+      "order": 0,
+      "filename": "<empty>"
+    },
+    {
+      "name": "<operator>.logicalNot",
+      "astParentFullName": "<global>",
+      "_id": 107374182407,
+      "signature": "",
+      "astParentType": "NAMESPACE_BLOCK",
+      "_label": "METHOD",
+      "fullName": "<operator>.logicalNot",
+      "genericSignature": "<empty>",
+      "code": "<empty>",
+      "isExternal": true,
+      "order": 0,
+      "filename": "<empty>"
+    },
+    {
+      "name": "nla_total_size_64bit",
+      "astParentFullName": "<global>",
+      "_id": 107374182408,
+      "signature": "",
+      "astParentType": "NAMESPACE_BLOCK",
+      "_label": "METHOD",
+      "fullName": "nla_total_size_64bit",
+      "genericSignature": "<empty>",
+      "code": "<empty>",
+      "isExternal": true,
+      "order": 0,
+      "filename": "<empty>"
+    },
+    {
+      "name": "<operator>.sizeOf",
+      "astParentFullName": "<global>",
+      "_id": 107374182409,
+      "signature": "",
+      "astParentType": "NAMESPACE_BLOCK",
+      "_label": "METHOD",
+      "fullName": "<operator>.sizeOf",
+      "genericSignature": "<empty>",
+      "code": "<empty>",
+      "isExternal": true,
+      "order": 0,
+      "filename": "<empty>"
+    },
+    {
+      "name": "alloc_skb",
+      "astParentFullName": "<global>",
+      "_id": 107374182410,
+      "signature": "",
+      "astParentType": "NAMESPACE_BLOCK",
+      "_label": "METHOD",
+      "fullName": "alloc_skb",
+      "genericSignature": "<empty>",
+      "code": "<empty>",
+      "isExternal": true,
+      "order": 0,
+      "filename": "<empty>"
+    },
+    {
+      "name": "<operator>.fieldAccess",
+      "astParentFullName": "<global>",
+      "_id": 107374182411,
+      "signature": "",
+      "astParentType": "NAMESPACE_BLOCK",
+      "_label": "METHOD",
+      "fullName": "<operator>.fieldAccess",
+      "genericSignature": "<empty>",
+      "code": "<empty>",
+      "isExternal": true,
+      "order": 0,
+      "filename": "<empty>"
+    },
+    {
+      "name": "<operator>.multiplication",
+      "astParentFullName": "<global>",
+      "_id": 107374182412,
+      "signature": "",
+      "astParentType": "NAMESPACE_BLOCK",
+      "_label": "METHOD",
+      "fullName": "<operator>.multiplication",
+      "genericSignature": "<empty>",
+      "code": "<empty>",
+      "isExternal": true,
+      "order": 0,
+      "filename": "<empty>"
+    },
+    {
+      "name": "<operator>.assignment",
+      "astParentFullName": "<global>",
+      "_id": 107374182413,
+      "signature": "",
+      "astParentType": "NAMESPACE_BLOCK",
+      "_label": "METHOD",
+      "fullName": "<operator>.assignment",
+      "genericSignature": "<empty>",
+      "code": "<empty>",
+      "isExternal": true,
+      "order": 0,
+      "filename": "<empty>"
+    },
+    {
+      "name": "tcp_get_info_chrono_stats",
+      "astParentFullName": "<global>",
+      "_id": 107374182414,
+      "signature": "",
+      "astParentType": "NAMESPACE_BLOCK",
+      "_label": "METHOD",
+      "fullName": "tcp_get_info_chrono_stats",
+      "genericSignature": "<empty>",
+      "code": "<empty>",
+      "isExternal": true,
+      "order": 0,
+      "filename": "<empty>"
+    },
+    {
+      "name": "tcp_sk",
+      "astParentFullName": "<global>",
+      "_id": 107374182415,
+      "signature": "",
+      "astParentType": "NAMESPACE_BLOCK",
+      "_label": "METHOD",
+      "fullName": "tcp_sk",
+      "genericSignature": "<empty>",
+      "code": "<empty>",
+      "isExternal": true,
+      "order": 0,
+      "filename": "<empty>"
+    },
+    {
+      "dynamicTypeHintFullName": [],
+      "name": "sk",
+      "_id": 111669149696,
+      "evaluationStrategy": "BY_VALUE",
+      "isVariadic": false,
+      "typeFullName": "sock*",
+      "lineNumber": 7,
+      "order": 1,
+      "_label": "METHOD_PARAMETER_IN",
+      "possibleTypes": [],
+      "index": 1,
+      "code": "const struct sock *sk",
+      "columnNumber": 48
+    },
+    {
+      "dynamicTypeHintFullName": [],
+      "name": "p1",
+      "_id": 111669149697,
+      "evaluationStrategy": "BY_VALUE",
+      "isVariadic": false,
+      "typeFullName": "ANY",
+      "order": 1,
+      "_label": "METHOD_PARAMETER_IN",
+      "possibleTypes": [],
+      "index": 1,
+      "code": "p1"
+    },
+    {
+      "dynamicTypeHintFullName": [],
+      "name": "p2",
+      "_id": 111669149698,
+      "evaluationStrategy": "BY_VALUE",
+      "isVariadic": false,
+      "typeFullName": "ANY",
+      "order": 2,
+      "_label": "METHOD_PARAMETER_IN",
+      "possibleTypes": [],
+      "index": 2,
+      "code": "p2"
+    },
+    {
+      "dynamicTypeHintFullName": [],
+      "name": "p3",
+      "_id": 111669149699,
+      "evaluationStrategy": "BY_VALUE",
+      "isVariadic": false,
+      "typeFullName": "ANY",
+      "order": 3,
+      "_label": "METHOD_PARAMETER_IN",
+      "possibleTypes": [],
+      "index": 3,
+      "code": "p3"
+    },
+    {
+      "dynamicTypeHintFullName": [],
+      "name": "p4",
+      "_id": 111669149700,
+      "evaluationStrategy": "BY_VALUE",
+      "isVariadic": false,
+      "typeFullName": "ANY",
+      "order": 4,
+      "_label": "METHOD_PARAMETER_IN",
+      "possibleTypes": [],
+      "index": 4,
+      "code": "p4"
+    },
+    {
+      "dynamicTypeHintFullName": [],
+      "name": "p1",
+      "_id": 111669149701,
+      "evaluationStrategy": "BY_VALUE",
+      "isVariadic": false,
+      "typeFullName": "ANY",
+      "order": 1,
+      "_label": "METHOD_PARAMETER_IN",
+      "possibleTypes": [],
+      "index": 1,
+      "code": "p1"
+    },
+    {
+      "dynamicTypeHintFullName": [],
+      "name": "p1",
+      "_id": 111669149702,
+      "evaluationStrategy": "BY_VALUE",
+      "isVariadic": false,
+      "typeFullName": "ANY",
+      "order": 1,
+      "_label": "METHOD_PARAMETER_IN",
+      "possibleTypes": [],
+      "index": 1,
+      "code": "p1"
+    },
+    {
+      "dynamicTypeHintFullName": [],
+      "name": "p1",
+      "_id": 111669149703,
+      "evaluationStrategy": "BY_VALUE",
+      "isVariadic": false,
+      "typeFullName": "ANY",
+      "order": 1,
+      "_label": "METHOD_PARAMETER_IN",
+      "possibleTypes": [],
+      "index": 1,
+      "code": "p1"
+    },
+    {
+      "dynamicTypeHintFullName": [],
+      "name": "p1",
+      "_id": 111669149704,
+      "evaluationStrategy": "BY_VALUE",
+      "isVariadic": false,
+      "typeFullName": "ANY",
+      "order": 1,
+      "_label": "METHOD_PARAMETER_IN",
+      "possibleTypes": [],
+      "index": 1,
+      "code": "p1"
+    },
+    {
+      "dynamicTypeHintFullName": [],
+      "name": "p1",
+      "_id": 111669149705,
+      "evaluationStrategy": "BY_VALUE",
+      "isVariadic": false,
+      "typeFullName": "ANY",
+      "order": 1,
+      "_label": "METHOD_PARAMETER_IN",
+      "possibleTypes": [],
+      "index": 1,
+      "code": "p1"
+    },
+    {
+      "dynamicTypeHintFullName": [],
+      "name": "p2",
+      "_id": 111669149706,
+      "evaluationStrategy": "BY_VALUE",
+      "isVariadic": false,
+      "typeFullName": "ANY",
+      "order": 2,
+      "_label": "METHOD_PARAMETER_IN",
+      "possibleTypes": [],
+      "index": 2,
+      "code": "p2"
+    },
+    {
+      "dynamicTypeHintFullName": [],
+      "name": "p1",
+      "_id": 111669149707,
+      "evaluationStrategy": "BY_VALUE",
+      "isVariadic": false,
+      "typeFullName": "ANY",
+      "order": 1,
+      "_label": "METHOD_PARAMETER_IN",
+      "possibleTypes": [],
+      "index": 1,
+      "code": "p1"
+    },
+    {
+      "dynamicTypeHintFullName": [],
+      "name": "p2",
+      "_id": 111669149708,
+      "evaluationStrategy": "BY_VALUE",
+      "isVariadic": false,
+      "typeFullName": "ANY",
+      "order": 2,
+      "_label": "METHOD_PARAMETER_IN",
+      "possibleTypes": [],
+      "index": 2,
+      "code": "p2"
+    },
+    {
+      "dynamicTypeHintFullName": [],
+      "name": "p1",
+      "_id": 111669149709,
+      "evaluationStrategy": "BY_VALUE",
+      "isVariadic": false,
+      "typeFullName": "ANY",
+      "order": 1,
+      "_label": "METHOD_PARAMETER_IN",
+      "possibleTypes": [],
+      "index": 1,
+      "code": "p1"
+    },
+    {
+      "dynamicTypeHintFullName": [],
+      "name": "p2",
+      "_id": 111669149710,
+      "evaluationStrategy": "BY_VALUE",
+      "isVariadic": false,
+      "typeFullName": "ANY",
+      "order": 2,
+      "_label": "METHOD_PARAMETER_IN",
+      "possibleTypes": [],
+      "index": 2,
+      "code": "p2"
+    },
+    {
+      "dynamicTypeHintFullName": [],
+      "name": "p1",
+      "_id": 111669149711,
+      "evaluationStrategy": "BY_VALUE",
+      "isVariadic": false,
+      "typeFullName": "ANY",
+      "order": 1,
+      "_label": "METHOD_PARAMETER_IN",
+      "possibleTypes": [],
+      "index": 1,
+      "code": "p1"
+    },
+    {
+      "dynamicTypeHintFullName": [],
+      "name": "p2",
+      "_id": 111669149712,
+      "evaluationStrategy": "BY_VALUE",
+      "isVariadic": false,
+      "typeFullName": "ANY",
+      "order": 2,
+      "_label": "METHOD_PARAMETER_IN",
+      "possibleTypes": [],
+      "index": 2,
+      "code": "p2"
+    },
+    {
+      "dynamicTypeHintFullName": [],
+      "name": "p1",
+      "_id": 111669149713,
+      "evaluationStrategy": "BY_VALUE",
+      "isVariadic": false,
+      "typeFullName": "ANY",
+      "order": 1,
+      "_label": "METHOD_PARAMETER_IN",
+      "possibleTypes": [],
+      "index": 1,
+      "code": "p1"
+    },
+    {
+      "dynamicTypeHintFullName": [],
+      "name": "p2",
+      "_id": 111669149714,
+      "evaluationStrategy": "BY_VALUE",
+      "isVariadic": false,
+      "typeFullName": "ANY",
+      "order": 2,
+      "_label": "METHOD_PARAMETER_IN",
+      "possibleTypes": [],
+      "index": 2,
+      "code": "p2"
+    },
+    {
+      "dynamicTypeHintFullName": [],
+      "name": "p1",
+      "_id": 111669149715,
+      "evaluationStrategy": "BY_VALUE",
+      "isVariadic": false,
+      "typeFullName": "ANY",
+      "order": 1,
+      "_label": "METHOD_PARAMETER_IN",
+      "possibleTypes": [],
+      "index": 1,
+      "code": "p1"
+    },
+    {
+      "name": "sk",
+      "_id": 115964116992,
+      "evaluationStrategy": "BY_VALUE",
+      "isVariadic": false,
+      "code": "const struct sock *sk",
+      "typeFullName": "sock*",
+      "lineNumber": 7,
+      "order": 1,
+      "_label": "METHOD_PARAMETER_OUT",
+      "index": 1,
+      "columnNumber": 48
+    },
+    {
+      "name": "p1",
+      "_id": 115964116993,
+      "evaluationStrategy": "BY_VALUE",
+      "isVariadic": false,
+      "code": "p1",
+      "typeFullName": "ANY",
+      "order": 1,
+      "_label": "METHOD_PARAMETER_OUT",
+      "index": 1
+    },
+    {
+      "name": "p2",
+      "_id": 115964116994,
+      "evaluationStrategy": "BY_VALUE",
+      "isVariadic": false,
+      "code": "p2",
+      "typeFullName": "ANY",
+      "order": 2,
+      "_label": "METHOD_PARAMETER_OUT",
+      "index": 2
+    },
+    {
+      "name": "p3",
+      "_id": 115964116995,
+      "evaluationStrategy": "BY_VALUE",
+      "isVariadic": false,
+      "code": "p3",
+      "typeFullName": "ANY",
+      "order": 3,
+      "_label": "METHOD_PARAMETER_OUT",
+      "index": 3
+    },
+    {
+      "name": "p4",
+      "_id": 115964116996,
+      "evaluationStrategy": "BY_VALUE",
+      "isVariadic": false,
+      "code": "p4",
+      "typeFullName": "ANY",
+      "order": 4,
+      "_label": "METHOD_PARAMETER_OUT",
+      "index": 4
+    },
+    {
+      "name": "p1",
+      "_id": 115964116997,
+      "evaluationStrategy": "BY_VALUE",
+      "isVariadic": false,
+      "code": "p1",
+      "typeFullName": "ANY",
+      "order": 1,
+      "_label": "METHOD_PARAMETER_OUT",
+      "index": 1
+    },
+    {
+      "name": "p1",
+      "_id": 115964116998,
+      "evaluationStrategy": "BY_VALUE",
+      "isVariadic": false,
+      "code": "p1",
+      "typeFullName": "ANY",
+      "order": 1,
+      "_label": "METHOD_PARAMETER_OUT",
+      "index": 1
+    },
+    {
+      "name": "p1",
+      "_id": 115964116999,
+      "evaluationStrategy": "BY_VALUE",
+      "isVariadic": false,
+      "code": "p1",
+      "typeFullName": "ANY",
+      "order": 1,
+      "_label": "METHOD_PARAMETER_OUT",
+      "index": 1
+    },
+    {
+      "name": "p1",
+      "_id": 115964117000,
+      "evaluationStrategy": "BY_VALUE",
+      "isVariadic": false,
+      "code": "p1",
+      "typeFullName": "ANY",
+      "order": 1,
+      "_label": "METHOD_PARAMETER_OUT",
+      "index": 1
+    },
+    {
+      "name": "p1",
+      "_id": 115964117001,
+      "evaluationStrategy": "BY_VALUE",
+      "isVariadic": false,
+      "code": "p1",
+      "typeFullName": "ANY",
+      "order": 1,
+      "_label": "METHOD_PARAMETER_OUT",
+      "index": 1
+    },
+    {
+      "name": "p2",
+      "_id": 115964117002,
+      "evaluationStrategy": "BY_VALUE",
+      "isVariadic": false,
+      "code": "p2",
+      "typeFullName": "ANY",
+      "order": 2,
+      "_label": "METHOD_PARAMETER_OUT",
+      "index": 2
+    },
+    {
+      "name": "p1",
+      "_id": 115964117003,
+      "evaluationStrategy": "BY_VALUE",
+      "isVariadic": false,
+      "code": "p1",
+      "typeFullName": "ANY",
+      "order": 1,
+      "_label": "METHOD_PARAMETER_OUT",
+      "index": 1
+    },
+    {
+      "name": "p2",
+      "_id": 115964117004,
+      "evaluationStrategy": "BY_VALUE",
+      "isVariadic": false,
+      "code": "p2",
+      "typeFullName": "ANY",
+      "order": 2,
+      "_label": "METHOD_PARAMETER_OUT",
+      "index": 2
+    },
+    {
+      "name": "p1",
+      "_id": 115964117005,
+      "evaluationStrategy": "BY_VALUE",
+      "isVariadic": false,
+      "code": "p1",
+      "typeFullName": "ANY",
+      "order": 1,
+      "_label": "METHOD_PARAMETER_OUT",
+      "index": 1
+    },
+    {
+      "name": "p2",
+      "_id": 115964117006,
+      "evaluationStrategy": "BY_VALUE",
+      "isVariadic": false,
+      "code": "p2",
+      "typeFullName": "ANY",
+      "order": 2,
+      "_label": "METHOD_PARAMETER_OUT",
+      "index": 2
+    },
+    {
+      "name": "p1",
+      "_id": 115964117007,
+      "evaluationStrategy": "BY_VALUE",
+      "isVariadic": false,
+      "code": "p1",
+      "typeFullName": "ANY",
+      "order": 1,
+      "_label": "METHOD_PARAMETER_OUT",
+      "index": 1
+    },
+    {
+      "name": "p2",
+      "_id": 115964117008,
+      "evaluationStrategy": "BY_VALUE",
+      "isVariadic": false,
+      "code": "p2",
+      "typeFullName": "ANY",
+      "order": 2,
+      "_label": "METHOD_PARAMETER_OUT",
+      "index": 2
+    },
+    {
+      "name": "p1",
+      "_id": 115964117009,
+      "evaluationStrategy": "BY_VALUE",
+      "isVariadic": false,
+      "code": "p1",
+      "typeFullName": "ANY",
+      "order": 1,
+      "_label": "METHOD_PARAMETER_OUT",
+      "index": 1
+    },
+    {
+      "name": "p2",
+      "_id": 115964117010,
+      "evaluationStrategy": "BY_VALUE",
+      "isVariadic": false,
+      "code": "p2",
+      "typeFullName": "ANY",
+      "order": 2,
+      "_label": "METHOD_PARAMETER_OUT",
+      "index": 2
+    },
+    {
+      "name": "p1",
+      "_id": 115964117011,
+      "evaluationStrategy": "BY_VALUE",
+      "isVariadic": false,
+      "code": "p1",
+      "typeFullName": "ANY",
+      "order": 1,
+      "_label": "METHOD_PARAMETER_OUT",
+      "index": 1
+    },
+    {
+      "dynamicTypeHintFullName": [],
+      "_id": 120259084288,
+      "code": "tcp_get_timestamping_opt_stats",
+      "typeFullName": "tcp_get_timestamping_opt_stats",
+      "lineNumber": 7,
+      "order": 1,
+      "methodFullName": "tcp_get_timestamping_opt_stats",
+      "_label": "METHOD_REF",
+      "columnNumber": 1,
+      "possibleTypes": [],
+      "argumentIndex": -1
+    },
+    {
+      "dynamicTypeHintFullName": [],
+      "_id": 124554051584,
+      "evaluationStrategy": "BY_VALUE",
+      "code": "RET",
+      "typeFullName": "sk_buff",
+      "lineNumber": 7,
+      "order": 3,
+      "_label": "METHOD_RETURN",
+      "possibleTypes": [],
+      "columnNumber": 1
+    },
+    {
+      "dynamicTypeHintFullName": [],
+      "_id": 124554051585,
+      "evaluationStrategy": "BY_VALUE",
+      "code": "RET",
+      "typeFullName": "ANY",
+      "lineNumber": 1,
+      "order": 2,
+      "_label": "METHOD_RETURN",
+      "possibleTypes": [],
+      "columnNumber": 1
+    },
+    {
+      "dynamicTypeHintFullName": [],
+      "_id": 124554051586,
+      "evaluationStrategy": "BY_VALUE",
+      "code": "RET",
+      "typeFullName": "ANY",
+      "lineNumber": 1,
+      "order": 2,
+      "_label": "METHOD_RETURN",
+      "possibleTypes": [],
+      "columnNumber": 1
+    },
+    {
+      "dynamicTypeHintFullName": [],
+      "_id": 124554051587,
+      "evaluationStrategy": "BY_VALUE",
+      "code": "RET",
+      "typeFullName": "ANY",
+      "lineNumber": 1,
+      "order": 2,
+      "_label": "METHOD_RETURN",
+      "possibleTypes": [],
+      "columnNumber": 1
+    },
+    {
+      "dynamicTypeHintFullName": [],
+      "_id": 124554051588,
+      "evaluationStrategy": "BY_VALUE",
+      "code": "RET",
+      "typeFullName": "ANY",
+      "lineNumber": 1,
+      "order": 2,
+      "_label": "METHOD_RETURN",
+      "possibleTypes": []
+    },
+    {
+      "dynamicTypeHintFullName": [],
+      "_id": 124554051589,
+      "evaluationStrategy": "BY_VALUE",
+      "code": "RET",
+      "typeFullName": "ANY",
+      "order": 2,
+      "_label": "METHOD_RETURN",
+      "possibleTypes": []
+    },
+    {
+      "dynamicTypeHintFullName": [],
+      "_id": 124554051590,
+      "evaluationStrategy": "BY_VALUE",
+      "code": "RET",
+      "typeFullName": "ANY",
+      "order": 2,
+      "_label": "METHOD_RETURN",
+      "possibleTypes": []
+    },
+    {
+      "dynamicTypeHintFullName": [],
+      "_id": 124554051591,
+      "evaluationStrategy": "BY_VALUE",
+      "code": "RET",
+      "typeFullName": "ANY",
+      "order": 2,
+      "_label": "METHOD_RETURN",
+      "possibleTypes": []
+    },
+    {
+      "dynamicTypeHintFullName": [],
+      "_id": 124554051592,
+      "evaluationStrategy": "BY_VALUE",
+      "code": "RET",
+      "typeFullName": "ANY",
+      "order": 2,
+      "_label": "METHOD_RETURN",
+      "possibleTypes": []
+    },
+    {
+      "dynamicTypeHintFullName": [],
+      "_id": 124554051593,
+      "evaluationStrategy": "BY_VALUE",
+      "code": "RET",
+      "typeFullName": "ANY",
+      "order": 2,
+      "_label": "METHOD_RETURN",
+      "possibleTypes": []
+    },
+    {
+      "dynamicTypeHintFullName": [],
+      "_id": 124554051594,
+      "evaluationStrategy": "BY_VALUE",
+      "code": "RET",
+      "typeFullName": "ANY",
+      "order": 2,
+      "_label": "METHOD_RETURN",
+      "possibleTypes": []
+    },
+    {
+      "dynamicTypeHintFullName": [],
+      "_id": 124554051595,
+      "evaluationStrategy": "BY_VALUE",
+      "code": "RET",
+      "typeFullName": "ANY",
+      "order": 2,
+      "_label": "METHOD_RETURN",
+      "possibleTypes": []
+    },
+    {
+      "dynamicTypeHintFullName": [],
+      "_id": 124554051596,
+      "evaluationStrategy": "BY_VALUE",
+      "code": "RET",
+      "typeFullName": "ANY",
+      "order": 2,
+      "_label": "METHOD_RETURN",
+      "possibleTypes": []
+    },
+    {
+      "dynamicTypeHintFullName": [],
+      "_id": 124554051597,
+      "evaluationStrategy": "BY_VALUE",
+      "code": "RET",
+      "typeFullName": "ANY",
+      "order": 2,
+      "_label": "METHOD_RETURN",
+      "possibleTypes": []
+    },
+    {
+      "dynamicTypeHintFullName": [],
+      "_id": 124554051598,
+      "evaluationStrategy": "BY_VALUE",
+      "code": "RET",
+      "typeFullName": "ANY",
+      "order": 2,
+      "_label": "METHOD_RETURN",
+      "possibleTypes": []
+    },
+    {
+      "dynamicTypeHintFullName": [],
+      "_id": 124554051599,
+      "evaluationStrategy": "BY_VALUE",
+      "code": "RET",
+      "typeFullName": "ANY",
+      "order": 2,
+      "_label": "METHOD_RETURN",
+      "possibleTypes": []
+    },
+    {
+      "name": "<global>",
+      "_id": 133143986176,
+      "code": "<empty>",
+      "order": -1,
+      "_label": "NAMESPACE"
+    },
+    {
+      "name": "<global>",
+      "_id": 137438953472,
+      "fullName": "<global>",
+      "code": "<empty>",
+      "_label": "NAMESPACE_BLOCK",
+      "order": 1,
+      "filename": "<unknown>"
+    },
+    {
+      "name": "<global>",
+      "_id": 137438953473,
+      "fullName": "ccf7abb93af09ad0868ae9033d1ca8108bdaec82_48.c:<global>",
+      "code": "<empty>",
+      "_label": "NAMESPACE_BLOCK",
+      "order": 1,
+      "filename": "ccf7abb93af09ad0868ae9033d1ca8108bdaec82_48.c"
+    },
+    {
+      "name": "<global>",
+      "_id": 137438953474,
+      "fullName": "ccf7abb93af09ad0868ae9033d1ca8108bdaec82_50.c:<global>",
+      "code": "<empty>",
+      "_label": "NAMESPACE_BLOCK",
+      "order": 1,
+      "filename": "ccf7abb93af09ad0868ae9033d1ca8108bdaec82_50.c"
+    },
+    {
+      "name": "<global>",
+      "_id": 137438953475,
+      "fullName": "ccf7abb93af09ad0868ae9033d1ca8108bdaec82_55.c:<global>",
+      "code": "<empty>",
+      "_label": "NAMESPACE_BLOCK",
+      "order": 1,
+      "filename": "ccf7abb93af09ad0868ae9033d1ca8108bdaec82_55.c"
+    },
+    {
+      "name": "<global>",
+      "_id": 137438953476,
+      "fullName": "<includes>:<global>",
+      "code": "<empty>",
+      "_label": "NAMESPACE_BLOCK",
+      "order": 1,
+      "filename": "<includes>"
+    },
+    {
+      "_id": 141733920768,
+      "code": "return NULL;",
+      "lineNumber": 15,
+      "order": 1,
+      "_label": "RETURN",
+      "argumentIndex": -1,
+      "columnNumber": 3
+    },
+    {
+      "_id": 141733920769,
+      "code": "return stats;",
+      "lineNumber": 24,
+      "order": 11,
+      "_label": "RETURN",
+      "argumentIndex": -1,
+      "columnNumber": 2
+    },
+    {
+      "name": "ANY",
+      "_id": 158913789952,
+      "fullName": "ANY",
+      "typeDeclFullName": "ANY",
+      "_label": "TYPE"
+    },
+    {
+      "name": "int",
+      "_id": 158913789953,
+      "fullName": "int",
+      "typeDeclFullName": "int",
+      "_label": "TYPE"
+    },
+    {
+      "name": "sk_buff",
+      "_id": 158913789954,
+      "fullName": "sk_buff",
+      "typeDeclFullName": "sk_buff",
+      "_label": "TYPE"
+    },
+    {
+      "name": "sk_buff*",
+      "_id": 158913789955,
+      "fullName": "sk_buff*",
+      "typeDeclFullName": "sk_buff*",
+      "_label": "TYPE"
+    },
+    {
+      "name": "sock*",
+      "_id": 158913789956,
+      "fullName": "sock*",
+      "typeDeclFullName": "sock*",
+      "_label": "TYPE"
+    },
+    {
+      "name": "tcp_get_timestamping_opt_stats",
+      "_id": 158913789957,
+      "fullName": "tcp_get_timestamping_opt_stats",
+      "typeDeclFullName": "tcp_get_timestamping_opt_stats",
+      "_label": "TYPE"
+    },
+    {
+      "name": "tcp_info",
+      "_id": 158913789958,
+      "fullName": "tcp_info",
+      "typeDeclFullName": "tcp_info",
+      "_label": "TYPE"
+    },
+    {
+      "name": "tcp_sock",
+      "_id": 158913789959,
+      "fullName": "tcp_sock",
+      "typeDeclFullName": "tcp_sock",
+      "_label": "TYPE"
+    },
+    {
+      "name": "tcp_sock*",
+      "_id": 158913789960,
+      "fullName": "tcp_sock*",
+      "typeDeclFullName": "tcp_sock*",
+      "_label": "TYPE"
+    },
+    {
+      "name": "u64",
+      "_id": 158913789961,
+      "fullName": "u64",
+      "typeDeclFullName": "u64",
+      "_label": "TYPE"
+    },
+    {
+      "name": "void",
+      "_id": 158913789962,
+      "fullName": "void",
+      "typeDeclFullName": "void",
+      "_label": "TYPE"
+    },
+    {
+      "inheritsFromTypeFullName": [],
+      "name": "tcp_get_timestamping_opt_stats",
+      "astParentFullName": "ccf7abb93af09ad0868ae9033d1ca8108bdaec82_48.c:<global>",
+      "_id": 167503724544,
+      "astParentType": "TYPE_DECL",
+      "lineNumber": 7,
+      "_label": "TYPE_DECL",
+      "fullName": "tcp_get_timestamping_opt_stats",
+      "genericSignature": "<empty>",
+      "code": "tcp_get_timestamping_opt_stats",
+      "isExternal": false,
+      "columnNumber": 1,
+      "order": 1,
+      "filename": "ccf7abb93af09ad0868ae9033d1ca8108bdaec82_48.c"
+    },
+    {
+      "inheritsFromTypeFullName": [],
+      "name": "<global>",
+      "astParentFullName": "ccf7abb93af09ad0868ae9033d1ca8108bdaec82_48.c:<global>",
+      "_id": 167503724545,
+      "astParentType": "NAMESPACE_BLOCK",
+      "lineNumber": 1,
+      "_label": "TYPE_DECL",
+      "fullName": "ccf7abb93af09ad0868ae9033d1ca8108bdaec82_48.c:<global>",
+      "genericSignature": "<empty>",
+      "code": "<global>",
+      "isExternal": false,
+      "columnNumber": 1,
+      "order": 4,
+      "filename": "ccf7abb93af09ad0868ae9033d1ca8108bdaec82_48.c"
+    },
+    {
+      "inheritsFromTypeFullName": [],
+      "name": "<global>",
+      "astParentFullName": "ccf7abb93af09ad0868ae9033d1ca8108bdaec82_50.c:<global>",
+      "_id": 167503724546,
+      "astParentType": "NAMESPACE_BLOCK",
+      "lineNumber": 1,
+      "_label": "TYPE_DECL",
+      "fullName": "ccf7abb93af09ad0868ae9033d1ca8108bdaec82_50.c:<global>",
+      "genericSignature": "<empty>",
+      "code": "<global>",
+      "isExternal": false,
+      "columnNumber": 1,
+      "order": 4,
+      "filename": "ccf7abb93af09ad0868ae9033d1ca8108bdaec82_50.c"
+    },
+    {
+      "inheritsFromTypeFullName": [],
+      "name": "<global>",
+      "astParentFullName": "ccf7abb93af09ad0868ae9033d1ca8108bdaec82_55.c:<global>",
+      "_id": 167503724547,
+      "astParentType": "NAMESPACE_BLOCK",
+      "lineNumber": 1,
+      "_label": "TYPE_DECL",
+      "fullName": "ccf7abb93af09ad0868ae9033d1ca8108bdaec82_55.c:<global>",
+      "genericSignature": "<empty>",
+      "code": "<global>",
+      "isExternal": false,
+      "columnNumber": 1,
+      "order": 4,
+      "filename": "ccf7abb93af09ad0868ae9033d1ca8108bdaec82_55.c"
+    },
+    {
+      "inheritsFromTypeFullName": [],
+      "name": "ANY",
+      "astParentFullName": "<includes>:<global>",
+      "_id": 167503724548,
+      "astParentType": "NAMESPACE_BLOCK",
+      "_label": "TYPE_DECL",
+      "fullName": "ANY",
+      "genericSignature": "<empty>",
+      "code": "ANY",
+      "isExternal": true,
+      "order": -1,
+      "filename": "<includes>"
+    },
+    {
+      "inheritsFromTypeFullName": [],
+      "name": "int",
+      "astParentFullName": "<includes>:<global>",
+      "_id": 167503724549,
+      "astParentType": "NAMESPACE_BLOCK",
+      "_label": "TYPE_DECL",
+      "fullName": "int",
+      "genericSignature": "<empty>",
+      "code": "int",
+      "isExternal": true,
+      "order": -1,
+      "filename": "<includes>"
+    },
+    {
+      "inheritsFromTypeFullName": [],
+      "name": "sk_buff",
+      "astParentFullName": "<includes>:<global>",
+      "_id": 167503724550,
+      "astParentType": "NAMESPACE_BLOCK",
+      "_label": "TYPE_DECL",
+      "fullName": "sk_buff",
+      "genericSignature": "<empty>",
+      "code": "sk_buff",
+      "isExternal": true,
+      "order": -1,
+      "filename": "<includes>"
+    },
+    {
+      "inheritsFromTypeFullName": [],
+      "name": "sk_buff*",
+      "astParentFullName": "<includes>:<global>",
+      "_id": 167503724551,
+      "astParentType": "NAMESPACE_BLOCK",
+      "_label": "TYPE_DECL",
+      "fullName": "sk_buff*",
+      "genericSignature": "<empty>",
+      "code": "sk_buff*",
+      "isExternal": true,
+      "order": -1,
+      "filename": "<includes>"
+    },
+    {
+      "inheritsFromTypeFullName": [],
+      "name": "sock*",
+      "astParentFullName": "<includes>:<global>",
+      "_id": 167503724552,
+      "astParentType": "NAMESPACE_BLOCK",
+      "_label": "TYPE_DECL",
+      "fullName": "sock*",
+      "genericSignature": "<empty>",
+      "code": "sock*",
+      "isExternal": true,
+      "order": -1,
+      "filename": "<includes>"
+    },
+    {
+      "inheritsFromTypeFullName": [],
+      "name": "tcp_info",
+      "astParentFullName": "<includes>:<global>",
+      "_id": 167503724553,
+      "astParentType": "NAMESPACE_BLOCK",
+      "_label": "TYPE_DECL",
+      "fullName": "tcp_info",
+      "genericSignature": "<empty>",
+      "code": "tcp_info",
+      "isExternal": true,
+      "order": -1,
+      "filename": "<includes>"
+    },
+    {
+      "inheritsFromTypeFullName": [],
+      "name": "tcp_sock",
+      "astParentFullName": "<includes>:<global>",
+      "_id": 167503724554,
+      "astParentType": "NAMESPACE_BLOCK",
+      "_label": "TYPE_DECL",
+      "fullName": "tcp_sock",
+      "genericSignature": "<empty>",
+      "code": "tcp_sock",
+      "isExternal": true,
+      "order": -1,
+      "filename": "<includes>"
+    },
+    {
+      "inheritsFromTypeFullName": [],
+      "name": "tcp_sock*",
+      "astParentFullName": "<includes>:<global>",
+      "_id": 167503724555,
+      "astParentType": "NAMESPACE_BLOCK",
+      "_label": "TYPE_DECL",
+      "fullName": "tcp_sock*",
+      "genericSignature": "<empty>",
+      "code": "tcp_sock*",
+      "isExternal": true,
+      "order": -1,
+      "filename": "<includes>"
+    },
+    {
+      "inheritsFromTypeFullName": [],
+      "name": "u64",
+      "astParentFullName": "<includes>:<global>",
+      "_id": 167503724556,
+      "astParentType": "NAMESPACE_BLOCK",
+      "_label": "TYPE_DECL",
+      "fullName": "u64",
+      "genericSignature": "<empty>",
+      "code": "u64",
+      "isExternal": true,
+      "order": -1,
+      "filename": "<includes>"
+    },
+    {
+      "inheritsFromTypeFullName": [],
+      "name": "void",
+      "astParentFullName": "<includes>:<global>",
+      "_id": 167503724557,
+      "astParentType": "NAMESPACE_BLOCK",
+      "_label": "TYPE_DECL",
+      "fullName": "void",
+      "genericSignature": "<empty>",
+      "code": "void",
+      "isExternal": true,
+      "order": -1,
+      "filename": "<includes>"
+    },
+    {
+      "dynamicTypeHintFullName": [],
+      "parserTypeName": "CASTProblemDeclaration",
+      "_id": 180388626432,
+      "code": "int tcp_getsockopt(struct sock *sk, int level, int optname, char __user *optval,\n\t\t   int __user *optlen)\n{\n\tstruct inet_connection_sock *icsk = inet_csk(sk);\n\n\tif (level != SOL_TCP)\n\t\treturn icsk->icsk_af_ops->getsockopt(sk, level, optname,\n\t\t\t\t\t\t     optval, optlen);\n\treturn do_tcp_getsockopt(sk, level, optname, optval, optlen);\n}",
+      "typeFullName": "<empty>",
+      "lineNumber": 7,
+      "order": 1,
+      "containedRef": "<empty>",
+      "_label": "UNKNOWN",
+      "columnNumber": 1,
+      "possibleTypes": [],
+      "argumentIndex": -1
+    },
+    {
+      "dynamicTypeHintFullName": [],
+      "parserTypeName": "CASTProblemDeclaration",
+      "_id": 180388626433,
+      "code": "void __init tcp_init(void)\n{\n\tint max_rshare, max_wshare, cnt;\n\tunsigned long limit;\n\tunsigned int i;\n\n\tBUILD_BUG_ON(sizeof(struct tcp_skb_cb) >\n\t\t     FIELD_SIZEOF(struct sk_buff, cb));\n\n\tpercpu_counter_init(&tcp_sockets_allocated, 0, GFP_KERNEL);\n\tpercpu_counter_init(&tcp_orphan_count, 0, GFP_KERNEL);\n\ttcp_hashinfo.bind_bucket_cachep =\n\t\tkmem_cache_create(\"tcp_bind_bucket\",\n\t\t\t\t  sizeof(struct inet_bind_bucket), 0,\n\t\t\t\t  SLAB_HWCACHE_ALIGN|SLAB_PANIC, NULL);\n\n\t/* Size and allocate the main established and bind bucket\n\t * hash tables.\n\t *\n\t * The methodology is similar to that of the buffer cache.\n\t */\n\ttcp_hashinfo.ehash =\n\t\talloc_large_system_hash(\"TCP established\",\n\t\t\t\t\tsizeof(struct inet_ehash_bucket),\n\t\t\t\t\tthash_entries,\n\t\t\t\t\t17, /* one slot per 128 KB of memory */\n\t\t\t\t\t0,\n\t\t\t\t\tNULL,\n\t\t\t\t\t&tcp_hashinfo.ehash_mask,\n\t\t\t\t\t0,\n\t\t\t\t\tthash_entries ? 0 : 512 * 1024);\n\tfor (i = 0; i <= tcp_hashinfo.ehash_mask; i++)\n\t\tINIT_HLIST_NULLS_HEAD(&tcp_hashinfo.ehash[i].chain, i);\n\n\tif (inet_eh...",
+      "typeFullName": "<empty>",
+      "lineNumber": 7,
+      "order": 1,
+      "containedRef": "<empty>",
+      "_label": "UNKNOWN",
+      "columnNumber": 1,
+      "possibleTypes": [],
+      "argumentIndex": -1
+    }
+  ],
+  "edges": {
+    "AST": [
+      {
+        "src": 107374182400,
+        "dst": 111669149696,
+        "label": "AST"
+      },
+      {
+        "src": 107374182400,
+        "dst": 115964116992,
+        "label": "AST"
+      },
+      {
+        "src": 107374182400,
+        "dst": 25769803776,
+        "label": "AST"
+      },
+      {
+        "src": 107374182400,
+        "dst": 124554051584,
+        "label": "AST"
+      },
+      {
+        "src": 25769803776,
+        "dst": 94489280515,
+        "label": "AST"
+      },
+      {
+        "src": 25769803776,
+        "dst": 94489280516,
+        "label": "AST"
+      },
+      {
+        "src": 25769803776,
+        "dst": 94489280517,
+        "label": "AST"
+      },
+      {
+        "src": 25769803776,
+        "dst": 94489280518,
+        "label": "AST"
+      },
+      {
+        "src": 25769803776,
+        "dst": 94489280519,
+        "label": "AST"
+      },
+      {
+        "src": 25769803776,
+        "dst": 94489280520,
+        "label": "AST"
+      },
+      {
+        "src": 25769803776,
+        "dst": 94489280521,
+        "label": "AST"
+      },
+      {
+        "src": 25769803776,
+        "dst": 94489280512,
+        "label": "AST"
+      },
+      {
+        "src": 25769803776,
+        "dst": 30064771072,
+        "label": "AST"
+      },
+      {
+        "src": 25769803776,
+        "dst": 94489280513,
+        "label": "AST"
+      },
+      {
+        "src": 25769803776,
+        "dst": 94489280514,
+        "label": "AST"
+      },
+      {
+        "src": 25769803776,
+        "dst": 30064771074,
+        "label": "AST"
+      },
+      {
+        "src": 25769803776,
+        "dst": 47244640256,
+        "label": "AST"
+      },
+      {
+        "src": 25769803776,
+        "dst": 30064771080,
+        "label": "AST"
+      },
+      {
+        "src": 25769803776,
+        "dst": 30064771082,
+        "label": "AST"
+      },
+      {
+        "src": 25769803776,
+        "dst": 30064771084,
+        "label": "AST"
+      },
+      {
+        "src": 25769803776,
+        "dst": 30064771086,
+        "label": "AST"
+      },
+      {
+        "src": 25769803776,
+        "dst": 141733920769,
+        "label": "AST"
+      },
+      {
+        "src": 30064771072,
+        "dst": 68719476736,
+        "label": "AST"
+      },
+      {
+        "src": 30064771072,
+        "dst": 30064771073,
+        "label": "AST"
+      },
+      {
+        "src": 30064771073,
+        "dst": 68719476737,
+        "label": "AST"
+      },
+      {
+        "src": 30064771074,
+        "dst": 68719476738,
+        "label": "AST"
+      },
+      {
+        "src": 30064771074,
+        "dst": 30064771075,
+        "label": "AST"
+      },
+      {
+        "src": 30064771075,
+        "dst": 30064771076,
+        "label": "AST"
+      },
+      {
+        "src": 30064771075,
+        "dst": 68719476740,
+        "label": "AST"
+      },
+      {
+        "src": 30064771076,
+        "dst": 90194313216,
+        "label": "AST"
+      },
+      {
+        "src": 30064771076,
+        "dst": 30064771077,
+        "label": "AST"
+      },
+      {
+        "src": 30064771077,
+        "dst": 30064771078,
+        "label": "AST"
+      },
+      {
+        "src": 30064771078,
+        "dst": 68719476739,
+        "label": "AST"
+      },
+      {
+        "src": 47244640256,
+        "dst": 30064771079,
+        "label": "AST"
+      },
+      {
+        "src": 47244640256,
+        "dst": 25769803777,
+        "label": "AST"
+      },
+      {
+        "src": 30064771079,
+        "dst": 68719476741,
+        "label": "AST"
+      },
+      {
+        "src": 25769803777,
+        "dst": 141733920768,
+        "label": "AST"
+      },
+      {
+        "src": 141733920768,
+        "dst": 68719476742,
+        "label": "AST"
+      },
+      {
+        "src": 30064771080,
+        "dst": 68719476743,
+        "label": "AST"
+      },
+      {
+        "src": 30064771080,
+        "dst": 30064771081,
+        "label": "AST"
+      },
+      {
+        "src": 30064771081,
+        "dst": 68719476744,
+        "label": "AST"
+      },
+      {
+        "src": 30064771082,
+        "dst": 68719476745,
+        "label": "AST"
+      },
+      {
+        "src": 30064771082,
+        "dst": 68719476746,
+        "label": "AST"
+      },
+      {
+        "src": 30064771082,
+        "dst": 30064771083,
+        "label": "AST"
+      },
+      {
+        "src": 30064771082,
+        "dst": 68719476748,
+        "label": "AST"
+      },
+      {
+        "src": 30064771083,
+        "dst": 68719476747,
+        "label": "AST"
+      },
+      {
+        "src": 30064771083,
+        "dst": 55834574848,
+        "label": "AST"
+      },
+      {
+        "src": 30064771084,
+        "dst": 68719476749,
+        "label": "AST"
+      },
+      {
+        "src": 30064771084,
+        "dst": 68719476750,
+        "label": "AST"
+      },
+      {
+        "src": 30064771084,
+        "dst": 30064771085,
+        "label": "AST"
+      },
+      {
+        "src": 30064771084,
+        "dst": 68719476752,
+        "label": "AST"
+      },
+      {
+        "src": 30064771085,
+        "dst": 68719476751,
+        "label": "AST"
+      },
+      {
+        "src": 30064771085,
+        "dst": 55834574849,
+        "label": "AST"
+      },
+      {
+        "src": 30064771086,
+        "dst": 68719476753,
+        "label": "AST"
+      },
+      {
+        "src": 30064771086,
+        "dst": 68719476754,
+        "label": "AST"
+      },
+      {
+        "src": 30064771086,
+        "dst": 30064771087,
+        "label": "AST"
+      },
+      {
+        "src": 30064771086,
+        "dst": 68719476756,
+        "label": "AST"
+      },
+      {
+        "src": 30064771087,
+        "dst": 68719476755,
+        "label": "AST"
+      },
+      {
+        "src": 30064771087,
+        "dst": 55834574850,
+        "label": "AST"
+      },
+      {
+        "src": 141733920769,
+        "dst": 68719476757,
+        "label": "AST"
+      },
+      {
+        "src": 107374182401,
+        "dst": 107374182400,
+        "label": "AST"
+      },
+      {
+        "src": 107374182401,
+        "dst": 25769803778,
+        "label": "AST"
+      },
+      {
+        "src": 107374182401,
+        "dst": 124554051585,
+        "label": "AST"
+      },
+      {
+        "src": 25769803778,
+        "dst": 120259084288,
+        "label": "AST"
+      },
+      {
+        "src": 107374182402,
+        "dst": 25769803779,
+        "label": "AST"
+      },
+      {
+        "src": 107374182402,
+        "dst": 124554051586,
+        "label": "AST"
+      },
+      {
+        "src": 25769803779,
+        "dst": 180388626432,
+        "label": "AST"
+      },
+      {
+        "src": 107374182403,
+        "dst": 25769803780,
+        "label": "AST"
+      },
+      {
+        "src": 107374182403,
+        "dst": 124554051587,
+        "label": "AST"
+      },
+      {
+        "src": 25769803780,
+        "dst": 180388626433,
+        "label": "AST"
+      },
+      {
+        "src": 107374182404,
+        "dst": 25769803781,
+        "label": "AST"
+      },
+      {
+        "src": 107374182404,
+        "dst": 124554051588,
+        "label": "AST"
+      },
+      {
+        "src": 107374182405,
+        "dst": 111669149697,
+        "label": "AST"
+      },
+      {
+        "src": 107374182405,
+        "dst": 25769803782,
+        "label": "AST"
+      },
+      {
+        "src": 107374182405,
+        "dst": 115964116993,
+        "label": "AST"
+      },
+      {
+        "src": 107374182405,
+        "dst": 111669149698,
+        "label": "AST"
+      },
+      {
+        "src": 107374182405,
+        "dst": 124554051589,
+        "label": "AST"
+      },
+      {
+        "src": 107374182405,
+        "dst": 115964116994,
+        "label": "AST"
+      },
+      {
+        "src": 107374182405,
+        "dst": 111669149699,
+        "label": "AST"
+      },
+      {
+        "src": 107374182405,
+        "dst": 115964116995,
+        "label": "AST"
+      },
+      {
+        "src": 107374182405,
+        "dst": 111669149700,
+        "label": "AST"
+      },
+      {
+        "src": 107374182405,
+        "dst": 115964116996,
+        "label": "AST"
+      },
+      {
+        "src": 107374182406,
+        "dst": 111669149701,
+        "label": "AST"
+      },
+      {
+        "src": 107374182406,
+        "dst": 25769803783,
+        "label": "AST"
+      },
+      {
+        "src": 107374182406,
+        "dst": 115964116997,
+        "label": "AST"
+      },
+      {
+        "src": 107374182406,
+        "dst": 124554051590,
+        "label": "AST"
+      },
+      {
+        "src": 107374182407,
+        "dst": 111669149702,
+        "label": "AST"
+      },
+      {
+        "src": 107374182407,
+        "dst": 25769803784,
+        "label": "AST"
+      },
+      {
+        "src": 107374182407,
+        "dst": 115964116998,
+        "label": "AST"
+      },
+      {
+        "src": 107374182407,
+        "dst": 124554051591,
+        "label": "AST"
+      },
+      {
+        "src": 107374182408,
+        "dst": 111669149703,
+        "label": "AST"
+      },
+      {
+        "src": 107374182408,
+        "dst": 25769803785,
+        "label": "AST"
+      },
+      {
+        "src": 107374182408,
+        "dst": 115964116999,
+        "label": "AST"
+      },
+      {
+        "src": 107374182408,
+        "dst": 124554051592,
+        "label": "AST"
+      },
+      {
+        "src": 107374182409,
+        "dst": 111669149704,
+        "label": "AST"
+      },
+      {
+        "src": 107374182409,
+        "dst": 25769803786,
+        "label": "AST"
+      },
+      {
+        "src": 107374182409,
+        "dst": 115964117000,
+        "label": "AST"
+      },
+      {
+        "src": 107374182409,
+        "dst": 124554051593,
+        "label": "AST"
+      },
+      {
+        "src": 107374182410,
+        "dst": 111669149705,
+        "label": "AST"
+      },
+      {
+        "src": 107374182410,
+        "dst": 25769803787,
+        "label": "AST"
+      },
+      {
+        "src": 107374182410,
+        "dst": 115964117001,
+        "label": "AST"
+      },
+      {
+        "src": 107374182410,
+        "dst": 111669149706,
+        "label": "AST"
+      },
+      {
+        "src": 107374182410,
+        "dst": 124554051594,
+        "label": "AST"
+      },
+      {
+        "src": 107374182410,
+        "dst": 115964117002,
+        "label": "AST"
+      },
+      {
+        "src": 107374182411,
+        "dst": 111669149707,
+        "label": "AST"
+      },
+      {
+        "src": 107374182411,
+        "dst": 25769803788,
+        "label": "AST"
+      },
+      {
+        "src": 107374182411,
+        "dst": 115964117003,
+        "label": "AST"
+      },
+      {
+        "src": 107374182411,
+        "dst": 111669149708,
+        "label": "AST"
+      },
+      {
+        "src": 107374182411,
+        "dst": 124554051595,
+        "label": "AST"
+      },
+      {
+        "src": 107374182411,
+        "dst": 115964117004,
+        "label": "AST"
+      },
+      {
+        "src": 107374182412,
+        "dst": 111669149709,
+        "label": "AST"
+      },
+      {
+        "src": 107374182412,
+        "dst": 25769803789,
+        "label": "AST"
+      },
+      {
+        "src": 107374182412,
+        "dst": 115964117005,
+        "label": "AST"
+      },
+      {
+        "src": 107374182412,
+        "dst": 111669149710,
+        "label": "AST"
+      },
+      {
+        "src": 107374182412,
+        "dst": 124554051596,
+        "label": "AST"
+      },
+      {
+        "src": 107374182412,
+        "dst": 115964117006,
+        "label": "AST"
+      },
+      {
+        "src": 107374182413,
+        "dst": 111669149711,
+        "label": "AST"
+      },
+      {
+        "src": 107374182413,
+        "dst": 25769803790,
+        "label": "AST"
+      },
+      {
+        "src": 107374182413,
+        "dst": 115964117007,
+        "label": "AST"
+      },
+      {
+        "src": 107374182413,
+        "dst": 111669149712,
+        "label": "AST"
+      },
+      {
+        "src": 107374182413,
+        "dst": 124554051597,
+        "label": "AST"
+      },
+      {
+        "src": 107374182413,
+        "dst": 115964117008,
+        "label": "AST"
+      },
+      {
+        "src": 107374182414,
+        "dst": 111669149713,
+        "label": "AST"
+      },
+      {
+        "src": 107374182414,
+        "dst": 25769803791,
+        "label": "AST"
+      },
+      {
+        "src": 107374182414,
+        "dst": 115964117009,
+        "label": "AST"
+      },
+      {
+        "src": 107374182414,
+        "dst": 111669149714,
+        "label": "AST"
+      },
+      {
+        "src": 107374182414,
+        "dst": 124554051598,
+        "label": "AST"
+      },
+      {
+        "src": 107374182414,
+        "dst": 115964117010,
+        "label": "AST"
+      },
+      {
+        "src": 107374182415,
+        "dst": 111669149715,
+        "label": "AST"
+      },
+      {
+        "src": 107374182415,
+        "dst": 25769803792,
+        "label": "AST"
+      },
+      {
+        "src": 107374182415,
+        "dst": 115964117011,
+        "label": "AST"
+      },
+      {
+        "src": 107374182415,
+        "dst": 124554051599,
+        "label": "AST"
+      }
+    ],
+    "CFG": [
+      {
+        "src": 30064771072,
+        "dst": 68719476738,
+        "label": "CFG"
+      },
+      {
+        "src": 30064771074,
+        "dst": 68719476741,
+        "label": "CFG"
+      },
+      {
+        "src": 30064771080,
+        "dst": 68719476745,
+        "label": "CFG"
+      },
+      {
+        "src": 30064771082,
+        "dst": 68719476749,
+        "label": "CFG"
+      },
+      {
+        "src": 30064771084,
+        "dst": 68719476753,
+        "label": "CFG"
+      },
+      {
+        "src": 30064771086,
+        "dst": 68719476757,
+        "label": "CFG"
+      },
+      {
+        "src": 68719476736,
+        "dst": 68719476737,
+        "label": "CFG"
+      },
+      {
+        "src": 30064771073,
+        "dst": 30064771072,
+        "label": "CFG"
+      },
+      {
+        "src": 68719476738,
+        "dst": 90194313216,
+        "label": "CFG"
+      },
+      {
+        "src": 30064771075,
+        "dst": 30064771074,
+        "label": "CFG"
+      },
+      {
+        "src": 30064771079,
+        "dst": 68719476742,
+        "label": "CFG"
+      },
+      {
+        "src": 30064771079,
+        "dst": 68719476743,
+        "label": "CFG"
+      },
+      {
+        "src": 68719476743,
+        "dst": 68719476744,
+        "label": "CFG"
+      },
+      {
+        "src": 30064771081,
+        "dst": 30064771080,
+        "label": "CFG"
+      },
+      {
+        "src": 68719476745,
+        "dst": 68719476746,
+        "label": "CFG"
+      },
+      {
+        "src": 68719476746,
+        "dst": 68719476747,
+        "label": "CFG"
+      },
+      {
+        "src": 30064771083,
+        "dst": 68719476748,
+        "label": "CFG"
+      },
+      {
+        "src": 68719476748,
+        "dst": 30064771082,
+        "label": "CFG"
+      },
+      {
+        "src": 68719476749,
+        "dst": 68719476750,
+        "label": "CFG"
+      },
+      {
+        "src": 68719476750,
+        "dst": 68719476751,
+        "label": "CFG"
+      },
+      {
+        "src": 30064771085,
+        "dst": 68719476752,
+        "label": "CFG"
+      },
+      {
+        "src": 68719476752,
+        "dst": 30064771084,
+        "label": "CFG"
+      },
+      {
+        "src": 68719476753,
+        "dst": 68719476754,
+        "label": "CFG"
+      },
+      {
+        "src": 68719476754,
+        "dst": 68719476755,
+        "label": "CFG"
+      },
+      {
+        "src": 30064771087,
+        "dst": 68719476756,
+        "label": "CFG"
+      },
+      {
+        "src": 68719476756,
+        "dst": 30064771086,
+        "label": "CFG"
+      },
+      {
+        "src": 68719476757,
+        "dst": 141733920769,
+        "label": "CFG"
+      },
+      {
+        "src": 68719476737,
+        "dst": 30064771073,
+        "label": "CFG"
+      },
+      {
+        "src": 30064771076,
+        "dst": 68719476740,
+        "label": "CFG"
+      },
+      {
+        "src": 68719476740,
+        "dst": 30064771075,
+        "label": "CFG"
+      },
+      {
+        "src": 68719476741,
+        "dst": 30064771079,
+        "label": "CFG"
+      },
+      {
+        "src": 68719476744,
+        "dst": 30064771081,
+        "label": "CFG"
+      },
+      {
+        "src": 68719476747,
+        "dst": 55834574848,
+        "label": "CFG"
+      },
+      {
+        "src": 55834574848,
+        "dst": 30064771083,
+        "label": "CFG"
+      },
+      {
+        "src": 68719476751,
+        "dst": 55834574849,
+        "label": "CFG"
+      },
+      {
+        "src": 55834574849,
+        "dst": 30064771085,
+        "label": "CFG"
+      },
+      {
+        "src": 68719476755,
+        "dst": 55834574850,
+        "label": "CFG"
+      },
+      {
+        "src": 55834574850,
+        "dst": 30064771087,
+        "label": "CFG"
+      },
+      {
+        "src": 90194313216,
+        "dst": 68719476739,
+        "label": "CFG"
+      },
+      {
+        "src": 30064771077,
+        "dst": 30064771076,
+        "label": "CFG"
+      },
+      {
+        "src": 68719476742,
+        "dst": 141733920768,
+        "label": "CFG"
+      },
+      {
+        "src": 30064771078,
+        "dst": 30064771077,
+        "label": "CFG"
+      },
+      {
+        "src": 68719476739,
+        "dst": 30064771078,
+        "label": "CFG"
+      },
+      {
+        "src": 107374182400,
+        "dst": 68719476736,
+        "label": "CFG"
+      }
+    ],
+    "DFG": [
+      {
+        "src": 30064771072,
+        "dst": 30064771080,
+        "label": "DFG"
+      },
+      {
+        "src": 30064771074,
+        "dst": 30064771082,
+        "label": "DFG"
+      },
+      {
+        "src": 30064771074,
+        "dst": 30064771084,
+        "label": "DFG"
+      },
+      {
+        "src": 30064771074,
+        "dst": 30064771086,
+        "label": "DFG"
+      },
+      {
+        "src": 30064771074,
+        "dst": 141733920769,
+        "label": "DFG"
+      },
+      {
+        "src": 30064771074,
+        "dst": 30064771079,
+        "label": "DFG"
+      },
+      {
+        "src": 30064771072,
+        "dst": 68719476743,
+        "label": "DFG"
+      },
+      {
+        "src": 30064771074,
+        "dst": 68719476745,
+        "label": "DFG"
+      },
+      {
+        "src": 30064771074,
+        "dst": 68719476749,
+        "label": "DFG"
+      },
+      {
+        "src": 30064771074,
+        "dst": 68719476753,
+        "label": "DFG"
+      },
+      {
+        "src": 30064771074,
+        "dst": 68719476757,
+        "label": "DFG"
+      },
+      {
+        "src": 30064771074,
+        "dst": 68719476741,
+        "label": "DFG"
+      }
+    ],
+    "CALL": [
+      {
+        "src": 30064771072,
+        "dst": 107374182413,
+        "label": "CALL"
+      },
+      {
+        "src": 30064771073,
+        "dst": 107374182415,
+        "label": "CALL"
+      },
+      {
+        "src": 30064771074,
+        "dst": 107374182413,
+        "label": "CALL"
+      },
+      {
+        "src": 30064771075,
+        "dst": 107374182410,
+        "label": "CALL"
+      },
+      {
+        "src": 30064771076,
+        "dst": 107374182412,
+        "label": "CALL"
+      },
+      {
+        "src": 30064771077,
+        "dst": 107374182408,
+        "label": "CALL"
+      },
+      {
+        "src": 30064771078,
+        "dst": 107374182409,
+        "label": "CALL"
+      },
+      {
+        "src": 30064771079,
+        "dst": 107374182407,
+        "label": "CALL"
+      },
+      {
+        "src": 30064771080,
+        "dst": 107374182414,
+        "label": "CALL"
+      },
+      {
+        "src": 30064771081,
+        "dst": 107374182406,
+        "label": "CALL"
+      },
+      {
+        "src": 30064771082,
+        "dst": 107374182405,
+        "label": "CALL"
+      },
+      {
+        "src": 30064771083,
+        "dst": 107374182411,
+        "label": "CALL"
+      },
+      {
+        "src": 30064771084,
+        "dst": 107374182405,
+        "label": "CALL"
+      },
+      {
+        "src": 30064771085,
+        "dst": 107374182411,
+        "label": "CALL"
+      },
+      {
+        "src": 30064771086,
+        "dst": 107374182405,
+        "label": "CALL"
+      },
+      {
+        "src": 30064771087,
+        "dst": 107374182411,
+        "label": "CALL"
+      }
+    ],
+    "ARG2PARAM": [
+      {
+        "src": 68719476736,
+        "dst": 111669149711,
+        "label": "ARG2PARAM"
+      },
+      {
+        "src": 30064771073,
+        "dst": 111669149712,
+        "label": "ARG2PARAM"
+      },
+      {
+        "src": 68719476737,
+        "dst": 111669149715,
+        "label": "ARG2PARAM"
+      },
+      {
+        "src": 68719476738,
+        "dst": 111669149711,
+        "label": "ARG2PARAM"
+      },
+      {
+        "src": 30064771075,
+        "dst": 111669149712,
+        "label": "ARG2PARAM"
+      },
+      {
+        "src": 30064771076,
+        "dst": 111669149705,
+        "label": "ARG2PARAM"
+      },
+      {
+        "src": 68719476740,
+        "dst": 111669149706,
+        "label": "ARG2PARAM"
+      },
+      {
+        "src": 90194313216,
+        "dst": 111669149709,
+        "label": "ARG2PARAM"
+      },
+      {
+        "src": 30064771077,
+        "dst": 111669149710,
+        "label": "ARG2PARAM"
+      },
+      {
+        "src": 30064771078,
+        "dst": 111669149703,
+        "label": "ARG2PARAM"
+      },
+      {
+        "src": 68719476739,
+        "dst": 111669149704,
+        "label": "ARG2PARAM"
+      },
+      {
+        "src": 68719476741,
+        "dst": 111669149702,
+        "label": "ARG2PARAM"
+      },
+      {
+        "src": 68719476743,
+        "dst": 111669149713,
+        "label": "ARG2PARAM"
+      },
+      {
+        "src": 30064771081,
+        "dst": 111669149714,
+        "label": "ARG2PARAM"
+      },
+      {
+        "src": 68719476744,
+        "dst": 111669149701,
+        "label": "ARG2PARAM"
+      },
+      {
+        "src": 68719476745,
+        "dst": 111669149697,
+        "label": "ARG2PARAM"
+      },
+      {
+        "src": 68719476746,
+        "dst": 111669149698,
+        "label": "ARG2PARAM"
+      },
+      {
+        "src": 30064771083,
+        "dst": 111669149699,
+        "label": "ARG2PARAM"
+      },
+      {
+        "src": 68719476748,
+        "dst": 111669149700,
+        "label": "ARG2PARAM"
+      },
+      {
+        "src": 68719476747,
+        "dst": 111669149707,
+        "label": "ARG2PARAM"
+      },
+      {
+        "src": 55834574848,
+        "dst": 111669149708,
+        "label": "ARG2PARAM"
+      },
+      {
+        "src": 68719476749,
+        "dst": 111669149697,
+        "label": "ARG2PARAM"
+      },
+      {
+        "src": 68719476750,
+        "dst": 111669149698,
+        "label": "ARG2PARAM"
+      },
+      {
+        "src": 30064771085,
+        "dst": 111669149699,
+        "label": "ARG2PARAM"
+      },
+      {
+        "src": 68719476752,
+        "dst": 111669149700,
+        "label": "ARG2PARAM"
+      },
+      {
+        "src": 68719476751,
+        "dst": 111669149707,
+        "label": "ARG2PARAM"
+      },
+      {
+        "src": 55834574849,
+        "dst": 111669149708,
+        "label": "ARG2PARAM"
+      },
+      {
+        "src": 68719476753,
+        "dst": 111669149697,
+        "label": "ARG2PARAM"
+      },
+      {
+        "src": 68719476754,
+        "dst": 111669149698,
+        "label": "ARG2PARAM"
+      },
+      {
+        "src": 30064771087,
+        "dst": 111669149699,
+        "label": "ARG2PARAM"
+      },
+      {
+        "src": 68719476756,
+        "dst": 111669149700,
+        "label": "ARG2PARAM"
+      },
+      {
+        "src": 68719476755,
+        "dst": 111669149707,
+        "label": "ARG2PARAM"
+      },
+      {
+        "src": 55834574850,
+        "dst": 111669149708,
+        "label": "ARG2PARAM"
+      }
+    ],
+    "RET2CALL": [
+      {
+        "src": 124554051597,
+        "dst": 30064771072,
+        "label": "RET2CALL"
+      },
+      {
+        "src": 124554051599,
+        "dst": 30064771073,
+        "label": "RET2CALL"
+      },
+      {
+        "src": 124554051597,
+        "dst": 30064771074,
+        "label": "RET2CALL"
+      },
+      {
+        "src": 124554051594,
+        "dst": 30064771075,
+        "label": "RET2CALL"
+      },
+      {
+        "src": 124554051596,
+        "dst": 30064771076,
+        "label": "RET2CALL"
+      },
+      {
+        "src": 124554051592,
+        "dst": 30064771077,
+        "label": "RET2CALL"
+      },
+      {
+        "src": 124554051593,
+        "dst": 30064771078,
+        "label": "RET2CALL"
+      },
+      {
+        "src": 124554051591,
+        "dst": 30064771079,
+        "label": "RET2CALL"
+      },
+      {
+        "src": 124554051598,
+        "dst": 30064771080,
+        "label": "RET2CALL"
+      },
+      {
+        "src": 124554051590,
+        "dst": 30064771081,
+        "label": "RET2CALL"
+      },
+      {
+        "src": 124554051589,
+        "dst": 30064771082,
+        "label": "RET2CALL"
+      },
+      {
+        "src": 124554051595,
+        "dst": 30064771083,
+        "label": "RET2CALL"
+      },
+      {
+        "src": 124554051589,
+        "dst": 30064771084,
+        "label": "RET2CALL"
+      },
+      {
+        "src": 124554051595,
+        "dst": 30064771085,
+        "label": "RET2CALL"
+      },
+      {
+        "src": 124554051589,
+        "dst": 30064771086,
+        "label": "RET2CALL"
+      },
+      {
+        "src": 124554051595,
+        "dst": 30064771087,
+        "label": "RET2CALL"
+      }
+    ],
+    "RET2LHS": [
+      {
+        "src": 124554051599,
+        "dst": 68719476736,
+        "label": "RET2LHS"
+      },
+      {
+        "src": 124554051594,
+        "dst": 68719476738,
+        "label": "RET2LHS"
+      }
+    ]
+  }
+}

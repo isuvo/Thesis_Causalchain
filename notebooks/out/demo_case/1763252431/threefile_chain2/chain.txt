@@ -1,0 +1,25 @@
+Root → … → Sink (hops=7)
+
+[ROOT] P=0.475  if (fgets(buf, sizeof(buf), stdin) == NULL) {
+   (label=CALL, file=app/main.c, line=15)
+   └──[CFG]
+[→] P=0.470  return 0;
+   (label=BLOCK, file=app/main.c, line=16)
+   └──[CFG]
+[→] P=0.528  }
+   (label=BLOCK, file=app/main.c, line=17)
+   └──[CFG]
+[→] P=0.472  n = strlen(buf);
+   (label=BLOCK, file=app/main.c, line=19)
+   └──[CFG/DFG]
+[→] P=0.395  if (n > 0 && (buf[n - 1] == '\n' || buf[n - 1] == '\r')) {
+   (label=CALL, file=app/main.c, line=20)
+   └──[CPG]
+[→] P=0.524  n = sizeof(exec_local) - 1;
+   (label=BLOCK, file=lib/shell.c, line=40)
+   └──[DFG]
+[→] P=0.451  exec_local[n] = '\0';
+   (label=BLOCK, file=lib/shell.c, line=44)
+   └──[CFG]
+[SINK] P=0.445  system(exec_local); /* external command execution */
+   (label=CALL, file=lib/shell.c, line=45)

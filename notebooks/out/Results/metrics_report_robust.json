@@ -1,0 +1,38 @@
+{
+  "reports": [
+    {
+      "split": "valid",
+      "threshold": 0.5,
+      "details_jsonl": "out/cagat_acc_interproc_train\\metrics_valid_robust.jsonl",
+      "supervised": {
+        "note": "no_graphs_with_labels"
+      },
+      "weak_seeded": {
+        "note": "miner_found_no_paths"
+      },
+      "diagnostics": {
+        "path_monotonicity_avg": null,
+        "path_monotonicity_paths_used": 0,
+        "call_chain_coherence_avg": 0.23544000245487515,
+        "call_chain_pairs_used": 820174
+      }
+    },
+    {
+      "split": "test",
+      "threshold": 0.5,
+      "details_jsonl": "out/cagat_acc_interproc_train\\metrics_test_robust.jsonl",
+      "supervised": {
+        "note": "no_graphs_with_labels"
+      },
+      "weak_seeded": {
+        "note": "miner_found_no_paths"
+      },
+      "diagnostics": {
+        "path_monotonicity_avg": null,
+        "path_monotonicity_paths_used": 0,
+        "call_chain_coherence_avg": 0.19578031284842037,
+        "call_chain_pairs_used": 823385
+      }
+    }
+  ]
+}

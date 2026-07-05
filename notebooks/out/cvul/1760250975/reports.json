@@ -1,0 +1,104 @@
+{
+  "config": {
+    "epochs": 10,
+    "hidden": 64,
+    "layers": 3,
+    "lr": 0.002,
+    "wd": 0.0001,
+    "neg_pos_ratio": 20,
+    "device": "cuda",
+    "dataset_weights": {
+      "default": 1.0
+    },
+    "relations": [
+      "ARG2PARAM",
+      "CALL",
+      "CFG",
+      "DFG",
+      "RET2CALL",
+      "RET2LHS"
+    ],
+    "add_summary_edges": true,
+    "label_keys": [
+      "y",
+      "label",
+      "is_sink",
+      "vulnerable"
+    ],
+    "sink_keys": [
+      "sinks",
+      "sink_nodes"
+    ],
+    "path_keys": [
+      "vulnerable_paths",
+      "paths_idx"
+    ]
+  },
+  "thresholds_by_source": {},
+  "reports": {
+    "valid": {
+      "split": "valid",
+      "overall": {
+        "precision": null,
+        "recall": null,
+        "f1": 0.0
+      },
+      "thresholds": {},
+      "n_graphs_used": 0,
+      "per_source": {},
+      "CCS_mean": null,
+      "CFAM_mean": null,
+      "CCS_count": 0,
+      "CFAM_count": 0
+    },
+    "train": {
+      "split": "train",
+      "overall": {
+        "precision": null,
+        "recall": null,
+        "f1": 0.0
+      },
+      "thresholds": {
+        "default": 0.05
+      },
+      "n_graphs_used": 0,
+      "per_source": {},
+      "CCS_mean": null,
+      "CFAM_mean": null,
+      "CCS_count": 0,
+      "CFAM_count": 0
+    },
+    "test": {
+      "split": "test",
+      "overall": {
+        "precision": null,
+        "recall": null,
+        "f1": 0.0
+      },
+      "thresholds": {
+        "default": 0.05
+      },
+      "n_graphs_used": 0,
+      "per_source": {},
+      "CCS_mean": null,
+      "CFAM_mean": null,
+      "CCS_count": 0,
+      "CFAM_count": 0
+    }
+  },
+  "demo": {
+    "meta": {
+      "split": null,
+      "graph_path": null
+    },
+    "paths": []
+  },
+  "notes": {
+    "interprocedural": "DFG/CFG/CALL/ARG2PARAM/RET2CALL/RET2LHS + thin DFG_THIN; multi-root supported.",
+    "beam_guidance": "learned per-relation gates via rel_emb + edge_head; no fixed ordering.",
+    "CCS": "p(X) vs p(do(X')) by zeroing causal-slice features strictly derived from ground-truth labels/sinks/paths.",
+    "CFAM": "grad-norm attribution over hidden h; CFAM = \u03a3_causal / (\u03a3_causal + \u03a3_spurious).",
+    "calibration": "per-source thresholds selected on valid; applied to train/test.",
+    "provenance": "per-graph 'source' from sidecar; training loss weighted per DATASET_WEIGHTS."
+  }
+}

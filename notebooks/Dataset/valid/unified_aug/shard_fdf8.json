@@ -1,0 +1,464 @@
+{
+  "meta": {
+    "tool": "joern",
+    "source": "C:/Users/USER/Desktop/Thesis Research/Implementation/Thesis-causal-vul/work/src/valid/shard_fdf8",
+    "n_nodes": 37,
+    "n_edges": {
+      "AST": 8,
+      "CFG": 0,
+      "DFG": 0
+    },
+    "dfg_status": "rd_intra_proc",
+    "cpg_augmented": true,
+    "added_edges": {
+      "CALL": 0,
+      "ARG2PARAM": 0,
+      "RET2CALL": 0,
+      "RET2LHS": 0
+    }
+  },
+  "nodes": [
+    {
+      "dynamicTypeHintFullName": [],
+      "_id": 25769803776,
+      "code": "<empty>",
+      "typeFullName": "ANY",
+      "lineNumber": 1,
+      "order": 1,
+      "_label": "BLOCK",
+      "columnNumber": 1,
+      "possibleTypes": [],
+      "argumentIndex": -1
+    },
+    {
+      "dynamicTypeHintFullName": [],
+      "_id": 25769803777,
+      "code": "<empty>",
+      "typeFullName": "ANY",
+      "lineNumber": 1,
+      "order": 1,
+      "_label": "BLOCK",
+      "columnNumber": 1,
+      "possibleTypes": [],
+      "argumentIndex": -1
+    },
+    {
+      "dynamicTypeHintFullName": [],
+      "_id": 25769803778,
+      "code": "<empty>",
+      "typeFullName": "ANY",
+      "order": 1,
+      "_label": "BLOCK",
+      "possibleTypes": [],
+      "argumentIndex": -1
+    },
+    {
+      "name": "stddef.h",
+      "_id": 51539607552,
+      "version": "include",
+      "dependencyGroupId": "stddef.h",
+      "_label": "DEPENDENCY"
+    },
+    {
+      "name": "stdint.h",
+      "_id": 51539607553,
+      "version": "include",
+      "dependencyGroupId": "stdint.h",
+      "_label": "DEPENDENCY"
+    },
+    {
+      "name": "stdbool.h",
+      "_id": 51539607554,
+      "version": "include",
+      "dependencyGroupId": "stdbool.h",
+      "_label": "DEPENDENCY"
+    },
+    {
+      "name": "stddef.h",
+      "_id": 51539607555,
+      "version": "include",
+      "dependencyGroupId": "stddef.h",
+      "_label": "DEPENDENCY"
+    },
+    {
+      "name": "stdint.h",
+      "_id": 51539607556,
+      "version": "include",
+      "dependencyGroupId": "stdint.h",
+      "_label": "DEPENDENCY"
+    },
+    {
+      "name": "stdbool.h",
+      "_id": 51539607557,
+      "version": "include",
+      "dependencyGroupId": "stdbool.h",
+      "_label": "DEPENDENCY"
+    },
+    {
+      "name": "fdf82a7856b32d905c39afc85e34364491e46346_3.c",
+      "_id": 60129542144,
+      "code": "<empty>",
+      "order": 0,
+      "content": "<empty>",
+      "_label": "FILE"
+    },
+    {
+      "name": "fdf82a7856b32d905c39afc85e34364491e46346_7.c",
+      "_id": 60129542145,
+      "code": "<empty>",
+      "order": 0,
+      "content": "<empty>",
+      "_label": "FILE"
+    },
+    {
+      "name": "<includes>",
+      "_id": 60129542146,
+      "code": "<empty>",
+      "order": 1,
+      "content": "<empty>",
+      "_label": "FILE"
+    },
+    {
+      "name": "<unknown>",
+      "_id": 60129542147,
+      "code": "<empty>",
+      "order": 0,
+      "content": "<empty>",
+      "_label": "FILE"
+    },
+    {
+      "_id": 73014444032,
+      "importedAs": "stddef.h",
+      "code": "#include <stddef.h>",
+      "lineNumber": 3,
+      "order": 1,
+      "importedEntity": "stddef.h",
+      "_label": "IMPORT",
+      "columnNumber": 1
+    },
+    {
+      "_id": 73014444033,
+      "importedAs": "stdint.h",
+      "code": "#include <stdint.h>",
+      "lineNumber": 4,
+      "order": 2,
+      "importedEntity": "stdint.h",
+      "_label": "IMPORT",
+      "columnNumber": 1
+    },
+    {
+      "_id": 73014444034,
+      "importedAs": "stdbool.h",
+      "code": "#include <stdbool.h>",
+      "lineNumber": 5,
+      "order": 3,
+      "importedEntity": "stdbool.h",
+      "_label": "IMPORT",
+      "columnNumber": 1
+    },
+    {
+      "_id": 73014444035,
+      "importedAs": "stddef.h",
+      "code": "#include <stddef.h>",
+      "lineNumber": 3,
+      "order": 1,
+      "importedEntity": "stddef.h",
+      "_label": "IMPORT",
+      "columnNumber": 1
+    },
+    {
+      "_id": 73014444036,
+      "importedAs": "stdint.h",
+      "code": "#include <stdint.h>",
+      "lineNumber": 4,
+      "order": 2,
+      "importedEntity": "stdint.h",
+      "_label": "IMPORT",
+      "columnNumber": 1
+    },
+    {
+      "_id": 73014444037,
+      "importedAs": "stdbool.h",
+      "code": "#include <stdbool.h>",
+      "lineNumber": 5,
+      "order": 3,
+      "importedEntity": "stdbool.h",
+      "_label": "IMPORT",
+      "columnNumber": 1
+    },
+    {
+      "_id": 103079215104,
+      "version": "0.1",
+      "language": "NEWC",
+      "_label": "META_DATA",
+      "overlays": [
+        "base",
+        "controlflow",
+        "typerel",
+        "callgraph",
+        "dataflowOss"
+      ],
+      "root": "C:\\Users\\USER\\Desktop\\Thesis Research\\Implementation\\Thesis-causal-vul\\work\\src\\valid\\shard_fdf8"
+    },
+    {
+      "name": "<global>",
+      "astParentFullName": "fdf82a7856b32d905c39afc85e34364491e46346_3.c:<global>",
+      "_id": 107374182400,
+      "signature": "",
+      "astParentType": "TYPE_DECL",
+      "lineNumberEnd": 11,
+      "_label": "METHOD",
+      "columnNumberEnd": 1,
+      "fullName": "fdf82a7856b32d905c39afc85e34364491e46346_3.c:<global>",
+      "genericSignature": "<empty>",
+      "code": "<global>",
+      "isExternal": false,
+      "lineNumber": 1,
+      "columnNumber": 1,
+      "order": 1,
+      "filename": "fdf82a7856b32d905c39afc85e34364491e46346_3.c"
+    },
+    {
+      "name": "<global>",
+      "astParentFullName": "fdf82a7856b32d905c39afc85e34364491e46346_7.c:<global>",
+      "_id": 107374182401,
+      "signature": "",
+      "astParentType": "TYPE_DECL",
+      "lineNumberEnd": 53,
+      "_label": "METHOD",
+      "columnNumberEnd": 1,
+      "fullName": "fdf82a7856b32d905c39afc85e34364491e46346_7.c:<global>",
+      "genericSignature": "<empty>",
+      "code": "<global>",
+      "isExternal": false,
+      "lineNumber": 1,
+      "columnNumber": 1,
+      "order": 1,
+      "filename": "fdf82a7856b32d905c39afc85e34364491e46346_7.c"
+    },
+    {
+      "name": "<global>",
+      "astParentFullName": "<includes>:<global>",
+      "_id": 107374182402,
+      "signature": "",
+      "astParentType": "NAMESPACE_BLOCK",
+      "_label": "METHOD",
+      "fullName": "<includes>:<global>",
+      "genericSignature": "<empty>",
+      "code": "<global>",
+      "isExternal": false,
+      "lineNumber": 1,
+      "order": 1,
+      "filename": "<includes>"
+    },
+    {
+      "dynamicTypeHintFullName": [],
+      "_id": 124554051584,
+      "evaluationStrategy": "BY_VALUE",
+      "code": "RET",
+      "typeFullName": "ANY",
+      "lineNumber": 1,
+      "order": 2,
+      "_label": "METHOD_RETURN",
+      "possibleTypes": [],
+      "columnNumber": 1
+    },
+    {
+      "dynamicTypeHintFullName": [],
+      "_id": 124554051585,
+      "evaluationStrategy": "BY_VALUE",
+      "code": "RET",
+      "typeFullName": "ANY",
+      "lineNumber": 1,
+      "order": 2,
+      "_label": "METHOD_RETURN",
+      "possibleTypes": [],
+      "columnNumber": 1
+    },
+    {
+      "dynamicTypeHintFullName": [],
+      "_id": 124554051586,
+      "evaluationStrategy": "BY_VALUE",
+      "code": "RET",
+      "typeFullName": "ANY",
+      "lineNumber": 1,
+      "order": 2,
+      "_label": "METHOD_RETURN",
+      "possibleTypes": []
+    },
+    {
+      "name": "<global>",
+      "_id": 133143986176,
+      "code": "<empty>",
+      "order": -1,
+      "_label": "NAMESPACE"
+    },
+    {
+      "name": "<global>",
+      "_id": 137438953472,
+      "fullName": "<global>",
+      "code": "<empty>",
+      "_label": "NAMESPACE_BLOCK",
+      "order": 1,
+      "filename": "<unknown>"
+    },
+    {
+      "name": "<global>",
+      "_id": 137438953473,
+      "fullName": "fdf82a7856b32d905c39afc85e34364491e46346_3.c:<global>",
+      "code": "<empty>",
+      "_label": "NAMESPACE_BLOCK",
+      "order": 1,
+      "filename": "fdf82a7856b32d905c39afc85e34364491e46346_3.c"
+    },
+    {
+      "name": "<global>",
+      "_id": 137438953474,
+      "fullName": "fdf82a7856b32d905c39afc85e34364491e46346_7.c:<global>",
+      "code": "<empty>",
+      "_label": "NAMESPACE_BLOCK",
+      "order": 1,
+      "filename": "fdf82a7856b32d905c39afc85e34364491e46346_7.c"
+    },
+    {
+      "name": "<global>",
+      "_id": 137438953475,
+      "fullName": "<includes>:<global>",
+      "code": "<empty>",
+      "_label": "NAMESPACE_BLOCK",
+      "order": 1,
+      "filename": "<includes>"
+    },
+    {
+      "name": "ANY",
+      "_id": 158913789952,
+      "fullName": "ANY",
+      "typeDeclFullName": "ANY",
+      "_label": "TYPE"
+    },
+    {
+      "inheritsFromTypeFullName": [],
+      "name": "<global>",
+      "astParentFullName": "fdf82a7856b32d905c39afc85e34364491e46346_3.c:<global>",
+      "_id": 167503724544,
+      "astParentType": "NAMESPACE_BLOCK",
+      "lineNumber": 1,
+      "_label": "TYPE_DECL",
+      "fullName": "fdf82a7856b32d905c39afc85e34364491e46346_3.c:<global>",
+      "genericSignature": "<empty>",
+      "code": "<global>",
+      "isExternal": false,
+      "columnNumber": 1,
+      "order": 4,
+      "filename": "fdf82a7856b32d905c39afc85e34364491e46346_3.c"
+    },
+    {
+      "inheritsFromTypeFullName": [],
+      "name": "<global>",
+      "astParentFullName": "fdf82a7856b32d905c39afc85e34364491e46346_7.c:<global>",
+      "_id": 167503724545,
+      "astParentType": "NAMESPACE_BLOCK",
+      "lineNumber": 1,
+      "_label": "TYPE_DECL",
+      "fullName": "fdf82a7856b32d905c39afc85e34364491e46346_7.c:<global>",
+      "genericSignature": "<empty>",
+      "code": "<global>",
+      "isExternal": false,
+      "columnNumber": 1,
+      "order": 4,
+      "filename": "fdf82a7856b32d905c39afc85e34364491e46346_7.c"
+    },
+    {
+      "inheritsFromTypeFullName": [],
+      "name": "ANY",
+      "astParentFullName": "<includes>:<global>",
+      "_id": 167503724546,
+      "astParentType": "NAMESPACE_BLOCK",
+      "_label": "TYPE_DECL",
+      "fullName": "ANY",
+      "genericSignature": "<empty>",
+      "code": "ANY",
+      "isExternal": true,
+      "order": -1,
+      "filename": "<includes>"
+    },
+    {
+      "dynamicTypeHintFullName": [],
+      "parserTypeName": "CASTProblemDeclaration",
+      "_id": 180388626432,
+      "code": "static void __init spec2_print_if_insecure(const char *reason)\n{\n\tif (boot_cpu_has_bug(X86_BUG_SPECTRE_V2))\n\t\tpr_info(\"%s selected on command line.\\n\", reason);\n}",
+      "typeFullName": "<empty>",
+      "lineNumber": 7,
+      "order": 1,
+      "containedRef": "<empty>",
+      "_label": "UNKNOWN",
+      "columnNumber": 1,
+      "possibleTypes": [],
+      "argumentIndex": -1
+    },
+    {
+      "dynamicTypeHintFullName": [],
+      "parserTypeName": "CASTProblemDeclaration",
+      "_id": 180388626433,
+      "code": "static enum spectre_v2_mitigation_cmd __init spectre_v2_parse_cmdline(void)\n{\n\tchar arg[20];\n\tint ret, i;\n\tenum spectre_v2_mitigation_cmd cmd = SPECTRE_V2_CMD_AUTO;\n\n\tif (cmdline_find_option_bool(boot_command_line, \"nospectre_v2\"))\n\t\treturn SPECTRE_V2_CMD_NONE;\n\telse {\n\t\tret = cmdline_find_option(boot_command_line, \"spectre_v2\", arg, sizeof(arg));\n\t\tif (ret < 0)\n\t\t\treturn SPECTRE_V2_CMD_AUTO;\n\n\t\tfor (i = 0; i < ARRAY_SIZE(mitigation_options); i++) {\n\t\t\tif (!match_option(arg, ret, mitigation_options[i].option))\n\t\t\t\tcontinue;\n\t\t\tcmd = mitigation_options[i].cmd;\n\t\t\tbreak;\n\t\t}\n\n\t\tif (i >= ARRAY_SIZE(mitigation_options)) {\n\t\t\tpr_err(\"unknown option (%s). Switching to AUTO select\\n\", arg);\n\t\t\treturn SPECTRE_V2_CMD_AUTO;\n\t\t}\n\t}\n\n\tif ((cmd == SPECTRE_V2_CMD_RETPOLINE ||\n\t     cmd == SPECTRE_V2_CMD_RETPOLINE_AMD ||\n\t     cmd == SPECTRE_V2_CMD_RETPOLINE_GENERIC) &&\n\t    !IS_ENABLED(CONFIG_RETPOLINE)) {\n\t\tpr_err(\"%s selected but not compiled in. Switching to AUTO select\\n\", mitigation_options[...",
+      "typeFullName": "<empty>",
+      "lineNumber": 7,
+      "order": 1,
+      "containedRef": "<empty>",
+      "_label": "UNKNOWN",
+      "columnNumber": 1,
+      "possibleTypes": [],
+      "argumentIndex": -1
+    }
+  ],
+  "edges": {
+    "AST": [
+      {
+        "src": 107374182400,
+        "dst": 25769803776,
+        "label": "AST"
+      },
+      {
+        "src": 107374182400,
+        "dst": 124554051584,
+        "label": "AST"
+      },
+      {
+        "src": 25769803776,
+        "dst": 180388626432,
+        "label": "AST"
+      },
+      {
+        "src": 107374182401,
+        "dst": 25769803777,
+        "label": "AST"
+      },
+      {
+        "src": 107374182401,
+        "dst": 124554051585,
+        "label": "AST"
+      },
+      {
+        "src": 25769803777,
+        "dst": 180388626433,
+        "label": "AST"
+      },
+      {
+        "src": 107374182402,
+        "dst": 25769803778,
+        "label": "AST"
+      },
+      {
+        "src": 107374182402,
+        "dst": 124554051586,
+        "label": "AST"
+      }
+    ],
+    "CFG": [],
+    "DFG": [],
+    "CALL": [],
+    "ARG2PARAM": [],
+    "RET2CALL": [],
+    "RET2LHS": []
+  }
+}

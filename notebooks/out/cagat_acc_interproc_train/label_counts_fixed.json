@@ -1,0 +1,31 @@
+{
+  "splits": [
+    {
+      "split": "train",
+      "graphs_total": 3438,
+      "graphs_with_json_or_pos": 3436,
+      "vulnerable_nodes_total": 9946,
+      "non_vulnerable_nodes_total": 25173258,
+      "pos_ratio": 0.0003949457741755179
+    },
+    {
+      "split": "valid",
+      "graphs_total": 2905,
+      "graphs_with_json_or_pos": 2905,
+      "vulnerable_nodes_total": 1455,
+      "non_vulnerable_nodes_total": 3970281,
+      "pos_ratio": 0.0003663385481814501
+    },
+    {
+      "split": "test",
+      "graphs_total": 2915,
+      "graphs_with_json_or_pos": 2915,
+      "vulnerable_nodes_total": 1316,
+      "non_vulnerable_nodes_total": 3973974,
+      "pos_ratio": 0.00033104503067700724
+    }
+  ],
+  "evidence": {
+    "node_text_rx": 1074
+  }
+}

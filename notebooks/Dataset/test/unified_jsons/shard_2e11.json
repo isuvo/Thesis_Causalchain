@@ -1,0 +1,2241 @@
+{"meta":{"tool":"joern","source":"C:/Users/USER/Desktop/Thesis Research/Implementation/Thesis-causal-vul/work/src/test/shard_2e11","n_nodes":155,"n_edges":{"AST":109,"CFG":51,"DFG":0},"dfg_status":"rd_intra_proc"},"nodes":[
+  {
+    "name":"stellaris_txpacket_datalen",
+    "_id":21474836480,
+    "signature":"int(stellaris_enet_state*)",
+    "methodFullName":"stellaris_txpacket_datalen",
+    "_label":"BINDING"
+  },
+  {
+    "name":"stellaris_enet_reset",
+    "_id":21474836481,
+    "signature":"void(stellaris_enet_state*)",
+    "methodFullName":"stellaris_enet_reset",
+    "_label":"BINDING"
+  },
+  {
+    "dynamicTypeHintFullName":[
+      
+    ],
+    "_id":25769803776,
+    "code":"{\n    return s->tx_fifo[0] | (s->tx_fifo[1] << 8);\n}",
+    "typeFullName":"void",
+    "lineNumber":8,
+    "order":2,
+    "_label":"BLOCK",
+    "columnNumber":1,
+    "possibleTypes":[
+      
+    ],
+    "argumentIndex":-1
+  },
+  {
+    "dynamicTypeHintFullName":[
+      
+    ],
+    "_id":25769803777,
+    "code":"<empty>",
+    "typeFullName":"ANY",
+    "lineNumber":1,
+    "order":1,
+    "_label":"BLOCK",
+    "columnNumber":1,
+    "possibleTypes":[
+      
+    ],
+    "argumentIndex":-1
+  },
+  {
+    "dynamicTypeHintFullName":[
+      
+    ],
+    "_id":25769803778,
+    "code":"{\n    s->mdv = 0x80;\n    s->rctl = SE_RCTL_BADCRC;\n    s->im = SE_INT_PHY | SE_INT_MD | SE_INT_RXER | SE_INT_FOV | SE_INT_TXEMP\n            | SE_INT_TXER | SE_INT_RX;\n    s->thr = 0x3f;\n    s->tx_fifo_len = 0;\n}",
+    "typeFullName":"void",
+    "lineNumber":8,
+    "order":2,
+    "_label":"BLOCK",
+    "columnNumber":1,
+    "possibleTypes":[
+      
+    ],
+    "argumentIndex":-1
+  },
+  {
+    "dynamicTypeHintFullName":[
+      
+    ],
+    "_id":25769803779,
+    "code":"<empty>",
+    "typeFullName":"ANY",
+    "lineNumber":1,
+    "order":1,
+    "_label":"BLOCK",
+    "columnNumber":1,
+    "possibleTypes":[
+      
+    ],
+    "argumentIndex":-1
+  },
+  {
+    "dynamicTypeHintFullName":[
+      
+    ],
+    "_id":25769803780,
+    "code":"<empty>",
+    "typeFullName":"ANY",
+    "order":1,
+    "_label":"BLOCK",
+    "possibleTypes":[
+      
+    ],
+    "argumentIndex":-1
+  },
+  {
+    "dynamicTypeHintFullName":[
+      
+    ],
+    "_id":25769803781,
+    "code":"<empty>",
+    "typeFullName":"ANY",
+    "order":1,
+    "_label":"BLOCK",
+    "possibleTypes":[
+      
+    ],
+    "argumentIndex":1
+  },
+  {
+    "dynamicTypeHintFullName":[
+      
+    ],
+    "_id":25769803782,
+    "code":"<empty>",
+    "typeFullName":"ANY",
+    "order":1,
+    "_label":"BLOCK",
+    "possibleTypes":[
+      
+    ],
+    "argumentIndex":1
+  },
+  {
+    "dynamicTypeHintFullName":[
+      
+    ],
+    "_id":25769803783,
+    "code":"<empty>",
+    "typeFullName":"ANY",
+    "order":1,
+    "_label":"BLOCK",
+    "possibleTypes":[
+      
+    ],
+    "argumentIndex":1
+  },
+  {
+    "dynamicTypeHintFullName":[
+      
+    ],
+    "_id":25769803784,
+    "code":"<empty>",
+    "typeFullName":"ANY",
+    "order":1,
+    "_label":"BLOCK",
+    "possibleTypes":[
+      
+    ],
+    "argumentIndex":1
+  },
+  {
+    "dynamicTypeHintFullName":[
+      
+    ],
+    "_id":25769803785,
+    "code":"<empty>",
+    "typeFullName":"ANY",
+    "order":1,
+    "_label":"BLOCK",
+    "possibleTypes":[
+      
+    ],
+    "argumentIndex":1
+  },
+  {
+    "name":"<operator>.or",
+    "_id":30064771072,
+    "signature":"",
+    "code":"s->tx_fifo[0] | (s->tx_fifo[1] << 8)",
+    "typeFullName":"ANY",
+    "lineNumber":9,
+    "order":1,
+    "methodFullName":"<operator>.or",
+    "dynamicTypeHintFullName":[
+      
+    ],
+    "dispatchType":"STATIC_DISPATCH",
+    "columnNumber":12,
+    "_label":"CALL",
+    "possibleTypes":[
+      
+    ],
+    "argumentIndex":-1
+  },
+  {
+    "name":"<operator>.indirectIndexAccess",
+    "_id":30064771073,
+    "signature":"",
+    "code":"s->tx_fifo[0]",
+    "typeFullName":"ANY",
+    "lineNumber":9,
+    "order":1,
+    "methodFullName":"<operator>.indirectIndexAccess",
+    "dynamicTypeHintFullName":[
+      
+    ],
+    "dispatchType":"STATIC_DISPATCH",
+    "columnNumber":12,
+    "_label":"CALL",
+    "possibleTypes":[
+      
+    ],
+    "argumentIndex":1
+  },
+  {
+    "name":"<operator>.indirectFieldAccess",
+    "_id":30064771074,
+    "signature":"",
+    "code":"s->tx_fifo",
+    "typeFullName":"ANY",
+    "lineNumber":9,
+    "order":1,
+    "methodFullName":"<operator>.indirectFieldAccess",
+    "dynamicTypeHintFullName":[
+      
+    ],
+    "dispatchType":"STATIC_DISPATCH",
+    "columnNumber":12,
+    "_label":"CALL",
+    "possibleTypes":[
+      
+    ],
+    "argumentIndex":1
+  },
+  {
+    "name":"<operator>.shiftLeft",
+    "_id":30064771075,
+    "signature":"",
+    "code":"s->tx_fifo[1] << 8",
+    "typeFullName":"ANY",
+    "lineNumber":9,
+    "order":2,
+    "methodFullName":"<operator>.shiftLeft",
+    "dynamicTypeHintFullName":[
+      
+    ],
+    "dispatchType":"STATIC_DISPATCH",
+    "columnNumber":29,
+    "_label":"CALL",
+    "possibleTypes":[
+      
+    ],
+    "argumentIndex":2
+  },
+  {
+    "name":"<operator>.indirectIndexAccess",
+    "_id":30064771076,
+    "signature":"",
+    "code":"s->tx_fifo[1]",
+    "typeFullName":"ANY",
+    "lineNumber":9,
+    "order":1,
+    "methodFullName":"<operator>.indirectIndexAccess",
+    "dynamicTypeHintFullName":[
+      
+    ],
+    "dispatchType":"STATIC_DISPATCH",
+    "columnNumber":29,
+    "_label":"CALL",
+    "possibleTypes":[
+      
+    ],
+    "argumentIndex":1
+  },
+  {
+    "name":"<operator>.indirectFieldAccess",
+    "_id":30064771077,
+    "signature":"",
+    "code":"s->tx_fifo",
+    "typeFullName":"ANY",
+    "lineNumber":9,
+    "order":1,
+    "methodFullName":"<operator>.indirectFieldAccess",
+    "dynamicTypeHintFullName":[
+      
+    ],
+    "dispatchType":"STATIC_DISPATCH",
+    "columnNumber":29,
+    "_label":"CALL",
+    "possibleTypes":[
+      
+    ],
+    "argumentIndex":1
+  },
+  {
+    "name":"<operator>.assignment",
+    "_id":30064771078,
+    "signature":"",
+    "code":"s->mdv = 0x80",
+    "typeFullName":"ANY",
+    "lineNumber":9,
+    "order":1,
+    "methodFullName":"<operator>.assignment",
+    "dynamicTypeHintFullName":[
+      
+    ],
+    "dispatchType":"STATIC_DISPATCH",
+    "columnNumber":5,
+    "_label":"CALL",
+    "possibleTypes":[
+      
+    ],
+    "argumentIndex":-1
+  },
+  {
+    "name":"<operator>.indirectFieldAccess",
+    "_id":30064771079,
+    "signature":"",
+    "code":"s->mdv",
+    "typeFullName":"ANY",
+    "lineNumber":9,
+    "order":1,
+    "methodFullName":"<operator>.indirectFieldAccess",
+    "dynamicTypeHintFullName":[
+      
+    ],
+    "dispatchType":"STATIC_DISPATCH",
+    "columnNumber":5,
+    "_label":"CALL",
+    "possibleTypes":[
+      
+    ],
+    "argumentIndex":1
+  },
+  {
+    "name":"<operator>.assignment",
+    "_id":30064771080,
+    "signature":"",
+    "code":"s->rctl = SE_RCTL_BADCRC",
+    "typeFullName":"ANY",
+    "lineNumber":10,
+    "order":2,
+    "methodFullName":"<operator>.assignment",
+    "dynamicTypeHintFullName":[
+      
+    ],
+    "dispatchType":"STATIC_DISPATCH",
+    "columnNumber":5,
+    "_label":"CALL",
+    "possibleTypes":[
+      
+    ],
+    "argumentIndex":-1
+  },
+  {
+    "name":"<operator>.indirectFieldAccess",
+    "_id":30064771081,
+    "signature":"",
+    "code":"s->rctl",
+    "typeFullName":"ANY",
+    "lineNumber":10,
+    "order":1,
+    "methodFullName":"<operator>.indirectFieldAccess",
+    "dynamicTypeHintFullName":[
+      
+    ],
+    "dispatchType":"STATIC_DISPATCH",
+    "columnNumber":5,
+    "_label":"CALL",
+    "possibleTypes":[
+      
+    ],
+    "argumentIndex":1
+  },
+  {
+    "name":"<operator>.assignment",
+    "_id":30064771082,
+    "signature":"",
+    "code":"s->im = SE_INT_PHY | SE_INT_MD | SE_INT_RXER | SE_INT_FOV | SE_INT_TXEMP\n            | SE_INT_TXER | SE_INT_RX",
+    "typeFullName":"ANY",
+    "lineNumber":11,
+    "order":3,
+    "methodFullName":"<operator>.assignment",
+    "dynamicTypeHintFullName":[
+      
+    ],
+    "dispatchType":"STATIC_DISPATCH",
+    "columnNumber":5,
+    "_label":"CALL",
+    "possibleTypes":[
+      
+    ],
+    "argumentIndex":-1
+  },
+  {
+    "name":"<operator>.indirectFieldAccess",
+    "_id":30064771083,
+    "signature":"",
+    "code":"s->im",
+    "typeFullName":"ANY",
+    "lineNumber":11,
+    "order":1,
+    "methodFullName":"<operator>.indirectFieldAccess",
+    "dynamicTypeHintFullName":[
+      
+    ],
+    "dispatchType":"STATIC_DISPATCH",
+    "columnNumber":5,
+    "_label":"CALL",
+    "possibleTypes":[
+      
+    ],
+    "argumentIndex":1
+  },
+  {
+    "name":"<operator>.or",
+    "_id":30064771084,
+    "signature":"",
+    "code":"SE_INT_PHY | SE_INT_MD | SE_INT_RXER | SE_INT_FOV | SE_INT_TXEMP\n            | SE_INT_TXER | SE_INT_RX",
+    "typeFullName":"ANY",
+    "lineNumber":11,
+    "order":2,
+    "methodFullName":"<operator>.or",
+    "dynamicTypeHintFullName":[
+      
+    ],
+    "dispatchType":"STATIC_DISPATCH",
+    "columnNumber":13,
+    "_label":"CALL",
+    "possibleTypes":[
+      
+    ],
+    "argumentIndex":2
+  },
+  {
+    "name":"<operator>.or",
+    "_id":30064771085,
+    "signature":"",
+    "code":"SE_INT_PHY | SE_INT_MD | SE_INT_RXER | SE_INT_FOV | SE_INT_TXEMP\n            | SE_INT_TXER",
+    "typeFullName":"ANY",
+    "lineNumber":11,
+    "order":1,
+    "methodFullName":"<operator>.or",
+    "dynamicTypeHintFullName":[
+      
+    ],
+    "dispatchType":"STATIC_DISPATCH",
+    "columnNumber":13,
+    "_label":"CALL",
+    "possibleTypes":[
+      
+    ],
+    "argumentIndex":1
+  },
+  {
+    "name":"<operator>.or",
+    "_id":30064771086,
+    "signature":"",
+    "code":"SE_INT_PHY | SE_INT_MD | SE_INT_RXER | SE_INT_FOV | SE_INT_TXEMP",
+    "typeFullName":"ANY",
+    "lineNumber":11,
+    "order":1,
+    "methodFullName":"<operator>.or",
+    "dynamicTypeHintFullName":[
+      
+    ],
+    "dispatchType":"STATIC_DISPATCH",
+    "columnNumber":13,
+    "_label":"CALL",
+    "possibleTypes":[
+      
+    ],
+    "argumentIndex":1
+  },
+  {
+    "name":"<operator>.or",
+    "_id":30064771087,
+    "signature":"",
+    "code":"SE_INT_PHY | SE_INT_MD | SE_INT_RXER | SE_INT_FOV",
+    "typeFullName":"ANY",
+    "lineNumber":11,
+    "order":1,
+    "methodFullName":"<operator>.or",
+    "dynamicTypeHintFullName":[
+      
+    ],
+    "dispatchType":"STATIC_DISPATCH",
+    "columnNumber":13,
+    "_label":"CALL",
+    "possibleTypes":[
+      
+    ],
+    "argumentIndex":1
+  },
+  {
+    "name":"<operator>.or",
+    "_id":30064771088,
+    "signature":"",
+    "code":"SE_INT_PHY | SE_INT_MD | SE_INT_RXER",
+    "typeFullName":"ANY",
+    "lineNumber":11,
+    "order":1,
+    "methodFullName":"<operator>.or",
+    "dynamicTypeHintFullName":[
+      
+    ],
+    "dispatchType":"STATIC_DISPATCH",
+    "columnNumber":13,
+    "_label":"CALL",
+    "possibleTypes":[
+      
+    ],
+    "argumentIndex":1
+  },
+  {
+    "name":"<operator>.or",
+    "_id":30064771089,
+    "signature":"",
+    "code":"SE_INT_PHY | SE_INT_MD",
+    "typeFullName":"ANY",
+    "lineNumber":11,
+    "order":1,
+    "methodFullName":"<operator>.or",
+    "dynamicTypeHintFullName":[
+      
+    ],
+    "dispatchType":"STATIC_DISPATCH",
+    "columnNumber":13,
+    "_label":"CALL",
+    "possibleTypes":[
+      
+    ],
+    "argumentIndex":1
+  },
+  {
+    "name":"<operator>.assignment",
+    "_id":30064771090,
+    "signature":"",
+    "code":"s->thr = 0x3f",
+    "typeFullName":"ANY",
+    "lineNumber":13,
+    "order":4,
+    "methodFullName":"<operator>.assignment",
+    "dynamicTypeHintFullName":[
+      
+    ],
+    "dispatchType":"STATIC_DISPATCH",
+    "columnNumber":5,
+    "_label":"CALL",
+    "possibleTypes":[
+      
+    ],
+    "argumentIndex":-1
+  },
+  {
+    "name":"<operator>.indirectFieldAccess",
+    "_id":30064771091,
+    "signature":"",
+    "code":"s->thr",
+    "typeFullName":"ANY",
+    "lineNumber":13,
+    "order":1,
+    "methodFullName":"<operator>.indirectFieldAccess",
+    "dynamicTypeHintFullName":[
+      
+    ],
+    "dispatchType":"STATIC_DISPATCH",
+    "columnNumber":5,
+    "_label":"CALL",
+    "possibleTypes":[
+      
+    ],
+    "argumentIndex":1
+  },
+  {
+    "name":"<operator>.assignment",
+    "_id":30064771092,
+    "signature":"",
+    "code":"s->tx_fifo_len = 0",
+    "typeFullName":"ANY",
+    "lineNumber":14,
+    "order":5,
+    "methodFullName":"<operator>.assignment",
+    "dynamicTypeHintFullName":[
+      
+    ],
+    "dispatchType":"STATIC_DISPATCH",
+    "columnNumber":5,
+    "_label":"CALL",
+    "possibleTypes":[
+      
+    ],
+    "argumentIndex":-1
+  },
+  {
+    "name":"<operator>.indirectFieldAccess",
+    "_id":30064771093,
+    "signature":"",
+    "code":"s->tx_fifo_len",
+    "typeFullName":"ANY",
+    "lineNumber":14,
+    "order":1,
+    "methodFullName":"<operator>.indirectFieldAccess",
+    "dynamicTypeHintFullName":[
+      
+    ],
+    "dispatchType":"STATIC_DISPATCH",
+    "columnNumber":5,
+    "_label":"CALL",
+    "possibleTypes":[
+      
+    ],
+    "argumentIndex":1
+  },
+  {
+    "name":"stddef.h",
+    "_id":51539607552,
+    "version":"include",
+    "dependencyGroupId":"stddef.h",
+    "_label":"DEPENDENCY"
+  },
+  {
+    "name":"stdint.h",
+    "_id":51539607553,
+    "version":"include",
+    "dependencyGroupId":"stdint.h",
+    "_label":"DEPENDENCY"
+  },
+  {
+    "name":"stdbool.h",
+    "_id":51539607554,
+    "version":"include",
+    "dependencyGroupId":"stdbool.h",
+    "_label":"DEPENDENCY"
+  },
+  {
+    "name":"stddef.h",
+    "_id":51539607555,
+    "version":"include",
+    "dependencyGroupId":"stddef.h",
+    "_label":"DEPENDENCY"
+  },
+  {
+    "name":"stdint.h",
+    "_id":51539607556,
+    "version":"include",
+    "dependencyGroupId":"stdint.h",
+    "_label":"DEPENDENCY"
+  },
+  {
+    "name":"stdbool.h",
+    "_id":51539607557,
+    "version":"include",
+    "dependencyGroupId":"stdbool.h",
+    "_label":"DEPENDENCY"
+  },
+  {
+    "_id":55834574848,
+    "code":"tx_fifo",
+    "order":2,
+    "_label":"FIELD_IDENTIFIER",
+    "argumentIndex":2,
+    "canonicalName":"tx_fifo",
+    "lineNumber":9,
+    "columnNumber":12
+  },
+  {
+    "_id":55834574849,
+    "code":"tx_fifo",
+    "order":2,
+    "_label":"FIELD_IDENTIFIER",
+    "argumentIndex":2,
+    "canonicalName":"tx_fifo",
+    "lineNumber":9,
+    "columnNumber":29
+  },
+  {
+    "_id":55834574850,
+    "code":"mdv",
+    "order":2,
+    "_label":"FIELD_IDENTIFIER",
+    "argumentIndex":2,
+    "canonicalName":"mdv",
+    "lineNumber":9,
+    "columnNumber":5
+  },
+  {
+    "_id":55834574851,
+    "code":"rctl",
+    "order":2,
+    "_label":"FIELD_IDENTIFIER",
+    "argumentIndex":2,
+    "canonicalName":"rctl",
+    "lineNumber":10,
+    "columnNumber":5
+  },
+  {
+    "_id":55834574852,
+    "code":"im",
+    "order":2,
+    "_label":"FIELD_IDENTIFIER",
+    "argumentIndex":2,
+    "canonicalName":"im",
+    "lineNumber":11,
+    "columnNumber":5
+  },
+  {
+    "_id":55834574853,
+    "code":"thr",
+    "order":2,
+    "_label":"FIELD_IDENTIFIER",
+    "argumentIndex":2,
+    "canonicalName":"thr",
+    "lineNumber":13,
+    "columnNumber":5
+  },
+  {
+    "_id":55834574854,
+    "code":"tx_fifo_len",
+    "order":2,
+    "_label":"FIELD_IDENTIFIER",
+    "argumentIndex":2,
+    "canonicalName":"tx_fifo_len",
+    "lineNumber":14,
+    "columnNumber":5
+  },
+  {
+    "name":"2e1198672759eda6e122ff38fcf6df06f27e0fe2_1.c",
+    "_id":60129542144,
+    "code":"<empty>",
+    "order":0,
+    "content":"<empty>",
+    "_label":"FILE"
+  },
+  {
+    "name":"2e1198672759eda6e122ff38fcf6df06f27e0fe2_9.c",
+    "_id":60129542145,
+    "code":"<empty>",
+    "order":0,
+    "content":"<empty>",
+    "_label":"FILE"
+  },
+  {
+    "name":"<includes>",
+    "_id":60129542146,
+    "code":"<empty>",
+    "order":1,
+    "content":"<empty>",
+    "_label":"FILE"
+  },
+  {
+    "name":"<unknown>",
+    "_id":60129542147,
+    "code":"<empty>",
+    "order":0,
+    "content":"<empty>",
+    "_label":"FILE"
+  },
+  {
+    "dynamicTypeHintFullName":[
+      
+    ],
+    "name":"s",
+    "_id":68719476736,
+    "code":"s",
+    "typeFullName":"stellaris_enet_state*",
+    "lineNumber":9,
+    "order":1,
+    "_label":"IDENTIFIER",
+    "columnNumber":12,
+    "possibleTypes":[
+      
+    ],
+    "argumentIndex":1
+  },
+  {
+    "dynamicTypeHintFullName":[
+      
+    ],
+    "name":"s",
+    "_id":68719476737,
+    "code":"s",
+    "typeFullName":"stellaris_enet_state*",
+    "lineNumber":9,
+    "order":1,
+    "_label":"IDENTIFIER",
+    "columnNumber":29,
+    "possibleTypes":[
+      
+    ],
+    "argumentIndex":1
+  },
+  {
+    "dynamicTypeHintFullName":[
+      
+    ],
+    "name":"s",
+    "_id":68719476738,
+    "code":"s",
+    "typeFullName":"stellaris_enet_state*",
+    "lineNumber":9,
+    "order":1,
+    "_label":"IDENTIFIER",
+    "columnNumber":5,
+    "possibleTypes":[
+      
+    ],
+    "argumentIndex":1
+  },
+  {
+    "dynamicTypeHintFullName":[
+      
+    ],
+    "name":"s",
+    "_id":68719476739,
+    "code":"s",
+    "typeFullName":"stellaris_enet_state*",
+    "lineNumber":10,
+    "order":1,
+    "_label":"IDENTIFIER",
+    "columnNumber":5,
+    "possibleTypes":[
+      
+    ],
+    "argumentIndex":1
+  },
+  {
+    "dynamicTypeHintFullName":[
+      
+    ],
+    "name":"SE_RCTL_BADCRC",
+    "_id":68719476740,
+    "code":"<unknown> SE_RCTL_BADCRC",
+    "typeFullName":"ANY",
+    "lineNumber":10,
+    "order":2,
+    "_label":"IDENTIFIER",
+    "columnNumber":15,
+    "possibleTypes":[
+      
+    ],
+    "argumentIndex":2
+  },
+  {
+    "dynamicTypeHintFullName":[
+      
+    ],
+    "name":"s",
+    "_id":68719476741,
+    "code":"s",
+    "typeFullName":"stellaris_enet_state*",
+    "lineNumber":11,
+    "order":1,
+    "_label":"IDENTIFIER",
+    "columnNumber":5,
+    "possibleTypes":[
+      
+    ],
+    "argumentIndex":1
+  },
+  {
+    "dynamicTypeHintFullName":[
+      
+    ],
+    "name":"SE_INT_PHY",
+    "_id":68719476742,
+    "code":"<unknown> SE_INT_PHY",
+    "typeFullName":"ANY",
+    "lineNumber":11,
+    "order":1,
+    "_label":"IDENTIFIER",
+    "columnNumber":13,
+    "possibleTypes":[
+      
+    ],
+    "argumentIndex":1
+  },
+  {
+    "dynamicTypeHintFullName":[
+      
+    ],
+    "name":"SE_INT_MD",
+    "_id":68719476743,
+    "code":"<unknown> SE_INT_MD",
+    "typeFullName":"ANY",
+    "lineNumber":11,
+    "order":2,
+    "_label":"IDENTIFIER",
+    "columnNumber":26,
+    "possibleTypes":[
+      
+    ],
+    "argumentIndex":2
+  },
+  {
+    "dynamicTypeHintFullName":[
+      
+    ],
+    "name":"SE_INT_RXER",
+    "_id":68719476744,
+    "code":"<unknown> SE_INT_RXER",
+    "typeFullName":"ANY",
+    "lineNumber":11,
+    "order":2,
+    "_label":"IDENTIFIER",
+    "columnNumber":38,
+    "possibleTypes":[
+      
+    ],
+    "argumentIndex":2
+  },
+  {
+    "dynamicTypeHintFullName":[
+      
+    ],
+    "name":"SE_INT_FOV",
+    "_id":68719476745,
+    "code":"<unknown> SE_INT_FOV",
+    "typeFullName":"ANY",
+    "lineNumber":11,
+    "order":2,
+    "_label":"IDENTIFIER",
+    "columnNumber":52,
+    "possibleTypes":[
+      
+    ],
+    "argumentIndex":2
+  },
+  {
+    "dynamicTypeHintFullName":[
+      
+    ],
+    "name":"SE_INT_TXEMP",
+    "_id":68719476746,
+    "code":"<unknown> SE_INT_TXEMP",
+    "typeFullName":"ANY",
+    "lineNumber":11,
+    "order":2,
+    "_label":"IDENTIFIER",
+    "columnNumber":65,
+    "possibleTypes":[
+      
+    ],
+    "argumentIndex":2
+  },
+  {
+    "dynamicTypeHintFullName":[
+      
+    ],
+    "name":"SE_INT_TXER",
+    "_id":68719476747,
+    "code":"<unknown> SE_INT_TXER",
+    "typeFullName":"ANY",
+    "lineNumber":12,
+    "order":2,
+    "_label":"IDENTIFIER",
+    "columnNumber":15,
+    "possibleTypes":[
+      
+    ],
+    "argumentIndex":2
+  },
+  {
+    "dynamicTypeHintFullName":[
+      
+    ],
+    "name":"SE_INT_RX",
+    "_id":68719476748,
+    "code":"<unknown> SE_INT_RX",
+    "typeFullName":"ANY",
+    "lineNumber":12,
+    "order":2,
+    "_label":"IDENTIFIER",
+    "columnNumber":29,
+    "possibleTypes":[
+      
+    ],
+    "argumentIndex":2
+  },
+  {
+    "dynamicTypeHintFullName":[
+      
+    ],
+    "name":"s",
+    "_id":68719476749,
+    "code":"s",
+    "typeFullName":"stellaris_enet_state*",
+    "lineNumber":13,
+    "order":1,
+    "_label":"IDENTIFIER",
+    "columnNumber":5,
+    "possibleTypes":[
+      
+    ],
+    "argumentIndex":1
+  },
+  {
+    "dynamicTypeHintFullName":[
+      
+    ],
+    "name":"s",
+    "_id":68719476750,
+    "code":"s",
+    "typeFullName":"stellaris_enet_state*",
+    "lineNumber":14,
+    "order":1,
+    "_label":"IDENTIFIER",
+    "columnNumber":5,
+    "possibleTypes":[
+      
+    ],
+    "argumentIndex":1
+  },
+  {
+    "_id":73014444032,
+    "importedAs":"stddef.h",
+    "code":"#include <stddef.h>",
+    "lineNumber":3,
+    "order":1,
+    "importedEntity":"stddef.h",
+    "_label":"IMPORT",
+    "columnNumber":1
+  },
+  {
+    "_id":73014444033,
+    "importedAs":"stdint.h",
+    "code":"#include <stdint.h>",
+    "lineNumber":4,
+    "order":2,
+    "importedEntity":"stdint.h",
+    "_label":"IMPORT",
+    "columnNumber":1
+  },
+  {
+    "_id":73014444034,
+    "importedAs":"stdbool.h",
+    "code":"#include <stdbool.h>",
+    "lineNumber":5,
+    "order":3,
+    "importedEntity":"stdbool.h",
+    "_label":"IMPORT",
+    "columnNumber":1
+  },
+  {
+    "_id":73014444035,
+    "importedAs":"stddef.h",
+    "code":"#include <stddef.h>",
+    "lineNumber":3,
+    "order":1,
+    "importedEntity":"stddef.h",
+    "_label":"IMPORT",
+    "columnNumber":1
+  },
+  {
+    "_id":73014444036,
+    "importedAs":"stdint.h",
+    "code":"#include <stdint.h>",
+    "lineNumber":4,
+    "order":2,
+    "importedEntity":"stdint.h",
+    "_label":"IMPORT",
+    "columnNumber":1
+  },
+  {
+    "_id":73014444037,
+    "importedAs":"stdbool.h",
+    "code":"#include <stdbool.h>",
+    "lineNumber":5,
+    "order":3,
+    "importedEntity":"stdbool.h",
+    "_label":"IMPORT",
+    "columnNumber":1
+  },
+  {
+    "dynamicTypeHintFullName":[
+      
+    ],
+    "_id":90194313216,
+    "code":"0",
+    "typeFullName":"int",
+    "lineNumber":9,
+    "order":2,
+    "_label":"LITERAL",
+    "columnNumber":23,
+    "possibleTypes":[
+      
+    ],
+    "argumentIndex":2
+  },
+  {
+    "dynamicTypeHintFullName":[
+      
+    ],
+    "_id":90194313217,
+    "code":"1",
+    "typeFullName":"int",
+    "lineNumber":9,
+    "order":2,
+    "_label":"LITERAL",
+    "columnNumber":40,
+    "possibleTypes":[
+      
+    ],
+    "argumentIndex":2
+  },
+  {
+    "dynamicTypeHintFullName":[
+      
+    ],
+    "_id":90194313218,
+    "code":"8",
+    "typeFullName":"int",
+    "lineNumber":9,
+    "order":2,
+    "_label":"LITERAL",
+    "columnNumber":46,
+    "possibleTypes":[
+      
+    ],
+    "argumentIndex":2
+  },
+  {
+    "dynamicTypeHintFullName":[
+      
+    ],
+    "_id":90194313219,
+    "code":"0x80",
+    "typeFullName":"int",
+    "lineNumber":9,
+    "order":2,
+    "_label":"LITERAL",
+    "columnNumber":14,
+    "possibleTypes":[
+      
+    ],
+    "argumentIndex":2
+  },
+  {
+    "dynamicTypeHintFullName":[
+      
+    ],
+    "_id":90194313220,
+    "code":"0x3f",
+    "typeFullName":"int",
+    "lineNumber":13,
+    "order":2,
+    "_label":"LITERAL",
+    "columnNumber":14,
+    "possibleTypes":[
+      
+    ],
+    "argumentIndex":2
+  },
+  {
+    "dynamicTypeHintFullName":[
+      
+    ],
+    "_id":90194313221,
+    "code":"0",
+    "typeFullName":"int",
+    "lineNumber":14,
+    "order":2,
+    "_label":"LITERAL",
+    "columnNumber":22,
+    "possibleTypes":[
+      
+    ],
+    "argumentIndex":2
+  },
+  {
+    "dynamicTypeHintFullName":[
+      
+    ],
+    "name":"SE_INT_RX",
+    "_id":94489280512,
+    "genericSignature":"<empty>",
+    "typeFullName":"ANY",
+    "lineNumber":12,
+    "order":0,
+    "_label":"LOCAL",
+    "possibleTypes":[
+      
+    ],
+    "code":"<unknown> SE_INT_RX",
+    "columnNumber":29
+  },
+  {
+    "dynamicTypeHintFullName":[
+      
+    ],
+    "name":"SE_INT_TXER",
+    "_id":94489280513,
+    "genericSignature":"<empty>",
+    "typeFullName":"ANY",
+    "lineNumber":12,
+    "order":0,
+    "_label":"LOCAL",
+    "possibleTypes":[
+      
+    ],
+    "code":"<unknown> SE_INT_TXER",
+    "columnNumber":15
+  },
+  {
+    "dynamicTypeHintFullName":[
+      
+    ],
+    "name":"SE_INT_TXEMP",
+    "_id":94489280514,
+    "genericSignature":"<empty>",
+    "typeFullName":"ANY",
+    "lineNumber":11,
+    "order":0,
+    "_label":"LOCAL",
+    "possibleTypes":[
+      
+    ],
+    "code":"<unknown> SE_INT_TXEMP",
+    "columnNumber":65
+  },
+  {
+    "dynamicTypeHintFullName":[
+      
+    ],
+    "name":"SE_INT_FOV",
+    "_id":94489280515,
+    "genericSignature":"<empty>",
+    "typeFullName":"ANY",
+    "lineNumber":11,
+    "order":0,
+    "_label":"LOCAL",
+    "possibleTypes":[
+      
+    ],
+    "code":"<unknown> SE_INT_FOV",
+    "columnNumber":52
+  },
+  {
+    "dynamicTypeHintFullName":[
+      
+    ],
+    "name":"SE_INT_RXER",
+    "_id":94489280516,
+    "genericSignature":"<empty>",
+    "typeFullName":"ANY",
+    "lineNumber":11,
+    "order":0,
+    "_label":"LOCAL",
+    "possibleTypes":[
+      
+    ],
+    "code":"<unknown> SE_INT_RXER",
+    "columnNumber":38
+  },
+  {
+    "dynamicTypeHintFullName":[
+      
+    ],
+    "name":"SE_INT_MD",
+    "_id":94489280517,
+    "genericSignature":"<empty>",
+    "typeFullName":"ANY",
+    "lineNumber":11,
+    "order":0,
+    "_label":"LOCAL",
+    "possibleTypes":[
+      
+    ],
+    "code":"<unknown> SE_INT_MD",
+    "columnNumber":26
+  },
+  {
+    "dynamicTypeHintFullName":[
+      
+    ],
+    "name":"SE_INT_PHY",
+    "_id":94489280518,
+    "genericSignature":"<empty>",
+    "typeFullName":"ANY",
+    "lineNumber":11,
+    "order":0,
+    "_label":"LOCAL",
+    "possibleTypes":[
+      
+    ],
+    "code":"<unknown> SE_INT_PHY",
+    "columnNumber":13
+  },
+  {
+    "dynamicTypeHintFullName":[
+      
+    ],
+    "name":"SE_RCTL_BADCRC",
+    "_id":94489280519,
+    "genericSignature":"<empty>",
+    "typeFullName":"ANY",
+    "lineNumber":10,
+    "order":0,
+    "_label":"LOCAL",
+    "possibleTypes":[
+      
+    ],
+    "code":"<unknown> SE_RCTL_BADCRC",
+    "columnNumber":15
+  },
+  {
+    "_id":103079215104,
+    "version":"0.1",
+    "language":"NEWC",
+    "_label":"META_DATA",
+    "overlays":[
+      "base",
+      "controlflow",
+      "typerel",
+      "callgraph",
+      "dataflowOss"
+    ],
+    "root":"C:\\Users\\USER\\Desktop\\Thesis Research\\Implementation\\Thesis-causal-vul\\work\\src\\test\\shard_2e11"
+  },
+  {
+    "name":"stellaris_txpacket_datalen",
+    "astParentFullName":"2e1198672759eda6e122ff38fcf6df06f27e0fe2_1.c:<global>",
+    "_id":107374182400,
+    "signature":"int(stellaris_enet_state*)",
+    "astParentType":"TYPE_DECL",
+    "lineNumberEnd":10,
+    "_label":"METHOD",
+    "columnNumberEnd":1,
+    "fullName":"stellaris_txpacket_datalen",
+    "genericSignature":"<empty>",
+    "code":"static inline int stellaris_txpacket_datalen(stellaris_enet_state *s)\n{\n    return s->tx_fifo[0] | (s->tx_fifo[1] << 8);\n}",
+    "isExternal":false,
+    "lineNumber":7,
+    "columnNumber":1,
+    "order":1,
+    "filename":"2e1198672759eda6e122ff38fcf6df06f27e0fe2_1.c"
+  },
+  {
+    "name":"<global>",
+    "astParentFullName":"2e1198672759eda6e122ff38fcf6df06f27e0fe2_1.c:<global>",
+    "_id":107374182401,
+    "signature":"",
+    "astParentType":"TYPE_DECL",
+    "lineNumberEnd":10,
+    "_label":"METHOD",
+    "columnNumberEnd":1,
+    "fullName":"2e1198672759eda6e122ff38fcf6df06f27e0fe2_1.c:<global>",
+    "genericSignature":"<empty>",
+    "code":"<global>",
+    "isExternal":false,
+    "lineNumber":1,
+    "columnNumber":1,
+    "order":1,
+    "filename":"2e1198672759eda6e122ff38fcf6df06f27e0fe2_1.c"
+  },
+  {
+    "name":"stellaris_enet_reset",
+    "astParentFullName":"2e1198672759eda6e122ff38fcf6df06f27e0fe2_9.c:<global>",
+    "_id":107374182402,
+    "signature":"void(stellaris_enet_state*)",
+    "astParentType":"TYPE_DECL",
+    "lineNumberEnd":15,
+    "_label":"METHOD",
+    "columnNumberEnd":1,
+    "fullName":"stellaris_enet_reset",
+    "genericSignature":"<empty>",
+    "code":"static void stellaris_enet_reset(stellaris_enet_state *s)\n{\n    s->mdv = 0x80;\n    s->rctl = SE_RCTL_BADCRC;\n    s->im = SE_INT_PHY | SE_INT_MD | SE_INT_RXER | SE_INT_FOV | SE_INT_TXEMP\n            | SE_INT_TXER | SE_INT_RX;\n    s->thr = 0x3f;\n    s->tx_fifo_len = 0;\n}",
+    "isExternal":false,
+    "lineNumber":7,
+    "columnNumber":1,
+    "order":1,
+    "filename":"2e1198672759eda6e122ff38fcf6df06f27e0fe2_9.c"
+  },
+  {
+    "name":"<global>",
+    "astParentFullName":"2e1198672759eda6e122ff38fcf6df06f27e0fe2_9.c:<global>",
+    "_id":107374182403,
+    "signature":"",
+    "astParentType":"TYPE_DECL",
+    "lineNumberEnd":15,
+    "_label":"METHOD",
+    "columnNumberEnd":1,
+    "fullName":"2e1198672759eda6e122ff38fcf6df06f27e0fe2_9.c:<global>",
+    "genericSignature":"<empty>",
+    "code":"<global>",
+    "isExternal":false,
+    "lineNumber":1,
+    "columnNumber":1,
+    "order":1,
+    "filename":"2e1198672759eda6e122ff38fcf6df06f27e0fe2_9.c"
+  },
+  {
+    "name":"<global>",
+    "astParentFullName":"<includes>:<global>",
+    "_id":107374182404,
+    "signature":"",
+    "astParentType":"NAMESPACE_BLOCK",
+    "_label":"METHOD",
+    "fullName":"<includes>:<global>",
+    "genericSignature":"<empty>",
+    "code":"<global>",
+    "isExternal":false,
+    "lineNumber":1,
+    "order":1,
+    "filename":"<includes>"
+  },
+  {
+    "name":"<operator>.shiftLeft",
+    "astParentFullName":"<global>",
+    "_id":107374182405,
+    "signature":"",
+    "astParentType":"NAMESPACE_BLOCK",
+    "_label":"METHOD",
+    "fullName":"<operator>.shiftLeft",
+    "genericSignature":"<empty>",
+    "code":"<empty>",
+    "isExternal":true,
+    "order":0,
+    "filename":"<empty>"
+  },
+  {
+    "name":"<operator>.indirectFieldAccess",
+    "astParentFullName":"<global>",
+    "_id":107374182406,
+    "signature":"",
+    "astParentType":"NAMESPACE_BLOCK",
+    "_label":"METHOD",
+    "fullName":"<operator>.indirectFieldAccess",
+    "genericSignature":"<empty>",
+    "code":"<empty>",
+    "isExternal":true,
+    "order":0,
+    "filename":"<empty>"
+  },
+  {
+    "name":"<operator>.indirectIndexAccess",
+    "astParentFullName":"<global>",
+    "_id":107374182407,
+    "signature":"",
+    "astParentType":"NAMESPACE_BLOCK",
+    "_label":"METHOD",
+    "fullName":"<operator>.indirectIndexAccess",
+    "genericSignature":"<empty>",
+    "code":"<empty>",
+    "isExternal":true,
+    "order":0,
+    "filename":"<empty>"
+  },
+  {
+    "name":"<operator>.or",
+    "astParentFullName":"<global>",
+    "_id":107374182408,
+    "signature":"",
+    "astParentType":"NAMESPACE_BLOCK",
+    "_label":"METHOD",
+    "fullName":"<operator>.or",
+    "genericSignature":"<empty>",
+    "code":"<empty>",
+    "isExternal":true,
+    "order":0,
+    "filename":"<empty>"
+  },
+  {
+    "name":"<operator>.assignment",
+    "astParentFullName":"<global>",
+    "_id":107374182409,
+    "signature":"",
+    "astParentType":"NAMESPACE_BLOCK",
+    "_label":"METHOD",
+    "fullName":"<operator>.assignment",
+    "genericSignature":"<empty>",
+    "code":"<empty>",
+    "isExternal":true,
+    "order":0,
+    "filename":"<empty>"
+  },
+  {
+    "dynamicTypeHintFullName":[
+      
+    ],
+    "name":"s",
+    "_id":111669149696,
+    "evaluationStrategy":"BY_VALUE",
+    "isVariadic":false,
+    "typeFullName":"stellaris_enet_state*",
+    "lineNumber":7,
+    "order":1,
+    "_label":"METHOD_PARAMETER_IN",
+    "possibleTypes":[
+      
+    ],
+    "index":1,
+    "code":"stellaris_enet_state *s",
+    "columnNumber":46
+  },
+  {
+    "dynamicTypeHintFullName":[
+      
+    ],
+    "name":"s",
+    "_id":111669149697,
+    "evaluationStrategy":"BY_VALUE",
+    "isVariadic":false,
+    "typeFullName":"stellaris_enet_state*",
+    "lineNumber":7,
+    "order":1,
+    "_label":"METHOD_PARAMETER_IN",
+    "possibleTypes":[
+      
+    ],
+    "index":1,
+    "code":"stellaris_enet_state *s",
+    "columnNumber":34
+  },
+  {
+    "dynamicTypeHintFullName":[
+      
+    ],
+    "name":"p1",
+    "_id":111669149698,
+    "evaluationStrategy":"BY_VALUE",
+    "isVariadic":false,
+    "typeFullName":"ANY",
+    "order":1,
+    "_label":"METHOD_PARAMETER_IN",
+    "possibleTypes":[
+      
+    ],
+    "index":1,
+    "code":"p1"
+  },
+  {
+    "dynamicTypeHintFullName":[
+      
+    ],
+    "name":"p2",
+    "_id":111669149699,
+    "evaluationStrategy":"BY_VALUE",
+    "isVariadic":false,
+    "typeFullName":"ANY",
+    "order":2,
+    "_label":"METHOD_PARAMETER_IN",
+    "possibleTypes":[
+      
+    ],
+    "index":2,
+    "code":"p2"
+  },
+  {
+    "dynamicTypeHintFullName":[
+      
+    ],
+    "name":"p1",
+    "_id":111669149700,
+    "evaluationStrategy":"BY_VALUE",
+    "isVariadic":false,
+    "typeFullName":"ANY",
+    "order":1,
+    "_label":"METHOD_PARAMETER_IN",
+    "possibleTypes":[
+      
+    ],
+    "index":1,
+    "code":"p1"
+  },
+  {
+    "dynamicTypeHintFullName":[
+      
+    ],
+    "name":"p2",
+    "_id":111669149701,
+    "evaluationStrategy":"BY_VALUE",
+    "isVariadic":false,
+    "typeFullName":"ANY",
+    "order":2,
+    "_label":"METHOD_PARAMETER_IN",
+    "possibleTypes":[
+      
+    ],
+    "index":2,
+    "code":"p2"
+  },
+  {
+    "dynamicTypeHintFullName":[
+      
+    ],
+    "name":"p1",
+    "_id":111669149702,
+    "evaluationStrategy":"BY_VALUE",
+    "isVariadic":false,
+    "typeFullName":"ANY",
+    "order":1,
+    "_label":"METHOD_PARAMETER_IN",
+    "possibleTypes":[
+      
+    ],
+    "index":1,
+    "code":"p1"
+  },
+  {
+    "dynamicTypeHintFullName":[
+      
+    ],
+    "name":"p2",
+    "_id":111669149703,
+    "evaluationStrategy":"BY_VALUE",
+    "isVariadic":false,
+    "typeFullName":"ANY",
+    "order":2,
+    "_label":"METHOD_PARAMETER_IN",
+    "possibleTypes":[
+      
+    ],
+    "index":2,
+    "code":"p2"
+  },
+  {
+    "dynamicTypeHintFullName":[
+      
+    ],
+    "name":"p1",
+    "_id":111669149704,
+    "evaluationStrategy":"BY_VALUE",
+    "isVariadic":false,
+    "typeFullName":"ANY",
+    "order":1,
+    "_label":"METHOD_PARAMETER_IN",
+    "possibleTypes":[
+      
+    ],
+    "index":1,
+    "code":"p1"
+  },
+  {
+    "dynamicTypeHintFullName":[
+      
+    ],
+    "name":"p2",
+    "_id":111669149705,
+    "evaluationStrategy":"BY_VALUE",
+    "isVariadic":false,
+    "typeFullName":"ANY",
+    "order":2,
+    "_label":"METHOD_PARAMETER_IN",
+    "possibleTypes":[
+      
+    ],
+    "index":2,
+    "code":"p2"
+  },
+  {
+    "dynamicTypeHintFullName":[
+      
+    ],
+    "name":"p1",
+    "_id":111669149706,
+    "evaluationStrategy":"BY_VALUE",
+    "isVariadic":false,
+    "typeFullName":"ANY",
+    "order":1,
+    "_label":"METHOD_PARAMETER_IN",
+    "possibleTypes":[
+      
+    ],
+    "index":1,
+    "code":"p1"
+  },
+  {
+    "dynamicTypeHintFullName":[
+      
+    ],
+    "name":"p2",
+    "_id":111669149707,
+    "evaluationStrategy":"BY_VALUE",
+    "isVariadic":false,
+    "typeFullName":"ANY",
+    "order":2,
+    "_label":"METHOD_PARAMETER_IN",
+    "possibleTypes":[
+      
+    ],
+    "index":2,
+    "code":"p2"
+  },
+  {
+    "name":"s",
+    "_id":115964116992,
+    "evaluationStrategy":"BY_VALUE",
+    "isVariadic":false,
+    "code":"stellaris_enet_state *s",
+    "typeFullName":"stellaris_enet_state*",
+    "lineNumber":7,
+    "order":1,
+    "_label":"METHOD_PARAMETER_OUT",
+    "index":1,
+    "columnNumber":46
+  },
+  {
+    "name":"s",
+    "_id":115964116993,
+    "evaluationStrategy":"BY_VALUE",
+    "isVariadic":false,
+    "code":"stellaris_enet_state *s",
+    "typeFullName":"stellaris_enet_state*",
+    "lineNumber":7,
+    "order":1,
+    "_label":"METHOD_PARAMETER_OUT",
+    "index":1,
+    "columnNumber":34
+  },
+  {
+    "name":"p1",
+    "_id":115964116994,
+    "evaluationStrategy":"BY_VALUE",
+    "isVariadic":false,
+    "code":"p1",
+    "typeFullName":"ANY",
+    "order":1,
+    "_label":"METHOD_PARAMETER_OUT",
+    "index":1
+  },
+  {
+    "name":"p2",
+    "_id":115964116995,
+    "evaluationStrategy":"BY_VALUE",
+    "isVariadic":false,
+    "code":"p2",
+    "typeFullName":"ANY",
+    "order":2,
+    "_label":"METHOD_PARAMETER_OUT",
+    "index":2
+  },
+  {
+    "name":"p1",
+    "_id":115964116996,
+    "evaluationStrategy":"BY_VALUE",
+    "isVariadic":false,
+    "code":"p1",
+    "typeFullName":"ANY",
+    "order":1,
+    "_label":"METHOD_PARAMETER_OUT",
+    "index":1
+  },
+  {
+    "name":"p2",
+    "_id":115964116997,
+    "evaluationStrategy":"BY_VALUE",
+    "isVariadic":false,
+    "code":"p2",
+    "typeFullName":"ANY",
+    "order":2,
+    "_label":"METHOD_PARAMETER_OUT",
+    "index":2
+  },
+  {
+    "name":"p1",
+    "_id":115964116998,
+    "evaluationStrategy":"BY_VALUE",
+    "isVariadic":false,
+    "code":"p1",
+    "typeFullName":"ANY",
+    "order":1,
+    "_label":"METHOD_PARAMETER_OUT",
+    "index":1
+  },
+  {
+    "name":"p2",
+    "_id":115964116999,
+    "evaluationStrategy":"BY_VALUE",
+    "isVariadic":false,
+    "code":"p2",
+    "typeFullName":"ANY",
+    "order":2,
+    "_label":"METHOD_PARAMETER_OUT",
+    "index":2
+  },
+  {
+    "name":"p1",
+    "_id":115964117000,
+    "evaluationStrategy":"BY_VALUE",
+    "isVariadic":false,
+    "code":"p1",
+    "typeFullName":"ANY",
+    "order":1,
+    "_label":"METHOD_PARAMETER_OUT",
+    "index":1
+  },
+  {
+    "name":"p2",
+    "_id":115964117001,
+    "evaluationStrategy":"BY_VALUE",
+    "isVariadic":false,
+    "code":"p2",
+    "typeFullName":"ANY",
+    "order":2,
+    "_label":"METHOD_PARAMETER_OUT",
+    "index":2
+  },
+  {
+    "name":"p1",
+    "_id":115964117002,
+    "evaluationStrategy":"BY_VALUE",
+    "isVariadic":false,
+    "code":"p1",
+    "typeFullName":"ANY",
+    "order":1,
+    "_label":"METHOD_PARAMETER_OUT",
+    "index":1
+  },
+  {
+    "name":"p2",
+    "_id":115964117003,
+    "evaluationStrategy":"BY_VALUE",
+    "isVariadic":false,
+    "code":"p2",
+    "typeFullName":"ANY",
+    "order":2,
+    "_label":"METHOD_PARAMETER_OUT",
+    "index":2
+  },
+  {
+    "dynamicTypeHintFullName":[
+      
+    ],
+    "_id":120259084288,
+    "code":"stellaris_txpacket_datalen",
+    "typeFullName":"stellaris_txpacket_datalen",
+    "lineNumber":7,
+    "order":1,
+    "methodFullName":"stellaris_txpacket_datalen",
+    "_label":"METHOD_REF",
+    "columnNumber":1,
+    "possibleTypes":[
+      
+    ],
+    "argumentIndex":-1
+  },
+  {
+    "dynamicTypeHintFullName":[
+      
+    ],
+    "_id":120259084289,
+    "code":"stellaris_enet_reset",
+    "typeFullName":"stellaris_enet_reset",
+    "lineNumber":7,
+    "order":1,
+    "methodFullName":"stellaris_enet_reset",
+    "_label":"METHOD_REF",
+    "columnNumber":1,
+    "possibleTypes":[
+      
+    ],
+    "argumentIndex":-1
+  },
+  {
+    "dynamicTypeHintFullName":[
+      
+    ],
+    "_id":124554051584,
+    "evaluationStrategy":"BY_VALUE",
+    "code":"RET",
+    "typeFullName":"int",
+    "lineNumber":7,
+    "order":4,
+    "_label":"METHOD_RETURN",
+    "possibleTypes":[
+      
+    ],
+    "columnNumber":1
+  },
+  {
+    "dynamicTypeHintFullName":[
+      
+    ],
+    "_id":124554051585,
+    "evaluationStrategy":"BY_VALUE",
+    "code":"RET",
+    "typeFullName":"ANY",
+    "lineNumber":1,
+    "order":2,
+    "_label":"METHOD_RETURN",
+    "possibleTypes":[
+      
+    ],
+    "columnNumber":1
+  },
+  {
+    "dynamicTypeHintFullName":[
+      
+    ],
+    "_id":124554051586,
+    "evaluationStrategy":"BY_VALUE",
+    "code":"RET",
+    "typeFullName":"void",
+    "lineNumber":7,
+    "order":4,
+    "_label":"METHOD_RETURN",
+    "possibleTypes":[
+      
+    ],
+    "columnNumber":1
+  },
+  {
+    "dynamicTypeHintFullName":[
+      
+    ],
+    "_id":124554051587,
+    "evaluationStrategy":"BY_VALUE",
+    "code":"RET",
+    "typeFullName":"ANY",
+    "lineNumber":1,
+    "order":2,
+    "_label":"METHOD_RETURN",
+    "possibleTypes":[
+      
+    ],
+    "columnNumber":1
+  },
+  {
+    "dynamicTypeHintFullName":[
+      
+    ],
+    "_id":124554051588,
+    "evaluationStrategy":"BY_VALUE",
+    "code":"RET",
+    "typeFullName":"ANY",
+    "lineNumber":1,
+    "order":2,
+    "_label":"METHOD_RETURN",
+    "possibleTypes":[
+      
+    ]
+  },
+  {
+    "dynamicTypeHintFullName":[
+      
+    ],
+    "_id":124554051589,
+    "evaluationStrategy":"BY_VALUE",
+    "code":"RET",
+    "typeFullName":"ANY",
+    "order":2,
+    "_label":"METHOD_RETURN",
+    "possibleTypes":[
+      
+    ]
+  },
+  {
+    "dynamicTypeHintFullName":[
+      
+    ],
+    "_id":124554051590,
+    "evaluationStrategy":"BY_VALUE",
+    "code":"RET",
+    "typeFullName":"ANY",
+    "order":2,
+    "_label":"METHOD_RETURN",
+    "possibleTypes":[
+      
+    ]
+  },
+  {
+    "dynamicTypeHintFullName":[
+      
+    ],
+    "_id":124554051591,
+    "evaluationStrategy":"BY_VALUE",
+    "code":"RET",
+    "typeFullName":"ANY",
+    "order":2,
+    "_label":"METHOD_RETURN",
+    "possibleTypes":[
+      
+    ]
+  },
+  {
+    "dynamicTypeHintFullName":[
+      
+    ],
+    "_id":124554051592,
+    "evaluationStrategy":"BY_VALUE",
+    "code":"RET",
+    "typeFullName":"ANY",
+    "order":2,
+    "_label":"METHOD_RETURN",
+    "possibleTypes":[
+      
+    ]
+  },
+  {
+    "dynamicTypeHintFullName":[
+      
+    ],
+    "_id":124554051593,
+    "evaluationStrategy":"BY_VALUE",
+    "code":"RET",
+    "typeFullName":"ANY",
+    "order":2,
+    "_label":"METHOD_RETURN",
+    "possibleTypes":[
+      
+    ]
+  },
+  {
+    "_id":128849018880,
+    "modifierType":"STATIC",
+    "code":"<empty>",
+    "lineNumber":7,
+    "order":3,
+    "_label":"MODIFIER",
+    "columnNumber":1
+  },
+  {
+    "_id":128849018881,
+    "modifierType":"STATIC",
+    "code":"<empty>",
+    "lineNumber":7,
+    "order":3,
+    "_label":"MODIFIER",
+    "columnNumber":1
+  },
+  {
+    "name":"<global>",
+    "_id":133143986176,
+    "code":"<empty>",
+    "order":-1,
+    "_label":"NAMESPACE"
+  },
+  {
+    "name":"<global>",
+    "_id":137438953472,
+    "fullName":"<global>",
+    "code":"<empty>",
+    "_label":"NAMESPACE_BLOCK",
+    "order":1,
+    "filename":"<unknown>"
+  },
+  {
+    "name":"<global>",
+    "_id":137438953473,
+    "fullName":"2e1198672759eda6e122ff38fcf6df06f27e0fe2_1.c:<global>",
+    "code":"<empty>",
+    "_label":"NAMESPACE_BLOCK",
+    "order":1,
+    "filename":"2e1198672759eda6e122ff38fcf6df06f27e0fe2_1.c"
+  },
+  {
+    "name":"<global>",
+    "_id":137438953474,
+    "fullName":"2e1198672759eda6e122ff38fcf6df06f27e0fe2_9.c:<global>",
+    "code":"<empty>",
+    "_label":"NAMESPACE_BLOCK",
+    "order":1,
+    "filename":"2e1198672759eda6e122ff38fcf6df06f27e0fe2_9.c"
+  },
+  {
+    "name":"<global>",
+    "_id":137438953475,
+    "fullName":"<includes>:<global>",
+    "code":"<empty>",
+    "_label":"NAMESPACE_BLOCK",
+    "order":1,
+    "filename":"<includes>"
+  },
+  {
+    "_id":141733920768,
+    "code":"return s->tx_fifo[0] | (s->tx_fifo[1] << 8);",
+    "lineNumber":9,
+    "order":1,
+    "_label":"RETURN",
+    "argumentIndex":-1,
+    "columnNumber":5
+  },
+  {
+    "name":"ANY",
+    "_id":158913789952,
+    "fullName":"ANY",
+    "typeDeclFullName":"ANY",
+    "_label":"TYPE"
+  },
+  {
+    "name":"int",
+    "_id":158913789953,
+    "fullName":"int",
+    "typeDeclFullName":"int",
+    "_label":"TYPE"
+  },
+  {
+    "name":"stellaris_enet_reset",
+    "_id":158913789954,
+    "fullName":"stellaris_enet_reset",
+    "typeDeclFullName":"stellaris_enet_reset",
+    "_label":"TYPE"
+  },
+  {
+    "name":"stellaris_enet_state*",
+    "_id":158913789955,
+    "fullName":"stellaris_enet_state*",
+    "typeDeclFullName":"stellaris_enet_state*",
+    "_label":"TYPE"
+  },
+  {
+    "name":"stellaris_txpacket_datalen",
+    "_id":158913789956,
+    "fullName":"stellaris_txpacket_datalen",
+    "typeDeclFullName":"stellaris_txpacket_datalen",
+    "_label":"TYPE"
+  },
+  {
+    "name":"void",
+    "_id":158913789957,
+    "fullName":"void",
+    "typeDeclFullName":"void",
+    "_label":"TYPE"
+  },
+  {
+    "inheritsFromTypeFullName":[
+      
+    ],
+    "name":"stellaris_txpacket_datalen",
+    "astParentFullName":"2e1198672759eda6e122ff38fcf6df06f27e0fe2_1.c:<global>",
+    "_id":167503724544,
+    "astParentType":"TYPE_DECL",
+    "lineNumber":7,
+    "_label":"TYPE_DECL",
+    "fullName":"stellaris_txpacket_datalen",
+    "genericSignature":"<empty>",
+    "code":"stellaris_txpacket_datalen",
+    "isExternal":false,
+    "columnNumber":1,
+    "order":1,
+    "filename":"2e1198672759eda6e122ff38fcf6df06f27e0fe2_1.c"
+  },
+  {
+    "inheritsFromTypeFullName":[
+      
+    ],
+    "name":"<global>",
+    "astParentFullName":"2e1198672759eda6e122ff38fcf6df06f27e0fe2_1.c:<global>",
+    "_id":167503724545,
+    "astParentType":"NAMESPACE_BLOCK",
+    "lineNumber":1,
+    "_label":"TYPE_DECL",
+    "fullName":"2e1198672759eda6e122ff38fcf6df06f27e0fe2_1.c:<global>",
+    "genericSignature":"<empty>",
+    "code":"<global>",
+    "isExternal":false,
+    "columnNumber":1,
+    "order":4,
+    "filename":"2e1198672759eda6e122ff38fcf6df06f27e0fe2_1.c"
+  },
+  {
+    "inheritsFromTypeFullName":[
+      
+    ],
+    "name":"stellaris_enet_reset",
+    "astParentFullName":"2e1198672759eda6e122ff38fcf6df06f27e0fe2_9.c:<global>",
+    "_id":167503724546,
+    "astParentType":"TYPE_DECL",
+    "lineNumber":7,
+    "_label":"TYPE_DECL",
+    "fullName":"stellaris_enet_reset",
+    "genericSignature":"<empty>",
+    "code":"stellaris_enet_reset",
+    "isExternal":false,
+    "columnNumber":1,
+    "order":1,
+    "filename":"2e1198672759eda6e122ff38fcf6df06f27e0fe2_9.c"
+  },
+  {
+    "inheritsFromTypeFullName":[
+      
+    ],
+    "name":"<global>",
+    "astParentFullName":"2e1198672759eda6e122ff38fcf6df06f27e0fe2_9.c:<global>",
+    "_id":167503724547,
+    "astParentType":"NAMESPACE_BLOCK",
+    "lineNumber":1,
+    "_label":"TYPE_DECL",
+    "fullName":"2e1198672759eda6e122ff38fcf6df06f27e0fe2_9.c:<global>",
+    "genericSignature":"<empty>",
+    "code":"<global>",
+    "isExternal":false,
+    "columnNumber":1,
+    "order":4,
+    "filename":"2e1198672759eda6e122ff38fcf6df06f27e0fe2_9.c"
+  },
+  {
+    "inheritsFromTypeFullName":[
+      
+    ],
+    "name":"ANY",
+    "astParentFullName":"<includes>:<global>",
+    "_id":167503724548,
+    "astParentType":"NAMESPACE_BLOCK",
+    "_label":"TYPE_DECL",
+    "fullName":"ANY",
+    "genericSignature":"<empty>",
+    "code":"ANY",
+    "isExternal":true,
+    "order":-1,
+    "filename":"<includes>"
+  },
+  {
+    "inheritsFromTypeFullName":[
+      
+    ],
+    "name":"int",
+    "astParentFullName":"<includes>:<global>",
+    "_id":167503724549,
+    "astParentType":"NAMESPACE_BLOCK",
+    "_label":"TYPE_DECL",
+    "fullName":"int",
+    "genericSignature":"<empty>",
+    "code":"int",
+    "isExternal":true,
+    "order":-1,
+    "filename":"<includes>"
+  },
+  {
+    "inheritsFromTypeFullName":[
+      
+    ],
+    "name":"stellaris_enet_state*",
+    "astParentFullName":"<includes>:<global>",
+    "_id":167503724550,
+    "astParentType":"NAMESPACE_BLOCK",
+    "_label":"TYPE_DECL",
+    "fullName":"stellaris_enet_state*",
+    "genericSignature":"<empty>",
+    "code":"stellaris_enet_state*",
+    "isExternal":true,
+    "order":-1,
+    "filename":"<includes>"
+  },
+  {
+    "inheritsFromTypeFullName":[
+      
+    ],
+    "name":"void",
+    "astParentFullName":"<includes>:<global>",
+    "_id":167503724551,
+    "astParentType":"NAMESPACE_BLOCK",
+    "_label":"TYPE_DECL",
+    "fullName":"void",
+    "genericSignature":"<empty>",
+    "code":"void",
+    "isExternal":true,
+    "order":-1,
+    "filename":"<includes>"
+  }
+],"edges":{"AST":[{"src":107374182400,"dst":111669149696,"label":"AST"},{"src":107374182400,"dst":115964116992,"label":"AST"},{"src":107374182400,"dst":25769803776,"label":"AST"},{"src":107374182400,"dst":128849018880,"label":"AST"},{"src":107374182400,"dst":124554051584,"label":"AST"},{"src":25769803776,"dst":141733920768,"label":"AST"},{"src":141733920768,"dst":30064771072,"label":"AST"},{"src":30064771072,"dst":30064771073,"label":"AST"},{"src":30064771072,"dst":30064771075,"label":"AST"},{"src":30064771073,"dst":30064771074,"label":"AST"},{"src":30064771073,"dst":90194313216,"label":"AST"},{"src":30064771074,"dst":68719476736,"label":"AST"},{"src":30064771074,"dst":55834574848,"label":"AST"},{"src":30064771075,"dst":30064771076,"label":"AST"},{"src":30064771075,"dst":90194313218,"label":"AST"},{"src":30064771076,"dst":30064771077,"label":"AST"},{"src":30064771076,"dst":90194313217,"label":"AST"},{"src":30064771077,"dst":68719476737,"label":"AST"},{"src":30064771077,"dst":55834574849,"label":"AST"},{"src":107374182401,"dst":107374182400,"label":"AST"},{"src":107374182401,"dst":25769803777,"label":"AST"},{"src":107374182401,"dst":124554051585,"label":"AST"},{"src":25769803777,"dst":120259084288,"label":"AST"},{"src":107374182402,"dst":111669149697,"label":"AST"},{"src":107374182402,"dst":115964116993,"label":"AST"},{"src":107374182402,"dst":25769803778,"label":"AST"},{"src":107374182402,"dst":128849018881,"label":"AST"},{"src":107374182402,"dst":124554051586,"label":"AST"},{"src":25769803778,"dst":94489280512,"label":"AST"},{"src":25769803778,"dst":94489280513,"label":"AST"},{"src":25769803778,"dst":94489280514,"label":"AST"},{"src":25769803778,"dst":94489280515,"label":"AST"},{"src":25769803778,"dst":94489280516,"label":"AST"},{"src":25769803778,"dst":94489280517,"label":"AST"},{"src":25769803778,"dst":94489280518,"label":"AST"},{"src":25769803778,"dst":94489280519,"label":"AST"},{"src":25769803778,"dst":30064771078,"label":"AST"},{"src":25769803778,"dst":30064771080,"label":"AST"},{"src":25769803778,"dst":30064771082,"label":"AST"},{"src":25769803778,"dst":30064771090,"label":"AST"},{"src":25769803778,"dst":30064771092,"label":"AST"},{"src":30064771078,"dst":30064771079,"label":"AST"},{"src":30064771078,"dst":90194313219,"label":"AST"},{"src":30064771079,"dst":68719476738,"label":"AST"},{"src":30064771079,"dst":55834574850,"label":"AST"},{"src":30064771080,"dst":30064771081,"label":"AST"},{"src":30064771080,"dst":68719476740,"label":"AST"},{"src":30064771081,"dst":68719476739,"label":"AST"},{"src":30064771081,"dst":55834574851,"label":"AST"},{"src":30064771082,"dst":30064771083,"label":"AST"},{"src":30064771082,"dst":30064771084,"label":"AST"},{"src":30064771083,"dst":68719476741,"label":"AST"},{"src":30064771083,"dst":55834574852,"label":"AST"},{"src":30064771084,"dst":30064771085,"label":"AST"},{"src":30064771084,"dst":68719476748,"label":"AST"},{"src":30064771085,"dst":30064771086,"label":"AST"},{"src":30064771085,"dst":68719476747,"label":"AST"},{"src":30064771086,"dst":30064771087,"label":"AST"},{"src":30064771086,"dst":68719476746,"label":"AST"},{"src":30064771087,"dst":30064771088,"label":"AST"},{"src":30064771087,"dst":68719476745,"label":"AST"},{"src":30064771088,"dst":30064771089,"label":"AST"},{"src":30064771088,"dst":68719476744,"label":"AST"},{"src":30064771089,"dst":68719476742,"label":"AST"},{"src":30064771089,"dst":68719476743,"label":"AST"},{"src":30064771090,"dst":30064771091,"label":"AST"},{"src":30064771090,"dst":90194313220,"label":"AST"},{"src":30064771091,"dst":68719476749,"label":"AST"},{"src":30064771091,"dst":55834574853,"label":"AST"},{"src":30064771092,"dst":30064771093,"label":"AST"},{"src":30064771092,"dst":90194313221,"label":"AST"},{"src":30064771093,"dst":68719476750,"label":"AST"},{"src":30064771093,"dst":55834574854,"label":"AST"},{"src":107374182403,"dst":107374182402,"label":"AST"},{"src":107374182403,"dst":25769803779,"label":"AST"},{"src":107374182403,"dst":124554051587,"label":"AST"},{"src":25769803779,"dst":120259084289,"label":"AST"},{"src":107374182404,"dst":25769803780,"label":"AST"},{"src":107374182404,"dst":124554051588,"label":"AST"},{"src":107374182405,"dst":111669149698,"label":"AST"},{"src":107374182405,"dst":25769803781,"label":"AST"},{"src":107374182405,"dst":115964116994,"label":"AST"},{"src":107374182405,"dst":111669149699,"label":"AST"},{"src":107374182405,"dst":124554051589,"label":"AST"},{"src":107374182405,"dst":115964116995,"label":"AST"},{"src":107374182406,"dst":111669149700,"label":"AST"},{"src":107374182406,"dst":25769803782,"label":"AST"},{"src":107374182406,"dst":115964116996,"label":"AST"},{"src":107374182406,"dst":111669149701,"label":"AST"},{"src":107374182406,"dst":124554051590,"label":"AST"},{"src":107374182406,"dst":115964116997,"label":"AST"},{"src":107374182407,"dst":111669149702,"label":"AST"},{"src":107374182407,"dst":25769803783,"label":"AST"},{"src":107374182407,"dst":115964116998,"label":"AST"},{"src":107374182407,"dst":111669149703,"label":"AST"},{"src":107374182407,"dst":124554051591,"label":"AST"},{"src":107374182407,"dst":115964116999,"label":"AST"},{"src":107374182408,"dst":111669149704,"label":"AST"},{"src":107374182408,"dst":25769803784,"label":"AST"},{"src":107374182408,"dst":115964117000,"label":"AST"},{"src":107374182408,"dst":111669149705,"label":"AST"},{"src":107374182408,"dst":124554051592,"label":"AST"},{"src":107374182408,"dst":115964117001,"label":"AST"},{"src":107374182409,"dst":111669149706,"label":"AST"},{"src":107374182409,"dst":25769803785,"label":"AST"},{"src":107374182409,"dst":115964117002,"label":"AST"},{"src":107374182409,"dst":111669149707,"label":"AST"},{"src":107374182409,"dst":124554051593,"label":"AST"},{"src":107374182409,"dst":115964117003,"label":"AST"}],"CFG":[{"src":30064771072,"dst":141733920768,"label":"CFG"},{"src":30064771073,"dst":68719476737,"label":"CFG"},{"src":30064771075,"dst":30064771072,"label":"CFG"},{"src":30064771074,"dst":90194313216,"label":"CFG"},{"src":90194313216,"dst":30064771073,"label":"CFG"},{"src":30064771076,"dst":90194313218,"label":"CFG"},{"src":90194313218,"dst":30064771075,"label":"CFG"},{"src":68719476736,"dst":55834574848,"label":"CFG"},{"src":55834574848,"dst":30064771074,"label":"CFG"},{"src":30064771077,"dst":90194313217,"label":"CFG"},{"src":90194313217,"dst":30064771076,"label":"CFG"},{"src":68719476737,"dst":55834574849,"label":"CFG"},{"src":55834574849,"dst":30064771077,"label":"CFG"},{"src":107374182400,"dst":68719476736,"label":"CFG"},{"src":30064771078,"dst":68719476739,"label":"CFG"},{"src":30064771080,"dst":68719476741,"label":"CFG"},{"src":30064771082,"dst":68719476749,"label":"CFG"},{"src":30064771090,"dst":68719476750,"label":"CFG"},{"src":30064771079,"dst":90194313219,"label":"CFG"},{"src":90194313219,"dst":30064771078,"label":"CFG"},{"src":30064771081,"dst":68719476740,"label":"CFG"},{"src":68719476740,"dst":30064771080,"label":"CFG"},{"src":30064771083,"dst":68719476742,"label":"CFG"},{"src":30064771084,"dst":30064771082,"label":"CFG"},{"src":30064771091,"dst":90194313220,"label":"CFG"},{"src":90194313220,"dst":30064771090,"label":"CFG"},{"src":30064771093,"dst":90194313221,"label":"CFG"},{"src":90194313221,"dst":30064771092,"label":"CFG"},{"src":68719476738,"dst":55834574850,"label":"CFG"},{"src":55834574850,"dst":30064771079,"label":"CFG"},{"src":68719476739,"dst":55834574851,"label":"CFG"},{"src":55834574851,"dst":30064771081,"label":"CFG"},{"src":68719476741,"dst":55834574852,"label":"CFG"},{"src":55834574852,"dst":30064771083,"label":"CFG"},{"src":30064771085,"dst":68719476748,"label":"CFG"},{"src":68719476748,"dst":30064771084,"label":"CFG"},{"src":68719476749,"dst":55834574853,"label":"CFG"},{"src":55834574853,"dst":30064771091,"label":"CFG"},{"src":68719476750,"dst":55834574854,"label":"CFG"},{"src":55834574854,"dst":30064771093,"label":"CFG"},{"src":30064771086,"dst":68719476747,"label":"CFG"},{"src":68719476747,"dst":30064771085,"label":"CFG"},{"src":30064771087,"dst":68719476746,"label":"CFG"},{"src":68719476746,"dst":30064771086,"label":"CFG"},{"src":30064771088,"dst":68719476745,"label":"CFG"},{"src":68719476745,"dst":30064771087,"label":"CFG"},{"src":30064771089,"dst":68719476744,"label":"CFG"},{"src":68719476744,"dst":30064771088,"label":"CFG"},{"src":68719476742,"dst":68719476743,"label":"CFG"},{"src":68719476743,"dst":30064771089,"label":"CFG"},{"src":107374182402,"dst":68719476738,"label":"CFG"}],"DFG":[]}}

@@ -1,0 +1,461 @@
+[
+  {
+    "idx": 0,
+    "prob": 0.5219775438308716,
+    "nid": 0,
+    "file": "app/main.c",
+    "line": 2,
+    "label": "Stmt",
+    "code": "#include <stdio.h>"
+  },
+  {
+    "idx": 1,
+    "prob": 0.5093393921852112,
+    "nid": 1,
+    "file": "app/main.c",
+    "line": 3,
+    "label": "Stmt",
+    "code": "#include <stdlib.h>"
+  },
+  {
+    "idx": 2,
+    "prob": 0.4963003695011139,
+    "nid": 2,
+    "file": "app/main.c",
+    "line": 4,
+    "label": "Stmt",
+    "code": "#include <string.h>"
+  },
+  {
+    "idx": 3,
+    "prob": 0.49352940917015076,
+    "nid": 3,
+    "file": "app/main.c",
+    "line": 6,
+    "label": "Stmt",
+    "code": "extern char* wrap_a(char* in);"
+  },
+  {
+    "idx": 4,
+    "prob": 0.5733454823493958,
+    "nid": 4,
+    "file": "app/main.c",
+    "line": 7,
+    "label": "Stmt",
+    "code": "extern char* wrap_b(char* in);"
+  },
+  {
+    "idx": 5,
+    "prob": 0.5081663727760315,
+    "nid": 5,
+    "file": "app/main.c",
+    "line": 8,
+    "label": "Stmt",
+    "code": "extern char* wrap_c(char* in);"
+  },
+  {
+    "idx": 6,
+    "prob": 0.5504376888275146,
+    "nid": 6,
+    "file": "app/main.c",
+    "line": 9,
+    "label": "Stmt",
+    "code": "extern void run_system(char* cmd);"
+  },
+  {
+    "idx": 7,
+    "prob": 0.46300873160362244,
+    "nid": 7,
+    "file": "app/main.c",
+    "line": 11,
+    "label": "ROOT",
+    "code": "int main(int argc, char** argv) {"
+  },
+  {
+    "idx": 8,
+    "prob": 0.46331295371055603,
+    "nid": 8,
+    "file": "app/main.c",
+    "line": 12,
+    "label": "Stmt",
+    "code": "char buf[256];"
+  },
+  {
+    "idx": 9,
+    "prob": 0.4054356515407562,
+    "nid": 9,
+    "file": "app/main.c",
+    "line": 13,
+    "label": "ROOT",
+    "code": "// ROOT: untrusted input (simulate reading from argv)"
+  },
+  {
+    "idx": 10,
+    "prob": 0.5003061294555664,
+    "nid": 10,
+    "file": "app/main.c",
+    "line": 14,
+    "label": "Stmt",
+    "code": "if (argc > 1) {"
+  },
+  {
+    "idx": 11,
+    "prob": 0.5117995738983154,
+    "nid": 11,
+    "file": "app/main.c",
+    "line": 15,
+    "label": "ROOT",
+    "code": "strncpy(buf, argv[1], sizeof(buf)-1);"
+  },
+  {
+    "idx": 12,
+    "prob": 0.5380043387413025,
+    "nid": 12,
+    "file": "app/main.c",
+    "line": 16,
+    "label": "Stmt",
+    "code": "buf[sizeof(buf)-1] = '\\0';"
+  },
+  {
+    "idx": 13,
+    "prob": 0.588381826877594,
+    "nid": 13,
+    "file": "app/main.c",
+    "line": 17,
+    "label": "Stmt",
+    "code": "char* p = wrap_a(buf);"
+  },
+  {
+    "idx": 14,
+    "prob": 0.5350789427757263,
+    "nid": 14,
+    "file": "app/main.c",
+    "line": 18,
+    "label": "Stmt",
+    "code": "p = wrap_b(p);"
+  },
+  {
+    "idx": 15,
+    "prob": 0.48005738854408264,
+    "nid": 15,
+    "file": "app/main.c",
+    "line": 19,
+    "label": "Stmt",
+    "code": "p = wrap_c(p);"
+  },
+  {
+    "idx": 16,
+    "prob": 0.4866863787174225,
+    "nid": 16,
+    "file": "app/main.c",
+    "line": 20,
+    "label": "Stmt",
+    "code": "// final call: dangerous sink"
+  },
+  {
+    "idx": 17,
+    "prob": 0.42060422897338867,
+    "nid": 17,
+    "file": "app/main.c",
+    "line": 21,
+    "label": "Stmt",
+    "code": "run_system(p);"
+  },
+  {
+    "idx": 18,
+    "prob": 0.49494606256484985,
+    "nid": 18,
+    "file": "app/main.c",
+    "line": 22,
+    "label": "Stmt",
+    "code": "}"
+  },
+  {
+    "idx": 19,
+    "prob": 0.5324817895889282,
+    "nid": 19,
+    "file": "app/main.c",
+    "line": 23,
+    "label": "Stmt",
+    "code": "return 0;"
+  },
+  {
+    "idx": 20,
+    "prob": 0.5100495219230652,
+    "nid": 20,
+    "file": "app/main.c",
+    "line": 24,
+    "label": "Stmt",
+    "code": "}"
+  },
+  {
+    "idx": 21,
+    "prob": 0.5178039073944092,
+    "nid": 21,
+    "file": "lib/wrap.c",
+    "line": 2,
+    "label": "Stmt",
+    "code": "#include <stdio.h>"
+  },
+  {
+    "idx": 22,
+    "prob": 0.4956507980823517,
+    "nid": 22,
+    "file": "lib/wrap.c",
+    "line": 3,
+    "label": "Stmt",
+    "code": "#include <stdlib.h>"
+  },
+  {
+    "idx": 23,
+    "prob": 0.46349817514419556,
+    "nid": 23,
+    "file": "lib/wrap.c",
+    "line": 4,
+    "label": "Stmt",
+    "code": "#include <string.h>"
+  },
+  {
+    "idx": 24,
+    "prob": 0.5397850871086121,
+    "nid": 24,
+    "file": "lib/wrap.c",
+    "line": 6,
+    "label": "Stmt",
+    "code": "char tmp1[300];"
+  },
+  {
+    "idx": 25,
+    "prob": 0.4664679169654846,
+    "nid": 25,
+    "file": "lib/wrap.c",
+    "line": 7,
+    "label": "Stmt",
+    "code": "char tmp2[300];"
+  },
+  {
+    "idx": 26,
+    "prob": 0.5316849946975708,
+    "nid": 26,
+    "file": "lib/wrap.c",
+    "line": 8,
+    "label": "Stmt",
+    "code": "char tmp3[300];"
+  },
+  {
+    "idx": 27,
+    "prob": 0.5099050402641296,
+    "nid": 27,
+    "file": "lib/wrap.c",
+    "line": 10,
+    "label": "Stmt",
+    "code": "char* wrap_a(char* in) {"
+  },
+  {
+    "idx": 28,
+    "prob": 0.4824536144733429,
+    "nid": 28,
+    "file": "lib/wrap.c",
+    "line": 11,
+    "label": "Stmt",
+    "code": "// propagation #1 (DFG + CALL/ARG2PARAM)"
+  },
+  {
+    "idx": 29,
+    "prob": 0.5445873737335205,
+    "nid": 29,
+    "file": "lib/wrap.c",
+    "line": 12,
+    "label": "Stmt",
+    "code": "snprintf(tmp1, sizeof(tmp1), \"%s\", in);"
+  },
+  {
+    "idx": 30,
+    "prob": 0.5917191505432129,
+    "nid": 30,
+    "file": "lib/wrap.c",
+    "line": 13,
+    "label": "Stmt",
+    "code": "return tmp1;"
+  },
+  {
+    "idx": 31,
+    "prob": 0.506340742111206,
+    "nid": 31,
+    "file": "lib/wrap.c",
+    "line": 14,
+    "label": "Stmt",
+    "code": "}"
+  },
+  {
+    "idx": 32,
+    "prob": 0.4160444736480713,
+    "nid": 32,
+    "file": "lib/wrap.c",
+    "line": 16,
+    "label": "Stmt",
+    "code": "char* wrap_b(char* in) {"
+  },
+  {
+    "idx": 33,
+    "prob": 0.4740573465824127,
+    "nid": 33,
+    "file": "lib/wrap.c",
+    "line": 17,
+    "label": "Stmt",
+    "code": "// propagation #2"
+  },
+  {
+    "idx": 34,
+    "prob": 0.5485424399375916,
+    "nid": 34,
+    "file": "lib/wrap.c",
+    "line": 18,
+    "label": "Stmt",
+    "code": "strcat(tmp2, in);"
+  },
+  {
+    "idx": 35,
+    "prob": 0.5266021490097046,
+    "nid": 35,
+    "file": "lib/wrap.c",
+    "line": 19,
+    "label": "Stmt",
+    "code": "strcat(tmp2, \" --verbose\");"
+  },
+  {
+    "idx": 36,
+    "prob": 0.5905986428260803,
+    "nid": 36,
+    "file": "lib/wrap.c",
+    "line": 20,
+    "label": "Stmt",
+    "code": "return tmp2;"
+  },
+  {
+    "idx": 37,
+    "prob": 0.5066595673561096,
+    "nid": 37,
+    "file": "lib/wrap.c",
+    "line": 21,
+    "label": "Stmt",
+    "code": "}"
+  },
+  {
+    "idx": 38,
+    "prob": 0.44598644971847534,
+    "nid": 38,
+    "file": "lib/wrap.c",
+    "line": 23,
+    "label": "Stmt",
+    "code": "char* wrap_c(char* in) {"
+  },
+  {
+    "idx": 39,
+    "prob": 0.4889146685600281,
+    "nid": 39,
+    "file": "lib/wrap.c",
+    "line": 24,
+    "label": "Stmt",
+    "code": "// propagation #3"
+  },
+  {
+    "idx": 40,
+    "prob": 0.5359284281730652,
+    "nid": 40,
+    "file": "lib/wrap.c",
+    "line": 25,
+    "label": "Stmt",
+    "code": "sprintf(tmp3, \"%s %s\", in, \"--force\");"
+  },
+  {
+    "idx": 41,
+    "prob": 0.6124783754348755,
+    "nid": 41,
+    "file": "lib/wrap.c",
+    "line": 26,
+    "label": "Stmt",
+    "code": "return tmp3;"
+  },
+  {
+    "idx": 42,
+    "prob": 0.4818340837955475,
+    "nid": 42,
+    "file": "lib/wrap.c",
+    "line": 27,
+    "label": "Stmt",
+    "code": "}"
+  },
+  {
+    "idx": 43,
+    "prob": 0.525931179523468,
+    "nid": 43,
+    "file": "lib/sink.c",
+    "line": 2,
+    "label": "Stmt",
+    "code": "#include <stdio.h>"
+  },
+  {
+    "idx": 44,
+    "prob": 0.5042733550071716,
+    "nid": 44,
+    "file": "lib/sink.c",
+    "line": 3,
+    "label": "Stmt",
+    "code": "#include <stdlib.h>"
+  },
+  {
+    "idx": 45,
+    "prob": 0.4733116924762726,
+    "nid": 45,
+    "file": "lib/sink.c",
+    "line": 4,
+    "label": "Stmt",
+    "code": "#include <string.h>"
+  },
+  {
+    "idx": 46,
+    "prob": 0.4891769587993622,
+    "nid": 46,
+    "file": "lib/sink.c",
+    "line": 6,
+    "label": "Stmt",
+    "code": "void run_system(char* cmd) {"
+  },
+  {
+    "idx": 47,
+    "prob": 0.5189772844314575,
+    "nid": 47,
+    "file": "lib/sink.c",
+    "line": 7,
+    "label": "Stmt",
+    "code": "// SINK: vulnerable external command execution"
+  },
+  {
+    "idx": 48,
+    "prob": 0.48711276054382324,
+    "nid": 48,
+    "file": "lib/sink.c",
+    "line": 8,
+    "label": "Stmt",
+    "code": "// (intentionally no sanitization)"
+  },
+  {
+    "idx": 49,
+    "prob": 0.40749606490135193,
+    "nid": 49,
+    "file": "lib/sink.c",
+    "line": 9,
+    "label": "SINK",
+    "code": "system(cmd);"
+  },
+  {
+    "idx": 50,
+    "prob": 0.5325869917869568,
+    "nid": 50,
+    "file": "lib/sink.c",
+    "line": 10,
+    "label": "Stmt",
+    "code": "}"
+  }
+]

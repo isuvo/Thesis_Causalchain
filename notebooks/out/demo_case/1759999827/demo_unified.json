@@ -1,0 +1,716 @@
+{
+  "nodes": [
+    {
+      "_id": 0,
+      "file": "med/main.c",
+      "line": 2,
+      "code": "#include <stdlib.h>",
+      "_label": "STMT",
+      "nodeType": "STMT"
+    },
+    {
+      "_id": 1,
+      "file": "med/main.c",
+      "line": 3,
+      "code": "#include <string.h>",
+      "_label": "STMT",
+      "nodeType": "STMT"
+    },
+    {
+      "_id": 2,
+      "file": "med/main.c",
+      "line": 5,
+      "code": "extern char* wrap1(char* in);",
+      "_label": "STMT",
+      "nodeType": "STMT"
+    },
+    {
+      "_id": 3,
+      "file": "med/main.c",
+      "line": 6,
+      "code": "extern char* wrap2(char* in);",
+      "_label": "STMT",
+      "nodeType": "STMT"
+    },
+    {
+      "_id": 4,
+      "file": "med/main.c",
+      "line": 7,
+      "code": "extern void  do_exec(char* cmd);",
+      "_label": "STMT",
+      "nodeType": "STMT"
+    },
+    {
+      "_id": 5,
+      "file": "med/main.c",
+      "line": 9,
+      "code": "int main(int argc, char** argv) {",
+      "_label": "ROOT",
+      "nodeType": "ROOT"
+    },
+    {
+      "_id": 6,
+      "file": "med/main.c",
+      "line": 10,
+      "code": "if (argc > 1) {",
+      "_label": "COND",
+      "nodeType": "COND"
+    },
+    {
+      "_id": 7,
+      "file": "med/main.c",
+      "line": 11,
+      "code": "char* p = argv[1];      // ROOT",
+      "_label": "ROOT",
+      "nodeType": "ROOT"
+    },
+    {
+      "_id": 8,
+      "file": "med/main.c",
+      "line": 12,
+      "code": "p = wrap1(p);           // hop 1",
+      "_label": "ASSIGN",
+      "nodeType": "ASSIGN"
+    },
+    {
+      "_id": 9,
+      "file": "med/main.c",
+      "line": 13,
+      "code": "p = wrap2(p);           // hop 2",
+      "_label": "ASSIGN",
+      "nodeType": "ASSIGN"
+    },
+    {
+      "_id": 10,
+      "file": "med/main.c",
+      "line": 14,
+      "code": "do_exec(p);             // hop 3 \u2192 then into sink and system",
+      "_label": "CALL:do_exec",
+      "nodeType": "CALL:do_exec"
+    },
+    {
+      "_id": 11,
+      "file": "med/main.c",
+      "line": 15,
+      "code": "}",
+      "_label": "STMT",
+      "nodeType": "STMT"
+    },
+    {
+      "_id": 12,
+      "file": "med/main.c",
+      "line": 16,
+      "code": "return 0;",
+      "_label": "RET",
+      "nodeType": "RET"
+    },
+    {
+      "_id": 13,
+      "file": "med/main.c",
+      "line": 17,
+      "code": "}",
+      "_label": "STMT",
+      "nodeType": "STMT"
+    },
+    {
+      "_id": 14,
+      "file": "med/wrap.c",
+      "line": 2,
+      "code": "#include <string.h>",
+      "_label": "STMT",
+      "nodeType": "STMT"
+    },
+    {
+      "_id": 15,
+      "file": "med/wrap.c",
+      "line": 3,
+      "code": "static char b1[256];",
+      "_label": "DECL",
+      "nodeType": "DECL"
+    },
+    {
+      "_id": 16,
+      "file": "med/wrap.c",
+      "line": 4,
+      "code": "static char b2[256];",
+      "_label": "DECL",
+      "nodeType": "DECL"
+    },
+    {
+      "_id": 17,
+      "file": "med/wrap.c",
+      "line": 6,
+      "code": "char* wrap1(char* in) {         // callee head",
+      "_label": "STMT",
+      "nodeType": "STMT"
+    },
+    {
+      "_id": 18,
+      "file": "med/wrap.c",
+      "line": 7,
+      "code": "snprintf(b1, sizeof(b1), \"%s\", in);",
+      "_label": "CALL:snprintf",
+      "nodeType": "CALL:snprintf"
+    },
+    {
+      "_id": 19,
+      "file": "med/wrap.c",
+      "line": 8,
+      "code": "return b1;",
+      "_label": "RET",
+      "nodeType": "RET"
+    },
+    {
+      "_id": 20,
+      "file": "med/wrap.c",
+      "line": 9,
+      "code": "}",
+      "_label": "STMT",
+      "nodeType": "STMT"
+    },
+    {
+      "_id": 21,
+      "file": "med/wrap.c",
+      "line": 11,
+      "code": "char* wrap2(char* in) {         // callee head",
+      "_label": "STMT",
+      "nodeType": "STMT"
+    },
+    {
+      "_id": 22,
+      "file": "med/wrap.c",
+      "line": 12,
+      "code": "strcpy(b2, in);",
+      "_label": "CALL:strcpy",
+      "nodeType": "CALL:strcpy"
+    },
+    {
+      "_id": 23,
+      "file": "med/wrap.c",
+      "line": 13,
+      "code": "strcat(b2, \" --opt\");",
+      "_label": "CALL:strcat",
+      "nodeType": "CALL:strcat"
+    },
+    {
+      "_id": 24,
+      "file": "med/wrap.c",
+      "line": 14,
+      "code": "return b2;",
+      "_label": "RET",
+      "nodeType": "RET"
+    },
+    {
+      "_id": 25,
+      "file": "med/wrap.c",
+      "line": 15,
+      "code": "}",
+      "_label": "STMT",
+      "nodeType": "STMT"
+    },
+    {
+      "_id": 26,
+      "file": "med/sink.c",
+      "line": 2,
+      "code": "#include <stdlib.h>",
+      "_label": "STMT",
+      "nodeType": "STMT"
+    },
+    {
+      "_id": 27,
+      "file": "med/sink.c",
+      "line": 3,
+      "code": "void do_exec(char* cmd) {",
+      "_label": "STMT",
+      "nodeType": "STMT"
+    },
+    {
+      "_id": 28,
+      "file": "med/sink.c",
+      "line": 4,
+      "code": "system(cmd);                // SINK",
+      "_label": "SINK",
+      "nodeType": "SINK"
+    },
+    {
+      "_id": 29,
+      "file": "med/sink.c",
+      "line": 5,
+      "code": "}",
+      "_label": "STMT",
+      "nodeType": "STMT"
+    }
+  ],
+  "edges": [
+    {
+      "type": "CFG",
+      "src": 0,
+      "dst": 1
+    },
+    {
+      "type": "CFG",
+      "src": 1,
+      "dst": 2
+    },
+    {
+      "type": "CFG",
+      "src": 2,
+      "dst": 3
+    },
+    {
+      "type": "CFG",
+      "src": 3,
+      "dst": 4
+    },
+    {
+      "type": "CFG",
+      "src": 4,
+      "dst": 5
+    },
+    {
+      "type": "CFG",
+      "src": 5,
+      "dst": 6
+    },
+    {
+      "type": "CFG",
+      "src": 6,
+      "dst": 7
+    },
+    {
+      "type": "CFG",
+      "src": 7,
+      "dst": 8
+    },
+    {
+      "type": "CFG",
+      "src": 8,
+      "dst": 9
+    },
+    {
+      "type": "CFG",
+      "src": 9,
+      "dst": 10
+    },
+    {
+      "type": "CFG",
+      "src": 10,
+      "dst": 11
+    },
+    {
+      "type": "CFG",
+      "src": 11,
+      "dst": 12
+    },
+    {
+      "type": "CFG",
+      "src": 12,
+      "dst": 13
+    },
+    {
+      "type": "CFG",
+      "src": 14,
+      "dst": 15
+    },
+    {
+      "type": "CFG",
+      "src": 15,
+      "dst": 16
+    },
+    {
+      "type": "CFG",
+      "src": 16,
+      "dst": 17
+    },
+    {
+      "type": "CFG",
+      "src": 17,
+      "dst": 18
+    },
+    {
+      "type": "CFG",
+      "src": 18,
+      "dst": 19
+    },
+    {
+      "type": "CFG",
+      "src": 19,
+      "dst": 20
+    },
+    {
+      "type": "CFG",
+      "src": 20,
+      "dst": 21
+    },
+    {
+      "type": "CFG",
+      "src": 21,
+      "dst": 22
+    },
+    {
+      "type": "CFG",
+      "src": 22,
+      "dst": 23
+    },
+    {
+      "type": "CFG",
+      "src": 23,
+      "dst": 24
+    },
+    {
+      "type": "CFG",
+      "src": 24,
+      "dst": 25
+    },
+    {
+      "type": "CFG",
+      "src": 26,
+      "dst": 27
+    },
+    {
+      "type": "CFG",
+      "src": 27,
+      "dst": 28
+    },
+    {
+      "type": "CFG",
+      "src": 28,
+      "dst": 29
+    },
+    {
+      "type": "DFG",
+      "src": 8,
+      "dst": 9
+    },
+    {
+      "type": "DFG",
+      "src": 8,
+      "dst": 9
+    },
+    {
+      "type": "DFG",
+      "src": 9,
+      "dst": 10
+    },
+    {
+      "type": "DFG",
+      "src": 15,
+      "dst": 18
+    },
+    {
+      "type": "DFG",
+      "src": 15,
+      "dst": 18
+    },
+    {
+      "type": "DFG",
+      "src": 15,
+      "dst": 19
+    },
+    {
+      "type": "DFG",
+      "src": 16,
+      "dst": 22
+    },
+    {
+      "type": "DFG",
+      "src": 16,
+      "dst": 23
+    },
+    {
+      "type": "DFG",
+      "src": 16,
+      "dst": 24
+    },
+    {
+      "type": "CALL",
+      "src": 6,
+      "dst": 6
+    },
+    {
+      "type": "CALL",
+      "src": 10,
+      "dst": 4
+    },
+    {
+      "type": "ARG2PARAM",
+      "src": 9,
+      "dst": 4
+    },
+    {
+      "type": "CALL",
+      "src": 18,
+      "dst": 18
+    },
+    {
+      "type": "ARG2PARAM",
+      "src": 15,
+      "dst": 18
+    },
+    {
+      "type": "ARG2PARAM",
+      "src": 15,
+      "dst": 18
+    },
+    {
+      "type": "CALL",
+      "src": 22,
+      "dst": 22
+    },
+    {
+      "type": "ARG2PARAM",
+      "src": 16,
+      "dst": 22
+    },
+    {
+      "type": "CALL",
+      "src": 23,
+      "dst": 23
+    },
+    {
+      "type": "ARG2PARAM",
+      "src": 16,
+      "dst": 23
+    },
+    {
+      "type": "CALL",
+      "src": 28,
+      "dst": 28
+    },
+    {
+      "type": "DFG_REV",
+      "src": 9,
+      "dst": 8
+    },
+    {
+      "type": "DFG_REV",
+      "src": 9,
+      "dst": 8
+    },
+    {
+      "type": "DFG_REV",
+      "src": 10,
+      "dst": 9
+    },
+    {
+      "type": "DFG_REV",
+      "src": 18,
+      "dst": 15
+    },
+    {
+      "type": "DFG_REV",
+      "src": 18,
+      "dst": 15
+    },
+    {
+      "type": "DFG_REV",
+      "src": 19,
+      "dst": 15
+    },
+    {
+      "type": "DFG_REV",
+      "src": 22,
+      "dst": 16
+    },
+    {
+      "type": "DFG_REV",
+      "src": 23,
+      "dst": 16
+    },
+    {
+      "type": "DFG_REV",
+      "src": 24,
+      "dst": 16
+    },
+    {
+      "type": "CALL_REV",
+      "src": 6,
+      "dst": 6
+    },
+    {
+      "type": "CALL_REV",
+      "src": 4,
+      "dst": 10
+    },
+    {
+      "type": "CALL_REV",
+      "src": 18,
+      "dst": 18
+    },
+    {
+      "type": "CALL_REV",
+      "src": 22,
+      "dst": 22
+    },
+    {
+      "type": "CALL_REV",
+      "src": 23,
+      "dst": 23
+    },
+    {
+      "type": "CALL_REV",
+      "src": 28,
+      "dst": 28
+    },
+    {
+      "type": "CFG_REV",
+      "src": 1,
+      "dst": 0
+    },
+    {
+      "type": "CFG_REV",
+      "src": 2,
+      "dst": 1
+    },
+    {
+      "type": "CFG_REV",
+      "src": 3,
+      "dst": 2
+    },
+    {
+      "type": "CFG_REV",
+      "src": 4,
+      "dst": 3
+    },
+    {
+      "type": "CFG_REV",
+      "src": 5,
+      "dst": 4
+    },
+    {
+      "type": "CFG_REV",
+      "src": 6,
+      "dst": 5
+    },
+    {
+      "type": "CFG_REV",
+      "src": 7,
+      "dst": 6
+    },
+    {
+      "type": "CFG_REV",
+      "src": 8,
+      "dst": 7
+    },
+    {
+      "type": "CFG_REV",
+      "src": 9,
+      "dst": 8
+    },
+    {
+      "type": "CFG_REV",
+      "src": 10,
+      "dst": 9
+    },
+    {
+      "type": "CFG_REV",
+      "src": 11,
+      "dst": 10
+    },
+    {
+      "type": "CFG_REV",
+      "src": 12,
+      "dst": 11
+    },
+    {
+      "type": "CFG_REV",
+      "src": 13,
+      "dst": 12
+    },
+    {
+      "type": "CFG_REV",
+      "src": 15,
+      "dst": 14
+    },
+    {
+      "type": "CFG_REV",
+      "src": 16,
+      "dst": 15
+    },
+    {
+      "type": "CFG_REV",
+      "src": 17,
+      "dst": 16
+    },
+    {
+      "type": "CFG_REV",
+      "src": 18,
+      "dst": 17
+    },
+    {
+      "type": "CFG_REV",
+      "src": 19,
+      "dst": 18
+    },
+    {
+      "type": "CFG_REV",
+      "src": 20,
+      "dst": 19
+    },
+    {
+      "type": "CFG_REV",
+      "src": 21,
+      "dst": 20
+    },
+    {
+      "type": "CFG_REV",
+      "src": 22,
+      "dst": 21
+    },
+    {
+      "type": "CFG_REV",
+      "src": 23,
+      "dst": 22
+    },
+    {
+      "type": "CFG_REV",
+      "src": 24,
+      "dst": 23
+    },
+    {
+      "type": "CFG_REV",
+      "src": 25,
+      "dst": 24
+    },
+    {
+      "type": "CFG_REV",
+      "src": 27,
+      "dst": 26
+    },
+    {
+      "type": "CFG_REV",
+      "src": 28,
+      "dst": 27
+    },
+    {
+      "type": "CFG_REV",
+      "src": 29,
+      "dst": 28
+    },
+    {
+      "type": "ARG2PARAM_REV",
+      "src": 4,
+      "dst": 9
+    },
+    {
+      "type": "ARG2PARAM_REV",
+      "src": 18,
+      "dst": 15
+    },
+    {
+      "type": "ARG2PARAM_REV",
+      "src": 18,
+      "dst": 15
+    },
+    {
+      "type": "ARG2PARAM_REV",
+      "src": 22,
+      "dst": 16
+    },
+    {
+      "type": "ARG2PARAM_REV",
+      "src": 23,
+      "dst": 16
+    }
+  ]
+}

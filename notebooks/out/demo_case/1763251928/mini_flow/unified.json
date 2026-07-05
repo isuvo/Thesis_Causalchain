@@ -1,0 +1,497 @@
+{
+  "meta": {
+    "tool": "demo",
+    "demo_name": "mini_flow",
+    "n_nodes": 20,
+    "n_edges": {
+      "CALL": 4,
+      "CALL_REV": 4,
+      "CFG": 19,
+      "CFG_REV": 19,
+      "RET2CALL": 4,
+      "RET2CALL_REV": 4
+    }
+  },
+  "nodes": [
+    {
+      "_id": 0,
+      "code": "#include <stdio.h>",
+      "typeFullName": "ANY",
+      "lineNumber": 2,
+      "order": 1,
+      "_label": "BLOCK",
+      "file": "toy.c",
+      "nodeType": "BLOCK"
+    },
+    {
+      "_id": 1,
+      "code": "#include <string.h>",
+      "typeFullName": "ANY",
+      "lineNumber": 3,
+      "order": 2,
+      "_label": "BLOCK",
+      "file": "toy.c",
+      "nodeType": "BLOCK"
+    },
+    {
+      "_id": 2,
+      "code": "char* pass(char* s);",
+      "typeFullName": "ANY",
+      "lineNumber": 5,
+      "order": 3,
+      "_label": "BLOCK",
+      "file": "toy.c",
+      "nodeType": "BLOCK"
+    },
+    {
+      "_id": 3,
+      "code": "void sink(char* cmd);",
+      "typeFullName": "ANY",
+      "lineNumber": 6,
+      "order": 4,
+      "_label": "BLOCK",
+      "file": "toy.c",
+      "nodeType": "BLOCK"
+    },
+    {
+      "_id": 4,
+      "code": "int main(int argc, char** argv){",
+      "typeFullName": "ANY",
+      "lineNumber": 8,
+      "order": 5,
+      "_label": "BLOCK",
+      "file": "toy.c",
+      "nodeType": "BLOCK"
+    },
+    {
+      "_id": 5,
+      "code": "char b[64];",
+      "typeFullName": "ANY",
+      "lineNumber": 9,
+      "order": 6,
+      "_label": "BLOCK",
+      "file": "toy.c",
+      "nodeType": "BLOCK"
+    },
+    {
+      "_id": 6,
+      "code": "if(argc>1){",
+      "typeFullName": "ANY",
+      "lineNumber": 10,
+      "order": 7,
+      "_label": "CALL",
+      "file": "toy.c",
+      "nodeType": "CALL",
+      "name": "if",
+      "methodFullName": "if:<unresolvedSignature>"
+    },
+    {
+      "_id": 7,
+      "code": "strncpy(b, argv[1], 63);",
+      "typeFullName": "ANY",
+      "lineNumber": 11,
+      "order": 8,
+      "_label": "CALL",
+      "file": "toy.c",
+      "nodeType": "CALL",
+      "name": "strncpy",
+      "methodFullName": "strncpy:<unresolvedSignature>"
+    },
+    {
+      "_id": 8,
+      "code": "b[63]=0;",
+      "typeFullName": "ANY",
+      "lineNumber": 12,
+      "order": 9,
+      "_label": "BLOCK",
+      "file": "toy.c",
+      "nodeType": "BLOCK"
+    },
+    {
+      "_id": 9,
+      "code": "char* z = pass(b);",
+      "typeFullName": "ANY",
+      "lineNumber": 13,
+      "order": 10,
+      "_label": "BLOCK",
+      "file": "toy.c",
+      "nodeType": "BLOCK"
+    },
+    {
+      "_id": 10,
+      "code": "sink(z);",
+      "typeFullName": "ANY",
+      "lineNumber": 14,
+      "order": 11,
+      "_label": "CALL",
+      "file": "toy.c",
+      "nodeType": "CALL",
+      "name": "sink",
+      "methodFullName": "sink:<unresolvedSignature>"
+    },
+    {
+      "_id": 11,
+      "code": "}",
+      "typeFullName": "ANY",
+      "lineNumber": 15,
+      "order": 12,
+      "_label": "BLOCK",
+      "file": "toy.c",
+      "nodeType": "BLOCK"
+    },
+    {
+      "_id": 12,
+      "code": "return 0;",
+      "typeFullName": "ANY",
+      "lineNumber": 16,
+      "order": 13,
+      "_label": "BLOCK",
+      "file": "toy.c",
+      "nodeType": "BLOCK"
+    },
+    {
+      "_id": 13,
+      "code": "}",
+      "typeFullName": "ANY",
+      "lineNumber": 17,
+      "order": 14,
+      "_label": "BLOCK",
+      "file": "toy.c",
+      "nodeType": "BLOCK"
+    },
+    {
+      "_id": 14,
+      "code": "char* pass(char* s){",
+      "typeFullName": "ANY",
+      "lineNumber": 19,
+      "order": 15,
+      "_label": "BLOCK",
+      "file": "toy.c",
+      "nodeType": "BLOCK"
+    },
+    {
+      "_id": 15,
+      "code": "return s;",
+      "typeFullName": "ANY",
+      "lineNumber": 20,
+      "order": 16,
+      "_label": "BLOCK",
+      "file": "toy.c",
+      "nodeType": "BLOCK"
+    },
+    {
+      "_id": 16,
+      "code": "}",
+      "typeFullName": "ANY",
+      "lineNumber": 21,
+      "order": 17,
+      "_label": "BLOCK",
+      "file": "toy.c",
+      "nodeType": "BLOCK"
+    },
+    {
+      "_id": 17,
+      "code": "void sink(char* cmd){",
+      "typeFullName": "ANY",
+      "lineNumber": 22,
+      "order": 18,
+      "_label": "BLOCK",
+      "file": "toy.c",
+      "nodeType": "BLOCK"
+    },
+    {
+      "_id": 18,
+      "code": "puts(cmd);",
+      "typeFullName": "ANY",
+      "lineNumber": 23,
+      "order": 19,
+      "_label": "CALL",
+      "file": "toy.c",
+      "nodeType": "CALL",
+      "name": "puts",
+      "methodFullName": "puts:<unresolvedSignature>"
+    },
+    {
+      "_id": 19,
+      "code": "}",
+      "typeFullName": "ANY",
+      "lineNumber": 24,
+      "order": 20,
+      "_label": "BLOCK",
+      "file": "toy.c",
+      "nodeType": "BLOCK"
+    }
+  ],
+  "edges": [
+    {
+      "type": "CFG",
+      "src": 0,
+      "dst": 1
+    },
+    {
+      "type": "CFG",
+      "src": 1,
+      "dst": 2
+    },
+    {
+      "type": "CFG",
+      "src": 2,
+      "dst": 3
+    },
+    {
+      "type": "CFG",
+      "src": 3,
+      "dst": 4
+    },
+    {
+      "type": "CFG",
+      "src": 4,
+      "dst": 5
+    },
+    {
+      "type": "CFG",
+      "src": 5,
+      "dst": 6
+    },
+    {
+      "type": "CFG",
+      "src": 6,
+      "dst": 7
+    },
+    {
+      "type": "CFG",
+      "src": 7,
+      "dst": 8
+    },
+    {
+      "type": "CFG",
+      "src": 8,
+      "dst": 9
+    },
+    {
+      "type": "CFG",
+      "src": 9,
+      "dst": 10
+    },
+    {
+      "type": "CFG",
+      "src": 10,
+      "dst": 11
+    },
+    {
+      "type": "CFG",
+      "src": 11,
+      "dst": 12
+    },
+    {
+      "type": "CFG",
+      "src": 12,
+      "dst": 13
+    },
+    {
+      "type": "CFG",
+      "src": 13,
+      "dst": 14
+    },
+    {
+      "type": "CFG",
+      "src": 14,
+      "dst": 15
+    },
+    {
+      "type": "CFG",
+      "src": 15,
+      "dst": 16
+    },
+    {
+      "type": "CFG",
+      "src": 16,
+      "dst": 17
+    },
+    {
+      "type": "CFG",
+      "src": 17,
+      "dst": 18
+    },
+    {
+      "type": "CFG",
+      "src": 18,
+      "dst": 19
+    },
+    {
+      "type": "CALL",
+      "src": 6,
+      "dst": 6
+    },
+    {
+      "type": "RET2CALL",
+      "src": 6,
+      "dst": 6
+    },
+    {
+      "type": "CALL",
+      "src": 7,
+      "dst": 7
+    },
+    {
+      "type": "RET2CALL",
+      "src": 7,
+      "dst": 7
+    },
+    {
+      "type": "CALL",
+      "src": 10,
+      "dst": 17
+    },
+    {
+      "type": "RET2CALL",
+      "src": 17,
+      "dst": 10
+    },
+    {
+      "type": "CALL",
+      "src": 18,
+      "dst": 18
+    },
+    {
+      "type": "RET2CALL",
+      "src": 18,
+      "dst": 18
+    },
+    {
+      "type": "CFG_REV",
+      "src": 1,
+      "dst": 0
+    },
+    {
+      "type": "CFG_REV",
+      "src": 2,
+      "dst": 1
+    },
+    {
+      "type": "CFG_REV",
+      "src": 3,
+      "dst": 2
+    },
+    {
+      "type": "CFG_REV",
+      "src": 4,
+      "dst": 3
+    },
+    {
+      "type": "CFG_REV",
+      "src": 5,
+      "dst": 4
+    },
+    {
+      "type": "CFG_REV",
+      "src": 6,
+      "dst": 5
+    },
+    {
+      "type": "CFG_REV",
+      "src": 7,
+      "dst": 6
+    },
+    {
+      "type": "CFG_REV",
+      "src": 8,
+      "dst": 7
+    },
+    {
+      "type": "CFG_REV",
+      "src": 9,
+      "dst": 8
+    },
+    {
+      "type": "CFG_REV",
+      "src": 10,
+      "dst": 9
+    },
+    {
+      "type": "CFG_REV",
+      "src": 11,
+      "dst": 10
+    },
+    {
+      "type": "CFG_REV",
+      "src": 12,
+      "dst": 11
+    },
+    {
+      "type": "CFG_REV",
+      "src": 13,
+      "dst": 12
+    },
+    {
+      "type": "CFG_REV",
+      "src": 14,
+      "dst": 13
+    },
+    {
+      "type": "CFG_REV",
+      "src": 15,
+      "dst": 14
+    },
+    {
+      "type": "CFG_REV",
+      "src": 16,
+      "dst": 15
+    },
+    {
+      "type": "CFG_REV",
+      "src": 17,
+      "dst": 16
+    },
+    {
+      "type": "CFG_REV",
+      "src": 18,
+      "dst": 17
+    },
+    {
+      "type": "CFG_REV",
+      "src": 19,
+      "dst": 18
+    },
+    {
+      "type": "CALL_REV",
+      "src": 6,
+      "dst": 6
+    },
+    {
+      "type": "CALL_REV",
+      "src": 7,
+      "dst": 7
+    },
+    {
+      "type": "CALL_REV",
+      "src": 17,
+      "dst": 10
+    },
+    {
+      "type": "CALL_REV",
+      "src": 18,
+      "dst": 18
+    },
+    {
+      "type": "RET2CALL_REV",
+      "src": 6,
+      "dst": 6
+    },
+    {
+      "type": "RET2CALL_REV",
+      "src": 7,
+      "dst": 7
+    },
+    {
+      "type": "RET2CALL_REV",
+      "src": 10,
+      "dst": 17
+    },
+    {
+      "type": "RET2CALL_REV",
+      "src": 18,
+      "dst": 18
+    }
+  ]
+}

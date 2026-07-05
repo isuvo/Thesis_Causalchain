@@ -1,0 +1,13 @@
+Root → … → Sink (by P) (hops=3)
+
+[ROOT] }
+  (STMT, mini/sink.c, line 6, P=0.398)
+   └──[CFG] exact=CFG_REV
+[→] system(cmd);
+  (CALL:system, mini/sink.c, line 5, P=0.446)
+   └──[CFG] exact=CFG_REV
+[→] void do_exec(char* cmd) {
+  (STMT, mini/sink.c, line 4, P=0.410)
+   └──[CFG] exact=CFG_REV
+[SINK] #include <stdlib.h>
+  (STMT, mini/sink.c, line 2, P=0.514)

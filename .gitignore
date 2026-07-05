@@ -1,0 +1,10 @@
+# Joern / temp / large artifacts
+external/joern/
+work/joern/
+**/__pycache__
+*.cpg.bin
+*.cpg.bin.zip
+*.tmp
+*.log
+.venv/
+

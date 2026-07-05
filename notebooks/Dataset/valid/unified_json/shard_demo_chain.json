@@ -1,0 +1,455 @@
+{
+  "meta": {
+    "augmented": true,
+    "note": "demo long chain"
+  },
+  "nodes": [
+    {
+      "_id": 1000,
+      "nodeType": "Identifier",
+      "name": "n0",
+      "code": "char *user = argv[1]; // ROOT",
+      "file": "main.c",
+      "line": 10,
+      "is_sink": false
+    },
+    {
+      "_id": 1001,
+      "nodeType": "Assignment",
+      "name": "n1",
+      "code": "return (int)helper_a(tmp0); // call",
+      "file": "main.c",
+      "line": 11,
+      "is_sink": false
+    },
+    {
+      "_id": 1002,
+      "nodeType": "Assignment",
+      "name": "n2",
+      "code": "return (int)helper_a(tmp0); // call",
+      "file": "main.c",
+      "line": 12,
+      "is_sink": false
+    },
+    {
+      "_id": 1003,
+      "nodeType": "CallExpression",
+      "name": "n3",
+      "code": "char* t3=s; // HOP3",
+      "file": "helper_a.c",
+      "line": 13,
+      "is_sink": false
+    },
+    {
+      "_id": 1004,
+      "nodeType": "Assignment",
+      "name": "n4",
+      "code": "char* t4=s; // HOP4",
+      "file": "helper_a.c",
+      "line": 14,
+      "is_sink": false
+    },
+    {
+      "_id": 1005,
+      "nodeType": "Assignment",
+      "name": "n5",
+      "code": "char* t5=s; // HOP5",
+      "file": "helper_a.c",
+      "line": 15,
+      "is_sink": false
+    },
+    {
+      "_id": 1006,
+      "nodeType": "CallExpression",
+      "name": "n6",
+      "code": "char* u6=q; // HOP6",
+      "file": "helper_b.c",
+      "line": 16,
+      "is_sink": false
+    },
+    {
+      "_id": 1007,
+      "nodeType": "Assignment",
+      "name": "n7",
+      "code": "char* u7=q; // HOP7",
+      "file": "helper_b.c",
+      "line": 17,
+      "is_sink": false
+    },
+    {
+      "_id": 1008,
+      "nodeType": "Assignment",
+      "name": "n8",
+      "code": "char* u8=q; // HOP8",
+      "file": "helper_b.c",
+      "line": 18,
+      "is_sink": false
+    },
+    {
+      "_id": 1009,
+      "nodeType": "CallExpression",
+      "name": "n9",
+      "code": "char* z9=w; // HOP9",
+      "file": "helper_c.c",
+      "line": 19,
+      "is_sink": false
+    },
+    {
+      "_id": 1010,
+      "nodeType": "Assignment",
+      "name": "n10",
+      "code": "char* z10=w; // HOP10",
+      "file": "helper_c.c",
+      "line": 20,
+      "is_sink": false
+    },
+    {
+      "_id": 1011,
+      "nodeType": "Assignment",
+      "name": "n11",
+      "code": "system(data); // SINK",
+      "file": "helper_c.c",
+      "line": 21,
+      "is_sink": true
+    },
+    {
+      "_id": 9000,
+      "nodeType": "Identifier",
+      "name": "noise0",
+      "code": "int noise0 = 0;",
+      "file": "misc.c",
+      "line": 100
+    },
+    {
+      "_id": 9001,
+      "nodeType": "Identifier",
+      "name": "noise1",
+      "code": "int noise1 = 1;",
+      "file": "misc.c",
+      "line": 101
+    },
+    {
+      "_id": 9002,
+      "nodeType": "Identifier",
+      "name": "noise2",
+      "code": "int noise2 = 2;",
+      "file": "misc.c",
+      "line": 102
+    },
+    {
+      "_id": 9003,
+      "nodeType": "Identifier",
+      "name": "noise3",
+      "code": "int noise3 = 3;",
+      "file": "misc.c",
+      "line": 103
+    },
+    {
+      "_id": 9004,
+      "nodeType": "Identifier",
+      "name": "noise4",
+      "code": "int noise4 = 4;",
+      "file": "misc.c",
+      "line": 104
+    },
+    {
+      "_id": 9005,
+      "nodeType": "Identifier",
+      "name": "noise5",
+      "code": "int noise5 = 5;",
+      "file": "misc.c",
+      "line": 105
+    },
+    {
+      "_id": 9006,
+      "nodeType": "Identifier",
+      "name": "noise6",
+      "code": "int noise6 = 6;",
+      "file": "misc.c",
+      "line": 106
+    },
+    {
+      "_id": 9007,
+      "nodeType": "Identifier",
+      "name": "noise7",
+      "code": "int noise7 = 7;",
+      "file": "misc.c",
+      "line": 107
+    },
+    {
+      "_id": 9008,
+      "nodeType": "Identifier",
+      "name": "noise8",
+      "code": "int noise8 = 8;",
+      "file": "misc.c",
+      "line": 108
+    },
+    {
+      "_id": 9009,
+      "nodeType": "Identifier",
+      "name": "noise9",
+      "code": "int noise9 = 9;",
+      "file": "misc.c",
+      "line": 109
+    },
+    {
+      "_id": 9010,
+      "nodeType": "Identifier",
+      "name": "noise10",
+      "code": "int noise10 = 10;",
+      "file": "misc.c",
+      "line": 110
+    },
+    {
+      "_id": 9011,
+      "nodeType": "Identifier",
+      "name": "noise11",
+      "code": "int noise11 = 11;",
+      "file": "misc.c",
+      "line": 111
+    },
+    {
+      "_id": 9012,
+      "nodeType": "Identifier",
+      "name": "noise12",
+      "code": "int noise12 = 12;",
+      "file": "misc.c",
+      "line": 112
+    },
+    {
+      "_id": 9013,
+      "nodeType": "Identifier",
+      "name": "noise13",
+      "code": "int noise13 = 13;",
+      "file": "misc.c",
+      "line": 113
+    },
+    {
+      "_id": 9014,
+      "nodeType": "Identifier",
+      "name": "noise14",
+      "code": "int noise14 = 14;",
+      "file": "misc.c",
+      "line": 114
+    },
+    {
+      "_id": 9015,
+      "nodeType": "Identifier",
+      "name": "noise15",
+      "code": "int noise15 = 15;",
+      "file": "misc.c",
+      "line": 115
+    },
+    {
+      "_id": 9016,
+      "nodeType": "Identifier",
+      "name": "noise16",
+      "code": "int noise16 = 16;",
+      "file": "misc.c",
+      "line": 116
+    },
+    {
+      "_id": 9017,
+      "nodeType": "Identifier",
+      "name": "noise17",
+      "code": "int noise17 = 17;",
+      "file": "misc.c",
+      "line": 117
+    },
+    {
+      "_id": 9018,
+      "nodeType": "Identifier",
+      "name": "noise18",
+      "code": "int noise18 = 18;",
+      "file": "misc.c",
+      "line": 118
+    },
+    {
+      "_id": 9019,
+      "nodeType": "Identifier",
+      "name": "noise19",
+      "code": "int noise19 = 19;",
+      "file": "misc.c",
+      "line": 119
+    },
+    {
+      "_id": 9020,
+      "nodeType": "Identifier",
+      "name": "noise20",
+      "code": "int noise20 = 20;",
+      "file": "misc.c",
+      "line": 120
+    },
+    {
+      "_id": 9021,
+      "nodeType": "Identifier",
+      "name": "noise21",
+      "code": "int noise21 = 21;",
+      "file": "misc.c",
+      "line": 121
+    },
+    {
+      "_id": 9022,
+      "nodeType": "Identifier",
+      "name": "noise22",
+      "code": "int noise22 = 22;",
+      "file": "misc.c",
+      "line": 122
+    },
+    {
+      "_id": 9023,
+      "nodeType": "Identifier",
+      "name": "noise23",
+      "code": "int noise23 = 23;",
+      "file": "misc.c",
+      "line": 123
+    },
+    {
+      "_id": 9024,
+      "nodeType": "Identifier",
+      "name": "noise24",
+      "code": "int noise24 = 24;",
+      "file": "misc.c",
+      "line": 124
+    },
+    {
+      "_id": 9025,
+      "nodeType": "Identifier",
+      "name": "noise25",
+      "code": "int noise25 = 25;",
+      "file": "misc.c",
+      "line": 125
+    },
+    {
+      "_id": 9026,
+      "nodeType": "Identifier",
+      "name": "noise26",
+      "code": "int noise26 = 26;",
+      "file": "misc.c",
+      "line": 126
+    },
+    {
+      "_id": 9027,
+      "nodeType": "Identifier",
+      "name": "noise27",
+      "code": "int noise27 = 27;",
+      "file": "misc.c",
+      "line": 127
+    },
+    {
+      "_id": 9028,
+      "nodeType": "Identifier",
+      "name": "noise28",
+      "code": "int noise28 = 28;",
+      "file": "misc.c",
+      "line": 128
+    },
+    {
+      "_id": 9029,
+      "nodeType": "Identifier",
+      "name": "noise29",
+      "code": "int noise29 = 29;",
+      "file": "misc.c",
+      "line": 129
+    },
+    {
+      "_id": 9030,
+      "nodeType": "Identifier",
+      "name": "noise30",
+      "code": "int noise30 = 30;",
+      "file": "misc.c",
+      "line": 130
+    },
+    {
+      "_id": 9031,
+      "nodeType": "Identifier",
+      "name": "noise31",
+      "code": "int noise31 = 31;",
+      "file": "misc.c",
+      "line": 131
+    },
+    {
+      "_id": 9032,
+      "nodeType": "Identifier",
+      "name": "noise32",
+      "code": "int noise32 = 32;",
+      "file": "misc.c",
+      "line": 132
+    },
+    {
+      "_id": 9033,
+      "nodeType": "Identifier",
+      "name": "noise33",
+      "code": "int noise33 = 33;",
+      "file": "misc.c",
+      "line": 133
+    },
+    {
+      "_id": 9034,
+      "nodeType": "Identifier",
+      "name": "noise34",
+      "code": "int noise34 = 34;",
+      "file": "misc.c",
+      "line": 134
+    },
+    {
+      "_id": 9035,
+      "nodeType": "Identifier",
+      "name": "noise35",
+      "code": "int noise35 = 35;",
+      "file": "misc.c",
+      "line": 135
+    },
+    {
+      "_id": 9036,
+      "nodeType": "Identifier",
+      "name": "noise36",
+      "code": "int noise36 = 36;",
+      "file": "misc.c",
+      "line": 136
+    },
+    {
+      "_id": 9037,
+      "nodeType": "Identifier",
+      "name": "noise37",
+      "code": "int noise37 = 37;",
+      "file": "misc.c",
+      "line": 137
+    },
+    {
+      "_id": 9038,
+      "nodeType": "Identifier",
+      "name": "noise38",
+      "code": "int noise38 = 38;",
+      "file": "misc.c",
+      "line": 138
+    },
+    {
+      "_id": 9039,
+      "nodeType": "Identifier",
+      "name": "noise39",
+      "code": "int noise39 = 39;",
+      "file": "misc.c",
+      "line": 139
+    }
+  ],
+  "vulnerable_paths": [
+    [
+      1000,
+      1001,
+      1002,
+      1003,
+      1004,
+      1005,
+      1006,
+      1007,
+      1008,
+      1009,
+      1010,
+      1011
+    ]
+  ],
+  "sinks": [
+    1011
+  ]
+}

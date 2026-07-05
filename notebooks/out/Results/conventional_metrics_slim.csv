@@ -1,0 +1,7 @@
+split,label_source,n_graphs,accuracy,precision,recall,f1
+valid,heuristic,777,0.405,0.00261,0.817,0.00505
+valid,bootstrap,70,0.492,0.0582,1.0,0.108
+test,heuristic,812,0.402,0.00187,0.815,0.00366
+test,bootstrap,78,0.489,0.0604,1.0,0.112
+test,heuristic,812,0.402,0.00187,0.815,0.00366
+test,bootstrap,78,0.489,0.0604,1.0,0.112

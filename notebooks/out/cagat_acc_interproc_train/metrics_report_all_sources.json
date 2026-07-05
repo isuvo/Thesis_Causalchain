@@ -1,0 +1,110 @@
+{
+  "checkpoint": "out\\cagat_acc_interproc_train\\best_model.pt",
+  "device": "cuda",
+  "force_bfs": true,
+  "max_nodes": 5000,
+  "max_edges": 15000,
+  "threshold": 0.5,
+  "splits": [
+    {
+      "split": "valid",
+      "threshold": 0.5,
+      "jsonl": "out\\cagat_acc_interproc_train\\metrics_valid.jsonl",
+      "csv": "out\\cagat_acc_interproc_train\\metrics_valid.csv",
+      "by_label_source": {
+        "mined": {
+          "global": {
+            "counted_graphs": 2058,
+            "acc": 0.43974651706960227,
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0
+          },
+          "inter": {
+            "note": "no_graphs"
+          }
+        },
+        "heuristic": {
+          "global": {
+            "counted_graphs": 777,
+            "acc": 0.4053479304575862,
+            "precision": 0.0026079216057589144,
+            "recall": 0.817117117117117,
+            "f1": 0.0050465862375272215
+          },
+          "inter": {
+            "counted_graphs": 777,
+            "acc": 0.25435631081707716,
+            "precision": 0.01045042417901096,
+            "recall": 0.817117117117117,
+            "f1": 0.016916495405435755
+          }
+        },
+        "bootstrap": {
+          "global": {
+            "counted_graphs": 70,
+            "acc": 0.4918951650319589,
+            "precision": 0.058208996552376324,
+            "recall": 1.0,
+            "f1": 0.10788735828298934
+          },
+          "inter": {
+            "note": "no_graphs"
+          }
+        }
+      },
+      "global_mAP_pooled": 0.001514148417984413,
+      "inter_mAP_pooled": 0.0027399749373487226
+    },
+    {
+      "split": "test",
+      "threshold": 0.5,
+      "jsonl": "out\\cagat_acc_interproc_train\\metrics_test.jsonl",
+      "csv": "out\\cagat_acc_interproc_train\\metrics_test.csv",
+      "by_label_source": {
+        "mined": {
+          "global": {
+            "counted_graphs": 2025,
+            "acc": 0.44332193759288097,
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0
+          },
+          "inter": {
+            "note": "no_graphs"
+          }
+        },
+        "heuristic": {
+          "global": {
+            "counted_graphs": 812,
+            "acc": 0.40180120060006075,
+            "precision": 0.0018662734168757716,
+            "recall": 0.8153940886699504,
+            "f1": 0.0036573721334772985
+          },
+          "inter": {
+            "counted_graphs": 812,
+            "acc": 0.2501160262134256,
+            "precision": 0.006646600803535715,
+            "recall": 0.8153940886699504,
+            "f1": 0.011346079651696313
+          }
+        },
+        "bootstrap": {
+          "global": {
+            "counted_graphs": 78,
+            "acc": 0.4887498910572881,
+            "precision": 0.06035364592737393,
+            "recall": 1.0,
+            "f1": 0.11176023153266669
+          },
+          "inter": {
+            "note": "no_graphs"
+          }
+        }
+      },
+      "global_mAP_pooled": 0.0016707977799920552,
+      "inter_mAP_pooled": 0.0027868156398415233
+    }
+  ]
+}

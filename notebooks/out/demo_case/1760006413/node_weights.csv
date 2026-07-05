@@ -1,0 +1,43 @@
+idx,P,file,line,label,code
+0,0.467542,demo2/main.c,2,STMT,#include <stdio.h>
+1,0.426655,demo2/main.c,3,STMT,#include <stdlib.h>
+2,0.379694,demo2/main.c,4,STMT,#include <string.h>
+3,0.428507,demo2/main.c,6,STMT,extern char* stage1_normalize(const char* in);
+4,0.487550,demo2/main.c,7,STMT,extern char* stage2_expand(char* in);
+5,0.412324,demo2/main.c,8,STMT,extern char* stage3_flag(char* in);
+6,0.484882,demo2/main.c,9,STMT,extern void  do_exec(char* cmd);
+7,0.468242,demo2/main.c,11,STMT,int main(void) {
+8,0.495906,demo2/main.c,12,DECL,char in[256];
+9,0.397530,demo2/main.c,13,ASSIGN,char* p = NULL;
+10,0.396326,demo2/main.c,14,COND,"if (fgets(in, sizeof(in), stdin)) {"
+11,0.499639,demo2/main.c,15,ASSIGN,p = stage1_normalize(in);
+12,0.456794,demo2/main.c,16,ASSIGN,p = stage2_expand(p);
+13,0.538528,demo2/main.c,17,ASSIGN,p = stage3_flag(p);
+14,0.441938,demo2/main.c,18,CALL:do_exec,do_exec(p);
+15,0.448271,demo2/main.c,19,STMT,}
+16,0.451473,demo2/main.c,20,RET,return 0;
+17,0.357740,demo2/main.c,21,STMT,}
+18,0.463169,demo2/transform.c,2,STMT,#include <stdio.h>
+19,0.428618,demo2/transform.c,3,STMT,#include <stdlib.h>
+20,0.386193,demo2/transform.c,4,STMT,#include <string.h>
+21,0.426717,demo2/transform.c,6,DECL,static char buf1[300];
+22,0.460047,demo2/transform.c,7,DECL,static char buf2[300];
+23,0.485167,demo2/transform.c,8,DECL,static char buf3[300];
+24,0.445173,demo2/transform.c,10,STMT,char* stage1_normalize(const char* in) {
+25,0.493050,demo2/transform.c,11,CALL:snprintf,"snprintf(buf1, sizeof(buf1), ""%s"", in);"
+26,0.526859,demo2/transform.c,12,RET,return buf1;
+27,0.358278,demo2/transform.c,13,STMT,}
+28,0.414059,demo2/transform.c,15,STMT,char* stage2_expand(char* in) {
+29,0.486849,demo2/transform.c,16,CALL:strcpy,"strcpy(buf2, ""sh -c "");"
+30,0.484584,demo2/transform.c,17,CALL:strcat,"strcat(buf2, in);"
+31,0.513077,demo2/transform.c,18,RET,return buf2;
+32,0.359448,demo2/transform.c,19,STMT,}
+33,0.425060,demo2/transform.c,21,STMT,char* stage3_flag(char* in) {
+34,0.461630,demo2/transform.c,22,CALL:sprintf,"sprintf(buf3, ""%s %s"", in, ""--debug"");"
+35,0.497537,demo2/transform.c,23,RET,return buf3;
+36,0.346237,demo2/transform.c,24,STMT,}
+37,0.466658,demo2/sink.c,2,STMT,#include <stdio.h>
+38,0.401276,demo2/sink.c,3,STMT,#include <stdlib.h>
+39,0.383431,demo2/sink.c,5,STMT,void do_exec(char* cmd) {
+40,0.448206,demo2/sink.c,6,CALL:system,system(cmd);
+41,0.401407,demo2/sink.c,7,STMT,}

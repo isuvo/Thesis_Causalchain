@@ -1,0 +1,124 @@
+idx,_id,file,lineNumber,_label,code,P
+0,0,app/main3.c,2,BLOCK,#include <stdio.h>,0.39059150218963623
+1,1,app/main3.c,3,BLOCK,#include <stdlib.h>,0.4759109318256378
+2,2,app/main3.c,4,BLOCK,#include <string.h>,0.3894026577472687
+3,3,app/main3.c,6,BLOCK,char* normalize_stage(char* in);,0.40107396245002747
+4,4,app/main3.c,7,BLOCK,char* chain_stage(char* in);,0.43133747577667236
+5,5,app/main3.c,8,BLOCK,void final_execute(char* cmd);,0.4146619439125061
+6,6,app/main3.c,10,BLOCK,"int main(int argc, char** argv) {",0.4652504026889801
+7,7,app/main3.c,11,BLOCK,char buf[256];,0.4360313415527344
+8,8,app/main3.c,12,BLOCK,size_t len;,0.45618265867233276
+9,9,app/main3.c,13,CALL,if (argc > 1) {,0.39151298999786377
+10,10,app/main3.c,14,BLOCK,len = strlen(argv[1]);,0.5144458413124084
+11,11,app/main3.c,15,CALL,if (len > sizeof(buf) - 1) {,0.46615445613861084
+12,12,app/main3.c,16,BLOCK,len = sizeof(buf) - 1;,0.48646023869514465
+13,13,app/main3.c,17,BLOCK,},0.4735264480113983
+14,14,app/main3.c,18,CALL,"memset(buf, 0, sizeof(buf));",0.41806700825691223
+15,15,app/main3.c,19,CALL,"strncpy(buf, argv[1], len);",0.49110835790634155
+16,16,app/main3.c,20,BLOCK,buf[len] = '\0';,0.37323087453842163
+17,17,app/main3.c,21,BLOCK,char* s1 = normalize_stage(buf);,0.3675687909126282
+18,18,app/main3.c,22,BLOCK,char* s2 = chain_stage(s1);,0.48495566844940186
+19,19,app/main3.c,23,CALL,final_execute(s2);,0.4407978951931
+20,20,app/main3.c,24,BLOCK,},0.38925185799598694
+21,21,app/main3.c,25,BLOCK,return 0;,0.4619159400463104
+22,22,app/main3.c,26,BLOCK,},0.5085296034812927
+23,23,lib/normalize3.c,2,BLOCK,#include <stdio.h>,0.3921770751476288
+24,24,lib/normalize3.c,3,BLOCK,#include <stdlib.h>,0.48785918951034546
+25,25,lib/normalize3.c,4,BLOCK,#include <string.h>,0.48947519063949585
+26,26,lib/normalize3.c,6,BLOCK,static char norm_buf1[256];,0.4855082631111145
+27,27,lib/normalize3.c,7,BLOCK,static char norm_buf2[256];,0.43254297971725464
+28,28,lib/normalize3.c,8,BLOCK,static char norm_buf3[256];,0.4073430895805359
+29,29,lib/normalize3.c,10,BLOCK,static char* trim_leading(char* in) {,0.4702344238758087
+30,30,lib/normalize3.c,11,BLOCK,size_t i = 0;,0.4928339719772339
+31,31,lib/normalize3.c,12,BLOCK,size_t j = 0;,0.45643350481987
+32,32,lib/normalize3.c,13,CALL,while (in[i] == ' ' || in[i] == '\t') {,0.420014888048172
+33,33,lib/normalize3.c,14,BLOCK,i++;,0.490721195936203
+34,34,lib/normalize3.c,15,BLOCK,},0.4140147864818573
+35,35,lib/normalize3.c,16,CALL,while (in[i] != '\0' && j < sizeof(norm_buf1) - 1) {,0.4442498981952667
+36,36,lib/normalize3.c,17,BLOCK,norm_buf1[j] = in[i];,0.44297561049461365
+37,37,lib/normalize3.c,18,BLOCK,i++;,0.49190109968185425
+38,38,lib/normalize3.c,19,BLOCK,j++;,0.5033982396125793
+39,39,lib/normalize3.c,20,BLOCK,},0.4795224368572235
+40,40,lib/normalize3.c,21,BLOCK,norm_buf1[j] = '\0';,0.4441927671432495
+41,41,lib/normalize3.c,22,BLOCK,return norm_buf1;,0.48240992426872253
+42,42,lib/normalize3.c,23,BLOCK,},0.4609457552433014
+43,43,lib/normalize3.c,25,BLOCK,static char* trim_trailing(char* in) {,0.4259209632873535
+44,44,lib/normalize3.c,26,BLOCK,size_t len = strlen(in);,0.5275130271911621
+45,45,lib/normalize3.c,27,BLOCK,size_t end = len;,0.5045406222343445
+46,46,lib/normalize3.c,28,CALL,while (end > 0 && (in[end - 1] == ' ' || in[end - 1] == '\t')) {,0.4451035261154175
+47,47,lib/normalize3.c,29,BLOCK,end--;,0.5119524002075195
+48,48,lib/normalize3.c,30,BLOCK,},0.4216558039188385
+49,49,lib/normalize3.c,31,CALL,if (end >= sizeof(norm_buf2)) {,0.44934311509132385
+50,50,lib/normalize3.c,32,BLOCK,end = sizeof(norm_buf2) - 1;,0.5371589064598083
+51,51,lib/normalize3.c,33,BLOCK,},0.499860554933548
+52,52,lib/normalize3.c,34,CALL,"memcpy(norm_buf2, in, end);",0.47263604402542114
+53,53,lib/normalize3.c,35,BLOCK,norm_buf2[end] = '\0';,0.41905447840690613
+54,54,lib/normalize3.c,36,BLOCK,return norm_buf2;,0.4627676010131836
+55,55,lib/normalize3.c,37,BLOCK,},0.5094937682151794
+56,56,lib/normalize3.c,39,BLOCK,static char* collapse_internal_spaces(char* in) {,0.44492241740226746
+57,57,lib/normalize3.c,40,BLOCK,size_t i = 0;,0.5022691488265991
+58,58,lib/normalize3.c,41,BLOCK,size_t j = 0;,0.48858529329299927
+59,59,lib/normalize3.c,42,BLOCK,int last_space = 0;,0.5071395635604858
+60,60,lib/normalize3.c,43,CALL,while (in[i] != '\0' && j < sizeof(norm_buf3) - 1) {,0.3685559630393982
+61,61,lib/normalize3.c,44,BLOCK,char c = in[i];,0.5175287127494812
+62,62,lib/normalize3.c,45,CALL,if (c == ' ') {,0.46868377923965454
+63,63,lib/normalize3.c,46,CALL,if (!last_space) {,0.4529498815536499
+64,64,lib/normalize3.c,47,BLOCK,norm_buf3[j] = c;,0.4496403932571411
+65,65,lib/normalize3.c,48,BLOCK,j++;,0.41593751311302185
+66,66,lib/normalize3.c,49,BLOCK,last_space = 1;,0.5418748259544373
+67,67,lib/normalize3.c,50,BLOCK,},0.4893395006656647
+68,68,lib/normalize3.c,51,BLOCK,} else {,0.4681960642337799
+69,69,lib/normalize3.c,52,BLOCK,norm_buf3[j] = c;,0.4065296947956085
+70,70,lib/normalize3.c,53,BLOCK,j++;,0.4516282081604004
+71,71,lib/normalize3.c,54,BLOCK,last_space = 0;,0.5170879364013672
+72,72,lib/normalize3.c,55,BLOCK,},0.4722241163253784
+73,73,lib/normalize3.c,56,BLOCK,i++;,0.520792543888092
+74,74,lib/normalize3.c,57,BLOCK,},0.4218611717224121
+75,75,lib/normalize3.c,58,BLOCK,norm_buf3[j] = '\0';,0.44175824522972107
+76,76,lib/normalize3.c,59,BLOCK,return norm_buf3;,0.47076359391212463
+77,77,lib/normalize3.c,60,BLOCK,},0.4753788411617279
+78,78,lib/normalize3.c,62,BLOCK,char* normalize_stage(char* in) {,0.40612006187438965
+79,79,lib/normalize3.c,63,BLOCK,char* a = trim_leading(in);,0.38893944025039673
+80,80,lib/normalize3.c,64,BLOCK,char* b = trim_trailing(a);,0.41028016805648804
+81,81,lib/normalize3.c,65,BLOCK,char* c = collapse_internal_spaces(b);,0.4681166410446167
+82,82,lib/normalize3.c,66,BLOCK,return c;,0.4500338137149811
+83,83,lib/normalize3.c,67,BLOCK,},0.5281985402107239
+84,84,lib/chain_exec3.c,2,BLOCK,#include <stdio.h>,0.3921770751476288
+85,85,lib/chain_exec3.c,3,BLOCK,#include <stdlib.h>,0.4876755177974701
+86,86,lib/chain_exec3.c,4,BLOCK,#include <string.h>,0.4916362166404724
+87,87,lib/chain_exec3.c,6,BLOCK,static char cmd_buf1[512];,0.48208096623420715
+88,88,lib/chain_exec3.c,7,BLOCK,static char cmd_buf2[512];,0.43052437901496887
+89,89,lib/chain_exec3.c,8,BLOCK,static char cmd_buf3[512];,0.3902020752429962
+90,90,lib/chain_exec3.c,10,BLOCK,static char* build_base_command(char* in) {,0.4765153229236603
+91,91,lib/chain_exec3.c,11,CALL,"snprintf(cmd_buf1, sizeof(cmd_buf1), ""base_program %s"", in);",0.4673651456832886
+92,92,lib/chain_exec3.c,12,BLOCK,return cmd_buf1;,0.35729214549064636
+93,93,lib/chain_exec3.c,13,BLOCK,},0.4999901056289673
+94,94,lib/chain_exec3.c,15,BLOCK,static char* add_execution_flags(char* in) {,0.43027597665786743
+95,95,lib/chain_exec3.c,16,CALL,"snprintf(cmd_buf2, sizeof(cmd_buf2), ""%s --mode=run --level=2"", in);",0.4938238859176636
+96,96,lib/chain_exec3.c,17,BLOCK,return cmd_buf2;,0.37990039587020874
+97,97,lib/chain_exec3.c,18,BLOCK,},0.4760594964027405
+98,98,lib/chain_exec3.c,20,BLOCK,static char* add_suffix_marker(char* in) {,0.4469291567802429
+99,99,lib/chain_exec3.c,21,CALL,"snprintf(cmd_buf3, sizeof(cmd_buf3), ""%s --marker=end"", in);",0.46223706007003784
+100,100,lib/chain_exec3.c,22,BLOCK,return cmd_buf3;,0.42722421884536743
+101,101,lib/chain_exec3.c,23,BLOCK,},0.4757409989833832
+102,102,lib/chain_exec3.c,25,BLOCK,char* chain_stage(char* in) {,0.45042312145233154
+103,103,lib/chain_exec3.c,26,BLOCK,char* a = build_base_command(in);,0.3875090479850769
+104,104,lib/chain_exec3.c,27,BLOCK,char* b = add_execution_flags(a);,0.41158443689346313
+105,105,lib/chain_exec3.c,28,BLOCK,char* c = add_suffix_marker(b);,0.4630650281906128
+106,106,lib/chain_exec3.c,29,BLOCK,return c;,0.46054789423942566
+107,107,lib/chain_exec3.c,30,BLOCK,},0.4750327467918396
+108,108,lib/chain_exec3.c,32,BLOCK,void final_execute(char* cmd) {,0.42433109879493713
+109,109,lib/chain_exec3.c,33,BLOCK,char local[512];,0.477925181388855
+110,110,lib/chain_exec3.c,34,BLOCK,size_t n;,0.4304523468017578
+111,111,lib/chain_exec3.c,35,CALL,if (cmd == NULL) {,0.45937711000442505
+112,112,lib/chain_exec3.c,36,BLOCK,return;,0.4226211607456207
+113,113,lib/chain_exec3.c,37,BLOCK,},0.41623958945274353
+114,114,lib/chain_exec3.c,38,BLOCK,n = strlen(cmd);,0.46992576122283936
+115,115,lib/chain_exec3.c,39,CALL,if (n >= sizeof(local)) {,0.43019014596939087
+116,116,lib/chain_exec3.c,40,BLOCK,n = sizeof(local) - 1;,0.5361352562904358
+117,117,lib/chain_exec3.c,41,BLOCK,},0.5009969472885132
+118,118,lib/chain_exec3.c,42,CALL,"memset(local, 0, sizeof(local));",0.4289119839668274
+119,119,lib/chain_exec3.c,43,CALL,"strncpy(local, cmd, n);",0.468250572681427
+120,120,lib/chain_exec3.c,44,BLOCK,local[n] = '\0';,0.45299091935157776
+121,121,lib/chain_exec3.c,45,CALL,system(local);,0.3771268129348755
+122,122,lib/chain_exec3.c,46,BLOCK,},0.40195295214653015

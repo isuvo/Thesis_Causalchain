@@ -1,0 +1,32 @@
+{
+  "split": "train",
+  "stats": {
+    "json_ok": 3436,
+    "has_nodes": 3436,
+    "no_vulnerable_paths": 3436,
+    "bad_json": 2
+  },
+  "key_hits": {
+    "nodes._label": 171540
+  },
+  "vulnerable_paths_elem_types": {},
+  "examples": {
+    "nodes.is_sink": [],
+    "nodes.isVulnerable": [],
+    "nodes.vulnerable": [],
+    "nodes.label": [],
+    "nodes._label": [
+      {
+        "_label": "BINDING"
+      },
+      {
+        "_label": "BINDING"
+      },
+      {
+        "_label": "BINDING"
+      }
+    ],
+    "nodes.class": [],
+    "nodes.tag": []
+  }
+}

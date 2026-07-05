@@ -1,0 +1,7 @@
+Root → … → Sink (hops=1)
+
+[ROOT] P=0.396  return s;
+   (label=BLOCK, file=toy.c, line=20)
+   └──[CFG]
+[SINK] P=0.601  }
+   (label=BLOCK, file=toy.c, line=21)

@@ -1,0 +1,37 @@
+Root → … → Sink (hops=11)
+
+[ROOT] char buf[256];
+  (Stmt, app/main.c, line 12, p=0.463)
+   └──[DFG] exact=DFG
+[→] char* p = wrap_a(buf);
+  (Stmt, app/main.c, line 17, p=0.588)
+   └──[CFG] exact=CFG
+[→] p = wrap_b(p);
+  (Stmt, app/main.c, line 18, p=0.535)
+   └──[CFG/DFG] exact=CFG,DFG
+[→] p = wrap_c(p);
+  (Stmt, app/main.c, line 19, p=0.480)
+   └──[DFG] exact=DFG
+[→] run_system(p);
+  (Stmt, app/main.c, line 21, p=0.421)
+   └──[CPG] exact=CALL
+[→] extern void run_system(char* cmd);
+  (Stmt, app/main.c, line 9, p=0.550)
+   └──[CFG] exact=CFG_REV
+[→] extern char* wrap_c(char* in);
+  (Stmt, app/main.c, line 8, p=0.508)
+   └──[CFG] exact=CFG_REV
+[→] extern char* wrap_b(char* in);
+  (Stmt, app/main.c, line 7, p=0.573)
+   └──[CFG] exact=CFG_REV
+[→] extern char* wrap_a(char* in);
+  (Stmt, app/main.c, line 6, p=0.494)
+   └──[CFG] exact=CFG_REV
+[→] #include <string.h>
+  (Stmt, app/main.c, line 4, p=0.496)
+   └──[CFG] exact=CFG_REV
+[→] #include <stdlib.h>
+  (Stmt, app/main.c, line 3, p=0.509)
+   └──[CFG] exact=CFG_REV
+[SINK] #include <stdio.h>
+  (Stmt, app/main.c, line 2, p=0.522)

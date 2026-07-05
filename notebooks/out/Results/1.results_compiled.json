@@ -1,0 +1,262 @@
+{
+  "meta": {
+    "generated_at": "2025-10-27T05:34:12.019061Z",
+    "sources": {
+      "reports": "/mnt/data/reports.json",
+      "ckg_used": "/mnt/data/ckg_used.json",
+      "beam_report_md": "/mnt/data/beam_report.md"
+    },
+    "notes": [
+      "Conventional classification metrics in reports.json are placeholders (0.0).",
+      "CKG prior is decoding-only; values below are mined from training graphs."
+    ]
+  },
+  "observed": {
+    "valid": {
+      "n_graphs": 2906,
+      "threshold_used": 0.05,
+      "conventional": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "accuracy": null,
+        "auroc": null,
+        "auprc": null
+      },
+      "interprocedural_only": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0
+      },
+      "beam": {
+        "avg_steps": 4.901927047487956,
+        "interproc_ratio": 0.41204117916952965
+      },
+      "causal": {
+        "cfam_mean": 0.03713512300016863,
+        "ccs_mean": 2.103382822502565e-05
+      }
+    },
+    "test": {
+      "n_graphs": 2915,
+      "threshold_used": 0.05,
+      "conventional": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "accuracy": null,
+        "auroc": null,
+        "auprc": null
+      },
+      "interprocedural_only": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0
+      },
+      "beam": {
+        "avg_steps": 4.88336192109777,
+        "interproc_ratio": 0.4147284162378449
+      },
+      "causal": {
+        "cfam_mean": 0.03802854397785558,
+        "ccs_mean": 2.992976884928558e-05
+      }
+    }
+  },
+  "ckg_prior": {
+    "graphs_used": 3438,
+    "relations": [
+      "DFG",
+      "CFG",
+      "CALL",
+      "ARG2PARAM",
+      "RET2CALL",
+      "RET2LHS",
+      "DFG_THIN"
+    ],
+    "edge_prior_prob": {
+      "DFG": 0.004169714703730797,
+      "CFG": 0.47439648866130213,
+      "CALL": 0.3902706656912948,
+      "ARG2PARAM": 0.09063643013899049,
+      "RET2CALL": 0.0019019751280175566,
+      "RET2LHS": 3.65764447695684e-05,
+      "DFG_THIN": 0.03858814923189466
+    },
+    "bigram_prob_sample": {
+      "DFG": {
+        "DFG": 0.6091954022988506,
+        "CFG": 0.12643678160919541,
+        "CALL": 0.011494252873563218,
+        "ARG2PARAM": 0.06896551724137931,
+        "RET2CALL": 0.0
+      },
+      "CFG": {
+        "DFG": 0.00408905043162199,
+        "CFG": 0.5834620626987733,
+        "CALL": 0.3085870059064062,
+        "ARG2PARAM": 0.08532485233984552,
+        "RET2CALL": 9.086778736937755e-05
+      },
+      "CALL": {
+        "DFG": 0.0,
+        "CFG": 0.0007084159818645508,
+        "CALL": 0.9992915840181354,
+        "ARG2PARAM": 0.0,
+        "RET2CALL": 0.0
+      },
+      "ARG2PARAM": {
+        "DFG": 0.0,
+        "CFG": 0.0,
+        "CALL": 0.0,
+        "ARG2PARAM": 0.7426114991939817,
+        "RET2CALL": 0.0
+      },
+      "RET2CALL": {
+        "DFG": 0.04,
+        "CFG": 0.3,
+        "CALL": 0.56,
+        "ARG2PARAM": 0.06,
+        "RET2CALL": 0.0
+      },
+      "RET2LHS": {
+        "DFG": 0.0,
+        "CFG": 0.0,
+        "CALL": 0.0,
+        "ARG2PARAM": 0.0,
+        "RET2CALL": 0.0
+      },
+      "DFG_THIN": {
+        "DFG": 0.006756756756756757,
+        "CFG": 0.05405405405405406,
+        "CALL": 0.04954954954954955,
+        "ARG2PARAM": 0.22072072072072071,
+        "RET2CALL": 0.0022522522522522522
+      }
+    },
+    "top_motifs": [
+      {
+        "count": 3943,
+        "rels": [
+          "CFG",
+          "CFG",
+          "CFG"
+        ]
+      },
+      {
+        "count": 3489,
+        "rels": [
+          "CALL",
+          "CALL",
+          "CALL"
+        ]
+      },
+      {
+        "count": 3343,
+        "rels": [
+          "CFG",
+          "CALL",
+          "CALL"
+        ]
+      },
+      {
+        "count": 810,
+        "rels": [
+          "CFG",
+          "ARG2PARAM",
+          "ARG2PARAM"
+        ]
+      },
+      {
+        "count": 480,
+        "rels": [
+          "ARG2PARAM",
+          "ARG2PARAM",
+          "ARG2PARAM"
+        ]
+      },
+      {
+        "count": 348,
+        "rels": [
+          "ARG2PARAM",
+          "ARG2PARAM",
+          "DFG_THIN"
+        ]
+      },
+      {
+        "count": 288,
+        "rels": [
+          "CFG",
+          "CFG",
+          "CALL"
+        ]
+      },
+      {
+        "count": 180,
+        "rels": [
+          "CFG",
+          "CFG",
+          "ARG2PARAM"
+        ]
+      },
+      {
+        "count": 135,
+        "rels": [
+          "CFG",
+          "DFG_THIN",
+          "DFG_THIN"
+        ]
+      },
+      {
+        "count": 116,
+        "rels": [
+          "CFG",
+          "ARG2PARAM",
+          "DFG_THIN"
+        ]
+      }
+    ],
+    "smoothing_eps": 0.001,
+    "temperature": 1.0,
+    "trigram_topK": 500,
+    "prior_weights": {
+      "beta1": 0.3,
+      "beta2": 0.6,
+      "beta3": 0.1
+    },
+    "mixture_lambda": 0.2
+  },
+  "expected_targets": {
+    "conventional_metrics": {
+      "macro_f1_range": [
+        0.35,
+        0.55
+      ],
+      "auprc_range": [
+        0.2,
+        0.4
+      ]
+    },
+    "causal_metrics": {
+      "cfam_mean_range": [
+        0.12,
+        0.25
+      ],
+      "ccs_minor_edits_max": 0.005,
+      "dcr_minor_edits_min": 0.75,
+      "chain_validity_rate_min": 0.85,
+      "ipa_rate_min": 0.6,
+      "motif_coverage_k500_min": 0.3
+    },
+    "decoding_profile": {
+      "avg_steps_range": [
+        4,
+        7
+      ],
+      "interproc_hop_ratio_range": [
+        0.35,
+        0.55
+      ]
+    }
+  }
+}
